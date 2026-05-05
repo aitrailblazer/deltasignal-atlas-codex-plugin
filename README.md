@@ -4,6 +4,8 @@
 
 DeltaSignal ATLAS-7 gives your agent structured, validated tools for market signals, risk analysis, peer ranking, and fundamentals, with automatic x402 micropayments in USDC. No subscription required.
 
+Also available on [Smithery](https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7).
+
 ## Quick Start
 
 ### 1. Install
