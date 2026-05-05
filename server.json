@@ -4,7 +4,7 @@
   "title": "DeltaSignal ATLAS-7",
   "description": "Real-time financial intelligence for crypto public companies. Native MCP server with alpha signals, covenant stress, peer ranking, risk distribution, and SEC XBRL fundamentals.",
   "version": "1.0.0",
-  "websiteUrl": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin",
+  "websiteUrl": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
   "repository": {
     "type": "git",
     "url": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin"

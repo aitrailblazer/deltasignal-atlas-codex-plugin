@@ -6,7 +6,7 @@
     "name": "AITrailblazer",
     "url": "https://api.aitrailblazer.net"
   },
-  "homepage": "https://api.aitrailblazer.net/help",
+  "homepage": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
   "repository": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin",
   "license": "MIT",
   "keywords": [
@@ -33,7 +33,7 @@
       "MCP Server",
       "Paid API"
     ],
-    "websiteURL": "https://api.aitrailblazer.net",
+    "websiteURL": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
     "privacyPolicyURL": "https://api.aitrailblazer.net/help",
     "termsOfServiceURL": "https://api.aitrailblazer.net/help",
     "defaultPrompt": [
