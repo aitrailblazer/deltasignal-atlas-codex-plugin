@@ -1,21 +1,21 @@
 # DeltaSignal ATLAS-7 - Native Codex MCP Server
 
-Real-time issuer intelligence as a native MCP server for Codex CLI and other MCP agents.
+**Real-time intelligence signals** as a **native MCP server** for Codex CLI and other MCP agents.
 
-DeltaSignal ATLAS-7 gives your agent structured tools for crypto public-company stress, risk analysis, peer ranking, alpha signals, and fundamentals, with a free starter tier and x402 payment fallback. No subscription required.
+DeltaSignal ATLAS-7 gives your agent structured, validated tools for market signals, risk analysis, peer ranking, and fundamentals, with automatic x402 micropayments in USDC. No subscription required.
 
 ## Quick Start
 
 ### 1. Install
 
 ```bash
-npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin --project
+codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
 ```
 
-For local development from this checkout:
+Or from an npm environment:
 
 ```bash
-codex plugin install .
+npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin --project
 ```
 
 ### 2. Payment Setup
@@ -28,26 +28,24 @@ npx @coinbase/payments-mcp install
 - Sign in with email
 - Fund your wallet with USDC
 
-Restart Codex CLI after payment setup.
+Restart Codex CLI after this step.
 
 ### 3. Use
 
 ```bash
-@DeltaSignal check readiness
-@DeltaSignal show top stressed issuers
-@DeltaSignal alpha signals for MARA
-@DeltaSignal peer ranking for RIOT
-@DeltaSignal company fundamentals for COIN
+@DeltaSignal alpha_signals ticker:NVDA
+@DeltaSignal top_stressed tickers:AAPL,TSLA
+@DeltaSignal company_fundamentals ticker:MSFT
 ```
 
 ## Access Model
 
-- First 5 live calls are free per user.
-- After the free tier, protected live routes return x402 payment requirements for USDC payment-capable clients.
-- Internal and local development profiles can test without payment.
-- All MCP tools are read-only, strictly validated, and closed-world.
+- First 5 calls are free per user.
+- After the free tier, supported clients receive automatic x402 payment requirements in USDC.
+- Internal testing can use a pre-authorized API key without payment.
+- All tools are read-only, schema-validated, and closed-world.
 
-## Available Tools
+## Available MCP Tools
 
 - `deltasignal_readiness`
 - `deltasignal_top_stressed`
@@ -60,47 +58,12 @@ Restart Codex CLI after payment setup.
 
 ## Development Modes
 
-Production marketplace profile:
-
-- `.mcp.json`
-- `DELTASIGNAL_PAYMENT_MODE=live`
-- `DELTASIGNAL_API_BASE_URL=https://api.aitrailblazer.net`
-- No embedded test key
-
-Local no-payment profile:
-
-- `.mcp.local.json`
-- `DELTASIGNAL_PAYMENT_MODE=local`
-- `DELTASIGNAL_API_BASE_URL=http://127.0.0.1:8080`
-- Uses `local-dev-key` for the local gateway
-
-Run the local gateway with:
-
-```bash
-GOWORK=off GATEWAY_PORT=8080 CRAWLER_ENABLED=false MCP_API_KEY=local-dev-key go run ./cmd/search-gateway
-```
-
-Deployed no-payment test profile:
-
-- `.mcp.deployed-test.json`
-- `DELTASIGNAL_PAYMENT_MODE=internal`
-- Requires `DELTASIGNAL_API_KEY` in the MCP process environment
-
-Use an internal pre-authorized key from Key Vault or local secret storage for deployed smoke tests. Do not commit that key into the plugin.
+- Local: `DELTASIGNAL_PAYMENT_MODE=local`
+- Internal testing: `DELTASIGNAL_PAYMENT_MODE=internal` plus `DELTASIGNAL_API_KEY`
+- Live production: `DELTASIGNAL_PAYMENT_MODE=live`
 
 ## Technical
 
-- Bundled STDIO MCP server
-- Strict input schemas with bounded arguments
-- Ticker, date, filter, and response-size validation
-- Structured MCP tool results
-- Compatible with Codex and other MCP clients
-
-## Optional Environment
-
-- `DELTASIGNAL_API_BASE_URL` defaults to `https://api.aitrailblazer.net`
-- `DELTASIGNAL_PAYMENT_MODE=live` uses the deployed x402/free-tier path
-- `DELTASIGNAL_PAYMENT_MODE=internal` requires `DELTASIGNAL_API_KEY` and bypasses x402 through the internal API-key path
-- `DELTASIGNAL_PAYMENT_MODE=local` marks tool results as local mode and sends `X-Test-Mode: free`
-- `DELTASIGNAL_CODEX_USER` sets the free-tier user identity header
-- `DELTASIGNAL_API_KEY` uses the internal/pre-authorized API key path
+- Bundled STDIO MCP server in `mcp-stdio/`
+- Strict input validation and bounded responses
+- Compatible with Codex, Claude, OpenClaw, and other MCP clients

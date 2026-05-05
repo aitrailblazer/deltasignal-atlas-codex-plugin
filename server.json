@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.aitrailblazer/deltasignal-atlas-7",
+  "title": "DeltaSignal ATLAS-7",
+  "description": "ATLAS-7 market signals, issuer risk, peer ranking, alpha detection, and fundamentals.",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin",
+  "repository": {
+    "url": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin",
+    "source": "github"
+  }
+}
