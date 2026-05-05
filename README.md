@@ -1,8 +1,8 @@
-# DeltaSignal ATLAS - Native Codex MCP Server
+# DeltaSignal ATLAS-7 - Native Codex MCP Server
 
 Real-time issuer intelligence as a native MCP server for Codex CLI and other MCP agents.
 
-DeltaSignal ATLAS gives your agent structured tools for crypto public-company stress, risk analysis, peer ranking, alpha signals, and fundamentals, with a free starter tier and x402 payment fallback. No subscription required.
+DeltaSignal ATLAS-7 gives your agent structured tools for crypto public-company stress, risk analysis, peer ranking, alpha signals, and fundamentals, with a free starter tier and x402 payment fallback. No subscription required.
 
 ## Quick Start
 

@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "deltasignal-atlas": {
+    "deltasignal-atlas-7": {
       "command": "go",
       "args": ["run", "."],
       "cwd": "./mcp-stdio",

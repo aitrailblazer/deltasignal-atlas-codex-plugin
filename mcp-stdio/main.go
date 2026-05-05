@@ -63,10 +63,10 @@ type tickerArgs struct {
 func main() {
 	client := newDeltaClient()
 	server := mcp.NewServer(&mcp.Implementation{
-		Name:    "deltasignal-atlas",
+		Name:    "deltasignal-atlas-7",
 		Version: "0.1.0",
 	}, &mcp.ServerOptions{
-		Instructions: "DeltaSignal ATLAS MCP wrapper for SEC-grounded crypto public issuer intelligence. Live mode uses the deployed x402/free-tier API; internal mode uses a pre-authorized API key for deployed no-payment testing; local mode calls a developer gateway.",
+		Instructions: "DeltaSignal ATLAS-7 MCP wrapper for SEC-grounded crypto public issuer intelligence. Live mode uses the deployed x402/free-tier API; internal mode uses a pre-authorized API key for deployed no-payment testing; local mode calls a developer gateway.",
 	})
 
 	mcp.AddTool(server, tool("deltasignal_readiness", "Check DeltaSignal data and service readiness before higher-cost calls.", map[string]any{
@@ -118,7 +118,7 @@ func main() {
 	}), client.dailyChanges)
 
 	if err := server.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
-		log.Printf("deltasignal-atlas MCP failed: %v", err)
+		log.Printf("deltasignal-atlas-7 MCP failed: %v", err)
 		os.Exit(1)
 	}
 }

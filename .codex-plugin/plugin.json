@@ -1,7 +1,7 @@
 {
-  "name": "deltasignal-atlas",
+  "name": "deltasignal-atlas-7",
   "version": "0.1.0",
-  "description": "MCP server for free starter tier plus pay-per-call ATLAS-7 financial intelligence on crypto public companies.",
+  "description": "MCP server for free starter tier plus pay-per-call ATLAS-7 issuer intelligence on crypto public companies.",
   "author": {
     "name": "AITrailblazer",
     "url": "https://api.aitrailblazer.net"
@@ -22,9 +22,9 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "DeltaSignal ATLAS",
-    "shortDescription": "MCP tools for SEC-grounded stress, alpha, and fundamentals intelligence with free calls and payment fallback.",
-    "longDescription": "DeltaSignal ATLAS gives Codex an MCP-first tool surface for usage-based issuer intelligence on crypto public companies. It exposes readiness checks, covenant stress screens, top-stressed issuers, peer ranking, alpha signals, fundamentals, and daily SEC change snapshots, with a 5-call free starter tier plus Tempo MPP and Base x402 compatibility rails.",
+    "displayName": "DeltaSignal ATLAS-7",
+    "shortDescription": "MCP tools for SEC-grounded ATLAS-7 stress, alpha, and fundamentals intelligence.",
+    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence on crypto public companies. It exposes readiness checks, covenant stress screens, top-stressed issuers, peer ranking, alpha signals, fundamentals, and daily SEC change snapshots, with a 5-call free starter tier plus Tempo MPP and Base x402 compatibility rails.",
     "developerName": "AITrailblazer",
     "category": "Research",
     "capabilities": [
@@ -37,9 +37,9 @@
     "privacyPolicyURL": "https://api.aitrailblazer.net/help",
     "termsOfServiceURL": "https://api.aitrailblazer.net/help",
     "defaultPrompt": [
-      "Use DeltaSignal ATLAS to check whether the current issuer slice is ready.",
-      "Use DeltaSignal ATLAS to find the top stressed crypto public issuers.",
-      "Use DeltaSignal ATLAS to compare MARA against its peer covenant stress ranking."
+      "Use DeltaSignal ATLAS-7 to check whether the current issuer slice is ready.",
+      "Use DeltaSignal ATLAS-7 to find the top stressed crypto public issuers.",
+      "Use DeltaSignal ATLAS-7 to compare MARA against its peer covenant stress ranking."
     ],
     "brandColor": "#0B5FFF",
     "composerIcon": "./assets/icon.png",

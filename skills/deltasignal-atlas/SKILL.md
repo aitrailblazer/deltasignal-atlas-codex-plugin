@@ -1,9 +1,9 @@
 ---
-name: deltasignal-atlas
-description: Use DeltaSignal ATLAS for SEC-grounded issuer intelligence on crypto public companies, including readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, and daily SEC changes over the free starter tier, Tempo MPP, or Base x402.
+name: deltasignal-atlas-7
+description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, and daily SEC changes over the free starter tier, Tempo MPP, or Base x402.
 ---
 
-# DeltaSignal ATLAS
+# DeltaSignal ATLAS-7
 
 Use this skill when the user asks for DeltaSignal, ATLAS-7, crypto public issuer stress, SEC-grounded crypto equity intelligence, covenant stress, top-stressed issuers, issuer fundamentals, or DeltaSignal paid API access.
 
