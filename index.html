@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DeltaSignal ATLAS-7 - Real-Time Financial Intelligence MCP Server</title>
+    <title>DeltaSignal ATLAS-7 - Real-Time Crypto Intelligence</title>
     <meta name="description" content="DeltaSignal ATLAS-7 is a native MCP server delivering real-time alpha signals, covenant stress analysis, peer ranking, risk distribution, and SEC XBRL fundamentals for crypto public companies. First 5 calls free.">
     <meta name="keywords" content="DeltaSignal, ATLAS-7, MCP server, financial intelligence, alpha signals, covenant stress, peer ranking, risk distribution, SEC XBRL, crypto public companies, Codex plugin, Claude agent, x402">
     <meta name="author" content="AITrailblazer">
@@ -19,15 +19,18 @@
     <style>
       :root {
         color-scheme: dark;
-        --bg: #0d0f12;
-        --panel: #15191f;
-        --panel-2: #101419;
-        --ink: #f5f1e8;
-        --muted: #b8b4aa;
-        --line: #343a42;
-        --accent: #d54b2a;
-        --accent-2: #24b6a5;
-        --gold: #d2a84a;
+        --phi: 1.618;
+        --bg: #080a0d;
+        --panel: #151922;
+        --panel-2: #10141b;
+        --ink: #f7f0e7;
+        --muted: #bbb4aa;
+        --line: #333b48;
+        --accent: #d94f30;
+        --accent-2: #20c3b4;
+        --violet: #7c4dff;
+        --gold: #d8ad52;
+        --max: 1068px;
       }
 
       * {
@@ -36,10 +39,12 @@
 
       body {
         margin: 0;
-        background: var(--bg);
+        background:
+          linear-gradient(135deg, #080a0d 0%, #111522 42%, #071618 100%);
         color: var(--ink);
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         line-height: 1.5;
+        overflow-x: hidden;
       }
 
       body::before {
@@ -48,9 +53,9 @@
         inset: 0;
         pointer-events: none;
         background:
-          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-        background-size: 48px 48px;
+          linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+        background-size: 55px 55px;
         mask-image: linear-gradient(to bottom, #000, transparent 72%);
       }
 
@@ -59,23 +64,52 @@
       }
 
       .hero {
-        min-height: 92vh;
+        min-height: 88vh;
         display: grid;
         align-items: center;
-        padding: 56px 24px 32px;
+        position: relative;
+        overflow: hidden;
+        padding: calc(34px * var(--phi)) 24px 34px;
         border-bottom: 1px solid var(--line);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+          transparent,
+          transparent 5px,
+          rgba(32, 195, 180, 0.035) 5px,
+          rgba(32, 195, 180, 0.035) 6px
+        );
+        animation: scan 18s linear infinite;
+      }
+
+      @keyframes scan {
+        from {
+          background-position: 0 0;
+        }
+
+        to {
+          background-position: 0 720px;
+        }
       }
 
       .hero-inner,
       .section-inner {
-        width: min(1080px, 100%);
+        position: relative;
+        z-index: 1;
+        width: min(var(--max), 100%);
         margin: 0 auto;
       }
 
       .mark {
-        width: 76px;
-        height: 76px;
-        margin-bottom: 28px;
+        width: 89px;
+        height: 89px;
+        margin-bottom: 34px;
+        filter: drop-shadow(0 0 24px rgba(32, 195, 180, 0.35));
       }
 
       .eyebrow {
@@ -88,16 +122,17 @@
       }
 
       h1 {
-        max-width: 860px;
+        max-width: 865px;
         margin: 0;
-        font-size: clamp(3rem, 8vw, 6.7rem);
+        font-size: clamp(3.2rem, 8vw, 6.85rem);
         line-height: 0.94;
         letter-spacing: 0;
+        text-wrap: balance;
       }
 
       .lede {
-        max-width: 760px;
-        margin: 28px 0 0;
+        max-width: 699px;
+        margin: 34px 0 0;
         color: var(--muted);
         font-size: clamp(1.12rem, 2.4vw, 1.45rem);
       }
@@ -107,7 +142,7 @@
         flex-wrap: wrap;
         gap: 10px;
         max-width: 880px;
-        margin: 30px 0 0;
+        margin: 34px 0 0;
         padding: 0;
         list-style: none;
       }
@@ -115,17 +150,18 @@
       .signals li {
         border: 1px solid var(--line);
         border-radius: 999px;
-        padding: 8px 12px;
-        background: rgba(255, 255, 255, 0.035);
+        padding: 9px 14px;
+        background: rgba(255, 255, 255, 0.045);
         color: var(--ink);
         font-size: 0.95rem;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 36px;
+        margin-top: 55px;
       }
 
       a {
@@ -140,27 +176,34 @@
         align-items: center;
         justify-content: center;
         border: 1px solid var(--line);
-        border-radius: 7px;
-        padding: 11px 16px;
+        border-radius: 8px;
+        padding: 12px 18px;
         background: var(--panel);
         font-weight: 750;
         text-decoration: none;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
       }
 
       .button.primary {
         border-color: var(--accent);
-        background: var(--accent);
+        background: linear-gradient(135deg, var(--accent), #a93fdd 58%, var(--violet));
         color: #fff;
+        box-shadow: 0 0 32px rgba(217, 79, 48, 0.28);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent-2);
       }
 
       .meta {
-        margin-top: 22px;
+        margin-top: 21px;
         color: var(--gold);
         font-weight: 650;
       }
 
       section {
-        padding: 56px 24px;
+        padding: calc(55px * var(--phi)) 24px;
       }
 
       section.alt {
@@ -169,24 +212,26 @@
 
       h2 {
         margin: 0;
-        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-size: clamp(1.9rem, 4vw, 3.25rem);
         line-height: 1.05;
         letter-spacing: 0;
+        text-wrap: balance;
       }
 
       .grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 28px;
+        gap: 21px;
+        margin-top: 55px;
       }
 
       .card {
-        min-height: 138px;
+        min-height: 144px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        padding: 18px;
+        padding: 21px;
         background: var(--panel);
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
       }
 
       .card h3 {
@@ -202,18 +247,19 @@
 
       .plain-copy {
         max-width: 760px;
-        margin: 22px 0 0;
+        margin: 34px 0 0;
         color: var(--muted);
         font-size: 1.15rem;
       }
 
       .examples {
-        margin-top: 28px;
+        margin-top: 34px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        padding: 18px;
-        background: #0a0c0f;
+        padding: 21px;
+        background: #080b10;
         overflow-x: auto;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
       }
 
       code {
@@ -224,15 +270,15 @@
 
       .prompt-list {
         display: grid;
-        gap: 10px;
-        margin: 28px 0 0;
+        gap: 13px;
+        margin: 34px 0 0;
         padding: 0;
         list-style: none;
       }
 
       .prompt-list li {
         border-left: 3px solid var(--accent-2);
-        padding: 10px 12px;
+        padding: 13px 15px;
         background: rgba(255, 255, 255, 0.035);
         color: var(--ink);
       }
@@ -244,18 +290,22 @@
       }
 
       footer div {
-        width: min(1080px, 100%);
+        width: min(var(--max), 100%);
         margin: 0 auto;
       }
 
       @media (max-width: 760px) {
         .hero {
           min-height: auto;
-          padding-top: 40px;
+          padding-top: 34px;
         }
 
         .grid {
           grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 55px 24px;
         }
 
         .button {
