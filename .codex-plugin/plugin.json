@@ -8,7 +8,7 @@
   },
   "homepage": "https://api.aitrailblazer.net/help",
   "repository": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin",
-  "license": "Proprietary",
+  "license": "MIT",
   "keywords": [
     "deltasignal",
     "mcp",

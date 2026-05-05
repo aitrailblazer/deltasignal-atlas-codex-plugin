@@ -2,11 +2,39 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.aitrailblazer/deltasignal-atlas-7",
   "title": "DeltaSignal ATLAS-7",
-  "description": "ATLAS-7 market signals, issuer risk, peer ranking, alpha detection, and fundamentals.",
+  "description": "Real-time financial intelligence for crypto public companies. Native MCP server with alpha signals, covenant stress, peer ranking, risk distribution, and SEC XBRL fundamentals.",
   "version": "1.0.0",
   "websiteUrl": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin",
   "repository": {
-    "url": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin",
-    "source": "github"
+    "type": "git",
+    "url": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin"
+  },
+  "license": "MIT",
+  "keywords": [
+    "finance",
+    "markets",
+    "alpha",
+    "risk",
+    "crypto",
+    "xbrl",
+    "mcp",
+    "codex",
+    "x402"
+  ],
+  "instructions": "First 5 calls are free. After that, usage is automatically charged via x402 USDC micropayments. Use natural language or call tools directly, for example deltasignal_alpha_signals ticker:NVDA.",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "paymentMode": {
+        "type": "string",
+        "enum": [
+          "live",
+          "internal",
+          "local"
+        ],
+        "default": "live"
+      }
+    },
+    "additionalProperties": false
   }
 }

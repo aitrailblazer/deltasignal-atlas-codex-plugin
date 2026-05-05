@@ -66,16 +66,16 @@ func main() {
 		Name:    "deltasignal-atlas-7",
 		Version: "0.1.0",
 	}, &mcp.ServerOptions{
-		Instructions: "DeltaSignal ATLAS-7 MCP wrapper for SEC-grounded crypto public issuer intelligence. Live mode uses the deployed x402/free-tier API; internal mode uses a pre-authorized API key for deployed no-payment testing; local mode calls a developer gateway.",
+		Instructions: "DeltaSignal ATLAS-7 delivers real-time financial intelligence for crypto public companies. First 5 calls are free; subsequent live usage is charged through x402 USDC micropayments. Use the structured tools for alpha signals, covenant stress, peer ranking, risk distribution, company fundamentals, and daily signal changes.",
 	})
 
-	mcp.AddTool(server, tool("deltasignal_readiness", "Check DeltaSignal data and service readiness before higher-cost calls.", map[string]any{
+	mcp.AddTool(server, tool("deltasignal_readiness", "Checks the live ATLAS-7 data plane before analysis, including service readiness, active data freshness, issuer coverage, and whether the current signal slice is safe to query.", map[string]any{
 		"type":                 "object",
 		"properties":           map[string]any{},
 		"additionalProperties": false,
 	}), client.readiness)
 
-	mcp.AddTool(server, tool("deltasignal_top_stressed", "Return the most stressed crypto public issuers from the active DeltaSignal slice.", map[string]any{
+	mcp.AddTool(server, tool("deltasignal_top_stressed", "Ranks the most stressed crypto public companies in the active DeltaSignal slice, using covenant stress, debt coverage, quality flags, and current issuer risk signals for triage workflows.", map[string]any{
 		"type": "object",
 		"properties": map[string]any{
 			"limit":  boundedIntSchema("Maximum issuers to return.", 1, maxLimit),
@@ -84,7 +84,7 @@ func main() {
 		"additionalProperties": false,
 	}), client.topStressed)
 
-	mcp.AddTool(server, tool("deltasignal_covenant_stress", "Fetch covenant stress for one ticker or list/filter the active stress slice.", map[string]any{
+	mcp.AddTool(server, tool("deltasignal_covenant_stress", "Fetches ATLAS-7 covenant stress for a single ticker or screens the active issuer universe with filters for risk tier, quality flags, debt coverage status, linkbase-backed rows, and minimum stress score.", map[string]any{
 		"type": "object",
 		"properties": map[string]any{
 			"ticker":               boundedStringSchema("Optional ticker. When set, returns the detail route for that issuer.", 1, maxTickerLength),
@@ -101,17 +101,17 @@ func main() {
 		"additionalProperties": false,
 	}), client.covenantStress)
 
-	mcp.AddTool(server, tickerTool("deltasignal_peer_ranking", "Return peer covenant ranking for one ticker."), client.peerRanking)
-	mcp.AddTool(server, tickerTool("deltasignal_alpha_signals", "Return phase 1 alpha, resilience, treasury, and regime-fit signals for one ticker."), client.alphaSignals)
-	mcp.AddTool(server, tickerTool("deltasignal_company_fundamentals", "Return company fundamentals for one ticker."), client.companyFundamentals)
+	mcp.AddTool(server, tickerTool("deltasignal_peer_ranking", "Compares one crypto public company against its peer group and returns relative covenant stress ranking, percentile context, and peer-comparison signals for issuer research."), client.peerRanking)
+	mcp.AddTool(server, tickerTool("deltasignal_alpha_signals", "Returns high-conviction alpha and edge signals for one crypto public company ticker, including resilience, treasury, regime-fit, and phase-one opportunity indicators."), client.alphaSignals)
+	mcp.AddTool(server, tickerTool("deltasignal_company_fundamentals", "Returns SEC XBRL-backed company fundamentals for one ticker, with optional segment facts and related-party facts for deeper financial diligence."), client.companyFundamentals)
 
-	mcp.AddTool(server, tool("deltasignal_risk_distribution", "Return current risk-tier distribution for the active DeltaSignal slice.", map[string]any{
+	mcp.AddTool(server, tool("deltasignal_risk_distribution", "Summarizes the active issuer universe by ATLAS-7 risk tier so agents can understand market-wide stress concentration before drilling into individual companies.", map[string]any{
 		"type":                 "object",
 		"properties":           map[string]any{},
 		"additionalProperties": false,
 	}), client.riskDistribution)
 
-	mcp.AddTool(server, tool("deltasignal_daily_changes", "Return the latest daily SEC change snapshot.", map[string]any{
+	mcp.AddTool(server, tool("deltasignal_daily_changes", "Returns the latest daily signal-change snapshot, highlighting new SEC/XBRL-driven changes, issuer movements, and fresh DeltaSignal updates for monitoring workflows.", map[string]any{
 		"type":                 "object",
 		"properties":           map[string]any{},
 		"additionalProperties": false,
