@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "deltasignal-atlas": {
+      "command": "go",
+      "args": ["run", "."],
+      "cwd": "./mcp-stdio",
+      "env": {
+        "DELTASIGNAL_API_BASE_URL": "http://127.0.0.1:8080",
+        "DELTASIGNAL_PAYMENT_MODE": "local",
+        "DELTASIGNAL_API_KEY": "local-dev-key"
+      }
+    }
+  }
+}
