@@ -200,6 +200,13 @@
         color: var(--muted);
       }
 
+      .plain-copy {
+        max-width: 760px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 1.15rem;
+      }
+
       .examples {
         margin-top: 28px;
         border: 1px solid var(--line);
@@ -213,6 +220,21 @@
         color: #f1d38a;
         font: 0.98rem ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
         white-space: pre;
+      }
+
+      .prompt-list {
+        display: grid;
+        gap: 10px;
+        margin: 28px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .prompt-list li {
+        border-left: 3px solid var(--accent-2);
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.035);
+        color: var(--ink);
       }
 
       footer {
@@ -272,7 +294,11 @@
 
       <section class="alt">
         <div class="section-inner">
-          <h2>Built for Codex, Claude, Cursor, OpenClaw, and Smithery.</h2>
+          <h2>What is DeltaSignal ATLAS-7?</h2>
+          <p class="plain-copy">
+            A smart assistant that watches crypto public companies like Coinbase, Strategy, MARA, and RIOT,
+            then tells your agent how healthy they look and where financial stress is building.
+          </p>
           <div class="grid">
             <article class="card">
               <h3>Agent-native</h3>
@@ -292,13 +318,38 @@
 
       <section>
         <div class="section-inner">
-          <h2>Example agent calls</h2>
+          <h2>Ask naturally</h2>
+          <ul class="prompt-list" aria-label="Natural language DeltaSignal ATLAS-7 prompts">
+            <li>Show me the most stressed crypto miners right now.</li>
+            <li>Give me alpha signals on COIN and MSTR.</li>
+            <li>How risky is MARA compared to RIOT?</li>
+            <li>What are the top covenant risks for Bitcoin companies this week?</li>
+            <li>Give me fundamentals and recent changes for Coinbase.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="alt">
+        <div class="section-inner">
+          <h2>Precise tool calls</h2>
           <div class="examples" aria-label="DeltaSignal ATLAS-7 example calls">
-            <code>@DeltaSignal alpha_signals ticker:NVDA
-@DeltaSignal top_stressed tickers:AAPL,TSLA,COIN
-@DeltaSignal covenant_stress ticker:BTC
-@DeltaSignal peer_ranking ticker:ETH</code>
+            <code>@DeltaSignal alpha_signals ticker:COIN
+@DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
+@DeltaSignal covenant_stress ticker:MSTR
+@DeltaSignal peer_ranking ticker:MARA
+@DeltaSignal company_fundamentals ticker:COIN</code>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <h2>What is covenant stress?</h2>
+          <p class="plain-copy">
+            When a crypto company borrows money, lenders set rules called covenants.
+            Covenant stress estimates how close the company is to breaking those rules.
+            Higher stress can mean higher risk of forced repayment, dilution, restructuring, or bankruptcy.
+          </p>
         </div>
       </section>
     </main>
