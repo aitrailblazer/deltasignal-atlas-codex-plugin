@@ -1,8 +1,5 @@
 # DeltaSignal ATLAS-7 - Native Codex MCP Server
 
-[![deltasignal-atlas-codex-plugin MCP server](https://glama.ai/mcp/servers/aitrailblazer/deltasignal-atlas-codex-plugin/badges/score.svg)](https://glama.ai/mcp/servers/aitrailblazer/deltasignal-atlas-codex-plugin)
-[![deltasignal-atlas-codex-plugin MCP server](https://glama.ai/mcp/servers/aitrailblazer/deltasignal-atlas-codex-plugin/badges/card.svg)](https://glama.ai/mcp/servers/aitrailblazer/deltasignal-atlas-codex-plugin)
-
 **Real-time intelligence signals** as a **native MCP server** for Codex CLI and other MCP agents.
 
 DeltaSignal ATLAS-7 gives your agent structured, validated tools for market signals, risk analysis, peer ranking, and fundamentals, with automatic x402 micropayments in USDC. No subscription required.
@@ -72,7 +69,7 @@ Restart Codex CLI after this step.
 ## Technical
 
 - Bundled STDIO MCP server in `mcp-stdio/`
-- Glama release container entrypoint in `Dockerfile`
+- Remote MCP endpoint: `https://api.aitrailblazer.net/mcp`
 - OpenAPI surface: `https://api.aitrailblazer.net/openapi.json`
 - Strict input validation and bounded responses
 - Compatible with Codex, Claude, OpenClaw, and other MCP clients
