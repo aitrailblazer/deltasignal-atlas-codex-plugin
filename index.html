@@ -42,23 +42,30 @@
 
   <!-- Full Instructions -->
   <div class="section">
-    <h2 style="text-align:center; margin-bottom:3rem;">Complete Setup Instructions</h2>
+    <h2 style="text-align:center; margin-bottom:3rem;">Complete Setup, Funding, and Usage Instructions</h2>
 
-    <h3 style="text-align:center; margin-bottom:2rem;">1. Easiest Way (Smithery - Recommended for Beginners)</h3>
+    <h3 style="text-align:center; margin-bottom:2rem;">1. Install the MCP Server</h3>
     <ol style="max-width:680px; margin:0 auto; font-size:1.2rem; line-height:2.1;">
       <li>Go to <a href="https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7" style="color:#c026d3;">Smithery page</a></li>
-      <li>Click <strong>"Connect"</strong></li>
-      <li>Select your agent (Codex, Claude, Cursor, OpenClaw...)</li>
-      <li>Copy and run the one-line command</li>
-      <li>Start asking questions immediately</li>
+      <li>Click <strong>"Connect"</strong> or choose your coding agent.</li>
+      <li>Select your client: <strong>Codex, Claude Desktop, Cursor, Windsurf, OpenClaw, or any MCP-compatible agent</strong>.</li>
+      <li>Copy the command or JSON configuration Smithery gives you.</li>
+      <li>Restart the agent if it does not immediately discover the tools.</li>
+      <li>Ask for DeltaSignal ATLAS-7 by name, or call the MCP tools directly.</li>
     </ol>
 
-    <h3 style="text-align:center; margin:3rem 0 1rem;">2. Manual MCP Setup for Coding Agents</h3>
+    <h3 style="text-align:center; margin:3rem 0 1rem;">2. Manual Install Commands</h3>
     <div class="examples"><strong>Codex CLI:</strong>
 smithery mcp add aitrailblazer/deltasignal-atlas-7
 
+<strong>Codex plugin install:</strong>
+codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
+
+<strong>Codex Marketplace fallback:</strong>
+npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin --project
+
 <strong>Claude Desktop / Cursor / Windsurf:</strong>
-Use the connection prompt from Smithery page
+Use the connection prompt from the Smithery page, or add the direct MCP config below.
 
 <strong>Advanced (direct MCP config):</strong>
 {
@@ -69,7 +76,29 @@ Use the connection prompt from Smithery page
   }
 }</div>
 
-    <h3 style="text-align:center; margin:3rem 0 1rem;">3. Try Crypto Public Company Tickers</h3>
+    <h3 style="text-align:center; margin:3rem 0 1rem;">3. Fund Usage After the Free Calls</h3>
+    <ol style="max-width:680px; margin:0 auto; font-size:1.15rem; line-height:2.1;">
+      <li>The first 5 calls are free for quick testing.</li>
+      <li>Paid calls use <strong>USDC on Base</strong> through x402 micropayments.</li>
+      <li>Use Coinbase Wallet, Coinbase Smart Wallet, or another Base-compatible wallet.</li>
+      <li>Fund the wallet with a small amount of Base USDC. Start with $1-$5 for testing.</li>
+      <li>Keep a small amount of ETH on Base for wallets that require gas. Some smart-wallet flows may sponsor gas; do not assume every wallet does.</li>
+      <li>When your agent receives a 402 payment challenge, approve or let the x402-compatible client settle the request.</li>
+    </ol>
+
+    <div class="examples"><strong>Beginner funding checklist:</strong>
+1. Install Coinbase Wallet or open Coinbase Smart Wallet.
+2. Switch the network to Base.
+3. Add USDC on Base.
+4. Keep a little ETH on Base if your wallet asks for gas.
+5. Re-run the agent query after the wallet is funded.
+
+<strong>Payment rail:</strong>
+Network: Base / eip155:8453
+Asset: USDC
+Access model: first 5 calls free, then x402 pay-per-call</div>
+
+    <h3 style="text-align:center; margin:3rem 0 1rem;">4. Use Crypto Public Company Tickers</h3>
     <div class="examples"><strong>Natural language prompts:</strong>
 Show me alpha signals for COIN.
 Compare covenant stress for MARA and RIOT.
@@ -84,6 +113,31 @@ What changed today for crypto public companies?
 @DeltaSignal company_fundamentals ticker:MSTR
 @DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
 @DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT</div>
+
+    <h3 style="text-align:center; margin:3rem 0 1rem;">5. What Each Tool Is For</h3>
+    <div class="examples"><strong>readiness</strong>
+Check whether DeltaSignal is live and which data slice is active.
+
+<strong>alpha_signals ticker:COIN</strong>
+Find positive or negative signal pressure for one issuer.
+
+<strong>covenant_stress ticker:MARA</strong>
+Estimate debt covenant and financial stress risk for one issuer.
+
+<strong>top_stressed tickers:MARA,RIOT,HUT,CLSK</strong>
+Rank the highest-stress crypto public companies.
+
+<strong>peer_ranking ticker:RIOT</strong>
+Compare one issuer against its peer group.
+
+<strong>risk_distribution tickers:COIN,MSTR,MARA,RIOT</strong>
+Summarize risk spread across a watchlist.
+
+<strong>company_fundamentals ticker:MSTR</strong>
+Retrieve SEC XBRL-backed fundamentals for one company.
+
+<strong>daily_changes</strong>
+See the latest detected changes in the DeltaSignal universe.</div>
   </div>
 
   <!-- Funding Section -->
