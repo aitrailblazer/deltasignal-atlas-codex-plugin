@@ -214,6 +214,167 @@
       font-size: 1.05rem;
     }
 
+    .signal-visual {
+      width: min(920px, 100%);
+      margin: 3rem auto 0;
+      border: 1px solid rgba(255, 154, 26, 0.26);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255,154,26,.08), rgba(227,0,85,.08)),
+        rgba(10, 9, 8, 0.72);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 30px 90px rgba(0, 0, 0, 0.32);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .visual-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(255, 154, 26, 0.16);
+      color: #ffe4cf;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: #ffd4a3;
+      text-transform: none;
+    }
+
+    .status-dot::before {
+      content: "";
+      width: 0.58rem;
+      height: 0.58rem;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 18px rgba(255,154,26,.8);
+      animation: breathe 1.8s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% { opacity: 0.56; transform: scale(0.86); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+
+    .flow-map {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .flow-map::before,
+    .flow-map::after {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,154,26,.75), rgba(227,0,85,.72), transparent);
+      opacity: 0.75;
+      animation: signalSweep 2.8s linear infinite;
+    }
+
+    .flow-map::before { top: 42%; }
+    .flow-map::after {
+      top: 59%;
+      animation-delay: 1.2s;
+      opacity: 0.48;
+    }
+
+    @keyframes signalSweep {
+      from { transform: translateX(-7%); filter: brightness(0.8); }
+      50% { filter: brightness(1.5); }
+      to { transform: translateX(7%); filter: brightness(0.8); }
+    }
+
+    .flow-node {
+      position: relative;
+      z-index: 1;
+      min-height: 122px;
+      padding: 1rem;
+      border: 1px solid rgba(255, 154, 26, 0.22);
+      border-radius: 8px;
+      background: rgba(17, 16, 15, 0.82);
+      text-align: left;
+    }
+
+    .flow-node strong {
+      display: block;
+      color: #ffd1a3;
+      margin-bottom: 0.35rem;
+    }
+
+    .flow-node span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .flow-node em {
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: var(--orange);
+      font-style: normal;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
+    }
+
+    .ticker-panel {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 0 1.25rem 1.25rem;
+    }
+
+    .ticker {
+      padding: 0.8rem;
+      border: 1px solid rgba(255, 154, 26, 0.18);
+      border-radius: 8px;
+      background: rgba(5, 5, 5, 0.58);
+      text-align: left;
+    }
+
+    .ticker strong {
+      display: block;
+      color: #fff6ee;
+      font-size: 0.85rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .bar {
+      position: relative;
+      height: 0.42rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+
+    .bar span {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: var(--w);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--orange), var(--red), var(--magenta));
+      animation: riskPulse 2.4s ease-in-out infinite;
+      animation-delay: var(--d);
+    }
+
+    @keyframes riskPulse {
+      0%, 100% { opacity: 0.58; transform: scaleX(0.92); transform-origin: left; }
+      50% { opacity: 1; transform: scaleX(1); transform-origin: left; }
+    }
+
     .section {
       padding: 6rem 1.5rem;
       border-bottom: 1px solid rgba(255, 154, 26, 0.12);
@@ -328,6 +489,53 @@
       gap: 1rem;
     }
 
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .link-card {
+      min-height: 160px;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255,154,26,.08), rgba(227,0,85,.06)),
+        var(--panel);
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 154, 26, 0.46);
+      box-shadow: 0 24px 62px rgba(0, 0, 0, 0.24);
+    }
+
+    .link-card strong {
+      display: block;
+      color: #ffd1a3;
+      margin-bottom: 0.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.12rem;
+    }
+
+    .link-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .link-card code {
+      display: block;
+      margin-top: 1rem;
+      color: var(--orange);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
     .tool {
       padding: 1.1rem;
       border: 1px solid var(--line);
@@ -356,6 +564,9 @@
     @media (max-width: 860px) {
       .prompt-grid,
       .steps,
+      .flow-map,
+      .ticker-panel,
+      .link-grid,
       .tool-grid {
         grid-template-columns: 1fr;
       }
@@ -366,6 +577,10 @@
 
       .btn {
         width: 100%;
+      }
+
+      .signal-visual {
+        margin-top: 2rem;
       }
     }
   </style>
@@ -387,6 +602,42 @@
           <a href="#examples" class="btn btn-secondary">See example prompts</a>
         </div>
         <p class="meter">First 5 calls free • Automatic x402 micropayments • Base USDC settlement • Works with Codex, Claude, Cursor, OpenClaw, and Smithery</p>
+        <div class="signal-visual" aria-label="Animated DeltaSignal data flow visualization">
+          <div class="visual-header">
+            <span>Discovery + Payment Rail</span>
+            <span class="status-dot">Glama verified • x402 live</span>
+          </div>
+          <div class="flow-map">
+            <div class="flow-node">
+              <strong>SEC / XBRL</strong>
+              <span>Issuer fundamentals and filings enter the ATLAS pipeline.</span>
+              <em>COIN MSTR MARA</em>
+            </div>
+            <div class="flow-node">
+              <strong>ATLAS-7</strong>
+              <span>Covenant stress, alpha signals, peer rank, and risk distribution.</span>
+              <em>risk model online</em>
+            </div>
+            <div class="flow-node">
+              <strong>MCP + OpenAPI</strong>
+              <span>Eight tools exposed over remote Streamable HTTP.</span>
+              <em>/mcp • /openapi.json</em>
+            </div>
+            <div class="flow-node">
+              <strong>x402 + Glama</strong>
+              <span>First calls free, then Base USDC settlement through agent clients.</span>
+              <em>connector healthy</em>
+            </div>
+          </div>
+          <div class="ticker-panel">
+            <div class="ticker"><strong>COIN</strong><div class="bar"><span style="--w:42%; --d:-.1s;"></span></div></div>
+            <div class="ticker"><strong>MSTR</strong><div class="bar"><span style="--w:68%; --d:-.4s;"></span></div></div>
+            <div class="ticker"><strong>MARA</strong><div class="bar"><span style="--w:82%; --d:-.7s;"></span></div></div>
+            <div class="ticker"><strong>RIOT</strong><div class="bar"><span style="--w:74%; --d:-1s;"></span></div></div>
+            <div class="ticker"><strong>HUT</strong><div class="bar"><span style="--w:58%; --d:-1.3s;"></span></div></div>
+            <div class="ticker"><strong>CLSK</strong><div class="bar"><span style="--w:64%; --d:-1.6s;"></span></div></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -452,6 +703,32 @@ npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin 
 
 <strong>OpenAPI</strong>
 https://api.aitrailblazer.net/openapi.json</div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Verified Discovery Surfaces</h2>
+          <p>Use the remote Connector for closed-source MCP access, or point agents directly at the live MCP and OpenAPI endpoints.</p>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">
+            <strong>Glama Connector</strong>
+            <span>Ownership verified, healthy, Streamable HTTP Connector for the hosted Azure MCP server.</span>
+            <code>glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">
+            <strong>Remote MCP Endpoint</strong>
+            <span>Connect MCP-compatible agents directly to the hosted DeltaSignal ATLAS-7 tool surface.</span>
+            <code>https://api.aitrailblazer.net/mcp</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
+            <strong>OpenAPI Spec</strong>
+            <span>Inspect the public REST and x402-compatible API contract used by discovery validators.</span>
+            <code>https://api.aitrailblazer.net/openapi.json</code>
+          </a>
+        </div>
       </div>
     </section>
 
