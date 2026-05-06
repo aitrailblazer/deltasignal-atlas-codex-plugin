@@ -21,7 +21,7 @@
     "codex",
     "x402"
   ],
-  "instructions": "First 5 calls are free. After that, usage is automatically charged via x402 USDC micropayments. Use natural language or call tools directly, for example deltasignal_alpha_signals ticker:NVDA.",
+  "instructions": "First 5 calls are free. After that, usage is automatically charged via x402 USDC micropayments on Base. Use natural language or call tools directly, for example deltasignal_alpha_signals ticker:COIN, deltasignal_covenant_stress ticker:MARA, or deltasignal_top_stressed tickers:MARA,RIOT,HUT,CLSK.",
   "configSchema": {
     "type": "object",
     "properties": {

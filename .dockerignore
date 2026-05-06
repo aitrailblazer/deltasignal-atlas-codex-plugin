@@ -1,0 +1,9 @@
+.git
+.github
+assets
+index.html
+README.md
+LICENSE
+.mcp*.json
+.codex-plugin
+skills
