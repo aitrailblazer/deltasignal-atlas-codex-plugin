@@ -35,6 +35,7 @@
       color: var(--ink);
       font-family: 'Inter', sans-serif;
       line-height: 1.55;
+      overflow-x: hidden;
     }
 
     a {
@@ -44,6 +45,7 @@
 
     .hero {
       min-height: 100vh;
+      width: 100%;
       display: grid;
       place-items: center;
       position: relative;
@@ -105,6 +107,7 @@
       width: min(var(--max), 100%);
       position: relative;
       z-index: 2;
+      min-width: 0;
     }
 
     .logo {
@@ -536,6 +539,175 @@
       overflow-wrap: anywhere;
     }
 
+    .mcp-stage {
+      position: relative;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 2rem;
+      border: 1px solid rgba(255, 154, 26, 0.2);
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,154,26,.08), transparent 20rem),
+        rgba(9, 9, 8, 0.78);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+      overflow: hidden;
+    }
+
+    .mcp-rail {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: center;
+      gap: 1.25rem;
+      min-height: 190px;
+    }
+
+    .mcp-rail::before,
+    .mcp-rail::after {
+      content: "";
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background-size: 28px 2px;
+      pointer-events: none;
+    }
+
+    .mcp-rail::before {
+      top: 42%;
+      background-image: linear-gradient(90deg, var(--orange) 0 14px, transparent 14px 28px);
+      animation: railForward 1.8s linear infinite;
+    }
+
+    .mcp-rail::after {
+      top: 56%;
+      background-image: linear-gradient(90deg, #c7a0ff 0 14px, transparent 14px 28px);
+      animation: railBack 2.1s linear infinite;
+      opacity: 0.78;
+    }
+
+    @keyframes railForward {
+      from { background-position: 0 0; }
+      to { background-position: 56px 0; }
+    }
+
+    @keyframes railBack {
+      from { background-position: 56px 0; }
+      to { background-position: 0 0; }
+    }
+
+    .mcp-node {
+      position: relative;
+      z-index: 1;
+      min-height: 122px;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      border: 2px solid rgba(255, 154, 26, 0.52);
+      border-radius: 12px;
+      background: rgba(12, 13, 12, 0.96);
+      color: #ffd1a3;
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 700;
+      box-shadow: 0 0 34px rgba(255,154,26,.12);
+    }
+
+    .mcp-node.glama {
+      border-color: rgba(84, 214, 157, 0.72);
+      color: #60d99e;
+      box-shadow: 0 0 34px rgba(84, 214, 157, 0.12);
+    }
+
+    .mcp-node.server {
+      border-color: rgba(227, 0, 85, 0.62);
+      color: #ffc1d5;
+      box-shadow: 0 0 34px rgba(227, 0, 85, 0.16);
+    }
+
+    .packet {
+      position: absolute;
+      z-index: 2;
+      top: 39%;
+      left: 10%;
+      width: 0.72rem;
+      height: 0.72rem;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 20px rgba(255,154,26,.9);
+      animation: packetForward 3.4s ease-in-out infinite;
+    }
+
+    .packet.response {
+      top: 53%;
+      left: auto;
+      right: 10%;
+      background: #c7a0ff;
+      box-shadow: 0 0 20px rgba(199,160,255,.8);
+      animation: packetBack 3.4s ease-in-out infinite;
+      animation-delay: 0.65s;
+    }
+
+    @keyframes packetForward {
+      0% { left: 10%; opacity: 0; }
+      12% { opacity: 1; }
+      88% { opacity: 1; }
+      100% { left: 89%; opacity: 0; }
+    }
+
+    @keyframes packetBack {
+      0% { right: 10%; opacity: 0; }
+      12% { opacity: 1; }
+      88% { opacity: 1; }
+      100% { right: 89%; opacity: 0; }
+    }
+
+    .mcp-caption {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+    }
+
+    .mcp-chip {
+      min-height: 92px;
+      padding: 0.95rem;
+      border: 1px solid rgba(255, 154, 26, 0.18);
+      border-radius: 8px;
+      background: rgba(17, 16, 15, 0.82);
+    }
+
+    .mcp-chip strong {
+      display: block;
+      color: #ffd1a3;
+      margin-bottom: 0.35rem;
+      font-size: 0.92rem;
+    }
+
+    .mcp-chip span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .mcp-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+    }
+
+    .mcp-tools span {
+      padding: 0.48rem 0.72rem;
+      border: 1px solid rgba(255, 154, 26, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 154, 26, 0.06);
+      color: #ffe4cf;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
+    }
+
     .tool {
       padding: 1.1rem;
       border: 1px solid var(--line);
@@ -567,20 +739,105 @@
       .flow-map,
       .ticker-panel,
       .link-grid,
+      .mcp-rail,
+      .mcp-caption,
       .tool-grid {
         grid-template-columns: 1fr;
       }
 
       .hero {
         min-height: auto;
+        padding: 3.5rem 1rem 3rem;
+      }
+
+      .hero-inner {
+        width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+      }
+
+      .hero-inner > *,
+      .signal-visual,
+      .flow-node,
+      .ticker {
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .visual-header {
+        flex-wrap: wrap;
+      }
+
+      .eyebrow {
+        max-width: 250px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        font-size: 0.78rem;
+      }
+
+      .logo {
+        width: 116px;
+        height: 116px;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: clamp(2.05rem, 12vw, 2.35rem);
+      }
+
+      .tagline {
+        max-width: 100%;
+        font-size: 1.05rem;
+        overflow-wrap: anywhere;
+      }
+
+      .hero-actions {
+        align-items: center;
+        margin-top: 2.25rem;
       }
 
       .btn {
         width: 100%;
+        max-width: 260px;
+        min-height: 56px;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        white-space: normal;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .meter {
+        max-width: 290px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-wrap: anywhere;
+        font-size: 0.95rem;
       }
 
       .signal-visual {
         margin-top: 2rem;
+      }
+
+      .mcp-stage {
+        padding: 1rem;
+      }
+
+      .mcp-rail {
+        min-height: auto;
+      }
+
+      .mcp-rail::before,
+      .mcp-rail::after,
+      .packet {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mcp-rail::before,
+      .mcp-rail::after,
+      .packet {
+        animation: none;
       }
     }
   </style>
@@ -660,7 +917,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="mcp-gateway">
       <div class="wrap">
         <div class="section-head">
           <h2>Install the MCP Server</h2>
@@ -703,6 +960,52 @@ npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin 
 
 <strong>OpenAPI</strong>
 https://api.aitrailblazer.net/openapi.json</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>MCP Gateway for DeltaSignal</h2>
+          <p>Glama can sit between an MCP client and the hosted DeltaSignal server, giving teams call logs, tool access control, and a clean remote connector without exposing backend source code.</p>
+        </div>
+        <div class="mcp-stage" aria-label="Animated MCP gateway flow from agent clients to DeltaSignal ATLAS-7">
+          <div class="mcp-rail">
+            <span class="packet"></span>
+            <span class="packet response"></span>
+            <div class="mcp-node">Agent / MCP Client</div>
+            <div class="mcp-node glama">Glama Connector</div>
+            <div class="mcp-node server">DeltaSignal MCP Server</div>
+          </div>
+          <div class="mcp-caption">
+            <div class="mcp-chip">
+              <strong>Request</strong>
+              <span>Codex, Claude, Cursor, or another agent asks for issuer intelligence.</span>
+            </div>
+            <div class="mcp-chip">
+              <strong>Control</strong>
+              <span>Glama records calls and controls which MCP tools are available.</span>
+            </div>
+            <div class="mcp-chip">
+              <strong>Compute</strong>
+              <span>ATLAS-7 resolves SEC-grounded signals for crypto public companies.</span>
+            </div>
+            <div class="mcp-chip">
+              <strong>Settle</strong>
+              <span>Starter calls are free; paid calls settle through x402 Base USDC.</span>
+            </div>
+          </div>
+          <div class="mcp-tools">
+            <span>readiness</span>
+            <span>alpha_signals</span>
+            <span>covenant_stress</span>
+            <span>top_stressed</span>
+            <span>peer_ranking</span>
+            <span>company_fundamentals</span>
+            <span>risk_distribution</span>
+            <span>daily_changes</span>
+          </div>
+        </div>
       </div>
     </section>
 
