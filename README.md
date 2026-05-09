@@ -45,6 +45,8 @@ Restart Codex CLI after this step.
 @DeltaSignal company_fundamentals ticker:MSTR
 @DeltaSignal covenant_stress ticker:MARA
 @DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT
+@DeltaSignal daily_changes
+@DeltaSignal daily_change_evidence ticker:ARKB source_date:2026-05-08 limit:100
 ```
 
 ## Access Model
@@ -73,9 +75,24 @@ Granular tools:
 - `deltasignal_alpha_signals`
 - `deltasignal_company_fundamentals`
 - `deltasignal_risk_distribution`
-- `deltasignal_daily_changes`
+- `deltasignal_daily_changes` - compact Daily Monitoring; no raw tag arrays; typical public route price $0.03.
+- `deltasignal_daily_change_evidence` - explicit issuer proof drilldown; paginated raw Company Facts tags; typical public route price $0.03.
 
 Credit packs are not implemented yet. Pricing metadata uses `1 credit = $0.01` of DeltaSignal usage value.
+
+## Daily Monitoring, Evidence, and Export Packaging
+
+DeltaSignal daily activity is packaged as three separate products:
+
+- **Daily Monitoring** answers "what changed today?" through compact MCP and REST responses.
+- **Evidence Drilldown** answers "show me why this issuer moved" through `deltasignal_daily_change_evidence` or `GET /v1/daily-changes/evidence`.
+- **Bulk Export** is reserved for future artifact-backed full daily evidence packs; full exports should be saved as durable files, not pasted into chat context.
+
+Public REST and payment surfaces:
+
+- `GET /v1/daily-changes/latest` or `GET /mpp/v1/daily-changes/latest` - $0.03 compact monitoring.
+- `GET /v1/daily-changes/evidence` or `GET /mpp/v1/daily-changes/evidence` - $0.03 issuer evidence drilldown.
+- Future bulk evidence export proposal: small pack $0.15, standard pack $0.30, full daily export $0.75-$1.50.
 
 ## Development Modes
 

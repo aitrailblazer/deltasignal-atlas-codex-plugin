@@ -1,7 +1,7 @@
 {
   "name": "deltasignal-atlas-7",
   "version": "0.2.0",
-  "description": "MCP server for composite presets plus pay-per-call ATLAS-7 issuer intelligence on crypto public companies.",
+  "description": "SEC-grounded crypto public issuer intelligence with compact daily monitoring, evidence drilldowns, and x402 paid access.",
   "author": {
     "name": "AITrailblazer",
     "url": "https://api.aitrailblazer.net"
@@ -23,8 +23,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "DeltaSignal ATLAS-7",
-    "shortDescription": "Composite MCP presets and granular tools for SEC-grounded ATLAS-7 stress, alpha, and fundamentals intelligence.",
-    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence on crypto public companies. It exposes five composite presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha, fundamentals, risk distribution, and daily change tools. Public Builder metadata uses usage credits; credit packs are not implemented yet.",
+    "shortDescription": "SEC-grounded ATLAS-7 stress, alpha, fundamentals, compact daily monitoring, and evidence drilldowns.",
+    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence on crypto public companies. It exposes composite presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha, fundamentals, risk distribution, compact daily monitoring, and paginated daily evidence drilldowns. Public Builder metadata uses usage credits; credit packs are not implemented yet.",
     "developerName": "AITrailblazer",
     "category": "Research",
     "capabilities": [
@@ -39,7 +39,9 @@
     "defaultPrompt": [
       "Use deltasignal_morning_brief for a DeltaSignal daily scan.",
       "Use deltasignal_company_report with ticker RIOT for a full issuer report.",
-      "Use deltasignal_pressure_board, deltasignal_alpha_sweep, or deltasignal_quick_ticker_check for focused preset workflows."
+      "Use deltasignal_pressure_board, deltasignal_alpha_sweep, or deltasignal_quick_ticker_check for focused preset workflows.",
+      "Use deltasignal_daily_changes for compact Daily Monitoring.",
+      "Use deltasignal_daily_change_evidence with ticker ARKB for paginated raw issuer proof."
     ],
     "brandColor": "#0B5FFF",
     "composerIcon": "./assets/icon.png",

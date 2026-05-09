@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DeltaSignal ATLAS-7 - x402 Verified real-time financial intelligence MCP server for crypto public companies. Agents ask in plain English and settle with Base USDC.">
+  <meta name="description" content="DeltaSignal ATLAS-7 - x402 verified real-time financial intelligence MCP server for crypto public companies, with compact daily monitoring and paginated evidence drilldowns.">
   <title>DeltaSignal ATLAS-7 • Real-Time Crypto Intelligence</title>
   <link rel="icon" href="./assets/logo.png" type="image/png">
   <meta property="og:image" content="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/assets/logo.png">
@@ -1169,7 +1169,7 @@ https://api.aitrailblazer.net/openapi.json</div>
             </div>
             <div class="mcp-chip">
               <strong>Settle</strong>
-              <span>Starter calls are free; paid calls settle through x402 Base USDC.</span>
+              <span>Starter calls are free; paid calls settle through x402 Base USDC. Daily Monitoring and Evidence Drilldown are separate $0.03 routes.</span>
             </div>
           </div>
           <div class="mcp-tools">
@@ -1186,6 +1186,7 @@ https://api.aitrailblazer.net/openapi.json</div>
             <span>company_fundamentals</span>
             <span>risk_distribution</span>
             <span>daily_changes</span>
+            <span>daily_change_evidence</span>
           </div>
         </div>
       </div>
@@ -1200,7 +1201,7 @@ https://api.aitrailblazer.net/openapi.json</div>
         <div class="surface-stage" aria-label="Animated direct MCP and x402 discovery flows">
           <div class="surface-card">
             <h3>Direct MCP + OpenAPI</h3>
-            <p>Agents can call the hosted Streamable HTTP MCP endpoint directly, while validators inspect the OpenAPI contract.</p>
+            <p>Agents can call the hosted Streamable HTTP MCP endpoint directly, while validators inspect the OpenAPI contract, including daily monitoring and evidence routes.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">Agent client</div>
@@ -1282,7 +1283,7 @@ Access model: first 5 calls free, then x402 pay-per-call
       <div class="wrap">
         <div class="section-head">
           <h2>Precise Tool Calls</h2>
-          <p>Use composite presets for common workflows. Use granular tools for custom drilldowns.</p>
+          <p>Use composite presets for common workflows. Use Daily Monitoring for compact changes, then Evidence Drilldown for raw issuer proof.</p>
         </div>
         <div class="code">@DeltaSignal morning_brief
 @DeltaSignal company_report ticker:RIOT
@@ -1294,7 +1295,9 @@ Access model: first 5 calls free, then x402 pay-per-call
 @DeltaSignal peer_ranking ticker:COIN
 @DeltaSignal company_fundamentals ticker:MSTR
 @DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
-@DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT</div>
+@DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT
+@DeltaSignal daily_changes
+@DeltaSignal daily_change_evidence ticker:ARKB source_date:2026-05-08 limit:100</div>
 
         <div class="tool-grid" style="margin-top:2rem;">
           <div class="tool"><strong>morning_brief</strong><span>Daily scan: readiness, changes, risk distribution, top stressed, and alpha opportunities. 18 credits / $0.18.</span></div>
@@ -1309,7 +1312,8 @@ Access model: first 5 calls free, then x402 pay-per-call
           <div class="tool"><strong>peer_ranking</strong><span>Compare one issuer against its peer group.</span></div>
           <div class="tool"><strong>risk_distribution</strong><span>Summarize risk spread across a watchlist.</span></div>
           <div class="tool"><strong>company_fundamentals</strong><span>Retrieve SEC XBRL-backed fundamentals.</span></div>
-          <div class="tool"><strong>daily_changes</strong><span>See the latest detected universe changes.</span></div>
+          <div class="tool"><strong>daily_changes</strong><span>Compact Daily Monitoring: freshness, counts, changed-company rows, and evidence refs. Typical public route price: $0.03.</span></div>
+          <div class="tool"><strong>daily_change_evidence</strong><span>Issuer-specific proof drilldown with paginated raw Company Facts tags. Requires ticker or CIK. Typical public route price: $0.03.</span></div>
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@
     "codex",
     "x402"
   ],
-  "instructions": "Prefer composite MCP presets for common workflows: deltasignal_morning_brief for daily scans, deltasignal_company_report for ticker reports, deltasignal_pressure_board for risk monitoring, deltasignal_alpha_sweep for opportunities, and deltasignal_quick_ticker_check for fast ticker checks. Use granular tools for custom drilldowns. First 5 calls are free where supported; paid usage settles via x402 USDC on Base.",
+  "instructions": "Prefer composite MCP presets for common workflows: deltasignal_morning_brief for daily scans, deltasignal_company_report for ticker reports, deltasignal_pressure_board for risk monitoring, deltasignal_alpha_sweep for opportunities, and deltasignal_quick_ticker_check for fast ticker checks. Use deltasignal_daily_changes for compact Daily Monitoring and deltasignal_daily_change_evidence for explicit ticker/CIK proof drilldowns. First 5 calls are free where supported; paid usage settles via x402 USDC on Base.",
   "configSchema": {
     "type": "object",
     "properties": {

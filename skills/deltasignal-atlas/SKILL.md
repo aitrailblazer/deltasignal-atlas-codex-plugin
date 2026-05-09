@@ -1,6 +1,6 @@
 ---
 name: deltasignal-atlas-7
-description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including composite MCP presets, readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, and daily SEC changes over the free starter tier, Tempo MPP, or Base x402.
+description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including composite MCP presets, readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, compact daily SEC monitoring, and paginated evidence drilldowns over the free starter tier, Tempo MPP, or Base x402.
 ---
 
 # DeltaSignal ATLAS-7
@@ -36,6 +36,8 @@ Bundled MCP server:
   - `deltasignal_pressure_board` for risk monitoring.
   - `deltasignal_alpha_sweep` for opportunity screening.
   - `deltasignal_quick_ticker_check` for fast ticker checks.
+  - `deltasignal_daily_changes` for compact Daily Monitoring.
+  - `deltasignal_daily_change_evidence` for explicit issuer proof after a monitoring result.
 - Use granular tools only for custom drilldowns or when a composite preset is unavailable.
 - Prefer the `deltasignal_*` MCP tools when this plugin is installed and the request maps to a supported DeltaSignal route.
 - MCP tools are read-only, idempotent, closed-world tools with strict argument validation.
@@ -58,6 +60,8 @@ Composite presets are discounted server-enforced workflows. Public Builder prici
 | `deltasignal_alpha_sweep` | 14 credits / `$0.14` | readiness, alpha_opportunities(limit=15), daily_changes |
 | `deltasignal_quick_ticker_check` | 18 credits / `$0.18` | readiness, covenant_stress(ticker), alpha_signals(ticker) |
 
+Daily Monitoring and Evidence are separate products. `deltasignal_daily_changes` is compact by default and should not be used as a bulk evidence export. Use `deltasignal_daily_change_evidence` only when the user asks to inspect raw proof for a named issuer or CIK.
+
 ## Paid Routes
 
 Use readiness before higher-cost calls when freshness matters.
@@ -65,6 +69,8 @@ Use readiness before higher-cost calls when freshness matters.
 | Route | Typical price | Purpose |
 | --- | ---: | --- |
 | `GET /mpp/v1/readiness` or `GET /v1/readiness` | `$0.04` | Latest service/data readiness and coverage snapshot |
+| `GET /mpp/v1/daily-changes/latest` or `GET /v1/daily-changes/latest` | `$0.03` | Compact Daily Monitoring: freshness, counts, compact changed-company rows, and evidence refs |
+| `GET /mpp/v1/daily-changes/evidence` or `GET /v1/daily-changes/evidence` | `$0.03` | Explicit issuer evidence drilldown with paginated raw Company Facts tags |
 | `GET /mpp/v1/risk-distribution` or `GET /v1/risk-distribution` | `$0.04` | Current risk-tier distribution |
 | `GET /mpp/v1/top-stressed` or `GET /v1/top-stressed` | `$0.05` | Most stressed crypto public issuers |
 | `GET /mpp/v1/peer-ranking/{ticker}` or `GET /v1/peer-ranking/{ticker}` | `$0.06` | Peer covenant ranking for one issuer |
@@ -74,6 +80,8 @@ Use readiness before higher-cost calls when freshness matters.
 | `GET /mpp/v1/covenant-stress/{ticker}` or `GET /v1/covenant-stress/{ticker}` | `$0.10` | Detailed ATLAS-7 covenant stress for one issuer |
 
 Supported list filters include `limit`, `offset`, `risk_tier`, `min_stress`, `linkbase_only`, and debt coverage status filters where exposed by the route.
+
+Future artifact-backed bulk daily evidence exports are not inline chat responses. Proposed prices: small pack $0.15, standard pack $0.30, full daily evidence export $0.75-$1.50.
 
 ## Operating Rules
 
@@ -91,6 +99,8 @@ Supported list filters include `limit`, `offset`, `risk_tier`, `min_stress`, `li
 - "Run a company report for RIOT" -> call `deltasignal_company_report` with `ticker=RIOT`.
 - "Show the pressure board" -> call `deltasignal_pressure_board`.
 - "Find alpha opportunities" -> call `deltasignal_alpha_sweep`.
+- "What changed today?" -> call `deltasignal_daily_changes`.
+- "Show me why ARKB moved" -> call `deltasignal_daily_change_evidence` with `ticker=ARKB` and the source date from Daily Monitoring when available.
 - "Quick check MARA" -> call `deltasignal_quick_ticker_check` with `ticker=MARA`.
 - "Is DeltaSignal current?" -> call readiness.
 - "Which issuers are most stressed?" -> call top-stressed.
