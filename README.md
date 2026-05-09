@@ -2,7 +2,7 @@
 
 **Real-time intelligence signals** as a **native MCP server** for Codex CLI and other MCP agents.
 
-DeltaSignal ATLAS-7 gives your agent structured, validated tools for market signals, risk analysis, peer ranking, and fundamentals, with automatic x402 micropayments in USDC. No subscription required.
+DeltaSignal ATLAS-7 gives your agent structured, validated tools for market signals, risk analysis, peer ranking, and fundamentals. Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. No subscription required.
 
 Also available on [Smithery](https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7) and as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7).
 
@@ -35,6 +35,11 @@ Restart Codex CLI after this step.
 ### 3. Use
 
 ```bash
+@DeltaSignal morning_brief
+@DeltaSignal company_report ticker:RIOT
+@DeltaSignal pressure_board
+@DeltaSignal alpha_sweep
+@DeltaSignal quick_ticker_check ticker:MARA
 @DeltaSignal alpha_signals ticker:COIN
 @DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
 @DeltaSignal company_fundamentals ticker:MSTR
@@ -51,6 +56,16 @@ Restart Codex CLI after this step.
 
 ## Available MCP Tools
 
+Composite presets:
+
+- `deltasignal_morning_brief` - daily scan: readiness + daily changes + risk distribution + top stressed(limit=10) + alpha opportunities(limit=10). Public Builder price: 18 credits / $0.18.
+- `deltasignal_company_report` - ticker report: readiness + fundamentals + alpha signals + peer ranking + covenant stress. Public Builder price: 30 credits / $0.30.
+- `deltasignal_pressure_board` - risk view: readiness + top stressed(limit=15) + risk distribution. Public Builder price: 14 credits / $0.14.
+- `deltasignal_alpha_sweep` - opportunity screen: readiness + alpha opportunities(limit=15) + daily changes. Public Builder price: 14 credits / $0.14.
+- `deltasignal_quick_ticker_check` - fast ticker check: readiness + covenant stress + alpha signals. Public Builder price: 18 credits / $0.18.
+
+Granular tools:
+
 - `deltasignal_readiness`
 - `deltasignal_top_stressed`
 - `deltasignal_covenant_stress`
@@ -59,6 +74,8 @@ Restart Codex CLI after this step.
 - `deltasignal_company_fundamentals`
 - `deltasignal_risk_distribution`
 - `deltasignal_daily_changes`
+
+Credit packs are not implemented yet. Pricing metadata uses `1 credit = $0.01` of DeltaSignal usage value.
 
 ## Development Modes
 

@@ -1027,7 +1027,7 @@
         <h1><span>DeltaSignal</span><span>ATLAS-7</span></h1>
         <p class="tagline">
           Real-time financial intelligence for crypto public companies.
-          <span>Agents ask in plain English. Pay automatically with Base USDC when you outgrow the free tier.</span>
+          <span>Agents ask in plain English, with composite MCP presets for daily scans, issuer reports, risk boards, and alpha sweeps.</span>
         </p>
         <div class="hero-actions">
           <a href="https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7" class="btn btn-primary" target="_blank" rel="noopener">Launch on Smithery → Start in 60 seconds</a>
@@ -1052,7 +1052,7 @@
             </div>
             <div class="flow-node">
               <strong>MCP + OpenAPI</strong>
-              <span>Eight tools exposed over remote Streamable HTTP.</span>
+              <span>Composite presets plus granular tools over remote Streamable HTTP.</span>
               <em>/mcp • /openapi.json</em>
             </div>
             <div class="flow-node">
@@ -1080,11 +1080,13 @@
           <p>Copy-paste these prompts into your coding agent. They use crypto public company coverage, not generic crypto price chatter.</p>
         </div>
         <div class="prompt-grid">
-          <div class="prompt">"Show me the most stressed crypto miners right now."</div>
+          <div class="prompt">"Give me a DeltaSignal morning brief."</div>
+          <div class="prompt">"Run a DeltaSignal company report for RIOT."</div>
+          <div class="prompt">"Show me the current pressure board."</div>
+          <div class="prompt">"Run an alpha sweep for the current universe."</div>
+          <div class="prompt">"Quick check MARA before I drill into it."</div>
           <div class="prompt">"Give me the latest alpha signals on COIN and MSTR."</div>
           <div class="prompt">"How risky is MARA compared to RIOT on covenants?"</div>
-          <div class="prompt">"What are the top covenant breach risks in crypto this week?"</div>
-          <div class="prompt">"Rank Bitcoin mining companies by risk level."</div>
           <div class="prompt">"Give me fundamentals and recent changes for Coinbase."</div>
           <div class="prompt">"Show peer ranking for BTC-related public companies."</div>
           <div class="prompt">"Give me a watchlist summary for COIN, MSTR, MARA, and RIOT."</div>
@@ -1171,6 +1173,11 @@ https://api.aitrailblazer.net/openapi.json</div>
             </div>
           </div>
           <div class="mcp-tools">
+            <span>morning_brief</span>
+            <span>company_report</span>
+            <span>pressure_board</span>
+            <span>alpha_sweep</span>
+            <span>quick_ticker_check</span>
             <span>readiness</span>
             <span>alpha_signals</span>
             <span>covenant_stress</span>
@@ -1227,7 +1234,7 @@ https://api.aitrailblazer.net/openapi.json</div>
           </a>
           <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
             <strong>OpenAPI Spec</strong>
-            <span>Inspect the public REST and x402-compatible API contract used by discovery validators.</span>
+            <span>Inspect the public REST, MCP JSON-RPC, and composite-tool discovery metadata used by validators.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
           </a>
         </div>
@@ -1275,9 +1282,14 @@ Access model: first 5 calls free, then x402 pay-per-call
       <div class="wrap">
         <div class="section-head">
           <h2>Precise Tool Calls</h2>
-          <p>Use these when you want deterministic MCP-style calls with crypto public company tickers.</p>
+          <p>Use composite presets for common workflows. Use granular tools for custom drilldowns.</p>
         </div>
-        <div class="code">@DeltaSignal alpha_signals ticker:COIN
+        <div class="code">@DeltaSignal morning_brief
+@DeltaSignal company_report ticker:RIOT
+@DeltaSignal pressure_board
+@DeltaSignal alpha_sweep
+@DeltaSignal quick_ticker_check ticker:MARA
+@DeltaSignal alpha_signals ticker:COIN
 @DeltaSignal covenant_stress ticker:MARA
 @DeltaSignal peer_ranking ticker:COIN
 @DeltaSignal company_fundamentals ticker:MSTR
@@ -1285,6 +1297,11 @@ Access model: first 5 calls free, then x402 pay-per-call
 @DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT</div>
 
         <div class="tool-grid" style="margin-top:2rem;">
+          <div class="tool"><strong>morning_brief</strong><span>Daily scan: readiness, changes, risk distribution, top stressed, and alpha opportunities. 18 credits / $0.18.</span></div>
+          <div class="tool"><strong>company_report</strong><span>Full issuer report across fundamentals, alpha, peers, and covenant stress. 30 credits / $0.30.</span></div>
+          <div class="tool"><strong>pressure_board</strong><span>Risk board with top stressed(limit=15) and risk distribution. 14 credits / $0.14.</span></div>
+          <div class="tool"><strong>alpha_sweep</strong><span>Opportunity screen with alpha opportunities(limit=15) and daily changes. 14 credits / $0.14.</span></div>
+          <div class="tool"><strong>quick_ticker_check</strong><span>Fast issuer triage using covenant stress and alpha signals. 18 credits / $0.18.</span></div>
           <div class="tool"><strong>readiness</strong><span>Check whether DeltaSignal is live and which data slice is active.</span></div>
           <div class="tool"><strong>alpha_signals</strong><span>Find positive or negative signal pressure for one issuer.</span></div>
           <div class="tool"><strong>covenant_stress</strong><span>Estimate debt covenant and financial stress risk.</span></div>

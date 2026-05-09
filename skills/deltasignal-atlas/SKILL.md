@@ -1,6 +1,6 @@
 ---
 name: deltasignal-atlas-7
-description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, and daily SEC changes over the free starter tier, Tempo MPP, or Base x402.
+description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including composite MCP presets, readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, and daily SEC changes over the free starter tier, Tempo MPP, or Base x402.
 ---
 
 # DeltaSignal ATLAS-7
@@ -30,6 +30,13 @@ Agentic Market compatibility rail:
 Bundled MCP server:
 
 - Treat DeltaSignal as an MCP-first plugin. Prefer named MCP tool calls over hand-written HTTP routes whenever the plugin is installed.
+- Prefer composite MCP presets for common workflows:
+  - `deltasignal_morning_brief` for daily scans.
+  - `deltasignal_company_report` for full ticker reports.
+  - `deltasignal_pressure_board` for risk monitoring.
+  - `deltasignal_alpha_sweep` for opportunity screening.
+  - `deltasignal_quick_ticker_check` for fast ticker checks.
+- Use granular tools only for custom drilldowns or when a composite preset is unavailable.
 - Prefer the `deltasignal_*` MCP tools when this plugin is installed and the request maps to a supported DeltaSignal route.
 - MCP tools are read-only, idempotent, closed-world tools with strict argument validation.
 - In live mode, the MCP wrapper calls the deployed Base x402 `/v1/*` routes and returns free-tier headers or x402 payment requirements in the tool result.
@@ -38,6 +45,18 @@ Bundled MCP server:
 - If the MCP wrapper returns `payment_required`, do not claim payment succeeded. Tell the user the free tier is exhausted or unavailable and switch to an x402/MPP-capable payment flow.
 
 Do not translate between route families unless the user explicitly switches payment rails. If the active client is Agentic Market or Coinbase x402, use `/v1/*`. If the active client is MPPScan, mpp.dev, or asks for Tempo MPP, use `/mpp/v1/*`.
+
+## Composite Presets
+
+Composite presets are discounted server-enforced workflows. Public Builder pricing uses `1 credit = $0.01` of DeltaSignal usage value. Credit packs are not implemented yet.
+
+| MCP tool | Builder price | Internal calls |
+| --- | ---: | --- |
+| `deltasignal_morning_brief` | 18 credits / `$0.18` | readiness, daily_changes, risk_distribution, top_stressed(limit=10), alpha_opportunities(limit=10) |
+| `deltasignal_company_report` | 30 credits / `$0.30` | readiness, company_fundamentals(ticker), alpha_signals(ticker), peer_ranking(ticker), covenant_stress(ticker) |
+| `deltasignal_pressure_board` | 14 credits / `$0.14` | readiness, top_stressed(limit=15), risk_distribution |
+| `deltasignal_alpha_sweep` | 14 credits / `$0.14` | readiness, alpha_opportunities(limit=15), daily_changes |
+| `deltasignal_quick_ticker_check` | 18 credits / `$0.18` | readiness, covenant_stress(ticker), alpha_signals(ticker) |
 
 ## Paid Routes
 
@@ -68,6 +87,11 @@ Supported list filters include `limit`, `offset`, `risk_tier`, `min_stress`, `li
 
 ## Common Prompts
 
+- "Give me a DeltaSignal morning brief" -> call `deltasignal_morning_brief`.
+- "Run a company report for RIOT" -> call `deltasignal_company_report` with `ticker=RIOT`.
+- "Show the pressure board" -> call `deltasignal_pressure_board`.
+- "Find alpha opportunities" -> call `deltasignal_alpha_sweep`.
+- "Quick check MARA" -> call `deltasignal_quick_ticker_check` with `ticker=MARA`.
 - "Is DeltaSignal current?" -> call readiness.
 - "Which issuers are most stressed?" -> call top-stressed.
 - "Run covenant stress on MARA" -> call covenant-stress detail for `MARA`.

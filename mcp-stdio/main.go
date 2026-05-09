@@ -60,14 +60,46 @@ type tickerArgs struct {
 	SourceDate string `json:"source_date"`
 }
 
+type outputModeArgs struct {
+	OutputMode string `json:"output_mode"`
+}
+
+type companyReportArgs struct {
+	Ticker              string `json:"ticker"`
+	Period              string `json:"period"`
+	IncludeSegments     bool   `json:"include_segments"`
+	IncludeRelatedParty bool   `json:"include_related_party"`
+	OutputMode          string `json:"output_mode"`
+}
+
+type quickTickerCheckArgs struct {
+	Ticker     string `json:"ticker"`
+	OutputMode string `json:"output_mode"`
+}
+
+type compositeLeg struct {
+	Name        string
+	Path        string
+	Query       url.Values
+	Args        map[string]any
+	Criticality string
+	PriceUSD    float64
+}
+
 func main() {
 	client := newDeltaClient()
 	server := mcp.NewServer(&mcp.Implementation{
 		Name:    "deltasignal-atlas-7",
-		Version: "0.1.0",
+		Version: "0.2.0",
 	}, &mcp.ServerOptions{
-		Instructions: "DeltaSignal ATLAS-7 delivers real-time financial intelligence for crypto public companies. First 5 calls are free; subsequent live usage is charged through x402 USDC micropayments. Use the structured tools for alpha signals, covenant stress, peer ranking, risk distribution, company fundamentals, and daily signal changes.",
+		Instructions: "DeltaSignal ATLAS-7 delivers SEC-grounded financial intelligence for crypto public companies. Prefer composite MCP tools for common workflows: deltasignal_morning_brief, deltasignal_company_report, deltasignal_pressure_board, deltasignal_alpha_sweep, and deltasignal_quick_ticker_check. First 5 granular calls are free where supported; paid live usage is charged through x402 USDC micropayments.",
 	})
+
+	mcp.AddTool(server, tool("deltasignal_morning_brief", "Server-enforced daily DeltaSignal scan. Internally calls readiness, daily_changes, risk_distribution, top_stressed(limit=10), and alpha_opportunities(limit=10). Use this for morning briefs and daily scans instead of manually chaining granular tools.", noArgCompositeSchema()), client.morningBrief)
+	mcp.AddTool(server, tool("deltasignal_company_report", "Server-enforced single-issuer report. Internally calls readiness, company_fundamentals, alpha_signals, peer_ranking, and covenant_stress for one normalized ticker. SPECTRA is not included by default.", companyReportSchema()), client.companyReport)
+	mcp.AddTool(server, tool("deltasignal_pressure_board", "Server-enforced risk view. Internally calls readiness, top_stressed(limit=15), and risk_distribution with no offset or issuer drilldowns.", noArgCompositeSchema()), client.pressureBoard)
+	mcp.AddTool(server, tool("deltasignal_alpha_sweep", "Server-enforced opportunity view. Internally calls readiness, alpha_opportunities(limit=15), and daily_changes with no offset or issuer drilldowns.", noArgCompositeSchema()), client.alphaSweep)
+	mcp.AddTool(server, tool("deltasignal_quick_ticker_check", "Server-enforced fast ticker check. Internally calls readiness, covenant_stress(ticker), and alpha_signals(ticker).", quickTickerCheckSchema()), client.quickTickerCheck)
 
 	mcp.AddTool(server, tool("deltasignal_readiness", "Checks the live ATLAS-7 data plane before analysis, including service readiness, active data freshness, issuer coverage, and whether the current signal slice is safe to query.", map[string]any{
 		"type":                 "object",
@@ -219,6 +251,159 @@ func (c *deltaClient) dailyChanges(ctx context.Context, _ *mcp.CallToolRequest, 
 	return c.get(ctx, "/v1/daily-changes/latest", nil)
 }
 
+func (c *deltaClient) morningBrief(ctx context.Context, _ *mcp.CallToolRequest, args outputModeArgs) (*mcp.CallToolResult, any, error) {
+	if err := validateOutputMode(args.OutputMode); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	return c.runComposite(ctx, "deltasignal_morning_brief", map[string]any{"output_mode": "compact"}, []compositeLeg{
+		{Name: "deltasignal_readiness", Path: "/v1/readiness", Criticality: "advisory", PriceUSD: 0.05},
+		{Name: "deltasignal_daily_changes", Path: "/v1/daily-changes/latest", Criticality: "required", PriceUSD: 0.04},
+		{Name: "deltasignal_risk_distribution", Path: "/v1/risk-distribution", Criticality: "required", PriceUSD: 0.05},
+		{Name: "deltasignal_top_stressed", Path: "/v1/top-stressed", Query: values(map[string]string{"limit": "10"}), Args: map[string]any{"limit": 10}, Criticality: "required", PriceUSD: 0.06},
+		{Name: "deltasignal_alpha_opportunities", Path: "/v1/alpha-opportunities", Query: values(map[string]string{"limit": "10"}), Args: map[string]any{"limit": 10}, Criticality: "required", PriceUSD: 0.06},
+	}, 0.18)
+}
+
+func (c *deltaClient) companyReport(ctx context.Context, _ *mcp.CallToolRequest, args companyReportArgs) (*mcp.CallToolResult, any, error) {
+	if err := validateOutputMode(args.OutputMode); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	ticker := strings.ToUpper(strings.TrimSpace(args.Ticker))
+	if err := validateTicker(ticker); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	if err := validateDate("period", args.Period); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	q := url.Values{}
+	addString(q, "period", args.Period)
+	request := map[string]any{"ticker": ticker, "output_mode": "compact"}
+	if args.Period != "" {
+		request["period"] = args.Period
+	}
+	return c.runComposite(ctx, "deltasignal_company_report", request, []compositeLeg{
+		{Name: "deltasignal_readiness", Path: "/v1/readiness", Criticality: "advisory", PriceUSD: 0.05},
+		{Name: "deltasignal_company_fundamentals", Path: "/v1/company-fundamentals/" + url.PathEscape(ticker), Query: q, Args: map[string]any{"ticker": ticker}, Criticality: "required", PriceUSD: 0.07},
+		{Name: "deltasignal_alpha_signals", Path: "/v1/alpha-signals/" + url.PathEscape(ticker), Args: map[string]any{"ticker": ticker}, Criticality: "required", PriceUSD: 0.09},
+		{Name: "deltasignal_peer_ranking", Path: "/v1/peer-ranking/" + url.PathEscape(ticker), Query: q, Args: map[string]any{"ticker": ticker}, Criticality: "required", PriceUSD: 0.08},
+		{Name: "deltasignal_covenant_stress", Path: "/v1/covenant-stress/" + url.PathEscape(ticker), Query: q, Args: map[string]any{"ticker": ticker}, Criticality: "required", PriceUSD: 0.15},
+	}, 0.30)
+}
+
+func (c *deltaClient) pressureBoard(ctx context.Context, _ *mcp.CallToolRequest, args outputModeArgs) (*mcp.CallToolResult, any, error) {
+	if err := validateOutputMode(args.OutputMode); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	return c.runComposite(ctx, "deltasignal_pressure_board", map[string]any{"output_mode": "compact"}, []compositeLeg{
+		{Name: "deltasignal_readiness", Path: "/v1/readiness", Criticality: "advisory", PriceUSD: 0.05},
+		{Name: "deltasignal_top_stressed", Path: "/v1/top-stressed", Query: values(map[string]string{"limit": "15"}), Args: map[string]any{"limit": 15}, Criticality: "required", PriceUSD: 0.06},
+		{Name: "deltasignal_risk_distribution", Path: "/v1/risk-distribution", Criticality: "required", PriceUSD: 0.05},
+	}, 0.14)
+}
+
+func (c *deltaClient) alphaSweep(ctx context.Context, _ *mcp.CallToolRequest, args outputModeArgs) (*mcp.CallToolResult, any, error) {
+	if err := validateOutputMode(args.OutputMode); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	return c.runComposite(ctx, "deltasignal_alpha_sweep", map[string]any{"output_mode": "compact"}, []compositeLeg{
+		{Name: "deltasignal_readiness", Path: "/v1/readiness", Criticality: "advisory", PriceUSD: 0.05},
+		{Name: "deltasignal_alpha_opportunities", Path: "/v1/alpha-opportunities", Query: values(map[string]string{"limit": "15"}), Args: map[string]any{"limit": 15}, Criticality: "required", PriceUSD: 0.06},
+		{Name: "deltasignal_daily_changes", Path: "/v1/daily-changes/latest", Criticality: "required", PriceUSD: 0.04},
+	}, 0.14)
+}
+
+func (c *deltaClient) quickTickerCheck(ctx context.Context, _ *mcp.CallToolRequest, args quickTickerCheckArgs) (*mcp.CallToolResult, any, error) {
+	if err := validateOutputMode(args.OutputMode); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	ticker := strings.ToUpper(strings.TrimSpace(args.Ticker))
+	if err := validateTicker(ticker); err != nil {
+		return result(map[string]any{"error": err.Error(), "payment_mode": c.mode}, true)
+	}
+	return c.runComposite(ctx, "deltasignal_quick_ticker_check", map[string]any{"ticker": ticker, "output_mode": "compact"}, []compositeLeg{
+		{Name: "deltasignal_readiness", Path: "/v1/readiness", Criticality: "advisory", PriceUSD: 0.05},
+		{Name: "deltasignal_covenant_stress", Path: "/v1/covenant-stress/" + url.PathEscape(ticker), Args: map[string]any{"ticker": ticker}, Criticality: "required", PriceUSD: 0.15},
+		{Name: "deltasignal_alpha_signals", Path: "/v1/alpha-signals/" + url.PathEscape(ticker), Args: map[string]any{"ticker": ticker}, Criticality: "required", PriceUSD: 0.09},
+	}, 0.18)
+}
+
+func (c *deltaClient) runComposite(ctx context.Context, workflow string, request map[string]any, legs []compositeLeg, bundlePrice float64) (*mcp.CallToolResult, any, error) {
+	start := time.Now()
+	data := map[string]any{
+		"schema_version": "2026-05-09",
+		"workflow":       workflow,
+		"request":        request,
+		"payment_mode":   c.mode,
+	}
+	ledger := make([]map[string]any, 0, len(legs))
+	errors := make([]map[string]any, 0)
+	requiredFailed := 0
+	requiredTotal := 0
+	for _, leg := range legs {
+		if leg.Criticality == "required" {
+			requiredTotal++
+		}
+		legStart := time.Now()
+		_, payloadAny, err := c.get(ctx, leg.Path, leg.Query)
+		elapsed := time.Since(legStart).Milliseconds()
+		payload, _ := payloadAny.(map[string]any)
+		status := 0
+		if payload != nil {
+			if raw, ok := payload["status"].(float64); ok {
+				status = int(raw)
+			} else if raw, ok := payload["status"].(int); ok {
+				status = raw
+			}
+		}
+		ok := err == nil && status >= 200 && status < 300
+		row := map[string]any{
+			"tool":             leg.Name,
+			"route":            routeName(leg.Path),
+			"args":             legArgs(leg.Args),
+			"criticality":      leg.Criticality,
+			"equivalent_price": fmt.Sprintf("$%.2f", leg.PriceUSD),
+			"price_usd":        leg.PriceUSD,
+			"elapsed_ms":       elapsed,
+			"status":           "ok",
+		}
+		if !ok {
+			row["status"] = "error"
+			row["error"] = errorText(err, payload)
+			errors = append(errors, row)
+			if leg.Criticality == "required" {
+				requiredFailed++
+			}
+		} else {
+			data[resultKey(leg.Name)] = payload["data"]
+		}
+		ledger = append(ledger, row)
+	}
+	partial := requiredFailed > 0
+	status := "ok"
+	if partial {
+		status = "partial"
+	}
+	if requiredTotal > 0 && requiredFailed == requiredTotal {
+		status = "error"
+	}
+	data["status"] = status
+	data["partial"] = partial
+	data["internal_calls"] = ledger
+	data["errors"] = errors
+	data["mcp_billing_estimate"] = map[string]any{
+		"payment_flow_used":             false,
+		"payment_mode":                  c.mode,
+		"bundle_x402_equivalent_price":  fmt.Sprintf("$%.2f", bundlePrice),
+		"bundle_x402_price_usd":         bundlePrice,
+		"charged_once":                  false,
+		"internal_call_count":           len(legs),
+		"note":                          "Local plugin composite executes deterministic granular reads. The hosted /mcp composite is the canonical server-enforced workflow.",
+		"public_credit_packs_available": false,
+	}
+	data["elapsed_ms"] = time.Since(start).Milliseconds()
+	return result(data, status == "error")
+}
+
 func (c *deltaClient) getTicker(ctx context.Context, pathPrefix, ticker, dateField, dateValue string) (*mcp.CallToolResult, any, error) {
 	ticker = strings.ToUpper(strings.TrimSpace(ticker))
 	if err := validateTicker(ticker); err != nil {
@@ -367,6 +552,43 @@ func tickerTool(name, description string) *mcp.Tool {
 	})
 }
 
+func noArgCompositeSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"output_mode": boundedStringSchema("Optional response mode. Only compact is accepted.", 1, 16),
+		},
+		"additionalProperties": false,
+	}
+}
+
+func companyReportSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"ticker":                boundedStringSchema("Required issuer ticker, normalized to uppercase.", 1, maxTickerLength),
+			"period":                dateSchema("Optional YYYY-MM-DD period."),
+			"include_segments":      boolSchema("Reserved for hosted MCP compatibility."),
+			"include_related_party": boolSchema("Reserved for hosted MCP compatibility."),
+			"output_mode":           boundedStringSchema("Optional response mode. Only compact is accepted.", 1, 16),
+		},
+		"required":             []string{"ticker"},
+		"additionalProperties": false,
+	}
+}
+
+func quickTickerCheckSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"ticker":      boundedStringSchema("Required issuer ticker, normalized to uppercase.", 1, maxTickerLength),
+			"output_mode": boundedStringSchema("Optional response mode. Only compact is accepted.", 1, 16),
+		},
+		"required":             []string{"ticker"},
+		"additionalProperties": false,
+	}
+}
+
 func stringSchema(description string) map[string]any {
 	return map[string]any{"type": "string", "description": description}
 }
@@ -472,6 +694,63 @@ func validateShortFilters(values ...string) error {
 		}
 	}
 	return nil
+}
+
+func validateOutputMode(value string) error {
+	value = strings.ToLower(strings.TrimSpace(value))
+	if value == "" || value == "compact" {
+		return nil
+	}
+	return fmt.Errorf("output_mode must be compact when set")
+}
+
+func values(raw map[string]string) url.Values {
+	q := url.Values{}
+	for key, value := range raw {
+		q.Set(key, value)
+	}
+	return q
+}
+
+func legArgs(args map[string]any) map[string]any {
+	if args == nil {
+		return map[string]any{}
+	}
+	return args
+}
+
+func routeName(path string) string {
+	for _, prefix := range []string{"/v1/company-fundamentals/", "/v1/alpha-signals/", "/v1/peer-ranking/", "/v1/covenant-stress/"} {
+		if strings.HasPrefix(path, prefix) {
+			return "GET " + strings.TrimRight(prefix, "/") + "/:ticker"
+		}
+	}
+	return "GET " + path
+}
+
+func resultKey(toolName string) string {
+	return strings.TrimPrefix(toolName, "deltasignal_")
+}
+
+func errorText(err error, payload map[string]any) string {
+	if err != nil {
+		return err.Error()
+	}
+	if payload == nil {
+		return "request failed"
+	}
+	if data, ok := payload["data"].(map[string]any); ok {
+		if msg, ok := data["error"].(string); ok && strings.TrimSpace(msg) != "" {
+			return msg
+		}
+	}
+	if msg, ok := payload["error"].(string); ok && strings.TrimSpace(msg) != "" {
+		return msg
+	}
+	if status, ok := payload["status"]; ok {
+		return fmt.Sprintf("request failed with status %v", status)
+	}
+	return "request failed"
 }
 
 func _printf(format string, args ...any) {

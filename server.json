@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.aitrailblazer/deltasignal-atlas-7",
   "title": "DeltaSignal ATLAS-7",
-  "description": "Real-time financial intelligence for crypto public companies. Native MCP server with alpha signals, covenant stress, peer ranking, risk distribution, and SEC XBRL fundamentals.",
-  "version": "1.0.0",
+  "description": "Real-time financial intelligence for crypto public companies. Native MCP server with composite presets, alpha signals, covenant stress, peer ranking, risk distribution, and SEC XBRL fundamentals.",
+  "version": "1.1.0",
   "websiteUrl": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "codex",
     "x402"
   ],
-  "instructions": "First 5 calls are free. After that, usage is automatically charged via x402 USDC micropayments on Base. Use natural language or call tools directly, for example deltasignal_alpha_signals ticker:COIN, deltasignal_covenant_stress ticker:MARA, or deltasignal_top_stressed tickers:MARA,RIOT,HUT,CLSK.",
+  "instructions": "Prefer composite MCP presets for common workflows: deltasignal_morning_brief for daily scans, deltasignal_company_report for ticker reports, deltasignal_pressure_board for risk monitoring, deltasignal_alpha_sweep for opportunities, and deltasignal_quick_ticker_check for fast ticker checks. Use granular tools for custom drilldowns. First 5 calls are free where supported; paid usage settles via x402 USDC on Base.",
   "configSchema": {
     "type": "object",
     "properties": {
