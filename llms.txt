@@ -1,0 +1,272 @@
+---
+title: Delta Signal Natural Language Briefs for LLMs
+description: Agent-facing guidance for using StrategiX Delta Signal Natural Language Briefs safely and accurately.
+sidebar_label: llms.txt
+sidebar_position: 10
+slug: /llms
+version: ATLAS7_NL_DOCS_V1
+status: phase-1
+product: Delta Signal Natural Language Briefs
+last_updated: 2026-05-10
+---
+
+# StrategiX Delta Signal Natural Language Briefs
+
+![Version](https://img.shields.io/badge/version-ATLAS7_NL_DOCS_V1-blue) ![Status](https://img.shields.io/badge/status-phase--1-orange) ![Renderer](https://img.shields.io/badge/renderers-deterministic%20%7C%20apex%20%7C%20fallback-purple) ![Safety](https://img.shields.io/badge/investment%20advice-no-red)
+
+StrategiX exposes Delta Signal ATLAS-7 Natural Language Briefs for humans, agents, and developer workflows that need audit-grade Markdown summaries over canonical Delta Signal evidence.
+
+Natural Language Briefs are evidence-to-Markdown compiler outputs. They are not chatbot responses, analyst opinions, trade recommendations, or new evidence sources.
+
+## Primary Product Surface
+
+- Raw Delta Signal evidence is fetched and canonicalized by the StrategiX backend.
+- The Natural Language compiler renders the canonical evidence into validated Markdown.
+- The response includes provenance metadata, renderer metadata, validation status, pricing, source dates, and evidence hash when available.
+
+Core doctrine:
+
+```text
+Raw Delta Signal evidence
+-> Canonical evidence envelope
+-> Endpoint-specific Markdown compiler
+-> Output validator
+-> Natural Language response
+```
+
+The evidence object is the source of truth. The renderer may organize, summarize, and explain returned evidence, but it must not add facts, fetch data, browse, infer missing values, re-rank issuers, or provide investment advice.
+
+## Key Constraints For LLMs And Agents
+
+When describing or using StrategiX Delta Signal Natural Language Briefs:
+
+- Treat Natural Language Briefs as a rendering layer over Delta Signal evidence.
+- Do not describe them as autonomous financial advice.
+- Do not imply that the renderer discovers new facts.
+- Do not imply that missing evidence means no risk, no changes, or no opportunity.
+- Do not add external market news unless the user separately requests external research and the environment permits it.
+- Do not provide buy, sell, short, long, hold, entry, exit, stop-loss, guaranteed-move, price-target, or personalized investment advice language.
+- Preserve the distinction between raw Delta Signal evidence, canonical evidence envelopes, and Natural Language rendered output.
+- Preserve renderer transparency: deterministic, apex, or deterministic_fallback.
+- Preserve the exact non-advice disclaimer when quoting or generating examples.
+
+Required disclaimer for Natural Language Briefs:
+
+```text
+Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
+```
+
+## Phase 1 Natural Language Endpoints
+
+### Top Stressed Brief
+
+Purpose: render the Delta Signal top-stressed issuer screen into a concise, audit-grade Markdown brief.
+
+- Route: `GET /v1/top-stressed/natural`
+- MPP mirror: `GET /mpp/v1/top-stressed/natural`
+- MCP tool: `deltasignal_top_stressed_natural`
+- Source tool: `deltasignal_top_stressed`
+- Price: `$0.95`
+- Ticker required: no
+
+Typical query parameters:
+
+- `style`: `professional`, `concise`, `trader`, or `detailed`
+- `limit`: integer, default `10`
+- `offset`: integer, default `0`
+- `date`: optional `YYYY-MM-DD` selector where supported
+
+Expected Markdown sections:
+
+- Delta Signal Top Stressed Brief
+- Readiness Summary
+- Top Stressed Issuers
+- Main Pattern
+- Evidence Limits
+- Suggested Drilldowns
+
+### Covenant Stress Brief
+
+Purpose: render ticker-specific covenant, leverage, liquidity, filing, and issuer stress evidence into a validated Markdown brief.
+
+- Route: `GET /v1/covenant-stress/natural`
+- MPP mirror: `GET /mpp/v1/covenant-stress/natural`
+- MCP tool: `deltasignal_covenant_stress_natural`
+- Source tool: `deltasignal_covenant_stress`
+- Price: `$1.20`
+- Ticker required: yes
+
+Typical query parameters:
+
+- `ticker`: required issuer ticker
+- `style`: `professional`, `concise`, `trader`, or `detailed`
+- `date`: optional `YYYY-MM-DD` selector where supported
+
+Expected Markdown sections:
+
+- Delta Signal Covenant Stress Brief
+- Issuer Summary
+- Covenant Pressure Indicators
+- Filing Evidence
+- Evidence Limits
+- Suggested Drilldowns
+
+Important: do not infer covenant breach, default risk, insolvency, bankruptcy risk, liquidity crisis, price movement, or trade direction unless explicitly returned by evidence.
+
+### Morning Brief
+
+Purpose: render backend-composed compact market-wide evidence into a validated Delta Signal Morning Brief.
+
+- Route: `GET /v1/morning-brief/natural`
+- MPP mirror: `GET /mpp/v1/morning-brief/natural`
+- MCP tool: `deltasignal_morning_brief_natural`
+- Source: backend-composed `deltasignal_morning_brief` evidence envelope
+- Price: `$1.80`
+- Ticker required: no
+
+Typical query parameters:
+
+- `style`: `professional`, `concise`, `trader`, or `detailed`
+- `date`: optional `YYYY-MM-DD` selector where supported
+- `limit`: optional compact record limit where supported
+
+Expected Markdown sections:
+
+- Delta Signal Morning Brief
+- Readiness Summary
+- What Changed
+- Market-Wide Risk Board
+- Top Stressed Issuers
+- Alpha Opportunity Board
+- Main Pattern
+- Evidence Limits
+- Suggested Drilldowns
+
+Important: Morning Brief must use backend-composed evidence. Do not perform client-side fan-out or renderer-side tool calls. Do not generate X drafts, Substack notes, article candidates, or issuer drilldowns unless the user requests those after evidence is returned.
+
+## Response Shape
+
+Successful Natural Language responses include:
+
+- `natural_brief`: validated Markdown string
+- `summary_data`: compact structured summary object
+- `raw_data_ref`: raw evidence reference when available
+- `cost_usd`: endpoint price
+- `tokens_used`: renderer token usage when available
+- `source_date`: source evidence date when available
+- `computed_at`: computation timestamp when available
+- `payload_mode`: `natural_language`
+- `raw_payload_mode`: `compact`, `full`, `evidence_page`, or `null`
+- `quality_flags`: returned quality flags
+- `caveats`: returned caveats
+- `model`: renderer model or deterministic renderer identifier
+- `renderer_agent`: `GEN-I-GENESIS-APEX` or `deterministic-fallback`
+- `renderer_mode`: `deterministic`, `apex`, or `deterministic_fallback`
+- `validation_status`: `passed`, `failed`, or `skipped`
+- `fallback_reason`: fallback reason when applicable
+- `prompt_version`: renderer prompt package version
+- `renderer_version`: compiler or renderer version
+- `evidence_hash`: canonical evidence hash when available
+- `request_id`: trace identifier
+- `latency_ms`: total latency
+- `cache_hit`: cache status
+- `billing_mode`: `x402`, `mpp`, `api_key`, `internal`, or `free_tier`
+- `free_tier_applied`: boolean when available
+
+## Renderer Modes
+
+`deterministic`: evidence-preserving baseline renderer. Used when APEX is disabled, during baseline deployment, or when maximum output stability is required.
+
+`apex`: GEN-I-GENESIS-APEX renderer. Used when APEX is enabled and the rendered output passes validation.
+
+`deterministic_fallback`: fallback renderer. Used when APEX times out, errors, returns malformed Markdown, fails evidence validation, includes unsafe financial language, or omits required sections or disclaimer.
+
+## Validation Behavior
+
+Natural Language output is validated before it is returned.
+
+Validation rejects output that:
+
+- Adds unsupported tickers or issuers.
+- Changes rankings, scores, dates, caveats, quality flags, periods, accession numbers, or null semantics.
+- Converts missing values into factual claims.
+- Describes compact evidence as full evidence.
+- Adds external news.
+- Invents causality.
+- Includes investment advice or trade language.
+- Omits required Markdown sections.
+- Omits or changes the required disclaimer.
+
+If APEX output fails validation, the backend may return deterministic fallback when fallback succeeds.
+
+## Access Model
+
+TestFlight and production clients authenticate through the StrategiX backend relay.
+
+The backend holds internal Delta Signal credentials and may call the MCP/x402-capable Delta Signal surface. Client applications must not embed internal Delta Signal credentials and must not execute wallet, settlement, or payment flows inside the StrategiX app.
+
+For public x402 access, payment handling is performed by the server-side route infrastructure. Payment failure returns HTTP `402`.
+
+## Recommended Agent Behavior
+
+If a user asks for a live Delta Signal Morning Brief:
+
+- Route to the backend `deltasignal_morning_brief` composite.
+- Render the returned compact evidence only.
+- Do not generate X drafts, Substack notes, article candidates, or drilldown branches unless the user asks after evidence is returned.
+
+If a user asks for a Company Report:
+
+- Require a ticker.
+- Route to the backend `deltasignal_company_report` composite.
+- Do not substitute a default ticker.
+
+If a user asks for a Scenario:
+
+- Use reliable `scenario_id` presets routed to server-enforced composite tools.
+- Use granular tools only for advanced or custom drilldowns.
+
+If Delta Signal mode is off:
+
+- Do not call Delta Signal tools.
+- Use provided context only.
+
+## Non-Advice Policy
+
+Delta Signal Natural Language Briefs are diligence triage and risk-sizing summaries. They are not personalized financial advice.
+
+Do not generate:
+
+- Buy recommendations.
+- Sell recommendations.
+- Short recommendations.
+- Long recommendations.
+- Hold recommendations.
+- Entry levels.
+- Exit levels.
+- Stop losses.
+- Price targets.
+- Guaranteed outcomes.
+- High-conviction trade calls.
+
+Use evidence-preserving language:
+
+- Returned evidence shows.
+- Source evidence returned.
+- Not returned.
+- Unavailable.
+- Compact payload.
+- Caveat applies.
+- Quality flag returned.
+- Follow-up drilldown.
+
+Avoid unsupported language:
+
+- Will move.
+- Should buy.
+- Should sell.
+- Insolvency risk unless returned.
+- Default risk unless returned.
+- Covenant breach unless returned.
+- Bankruptcy risk unless returned.
+- No risk because data is missing.
