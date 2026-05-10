@@ -1077,6 +1077,7 @@
         <div class="hero-actions">
           <a href="https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7" class="btn btn-primary" target="_blank" rel="noopener">Start with Smithery</a>
           <a href="https://api.aitrailblazer.net/openapi.json" class="btn btn-secondary" target="_blank" rel="noopener">View Open API</a>
+          <a href="./quickstart.md" class="btn btn-secondary">Read Quickstart</a>
         </div>
         <p class="meter">x402 verified • Glama verified • MCP live • Open API published • First 5 calls free • Base USDC settlement</p>
         <div class="signal-visual" aria-label="Animated DeltaSignal data flow visualization">
@@ -1174,6 +1175,32 @@ codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
   }
 }</div>
         </ds-install-tabs>
+      </div>
+    </section>
+
+    <section class="section" id="developer-docs">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Developer docs for Natural Language briefs</h2>
+          <p>Use the Quickstart for route-level integration and the LLM guide for agent behavior, evidence boundaries, renderer metadata, and non-advice constraints.</p>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="./quickstart.md">
+            <strong>Quickstart</strong>
+            <span>Call the Phase 1 Natural Language routes, inspect response metadata, handle fallback modes, and wire SDK clients safely.</span>
+            <code>/quickstart.md</code>
+          </a>
+          <a class="link-card" href="./llms.txt">
+            <strong>LLM Instructions</strong>
+            <span>Agent-facing rules for treating Natural Language Briefs as evidence-to-Markdown compiler outputs, not autonomous advice.</span>
+            <code>/llms.txt</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
+            <strong>OpenAPI 3.1</strong>
+            <span>Public route contract for raw, composite, x402, and Natural Language Delta Signal surfaces.</span>
+            <code>https://api.aitrailblazer.net/openapi.json</code>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -1348,6 +1375,16 @@ codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
             <strong>OpenAPI Spec</strong>
             <span>Inspect the public REST, MCP JSON-RPC, and composite-tool discovery metadata used by validators.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
+          </a>
+          <a class="link-card" href="./quickstart.md">
+            <strong>Natural Briefs Quickstart</strong>
+            <span>Route examples, response schema, renderer modes, validation model, caching rules, and SDK snippets.</span>
+            <code>./quickstart.md</code>
+          </a>
+          <a class="link-card" href="./llms.txt">
+            <strong>Agent Rules</strong>
+            <span>LLM-readable guidance for Delta Signal Natural Language Briefs, evidence boundaries, and non-advice policy.</span>
+            <code>./llms.txt</code>
           </a>
         </div>
       </div>
