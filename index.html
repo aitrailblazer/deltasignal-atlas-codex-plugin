@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DeltaSignal ATLAS-7 - x402 verified real-time financial intelligence MCP server for crypto public companies, with compact daily monitoring and paginated evidence drilldowns.">
-  <title>DeltaSignal ATLAS-7 • Real-Time Crypto Intelligence</title>
+  <meta name="description" content="DeltaSignal ATLAS-7 - SEC-grounded risk, fundamentals, daily monitoring, evidence drilldowns, and signal intelligence for crypto-exposed public companies through MCP, OpenAPI, and x402.">
+  <title>DeltaSignal ATLAS-7 • SEC-Grounded Issuer Intelligence</title>
   <link rel="icon" href="./assets/logo.png" type="image/png">
   <meta property="og:image" content="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/assets/logo.png">
   <meta name="twitter:image" content="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/assets/logo.png">
@@ -420,6 +420,15 @@
       gap: 1rem;
     }
 
+    ds-copy-prompt,
+    ds-install-tabs,
+    ds-pricing-toggle,
+    ds-x402-checklist,
+    ds-route-example,
+    ds-natural-tier-banner {
+      display: block;
+    }
+
     .prompt {
       min-height: 116px;
       padding: 1.25rem;
@@ -431,6 +440,41 @@
       color: #ffe8d9;
       font-size: 1.05rem;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .feature {
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255,154,26,.06), rgba(227,0,85,.05)),
+        var(--panel);
+    }
+
+    .feature strong {
+      display: block;
+      color: #ffd1a3;
+      margin-bottom: 0.45rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .mini-note {
+      max-width: 860px;
+      margin: 1rem auto 0;
+      color: var(--muted);
+      text-align: center;
     }
 
     .steps {
@@ -904,6 +948,7 @@
       }
 
       .prompt-grid,
+      .feature-grid,
       .steps,
       .flow-map,
       .ticker-panel,
@@ -1022,18 +1067,18 @@
     <section class="hero">
       <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="eyebrow">✅ x402 Verified on agentic.market Bazaar</p>
+        <p class="eyebrow">x402 verified • MCP live • Open API published</p>
         <img src="./assets/logo.png" class="logo" alt="DeltaSignal logo">
         <h1><span>DeltaSignal</span><span>ATLAS-7</span></h1>
         <p class="tagline">
-          Real-time financial intelligence for crypto public companies.
-          <span>Agents ask in plain English, with composite MCP presets for daily scans, issuer reports, risk boards, and alpha sweeps.</span>
+          SEC-grounded risk, fundamentals, and signal intelligence for crypto-exposed public companies.
+          <span>Ask an agent for morning briefs, issuer reports, pressure boards, alpha sweeps, covenant stress, peer rankings, and filing-backed fundamentals.</span>
         </p>
         <div class="hero-actions">
-          <a href="https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7" class="btn btn-primary" target="_blank" rel="noopener">Launch on Smithery → Start in 60 seconds</a>
-          <a href="#examples" class="btn btn-secondary">See example prompts</a>
+          <a href="https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7" class="btn btn-primary" target="_blank" rel="noopener">Start with Smithery</a>
+          <a href="https://api.aitrailblazer.net/openapi.json" class="btn btn-secondary" target="_blank" rel="noopener">View Open API</a>
         </div>
-        <p class="meter">First 5 calls free • Automatic x402 micropayments • Base USDC settlement • Works with Codex, Claude, Cursor, OpenClaw, and Smithery</p>
+        <p class="meter">x402 verified • Glama verified • MCP live • Open API published • First 5 calls free • Base USDC settlement</p>
         <div class="signal-visual" aria-label="Animated DeltaSignal data flow visualization">
           <div class="visual-header">
             <span>Discovery + Payment Rail</span>
@@ -1076,55 +1121,49 @@
     <section class="section alt" id="examples">
       <div class="wrap">
         <div class="section-head">
-          <h2>Just Talk Naturally</h2>
-          <p>Copy-paste these prompts into your coding agent. They use crypto public company coverage, not generic crypto price chatter.</p>
+          <h2>The first five things users can ask</h2>
+          <p>Start with plain-English workflows. Composite MCP presets bundle the right evidence routes behind one request.</p>
         </div>
         <div class="prompt-grid">
-          <div class="prompt">"Give me a DeltaSignal morning brief."</div>
-          <div class="prompt">"Run a DeltaSignal company report for RIOT."</div>
-          <div class="prompt">"Show me the current pressure board."</div>
-          <div class="prompt">"Run an alpha sweep for the current universe."</div>
-          <div class="prompt">"Quick check MARA before I drill into it."</div>
-          <div class="prompt">"Give me the latest alpha signals on COIN and MSTR."</div>
-          <div class="prompt">"How risky is MARA compared to RIOT on covenants?"</div>
-          <div class="prompt">"Give me fundamentals and recent changes for Coinbase."</div>
-          <div class="prompt">"Show peer ranking for BTC-related public companies."</div>
-          <div class="prompt">"Give me a watchlist summary for COIN, MSTR, MARA, and RIOT."</div>
+          <ds-copy-prompt prompt="Give me a Delta Signal morning brief."><div class="prompt">"Give me a Delta Signal morning brief."</div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Run a Delta Signal company report for RIOT."><div class="prompt">"Run a Delta Signal company report for RIOT."</div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Show me the current pressure board."><div class="prompt">"Show me the current pressure board."</div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Run an alpha sweep for the current universe."><div class="prompt">"Run an alpha sweep for the current universe."</div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Quick check MARA before I drill into it."><div class="prompt">"Quick check MARA before I drill into it."</div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Show peer ranking for BTC-related public companies."><div class="prompt">"Show peer ranking for BTC-related public companies."</div></ds-copy-prompt>
         </div>
       </div>
     </section>
 
-    <section class="section" id="mcp-gateway">
+    <section class="section" id="measures">
       <div class="wrap">
         <div class="section-head">
-          <h2>Install the MCP Server</h2>
-          <p>Use Smithery for the easiest path, or add the server directly to an MCP-compatible coding agent.</p>
+          <h2>What Delta Signal measures</h2>
+          <p>Delta Signal focuses on crypto-exposed public companies, not generic token chatter. SEC and XBRL evidence flows into issuer-level and market-wide tools.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">Step 01</div>
-            <h3>Connect on Smithery</h3>
-            <p>Open the Smithery page, click Connect, select Codex, Claude Desktop, Cursor, Windsurf, OpenClaw, or another MCP client, then copy the generated setup command.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">Step 02</div>
-            <h3>Restart Your Agent</h3>
-            <p>Restart the agent if tools do not appear immediately. Ask for DeltaSignal ATLAS-7 by name or call the tools directly.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">Step 03</div>
-            <h3>Run a Test Prompt</h3>
-            <p>Start with "Show me alpha signals for COIN" or "Rank MARA, RIOT, HUT, and CLSK by stress."</p>
-          </div>
+        <div class="feature-grid">
+          <div class="feature"><strong>Issuer Fundamentals</strong><span>SEC / XBRL-backed company facts.</span></div>
+          <div class="feature"><strong>Covenant Stress</strong><span>Debt and financial pressure indicators.</span></div>
+          <div class="feature"><strong>Peer Ranking</strong><span>Relative position inside comparable crypto public-company groups.</span></div>
+          <div class="feature"><strong>Alpha Signals</strong><span>Positive or negative signal pressure for one issuer.</span></div>
+          <div class="feature"><strong>Risk Distribution</strong><span>Market-wide or watchlist-level risk spread.</span></div>
+          <div class="feature"><strong>Daily Changes</strong><span>Compact monitoring of changed companies and evidence references.</span></div>
         </div>
-        <div class="code"><strong>Codex CLI</strong>
+      </div>
+    </section>
+
+    <section class="section alt" id="install">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Install in 60 seconds</h2>
+          <p>Use Smithery for the easiest path, install the Codex plugin, or point an MCP-compatible client directly at the hosted endpoint.</p>
+        </div>
+        <ds-install-tabs>
+          <div class="code"><strong>Smithery</strong>
 smithery mcp add aitrailblazer/deltasignal-atlas-7
 
 <strong>Codex plugin install</strong>
 codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
-
-<strong>Codex Marketplace fallback</strong>
-npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin --project
 
 <strong>Direct MCP config</strong>
 {
@@ -1133,70 +1172,142 @@ npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin 
       "url": "https://api.aitrailblazer.net/mcp"
     }
   }
-}
-
-<strong>OpenAPI</strong>
-https://api.aitrailblazer.net/openapi.json</div>
+}</div>
+        </ds-install-tabs>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="first-test">
       <div class="wrap">
         <div class="section-head">
-          <h2>MCP Gateway for DeltaSignal</h2>
-          <p>Glama can sit between an MCP client and the hosted DeltaSignal server, giving teams call logs, tool access control, and a clean remote connector without exposing backend source code.</p>
+          <h2>Run a first test</h2>
+          <p>After installing, restart your agent and run one starter prompt. If free calls are exhausted, compatible clients receive an x402 payment challenge.</p>
         </div>
-        <div class="mcp-stage" aria-label="Animated MCP gateway flow from agent clients to DeltaSignal ATLAS-7">
-          <div class="mcp-rail">
-            <span class="packet"></span>
-            <span class="packet response"></span>
-            <div class="mcp-node">Agent / MCP Client</div>
-            <div class="mcp-node glama">Glama Connector</div>
-            <div class="mcp-node server">DeltaSignal MCP Server</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">Beginner</div>
+            <h3>Daily picture</h3>
+            <p>Give me a Delta Signal morning brief.</p>
           </div>
-          <div class="mcp-caption">
-            <div class="mcp-chip">
-              <strong>Request</strong>
-              <span>Codex, Claude, Cursor, or another agent asks for issuer intelligence.</span>
-            </div>
-            <div class="mcp-chip">
-              <strong>Control</strong>
-              <span>Glama records calls and controls which MCP tools are available.</span>
-            </div>
-            <div class="mcp-chip">
-              <strong>Compute</strong>
-              <span>ATLAS-7 resolves SEC-grounded signals for crypto public companies.</span>
-            </div>
-            <div class="mcp-chip">
-              <strong>Settle</strong>
-              <span>Starter calls are free; paid calls settle through x402 Base USDC. Daily Monitoring and Evidence Drilldown are separate $0.03 routes.</span>
-            </div>
+          <div class="step">
+            <div class="step-number">Issuer-focused</div>
+            <h3>Company report</h3>
+            <p>Run a Delta Signal company report for RIOT.</p>
           </div>
-          <div class="mcp-tools">
-            <span>morning_brief</span>
-            <span>company_report</span>
-            <span>pressure_board</span>
-            <span>alpha_sweep</span>
-            <span>quick_ticker_check</span>
-            <span>readiness</span>
-            <span>alpha_signals</span>
-            <span>covenant_stress</span>
-            <span>top_stressed</span>
-            <span>peer_ranking</span>
-            <span>company_fundamentals</span>
-            <span>risk_distribution</span>
-            <span>daily_changes</span>
-            <span>daily_change_evidence</span>
+          <div class="step">
+            <div class="step-number">Analyst</div>
+            <h3>Peer context</h3>
+            <p>Show peer ranking for BTC-related public companies.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">Evidence</div>
+            <h3>Daily drilldown</h3>
+            <p>Show daily change evidence for ARKB with source date 2026-05-08.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="verified-discovery">
+    <section class="section alt" id="workflows">
       <div class="wrap">
         <div class="section-head">
-          <h2>Verified Discovery Surfaces</h2>
-          <p>Use the remote Connector for closed-source MCP access, or point agents directly at the live MCP and OpenAPI endpoints.</p>
+          <h2>Use composite presets for common workflows</h2>
+          <p>Most users should start here. Granular tools are available when you need exact route-level control.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="tool"><strong>morning_brief</strong><span>Daily scan: readiness, changes, risk distribution, top stressed, and alpha opportunities. 18 credits / $0.18.</span></div>
+          <div class="tool"><strong>company_report</strong><span>Full issuer report across fundamentals, alpha, peers, and covenant stress. 30 credits / $0.30.</span></div>
+          <div class="tool"><strong>pressure_board</strong><span>Risk board with top stressed(limit=15) and risk distribution. 14 credits / $0.14.</span></div>
+          <div class="tool"><strong>alpha_sweep</strong><span>Opportunity screen with alpha opportunities(limit=15) and daily changes. 14 credits / $0.14.</span></div>
+          <div class="tool"><strong>quick_ticker_check</strong><span>Fast issuer triage using covenant stress and alpha signals. 18 credits / $0.18.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="natural-language">
+      <div class="wrap">
+        <ds-natural-tier-banner>
+          <div class="feature">
+            <strong>Natural Language briefs</strong>
+            <span>Raw and composite routes return structured evidence. Natural Language routes compile that evidence into validated Markdown while preserving source dates, caveats, quality flags, evidence hashes, and non-advice disclaimers.</span>
+          </div>
+        </ds-natural-tier-banner>
+        <div style="margin-top:1.5rem;">
+          <ds-pricing-toggle>
+            <div class="tool-grid">
+              <div class="tool"><strong>top_stressed_natural</strong><span>Live. $0.95. Evidence-preserving Markdown brief for highest-stress issuers.</span></div>
+              <div class="tool"><strong>morning_brief_natural</strong><span>Planned. $1.80. Backend-composed Natural Language Morning Brief.</span></div>
+              <div class="tool"><strong>covenant_stress_natural</strong><span>Planned. $1.20. Ticker-specific covenant evidence brief.</span></div>
+            </div>
+          </ds-pricing-toggle>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="tools">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Granular tools for exact control</h2>
+          <p>Use these after you know which workflow, issuer, or evidence layer you want to inspect.</p>
+        </div>
+        <div class="code">@DeltaSignal readiness
+@DeltaSignal alpha_signals ticker:COIN
+@DeltaSignal covenant_stress ticker:MARA
+@DeltaSignal peer_ranking ticker:COIN
+@DeltaSignal company_fundamentals ticker:MSTR
+@DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
+@DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT
+@DeltaSignal daily_changes
+@DeltaSignal daily_change_evidence ticker:ARKB source_date:2026-05-08 limit:100</div>
+
+        <div class="tool-grid" style="margin-top:2rem;">
+          <div class="tool"><strong>readiness</strong><span>Check whether Delta Signal is live and which data slice is active.</span></div>
+          <div class="tool"><strong>alpha_signals</strong><span>Find returned signal pressure for one issuer.</span></div>
+          <div class="tool"><strong>covenant_stress</strong><span>Inspect returned debt covenant and financial stress evidence.</span></div>
+          <div class="tool"><strong>top_stressed</strong><span>Rank the highest-stress crypto public companies.</span></div>
+          <div class="tool"><strong>peer_ranking</strong><span>Compare one issuer against its peer group.</span></div>
+          <div class="tool"><strong>risk_distribution</strong><span>Summarize risk spread across a watchlist.</span></div>
+          <div class="tool"><strong>company_fundamentals</strong><span>Retrieve SEC XBRL-backed fundamentals.</span></div>
+          <div class="tool"><strong>daily_changes</strong><span>Compact Daily Monitoring: freshness, counts, changed-company rows, and evidence refs. Typical public route price: $0.03.</span></div>
+          <div class="tool"><strong>daily_change_evidence</strong><span>Explicit issuer proof drilldown for raw tag evidence.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="route-builder">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Build a GET route</h2>
+          <p>Natural Language GET routes use query parameters, not JSON request bodies.</p>
+        </div>
+        <ds-route-example path="/v1/top-stressed/natural">
+          <div class="code">https://api.aitrailblazer.net/v1/top-stressed/natural?limit=10&amp;style=professional</div>
+        </ds-route-example>
+      </div>
+    </section>
+
+    <section class="section alt" id="x402">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Free calls first, x402 after</h2>
+          <p>The first 5 calls are free. After that, compatible agent clients can settle paid calls through x402 using USDC on Base.</p>
+        </div>
+        <ds-x402-checklist>
+          <div class="code"><strong>Beginner checklist</strong>
+1. Use Coinbase Wallet, Coinbase Smart Wallet, or another Base-compatible wallet.
+2. Switch the wallet network to Base.
+3. Add USDC on Base.
+4. Keep a little ETH on Base if your wallet asks for gas.
+5. Re-run the agent query after funding.</div>
+        </ds-x402-checklist>
+      </div>
+    </section>
+
+    <section class="section" id="verified-discovery">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Verified developer surfaces</h2>
+          <p>Technical buyers can inspect the hosted MCP endpoint, OpenAPI spec, Glama connector, and x402 payment rail after they understand the workflow.</p>
         </div>
         <div class="surface-stage" aria-label="Animated direct MCP and x402 discovery flows">
           <div class="surface-card">
@@ -1230,7 +1341,7 @@ https://api.aitrailblazer.net/openapi.json</div>
           </a>
           <a class="link-card" href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">
             <strong>Remote MCP Endpoint</strong>
-            <span>Connect MCP-compatible agents directly to the hosted DeltaSignal ATLAS-7 tool surface.</span>
+            <span>Connect MCP-compatible agents directly to the hosted Delta Signal ATLAS-7 tool surface.</span>
             <code>https://api.aitrailblazer.net/mcp</code>
           </a>
           <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
@@ -1241,88 +1352,13 @@ https://api.aitrailblazer.net/openapi.json</div>
         </div>
       </div>
     </section>
-
-    <section class="section alt">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Fund Usage After the Free Calls</h2>
-          <p>The first 5 calls are free. Paid calls use USDC on Base through x402 micropayments.</p>
-        </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">Wallet</div>
-            <h3>Use a Base-Compatible Wallet</h3>
-            <p>Coinbase Wallet, Coinbase Smart Wallet, or another Base-compatible wallet works. Switch the wallet network to Base.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">USDC</div>
-            <h3>Add Base USDC</h3>
-            <p>Start with $1-$5 for testing. Buy USDC on Coinbase and send it to your wallet on Base.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">Settle</div>
-            <h3>Approve x402 Payments</h3>
-            <p>When the agent receives a 402 payment challenge, approve it or let your x402-compatible client settle the request.</p>
-          </div>
-        </div>
-        <div class="code"><strong>Payment rail</strong>
-Network: Base / eip155:8453
-Asset: USDC
-Access model: first 5 calls free, then x402 pay-per-call
-
-<strong>Beginner checklist</strong>
-1. Install Coinbase Wallet or open Coinbase Smart Wallet.
-2. Switch the network to Base.
-3. Add USDC on Base.
-4. Keep a little ETH on Base if your wallet asks for gas.
-5. Re-run the agent query after the wallet is funded.</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Precise Tool Calls</h2>
-          <p>Use composite presets for common workflows. Use Daily Monitoring for compact changes, then Evidence Drilldown for raw issuer proof.</p>
-        </div>
-        <div class="code">@DeltaSignal morning_brief
-@DeltaSignal company_report ticker:RIOT
-@DeltaSignal pressure_board
-@DeltaSignal alpha_sweep
-@DeltaSignal quick_ticker_check ticker:MARA
-@DeltaSignal alpha_signals ticker:COIN
-@DeltaSignal covenant_stress ticker:MARA
-@DeltaSignal peer_ranking ticker:COIN
-@DeltaSignal company_fundamentals ticker:MSTR
-@DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
-@DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT
-@DeltaSignal daily_changes
-@DeltaSignal daily_change_evidence ticker:ARKB source_date:2026-05-08 limit:100</div>
-
-        <div class="tool-grid" style="margin-top:2rem;">
-          <div class="tool"><strong>morning_brief</strong><span>Daily scan: readiness, changes, risk distribution, top stressed, and alpha opportunities. 18 credits / $0.18.</span></div>
-          <div class="tool"><strong>company_report</strong><span>Full issuer report across fundamentals, alpha, peers, and covenant stress. 30 credits / $0.30.</span></div>
-          <div class="tool"><strong>pressure_board</strong><span>Risk board with top stressed(limit=15) and risk distribution. 14 credits / $0.14.</span></div>
-          <div class="tool"><strong>alpha_sweep</strong><span>Opportunity screen with alpha opportunities(limit=15) and daily changes. 14 credits / $0.14.</span></div>
-          <div class="tool"><strong>quick_ticker_check</strong><span>Fast issuer triage using covenant stress and alpha signals. 18 credits / $0.18.</span></div>
-          <div class="tool"><strong>readiness</strong><span>Check whether DeltaSignal is live and which data slice is active.</span></div>
-          <div class="tool"><strong>alpha_signals</strong><span>Find positive or negative signal pressure for one issuer.</span></div>
-          <div class="tool"><strong>covenant_stress</strong><span>Estimate debt covenant and financial stress risk.</span></div>
-          <div class="tool"><strong>top_stressed</strong><span>Rank the highest-stress crypto public companies.</span></div>
-          <div class="tool"><strong>peer_ranking</strong><span>Compare one issuer against its peer group.</span></div>
-          <div class="tool"><strong>risk_distribution</strong><span>Summarize risk spread across a watchlist.</span></div>
-          <div class="tool"><strong>company_fundamentals</strong><span>Retrieve SEC XBRL-backed fundamentals.</span></div>
-          <div class="tool"><strong>daily_changes</strong><span>Compact Daily Monitoring: freshness, counts, changed-company rows, and evidence refs. Typical public route price: $0.03.</span></div>
-          <div class="tool"><strong>daily_change_evidence</strong><span>Issuer-specific proof drilldown with paginated raw Company Facts tags. Requires ticker or CIK. Typical public route price: $0.03.</span></div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
-    DeltaSignal ATLAS-7 • SEC-grounded crypto public company intelligence • No subscription required
+    Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
+  <script type="module" src="./assets/delta-signal-landing.js"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");
