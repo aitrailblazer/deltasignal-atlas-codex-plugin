@@ -1,7 +1,7 @@
 import { LitElement, css, html } from "https://cdn.jsdelivr.net/npm/lit@3/+esm";
 
 const rawRoutes = [
-  ["morning_brief", "$0.18", "Daily scan: readiness, daily changes, risk distribution, top stressed, and alpha opportunities."],
+  ["morning_brief", "backend-composed", "Server-side workflow through the Go relay for readiness, daily changes, risk distribution, top stressed, and alpha opportunities."],
   ["company_report", "$0.30", "Full issuer report across fundamentals, alpha signals, peer ranking, and covenant stress."],
   ["pressure_board", "$0.14", "Risk board with top stressed issuers and risk distribution."],
   ["alpha_sweep", "$0.14", "Opportunity screen with alpha opportunities and daily changes."],
@@ -16,6 +16,8 @@ const naturalRoutes = [
   ["peer_ranking_natural", "$1.10", "Planned Phase 2 peer-positioning brief."],
   ["alpha_signals_natural", "$1.30", "Planned Phase 2 alpha signal brief with strict non-advice validation."],
   ["company_fundamentals_natural", "$1.40", "Planned Phase 2 fundamentals brief over SEC/XBRL evidence."],
+  ["risk_distribution_natural", "$0.90", "Planned Phase 3 market-wide risk distribution brief."],
+  ["daily_changes_natural", "$0.85", "Planned Phase 3 compact daily movement brief."],
 ];
 
 const installTabs = {
