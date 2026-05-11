@@ -32,12 +32,6 @@ codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
 smithery login
 smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code`,
   },
-  smithery: {
-    label: "Coinbase + Smithery",
-    code: `npx @coinbase/payments-mcp install --client claude-code
-smithery login
-smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code`,
-  },
 };
 
 const x402Steps = [
@@ -157,6 +151,8 @@ class DSInstallTabs extends LitElement {
       background: #0c0a09;
       color: #ffe4cf;
       font: 0.98rem/1.8 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-variant-ligatures: none;
+      font-feature-settings: "liga" 0, "calt" 0;
       white-space: pre-wrap;
     }
     .copy { margin-top: 0.8rem; }
@@ -190,7 +186,7 @@ class DSInstallTabs extends LitElement {
           </button>
         `)}
       </div>
-      <pre><code>${current.code}</code></pre>
+      <pre translate="no" spellcheck="false"><code>${current.code}</code></pre>
       <button class="copy" type="button" @click=${this.copy}>${this.copied ? "Copied" : "Copy"}</button>
     `;
   }

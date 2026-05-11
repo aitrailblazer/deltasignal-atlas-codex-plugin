@@ -523,6 +523,8 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       font-size: 0.98rem;
       line-height: 1.85;
+      font-variant-ligatures: none;
+      font-feature-settings: "liga" 0, "calt" 0;
       white-space: pre-wrap;
     }
 
@@ -1160,16 +1162,11 @@
           <p>Start with Coinbase payments for Codex or Claude Code on the public x402 route.</p>
         </div>
         <ds-install-tabs>
-          <div class="code"><strong>Coinbase + Codex</strong>
+          <div class="code" translate="no" spellcheck="false"><strong>Coinbase + Codex</strong>
 npx @coinbase/payments-mcp install
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 
 <strong>Coinbase + Claude Code</strong>
-npx @coinbase/payments-mcp install --client claude-code
-smithery login
-smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code
-
-<strong>Coinbase + Smithery</strong>
 npx @coinbase/payments-mcp install --client claude-code
 smithery login
 smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code</div>
@@ -1446,7 +1443,7 @@ smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code</div>
     Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
-  <script type="module" src="./assets/delta-signal-landing.js?v=public-mcp-only-20260511"></script>
+  <script type="module" src="./assets/delta-signal-landing.js?v=two-public-install-tabs-20260511"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");
