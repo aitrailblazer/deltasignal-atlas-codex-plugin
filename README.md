@@ -1,5 +1,10 @@
 # DeltaSignal ATLAS-7 - SEC-Grounded Issuer Intelligence for Agents
 
+[![MCP Live](https://img.shields.io/badge/MCP-live-ff9a1a)](https://api.aitrailblazer.net/mcp)
+[![x402 Live](https://img.shields.io/badge/x402-Base%20USDC-e30055)](https://api.aitrailblazer.net/.well-known/x402)
+[![Arazzo Workflows](https://img.shields.io/badge/Arazzo-1.0.1-54d69d)](./arazzo/deltasignal-arazzo.yaml)
+[![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
+
 Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies.
 
 Native MCP server plus x402 micropayments. First 5 calls are free where supported, then Base USDC through compatible x402 clients. No subscription required.
@@ -29,6 +34,16 @@ flowchart LR
 ```
 
 Agents do not need a special Arazzo runner to use this today. MCP clients can read the scenario definitions, select one of the exposed MCP composite tools, or follow the OpenAPI route sequence step by step. Public clients use x402 when a route returns `402 Payment Required`; internal keyed validation is first-party testing only.
+
+## Key Surfaces
+
+- **MCP endpoint** - `https://api.aitrailblazer.net/mcp`
+- **OpenAPI 3.1** - `https://api.aitrailblazer.net/openapi.json`
+- **x402 discovery** - `https://api.aitrailblazer.net/.well-known/x402`
+- **Arazzo YAML** - [`arazzo/deltasignal-arazzo.yaml`](./arazzo/deltasignal-arazzo.yaml) and root mirror [`deltasignal-arazzo.yaml`](./deltasignal-arazzo.yaml)
+- **Arazzo JSON** - [`arazzo/deltasignal-arazzo.json`](./arazzo/deltasignal-arazzo.json) and root mirror [`deltasignal-arazzo.json`](./deltasignal-arazzo.json)
+- **Public handshake workflow** - [`arazzo/publicMcpX402Handshake.arazzo.yaml`](./arazzo/publicMcpX402Handshake.arazzo.yaml)
+- **Glama Connector** - [`net.aitrailblazer.api/delta-signal-atlas-7`](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 
 ## Quick Start
 
@@ -63,6 +78,7 @@ The workflow layer is published as Arazzo `1.0.1`:
 
 - YAML: [`arazzo/deltasignal-arazzo.yaml`](./arazzo/deltasignal-arazzo.yaml)
 - JSON: [`arazzo/deltasignal-arazzo.json`](./arazzo/deltasignal-arazzo.json)
+- Public handshake only: [`arazzo/publicMcpX402Handshake.arazzo.yaml`](./arazzo/publicMcpX402Handshake.arazzo.yaml)
 
 These workflows are scenario guidance for agents. They do not replace OpenAPI or MCP; they tell an agent which operations/tools to call for a user intent.
 
@@ -167,6 +183,19 @@ Granular tools:
 - `deltasignal_daily_change_evidence`
 
 All tools are read-only, schema-validated, and bounded for agent use.
+
+## Natural Language Briefs
+
+Raw and composite routes return structured evidence. Natural Language routes compile that evidence into validated Markdown while preserving source dates, caveats, quality flags, evidence hashes, and non-advice disclaimers.
+
+Current public route:
+
+- `top_stressed_natural` - live, `$0.95`, evidence-preserving Markdown brief for highest-stress issuers.
+
+Planned routes:
+
+- `morning_brief_natural` - `$1.80`
+- `covenant_stress_natural` - `$1.20`
 
 ## Access Model
 

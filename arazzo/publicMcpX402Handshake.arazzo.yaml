@@ -1,0 +1,66 @@
+arazzo: 1.0.1
+info:
+  title: DeltaSignal ATLAS-7 Public MCP x402 Handshake
+  summary: Public discovery and payment onboarding for the DeltaSignal MCP server.
+  description: >
+    Agents without internal keys should use this workflow to confirm public
+    MCP discovery and x402 payment behavior. The client issues tools/list,
+    receives a 402 challenge, pays through an x402-capable payment client,
+    then retries the same MCP request.
+  version: 1.0.0
+sourceDescriptions:
+  - name: deltasignalOpenAPI
+    type: openapi
+    url: https://api.aitrailblazer.net/openapi.json
+  - name: deltasignalX402
+    type: other
+    url: https://api.aitrailblazer.net/.well-known/x402
+workflows:
+  - workflowId: publicMcpX402Handshake
+    summary: Public MCP onboarding and payment check.
+    description: >
+      Confirms that POST /mcp is public x402-first. No internal key is sent.
+      x402-capable clients handle the payment step outside the Arazzo runner,
+      then retry the identical MCP request with payment proof.
+    x-audience: public
+    x-payment-rail: x402
+    x-agent-intent:
+      - onboarding
+      - payment_handshake
+      - mcp_discovery
+    inputs:
+      type: object
+      properties:
+        mcpRequest:
+          type: object
+          description: Original JSON-RPC request body.
+          default:
+            jsonrpc: "2.0"
+            id: tools
+            method: tools/list
+            params: {}
+    steps:
+      - stepId: unauthenticatedToolsList
+        description: Call POST /mcp with tools/list and no internal auth header.
+        operationId: callDeltaSignalMCP
+        x-deltasignal-path: /mcp
+        x-http-method: POST
+        x-payment-rail: x402
+        x-expected-status: 402
+        requestBody:
+          payload: $inputs.mcpRequest
+        successCriteria:
+          - condition: $statusCode == 402
+        failureActions:
+          - name: unexpectedMcpResponse
+            type: end
+            criteria:
+              - condition: $statusCode != 402
+        x-agent-next-action: >
+          Let the x402 client pay the returned challenge, then retry this same
+          MCP request. Do not use x-api-key or mcp-api-key for public clients.
+    outputs:
+      initialStatus: $statusCode
+      paymentRail: x402
+      mcpEndpoint: https://api.aitrailblazer.net/mcp
+      x402Discovery: https://api.aitrailblazer.net/.well-known/x402
