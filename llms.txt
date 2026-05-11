@@ -205,7 +205,7 @@ TestFlight and production clients authenticate through the StrategiX backend rel
 
 The backend holds internal Delta Signal credentials and may call the MCP/x402-capable Delta Signal surface. Client applications must not embed internal Delta Signal credentials and must not execute wallet, settlement, or payment flows inside the StrategiX app.
 
-For public x402 access, payment handling is performed by the server-side route infrastructure. Payment failure returns HTTP `402`.
+For public x402 access, payment handling is performed by the server-side route infrastructure. Payment failure returns HTTP `402`. Direct MCP with an `x-api-key` header is reserved for local validation and internal testing only; do not present API-key setup as the public buyer path.
 
 Coinbase x402 and Agentic Market callers must use the Base route family under `https://api.aitrailblazer.net/v1/*`. Before spending USDC, run a no-payment x402 discovery probe against `GET /v1/readiness` and confirm `x402Version=2`, `network=eip155:8453`, Base USDC asset `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`, `amount=40000` atomic USDC (`$0.04`), seller `payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`, and `extensions.bazaar.routeTemplate=/v1/readiness`.
 

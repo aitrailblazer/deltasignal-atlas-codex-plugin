@@ -22,7 +22,7 @@ const naturalRoutes = [
 
 const installTabs = {
   coinbase: {
-    label: "Coinbase + Codex",
+    label: "Coinbase x402 + Codex",
     code: `npx @coinbase/payments-mcp install
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
   },
@@ -30,19 +30,15 @@ codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
     label: "Codex Marketplace",
     code: "codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin",
   },
-  smithery: {
-    label: "Smithery",
-    code: "smithery mcp add aitrailblazer/deltasignal-atlas-7",
+  claude: {
+    label: "Claude Code x402",
+    code: `npx @coinbase/payments-mcp install --client claude-code
+# Use Coinbase x402 routes under https://api.aitrailblazer.net/v1/*`,
   },
-  mcp: {
-    label: "Direct MCP",
-    code: `{
-  "mcpServers": {
-    "deltasignal-atlas-7": {
-      "url": "https://api.aitrailblazer.net/mcp"
-    }
-  }
-}`,
+  smithery: {
+    label: "Smithery MCP",
+    code: `smithery login
+smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code`,
   },
   openapi: {
     label: "Open API",
@@ -56,6 +52,7 @@ const x402Steps = [
   "Add the DeltaSignal Codex marketplace with codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin.",
   "Use Coinbase x402 and Agentic Market routes under https://api.aitrailblazer.net/v1/*.",
   "Probe GET /v1/readiness before payment and confirm eip155:8453, Base USDC, amount=40000, and the DeltaSignal payTo wallet.",
+  "Use direct MCP with an x-api-key header only for local validation and internal testing.",
   "Confirm Bazaar metadata before claiming discovery validation.",
 ];
 

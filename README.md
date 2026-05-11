@@ -26,7 +26,17 @@ Restart Codex CLI after this step.
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 ```
 
-### 3. Coinbase x402 / Bazaar Route
+### 3. Claude Code x402 Client
+
+Claude Code can use the Coinbase payments MCP as a payment client option:
+
+```bash
+npx @coinbase/payments-mcp install --client claude-code
+```
+
+Direct MCP with an `x-api-key` header is for local validation and internal testing only. Public buyers should use the x402 `/v1/*` routes below.
+
+### 4. Coinbase x402 / Bazaar Route
 
 Use Coinbase x402 and Agentic Market on the Base route family:
 
@@ -52,7 +62,7 @@ Expected payment contract:
 
 Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
 
-### 4. Use
+### 5. Use
 
 ```bash
 @DeltaSignal morning_brief
@@ -73,7 +83,7 @@ Do not claim Agentic Market first-party verification until the Agentic Market UI
 
 - First 5 calls are free per user.
 - After the free tier, supported clients receive automatic x402 payment requirements in USDC.
-- Internal testing can use a pre-authorized API key without payment.
+- Internal testing can use a pre-authorized API key without payment on direct MCP. Do not publish API-key setup as the buyer path.
 - All tools are read-only, schema-validated, and closed-world.
 
 ## Available MCP Tools
