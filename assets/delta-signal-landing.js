@@ -24,11 +24,11 @@ const installTabs = {
   coinbase: {
     label: "Coinbase + Codex",
     code: `npx @coinbase/payments-mcp install
-codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin`,
+codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
   },
   codex: {
-    label: "Codex Plugin",
-    code: "codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin",
+    label: "Codex Marketplace",
+    code: "codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin",
   },
   smithery: {
     label: "Smithery",
@@ -53,6 +53,7 @@ codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin`,
 const x402Steps = [
   "Install Coinbase payments with npx @coinbase/payments-mcp install.",
   "Select Codex CLI, sign in, and fund with Base USDC.",
+  "Add the DeltaSignal Codex marketplace with codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin.",
   "Use Coinbase x402 and Agentic Market routes under https://api.aitrailblazer.net/v1/*.",
   "Probe GET /v1/readiness before payment and confirm eip155:8453, Base USDC, amount=40000, and the DeltaSignal payTo wallet.",
   "Confirm Bazaar metadata before claiming discovery validation.",

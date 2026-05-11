@@ -23,7 +23,7 @@ Restart Codex CLI after this step.
 ### 2. Install
 
 ```bash
-codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
+codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 ```
 
 ### 3. Coinbase x402 / Bazaar Route

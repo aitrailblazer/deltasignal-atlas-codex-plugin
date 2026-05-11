@@ -1163,8 +1163,8 @@
           <div class="code"><strong>Coinbase payments</strong>
 npx @coinbase/payments-mcp install
 
-<strong>Codex plugin install</strong>
-codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
+<strong>Codex marketplace add</strong>
+codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 
 <strong>Smithery alternate</strong>
 smithery mcp add aitrailblazer/deltasignal-atlas-7
@@ -1327,9 +1327,10 @@ smithery mcp add aitrailblazer/deltasignal-atlas-7
           <div class="code"><strong>Buyer setup</strong>
 1. Install Coinbase payments: npx @coinbase/payments-mcp install
 2. Select Codex CLI, sign in, and fund with Base USDC.
-3. Use Agentic Market or Coinbase x402 routes under https://api.aitrailblazer.net/v1/*
-4. Probe before payment: GET https://api.aitrailblazer.net/v1/readiness
-5. Expected contract: eip155:8453, Base USDC, amount=40000 ($0.04), payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3</div>
+3. Add DeltaSignal to Codex: codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
+4. Use Agentic Market or Coinbase x402 routes under https://api.aitrailblazer.net/v1/*
+5. Probe before payment: GET https://api.aitrailblazer.net/v1/readiness
+6. Expected contract: eip155:8453, Base USDC, amount=40000 ($0.04), payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3</div>
         </ds-x402-checklist>
       </div>
     </section>
@@ -1449,7 +1450,7 @@ smithery mcp add aitrailblazer/deltasignal-atlas-7
     Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
-  <script type="module" src="./assets/delta-signal-landing.js?v=coinbase-default-20260511"></script>
+  <script type="module" src="./assets/delta-signal-landing.js?v=codex-marketplace-20260511"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");
