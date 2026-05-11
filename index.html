@@ -1162,8 +1162,6 @@
         <ds-install-tabs>
           <div class="code"><strong>Coinbase + Codex</strong>
 npx @coinbase/payments-mcp install
-
-<strong>Codex plugin</strong>
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 
 <strong>Coinbase + Claude Code</strong>
@@ -1171,7 +1169,8 @@ npx @coinbase/payments-mcp install --client claude-code
 smithery login
 smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code
 
-<strong>Smithery alternate</strong>
+<strong>Coinbase + Smithery</strong>
+npx @coinbase/payments-mcp install --client claude-code
 smithery login
 smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code</div>
         </ds-install-tabs>
@@ -1447,7 +1446,7 @@ smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code</div>
     Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
-  <script type="module" src="./assets/delta-signal-landing.js?v=claude-atlas-install-20260511"></script>
+  <script type="module" src="./assets/delta-signal-landing.js?v=payment-all-install-tabs-20260511"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");

@@ -26,10 +26,6 @@ const installTabs = {
     code: `npx @coinbase/payments-mcp install
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
   },
-  codex: {
-    label: "Codex Plugin",
-    code: "codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin",
-  },
   claude: {
     label: "Coinbase + Claude Code",
     code: `npx @coinbase/payments-mcp install --client claude-code
@@ -37,13 +33,10 @@ smithery login
 smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code`,
   },
   smithery: {
-    label: "Smithery MCP",
-    code: `smithery login
+    label: "Coinbase + Smithery",
+    code: `npx @coinbase/payments-mcp install --client claude-code
+smithery login
 smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code`,
-  },
-  openapi: {
-    label: "Open API",
-    code: "https://api.aitrailblazer.net/openapi.json",
   },
 };
 
