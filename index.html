@@ -1196,6 +1196,11 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
             <span>Public route contract for raw, composite, x402, and Natural Language Delta Signal surfaces.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
           </a>
+          <a class="link-card" href="./arazzo/deltasignal-arazzo.yaml">
+            <strong>Arazzo Workflows</strong>
+            <span>Machine-readable scenario pipelines for MCP x402 handshake, market scans, issuer diligence, daily evidence, and composite preset selection.</span>
+            <code>./arazzo/deltasignal-arazzo.yaml</code>
+          </a>
         </div>
       </div>
     </section>
@@ -1234,15 +1239,20 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
     <section class="section alt" id="workflows">
       <div class="wrap">
         <div class="section-head">
-          <h2>Use composite presets for common workflows</h2>
-          <p>Most users should start here. Granular tools are available when you need exact route-level control.</p>
+          <h2>Six Arazzo-defined agent workflows</h2>
+          <p>Agents can follow scenario pipelines from access checks through analysis and composite MCP preset selection.</p>
         </div>
         <div class="tool-grid">
-          <div class="tool"><strong>morning_brief</strong><span>Backend-composed workflow through the Go relay for readiness, changes, risk distribution, top stressed, and alpha opportunities. Client apps do not compose this locally.</span></div>
-          <div class="tool"><strong>company_report</strong><span>Full issuer report across fundamentals, alpha, peers, and covenant stress. 30 credits / $0.30.</span></div>
-          <div class="tool"><strong>pressure_board</strong><span>Risk board with top stressed(limit=15) and risk distribution. 14 credits / $0.14.</span></div>
-          <div class="tool"><strong>alpha_sweep</strong><span>Opportunity screen with alpha opportunities(limit=15) and daily changes. 14 credits / $0.14.</span></div>
-          <div class="tool"><strong>quick_ticker_check</strong><span>Fast issuer triage using covenant stress and alpha signals. 18 credits / $0.18.</span></div>
+          <div class="tool"><strong>publicMcpX402Handshake</strong><span>POST /mcp without an internal key returns 402 so x402-capable public clients can pay and retry.</span></div>
+          <div class="tool"><strong>internalMcpToolSmoke</strong><span>First-party keyed validation on the same /mcp endpoint. Not public install guidance.</span></div>
+          <div class="tool"><strong>marketReadinessScan</strong><span>Readiness, risk distribution, top stressed, and alpha opportunities for market-wide triage.</span></div>
+          <div class="tool"><strong>singleIssuerDiligence</strong><span>Fundamentals, alpha signals, covenant stress, peer ranking, and optional ATLAS history for one ticker.</span></div>
+          <div class="tool"><strong>dailyMonitoringEvidenceDrilldown</strong><span>Compact daily changes first, then raw issuer evidence only when explicitly requested.</span></div>
+          <div class="tool"><strong>mcpCompositePresetSelection</strong><span>Use morning_brief, company_report, pressure_board, alpha_sweep, or quick_ticker_check for bounded server-side workflows.</span></div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a class="btn btn-primary" href="./arazzo/deltasignal-arazzo.yaml">Open Arazzo YAML</a>
+          <a class="btn btn-secondary" href="./arazzo/deltasignal-arazzo.json">Open Arazzo JSON</a>
         </div>
       </div>
     </section>
@@ -1424,6 +1434,11 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
             <span>Inspect the public REST, MCP JSON-RPC, and composite-tool discovery metadata used by validators.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
           </a>
+          <a class="link-card" href="./arazzo/deltasignal-arazzo.yaml">
+            <strong>Arazzo Workflow Spec</strong>
+            <span>Use scenario pipelines for public MCP x402 handshake, market scans, issuer diligence, daily evidence, and MCP composites.</span>
+            <code>./arazzo/deltasignal-arazzo.yaml</code>
+          </a>
           <a class="link-card" href="./quickstart.md">
             <strong>Natural Briefs Quickstart</strong>
             <span>Route examples, response schema, renderer modes, validation model, caching rules, and SDK snippets.</span>
@@ -1443,7 +1458,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
     Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
-  <script type="module" src="./assets/delta-signal-landing.js?v=public-claude-x402-20260511"></script>
+  <script type="module" src="./assets/delta-signal-landing.js?v=arazzo-workflows-20260511"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");

@@ -1,0 +1,533 @@
+{
+  "arazzo": "1.0.1",
+  "info": {
+    "title": "DeltaSignal ATLAS-7 Agent Workflows",
+    "summary": "Scenario pipelines for agents using DeltaSignal public x402 routes and the MCP JSON-RPC endpoint.",
+    "description": "This Arazzo document complements the DeltaSignal OpenAPI contract. OpenAPI describes individual operations; this file describes the recommended scenario pipelines that agents should follow for onboarding, market scans, single-issuer diligence, daily monitoring, and MCP composite presets.\n",
+    "version": "0.1.0"
+  },
+  "sourceDescriptions": [
+    {
+      "name": "deltasignalOpenAPI",
+      "type": "openapi",
+      "url": "https://api.aitrailblazer.net/openapi.json"
+    },
+    {
+      "name": "deltasignalX402",
+      "type": "other",
+      "url": "https://api.aitrailblazer.net/.well-known/x402"
+    }
+  ],
+  "x-deltasignal-contract": {
+    "publicBaseUrl": "https://api.aitrailblazer.net",
+    "mcpEndpoint": "https://api.aitrailblazer.net/mcp",
+    "publicPaymentRail": "x402",
+    "x402": {
+      "network": "eip155:8453",
+      "asset": "USDC",
+      "payTo": "0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3"
+    },
+    "internalBypass": {
+      "audience": "first_party_internal",
+      "headers": [
+        "x-api-key",
+        "mcp-api-key"
+      ],
+      "publicInstallGuidance": "Public clients should use x402, not internal key headers."
+    }
+  },
+  "workflows": [
+    {
+      "workflowId": "publicMcpX402Handshake",
+      "summary": "Discover and validate the public paid MCP route.",
+      "description": "Use this before a public agent attempts MCP tool calls. The first POST is expected to return HTTP 402 so an x402-capable client can pay and retry.\n",
+      "x-audience": "public",
+      "x-payment-rail": "x402",
+      "x-agent-intent": [
+        "onboarding",
+        "payment_handshake",
+        "mcp_discovery"
+      ],
+      "inputs": {
+        "type": "object",
+        "properties": {
+        }
+      },
+      "steps": [
+        {
+          "stepId": "postMcpToolsListWithoutPayment",
+          "description": "Call the MCP endpoint without payment to receive a Base x402 challenge.",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-payment-rail": "x402",
+          "x-expected-status": 402,
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "tools",
+              "method": "tools/list",
+              "params": {
+              }
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 402"
+            }
+          ],
+          "x-agent-next-action": "Retry the same request through an x402-capable client after payment."
+        }
+      ]
+    },
+    {
+      "workflowId": "internalMcpToolSmoke",
+      "summary": "First-party no-payment MCP smoke on the same endpoint.",
+      "description": "Internal Codex and Claude validation should stay as close as possible to the public MCP path by using POST /mcp with x-api-key or mcp-api-key. This workflow is not public install guidance.\n",
+      "x-audience": "internal",
+      "x-public-docs": false,
+      "x-payment-rail": "internal_api_key_bypass",
+      "x-agent-intent": [
+        "regression_smoke",
+        "mcp_tool_inventory",
+        "readiness_probe"
+      ],
+      "steps": [
+        {
+          "stepId": "listToolsWithInternalBypass",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-mcp-method": "tools/list",
+          "x-expected-status": 200,
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "tools",
+              "method": "tools/list",
+              "params": {
+              }
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            },
+            {
+              "condition": "$.result.tools.length >= 21"
+            }
+          ]
+        },
+        {
+          "stepId": "callReadinessTool",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-mcp-tool": "deltasignal_readiness",
+          "x-expected-status": 200,
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "readiness",
+              "method": "tools/call",
+              "params": {
+                "name": "deltasignal_readiness",
+                "arguments": {
+                }
+              }
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            },
+            {
+              "condition": "$.result.structuredContent.data.status == \"ok\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflowId": "marketReadinessScan",
+      "summary": "Market-wide operating picture for agents.",
+      "description": "Start here when a user asks what is happening across the crypto public issuer universe. This avoids issuer-level raw evidence until the agent has identified names worth drilling into.\n",
+      "x-audience": "public",
+      "x-payment-rail": "x402",
+      "x-agent-intent": [
+        "market_scan",
+        "readiness",
+        "pressure_board",
+        "alpha_screen"
+      ],
+      "steps": [
+        {
+          "stepId": "getReadiness",
+          "operationId": "getX402DeltaSignalReadiness",
+          "x-deltasignal-path": "/v1/readiness",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getRiskDistribution",
+          "operationId": "getX402RiskDistribution",
+          "x-deltasignal-path": "/v1/risk-distribution",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getTopStressed",
+          "operationId": "getX402TopStressedCryptoIssuers",
+          "x-deltasignal-path": "/v1/top-stressed",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "parameters": {
+            "query": {
+              "limit": 10
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getAlphaOpportunities",
+          "operationId": "getX402ListAlphaOpportunities",
+          "x-deltasignal-path": "/v1/alpha-opportunities",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "parameters": {
+            "query": {
+              "limit": 10
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        }
+      ],
+      "x-agent-output": {
+        "recommendedNextTools": [
+          "deltasignal_company_report",
+          "deltasignal_quick_ticker_check",
+          "deltasignal_daily_change_evidence"
+        ]
+      }
+    },
+    {
+      "workflowId": "singleIssuerDiligence",
+      "summary": "Full single-issuer diligence pipeline.",
+      "description": "Use this when the user names a ticker and wants a structured issuer view: fundamentals, alpha signal, covenant stress, peer rank, and optional historical ATLAS context.\n",
+      "x-audience": "public",
+      "x-payment-rail": "x402",
+      "x-agent-intent": [
+        "issuer_diligence",
+        "company_report",
+        "risk_and_alpha"
+      ],
+      "inputs": {
+        "type": "object",
+        "required": [
+          "ticker"
+        ],
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "pattern": "^[A-Z0-9.-]{1,10}$"
+          }
+        }
+      },
+      "steps": [
+        {
+          "stepId": "getCompanyFundamentals",
+          "operationId": "getX402CompanyFundamentals",
+          "x-deltasignal-path": "/v1/company-fundamentals/{ticker}",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "parameters": {
+            "path": {
+              "ticker": "$inputs.ticker"
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getAlphaSignals",
+          "operationId": "getX402AlphaSignals",
+          "x-deltasignal-path": "/v1/alpha-signals/{ticker}",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "parameters": {
+            "path": {
+              "ticker": "$inputs.ticker"
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getCovenantStress",
+          "operationId": "getX402CovenantStress",
+          "x-deltasignal-path": "/v1/covenant-stress/{ticker}",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "parameters": {
+            "path": {
+              "ticker": "$inputs.ticker"
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getPeerRanking",
+          "operationId": "getX402PeerCovenantRanking",
+          "x-deltasignal-path": "/v1/peer-ranking/{ticker}",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "parameters": {
+            "path": {
+              "ticker": "$inputs.ticker"
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getAtlasHistory",
+          "operationId": "getX402AtlasHistory",
+          "x-deltasignal-path": "/v1/atlas-history/{ticker}",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "x-optional": true,
+          "parameters": {
+            "path": {
+              "ticker": "$inputs.ticker"
+            },
+            "query": {
+              "limit": 30
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        }
+      ],
+      "x-mcp-equivalent": {
+        "operationId": "callDeltaSignalMCP",
+        "tool": "deltasignal_company_report",
+        "arguments": {
+          "ticker": "$inputs.ticker"
+        }
+      }
+    },
+    {
+      "workflowId": "dailyMonitoringEvidenceDrilldown",
+      "summary": "Daily changes followed by explicit evidence drilldown.",
+      "description": "Use the compact daily monitor first. Only request raw issuer evidence when the user asks why a specific issuer moved or when a downstream workflow needs source-level proof.\n",
+      "x-audience": "public",
+      "x-payment-rail": "x402",
+      "x-agent-intent": [
+        "daily_monitoring",
+        "evidence_drilldown",
+        "source_proof"
+      ],
+      "inputs": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "pattern": "^[A-Z0-9.-]{1,10}$"
+          },
+          "source_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "steps": [
+        {
+          "stepId": "getLatestDailyChanges",
+          "operationId": "getX402LatestDailyChanges",
+          "x-deltasignal-path": "/v1/daily-changes/latest",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        },
+        {
+          "stepId": "getDailyChangeEvidence",
+          "operationId": "getX402DailyChangeEvidence",
+          "x-deltasignal-path": "/v1/daily-changes/evidence",
+          "x-http-method": "GET",
+          "x-payment-rail": "x402",
+          "x-run-when": "User explicitly requests raw evidence for one issuer/change.",
+          "parameters": {
+            "query": {
+              "ticker": "$inputs.ticker",
+              "source_date": "$inputs.source_date",
+              "limit": 25
+            }
+          },
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflowId": "mcpCompositePresetSelection",
+      "summary": "Preferred MCP composite tools for agent UX.",
+      "description": "Use server-enforced composite tools when the user asks for common workflows. Do not manually fan out low-level calls unless the user asks for a custom analysis or the composite is unavailable.\n",
+      "x-audience": "public",
+      "x-payment-rail": "x402",
+      "x-agent-intent": [
+        "mcp_composite_presets",
+        "scenario_selection"
+      ],
+      "steps": [
+        {
+          "stepId": "morningBriefPreset",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-mcp-tool": "deltasignal_morning_brief",
+          "x-price-usd": 0.18,
+          "x-user-intent": "Daily market scan.",
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "morning_brief",
+              "method": "tools/call",
+              "params": {
+                "name": "deltasignal_morning_brief",
+                "arguments": {
+                }
+              }
+            }
+          }
+        },
+        {
+          "stepId": "companyReportPreset",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-mcp-tool": "deltasignal_company_report",
+          "x-price-usd": 0.3,
+          "x-user-intent": "Full single-ticker diligence package.",
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "company_report",
+              "method": "tools/call",
+              "params": {
+                "name": "deltasignal_company_report",
+                "arguments": {
+                  "ticker": "$inputs.ticker"
+                }
+              }
+            }
+          }
+        },
+        {
+          "stepId": "pressureBoardPreset",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-mcp-tool": "deltasignal_pressure_board",
+          "x-price-usd": 0.14,
+          "x-user-intent": "Risk-focused monitoring view.",
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "pressure_board",
+              "method": "tools/call",
+              "params": {
+                "name": "deltasignal_pressure_board",
+                "arguments": {
+                }
+              }
+            }
+          }
+        },
+        {
+          "stepId": "alphaSweepPreset",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-mcp-tool": "deltasignal_alpha_sweep",
+          "x-price-usd": 0.14,
+          "x-user-intent": "Opportunity-focused market screen.",
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "alpha_sweep",
+              "method": "tools/call",
+              "params": {
+                "name": "deltasignal_alpha_sweep",
+                "arguments": {
+                }
+              }
+            }
+          }
+        },
+        {
+          "stepId": "quickTickerCheckPreset",
+          "operationId": "callDeltaSignalMCP",
+          "x-deltasignal-path": "/mcp",
+          "x-http-method": "POST",
+          "x-mcp-tool": "deltasignal_quick_ticker_check",
+          "x-price-usd": 0.18,
+          "x-user-intent": "Fast single-name sanity check.",
+          "requestBody": {
+            "payload": {
+              "jsonrpc": "2.0",
+              "id": "quick_ticker_check",
+              "method": "tools/call",
+              "params": {
+                "name": "deltasignal_quick_ticker_check",
+                "arguments": {
+                  "ticker": "$inputs.ticker"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

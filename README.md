@@ -1,98 +1,136 @@
-# DeltaSignal ATLAS-7 - Native Codex MCP Server
+# DeltaSignal ATLAS-7 - SEC-Grounded Issuer Intelligence for Agents
 
-**Real-time intelligence signals** as a **native MCP server** for Codex CLI and other MCP agents.
+Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies.
 
-DeltaSignal ATLAS-7 gives your agent structured, validated tools for market signals, risk analysis, peer ranking, and fundamentals. Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. No subscription required.
+Native MCP server plus x402 micropayments. First 5 calls are free where supported, then Base USDC through compatible x402 clients. No subscription required.
 
-Also available on [Smithery](https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7) and as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7).
+Agents discover, pay, and execute deterministic workflows through MCP tools, OpenAPI routes, and Arazzo scenario definitions.
+
+Also available as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7). Smithery remains available as an alternate connector path.
 
 ## Quick Start
 
-### 1. Payment Setup
+### Codex + Coinbase
 
 ```bash
 npx @coinbase/payments-mcp install
-```
-
-- Select `Codex CLI`
-- Sign in with email
-- Fund your wallet with Base USDC
-
-Restart Codex CLI after this step.
-
-### 2. Install
-
-```bash
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 ```
 
-### 3. Claude Code
+Restart Codex CLI after install.
 
-Claude Code can use the same public MCP endpoint with Coinbase x402 payments:
+### Claude Code + Coinbase
 
 ```bash
 npx @coinbase/payments-mcp install --client claude-code
 claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.net/mcp
 ```
 
-### 4. Coinbase x402 / Bazaar Route
-
-Use Coinbase x402 and Agentic Market on the Base route family:
-
-- Base URL: `https://api.aitrailblazer.net`
-- x402 routes: `/v1/*`
-- payment: Base USDC
-- seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
-- discovery: Bazaar/CDP merchant resources for the seller `payTo`
-
-No-payment validation before spending:
+### Test Immediately
 
 ```text
-GET https://api.aitrailblazer.net/v1/readiness
+Give me a DeltaSignal morning brief.
+Run a DeltaSignal company report for RIOT.
+Show me the DeltaSignal pressure board.
+Run a quick ticker check for MARA.
 ```
 
-Expected payment contract:
+## Six Agent Workflows
 
-- `402 Payment Required`
-- `x402Version=2`
-- `network=eip155:8453`
-- `amount=40000` atomic USDC (`$0.04`)
-- `extensions.bazaar.routeTemplate=/v1/readiness`
+The workflow layer is published as Arazzo `1.0.1`:
 
-Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
+- YAML: [`arazzo/deltasignal-arazzo.yaml`](./arazzo/deltasignal-arazzo.yaml)
+- JSON: [`arazzo/deltasignal-arazzo.json`](./arazzo/deltasignal-arazzo.json)
 
-### 5. Use
+These workflows are scenario guidance for agents. They do not replace OpenAPI or MCP; they tell an agent which operations/tools to call for a user intent.
 
-```bash
-@DeltaSignal morning_brief
-@DeltaSignal company_report ticker:RIOT
-@DeltaSignal pressure_board
-@DeltaSignal alpha_sweep
-@DeltaSignal quick_ticker_check ticker:MARA
-@DeltaSignal alpha_signals ticker:COIN
-@DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
-@DeltaSignal company_fundamentals ticker:MSTR
-@DeltaSignal covenant_stress ticker:MARA
-@DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT
-@DeltaSignal daily_changes
-@DeltaSignal daily_change_evidence ticker:ARKB source_date:2026-05-08 limit:100
-```
+### 1. `publicMcpX402Handshake`
 
-## Access Model
+Public onboarding and payment check.
 
-- First 5 calls are free per user.
-- After the free tier, supported clients receive automatic x402 payment requirements in USDC.
-- All tools are read-only, schema-validated, and closed-world.
+Flow:
+
+1. Call `POST /mcp` with JSON-RPC `tools/list`.
+2. Do not send an internal key.
+3. Expect HTTP `402 Payment Required`.
+4. Let the x402-capable client pay and retry the same MCP request.
+
+Use this to confirm public paid MCP behavior before tool execution.
+
+### 2. `internalMcpToolSmoke`
+
+First-party internal no-payment smoke on the same MCP endpoint.
+
+Flow:
+
+1. Call `POST /mcp tools/list` with `x-api-key` or `mcp-api-key`.
+2. Expect HTTP `200`.
+3. Confirm the tool inventory.
+4. Call `deltasignal_readiness`.
+
+This workflow is internal validation only. Public users should use x402.
+
+### 3. `marketReadinessScan`
+
+Broad market operating picture.
+
+Flow:
+
+1. `GET /v1/readiness`
+2. `GET /v1/risk-distribution`
+3. `GET /v1/top-stressed?limit=10`
+4. `GET /v1/alpha-opportunities?limit=10`
+
+Use this when a user asks what is happening across the crypto public issuer universe.
+
+### 4. `singleIssuerDiligence`
+
+Full ticker-level diligence.
+
+Flow:
+
+1. `GET /v1/company-fundamentals/{ticker}`
+2. `GET /v1/alpha-signals/{ticker}`
+3. `GET /v1/covenant-stress/{ticker}`
+4. `GET /v1/peer-ranking/{ticker}`
+5. Optional: `GET /v1/atlas-history/{ticker}?limit=30`
+
+MCP equivalent: call `deltasignal_company_report` with `{ "ticker": "RIOT" }`.
+
+### 5. `dailyMonitoringEvidenceDrilldown`
+
+Compact daily monitoring first, raw evidence only when requested.
+
+Flow:
+
+1. `GET /v1/daily-changes/latest`
+2. Optional: `GET /v1/daily-changes/evidence?ticker={ticker}&source_date={source_date}&limit=25`
+
+Use this when a user asks what changed today, then asks why a specific issuer moved.
+
+### 6. `mcpCompositePresetSelection`
+
+Preferred MCP composite tools for common user intents.
+
+| Preset | Intent | Price metadata |
+| --- | --- | --- |
+| `deltasignal_morning_brief` | Daily market scan | `$0.18` |
+| `deltasignal_company_report` | Full single-ticker diligence | `$0.30` |
+| `deltasignal_pressure_board` | Risk-focused monitoring | `$0.14` |
+| `deltasignal_alpha_sweep` | Opportunity-focused market screen | `$0.14` |
+| `deltasignal_quick_ticker_check` | Fast single-name sanity check | `$0.18` |
+
+Agents should prefer these server-enforced composites for common scenarios instead of manually fanning out low-level tools.
 
 ## Available MCP Tools
 
 Composite presets:
 
-- `deltasignal_morning_brief` - daily scan: readiness + daily changes + risk distribution + top stressed(limit=10) + alpha opportunities(limit=10). Public Builder price: 18 credits / $0.18.
-- `deltasignal_company_report` - ticker report: readiness + fundamentals + alpha signals + peer ranking + covenant stress. Public Builder price: 30 credits / $0.30.
-- `deltasignal_pressure_board` - risk view: readiness + top stressed(limit=15) + risk distribution. Public Builder price: 14 credits / $0.14.
-- `deltasignal_alpha_sweep` - opportunity screen: readiness + alpha opportunities(limit=15) + daily changes. Public Builder price: 14 credits / $0.14.
-- `deltasignal_quick_ticker_check` - fast ticker check: readiness + covenant stress + alpha signals. Public Builder price: 18 credits / $0.18.
+- `deltasignal_morning_brief`
+- `deltasignal_company_report`
+- `deltasignal_pressure_board`
+- `deltasignal_alpha_sweep`
+- `deltasignal_quick_ticker_check`
 
 Granular tools:
 
@@ -103,14 +141,44 @@ Granular tools:
 - `deltasignal_alpha_signals`
 - `deltasignal_company_fundamentals`
 - `deltasignal_risk_distribution`
-- `deltasignal_daily_changes` - compact Daily Monitoring; no raw tag arrays; typical public route price $0.03.
-- `deltasignal_daily_change_evidence` - explicit issuer proof drilldown; paginated raw Company Facts tags; typical public route price $0.03.
+- `deltasignal_daily_changes`
+- `deltasignal_daily_change_evidence`
 
-Credit packs are not implemented yet. Pricing metadata uses `1 credit = $0.01` of DeltaSignal usage value.
+All tools are read-only, schema-validated, and bounded for agent use.
+
+## Access Model
+
+- Public MCP endpoint: `https://api.aitrailblazer.net/mcp`
+- Public OpenAPI: `https://api.aitrailblazer.net/openapi.json`
+- Public x402 discovery: `https://api.aitrailblazer.net/.well-known/x402`
+- Base x402 routes: `https://api.aitrailblazer.net/v1/*`
+- Payment rail: Base USDC through x402-capable clients
+- Seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
+
+First 5 calls are free where supported. After the free tier, compatible clients receive x402 payment requirements. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client.
+
+## Public x402 Probe
+
+Before paid use, inspect the payment contract without spending:
+
+```text
+GET https://api.aitrailblazer.net/v1/readiness
+```
+
+Expected public behavior:
+
+- HTTP `402 Payment Required`
+- `x402Version=2`
+- `network=eip155:8453`
+- Base USDC settlement
+- seller `payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
+- Bazaar discovery metadata for the route
+
+Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
 
 ## Daily Monitoring, Evidence, and Export Packaging
 
-DeltaSignal daily activity is packaged as three separate products:
+DeltaSignal daily activity is split into separate products:
 
 - **Daily Monitoring** answers "what changed today?" through compact MCP and REST responses.
 - **Evidence Drilldown** answers "show me why this issuer moved" through `deltasignal_daily_change_evidence` or `GET /v1/daily-changes/evidence`.
@@ -118,19 +186,22 @@ DeltaSignal daily activity is packaged as three separate products:
 
 Public REST and payment surfaces:
 
-- `GET /v1/daily-changes/latest` or `GET /mpp/v1/daily-changes/latest` - $0.03 compact monitoring.
-- `GET /v1/daily-changes/evidence` or `GET /mpp/v1/daily-changes/evidence` - $0.03 issuer evidence drilldown.
-- Future bulk evidence export proposal: small pack $0.15, standard pack $0.30, full daily export $0.75-$1.50.
+- `GET /v1/daily-changes/latest` or `GET /mpp/v1/daily-changes/latest` - compact monitoring.
+- `GET /v1/daily-changes/evidence` or `GET /mpp/v1/daily-changes/evidence` - issuer evidence drilldown.
 
 ## Development Modes
 
 - Local: `DELTASIGNAL_PAYMENT_MODE=local`
 - Live production: `DELTASIGNAL_PAYMENT_MODE=live`
+- Internal smoke: `DELTASIGNAL_PAYMENT_MODE=internal` with a pre-authorized key
+
+Internal mode is for first-party validation only. Public users should use x402.
 
 ## Technical
 
 - Bundled STDIO MCP server in `mcp-stdio/`
 - Remote MCP endpoint: `https://api.aitrailblazer.net/mcp`
 - OpenAPI surface: `https://api.aitrailblazer.net/openapi.json`
+- Arazzo workflow definitions: [`arazzo/deltasignal-arazzo.yaml`](./arazzo/deltasignal-arazzo.yaml) and [`arazzo/deltasignal-arazzo.json`](./arazzo/deltasignal-arazzo.json)
 - Strict input validation and bounded responses
-- Compatible with Codex, Claude, OpenClaw, and other MCP clients
+- Compatible with Codex, Claude Code, OpenClaw, and other MCP clients
