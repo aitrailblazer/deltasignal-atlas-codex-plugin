@@ -34,10 +34,6 @@ codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin`,
     label: "Smithery",
     code: "smithery mcp add aitrailblazer/deltasignal-atlas-7",
   },
-  marketplace: {
-    label: "Marketplace",
-    code: "npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin --project",
-  },
   mcp: {
     label: "Direct MCP",
     code: `{

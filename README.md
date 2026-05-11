@@ -26,12 +26,6 @@ Restart Codex CLI after this step.
 codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
 ```
 
-Or from an npm environment:
-
-```bash
-npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin --project
-```
-
 ### 3. Coinbase x402 / Bazaar Route
 
 Use Coinbase x402 and Agentic Market on the Base route family:
