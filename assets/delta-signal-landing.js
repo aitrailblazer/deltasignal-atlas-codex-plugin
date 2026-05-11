@@ -176,7 +176,7 @@ class DSInstallTabs extends LitElement {
 
   constructor() {
     super();
-    this.active = "smithery";
+    this.active = "coinbase";
     this.copied = false;
   }
 
