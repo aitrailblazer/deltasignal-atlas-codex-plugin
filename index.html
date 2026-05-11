@@ -1067,7 +1067,7 @@
     <section class="hero">
       <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="eyebrow">x402 verified • MCP live • Open API published</p>
+        <p class="eyebrow">x402 live • MCP live • Open API published</p>
         <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
         <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
         <p class="tagline">
@@ -1079,7 +1079,7 @@
           <a href="https://api.aitrailblazer.net/openapi.json" class="btn btn-secondary" target="_blank" rel="noopener">View Open API</a>
           <a href="./quickstart.md" class="btn btn-secondary">Read Quickstart</a>
         </div>
-        <p class="meter">x402 verified • Glama verified • MCP live • Open API published • First 5 calls free • Base USDC settlement</p>
+        <p class="meter">x402 live • Glama verified • MCP live • Open API published • First 5 calls free • Base USDC settlement</p>
         <div class="signal-visual" aria-label="Animated Delta Signal data flow visualization">
           <div class="visual-header">
             <span>Discovery + Payment Rail</span>
@@ -1317,21 +1317,71 @@ codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
     <section class="section alt" id="x402">
       <div class="wrap">
         <div class="section-head">
-          <h2>Free calls first, x402 after</h2>
-          <p>The first 5 calls are free. After that, compatible agent clients can settle paid calls through x402 using USDC on Base. StrategiX app clients authenticate through the backend relay; wallet, settlement, and payment flows are not executed inside the app.</p>
+          <h2>Coinbase x402 and Bazaar</h2>
+          <p>The first 5 calls are free. After that, Coinbase x402 and Agentic Market compatible clients use the Base route family, settle in Base USDC, and expose Bazaar metadata for discovery validation.</p>
         </div>
         <ds-x402-checklist>
-          <div class="code"><strong>Beginner checklist</strong>
-1. Use Coinbase Wallet, Coinbase Smart Wallet, or another Base-compatible wallet.
-2. Switch the wallet network to Base.
-3. Add USDC on Base.
-4. Keep a little ETH on Base if your wallet asks for gas.
-5. Re-run the agent query after funding.</div>
+          <div class="code"><strong>Buyer setup</strong>
+1. Install Coinbase payments: npx @coinbase/payments-mcp install
+2. Select Codex CLI, sign in, and fund with Base USDC.
+3. Use Agentic Market or Coinbase x402 routes under https://api.aitrailblazer.net/v1/*
+4. Probe before payment: GET https://api.aitrailblazer.net/v1/readiness
+5. Expected contract: eip155:8453, Base USDC, amount=40000 ($0.04), payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3</div>
         </ds-x402-checklist>
       </div>
     </section>
 
-    <section class="section" id="verified-discovery">
+    <section class="section" id="coinbase-bazaar-validation">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Validate before spending</h2>
+          <p>Use a no-payment x402 discovery probe first. A valid Delta Signal route returns a 402 contract with Base USDC payment requirements and Bazaar discovery metadata before any paid retry is attempted.</p>
+        </div>
+        <div class="surface-stage" aria-label="Coinbase x402 and Bazaar validation flow">
+          <div class="surface-card">
+            <h3>Coinbase x402 contract</h3>
+            <p>Probe <code>GET /v1/readiness</code> and confirm the route is payable on Base with the public seller wallet.</p>
+            <div class="surface-flow">
+              <span class="surface-dot"></span>
+              <div class="surface-step">/v1/readiness</div>
+              <div class="surface-step">402 contract</div>
+              <div class="surface-step">amount=40000</div>
+              <div class="surface-step hot">Base USDC</div>
+            </div>
+          </div>
+          <div class="surface-card payment">
+            <h3>Bazaar discovery proof</h3>
+            <p>Pass requires <code>extensions.bazaar.routeTemplate=/v1/readiness</code>, an output example, merchant resources for the seller <code>payTo</code>, and no Agentic Market first-party verification claim until the UI or Coinbase team confirms it.</p>
+            <div class="surface-flow">
+              <span class="surface-dot"></span>
+              <div class="surface-step">payTo</div>
+              <div class="surface-step">merchant resources</div>
+              <div class="surface-step">Bazaar metadata</div>
+              <div class="surface-step hot">validated</div>
+            </div>
+          </div>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
+            <strong>OpenAPI Contract</strong>
+            <span>Inspect the public REST routes, 402 responses, and x-payment metadata.</span>
+            <code>https://api.aitrailblazer.net/openapi.json</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">
+            <strong>No-Payment Probe</strong>
+            <span>Use an x402-capable discovery client to inspect payment requirements before paying.</span>
+            <code>GET https://api.aitrailblazer.net/v1/readiness</code>
+          </a>
+          <a class="link-card" href="https://docs.cdp.coinbase.com/x402/welcome" target="_blank" rel="noopener">
+            <strong>Coinbase x402 Docs</strong>
+            <span>Buyer, seller, facilitator, and Bazaar discovery reference for compatible clients.</span>
+            <code>docs.cdp.coinbase.com/x402</code>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="verified-discovery">
       <div class="wrap">
         <div class="section-head">
           <h2>Verified developer surfaces</h2>
@@ -1351,7 +1401,7 @@ codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
           </div>
           <div class="surface-card payment">
             <h3>x402 / Bazaar Settlement</h3>
-            <p>When free calls are exhausted, the route returns a 402 challenge and settles paid calls with Base USDC.</p>
+            <p>When free calls are exhausted, the route returns a 402 challenge with Bazaar metadata and settles paid calls with Base USDC.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">402 challenge</div>

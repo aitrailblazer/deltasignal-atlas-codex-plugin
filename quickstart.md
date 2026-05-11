@@ -60,6 +60,17 @@ Payment failure returns:
 402 Payment Required
 ```
 
+Coinbase x402 and Agentic Market use the Base route family under `https://api.aitrailblazer.net/v1/*`. Before spending USDC, run a no-payment x402 discovery probe against `GET /v1/readiness` and confirm:
+
+- `x402Version=2`
+- `network=eip155:8453`
+- Base USDC asset `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`
+- `amount=40000` atomic USDC (`$0.04`)
+- seller `payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
+- Bazaar metadata includes `extensions.bazaar.routeTemplate=/v1/readiness`
+
+Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
+
 ## Phase 1 Endpoints
 
 ### Top Stressed Natural Language Brief

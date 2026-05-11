@@ -207,6 +207,10 @@ The backend holds internal Delta Signal credentials and may call the MCP/x402-ca
 
 For public x402 access, payment handling is performed by the server-side route infrastructure. Payment failure returns HTTP `402`.
 
+Coinbase x402 and Agentic Market callers must use the Base route family under `https://api.aitrailblazer.net/v1/*`. Before spending USDC, run a no-payment x402 discovery probe against `GET /v1/readiness` and confirm `x402Version=2`, `network=eip155:8453`, Base USDC asset `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`, `amount=40000` atomic USDC (`$0.04`), seller `payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`, and `extensions.bazaar.routeTemplate=/v1/readiness`.
+
+Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
+
 ## Recommended Agent Behavior
 
 If a user asks for a live Delta Signal Morning Brief:

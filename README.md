@@ -32,7 +32,33 @@ npx @coinbase/payments-mcp install
 
 Restart Codex CLI after this step.
 
-### 3. Use
+### 3. Coinbase x402 / Bazaar Route
+
+Use Coinbase x402 and Agentic Market on the Base route family:
+
+- Base URL: `https://api.aitrailblazer.net`
+- x402 routes: `/v1/*`
+- payment: Base USDC
+- seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
+- discovery: Bazaar/CDP merchant resources for the seller `payTo`
+
+No-payment validation before spending:
+
+```text
+GET https://api.aitrailblazer.net/v1/readiness
+```
+
+Expected payment contract:
+
+- `402 Payment Required`
+- `x402Version=2`
+- `network=eip155:8453`
+- `amount=40000` atomic USDC (`$0.04`)
+- `extensions.bazaar.routeTemplate=/v1/readiness`
+
+Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
+
+### 4. Use
 
 ```bash
 @DeltaSignal morning_brief

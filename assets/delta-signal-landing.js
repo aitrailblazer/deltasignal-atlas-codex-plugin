@@ -50,11 +50,11 @@ const installTabs = {
 };
 
 const x402Steps = [
-  "Use Coinbase Wallet, Coinbase Smart Wallet, or another Base-compatible wallet.",
-  "Switch the wallet network to Base.",
-  "Add USDC on Base.",
-  "Keep a small amount of ETH on Base if your wallet requires gas.",
-  "Re-run the agent query after funding.",
+  "Install Coinbase payments with npx @coinbase/payments-mcp install.",
+  "Select Codex CLI, sign in, and fund with Base USDC.",
+  "Use Coinbase x402 and Agentic Market routes under https://api.aitrailblazer.net/v1/*.",
+  "Probe GET /v1/readiness before payment and confirm eip155:8453, Base USDC, amount=40000, and the DeltaSignal payTo wallet.",
+  "Confirm Bazaar metadata before claiming discovery validation.",
 ];
 
 class DSCopyPrompt extends LitElement {
