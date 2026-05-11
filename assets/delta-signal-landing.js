@@ -21,13 +21,18 @@ const naturalRoutes = [
 ];
 
 const installTabs = {
-  smithery: {
-    label: "Smithery",
-    code: "smithery mcp add aitrailblazer/deltasignal-atlas-7",
+  coinbase: {
+    label: "Coinbase + Codex",
+    code: `npx @coinbase/payments-mcp install
+codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin`,
   },
   codex: {
     label: "Codex Plugin",
     code: "codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin",
+  },
+  smithery: {
+    label: "Smithery",
+    code: "smithery mcp add aitrailblazer/deltasignal-atlas-7",
   },
   marketplace: {
     label: "Marketplace",

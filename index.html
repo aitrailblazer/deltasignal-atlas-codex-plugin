@@ -1075,7 +1075,7 @@
           <span>Ask an agent for morning briefs, issuer reports, pressure boards, alpha sweeps, covenant stress, peer rankings, and filing-backed fundamentals.</span>
         </p>
         <div class="hero-actions">
-          <a href="https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7" class="btn btn-primary" target="_blank" rel="noopener">Start with Smithery</a>
+          <a href="#install" class="btn btn-primary">Start with Coinbase x402</a>
           <a href="https://api.aitrailblazer.net/openapi.json" class="btn btn-secondary" target="_blank" rel="noopener">View Open API</a>
           <a href="./quickstart.md" class="btn btn-secondary">Read Quickstart</a>
         </div>
@@ -1157,14 +1157,17 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Install in 60 seconds</h2>
-          <p>Use Smithery for the easiest path, install the Codex plugin, or point an MCP-compatible client directly at the hosted endpoint.</p>
+          <p>Start with Coinbase payments and the Codex plugin for the x402 route. Smithery remains available as an alternate MCP connector.</p>
         </div>
         <ds-install-tabs>
-          <div class="code"><strong>Smithery</strong>
-smithery mcp add aitrailblazer/deltasignal-atlas-7
+          <div class="code"><strong>Coinbase payments</strong>
+npx @coinbase/payments-mcp install
 
 <strong>Codex plugin install</strong>
 codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
+
+<strong>Smithery alternate</strong>
+smithery mcp add aitrailblazer/deltasignal-atlas-7
 
 <strong>Direct MCP config</strong>
 {

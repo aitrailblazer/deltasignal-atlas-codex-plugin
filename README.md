@@ -8,7 +8,19 @@ Also available on [Smithery](https://smithery.ai/servers/aitrailblazer/deltasign
 
 ## Quick Start
 
-### 1. Install
+### 1. Payment Setup
+
+```bash
+npx @coinbase/payments-mcp install
+```
+
+- Select `Codex CLI`
+- Sign in with email
+- Fund your wallet with Base USDC
+
+Restart Codex CLI after this step.
+
+### 2. Install
 
 ```bash
 codex plugin install aitrailblazer/deltasignal-atlas-codex-plugin
@@ -19,18 +31,6 @@ Or from an npm environment:
 ```bash
 npx codex-marketplace add aitrailblazer/deltasignal-atlas-codex-plugin --plugin --project
 ```
-
-### 2. Payment Setup
-
-```bash
-npx @coinbase/payments-mcp install
-```
-
-- Select `Codex CLI`
-- Sign in with email
-- Fund your wallet with USDC
-
-Restart Codex CLI after this step.
 
 ### 3. Coinbase x402 / Bazaar Route
 
