@@ -8,6 +8,28 @@ Agents discover, pay, and execute deterministic workflows through MCP tools, Ope
 
 Also available as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7). Smithery remains available as an alternate connector path.
 
+## How Agents Know and Run Workflows
+
+The public landing page includes the animated workflow runner. The same contract is machine-readable here:
+
+```mermaid
+flowchart LR
+  Intent["User intent<br/>morning brief, RIOT report, daily evidence"]
+  Discover["Discover<br/>MCP tools/list<br/>OpenAPI<br/>Arazzo<br/>x402 metadata"]
+  Plan["Plan<br/>select Arazzo workflow"]
+  Execute["Execute<br/>MCP composite<br/>or REST sequence"]
+  Pay["Resolve payment<br/>402 challenge<br/>Coinbase x402 pay + retry"]
+  Result["Result<br/>bounded JSON<br/>Markdown evidence"]
+
+  Intent --> Discover --> Plan --> Execute --> Pay --> Result
+  Plan --> W1["marketReadinessScan"]
+  Plan --> W2["singleIssuerDiligence"]
+  Plan --> W3["dailyMonitoringEvidenceDrilldown"]
+  Plan --> W4["mcpCompositePresetSelection"]
+```
+
+Agents do not need a special Arazzo runner to use this today. MCP clients can read the scenario definitions, select one of the exposed MCP composite tools, or follow the OpenAPI route sequence step by step. Public clients use x402 when a route returns `402 Payment Required`; internal keyed validation is first-party testing only.
+
 ## Quick Start
 
 ### Codex + Coinbase

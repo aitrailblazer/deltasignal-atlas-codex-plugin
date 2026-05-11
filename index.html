@@ -860,6 +860,202 @@
       font-size: 0.78rem;
     }
 
+    .workflow-runner {
+      position: relative;
+      margin: 0 auto 1.5rem;
+      padding: 1.35rem;
+      overflow: hidden;
+      border: 1px solid rgba(255, 154, 26, 0.22);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255,154,26,.08), rgba(227,0,85,.05)),
+        rgba(9, 9, 8, 0.84);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 28px 88px rgba(0, 0, 0, 0.26);
+    }
+
+    .workflow-runner::before {
+      content: "";
+      position: absolute;
+      inset: 1.35rem;
+      top: 6.15rem;
+      height: 2px;
+      background-image: linear-gradient(90deg, rgba(255,154,26,.92) 0 14px, transparent 14px 28px);
+      background-size: 28px 2px;
+      animation: railForward 1.8s linear infinite;
+      opacity: 0.58;
+      pointer-events: none;
+    }
+
+    .workflow-head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.1rem;
+    }
+
+    .workflow-head strong {
+      display: block;
+      color: #ffd1a3;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.16rem;
+    }
+
+    .workflow-head span {
+      display: block;
+      max-width: 42rem;
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .workflow-status {
+      flex: 0 0 auto;
+      padding: 0.48rem 0.72rem;
+      border: 1px solid rgba(84, 214, 157, 0.35);
+      border-radius: 999px;
+      color: #9df0c5;
+      background: rgba(84, 214, 157, 0.08);
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .workflow-lanes {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .workflow-stage {
+      min-height: 216px;
+      padding: 1rem;
+      border: 1px solid rgba(255, 154, 26, 0.2);
+      border-radius: 8px;
+      background: rgba(12, 13, 12, 0.94);
+    }
+
+    .workflow-stage h3 {
+      margin: 0 0 0.45rem;
+      color: #ffe4cf;
+      font-size: 1rem;
+    }
+
+    .workflow-stage p {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .workflow-list {
+      display: grid;
+      gap: 0.52rem;
+    }
+
+    .workflow-list span,
+    .workflow-chip {
+      display: block;
+      padding: 0.5rem 0.62rem;
+      border: 1px solid rgba(255, 154, 26, 0.18);
+      border-radius: 7px;
+      background: rgba(255, 154, 26, 0.055);
+      color: #ffe4cf;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.73rem;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .workflow-chip {
+      animation: workflowPulse 5s ease-in-out infinite;
+    }
+
+    .workflow-chip:nth-child(2) { animation-delay: 0.35s; }
+    .workflow-chip:nth-child(3) { animation-delay: 0.7s; }
+    .workflow-chip:nth-child(4) { animation-delay: 1.05s; }
+
+    .workflow-stage.execute {
+      border-color: rgba(227, 0, 85, 0.34);
+      box-shadow: inset 0 0 0 1px rgba(227,0,85,.05);
+    }
+
+    .workflow-stage.result {
+      border-color: rgba(84, 214, 157, 0.34);
+    }
+
+    .workflow-packet {
+      position: absolute;
+      z-index: 2;
+      top: 6.15rem;
+      left: 1.35rem;
+      width: 0.74rem;
+      height: 0.74rem;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 0 22px rgba(255,154,26,.9);
+      animation: workflowPacket 4.8s ease-in-out infinite;
+    }
+
+    .workflow-packet.pay {
+      top: 7.15rem;
+      background: var(--magenta);
+      box-shadow: 0 0 22px rgba(227,0,85,.82);
+      animation-delay: 1.4s;
+      animation-duration: 5.3s;
+    }
+
+    @keyframes workflowPacket {
+      0% { left: 1.35rem; opacity: 0; }
+      10% { opacity: 1; }
+      86% { opacity: 1; }
+      100% { left: calc(100% - 1.9rem); opacity: 0; }
+    }
+
+    @keyframes workflowPulse {
+      0%, 72%, 100% {
+        border-color: rgba(255, 154, 26, 0.18);
+        box-shadow: none;
+      }
+      36% {
+        border-color: rgba(255, 154, 26, 0.44);
+        box-shadow: 0 0 22px rgba(255,154,26,.12);
+      }
+    }
+
+    .workflow-strata {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin: 1rem 0 1.35rem;
+    }
+
+    .workflow-stratum {
+      padding: 0.95rem;
+      border: 1px solid rgba(255, 154, 26, 0.17);
+      border-radius: 8px;
+      background: rgba(17, 16, 15, 0.78);
+    }
+
+    .workflow-stratum strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #ffd1a3;
+      font-size: 0.94rem;
+    }
+
+    .workflow-stratum span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
     .tool {
       padding: 1.1rem;
       border: 1px solid var(--line);
@@ -959,6 +1155,8 @@
       .surface-flow,
       .mcp-rail,
       .mcp-caption,
+      .workflow-lanes,
+      .workflow-strata,
       .tool-grid {
         grid-template-columns: 1fr;
       }
@@ -1040,6 +1238,22 @@
         padding: 1rem;
       }
 
+      .workflow-runner {
+        padding: 1rem;
+      }
+
+      .workflow-head {
+        display: grid;
+      }
+
+      .workflow-status {
+        width: fit-content;
+      }
+
+      .workflow-stage {
+        min-height: auto;
+      }
+
       .mcp-rail {
         min-height: auto;
       }
@@ -1048,7 +1262,9 @@
       .mcp-rail::after,
       .packet,
       .surface-flow::before,
-      .surface-dot {
+      .surface-dot,
+      .workflow-runner::before,
+      .workflow-packet {
         display: none;
       }
     }
@@ -1058,7 +1274,10 @@
       .mcp-rail::after,
       .packet,
       .surface-flow::before,
-      .surface-dot {
+      .surface-dot,
+      .workflow-runner::before,
+      .workflow-packet,
+      .workflow-chip {
         animation: none;
       }
     }
@@ -1239,8 +1458,79 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
     <section class="section alt" id="workflows">
       <div class="wrap">
         <div class="section-head">
+          <h2>How agents know and run the workflows</h2>
+          <p>MCP clients discover tools, read the Arazzo scenario plan, use OpenAPI for exact routes, and let Coinbase x402 handle public pay-and-retry execution.</p>
+        </div>
+        <div class="workflow-runner" aria-label="Animated agent workflow discovery and execution diagram">
+          <div class="workflow-head">
+            <div>
+              <strong>Agent workflow runner</strong>
+              <span>Codex, Claude Code, and other MCP clients can move from plain intent to a bounded Delta Signal workflow without guessing endpoint order.</span>
+            </div>
+            <span class="workflow-status">MCP + Arazzo + x402</span>
+          </div>
+          <span class="workflow-packet" aria-hidden="true"></span>
+          <span class="workflow-packet pay" aria-hidden="true"></span>
+          <div class="workflow-lanes">
+            <div class="workflow-stage">
+              <h3>1. Discover</h3>
+              <p>The agent sees the service contract through public metadata and tool discovery.</p>
+              <div class="workflow-list">
+                <span>MCP tools/list</span>
+                <span>/openapi.json</span>
+                <span>/arazzo YAML + JSON</span>
+                <span>/.well-known/x402</span>
+              </div>
+            </div>
+            <div class="workflow-stage">
+              <h3>2. Plan</h3>
+              <p>Arazzo maps user intent to the right scenario pipeline and required inputs.</p>
+              <div class="workflow-list">
+                <span class="workflow-chip">marketReadinessScan</span>
+                <span class="workflow-chip">singleIssuerDiligence</span>
+                <span class="workflow-chip">dailyMonitoringEvidenceDrilldown</span>
+                <span class="workflow-chip">mcpCompositePresetSelection</span>
+              </div>
+            </div>
+            <div class="workflow-stage execute">
+              <h3>3. Execute</h3>
+              <p>The client calls one MCP composite or follows the REST sequence step by step.</p>
+              <div class="workflow-list">
+                <span>@DeltaSignal morning_brief</span>
+                <span>@DeltaSignal company_report ticker:RIOT</span>
+                <span>GET /v1/readiness</span>
+                <span>GET /v1/daily-change-evidence</span>
+              </div>
+            </div>
+            <div class="workflow-stage result">
+              <h3>4. Resolve</h3>
+              <p>Public clients pay when challenged, retry, then receive structured evidence or a compiled brief.</p>
+              <div class="workflow-list">
+                <span>402 payment required</span>
+                <span>Base USDC via Coinbase x402</span>
+                <span>retry with payment proof</span>
+                <span>JSON + Markdown evidence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-strata" aria-label="Workflow layers">
+          <div class="workflow-stratum">
+            <strong>Access layer</strong>
+            <span>publicMcpX402Handshake proves the public route and payment challenge. internalMcpToolSmoke stays for first-party validation.</span>
+          </div>
+          <div class="workflow-stratum">
+            <strong>Analytical REST layer</strong>
+            <span>Market scans, issuer diligence, and evidence drilldowns expose exact OpenAPI-backed operations for agent-controlled runs.</span>
+          </div>
+          <div class="workflow-stratum">
+            <strong>MCP composite layer</strong>
+            <span>Priced presets such as morning_brief and company_report bundle common sequences into one bounded server-side call.</span>
+          </div>
+        </div>
+        <div class="section-head">
           <h2>Six Arazzo-defined agent workflows</h2>
-          <p>Agents can follow scenario pipelines from access checks through analysis and composite MCP preset selection.</p>
+          <p>These are the machine-readable scenarios agents can inspect before choosing a tool or route sequence.</p>
         </div>
         <div class="tool-grid">
           <div class="tool"><strong>publicMcpX402Handshake</strong><span>POST /mcp without an internal key returns 402 so x402-capable public clients can pay and retry.</span></div>
