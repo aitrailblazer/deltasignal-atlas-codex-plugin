@@ -22,16 +22,16 @@ const naturalRoutes = [
 
 const installTabs = {
   coinbase: {
-    label: "Coinbase x402 + Codex",
+    label: "Coinbase + Codex",
     code: `npx @coinbase/payments-mcp install
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
   },
   codex: {
-    label: "Codex Marketplace",
+    label: "Codex Plugin",
     code: "codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin",
   },
   claude: {
-    label: "Claude Code x402",
+    label: "Coinbase + Claude Code",
     code: `npx @coinbase/payments-mcp install --client claude-code
 # Use Coinbase x402 routes under https://api.aitrailblazer.net/v1/*`,
   },

@@ -1157,16 +1157,16 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Install in 60 seconds</h2>
-          <p>Start with Coinbase payments and the Codex plugin for the public x402 route. Claude Code can use Coinbase payments as a client option; direct MCP with an API key is local validation only.</p>
+          <p>Start with Coinbase payments for Codex or Claude Code on the public x402 route. Direct MCP with an API key is local validation only.</p>
         </div>
         <ds-install-tabs>
-          <div class="code"><strong>Coinbase x402 payments</strong>
+          <div class="code"><strong>Coinbase + Codex</strong>
 npx @coinbase/payments-mcp install
 
-<strong>Codex marketplace add</strong>
+<strong>Codex plugin</strong>
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 
-<strong>Claude Code x402 client</strong>
+<strong>Coinbase + Claude Code</strong>
 npx @coinbase/payments-mcp install --client claude-code
 
 <strong>Smithery alternate</strong>
@@ -1445,7 +1445,7 @@ smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code</div>
     Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
-  <script type="module" src="./assets/delta-signal-landing.js?v=x402-claude-local-mcp-20260511"></script>
+  <script type="module" src="./assets/delta-signal-landing.js?v=aligned-install-tabs-20260511"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");
