@@ -26,12 +26,14 @@ Restart Codex CLI after this step.
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 ```
 
-### 3. Claude Code x402 Client
+### 3. Claude Code x402 + ATLAS Client
 
-Claude Code can use the Coinbase payments MCP as a payment client option:
+Claude Code needs both the Coinbase payments MCP and the DeltaSignal ATLAS-7 MCP connector:
 
 ```bash
 npx @coinbase/payments-mcp install --client claude-code
+smithery login
+smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code
 ```
 
 Direct MCP with an `x-api-key` header is for local validation and internal testing only. Public buyers should use the x402 `/v1/*` routes below.

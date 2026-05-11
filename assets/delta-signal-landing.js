@@ -33,7 +33,8 @@ codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
   claude: {
     label: "Coinbase + Claude Code",
     code: `npx @coinbase/payments-mcp install --client claude-code
-# Use Coinbase x402 routes under https://api.aitrailblazer.net/v1/*`,
+smithery login
+smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code`,
   },
   smithery: {
     label: "Smithery MCP",
