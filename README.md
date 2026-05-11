@@ -26,19 +26,7 @@ Restart Codex CLI after this step.
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 ```
 
-### 3. Claude Code x402 + ATLAS Client
-
-Claude Code needs both the Coinbase payments MCP and the DeltaSignal ATLAS-7 MCP connector:
-
-```bash
-npx @coinbase/payments-mcp install --client claude-code
-smithery login
-smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code
-```
-
-Public buyers should use the x402 `/v1/*` routes below.
-
-### 4. Coinbase x402 / Bazaar Route
+### 3. Coinbase x402 / Bazaar Route
 
 Use Coinbase x402 and Agentic Market on the Base route family:
 
@@ -64,7 +52,7 @@ Expected payment contract:
 
 Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
 
-### 5. Use
+### 4. Use
 
 ```bash
 @DeltaSignal morning_brief

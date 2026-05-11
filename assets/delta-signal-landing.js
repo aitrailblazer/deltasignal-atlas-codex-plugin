@@ -26,12 +26,6 @@ const installTabs = {
     code: `npx @coinbase/payments-mcp install
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin`,
   },
-  claude: {
-    label: "Coinbase + Claude Code",
-    code: `npx @coinbase/payments-mcp install --client claude-code
-smithery login
-smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code`,
-  },
 };
 
 const x402Steps = [
