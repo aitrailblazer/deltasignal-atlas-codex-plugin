@@ -1159,12 +1159,16 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Install in 60 seconds</h2>
-          <p>Start with Coinbase payments and the Codex plugin for the public x402 route.</p>
+          <p>Start with Coinbase payments for Codex or Claude Code on the public x402 route.</p>
         </div>
         <ds-install-tabs>
           <div class="code" translate="no" spellcheck="false"><strong>Coinbase + Codex</strong>
 npx @coinbase/payments-mcp install
 codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
+
+<strong>Coinbase + Claude Code</strong>
+npx @coinbase/payments-mcp install --client claude-code
+claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.net/mcp
 </div>
         </ds-install-tabs>
       </div>
@@ -1439,7 +1443,7 @@ codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
     Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
-  <script type="module" src="./assets/delta-signal-landing.js?v=public-codex-x402-only-20260511"></script>
+  <script type="module" src="./assets/delta-signal-landing.js?v=public-claude-x402-20260511"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");
