@@ -1157,7 +1157,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Install in 60 seconds</h2>
-          <p>Start with Coinbase payments for Codex or Claude Code on the public x402 route. Direct MCP with an API key is local validation only.</p>
+          <p>Start with Coinbase payments for Codex or Claude Code on the public x402 route.</p>
         </div>
         <ds-install-tabs>
           <div class="code"><strong>Coinbase + Codex</strong>
@@ -1385,12 +1385,12 @@ smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code</div>
       <div class="wrap">
         <div class="section-head">
           <h2>Verified developer surfaces</h2>
-          <p>Technical buyers should validate the public x402 payment rail first. Direct MCP access with an API-key header is reserved for local validation and internal testing.</p>
+          <p>Technical buyers can validate the public MCP endpoint, Open API contract, and x402 payment rail before paid use.</p>
         </div>
-        <div class="surface-stage" aria-label="Animated local MCP and x402 discovery flows">
+        <div class="surface-stage" aria-label="Animated public MCP and x402 discovery flows">
           <div class="surface-card">
-            <h3>Local MCP + Open API</h3>
-            <p>Internal validators can call the hosted Streamable HTTP MCP endpoint with the required x-api-key header, while public buyers use x402 routes under <code>/v1/*</code>.</p>
+            <h3>Public MCP + Open API</h3>
+            <p>Agents can inspect the hosted Streamable HTTP MCP endpoint and Open API contract, then use x402 routes under <code>/v1/*</code> for paid public access.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">Agent client</div>
@@ -1446,7 +1446,7 @@ smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code</div>
     Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
   </footer>
 
-  <script type="module" src="./assets/delta-signal-landing.js?v=payment-all-install-tabs-20260511"></script>
+  <script type="module" src="./assets/delta-signal-landing.js?v=public-mcp-only-20260511"></script>
   <script>
     (() => {
       const canvas = document.getElementById("particles");

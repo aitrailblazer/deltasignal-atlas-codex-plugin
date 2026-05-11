@@ -46,7 +46,7 @@ const x402Steps = [
   "Add the DeltaSignal Codex marketplace with codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin.",
   "Use Coinbase x402 and Agentic Market routes under https://api.aitrailblazer.net/v1/*.",
   "Probe GET /v1/readiness before payment and confirm eip155:8453, Base USDC, amount=40000, and the DeltaSignal payTo wallet.",
-  "Use direct MCP with an x-api-key header only for local validation and internal testing.",
+  "Use the public MCP and x402 surfaces for discovery, payment challenge inspection, and paid access.",
   "Confirm Bazaar metadata before claiming discovery validation.",
 ];
 

@@ -36,7 +36,7 @@ smithery login
 smithery mcp add aitrailblazer/deltasignal-atlas-7 --client claude-code
 ```
 
-Direct MCP with an `x-api-key` header is for local validation and internal testing only. Public buyers should use the x402 `/v1/*` routes below.
+Public buyers should use the x402 `/v1/*` routes below.
 
 ### 4. Coinbase x402 / Bazaar Route
 
@@ -85,7 +85,6 @@ Do not claim Agentic Market first-party verification until the Agentic Market UI
 
 - First 5 calls are free per user.
 - After the free tier, supported clients receive automatic x402 payment requirements in USDC.
-- Internal testing can use a pre-authorized API key without payment on direct MCP. Do not publish API-key setup as the buyer path.
 - All tools are read-only, schema-validated, and closed-world.
 
 ## Available MCP Tools
@@ -129,7 +128,6 @@ Public REST and payment surfaces:
 ## Development Modes
 
 - Local: `DELTASIGNAL_PAYMENT_MODE=local`
-- Internal testing: `DELTASIGNAL_PAYMENT_MODE=internal` plus `DELTASIGNAL_API_KEY`
 - Live production: `DELTASIGNAL_PAYMENT_MODE=live`
 
 ## Technical

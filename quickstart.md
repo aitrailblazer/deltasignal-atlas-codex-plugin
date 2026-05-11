@@ -52,7 +52,7 @@ TestFlight and production clients authenticate through the StrategiX backend rel
 
 The backend holds the internal Delta Signal credential and may call the MCP/x402-capable Delta Signal surface. Client applications should not embed internal Delta Signal credentials.
 
-Public paid routes may use x402 or MPP access depending on deployment. Payment and settlement flows are handled by the backend route infrastructure, not by the StrategiX app. Direct MCP with an `x-api-key` header is local validation and internal testing only; public buyers should use the x402 `/v1/*` routes.
+Public paid routes may use x402 or MPP access depending on deployment. Payment and settlement flows are handled by the backend route infrastructure, not by the StrategiX app. Public buyers should use the x402 `/v1/*` routes.
 
 Payment failure returns:
 
