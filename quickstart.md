@@ -178,7 +178,7 @@ Returns a backend-composed compact market-wide Markdown brief.
 - Route: `GET /v1/morning-brief/natural`
 - MPP mirror: `GET /mpp/v1/morning-brief/natural`
 - MCP tool: `deltasignal_morning_brief_natural`
-- Price: `$1.80`
+- Price: `$0.95`
 - Ticker required: no
 
 Query parameters:

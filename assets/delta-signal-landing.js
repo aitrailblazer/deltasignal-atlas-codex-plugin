@@ -11,7 +11,7 @@ const rawRoutes = [
 
 const naturalRoutes = [
   ["top_stressed_natural", "$0.95", "Live evidence-preserving Markdown brief for highest-stress issuers."],
-  ["morning_brief_natural", "$1.80", "Phase 1 backend-composed market-wide Natural Language brief."],
+  ["morning_brief_natural", "$0.95", "Live backend-composed market-wide Natural Language brief."],
   ["covenant_stress_natural", "$1.20", "Phase 1 ticker-specific covenant, leverage, liquidity, and filing brief."],
   ["peer_ranking_natural", "$1.10", "Planned Phase 2 peer-positioning brief."],
   ["alpha_signals_natural", "$1.30", "Planned Phase 2 alpha signal brief with strict non-advice validation."],
@@ -428,7 +428,7 @@ class DSNaturalTierBanner extends LitElement {
         <p>Raw and composite routes return structured evidence. Natural Language routes package that evidence for human workflows while preserving source dates, caveats, quality flags, nulls, evidence hashes, and non-advice disclaimers.</p>
         <ul>
           <li><code>deltasignal_top_stressed_natural</code> is live at $0.95.</li>
-          <li><code>deltasignal_morning_brief_natural</code> and <code>deltasignal_covenant_stress_natural</code> are Phase 1 targets.</li>
+          <li><code>deltasignal_morning_brief_natural</code> is live at $0.95; <code>deltasignal_covenant_stress_natural</code> remains a Phase 1 target.</li>
           <li>The brief is a renderer output, not a new analytics source.</li>
         </ul>
       </section>

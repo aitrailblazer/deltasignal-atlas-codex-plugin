@@ -121,7 +121,7 @@ Purpose: render backend-composed compact market-wide evidence into a validated D
 - MPP mirror: `GET /mpp/v1/morning-brief/natural`
 - MCP tool: `deltasignal_morning_brief_natural`
 - Source: backend-composed `deltasignal_morning_brief` evidence envelope
-- Price: `$1.80`
+- Price: `$0.95`
 - Ticker required: no
 
 Typical query parameters:

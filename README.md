@@ -188,13 +188,13 @@ All tools are read-only, schema-validated, and bounded for agent use.
 
 Raw and composite routes return structured evidence. Natural Language routes compile that evidence into validated Markdown while preserving source dates, caveats, quality flags, evidence hashes, and non-advice disclaimers.
 
-Current public route:
+Current public routes:
 
 - `top_stressed_natural` - live, `$0.95`, evidence-preserving Markdown brief for highest-stress issuers.
+- `morning_brief_natural` - live, `$0.95`, backend-composed Natural Language Morning Brief.
 
 Planned routes:
 
-- `morning_brief_natural` - `$1.80`
 - `covenant_stress_natural` - `$1.20`
 
 ## Access Model
