@@ -215,6 +215,7 @@ Do not claim Agentic Market first-party verification until the Agentic Market UI
 
 If a user asks for a live Delta Signal Morning Brief:
 
+- Treat "daily picture" as a Morning Brief request.
 - Route to the backend `deltasignal_morning_brief` composite.
 - Render the returned compact evidence only.
 - Do not generate X drafts, Substack notes, article candidates, or drilldown branches unless the user asks after evidence is returned.

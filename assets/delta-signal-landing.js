@@ -1,12 +1,12 @@
 import { LitElement, css, html } from "https://cdn.jsdelivr.net/npm/lit@3/+esm";
 
 const rawRoutes = [
-  ["morning_brief", "backend-composed", "Server-side workflow through the Go relay for readiness, daily changes, risk distribution, top stressed, and alpha opportunities."],
+  ["morning_brief", "backend-composed", "Daily operating picture through the Go relay: readiness, latest meaningful deltas, risk distribution, top stressed issuers, and alpha opportunities."],
   ["company_report", "$0.30", "Full issuer report across fundamentals, alpha signals, peer ranking, and covenant stress."],
   ["pressure_board", "$0.14", "Risk board with top stressed issuers and risk distribution."],
   ["alpha_sweep", "$0.14", "Opportunity screen with alpha opportunities and daily changes."],
   ["quick_ticker_check", "$0.18", "Fast issuer triage using covenant stress and alpha signals."],
-  ["daily_changes", "$0.03", "Compact daily monitoring without raw tag arrays."],
+  ["daily_changes", "$0.03", "Compact daily monitoring: freshness, counts, changed-company rows, and evidence refs without raw tag arrays."],
 ];
 
 const naturalRoutes = [
