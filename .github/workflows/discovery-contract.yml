@@ -1,0 +1,52 @@
+name: Discovery Contract
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.24.x"
+          cache-dependency-path: mcp-stdio/go.sum
+
+      - name: Validate JSON manifests
+        run: |
+          jq empty .codex-plugin/plugin.json
+          jq empty server.json
+          jq empty arazzo/deltasignal-arazzo.json
+          jq empty deltasignal-arazzo.json
+
+      - name: Validate Arazzo YAML and mirrors
+        run: |
+          ruby -ryaml -e 'YAML.load_file("arazzo/deltasignal-arazzo.yaml"); YAML.load_file("deltasignal-arazzo.yaml"); YAML.load_file("arazzo/publicMcpX402Handshake.arazzo.yaml")'
+          cmp -s arazzo/deltasignal-arazzo.yaml deltasignal-arazzo.yaml
+          cmp -s arazzo/deltasignal-arazzo.json deltasignal-arazzo.json
+
+      - name: Test Go MCP wrapper and validators
+        working-directory: mcp-stdio
+        run: go test ./...
+
+      - name: Validate live OpenAPI operation discovery
+        working-directory: mcp-stdio
+        run: go run ./cmd/validate-discovery --root ..
+
+      - name: Validate live MCP tool discovery
+        if: ${{ secrets.DELTASIGNAL_API_KEY != '' }}
+        working-directory: mcp-stdio
+        env:
+          DELTASIGNAL_API_KEY: ${{ secrets.DELTASIGNAL_API_KEY }}
+        run: go run ./cmd/validate-discovery --root ..
