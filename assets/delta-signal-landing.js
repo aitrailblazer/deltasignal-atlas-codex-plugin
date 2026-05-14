@@ -1,8 +1,8 @@
 import { LitElement, css, html } from "https://cdn.jsdelivr.net/npm/lit@3/+esm";
 
 const rawRoutes = [
-  ["morning_brief", "backend-composed", "Daily operating picture through the Go relay: readiness, latest meaningful deltas, risk distribution, top stressed issuers, and alpha opportunities."],
-  ["company_report", "$0.30", "Full issuer report across fundamentals, alpha signals, peer ranking, and covenant stress."],
+  ["morning_brief", "$0.18", "Default daily market scan through the Go relay: readiness, latest meaningful deltas, risk distribution, top stressed issuers, and alpha opportunities."],
+  ["company_report", "$0.30", "Full issuer report across fundamentals, alpha signals, peer ranking, covenant stress, and SPECTRA when available."],
   ["pressure_board", "$0.14", "Risk board with top stressed issuers and risk distribution."],
   ["alpha_sweep", "$0.14", "Opportunity screen with alpha opportunities and daily changes."],
   ["quick_ticker_check", "$0.18", "Fast issuer triage using covenant stress and alpha signals."],
@@ -259,7 +259,7 @@ class DSPricingToggle extends LitElement {
             <div class="price">${price}</div>
           </div>
         `)}
-        <p class="note">Natural Language routes are priced separately because they compile evidence into validated Markdown with provenance metadata and non-advice disclosure.</p>
+        <p class="note">Builder composite pricing uses 1 credit = $0.01 of Delta Signal usage value. Discovery is free; first calls are free where supported; paid public calls return x402 requirements when payment is needed.</p>
       </section>
     `;
   }

@@ -1361,7 +1361,7 @@
         </p>
         <div class="hero-actions">
           <a href="#recommended-workflows" class="btn btn-primary">Run a free Morning Brief</a>
-          <a href="#what-you-get" class="btn btn-secondary">See example output</a>
+          <a href="#pricing" class="btn btn-secondary">View pricing</a>
         </div>
         <p class="meter">MCP live • Open API published • x402 enabled • Glama verified • First 5 calls free</p>
         <div class="sample-output" aria-label="Sample Delta Signal Morning Brief output">
@@ -1670,6 +1670,29 @@
       </div>
     </section>
 
+    <section class="section alt" id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Pricing for first workflows</h2>
+          <p>Start with free discovery and first calls where supported. Paid public usage is route-level, usage-based, and declared in OpenAPI/MCP metadata. Builder pricing uses 1 credit = $0.01 of Delta Signal usage value.</p>
+        </div>
+        <div class="tool-grid" style="margin-bottom:1.5rem;">
+          <div class="tool"><strong>Morning Brief</strong><span>$0.18. Default daily market scan: readiness, daily changes, risk distribution, top stressed issuers, and alpha opportunities.</span></div>
+          <div class="tool"><strong>Company Report</strong><span>$0.30. Full single-issuer diligence across fundamentals, alpha signals, peer ranking, covenant stress, and SPECTRA when available.</span></div>
+          <div class="tool"><strong>Pressure Board</strong><span>$0.14. Market stress view with top stressed issuers and risk distribution.</span></div>
+          <div class="tool"><strong>Alpha Sweep</strong><span>$0.14. Opportunity screen with alpha opportunities and daily changes.</span></div>
+          <div class="tool"><strong>Quick Ticker Check</strong><span>$0.18. Fast issuer triage using readiness, covenant stress, and alpha signals.</span></div>
+          <div class="tool"><strong>Natural Language Briefs</strong><span>$0.95 for live top-stressed and morning-brief Markdown routes. Higher-cost planned issuer briefs are priced separately when live.</span></div>
+        </div>
+        <div class="tool-grid" style="margin-bottom:1.5rem;">
+          <div class="tool"><strong>Discovery</strong><span>Free metadata and tool inspection: MCP discovery, OpenAPI route inspection, Arazzo workflow metadata, and readiness probes where free-tier policy applies.</span></div>
+          <div class="tool"><strong>Granular reads</strong><span>Typical public reads run about $0.03-$0.10 depending on route: daily changes, readiness, risk distribution, top-stressed, peer ranking, alpha signals, covenant stress, SPECTRA, and issuer detail.</span></div>
+          <div class="tool"><strong>Payment rail</strong><span>Compatible public clients use Base USDC via x402 on <code>/v1/*</code>. Tempo/MPP clients use the matching <code>/mpp/v1/*</code> route family.</span></div>
+        </div>
+        <p class="mini-note">Prices are examples from the current public route metadata. Always confirm the route-specific x402 challenge or OpenAPI metadata before paid execution.</p>
+      </div>
+    </section>
+
     <section class="section alt" id="x402">
       <div class="wrap">
         <div class="section-head">
@@ -1692,7 +1715,7 @@
 5. Client retries with proof.
 6. Delta Signal returns JSON or evidence-preserving Markdown.</div>
         </ds-x402-checklist>
-        <p class="mini-note">Use free discovery and a first test call before running paid workflows. <a href="#recommended-workflows">Run a free Morning Brief</a> or <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">view route pricing</a>.</p>
+        <p class="mini-note">Use free discovery and a first test call before running paid workflows. <a href="#recommended-workflows">Run a free Morning Brief</a>, <a href="#pricing">review pricing</a>, or <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">view route metadata</a>.</p>
       </div>
     </section>
 
