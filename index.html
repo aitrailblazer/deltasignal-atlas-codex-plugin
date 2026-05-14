@@ -1376,11 +1376,46 @@
       </div>
     </section>
 
-    <section class="section" id="choose-path">
+    <section class="section" id="measures">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What Delta Signal measures</h2>
+          <p>Delta Signal focuses on crypto-exposed public companies, not generic token chatter. SEC and XBRL evidence flows into issuer-level and market-wide tools.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><strong>Issuer Fundamentals</strong><span>SEC / XBRL-backed company facts.</span></div>
+          <div class="feature"><strong>Covenant Stress</strong><span>Debt and financial pressure indicators.</span></div>
+          <div class="feature"><strong>Peer Ranking</strong><span>Relative position inside comparable crypto public-company groups.</span></div>
+          <div class="feature"><strong>Alpha Signals</strong><span>Positive or negative signal pressure for one issuer.</span></div>
+          <div class="feature"><strong>Risk Distribution</strong><span>Market-wide or watchlist-level risk spread.</span></div>
+          <div class="feature"><strong>Daily Changes</strong><span>Compact monitoring of changed companies and evidence references.</span></div>
+          <div class="feature"><strong>Readiness</strong><span>Service health, active data slice, freshness, and route availability.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recommended-workflows">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Start with plain-English workflows</h2>
+          <p>Composite presets bundle the right evidence routes behind one request. Use these before dropping into granular tools.</p>
+        </div>
+        <div class="prompt-grid">
+          <ds-copy-prompt prompt="Give me a Delta Signal morning brief."><div class="prompt"><strong>Daily Operating Picture</strong><br>"Give me a Delta Signal morning brief."<br><span>Includes readiness, daily changes, risk distribution, top stressed issuers, and alpha opportunities.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Run a Delta Signal company report for RIOT."><div class="prompt"><strong>Issuer Diligence</strong><br>"Run a Delta Signal company report for RIOT."<br><span>Includes fundamentals, covenant stress, peer ranking, alpha signals, and source metadata.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Show me the current pressure board."><div class="prompt"><strong>Market Pressure Board</strong><br>"Show me the current pressure board."<br><span>Includes top stressed issuers, stress tiers, and risk distribution.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Run an alpha sweep for the current universe."><div class="prompt"><strong>Alpha Sweep</strong><br>"Run an alpha sweep for the current universe."<br><span>Includes alpha opportunities, issuer candidates, caveats, and quality flags.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Quick check MARA before I drill into it."><div class="prompt"><strong>Quick Ticker Check</strong><br>"Quick check MARA before I drill into it."<br><span>Includes compact issuer snapshot, stress signal, peer context, and next drilldown options.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Show peer ranking for BTC-related public companies."><div class="prompt"><strong>Peer Context</strong><br>"Show peer ranking for BTC-related public companies."<br><span>Use after the composite scan identifies which issuer set matters.</span></div></ds-copy-prompt>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="choose-path">
       <div class="wrap">
         <div class="section-head">
           <h2>Choose your integration path</h2>
-          <p>After the first successful response, choose the client path that matches how you want to integrate Delta Signal.</p>
+          <p>After the first successful response and a composite workflow, choose the client path that matches how you want to integrate Delta Signal.</p>
         </div>
         <div class="link-grid">
           <a class="link-card" href="#install">
@@ -1410,43 +1445,28 @@
           </a>
           <a class="link-card" href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">
             <strong>I use Glama</strong>
-            <span>Open the verified Streamable HTTP connector for the hosted Azure MCP server.</span>
+            <span>Open the verified Streamable HTTP connector for the hosted MCP server.</span>
             <code>Open Glama connector</code>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="measures">
+    <section class="section" id="evidence-model">
       <div class="wrap">
         <div class="section-head">
-          <h2>What Delta Signal measures</h2>
-          <p>Delta Signal focuses on crypto-exposed public companies, not generic token chatter. SEC and XBRL evidence flows into issuer-level and market-wide tools.</p>
+          <h2>Evidence-preserving outputs</h2>
+          <p>Evidence first. Briefs second. No unsupported invention.</p>
         </div>
-        <div class="feature-grid">
-          <div class="feature"><strong>Issuer Fundamentals</strong><span>SEC / XBRL-backed company facts.</span></div>
-          <div class="feature"><strong>Covenant Stress</strong><span>Debt and financial pressure indicators.</span></div>
-          <div class="feature"><strong>Peer Ranking</strong><span>Relative position inside comparable crypto public-company groups.</span></div>
-          <div class="feature"><strong>Alpha Signals</strong><span>Positive or negative signal pressure for one issuer.</span></div>
-          <div class="feature"><strong>Risk Distribution</strong><span>Market-wide or watchlist-level risk spread.</span></div>
-          <div class="feature"><strong>Daily Changes</strong><span>Compact monitoring of changed companies and evidence references.</span></div>
+        <div class="feature">
+          <strong>Natural Language route boundary</strong>
+          <span>Natural Language briefs render returned Delta Signal evidence into readable Markdown. They do not create new evidence, fill missing data, override source caveats, convert screens into recommendations, or produce personalized investment advice.</span>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="recommended-workflows">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Start with plain-English workflows</h2>
-          <p>Composite presets bundle the right evidence routes behind one request. Use these before dropping into granular tools.</p>
-        </div>
-        <div class="prompt-grid">
-          <ds-copy-prompt prompt="Give me a Delta Signal morning brief."><div class="prompt"><strong>Daily Operating Picture</strong><br>"Give me a Delta Signal morning brief."<br><span>Includes readiness, daily changes, risk distribution, top stressed issuers, and alpha opportunities.</span></div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Run a Delta Signal company report for RIOT."><div class="prompt"><strong>Issuer Diligence</strong><br>"Run a Delta Signal company report for RIOT."<br><span>Includes fundamentals, covenant stress, peer ranking, alpha signals, and source metadata.</span></div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Show me the current pressure board."><div class="prompt"><strong>Market Pressure Board</strong><br>"Show me the current pressure board."<br><span>Includes top stressed issuers, stress tiers, and risk distribution.</span></div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Run an alpha sweep for the current universe."><div class="prompt"><strong>Alpha Sweep</strong><br>"Run an alpha sweep for the current universe."<br><span>Includes alpha opportunities, issuer candidates, caveats, and quality flags.</span></div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Quick check MARA before I drill into it."><div class="prompt"><strong>Quick Ticker Check</strong><br>"Quick check MARA before I drill into it."<br><span>Includes compact issuer snapshot, stress signal, peer context, and next drilldown options.</span></div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Show peer ranking for BTC-related public companies."><div class="prompt"><strong>Peer Context</strong><br>"Show peer ranking for BTC-related public companies."<br><span>Use after the composite scan identifies which issuer set matters.</span></div></ds-copy-prompt>
+        <div class="tool-grid" style="margin-top:1.5rem;">
+          <div class="tool"><strong>Source context</strong><span>Source dates, filing dates where available, freshness indicators, and stale flags.</span></div>
+          <div class="tool"><strong>Evidence quality</strong><span>Caveats, quality flags, evidence hashes, renderer status, and route or tool provenance.</span></div>
+          <div class="tool"><strong>Review boundary</strong><span>Briefs compile returned evidence, preserve metadata, surface caveats, and keep non-advice disclaimers visible.</span></div>
+          <div class="tool"><strong>Missing data</strong><span>If evidence is missing, it remains missing and must be surfaced as a caveat.</span></div>
         </div>
       </div>
     </section>
@@ -1469,11 +1489,6 @@
           <div class="workflow-stratum">
             <strong>Agent outputs</strong>
             <span>Clients receive JSON evidence or Markdown briefs with source dates, caveats, quality flags, hashes, and non-advice disclaimers.</span>
-          </div>
-          <div class="step">
-            <div class="step-number">Operator</div>
-            <h3>Audit status</h3>
-            <p>Is the full ATLAS-7 audit healthy?</p>
           </div>
         </div>
         <div class="code">SEC / XBRL filings
@@ -1580,11 +1595,50 @@
       </div>
     </section>
 
+    <section class="section" id="agent-traces">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Canonical agent traces</h2>
+          <p>Concrete examples for how an agent moves from intent to bounded workflow, execution, returned evidence, and renderer rules.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="tool"><strong>Trace A: Morning Brief</strong><span>Intent: "Give me a Delta Signal morning brief." Execute the Morning Brief composite or Natural Language route. Return readiness, daily changes, risk distribution, top stressed issuers, alpha opportunities, caveats, and metadata. Preserve source dates, quality flags, hashes, renderer status, and non-advice disclaimers.</span></div>
+          <div class="tool"><strong>Trace B: Company Report</strong><span>Intent: "Run a Delta Signal company report for RIOT." Required input: ticker. Execute Company Report or single-issuer diligence. Return fundamentals, covenant stress, peer ranking, alpha signals, and source metadata. Do not substitute a default ticker; missing evidence remains missing.</span></div>
+          <div class="tool"><strong>Trace C: Pressure Board</strong><span>Intent: "Show me the current pressure board." Execute the pressure-board composite or bounded market scan. Return top stressed issuers, stress tiers, risk distribution, market-wide pressure context, caveats, and quality flags. Treat the board as triage evidence, not recommendations.</span></div>
+          <div class="tool"><strong>Trace D: Daily Change Drilldown</strong><span>Intent: "Show what changed for ARKB." Start with compact daily changes. Fetch raw issuer evidence only when explicitly requested. Return changed facts, source references, filing metadata, caveats, and hashes.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="x402">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Public access and x402 payment</h2>
+          <p>Discovery is free. Public x402-compatible clients can inspect tools and metadata, receive a 402 challenge for paid calls, submit payment proof, retry, and receive JSON evidence or Markdown briefs.</p>
+        </div>
+        <div class="tool-grid" style="margin-bottom:1.5rem;">
+          <div class="tool"><strong>Discovery</strong><span>Free metadata, MCP discovery, OpenAPI, Arazzo, and route inspection before execution.</span></div>
+          <div class="tool"><strong>Free calls</strong><span>First 5 calls free for public testing before paid route enforcement.</span></div>
+          <div class="tool"><strong>Base USDC settlement</strong><span>Compatible public agent clients handle x402 pay-and-retry execution on the Base route family.</span></div>
+          <div class="tool"><strong>Route pricing</strong><span>Prices are shown per route where applicable; the server returns the route-specific payment contract when payment is required.</span></div>
+        </div>
+        <ds-x402-checklist>
+          <div class="code"><strong>Buyer setup</strong>
+1. Install Coinbase payments: npx @coinbase/payments-mcp install
+2. Select Codex CLI, sign in, and fund with Base USDC.
+3. Add DeltaSignal to Codex: codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
+4. Use Agentic Market or Coinbase x402 routes under https://api.aitrailblazer.net/v1/*
+5. Probe before payment: GET https://api.aitrailblazer.net/v1/readiness
+6. Expected contract: eip155:8453, Base USDC, amount=40000 ($0.04), payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3</div>
+        </ds-x402-checklist>
+      </div>
+    </section>
+
     <section class="section" id="natural-language">
       <div class="wrap">
         <div class="section-head">
-          <h2>Evidence-preserving Markdown briefs</h2>
-          <p>Natural Language routes are for readable evidence packages, not unconstrained AI opinions.</p>
+          <h2>Natural Language brief routes</h2>
+          <p>Readable evidence packages, not unconstrained opinions. Natural Language routes compile returned Delta Signal evidence into validated Markdown briefs.</p>
         </div>
         <ds-natural-tier-banner>
           <div class="feature">
@@ -1647,32 +1701,6 @@
       </div>
     </section>
 
-    <section class="section alt" id="x402">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Public access and x402 payment</h2>
-          <p>Discovery is free. The first calls are free. Paid public routes return an x402 challenge. Compatible clients settle through Base USDC and retry with payment proof.</p>
-        </div>
-        <div class="tool-grid" style="margin-bottom:1.5rem;">
-          <div class="tool"><strong>Discovery</strong><span>Free metadata, MCP discovery, OpenAPI, Arazzo, and route inspection before execution.</span></div>
-          <div class="tool"><strong>Free calls</strong><span>First 5 calls free for public testing before paid route enforcement.</span></div>
-          <div class="tool"><strong>Granular example</strong><span>Daily changes is a low-cost public monitoring route; current route metadata shows its price.</span></div>
-          <div class="tool"><strong>Natural Language example</strong><span>Morning Brief Natural and Top-Stressed Natural have separate route-level prices.</span></div>
-          <div class="tool"><strong>x402 challenge</strong><span>The server returns the route-specific payment contract when payment is required.</span></div>
-          <div class="tool"><strong>Composite presets</strong><span>MCP composites are the recommended first workflow layer; public x402 route availability is governed by live route metadata.</span></div>
-        </div>
-        <ds-x402-checklist>
-          <div class="code"><strong>Buyer setup</strong>
-1. Install Coinbase payments: npx @coinbase/payments-mcp install
-2. Select Codex CLI, sign in, and fund with Base USDC.
-3. Add DeltaSignal to Codex: codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
-4. Use Agentic Market or Coinbase x402 routes under https://api.aitrailblazer.net/v1/*
-5. Probe before payment: GET https://api.aitrailblazer.net/v1/readiness
-6. Expected contract: eip155:8453, Base USDC, amount=40000 ($0.04), payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3</div>
-        </ds-x402-checklist>
-      </div>
-    </section>
-
     <section class="section" id="install">
       <div class="wrap">
         <div class="section-head">
@@ -1714,8 +1742,8 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
     <section class="section alt" id="developer-docs">
       <div class="wrap">
         <div class="section-head">
-          <h2>Developer resources</h2>
-          <p>Second-level docs for route contracts, workflow planning, LLM behavior, and x402 validation.</p>
+          <h2>Reference surfaces</h2>
+          <p>Inspect the exact contracts when you need implementation detail: schemas, workflows, MCP endpoint, Glama connector, x402 handshake, and agent-readable guidance.</p>
         </div>
         <div class="link-grid">
           <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
@@ -1874,6 +1902,69 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
         </div>
       </div>
     </section>
+
+    <section class="section" id="route-status">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Live versus planned route status</h2>
+          <p>Know what is callable now. Treat route status as operational metadata and confirm the current surface in OpenAPI, Quickstart, or route metadata before wiring production flows.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="tool"><strong>Live core routes</strong><span>Readiness, top stressed, risk distribution, alpha opportunities, daily changes, and issuer evidence routes where listed in the current OpenAPI surface.</span></div>
+          <div class="tool"><strong>Live Natural Language routes</strong><span>top_stressed_natural and morning_brief_natural are presented as live evidence-preserving Markdown routes where current route metadata confirms them.</span></div>
+          <div class="tool"><strong>Composite routes</strong><span>Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check are the recommended first workflow layer when exposed by MCP/composite metadata.</span></div>
+          <div class="tool"><strong>Planned briefs</strong><span>covenant_stress_natural and additional peer ranking, alpha signals, company fundamentals, risk distribution, and daily changes briefs should be treated as roadmap until current references mark them callable.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="operator-audit">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Operator and audit workflows</h2>
+          <p>Operational visibility helps confirm whether the ATLAS-7 pipeline is healthy before users depend on live evidence outputs.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="tool"><strong>atlas7AuditStatusCheck</strong><span>Checks audit freshness, artifact prefix, current failures, historical failures, and composite failures.</span></div>
+          <div class="tool"><strong>Readiness validation</strong><span>Confirms active data slice, freshness, live-price status, issuer count, and service availability.</span></div>
+          <div class="tool"><strong>Source metadata completeness</strong><span>Use response metadata to verify source dates, caveats, quality flags, and evidence references before downstream rendering.</span></div>
+          <div class="tool"><strong>Failure visibility</strong><span>Surface current, historical, and composite failures as validation context instead of hiding them behind successful route responses.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="first-call-copy">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Developer copy block: first call</h2>
+          <p>Copy, run, inspect. Start with readiness, then run a bounded workflow through your selected access path.</p>
+        </div>
+        <div class="code">curl https://api.aitrailblazer.net/v1/readiness
+
+# Then run a bounded workflow through REST, MCP, Glama,
+# an Arazzo-guided agent sequence, or an x402-compatible public client.
+
+# After the response returns, inspect:
+# source_date, computed_at, stale, caveats, quality_flags,
+# evidence_hashes, renderer_status, route_price, and payload_mode.</div>
+      </div>
+    </section>
+
+    <section class="section alt" id="final-cta">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Build with SEC-grounded issuer intelligence</h2>
+          <p>Start with readiness. Run a Morning Brief. Inspect the metadata. Then choose REST, MCP, Arazzo, Glama, or x402 for your integration path.</p>
+        </div>
+        <div class="hero-actions" style="margin:0;">
+          <a href="https://api.aitrailblazer.net/v1/readiness" class="btn btn-primary" target="_blank" rel="noopener">Run readiness</a>
+          <a href="#recommended-workflows" class="btn btn-secondary">Run Morning Brief</a>
+          <a href="https://api.aitrailblazer.net/openapi.json" class="btn btn-secondary" target="_blank" rel="noopener">View Open API</a>
+          <a href="./quickstart.md" class="btn btn-secondary">Read Quickstart</a>
+          <a href="#install" class="btn btn-secondary">Install MCP connector</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -1888,7 +1979,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
       <a href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">Glama</a>
       <a href="https://docs.cdp.coinbase.com/x402/welcome" target="_blank" rel="noopener">Coinbase x402</a>
     </div>
-    Delta Signal provides evidence-grounded issuer intelligence and screening outputs. It is not investment advice.
+    Delta Signal provides issuer intelligence, evidence routing, risk-screening outputs, and structured briefs. It does not provide personalized investment advice, buy or sell instructions, price targets, portfolio recommendations, or guarantees of issuer performance.
   </footer>
 
   <script type="module" src="./assets/delta-signal-landing.js?v=arazzo-workflows-20260511"></script>
