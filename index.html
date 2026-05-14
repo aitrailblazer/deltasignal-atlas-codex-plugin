@@ -1288,17 +1288,18 @@
     <section class="hero">
       <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="eyebrow">x402 live • MCP live • Open API published</p>
+        <p class="eyebrow">MCP live • Open API published • x402 live • First 5 calls free</p>
         <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
         <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
         <p class="tagline">
-          SEC-grounded risk, fundamentals, and signal intelligence for crypto-exposed public companies.
-          <span>Ask an agent for morning briefs, issuer reports, pressure boards, alpha sweeps, covenant stress, peer rankings, and filing-backed fundamentals.</span>
+          SEC-grounded issuer intelligence for crypto-exposed public companies.
+          <span>Turn SEC / XBRL filings, issuer fundamentals, covenant stress, peer rankings, daily changes, risk distribution, and alpha signals into agent-ready JSON and evidence-preserving Markdown briefs.</span>
         </p>
         <div class="hero-actions">
-          <a href="#install" class="btn btn-primary">Start with Coinbase x402</a>
+          <a href="https://api.aitrailblazer.net/v1/readiness" class="btn btn-primary" target="_blank" rel="noopener">Run a readiness check</a>
           <a href="https://api.aitrailblazer.net/openapi.json" class="btn btn-secondary" target="_blank" rel="noopener">View Open API</a>
           <a href="./quickstart.md" class="btn btn-secondary">Read Quickstart</a>
+          <a href="#install" class="btn btn-secondary">Install MCP connector</a>
         </div>
         <p class="meter">x402 live • Glama verified • MCP live • Open API published • First 5 calls free • Base USDC settlement</p>
         <div class="signal-visual" aria-label="Animated Delta Signal data flow visualization">
@@ -1340,19 +1341,72 @@
       </div>
     </section>
 
-    <section class="section alt" id="examples">
+    <section class="section alt" id="choose-path">
       <div class="wrap">
         <div class="section-head">
-          <h2>The first five things users can ask</h2>
-          <p>Start with plain-English workflows. Composite MCP presets bundle the right evidence routes behind one request.</p>
+          <h2>Choose your integration path</h2>
+          <p>Start from the path that matches your client. The page still exposes MCP, REST, Arazzo, and x402, but you do not need to understand all of them before the first useful call.</p>
         </div>
-        <div class="prompt-grid">
-          <ds-copy-prompt prompt="Give me a Delta Signal morning brief."><div class="prompt">"Give me a Delta Signal morning brief."</div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Run a Delta Signal company report for RIOT."><div class="prompt">"Run a Delta Signal company report for RIOT."</div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Show me the current pressure board."><div class="prompt">"Show me the current pressure board."</div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Run an alpha sweep for the current universe."><div class="prompt">"Run an alpha sweep for the current universe."</div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Quick check MARA before I drill into it."><div class="prompt">"Quick check MARA before I drill into it."</div></ds-copy-prompt>
-          <ds-copy-prompt prompt="Show peer ranking for BTC-related public companies."><div class="prompt">"Show peer ranking for BTC-related public companies."</div></ds-copy-prompt>
+        <div class="link-grid">
+          <a class="link-card" href="#install">
+            <strong>I use Codex or Claude Code</strong>
+            <span>Install the MCP connector and start with plain-English workflows.</span>
+            <code>Install MCP connector</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
+            <strong>I build with REST APIs</strong>
+            <span>Call OpenAPI-backed endpoints directly and inspect schemas, response metadata, and route pricing.</span>
+            <code>Open API reference</code>
+          </a>
+          <a class="link-card" href="./arazzo/deltasignal-arazzo.yaml">
+            <strong>I build agent workflows</strong>
+            <span>Use Arazzo to map user intent to bounded route sequences.</span>
+            <code>View Arazzo workflows</code>
+          </a>
+          <a class="link-card" href="#first-test">
+            <strong>I want one fast test</strong>
+            <span>Probe readiness, then run a Morning Brief or pressure-board scan.</span>
+            <code>Start first test</code>
+          </a>
+          <a class="link-card" href="#x402">
+            <strong>I need payment / x402 details</strong>
+            <span>Discovery is free. Paid calls return an x402 challenge for compatible clients.</span>
+            <code>Validate x402 flow</code>
+          </a>
+          <a class="link-card" href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">
+            <strong>I use Glama</strong>
+            <span>Open the verified Streamable HTTP connector for the hosted Azure MCP server.</span>
+            <code>Open Glama connector</code>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="first-test">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Run your first Delta Signal test</h2>
+          <p>Get to a successful output before choosing a full integration path.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">Step 1</div>
+            <h3>Check system readiness</h3>
+            <p>Use readiness to confirm the active data slice, service health, and whether the public route returns a payment challenge.</p>
+            <p><a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">GET /v1/readiness</a></p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2</div>
+            <h3>Run a bounded scan</h3>
+            <p>Start with a composite or Natural Language route: Morning Brief, Top-Stressed Brief, Pressure Board, or Alpha Sweep.</p>
+            <p>Starter prompt: Give me a Delta Signal morning brief.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3</div>
+            <h3>Inspect evidence metadata</h3>
+            <p>Check source dates, caveats, quality flags, evidence hashes, renderer status, and non-advice disclaimers before using the result.</p>
+            <p><a href="./quickstart.md">Read response metadata guide</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -1374,83 +1428,41 @@
       </div>
     </section>
 
-    <section class="section alt" id="install">
+    <section class="section" id="recommended-workflows">
       <div class="wrap">
         <div class="section-head">
-          <h2>Install in 60 seconds</h2>
-          <p>Start with Coinbase payments for Codex or Claude Code on the public x402 route.</p>
+          <h2>Start with plain-English workflows</h2>
+          <p>Composite presets bundle the right evidence routes behind one request. Use these before dropping into granular tools.</p>
         </div>
-        <ds-install-tabs>
-          <div class="code" translate="no" spellcheck="false"><strong>Coinbase + Codex</strong>
-npx @coinbase/payments-mcp install
-codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
-
-<strong>Coinbase + Claude Code</strong>
-npx @coinbase/payments-mcp install --client claude-code
-claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.net/mcp
-</div>
-        </ds-install-tabs>
-      </div>
-    </section>
-
-    <section class="section" id="developer-docs">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Developer docs for Natural Language briefs</h2>
-          <p>Use the Quickstart for route-level integration and the LLM guide for agent behavior, evidence boundaries, renderer metadata, and non-advice constraints.</p>
-        </div>
-        <div class="link-grid">
-          <a class="link-card" href="./quickstart.md">
-            <strong>Quickstart</strong>
-            <span>Call the Phase 1 Natural Language routes, inspect response metadata, handle fallback modes, and wire SDK clients safely.</span>
-            <code>/quickstart.md</code>
-          </a>
-          <a class="link-card" href="./llms.txt">
-            <strong>LLM Instructions</strong>
-            <span>Agent-facing rules for treating Natural Language Briefs as evidence-to-Markdown compiler outputs, not autonomous advice.</span>
-            <code>/llms.txt</code>
-          </a>
-          <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
-            <strong>Open API 3.1</strong>
-            <span>Public route contract for raw, composite, x402, and Natural Language Delta Signal surfaces.</span>
-            <code>https://api.aitrailblazer.net/openapi.json</code>
-          </a>
-          <a class="link-card" href="./arazzo/deltasignal-arazzo.yaml">
-            <strong>Arazzo Workflows</strong>
-            <span>Machine-readable scenario pipelines for MCP x402 handshake, market scans, issuer diligence, daily evidence, and composite preset selection.</span>
-            <code>./arazzo/deltasignal-arazzo.yaml</code>
-          </a>
+        <div class="prompt-grid">
+          <ds-copy-prompt prompt="Give me a Delta Signal morning brief."><div class="prompt"><strong>Daily Operating Picture</strong><br>"Give me a Delta Signal morning brief."<br><span>Includes readiness, daily changes, risk distribution, top stressed issuers, and alpha opportunities.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Run a Delta Signal company report for RIOT."><div class="prompt"><strong>Issuer Diligence</strong><br>"Run a Delta Signal company report for RIOT."<br><span>Includes fundamentals, covenant stress, peer ranking, alpha signals, and source metadata.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Show me the current pressure board."><div class="prompt"><strong>Market Pressure Board</strong><br>"Show me the current pressure board."<br><span>Includes top stressed issuers, stress tiers, and risk distribution.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Run an alpha sweep for the current universe."><div class="prompt"><strong>Alpha Sweep</strong><br>"Run an alpha sweep for the current universe."<br><span>Includes alpha opportunities, issuer candidates, caveats, and quality flags.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Quick check MARA before I drill into it."><div class="prompt"><strong>Quick Ticker Check</strong><br>"Quick check MARA before I drill into it."<br><span>Includes compact issuer snapshot, stress signal, peer context, and next drilldown options.</span></div></ds-copy-prompt>
+          <ds-copy-prompt prompt="Show peer ranking for BTC-related public companies."><div class="prompt"><strong>Peer Context</strong><br>"Show peer ranking for BTC-related public companies."<br><span>Use after the composite scan identifies which issuer set matters.</span></div></ds-copy-prompt>
         </div>
       </div>
     </section>
 
-    <section class="section" id="first-test">
+    <section class="section alt" id="architecture">
       <div class="wrap">
         <div class="section-head">
-          <h2>Run a first test</h2>
-          <p>After installing, restart your agent and run one starter prompt. If free calls are exhausted, compatible clients receive an x402 payment challenge.</p>
+          <h2>From filings to agent output</h2>
+          <p>Delta Signal is an evidence pipeline first: SEC / XBRL facts flow into ATLAS-7, then out through REST, MCP, Arazzo workflows, x402 public access, and response metadata.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">Beginner</div>
-            <h3>Daily picture</h3>
-            <p>Ask for the Morning Brief when you want the daily operating picture: readiness, latest meaningful deltas, risk distribution, top stressed issuers, and alpha opportunities in one bounded scan.</p>
-            <p>Starter prompt: Give me a Delta Signal morning brief.</p>
+        <div class="workflow-strata" aria-label="Delta Signal architecture">
+          <div class="workflow-stratum">
+            <strong>SEC / XBRL filings</strong>
+            <span>Issuer fundamentals, changed facts, filing dates, and source evidence enter the ATLAS-7 pipeline.</span>
           </div>
-          <div class="step">
-            <div class="step-number">Issuer-focused</div>
-            <h3>Company report</h3>
-            <p>Run a Delta Signal company report for RIOT.</p>
+          <div class="workflow-stratum">
+            <strong>ATLAS-7 surfaces</strong>
+            <span>Risk, fundamentals, covenant stress, peer ranking, alpha, daily changes, and readiness are exposed as bounded operations.</span>
           </div>
-          <div class="step">
-            <div class="step-number">Analyst</div>
-            <h3>Peer context</h3>
-            <p>Show peer ranking for BTC-related public companies.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">Evidence</div>
-            <h3>Daily drilldown</h3>
-            <p>Show recent daily change evidence for ARKB.</p>
+          <div class="workflow-stratum">
+            <strong>Agent outputs</strong>
+            <span>Clients receive JSON evidence or Markdown briefs with source dates, caveats, quality flags, hashes, and non-advice disclaimers.</span>
           </div>
           <div class="step">
             <div class="step-number">Operator</div>
@@ -1458,6 +1470,12 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
             <p>Is the full ATLAS-7 audit healthy?</p>
           </div>
         </div>
+        <div class="code">SEC / XBRL filings
+-> ATLAS-7 issuer pipeline
+-> risk, fundamentals, stress, peer, alpha, and daily-change surfaces
+-> REST / MCP / composite presets
+-> JSON evidence or Markdown briefs
+-> source dates, caveats, quality flags, hashes, and non-advice disclaimers</div>
       </div>
     </section>
 
@@ -1558,10 +1576,14 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
 
     <section class="section" id="natural-language">
       <div class="wrap">
+        <div class="section-head">
+          <h2>Evidence-preserving Markdown briefs</h2>
+          <p>Natural Language routes are for readable evidence packages, not unconstrained AI opinions.</p>
+        </div>
         <ds-natural-tier-banner>
           <div class="feature">
             <strong>Natural Language briefs</strong>
-            <span>Raw and composite routes return structured evidence. Natural Language routes compile that evidence into validated Markdown while preserving source dates, caveats, quality flags, evidence hashes, and non-advice disclaimers. They buffer, validate, and then return completed Markdown briefs.</span>
+            <span>Raw and composite routes return structured evidence. Natural Language routes compile that evidence into validated Markdown while preserving source dates, caveats, quality flags, evidence hashes, and non-advice disclaimers. They do not create new evidence; they render returned Delta Signal evidence into readable Markdown.</span>
           </div>
         </ds-natural-tier-banner>
         <div style="margin-top:1.5rem;">
@@ -1622,8 +1644,16 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
     <section class="section alt" id="x402">
       <div class="wrap">
         <div class="section-head">
-          <h2>Coinbase x402 and Bazaar</h2>
-          <p>The first 5 calls are free. After that, Coinbase x402 and Agentic Market compatible clients use the Base route family, settle in Base USDC, and expose Bazaar metadata for discovery validation.</p>
+          <h2>Public access and x402 payment</h2>
+          <p>Discovery is free. The first calls are free. Paid public routes return an x402 challenge. Compatible clients settle through Base USDC and retry with payment proof.</p>
+        </div>
+        <div class="tool-grid" style="margin-bottom:1.5rem;">
+          <div class="tool"><strong>Discovery</strong><span>Free metadata, MCP discovery, OpenAPI, Arazzo, and route inspection before execution.</span></div>
+          <div class="tool"><strong>Free calls</strong><span>First 5 calls free for public testing before paid route enforcement.</span></div>
+          <div class="tool"><strong>Granular example</strong><span>Daily changes is a low-cost public monitoring route; current route metadata shows its price.</span></div>
+          <div class="tool"><strong>Natural Language example</strong><span>Morning Brief Natural and Top-Stressed Natural have separate route-level prices.</span></div>
+          <div class="tool"><strong>x402 challenge</strong><span>The server returns the route-specific payment contract when payment is required.</span></div>
+          <div class="tool"><strong>Composite presets</strong><span>MCP composites are the recommended first workflow layer; public x402 route availability is governed by live route metadata.</span></div>
         </div>
         <ds-x402-checklist>
           <div class="code"><strong>Buyer setup</strong>
@@ -1637,11 +1667,90 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
       </div>
     </section>
 
+    <section class="section" id="install">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Install in your agent client</h2>
+          <p>Install details come after the first-test and pricing model so you know which path you are enabling.</p>
+        </div>
+        <ds-install-tabs>
+          <div class="code" translate="no" spellcheck="false"><strong>Coinbase + Codex</strong>
+npx @coinbase/payments-mcp install
+codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
+
+<strong>Coinbase + Claude Code</strong>
+npx @coinbase/payments-mcp install --client claude-code
+claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.net/mcp
+
+<strong>REST only</strong>
+Open https://api.aitrailblazer.net/openapi.json and call the route family directly.</div>
+        </ds-install-tabs>
+        <div class="link-grid" style="margin-top:1.5rem;">
+          <a class="link-card" href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">
+            <strong>Glama</strong>
+            <span>Use the verified Glama connector for Streamable HTTP MCP access.</span>
+            <code>Open Glama connector</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
+            <strong>REST Quickstart Path</strong>
+            <span>Use OpenAPI if you want direct HTTP route control instead of MCP.</span>
+            <code>Open API reference</code>
+          </a>
+          <a class="link-card" href="./quickstart.md">
+            <strong>Quickstart</strong>
+            <span>Route-level integration, response metadata, fallback modes, and SDK wiring.</span>
+            <code>./quickstart.md</code>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="developer-docs">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Developer resources</h2>
+          <p>Second-level docs for route contracts, workflow planning, LLM behavior, and x402 validation.</p>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
+            <strong>Open API 3.1</strong>
+            <span>Public route contract for raw, composite, x402, and Natural Language Delta Signal surfaces.</span>
+            <code>https://api.aitrailblazer.net/openapi.json</code>
+          </a>
+          <a class="link-card" href="./quickstart.md">
+            <strong>Quickstart</strong>
+            <span>Route-level integration, response metadata, fallback modes, and SDK wiring.</span>
+            <code>./quickstart.md</code>
+          </a>
+          <a class="link-card" href="./llms.txt">
+            <strong>LLM Instructions</strong>
+            <span>Agent-facing rules for evidence boundaries, renderer metadata, and non-advice constraints.</span>
+            <code>./llms.txt</code>
+          </a>
+          <a class="link-card" href="./arazzo/deltasignal-arazzo.yaml">
+            <strong>Arazzo YAML</strong>
+            <span>Machine-readable workflow plans for agents.</span>
+            <code>./arazzo/deltasignal-arazzo.yaml</code>
+          </a>
+          <a class="link-card" href="./arazzo/deltasignal-arazzo.json">
+            <strong>Arazzo JSON</strong>
+            <span>JSON mirror of the workflow plan for clients that prefer JSON.</span>
+            <code>./arazzo/deltasignal-arazzo.json</code>
+          </a>
+          <a class="link-card" href="./arazzo/publicMcpX402Handshake.arazzo.yaml">
+            <strong>x402 Handshake</strong>
+            <span>Public payment challenge and retry workflow.</span>
+            <code>./arazzo/publicMcpX402Handshake.arazzo.yaml</code>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="coinbase-bazaar-validation">
       <div class="wrap">
         <div class="section-head">
           <h2>Validate before spending</h2>
-          <p>Use a no-payment x402 discovery probe first. A valid Delta Signal route returns a 402 contract with Base USDC payment requirements and Bazaar discovery metadata before any paid retry is attempted.</p>
+          <p>Use readiness, discovery, and x402 probe routes before paid execution. Check service health, active data slice, route metadata, and expected payment challenge behavior.</p>
         </div>
         <div class="surface-stage" aria-label="Coinbase x402 and Bazaar validation flow">
           <div class="surface-card">
@@ -1683,6 +1792,14 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
             <span>Buyer, seller, facilitator, and Bazaar discovery reference for compatible clients.</span>
             <code>docs.cdp.coinbase.com/x402</code>
           </a>
+        </div>
+        <div class="tool-grid" style="margin-top:1.5rem;">
+          <div class="tool"><strong>Readiness route</strong><span>Returns current service state or a valid public payment challenge.</span></div>
+          <div class="tool"><strong>MCP discovery</strong><span>Works before paid calls so agents can inspect available tools.</span></div>
+          <div class="tool"><strong>OpenAPI contract</strong><span>Shows reachable public routes, route metadata, and 402 response shape.</span></div>
+          <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, and amount metadata before retry.</span></div>
+          <div class="tool"><strong>Paid retry</strong><span>Returns structured JSON or Markdown evidence after compatible payment proof.</span></div>
+          <div class="tool"><strong>Response metadata</strong><span>Includes source dates, caveats, quality flags, and non-advice boundaries.</span></div>
         </div>
       </div>
     </section>
@@ -1754,7 +1871,18 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
   </main>
 
   <footer class="footer">
-    Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
+    <div style="display:flex;flex-wrap:wrap;gap:.85rem;justify-content:center;margin-bottom:1rem;">
+      <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">Open API</a>
+      <a href="./quickstart.md">Quickstart</a>
+      <a href="./llms.txt">LLM guide</a>
+      <a href="./arazzo/deltasignal-arazzo.yaml">Arazzo YAML</a>
+      <a href="./arazzo/deltasignal-arazzo.json">Arazzo JSON</a>
+      <a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">MCP endpoint</a>
+      <a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">Readiness</a>
+      <a href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">Glama</a>
+      <a href="https://docs.cdp.coinbase.com/x402/welcome" target="_blank" rel="noopener">Coinbase x402</a>
+    </div>
+    Delta Signal provides evidence-grounded issuer intelligence and screening outputs. It is not investment advice.
   </footer>
 
   <script type="module" src="./assets/delta-signal-landing.js?v=arazzo-workflows-20260511"></script>
