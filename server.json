@@ -3,7 +3,7 @@
   "name": "io.github.aitrailblazer/deltasignal-atlas-7",
   "title": "DeltaSignal ATLAS-7",
   "description": "SEC-grounded crypto public issuer intelligence with MCP composite presets, compact daily monitoring, evidence drilldowns, Natural Language briefs, x402/MPP pay-per-call access, and Azure-native 215-issuer audit status.",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "websiteUrl": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "codex",
     "x402"
   ],
-  "instructions": "Prefer composite MCP presets for common workflows: deltasignal_morning_brief for daily scans, deltasignal_company_report for ticker reports, deltasignal_pressure_board for risk monitoring, deltasignal_alpha_sweep for opportunities, and deltasignal_quick_ticker_check for fast ticker checks. Use deltasignal_daily_changes for compact Daily Monitoring and deltasignal_daily_change_evidence for explicit ticker/CIK proof drilldowns. Use deltasignal_atlas7_audit_status or GET /v1/atlas7/audit/latest when the user asks whether the full Azure-native 215-issuer ATLAS-7 regression audit is healthy and fresh. Public users can access the surface through x402/Base or MPP/Tempo rails. First 5 calls are free where supported; paid usage settles via x402 USDC on Base.",
+  "instructions": "Prefer composite MCP presets for common workflows: deltasignal_morning_brief for daily scans, deltasignal_company_report for ticker reports, deltasignal_pressure_board for risk monitoring, deltasignal_alpha_sweep for opportunities, and deltasignal_quick_ticker_check for fast ticker checks. Use deltasignal_daily_changes for compact Daily Monitoring and deltasignal_daily_change_evidence for explicit ticker/CIK proof drilldowns. Use deltasignal_atlas7_audit_status or GET /v1/atlas7/audit/latest when the user asks whether the full Azure-native 215-issuer ATLAS-7 regression audit is healthy and fresh. Public MCP initialize and tools/list are free for discovery; public tools/call requires x402 payment unless a free-tier grant applies. Public users can access the surface through x402/Base or MPP/Tempo rails. First 5 calls are free where supported; paid usage settles via x402 USDC on Base.",
   "configSchema": {
     "type": "object",
     "properties": {

@@ -30,6 +30,7 @@ Agentic Market compatibility rail:
 Bundled MCP server:
 
 - Treat DeltaSignal as an MCP-first plugin. Prefer named MCP tool calls over hand-written HTTP routes whenever the plugin is installed.
+- Public MCP `initialize` and `tools/list` are free discovery methods. Public MCP `tools/call` remains protected by x402 payment unless a free-tier grant applies.
 - Prefer composite MCP presets for common workflows:
   - `deltasignal_morning_brief` for daily scans.
   - `deltasignal_company_report` for full ticker reports.

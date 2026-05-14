@@ -8,8 +8,8 @@ This file tracks external registry/cache state after the ATLAS-7 audit-status an
 
 The repo and GitHub Pages surfaces are current:
 
-- `server.json` version: `1.1.2`
-- `.codex-plugin/plugin.json` version: `0.2.2`
+- `server.json` version: `1.1.3`
+- `.codex-plugin/plugin.json` version: `0.2.3`
 - OpenAPI includes `GET /v1/atlas7/audit/latest`
 - MCP `tools/list` includes `deltasignal_atlas7_audit_status`
 - Arazzo includes seven workflows, including `atlas7AuditStatusCheck`
@@ -35,12 +35,13 @@ Observed static page title:
 DeltaSignal ATLAS-7 - MCP Connector | Glama
 ```
 
-Observed static content matched `daily monitoring`, but did not surface `atlas7_audit_status`, `audit status`, or `215-issuer` in the fetched HTML.
+Observed static content matched `daily monitoring`, but did not surface `atlas7_audit_status`, `audit status`, or `215-issuer` in the fetched HTML. After the 2026-05-14 backend fix, Glama still showed cached status `Unhealthy` with last test `2026-05-14 15:34`, which predates the deployed public MCP discovery change.
 
 Action:
 
 - Trigger Glama recrawl or resubmit connector metadata if Glama does not refresh automatically.
 - Verify the connector description includes audit status and 215-issuer regression wording.
+- Verify Glama re-tests `POST /mcp initialize` and `tools/list` as HTTP 200 public discovery, while unpaid `tools/call` remains HTTP 402.
 
 ### Smithery
 

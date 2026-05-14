@@ -1,6 +1,6 @@
 {
   "name": "deltasignal-atlas-7",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "SEC-grounded crypto public issuer intelligence with compact daily monitoring, evidence drilldowns, Azure-native audit status, and x402 paid access.",
   "author": {
     "name": "AITrailblazer",
@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "DeltaSignal ATLAS-7",
     "shortDescription": "SEC-grounded ATLAS-7 stress, alpha, fundamentals, daily monitoring, evidence drilldowns, and audit status.",
-    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence on crypto public companies. It exposes composite presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha, fundamentals, risk distribution, compact daily monitoring, paginated daily evidence drilldowns, and Azure-native 215-issuer regression audit status. Public Builder metadata uses usage credits; credit packs are not implemented yet.",
+    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence on crypto public companies. It exposes composite presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha, fundamentals, risk distribution, compact daily monitoring, paginated daily evidence drilldowns, and Azure-native 215-issuer regression audit status. Public MCP initialize and tools/list are free for discovery; public tools/call remains x402-protected unless a free-tier grant applies. Public Builder metadata uses usage credits; credit packs are not implemented yet.",
     "developerName": "AITrailblazer",
     "category": "Research",
     "capabilities": [
