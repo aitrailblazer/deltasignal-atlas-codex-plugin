@@ -95,10 +95,12 @@ Flow:
 
 1. Call `POST /mcp` with JSON-RPC `tools/list`.
 2. Do not send an internal key.
-3. Expect HTTP `402 Payment Required`.
-4. Let the x402-capable client pay and retry the same MCP request.
+3. Expect HTTP `200` with the public DeltaSignal tool inventory.
+4. Call a real tool such as `deltasignal_readiness` without payment.
+5. Expect HTTP `402 Payment Required`.
+6. Let the x402-capable client pay and retry the same `tools/call` request.
 
-Use this to confirm public paid MCP behavior before tool execution.
+Use this to confirm public MCP discovery and paid tool execution before real use.
 
 ### 2. `internalMcpToolSmoke`
 

@@ -4,9 +4,10 @@ info:
   summary: Public discovery and payment onboarding for the DeltaSignal MCP server.
   description: >
     Agents without internal keys should use this workflow to confirm public
-    MCP discovery and x402 payment behavior. The client issues tools/list,
-    receives a 402 challenge, pays through an x402-capable payment client,
-    then retries the same MCP request.
+    MCP discovery and x402 payment behavior. The client issues tools/list
+    for free discovery, then calls a real tool without payment to receive a
+    402 challenge. An x402-capable payment client pays and retries that same
+    tools/call request.
   version: 1.0.0
 sourceDescriptions:
   - name: deltasignalOpenAPI
@@ -19,9 +20,10 @@ workflows:
   - workflowId: publicMcpX402Handshake
     summary: Public MCP onboarding and payment check.
     description: >
-      Confirms that POST /mcp is public x402-first. No internal key is sent.
+      Confirms that POST /mcp allows public metadata discovery before payment,
+      and that tool execution remains x402-protected. No internal key is sent.
       x402-capable clients handle the payment step outside the Arazzo runner,
-      then retry the identical MCP request with payment proof.
+      then retry the identical tools/call request with payment proof.
     x-audience: public
     x-payment-rail: x402
     x-agent-intent:
@@ -33,15 +35,38 @@ workflows:
       properties:
         mcpRequest:
           type: object
-          description: Original JSON-RPC request body.
+          description: JSON-RPC tools/call request body used to trigger the payment challenge.
           default:
+            jsonrpc: "2.0"
+            id: readiness
+            method: tools/call
+            params:
+              name: deltasignal_readiness
+              arguments: {}
+    steps:
+      - stepId: unauthenticatedToolsList
+        description: Call POST /mcp with tools/list and no internal auth header. Public discovery should succeed without payment.
+        operationId: callDeltaSignalMCP
+        x-deltasignal-path: /mcp
+        x-http-method: POST
+        x-payment-rail: none
+        x-expected-status: 200
+        requestBody:
+          payload:
             jsonrpc: "2.0"
             id: tools
             method: tools/list
             params: {}
-    steps:
-      - stepId: unauthenticatedToolsList
-        description: Call POST /mcp with tools/list and no internal auth header.
+        successCriteria:
+          - condition: $statusCode == 200
+          - condition: $.result.tools.length >= 1
+        failureActions:
+          - name: unexpectedMcpResponse
+            type: end
+            criteria:
+              - condition: $statusCode != 200
+      - stepId: unpaidToolCallPaymentChallenge
+        description: Call a real MCP tool without internal auth or payment. Tool execution should return a Base x402 payment challenge.
         operationId: callDeltaSignalMCP
         x-deltasignal-path: /mcp
         x-http-method: POST
@@ -52,13 +77,13 @@ workflows:
         successCriteria:
           - condition: $statusCode == 402
         failureActions:
-          - name: unexpectedMcpResponse
+          - name: unexpectedPaidToolResponse
             type: end
             criteria:
               - condition: $statusCode != 402
         x-agent-next-action: >
           Let the x402 client pay the returned challenge, then retry this same
-          MCP request. Do not use x-api-key or mcp-api-key for public clients.
+          tools/call request. Do not use x-api-key or mcp-api-key for public clients.
     outputs:
       initialStatus: $statusCode
       paymentRail: x402

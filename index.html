@@ -1512,7 +1512,8 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
               <h3>4. Resolve</h3>
               <p>Public clients pay when challenged, retry, then receive structured evidence or a compiled brief.</p>
               <div class="workflow-list">
-                <span>402 payment required</span>
+                <span>free metadata discovery</span>
+                <span>402 on tools/call</span>
                 <span>Base USDC via Coinbase x402</span>
                 <span>retry with payment proof</span>
                 <span>JSON + Markdown evidence</span>
@@ -1523,7 +1524,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
         <div class="workflow-strata" aria-label="Workflow layers">
           <div class="workflow-stratum">
             <strong>Access layer</strong>
-            <span>publicMcpX402Handshake proves the public route and payment challenge. internalMcpToolSmoke stays for first-party validation.</span>
+            <span>publicMcpX402Handshake proves free public tool discovery and the paid tools/call challenge. internalMcpToolSmoke stays for first-party validation.</span>
           </div>
           <div class="workflow-stratum">
             <strong>Analytical REST layer</strong>
@@ -1539,7 +1540,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
           <p>These are the machine-readable scenarios agents can inspect before choosing a tool or route sequence.</p>
         </div>
         <div class="tool-grid">
-          <div class="tool"><strong>publicMcpX402Handshake</strong><span>POST /mcp without an internal key returns 402 so x402-capable public clients can pay and retry.</span></div>
+          <div class="tool"><strong>publicMcpX402Handshake</strong><span>POST /mcp allows free tools/list discovery, then returns 402 on unpaid tools/call so x402-capable public clients can pay and retry.</span></div>
           <div class="tool"><strong>internalMcpToolSmoke</strong><span>First-party keyed validation on the same /mcp endpoint. Not public install guidance.</span></div>
           <div class="tool"><strong>atlas7AuditStatusCheck</strong><span>Operator workflow for the Azure-native 215-issuer audit status: freshness, artifact prefix, current failures, historical failures, and composite failures.</span></div>
           <div class="tool"><strong>marketReadinessScan</strong><span>Readiness, risk distribution, top stressed, and alpha opportunities for market-wide triage.</span></div>

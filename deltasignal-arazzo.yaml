@@ -32,10 +32,12 @@ x-deltasignal-contract:
     publicInstallGuidance: Public clients should use x402, not internal key headers.
 workflows:
   - workflowId: publicMcpX402Handshake
-    summary: Discover and validate the public paid MCP route.
+    summary: Discover MCP tools and validate the public paid tool-call route.
     description: >
-      Use this before a public agent attempts MCP tool calls. The first POST is
-      expected to return HTTP 402 so an x402-capable client can pay and retry.
+      Use this before a public agent attempts paid MCP tool calls. Public MCP
+      metadata methods such as tools/list are free for discovery. The first
+      actual tools/call without payment is expected to return HTTP 402 so an
+      x402-capable client can pay and retry the same tool call.
     x-audience: public
     x-payment-rail: x402
     x-agent-intent:
@@ -47,7 +49,23 @@ workflows:
       properties: {}
     steps:
       - stepId: postMcpToolsListWithoutPayment
-        description: Call the MCP endpoint without payment to receive a Base x402 challenge.
+        description: Call the MCP endpoint without payment to inspect public tool metadata.
+        operationId: callDeltaSignalMCP
+        x-deltasignal-path: /mcp
+        x-http-method: POST
+        x-payment-rail: none
+        x-expected-status: 200
+        requestBody:
+          payload:
+            jsonrpc: "2.0"
+            id: tools
+            method: tools/list
+            params: {}
+        successCriteria:
+          - condition: $statusCode == 200
+          - condition: $.result.tools.length >= 1
+      - stepId: postMcpToolCallWithoutPayment
+        description: Call a real MCP tool without payment to receive a Base x402 challenge.
         operationId: callDeltaSignalMCP
         x-deltasignal-path: /mcp
         x-http-method: POST
@@ -56,12 +74,14 @@ workflows:
         requestBody:
           payload:
             jsonrpc: "2.0"
-            id: tools
-            method: tools/list
-            params: {}
+            id: readiness
+            method: tools/call
+            params:
+              name: deltasignal_readiness
+              arguments: {}
         successCriteria:
           - condition: $statusCode == 402
-        x-agent-next-action: Retry the same request through an x402-capable client after payment.
+        x-agent-next-action: Retry the same tools/call request through an x402-capable client after payment.
 
   - workflowId: internalMcpToolSmoke
     summary: First-party no-payment MCP smoke on the same endpoint.
