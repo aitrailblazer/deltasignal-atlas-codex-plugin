@@ -3,6 +3,7 @@
 [![MCP Live](https://img.shields.io/badge/MCP-live-ff9a1a)](https://api.aitrailblazer.net/mcp)
 [![x402 Live](https://img.shields.io/badge/x402-Base%20USDC-e30055)](https://api.aitrailblazer.net/.well-known/x402)
 [![Arazzo Workflows](https://img.shields.io/badge/Arazzo-1.0.1-54d69d)](./arazzo/deltasignal-arazzo.yaml)
+[![Discovery Contract](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml/badge.svg)](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml)
 [![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 
 Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies.
