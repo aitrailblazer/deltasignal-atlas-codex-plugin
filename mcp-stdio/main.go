@@ -92,7 +92,7 @@ func main() {
 		Name:    "deltasignal-atlas-7",
 		Version: "0.2.0",
 	}, &mcp.ServerOptions{
-		Instructions: "DeltaSignal ATLAS-7 delivers SEC-grounded financial intelligence for crypto public companies. Prefer composite MCP tools for common workflows: deltasignal_morning_brief, deltasignal_company_report, deltasignal_pressure_board, deltasignal_alpha_sweep, and deltasignal_quick_ticker_check. First 5 granular calls are free where supported; paid live usage is charged through x402 USDC micropayments.",
+		Instructions: "DeltaSignal ATLAS-7 delivers SEC-grounded financial intelligence for crypto public companies. Prefer composite MCP tools for common workflows: deltasignal_morning_brief, deltasignal_company_report, deltasignal_pressure_board, deltasignal_alpha_sweep, and deltasignal_quick_ticker_check. Use deltasignal_atlas7_audit_status when the user asks whether the full Azure-native 215-issuer regression audit is healthy. First 5 granular calls are free where supported; paid live usage is charged through x402 USDC micropayments.",
 	})
 
 	mcp.AddTool(server, tool("deltasignal_morning_brief", "Server-enforced daily DeltaSignal scan. Internally calls readiness, daily_changes, risk_distribution, top_stressed(limit=10), and alpha_opportunities(limit=10). Use this for morning briefs and daily scans instead of manually chaining granular tools.", noArgCompositeSchema()), client.morningBrief)
@@ -148,6 +148,12 @@ func main() {
 		"properties":           map[string]any{},
 		"additionalProperties": false,
 	}), client.dailyChanges)
+
+	mcp.AddTool(server, tool("deltasignal_atlas7_audit_status", "Returns the latest Azure-native 215-issuer ATLAS-7 regression audit status, including freshness, artifact prefix, operation count, historical failures, composite failures, and health state. Use this for operator readiness checks, not issuer analysis.", map[string]any{
+		"type":                 "object",
+		"properties":           map[string]any{},
+		"additionalProperties": false,
+	}), client.auditStatus)
 
 	if err := server.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
 		log.Printf("deltasignal-atlas-7 MCP failed: %v", err)
@@ -249,6 +255,10 @@ func (c *deltaClient) riskDistribution(ctx context.Context, _ *mcp.CallToolReque
 
 func (c *deltaClient) dailyChanges(ctx context.Context, _ *mcp.CallToolRequest, _ readinessArgs) (*mcp.CallToolResult, any, error) {
 	return c.get(ctx, "/v1/daily-changes/latest", nil)
+}
+
+func (c *deltaClient) auditStatus(ctx context.Context, _ *mcp.CallToolRequest, _ readinessArgs) (*mcp.CallToolResult, any, error) {
+	return c.get(ctx, "/v1/atlas7/audit/latest", nil)
 }
 
 func (c *deltaClient) morningBrief(ctx context.Context, _ *mcp.CallToolRequest, args outputModeArgs) (*mcp.CallToolResult, any, error) {

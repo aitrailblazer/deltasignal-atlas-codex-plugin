@@ -1452,6 +1452,11 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
             <h3>Daily drilldown</h3>
             <p>Show recent daily change evidence for ARKB.</p>
           </div>
+          <div class="step">
+            <div class="step-number">Operator</div>
+            <h3>Audit status</h3>
+            <p>Is the full ATLAS-7 audit healthy?</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1689,7 +1694,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
         <div class="surface-stage" aria-label="Animated public MCP and x402 discovery flows">
           <div class="surface-card">
             <h3>Public MCP + Open API</h3>
-            <p>Agents can inspect the hosted Streamable HTTP MCP endpoint and Open API contract, then use x402 routes under <code>/v1/*</code> for paid public access.</p>
+            <p>Agents can inspect the hosted Streamable HTTP MCP endpoint and Open API contract, including daily monitoring, evidence routes, and the Azure audit-status surface, then use x402 routes under <code>/v1/*</code> for paid public access.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">Agent client</div>
@@ -1723,7 +1728,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
           </a>
           <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
             <strong>Open API Spec</strong>
-            <span>Inspect the public REST, MCP JSON-RPC, and composite-tool discovery metadata used by validators.</span>
+            <span>Inspect the REST, MCP JSON-RPC, composite-tool, daily-monitoring, and audit-status discovery metadata used by validators.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
           </a>
           <a class="link-card" href="./arazzo/deltasignal-arazzo.yaml">

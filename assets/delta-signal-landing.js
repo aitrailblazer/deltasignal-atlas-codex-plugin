@@ -7,6 +7,7 @@ const rawRoutes = [
   ["alpha_sweep", "$0.14", "Opportunity screen with alpha opportunities and daily changes."],
   ["quick_ticker_check", "$0.18", "Fast issuer triage using covenant stress and alpha signals."],
   ["daily_changes", "$0.03", "Compact daily monitoring: freshness, counts, changed-company rows, and evidence refs without raw tag arrays."],
+  ["atlas7_audit_status", "operator", "Azure-native 215-issuer regression audit status, freshness, artifact prefix, and zero-failure checks."],
 ];
 
 const naturalRoutes = [

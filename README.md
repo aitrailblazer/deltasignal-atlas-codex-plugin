@@ -7,6 +7,8 @@
 
 Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies.
 
+Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live Azure service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
+
 Native MCP server plus x402 micropayments. First 5 calls are free where supported, then Base USDC through compatible x402 clients. No subscription required.
 
 Agents discover, pay, and execute deterministic workflows through MCP tools, OpenAPI routes, and Arazzo scenario definitions.
@@ -70,6 +72,7 @@ Give me a DeltaSignal morning brief.
 Run a DeltaSignal company report for RIOT.
 Show me the DeltaSignal pressure board.
 Run a quick ticker check for MARA.
+Is the full ATLAS-7 audit healthy?
 ```
 
 ## Six Agent Workflows
@@ -179,8 +182,9 @@ Granular tools:
 - `deltasignal_alpha_signals`
 - `deltasignal_company_fundamentals`
 - `deltasignal_risk_distribution`
-- `deltasignal_daily_changes`
-- `deltasignal_daily_change_evidence`
+- `deltasignal_daily_changes` - compact Daily Monitoring; no raw tag arrays; typical public route price $0.03.
+- `deltasignal_daily_change_evidence` - explicit issuer proof drilldown; paginated raw Company Facts tags; typical public route price $0.03.
+- `deltasignal_atlas7_audit_status` - operator health check for the Azure-native 215-issuer ATLAS-7 regression audit; reports freshness, artifact prefix, operation count, historical failures, composite failures, and health state. This is a readiness/audit surface, not an issuer-analysis route.
 
 All tools are read-only, schema-validated, and bounded for agent use.
 
@@ -240,6 +244,8 @@ Public REST and payment surfaces:
 
 - `GET /v1/daily-changes/latest` or `GET /mpp/v1/daily-changes/latest` - compact monitoring.
 - `GET /v1/daily-changes/evidence` or `GET /mpp/v1/daily-changes/evidence` - issuer evidence drilldown.
+- `GET /v1/atlas7/audit/latest` - authenticated operator status for the latest 215-issuer Azure regression audit.
+- Future bulk evidence export proposal: small pack $0.15, standard pack $0.30, full daily export $0.75-$1.50.
 
 ## Development Modes
 

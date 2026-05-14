@@ -1,6 +1,6 @@
 ---
 name: deltasignal-atlas-7
-description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including composite MCP presets, readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, compact daily SEC monitoring, and paginated evidence drilldowns over the free starter tier, Tempo MPP, or Base x402.
+description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including composite MCP presets, readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, compact daily SEC monitoring, paginated evidence drilldowns, and Azure-native audit status over the free starter tier, Tempo MPP, or Base x402.
 ---
 
 # DeltaSignal ATLAS-7
@@ -38,6 +38,7 @@ Bundled MCP server:
   - `deltasignal_quick_ticker_check` for fast ticker checks.
   - `deltasignal_daily_changes` for compact Daily Monitoring.
   - `deltasignal_daily_change_evidence` for explicit issuer proof after a monitoring result.
+  - `deltasignal_atlas7_audit_status` for operator checks that the Azure-native 215-issuer regression audit is healthy and fresh.
 - Use granular tools only for custom drilldowns or when a composite preset is unavailable.
 - Prefer the `deltasignal_*` MCP tools when this plugin is installed and the request maps to a supported DeltaSignal route.
 - MCP tools are read-only, idempotent, closed-world tools with strict argument validation.
@@ -61,6 +62,14 @@ Composite presets are discounted server-enforced workflows. Public Builder prici
 | `deltasignal_quick_ticker_check` | 18 credits / `$0.18` | readiness, covenant_stress(ticker), alpha_signals(ticker) |
 
 Daily Monitoring and Evidence are separate products. `deltasignal_daily_changes` is compact by default and should not be used as a bulk evidence export. Use `deltasignal_daily_change_evidence` only when the user asks to inspect raw proof for a named issuer or CIK.
+
+## Operator Audit Status
+
+- Use `deltasignal_atlas7_audit_status` when the user asks whether ATLAS-7 is healthy, current, monitored, Azure-native, or fully regression-tested.
+- Treat it as an operational readiness/audit surface, not as issuer intelligence or investment evidence.
+- Preserve `status`, `stale`, `artifact.prefix`, `finished_at_utc`, `issuer_count`, `operation_count`, `failed_count`, `historical_failed_count`, and `composite_failed_count` when summarizing.
+- A healthy result currently means the latest scheduled Go audit covered the 215-issuer universe, current routes, historical routes, and composite MCP workflows with zero failures inside the freshness window.
+- If the route returns unauthorized from the bundled STDIO wrapper, explain that this operator endpoint requires internal/pre-authorized access and tell the user to use the hosted MCP/tooling path that already has the DeltaSignal credential.
 
 ## Paid Routes
 
@@ -101,6 +110,7 @@ Future artifact-backed bulk daily evidence exports are not inline chat responses
 - "Find alpha opportunities" -> call `deltasignal_alpha_sweep`.
 - "What changed today?" -> call `deltasignal_daily_changes`.
 - "Show me why ARKB moved" -> call `deltasignal_daily_change_evidence` with `ticker=ARKB` and the source date from Daily Monitoring when available.
+- "Is the full ATLAS-7 audit healthy?" -> call `deltasignal_atlas7_audit_status`.
 - "Quick check MARA" -> call `deltasignal_quick_ticker_check` with `ticker=MARA`.
 - "Is DeltaSignal current?" -> call readiness.
 - "Which issuers are most stressed?" -> call top-stressed.
