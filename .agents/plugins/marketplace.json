@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "deltasignal-atlas-7",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "description": "SEC-grounded ATLAS-7 stress, alpha, fundamentals, compact daily monitoring, evidence drilldowns, and operator audit status.",
       "source": {
         "source": "local",

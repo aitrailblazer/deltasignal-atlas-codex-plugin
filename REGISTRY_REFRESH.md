@@ -8,8 +8,8 @@ This file tracks external registry/cache state after the ATLAS-7 audit-status an
 
 The repo and GitHub Pages surfaces are current:
 
-- `server.json` version: `1.1.1`
-- `.codex-plugin/plugin.json` version: `0.2.1`
+- `server.json` version: `1.1.2`
+- `.codex-plugin/plugin.json` version: `0.2.2`
 - OpenAPI includes `GET /v1/atlas7/audit/latest`
 - MCP `tools/list` includes `deltasignal_atlas7_audit_status`
 - Arazzo includes seven workflows, including `atlas7AuditStatusCheck`
