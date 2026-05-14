@@ -275,3 +275,12 @@ Internal mode is for first-party validation only. Public users should use x402.
 - Arazzo workflow definitions: [`arazzo/deltasignal-arazzo.yaml`](./arazzo/deltasignal-arazzo.yaml) and [`arazzo/deltasignal-arazzo.json`](./arazzo/deltasignal-arazzo.json)
 - Strict input validation and bounded responses
 - Compatible with Codex, Claude Code, OpenClaw, and other MCP clients
+
+Discovery contract validation:
+
+```bash
+cd mcp-stdio
+go run ./cmd/validate-discovery --root ..
+```
+
+Set `DELTASIGNAL_API_KEY` or pass `--api-key` to also verify that every Arazzo `x-mcp-tool` exists in live MCP `tools/list`.
