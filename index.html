@@ -232,6 +232,61 @@
       backdrop-filter: blur(10px);
     }
 
+    .sample-output {
+      width: min(760px, 100%);
+      margin: 3rem auto 0;
+      border: 1px solid rgba(255, 154, 26, 0.28);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255,154,26,.1), rgba(227,0,85,.08)),
+        rgba(10, 9, 8, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 30px 90px rgba(0, 0, 0, 0.34);
+      overflow: hidden;
+      text-align: left;
+      backdrop-filter: blur(10px);
+    }
+
+    .sample-output-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgba(255, 154, 26, 0.16);
+      color: #ffe4cf;
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .sample-output-body {
+      display: grid;
+      gap: 0.75rem;
+      padding: 1.1rem;
+    }
+
+    .sample-line {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 0.8rem;
+      align-items: start;
+      padding: 0.7rem;
+      border: 1px solid rgba(255, 154, 26, 0.16);
+      border-radius: 8px;
+      background: rgba(5, 5, 5, 0.5);
+    }
+
+    .sample-line strong {
+      color: #ffd1a3;
+      font-size: 0.9rem;
+    }
+
+    .sample-line span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
     .visual-header {
       display: flex;
       align-items: center;
@@ -1172,6 +1227,7 @@
       }
 
       .hero-inner > *,
+      .sample-output,
       .signal-visual,
       .flow-node,
       .ticker {
@@ -1181,6 +1237,14 @@
 
       .visual-header {
         flex-wrap: wrap;
+      }
+
+      .sample-output-head {
+        flex-wrap: wrap;
+      }
+
+      .sample-line {
+        grid-template-columns: 1fr;
       }
 
       .eyebrow {
@@ -1288,55 +1352,56 @@
     <section class="hero">
       <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="eyebrow">MCP live • Open API published • x402 live • First 5 calls free</p>
+        <p class="eyebrow">MCP live • Open API published • Glama verified • First 5 calls free</p>
         <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
         <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
         <p class="tagline">
-          SEC-grounded issuer intelligence for crypto-exposed public companies.
-          <span>Turn SEC / XBRL filings, issuer fundamentals, covenant stress, peer rankings, daily changes, risk distribution, and alpha signals into agent-ready JSON and evidence-preserving Markdown briefs.</span>
+          Filing-backed intelligence for crypto-exposed public companies.
+          <span>Run agent-ready Morning Briefs, issuer reports, pressure boards, and alpha screens from SEC / XBRL evidence.</span>
         </p>
         <div class="hero-actions">
-          <a href="https://api.aitrailblazer.net/v1/readiness" class="btn btn-primary" target="_blank" rel="noopener">Run a readiness check</a>
-          <a href="https://api.aitrailblazer.net/openapi.json" class="btn btn-secondary" target="_blank" rel="noopener">View Open API</a>
-          <a href="./quickstart.md" class="btn btn-secondary">Read Quickstart</a>
-          <a href="#install" class="btn btn-secondary">Install MCP connector</a>
+          <a href="#recommended-workflows" class="btn btn-primary">Run a free Morning Brief</a>
+          <a href="#what-you-get" class="btn btn-secondary">See example output</a>
         </div>
-        <p class="meter">x402 live • Glama verified • MCP live • Open API published • First 5 calls free • Base USDC settlement</p>
-        <div class="signal-visual" aria-label="Animated Delta Signal data flow visualization">
-          <div class="visual-header">
-            <span>Discovery + Payment Rail</span>
-            <span class="status-dot">Glama verified • x402 live</span>
+        <p class="meter">MCP live • Open API published • x402 enabled • Glama verified • First 5 calls free</p>
+        <div class="sample-output" aria-label="Sample Delta Signal Morning Brief output">
+          <div class="sample-output-head">
+            <span>Sample Morning Brief</span>
+            <span class="status-dot">Evidence-preserving output</span>
           </div>
-          <div class="flow-map">
-            <div class="flow-node">
-              <strong>SEC / XBRL</strong>
-              <span>Issuer fundamentals and filings enter the ATLAS pipeline.</span>
-              <em>COIN MSTR MARA</em>
+          <div class="sample-output-body">
+            <div class="sample-line">
+              <strong>Readiness</strong>
+              <span>Live service state, active data slice, freshness, issuer count, and route/payment readiness.</span>
             </div>
-            <div class="flow-node">
-              <strong>ATLAS-7</strong>
-              <span>Covenant stress, alpha signals, peer rank, and risk distribution.</span>
-              <em>risk model online</em>
+            <div class="sample-line">
+              <strong>Universe</strong>
+              <span>Crypto-exposed public companies with issuer-level SEC / XBRL evidence.</span>
             </div>
-            <div class="flow-node">
-              <strong>MCP + Open API</strong>
-              <span>Composite presets plus granular tools over remote Streamable HTTP.</span>
-              <em>/mcp • /openapi.json</em>
+            <div class="sample-line">
+              <strong>Includes</strong>
+              <span>Daily changes, risk distribution, top stressed issuers, alpha opportunities, source dates, and caveats.</span>
             </div>
-            <div class="flow-node">
-              <strong>x402 + Glama</strong>
-              <span>First calls free, then Base USDC settlement through agent clients.</span>
-              <em>connector healthy</em>
+            <div class="sample-line">
+              <strong>Output</strong>
+              <span>Agent-ready JSON or evidence-preserving Markdown. Screening and diligence support, not investment advice.</span>
             </div>
           </div>
-          <div class="ticker-panel">
-            <div class="ticker"><strong>COIN</strong><div class="bar"><span style="--w:42%; --d:-.1s;"></span></div></div>
-            <div class="ticker"><strong>MSTR</strong><div class="bar"><span style="--w:68%; --d:-.4s;"></span></div></div>
-            <div class="ticker"><strong>MARA</strong><div class="bar"><span style="--w:82%; --d:-.7s;"></span></div></div>
-            <div class="ticker"><strong>RIOT</strong><div class="bar"><span style="--w:74%; --d:-1s;"></span></div></div>
-            <div class="ticker"><strong>HUT</strong><div class="bar"><span style="--w:58%; --d:-1.3s;"></span></div></div>
-            <div class="ticker"><strong>CLSK</strong><div class="bar"><span style="--w:64%; --d:-1.6s;"></span></div></div>
-          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="what-you-get">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>From filings to usable issuer intelligence</h2>
+          <p>Start with bounded workflows that return structured evidence or readable Markdown, not generic market chatter.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><strong>Morning Brief</strong><span>Daily operating picture: readiness status, latest daily changes, risk distribution, top stressed issuers, alpha opportunities, source dates, and caveats.</span></div>
+          <div class="feature"><strong>Company Report</strong><span>Ticker-level diligence: SEC / XBRL fundamentals, covenant stress, peer ranking, alpha signals, source metadata, and quality flags.</span></div>
+          <div class="feature"><strong>Pressure Board</strong><span>Market stress view: top stressed names, risk tiers, watchlist pressure, stress caveats, and drilldown targets.</span></div>
+          <div class="feature"><strong>Alpha Sweep</strong><span>Research-candidate screen: alpha opportunity scores, signal pressure, universe-level screen, evidence boundaries, and next drilldown prompts.</span></div>
         </div>
       </div>
     </section>
@@ -1379,17 +1444,16 @@
     <section class="section" id="measures">
       <div class="wrap">
         <div class="section-head">
-          <h2>What Delta Signal measures</h2>
-          <p>Delta Signal focuses on crypto-exposed public companies, not generic token chatter. SEC and XBRL evidence flows into issuer-level and market-wide tools.</p>
+          <h2>Built on SEC / XBRL evidence, not token noise</h2>
+          <p>Delta Signal focuses on public companies exposed to crypto markets. It connects filings, fundamentals, financial pressure, peer context, and daily evidence changes into agent-readable intelligence.</p>
         </div>
         <div class="feature-grid">
-          <div class="feature"><strong>Issuer Fundamentals</strong><span>SEC / XBRL-backed company facts.</span></div>
-          <div class="feature"><strong>Covenant Stress</strong><span>Debt and financial pressure indicators.</span></div>
-          <div class="feature"><strong>Peer Ranking</strong><span>Relative position inside comparable crypto public-company groups.</span></div>
-          <div class="feature"><strong>Alpha Signals</strong><span>Positive or negative signal pressure for one issuer.</span></div>
-          <div class="feature"><strong>Risk Distribution</strong><span>Market-wide or watchlist-level risk spread.</span></div>
-          <div class="feature"><strong>Daily Changes</strong><span>Compact monitoring of changed companies and evidence references.</span></div>
-          <div class="feature"><strong>Readiness</strong><span>Service health, active data slice, freshness, and route availability.</span></div>
+          <div class="feature"><strong>Issuer-level, not token-level</strong><span>Track public companies with crypto exposure instead of relying on generic market sentiment.</span></div>
+          <div class="feature"><strong>Filing-backed fundamentals</strong><span>Use SEC / XBRL company facts as the evidence base for fundamentals and issuer context.</span></div>
+          <div class="feature"><strong>Stress and peer context</strong><span>Compare covenant stress, risk tiers, and relative position across crypto-exposed public-company groups.</span></div>
+          <div class="feature"><strong>Evidence-preserving output</strong><span>Compile structured evidence into Markdown while preserving source dates, caveats, quality flags, and disclaimers.</span></div>
+          <div class="feature"><strong>Agent-native access</strong><span>Use MCP, REST, Open API, Arazzo workflows, or x402-compatible public clients.</span></div>
+          <div class="feature"><strong>Readiness and daily changes</strong><span>Monitor service health, active data slice, changed companies, changed facts, and evidence references.</span></div>
         </div>
       </div>
     </section>
@@ -1397,8 +1461,8 @@
     <section class="section" id="recommended-workflows">
       <div class="wrap">
         <div class="section-head">
-          <h2>Start with plain-English workflows</h2>
-          <p>Composite presets bundle the right evidence routes behind one request. Use these before dropping into granular tools.</p>
+          <h2>Ask for the workflow you want</h2>
+          <p>Composite presets bundle the right evidence routes behind one request, so users do not have to guess endpoint order.</p>
         </div>
         <div class="prompt-grid">
           <ds-copy-prompt prompt="Give me a Delta Signal morning brief."><div class="prompt"><strong>Daily Operating Picture</strong><br>"Give me a Delta Signal morning brief."<br><span>Includes readiness, daily changes, risk distribution, top stressed issuers, and alpha opportunities.</span></div></ds-copy-prompt>
