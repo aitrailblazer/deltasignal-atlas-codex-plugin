@@ -47,6 +47,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 - **Arazzo JSON** - [`arazzo/deltasignal-arazzo.json`](./arazzo/deltasignal-arazzo.json) and root mirror [`deltasignal-arazzo.json`](./deltasignal-arazzo.json)
 - **Public handshake workflow** - [`arazzo/publicMcpX402Handshake.arazzo.yaml`](./arazzo/publicMcpX402Handshake.arazzo.yaml)
 - **Glama Connector** - [`net.aitrailblazer.api/delta-signal-atlas-7`](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
+- **Registry refresh notes** - [`REGISTRY_REFRESH.md`](./REGISTRY_REFRESH.md)
 
 ## Quick Start
 

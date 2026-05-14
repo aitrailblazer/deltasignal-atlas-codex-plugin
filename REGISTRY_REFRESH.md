@@ -1,0 +1,138 @@
+# DeltaSignal ATLAS-7 Registry Refresh Notes
+
+Checked: 2026-05-14
+
+This file tracks external registry/cache state after the ATLAS-7 audit-status and Arazzo discovery updates.
+
+## Source Of Truth
+
+The repo and GitHub Pages surfaces are current:
+
+- `server.json` version: `1.1.1`
+- `.codex-plugin/plugin.json` version: `0.2.1`
+- OpenAPI includes `GET /v1/atlas7/audit/latest`
+- MCP `tools/list` includes `deltasignal_atlas7_audit_status`
+- Arazzo includes seven workflows, including `atlas7AuditStatusCheck`
+- Discovery Contract CI is passing
+
+Current one-line description:
+
+> DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies, including composite MCP presets, alpha signals, covenant stress, peer ranking, SEC XBRL fundamentals, compact daily monitoring, evidence drilldowns, and Azure-native 215-issuer regression audit status over x402/Base and MPP/Tempo rails.
+
+## External Registry State
+
+### Glama
+
+URL:
+
+```text
+https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7
+```
+
+Observed static page title:
+
+```text
+DeltaSignal ATLAS-7 - MCP Connector | Glama
+```
+
+Observed static content matched `daily monitoring`, but did not surface `atlas7_audit_status`, `audit status`, or `215-issuer` in the fetched HTML.
+
+Action:
+
+- Trigger Glama recrawl or resubmit connector metadata if Glama does not refresh automatically.
+- Verify the connector description includes audit status and 215-issuer regression wording.
+
+### Smithery
+
+URL:
+
+```text
+https://smithery.ai/servers/aitrailblazer/deltasignal-atlas-7
+```
+
+Observed unauthenticated static fetch returned a small shell page without useful metadata.
+
+Action:
+
+- Verify through Smithery UI/dashboard or any supported server refresh command.
+- Confirm the server description mentions ATLAS-7, composite MCP presets, compact daily monitoring, evidence drilldowns, x402, and audit status.
+
+### Agentic Market / Bazaar
+
+URL:
+
+```text
+https://agentic.market/?chart=buyers-sellers&service=api-aitrailblazer-net
+```
+
+Observed top-level metadata remains stale:
+
+```text
+Historical ATLAS-7 covenant and stress series for one issuer, keyed by source_date for mNAV and Mirror Pulse joins.
+```
+
+Observed embedded OpenAPI route data includes the new route:
+
+```text
+GET /v1/atlas7/audit/latest
+```
+
+Action:
+
+- Resubmit or request refresh of the service-level description so the listing no longer describes only the historical issuer series.
+- Use the source-of-truth one-line description above.
+
+### MPPScan
+
+URL:
+
+```text
+https://mppscan.com/server/8892af70b613b5c2feb932a52fab50b29155f5655363c5e9e56456486187a6a7
+```
+
+Observed page includes audit-status route data from OpenAPI.
+
+Observed social metadata still uses the older broad description:
+
+```text
+ATLAS-7 Financial Intelligence for crypto public companies. Covenant stress, peer ranking, alpha opportunities, SEC XBRL fundamentals. Pay-per-call via MPP ($0.03-$0.10).
+```
+
+Action:
+
+- No route-level blocker: audit route is visible.
+- If MPPScan supports submitted social metadata, refresh the description to include compact daily monitoring, evidence drilldowns, Natural Language briefs, and audit status.
+
+## Recommended Resubmission Copy
+
+Short:
+
+```text
+SEC-grounded crypto public issuer intelligence with MCP presets, x402/MPP pay-per-call access, compact daily monitoring, evidence drilldowns, and Azure-native 215-issuer audit status.
+```
+
+Long:
+
+```text
+DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies. It exposes composite MCP presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha signals, fundamentals, compact daily monitoring, paginated evidence drilldowns, Natural Language briefs, and Azure-native 215-issuer regression audit status. Public users can access the surface through x402/Base or MPP/Tempo rails; internal validation can use pre-authorized MCP/API keys.
+```
+
+Operator/audit note:
+
+```text
+Use deltasignal_atlas7_audit_status or GET /v1/atlas7/audit/latest to verify the latest scheduled Azure-native 215-issuer regression audit. A healthy result reports stale=false, issuer_count=215, operation_count=1935, failed_count=0, historical_failed_count=0, and composite_failed_count=0.
+```
+
+## Verification Commands
+
+```bash
+cd mcp-stdio
+go run ./cmd/validate-discovery --root ..
+```
+
+With live MCP tool validation:
+
+```bash
+cd mcp-stdio
+DELTASIGNAL_API_KEY=... go run ./cmd/validate-discovery --root ..
+```
