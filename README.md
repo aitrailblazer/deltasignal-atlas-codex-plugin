@@ -75,7 +75,7 @@ Run a quick ticker check for MARA.
 Is the full ATLAS-7 audit healthy?
 ```
 
-## Six Agent Workflows
+## Seven Agent Workflows
 
 The workflow layer is published as Arazzo `1.0.1`:
 
@@ -111,7 +111,19 @@ Flow:
 
 This workflow is internal validation only. Public users should use x402.
 
-### 3. `marketReadinessScan`
+### 3. `atlas7AuditStatusCheck`
+
+Operator readiness check for the scheduled Azure-native regression audit.
+
+Flow:
+
+1. Call `GET /v1/atlas7/audit/latest` with an internal/pre-authorized key, or call MCP tool `deltasignal_atlas7_audit_status`.
+2. Confirm `status=healthy`, `stale=false`, `issuer_count=215`, `failed_count=0`, `historical_failed_count=0`, and `composite_failed_count=0`.
+3. Preserve the artifact prefix and `finished_at_utc` when summarizing.
+
+This workflow is an operational audit surface, not a paid issuer-analysis route.
+
+### 4. `marketReadinessScan`
 
 Broad market operating picture.
 
@@ -124,7 +136,7 @@ Flow:
 
 Use this when a user asks what is happening across the crypto public issuer universe.
 
-### 4. `singleIssuerDiligence`
+### 5. `singleIssuerDiligence`
 
 Full ticker-level diligence.
 
@@ -138,7 +150,7 @@ Flow:
 
 MCP equivalent: call `deltasignal_company_report` with `{ "ticker": "RIOT" }`.
 
-### 5. `dailyMonitoringEvidenceDrilldown`
+### 6. `dailyMonitoringEvidenceDrilldown`
 
 Compact daily monitoring first, raw evidence only when requested.
 
@@ -149,7 +161,7 @@ Flow:
 
 Use this when a user asks what changed today, then asks why a specific issuer moved.
 
-### 6. `mcpCompositePresetSelection`
+### 7. `mcpCompositePresetSelection`
 
 Preferred MCP composite tools for common user intents.
 

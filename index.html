@@ -1535,12 +1535,13 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
           </div>
         </div>
         <div class="section-head">
-          <h2>Six Arazzo-defined agent workflows</h2>
+          <h2>Seven Arazzo-defined agent workflows</h2>
           <p>These are the machine-readable scenarios agents can inspect before choosing a tool or route sequence.</p>
         </div>
         <div class="tool-grid">
           <div class="tool"><strong>publicMcpX402Handshake</strong><span>POST /mcp without an internal key returns 402 so x402-capable public clients can pay and retry.</span></div>
           <div class="tool"><strong>internalMcpToolSmoke</strong><span>First-party keyed validation on the same /mcp endpoint. Not public install guidance.</span></div>
+          <div class="tool"><strong>atlas7AuditStatusCheck</strong><span>Operator workflow for the Azure-native 215-issuer audit status: freshness, artifact prefix, current failures, historical failures, and composite failures.</span></div>
           <div class="tool"><strong>marketReadinessScan</strong><span>Readiness, risk distribution, top stressed, and alpha opportunities for market-wide triage.</span></div>
           <div class="tool"><strong>singleIssuerDiligence</strong><span>Fundamentals, alpha signals, covenant stress, peer ranking, and optional ATLAS history for one ticker.</span></div>
           <div class="tool"><strong>dailyMonitoringEvidenceDrilldown</strong><span>Compact daily changes first, then raw issuer evidence only when explicitly requested.</span></div>

@@ -2,8 +2,8 @@
   "arazzo": "1.0.1",
   "info": {
     "title": "DeltaSignal ATLAS-7 Agent Workflows",
-    "summary": "Scenario pipelines for agents using DeltaSignal public x402 routes and the MCP JSON-RPC endpoint.",
-    "description": "This Arazzo document complements the DeltaSignal OpenAPI contract. OpenAPI describes individual operations; this file describes the recommended scenario pipelines that agents should follow for onboarding, market scans, single-issuer diligence, daily monitoring, and MCP composite presets.\n",
+    "summary": "Scenario pipelines for agents using DeltaSignal public x402 routes, the MCP JSON-RPC endpoint, and the operator audit-status surface.",
+    "description": "This Arazzo document complements the DeltaSignal OpenAPI contract. OpenAPI describes individual operations; this file describes the recommended scenario pipelines that agents should follow for onboarding, market scans, single-issuer diligence, daily monitoring, MCP composite presets, and internal operator audit-status checks.\n",
     "version": "0.1.0"
   },
   "sourceDescriptions": [
@@ -147,6 +147,67 @@
           ]
         }
       ]
+    },
+    {
+      "workflowId": "atlas7AuditStatusCheck",
+      "summary": "Verify the Azure-native ATLAS-7 regression audit is healthy.",
+      "description": "Use this internal/operator workflow when a user asks whether ATLAS-7 is current, healthy, monitored, Azure-native, or fully regression-tested. The REST route and MCP tool both read the latest Azure Blob summary from the scheduled Go audit job. This is an operational readiness surface, not an issuer-analysis or paid data workflow.\n",
+      "x-audience": "internal",
+      "x-public-docs": true,
+      "x-payment-rail": "internal_api_key_bypass",
+      "x-agent-intent": [
+        "audit_status",
+        "regression_health",
+        "operator_readiness",
+        "azure_native_monitoring"
+      ],
+      "steps": [
+        {
+          "stepId": "getAtlas7AuditStatus",
+          "operationId": "getAtlas7AuditStatus",
+          "x-deltasignal-path": "/v1/atlas7/audit/latest",
+          "x-http-method": "GET",
+          "x-mcp-tool": "deltasignal_atlas7_audit_status",
+          "x-expected-status": 200,
+          "successCriteria": [
+            {
+              "condition": "$statusCode == 200"
+            },
+            {
+              "condition": "$.status == \"healthy\""
+            },
+            {
+              "condition": "$.stale == false"
+            },
+            {
+              "condition": "$.issuer_count == 215"
+            },
+            {
+              "condition": "$.failed_count == 0"
+            },
+            {
+              "condition": "$.historical_failed_count == 0"
+            },
+            {
+              "condition": "$.composite_failed_count == 0"
+            }
+          ]
+        }
+      ],
+      "x-agent-output": {
+        "preserveFields": [
+          "status",
+          "stale",
+          "artifact.prefix",
+          "finished_at_utc",
+          "issuer_count",
+          "operation_count",
+          "failed_count",
+          "historical_failed_count",
+          "composite_failed_count"
+        ],
+        "summaryTemplate": "ATLAS-7 audit status: {status}; stale={stale}; issuers={issuer_count}; operations={operation_count}; failures={failed_count}; historical_failures={historical_failed_count}; composite_failures={composite_failed_count}; artifact={artifact.prefix}."
+      }
     },
     {
       "workflowId": "marketReadinessScan",
