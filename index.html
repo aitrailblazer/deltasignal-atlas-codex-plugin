@@ -1341,11 +1341,46 @@
       </div>
     </section>
 
-    <section class="section alt" id="choose-path">
+    <section class="section alt" id="first-test">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Start here: readiness -> Morning Brief -> metadata</h2>
+          <p>New users should get one successful evidence response before choosing REST, MCP, Arazzo, Glama, or x402 details.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">Step 1</div>
+            <h3>Check system readiness</h3>
+            <p>Use readiness to confirm the active data slice, service health, and whether the public route returns a payment challenge.</p>
+            <p><a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">GET /v1/readiness</a></p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2</div>
+            <h3>Run a bounded scan</h3>
+            <p>Start with a composite or Natural Language route: Morning Brief, Top-Stressed Brief, Pressure Board, or Alpha Sweep.</p>
+            <p>Starter prompt: Give me a Delta Signal morning brief.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3</div>
+            <h3>Inspect evidence metadata</h3>
+            <p>Check source dates, caveats, quality flags, evidence hashes, renderer status, and non-advice disclaimers before using the result.</p>
+            <p><a href="./quickstart.md">Read response metadata guide</a></p>
+          </div>
+        </div>
+        <div class="tool-grid" style="margin-top:1.5rem;">
+          <div class="tool"><strong>Readiness should show</strong><span>Service state, active source date, issuer count, live-price status, audit freshness, and route/payment readiness.</span></div>
+          <div class="tool"><strong>Morning Brief should show</strong><span>Readiness, daily changes, risk distribution, top stressed issuers, alpha opportunities, caveats, and a non-advice boundary.</span></div>
+          <div class="tool"><strong>Metadata should show</strong><span>Source dates, computed times, stale flags, quality flags, evidence hashes where available, payload mode, and elapsed time.</span></div>
+          <div class="tool"><strong>Then choose integration</strong><span>Use REST for direct HTTP, MCP for agents, Arazzo for workflow planning, Glama for connector install, or x402 for public paid access.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="choose-path">
       <div class="wrap">
         <div class="section-head">
           <h2>Choose your integration path</h2>
-          <p>Start from the path that matches your client. The page still exposes MCP, REST, Arazzo, and x402, but you do not need to understand all of them before the first useful call.</p>
+          <p>After the first successful response, choose the client path that matches how you want to integrate Delta Signal.</p>
         </div>
         <div class="link-grid">
           <a class="link-card" href="#install">
@@ -1378,35 +1413,6 @@
             <span>Open the verified Streamable HTTP connector for the hosted Azure MCP server.</span>
             <code>Open Glama connector</code>
           </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="first-test">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Run your first Delta Signal test</h2>
-          <p>Get to a successful output before choosing a full integration path.</p>
-        </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">Step 1</div>
-            <h3>Check system readiness</h3>
-            <p>Use readiness to confirm the active data slice, service health, and whether the public route returns a payment challenge.</p>
-            <p><a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">GET /v1/readiness</a></p>
-          </div>
-          <div class="step">
-            <div class="step-number">Step 2</div>
-            <h3>Run a bounded scan</h3>
-            <p>Start with a composite or Natural Language route: Morning Brief, Top-Stressed Brief, Pressure Board, or Alpha Sweep.</p>
-            <p>Starter prompt: Give me a Delta Signal morning brief.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">Step 3</div>
-            <h3>Inspect evidence metadata</h3>
-            <p>Check source dates, caveats, quality flags, evidence hashes, renderer status, and non-advice disclaimers before using the result.</p>
-            <p><a href="./quickstart.md">Read response metadata guide</a></p>
-          </div>
         </div>
       </div>
     </section>
