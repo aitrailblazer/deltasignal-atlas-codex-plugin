@@ -45,8 +45,12 @@ jobs:
         run: go run ./cmd/validate-discovery --root ..
 
       - name: Validate live MCP tool discovery
-        if: ${{ secrets.DELTASIGNAL_API_KEY != '' }}
         working-directory: mcp-stdio
         env:
           DELTASIGNAL_API_KEY: ${{ secrets.DELTASIGNAL_API_KEY }}
-        run: go run ./cmd/validate-discovery --root ..
+        run: |
+          if [ -z "$DELTASIGNAL_API_KEY" ]; then
+            echo "Skipping live MCP tools/list validation because DELTASIGNAL_API_KEY is not configured."
+            exit 0
+          fi
+          go run ./cmd/validate-discovery --root ..
