@@ -42,6 +42,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 
 - **MCP endpoint** - `https://api.aitrailblazer.net/mcp`
 - **Main website** - `https://aitrailblazer.com`
+- **Delta Signal Substack** - `https://substack.com/@deltasignalai`
 - **OpenAPI 3.1** - `https://api.aitrailblazer.net/openapi.json`
 - **x402 discovery** - `https://api.aitrailblazer.net/.well-known/x402`
 - **Arazzo YAML** - [`arazzo/deltasignal-arazzo.yaml`](./arazzo/deltasignal-arazzo.yaml) and root mirror [`deltasignal-arazzo.yaml`](./deltasignal-arazzo.yaml)
