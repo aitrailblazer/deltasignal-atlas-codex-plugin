@@ -1,6 +1,6 @@
 # DeltaSignal ATLAS-7 Registry Refresh Notes
 
-Checked: 2026-05-14
+Checked: 2026-05-16
 
 This file tracks external registry/cache state after the ATLAS-7 audit-status and Arazzo discovery updates.
 
@@ -14,6 +14,7 @@ The repo and GitHub Pages surfaces are current:
 - MCP `tools/list` includes `deltasignal_atlas7_audit_status`
 - Arazzo includes seven workflows, including `atlas7AuditStatusCheck`
 - Discovery Contract CI is passing
+- Official MCP registry latest version is published as `1.1.4`
 
 Current one-line description:
 
@@ -86,14 +87,14 @@ Observed issue:
 
 Action:
 
-- Republish the official MCP registry `server.json` as version `1.1.4`.
-- Confirm the refreshed registry entry includes:
+- Republished the official MCP registry `server.json` as version `1.1.4` on 2026-05-16.
+- Confirmed the refreshed registry entry includes:
   - `websiteUrl: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin`
   - `remotes[0].type: streamable-http`
   - `remotes[0].url: https://api.aitrailblazer.net/mcp`
   - icon URL under GitHub Pages
   - repository source `github`
-- After registry refresh, verify Stork no longer needs to infer a fake npm package install.
+- Stork still served its cached 1.0.0 listing immediately after the official registry publish. Recheck after Stork's next crawler pass and verify it no longer needs to infer a fake npm package install.
 
 ### Agentic Market / Bazaar
 
