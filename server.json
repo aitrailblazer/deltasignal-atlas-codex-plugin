@@ -5,6 +5,33 @@
   "description": "SEC/XBRL issuer intelligence for crypto public companies via MCP, OpenAPI, x402, and MPP.",
   "version": "1.1.4",
   "websiteUrl": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
+  "relatedProducts": [
+    {
+      "name": "StrategiX Visual MCP",
+      "url": "https://aitrailblazer.github.io/strategix-visual-mcp/",
+      "relationship": "Finished PDF and visual artifact packaging layer for DeltaSignal ATLAS-7 evidence."
+    }
+  ],
+  "finishedDeliverables": [
+    {
+      "name": "strategix_delta_brief_pdf_full",
+      "label": "Single Daily Morning Brief PDF",
+      "priceUsd": 4.50,
+      "notes": "One ready-to-use PDF per market day produced through StrategiX Visual MCP."
+    },
+    {
+      "name": "strategix_delta_brief_pdf_monthly",
+      "label": "Monthly Subscription",
+      "priceUsd": 79.00,
+      "notes": "22 daily briefs with auto-delivery and archive access."
+    },
+    {
+      "name": "strategix_delta_deep_brief_pdf",
+      "label": "Heavy / Multi-Issuer Deep Brief",
+      "priceUsd": 9.00,
+      "notes": "Includes extra issuer drilldowns."
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",

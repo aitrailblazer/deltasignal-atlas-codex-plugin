@@ -18,6 +18,15 @@ StrategiX exposes Delta Signal ATLAS-7 Natural Language Briefs for humans, agent
 
 Natural Language Briefs are evidence-to-Markdown compiler outputs. They are not chatbot responses, analyst opinions, trade recommendations, or new evidence sources.
 
+Finished PDF deliverables are produced through StrategiX Visual MCP:
+
+- StrategiX Visual MCP page: https://aitrailblazer.github.io/strategix-visual-mcp/
+- Recommended workflow: strategix_delta_brief_pdf_full
+- Single Daily Morning Brief PDF: $4.50
+- Monthly Subscription: $79 for 22 daily briefs with auto-delivery and archive access
+- Heavy / Multi-Issuer Deep Brief: $9.00
+- Treat these as finished artifact prices over Delta Signal evidence, not raw Delta Signal route prices.
+
 ## Primary Product Surface
 
 - Raw Delta Signal evidence is fetched and canonicalized by the StrategiX backend.

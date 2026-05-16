@@ -42,6 +42,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 
 - **MCP endpoint** - `https://api.aitrailblazer.net/mcp`
 - **Main website** - `https://aitrailblazer.com`
+- **StrategiX Visual MCP** - `https://aitrailblazer.github.io/strategix-visual-mcp/`
 - **Delta Signal Substack** - `https://substack.com/@deltasignalai`
 - **OpenAPI 3.1** - `https://api.aitrailblazer.net/openapi.json`
 - **x402 discovery** - `https://api.aitrailblazer.net/.well-known/x402`
@@ -254,6 +255,9 @@ Do not claim Agentic Market first-party verification until the Agentic Market UI
 DeltaSignal daily activity is split into separate products:
 
 - **Morning Brief** answers "give me the daily picture" with one backend-composed scan across readiness, latest meaningful deltas, risk distribution, top stressed issuers, and alpha opportunities.
+- **Finished Morning Brief PDF** uses StrategiX Visual MCP to package DeltaSignal evidence into a polished, branded, auditable PDF. Recommended workflow: `strategix_delta_brief_pdf_full` at `$4.50` per market day.
+- **Monthly PDF Subscription** is `$79` for 22 daily briefs with auto-delivery and archive access.
+- **Heavy / Multi-Issuer Deep Brief** is `$9.00` when the finished PDF includes extra issuer drilldowns.
 - **Daily Monitoring** answers "what changed today?" through compact MCP and REST responses with freshness, changed-company rows, source dates, and evidence references.
 - **Evidence Drilldown** answers "show me why this issuer moved" through `deltasignal_daily_change_evidence` or `GET /v1/daily-changes/evidence`.
 - **Bulk Export** is reserved for future artifact-backed full daily evidence packs; full exports should be saved as durable files, not pasted into chat context.
