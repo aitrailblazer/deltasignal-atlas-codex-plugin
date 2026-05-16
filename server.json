@@ -2,11 +2,26 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.aitrailblazer/deltasignal-atlas-7",
   "title": "DeltaSignal ATLAS-7",
-  "description": "SEC-grounded crypto public issuer intelligence with MCP composite presets, compact daily monitoring, evidence drilldowns, Natural Language briefs, x402/MPP pay-per-call access, and Azure-native 215-issuer audit status.",
-  "version": "1.1.3",
+  "description": "SEC/XBRL issuer intelligence for crypto public companies via MCP, OpenAPI, x402, and MPP.",
+  "version": "1.1.4",
   "websiteUrl": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.aitrailblazer.net/mcp"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/assets/icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "800x800"
+      ]
+    }
+  ],
   "repository": {
-    "type": "git",
+    "source": "github",
     "url": "https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin"
   },
   "license": "MIT",
@@ -36,5 +51,23 @@
       }
     },
     "additionalProperties": false
+  },
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "summary": "DeltaSignal ATLAS-7 gives agents SEC/XBRL-grounded issuer intelligence for crypto public companies.",
+      "longDescription": "Composite MCP presets cover Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check workflows. Granular tools expose readiness, covenant stress, peer ranking, alpha signals, SEC/XBRL fundamentals, compact daily monitoring, evidence drilldowns, Natural Language briefs, and Azure-native 215-issuer audit status. Public access supports x402/Base and MPP/Tempo rails.",
+      "install": {
+        "transport": "streamable-http",
+        "mcpEndpoint": "https://api.aitrailblazer.net/mcp",
+        "docs": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/"
+      },
+      "recommendedPrompts": [
+        "Give me a Delta Signal morning brief.",
+        "Run a Delta Signal company report for MSTR.",
+        "Show me the current pressure board.",
+        "Run an alpha sweep for the current universe.",
+        "Quick check MARA before I drill into it."
+      ]
+    }
   }
 }
