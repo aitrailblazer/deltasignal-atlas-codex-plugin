@@ -95,6 +95,12 @@ Action:
   - icon URL under GitHub Pages
   - repository source `github`
 - Stork still served its cached 1.0.0 listing immediately after the official registry publish. Recheck after Stork's next crawler pass and verify it no longer needs to infer a fake npm package install.
+- Repeatable cache check:
+
+```bash
+cd mcp-stdio
+GOWORK=off go run ./cmd/check-registry-cache
+```
 
 ### Agentic Market / Bazaar
 
@@ -174,4 +180,11 @@ With live MCP tool validation:
 ```bash
 cd mcp-stdio
 DELTASIGNAL_API_KEY=... go run ./cmd/validate-discovery --root ..
+```
+
+Check the official MCP registry latest record and Stork cache state:
+
+```bash
+cd mcp-stdio
+GOWORK=off go run ./cmd/check-registry-cache
 ```
