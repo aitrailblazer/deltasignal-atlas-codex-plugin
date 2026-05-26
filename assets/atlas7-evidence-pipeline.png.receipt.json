@@ -1,0 +1,16 @@
+{
+  "schema": "strategix.image.provenance.v1",
+  "owner": "AITrailblazer / DeltaSignal",
+  "copyright": "(c) 2026 AITrailblazer / DeltaSignal",
+  "notice": "Generated visual artifact. Verify provenance by receipt. Do not infer the original prompt from reverse-image output alone.",
+  "model": "gpt-image-2-1",
+  "backend": "api.aitrailblazer.net",
+  "receipt_id": "deltasignal-atlas7-gpt-image2-rich-final-v3-20260526T204928Z",
+  "prompt_sha256": "c7530038c28d2b6793d5deca17961dab0e912aa093d55ba19f9ff76e74688d37",
+  "input_sha256": "177f7be61aa0d1bbb4596c1d3c94a7be642407933961dbb73f83653063fe7226",
+  "output_sha256": "17996c6c8533cd9191e7b7e663fde90e503ab474e6ef6ce5db70abb581a1890a",
+  "created_at": "2026-05-26T20:49:28Z",
+  "source_image": "artifacts/notebooklm/deltasignal-atlas-codex-plugin/gpt_image2_rich_cleaned_v3.png",
+  "output_image": "artifacts/notebooklm/deltasignal-atlas-codex-plugin/gpt_image2_rich_final_branded_v3.png",
+  "logo": "/Users/constantinevassilev02/MyLocalDocuments/go-projects/SyntheonArchive/GENI/aitrailblazerGENI/aitrailblazer-web-intel-mcp/deltasignal-web/deltasignal-logo.png"
+}
