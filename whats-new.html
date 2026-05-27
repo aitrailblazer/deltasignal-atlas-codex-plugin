@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What's New - Delta Signal ATLAS-7</title>
+  <meta name="description" content="Delta Signal ATLAS-7 improvement log for OpenAPI, MCP, x402, company reports, audit status, historical ATLAS-7 data, SPECTRA, and evidence-preserving workflows.">
+  <link rel="icon" href="./assets/logo.png" type="image/png">
+  <style>
+    :root {
+      --bg: #070811;
+      --panel: #11131f;
+      --panel-2: #171a29;
+      --ink: #f7f2e9;
+      --muted: #b8b0a5;
+      --gold: #ffb84d;
+      --orange: #ff7a1a;
+      --red: #e33d55;
+      --cyan: #57d8ff;
+      --green: #54d69d;
+      --line: rgba(255, 184, 77, .24);
+      --shadow: 0 26px 80px rgba(0, 0, 0, .46);
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255, 122, 26, .18), transparent 34rem),
+        radial-gradient(circle at 88% 12%, rgba(87, 216, 255, .13), transparent 32rem),
+        linear-gradient(180deg, #070811 0%, #0d0d17 48%, #070811 100%);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a {
+      color: #ffd080;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      padding: 54px 0 42px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 184, 77, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 184, 77, .08) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, .8), transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 46px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 0 0 1px rgba(255, 184, 77, .22);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      font-size: .92rem;
+    }
+
+    .nav a {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 184, 77, .22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .04);
+      color: #f8e6bf;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      padding: 7px 12px;
+      border: 1px solid rgba(84, 214, 157, .35);
+      border-radius: 999px;
+      color: #bff7dc;
+      background: rgba(84, 214, 157, .08);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5.8rem);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin: 20px 0 0;
+      color: #ded6cc;
+      font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 184, 77, .25);
+      color: #120b05;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      font-weight: 800;
+      box-shadow: 0 14px 36px rgba(255, 122, 26, .22);
+    }
+
+    .btn.secondary {
+      color: #ffe4b4;
+      background: rgba(255, 255, 255, .06);
+      box-shadow: none;
+    }
+
+    .section {
+      padding: 54px 0;
+    }
+
+    .section.alt {
+      background: rgba(255, 255, 255, .025);
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .section-head {
+      max-width: 860px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 3vw, 2.75rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p,
+    .muted {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card,
+    .timeline-item,
+    .code-card {
+      border: 1px solid rgba(255, 184, 77, .18);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .035));
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      padding: 18px;
+      min-height: 160px;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #ffd080;
+      font-size: 1.02rem;
+    }
+
+    .card span {
+      color: #cec6ba;
+      font-size: .94rem;
+    }
+
+    .status {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(84, 214, 157, .1);
+      color: #bff7dc;
+      border: 1px solid rgba(84, 214, 157, .32);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 22px 22px 22px 28px;
+      overflow: hidden;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--red), var(--orange), var(--gold));
+    }
+
+    .date {
+      color: #9de8ff;
+      font-size: .9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      margin: 5px 0 10px;
+      font-size: 1.28rem;
+      letter-spacing: 0;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: #ddd2c5;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, .08);
+      color: #ffe0a3;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: .92em;
+    }
+
+    pre {
+      margin: 0;
+      overflow-x: auto;
+      padding: 18px;
+      color: #f6e6c6;
+      background: #090a12;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 184, 77, .18);
+    }
+
+    .code-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .code-card {
+      padding: 16px;
+    }
+
+    .code-card h3 {
+      margin: 0 0 10px;
+      color: #ffd080;
+      font-size: 1rem;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(87, 216, 255, .22);
+      border-radius: 8px;
+      background: rgba(87, 216, 255, .07);
+      color: #dbeff7;
+    }
+
+    footer {
+      padding: 36px 0 48px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: rgba(0, 0, 0, .22);
+    }
+
+    @media (max-width: 920px) {
+      .grid,
+      .code-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .grid,
+      .code-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="topbar">
+        <a class="brand" href="./index.html">
+          <img src="./assets/logo.png" alt="Delta Signal logo">
+          <span>Delta Signal ATLAS-7</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="./index.html">Home</a>
+          <a href="./quickstart.md">Quickstart</a>
+          <a href="https://api.aitrailblazer.net/openapi.json">OpenAPI</a>
+          <a href="https://api.aitrailblazer.net/mcp">MCP</a>
+        </nav>
+      </div>
+      <p class="eyebrow">Updated May 27, 2026 - live backend verification included</p>
+      <h1>What's New in Delta Signal ATLAS-7</h1>
+      <p class="subtitle">A public improvement log for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
+        <a class="btn secondary" href="https://api.aitrailblazer.net/v1/readiness">Run readiness</a>
+        <a class="btn secondary" href="./index.html#recommended-workflows">View workflows</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Latest Live Improvements</h2>
+          <p>These are the changes most likely to matter to builders integrating the public route surface or agent workflows right now.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <span class="status">LIVE</span>
+            <strong>Atomic Company Report</strong>
+            <span><code>GET /v1/company-report/{ticker}</code> and <code>POST /v1/bundles/company-report</code> are now first-class REST/x402 routes backed by the server-enforced composite.</span>
+          </div>
+          <div class="card">
+            <span class="status">LIVE</span>
+            <strong>OpenAPI Discovery Fixed</strong>
+            <span>The live schema now advertises 43 paths, including the company-report aggregate routes, so clients no longer need to infer the composite from MCP-only metadata.</span>
+          </div>
+          <div class="card">
+            <span class="status">VERIFIED</span>
+            <strong>Real MSTR Data Probe</strong>
+            <span>Internal verification on May 27, 2026 returned MSTR fundamentals, alpha, peer ranking, covenant stress, readiness, and SPECTRA legs with <code>partial=false</code>.</span>
+          </div>
+          <div class="card">
+            <span class="status">BOUNDARY</span>
+            <strong>Evidence Layer First</strong>
+            <span>ATLAS remains a bounded evidence surface. Renderers and agents may summarize returned evidence, but should not invent facts or convert screens into investment advice.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Improvement Timeline</h2>
+          <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">May 27, 2026</div>
+            <h3>Company Report became a true OpenAPI-visible aggregate</h3>
+            <ul>
+              <li>Added live REST/x402 routes: <code>GET /v1/company-report/{ticker}</code> and <code>POST /v1/bundles/company-report</code>.</li>
+              <li>The aggregate returns readiness, company fundamentals, alpha signals, peer ranking, covenant stress, and advisory SPECTRA field-map support in one bounded response.</li>
+              <li>Public unauthenticated calls return the expected <code>402</code> x402 payment challenge.</li>
+              <li>Internal live MSTR verification returned <code>status=ok</code>, <code>partial=false</code>, and 6 of 6 internal legs succeeded.</li>
+              <li>Snapshot values from that verification: Strategy Inc, source date <code>2026-05-27</code>, alpha score <code>69</code>, peer rank <code>152/215</code>, stress <code>live_stress_50pct=0.2566</code>, risk tier <code>LOW</code>, and SPECTRA mode <code>atlas7_historical_spectra</code>.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 16, 2026</div>
+            <h3>StrategiX Visual MCP and finished DeltaSignal deliverables</h3>
+            <ul>
+              <li>Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.</li>
+              <li>Added finished DeltaSignal Intelligence Deliverables pricing, including a single daily Morning Brief PDF, monthly daily-brief subscription, and heavy multi-issuer deep brief.</li>
+              <li>Kept StrategiX execution internal-beta gated so public users are not asked to pay for tools that are not public-paid yet.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 14, 2026</div>
+            <h3>Historical source dates, SPECTRA, and ATLAS-7 calculation history</h3>
+            <ul>
+              <li>Added historical <code>source_date</code> support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.</li>
+              <li>Added first-class calculation-history surfaces: <code>GET /v1/atlas7/calculation-history</code>, <code>GET /mpp/v1/atlas7/calculation-history</code>, and MCP <code>deltasignal_atlas7_calculation_history</code>.</li>
+              <li>Calculation-history rows preserve covenant, fundamentals, peer, alpha, SPECTRA input, source fields, payload hash, and evidence hash fields.</li>
+              <li>MSTR SPECTRA was backfilled from real ATLAS history and exposed through <code>GET /v1/spectra-field-map/MSTR</code>.</li>
+              <li>Company Report MCP was expanded to six legs by including SPECTRA as an advisory field-map support leg.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 14, 2026</div>
+            <h3>Audit status, Morning Brief context, and public MCP discovery</h3>
+            <ul>
+              <li>Added the Azure-native ATLAS-7 audit status surface: <code>GET /v1/atlas7/audit/latest</code> and MCP <code>deltasignal_atlas7_audit_status</code>.</li>
+              <li>Audit status reports freshness, last successful run, issuer count, operation count, failure counts, artifact prefix, and job metadata.</li>
+              <li>Live audit verification reported 215 issuers, 1,935 operations, 0 failed operations, 0 historical failures, and 0 composite failures.</li>
+              <li>Morning Brief was updated with alpha board audit context so first-time users can see board scope, issuer mix, low-quality demotions, and caveats.</li>
+              <li>Public MCP discovery was opened before payment: <code>initialize</code> and <code>tools/list</code> stay inspectable, while <code>tools/call</code> remains protected by x402, API key, or an explicit free-tier grant.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 13-14, 2026</div>
+            <h3>Full-universe regression and issuer identity hardening</h3>
+            <ul>
+              <li>Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.</li>
+              <li>Extended company report and quick ticker check composite coverage across the issuer universe.</li>
+              <li>Canonicalized Strategy Inc as <code>MSTR</code> across issuer routes, ATLAS history rows, supported-company search, and x402 examples.</li>
+              <li>Canonicalized ambiguous Delta Signal issuer tickers and CIK aliases so public-company identity stays stable across CompanyFacts and ATLAS materialized rows.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 9-12, 2026</div>
+            <h3>Natural Language briefs and compact evidence contracts</h3>
+            <ul>
+              <li>Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.</li>
+              <li>Renderer metadata includes mode, validation status, fallback reason, compiler/version fields, evidence hash where available, latency, tokens, cache status, and billing mode.</li>
+              <li>Morning Brief Natural was updated to render returned alpha board evidence with issuer identity status, caveats, and non-advice language.</li>
+              <li>Default monitoring outputs stay compact, with raw evidence exposed through explicit drilldown routes instead of hidden client-side fan-out.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 1-8, 2026</div>
+            <h3>Composite workflows, route discovery, and payment metadata</h3>
+            <ul>
+              <li>Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.</li>
+              <li>Added Arazzo workflow definitions so agents can inspect scenario plans before execution.</li>
+              <li>Updated OpenAPI and route metadata for public clients that discover paid resources before execution.</li>
+              <li>Improved x402 and MPP payment metadata so AgentCash-style crawlers can identify route prices and protocol families.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">April 24-30, 2026</div>
+            <h3>Public x402 launch and Wardenclyffe/OpenAPI contract rollout</h3>
+            <ul>
+              <li>Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.</li>
+              <li>Raised public paid routes from test defaults to the launch pricing schedule.</li>
+              <li>Rolled out the Wardenclyffe/help/OpenAPI contract with updated readiness, help, schema shape, glossary, and debt coverage fields.</li>
+              <li>Added MPP discovery alongside x402 for compatible public-agent marketplaces and registry crawlers.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What Changed For Builders</h2>
+          <p>The product direction is now clearer: start with one bounded evidence response, inspect metadata, then drill down.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <strong>Less client stitching</strong>
+            <span>Company Report no longer requires every client to manually sequence fundamentals, covenant stress, peer ranking, alpha signals, and SPECTRA.</span>
+          </div>
+          <div class="card">
+            <strong>Better discovery</strong>
+            <span>OpenAPI, MCP discovery, Arazzo workflows, Glama metadata, and x402 challenges now describe more of the same live surface.</span>
+          </div>
+          <div class="card">
+            <strong>Better provenance</strong>
+            <span>Source dates, computed timestamps, quality flags, stale flags, payload modes, hashes, and caveats are treated as operational fields, not decoration.</span>
+          </div>
+          <div class="card">
+            <strong>Clearer safety boundary</strong>
+            <span>Delta Signal returns issuer-intelligence evidence and screens. It does not provide personalized investment advice, price targets, or portfolio recommendations.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Live Checks</h2>
+          <p>These commands show the current public contract. Paid public routes may return <code>402 Payment Required</code> until an x402-compatible client settles and retries.</p>
+        </div>
+        <div class="code-grid">
+          <div class="code-card">
+            <h3>Confirm the OpenAPI aggregate route</h3>
+            <pre><code>curl -s https://api.aitrailblazer.net/openapi.json \
+  | jq '.paths["/v1/company-report/{ticker}"]'</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Probe public x402 behavior</h3>
+            <pre><code>curl -i "https://api.aitrailblazer.net/v1/company-report/MSTR?output_mode=compact"</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Run readiness</h3>
+            <pre><code>curl -i https://api.aitrailblazer.net/v1/readiness</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Inspect MCP discovery</h3>
+            <pre><code>curl -i https://api.aitrailblazer.net/mcp</code></pre>
+          </div>
+        </div>
+        <div class="note">
+          Internal keyed verification is first-party testing only. Public users should rely on OpenAPI, MCP discovery, readiness, route metadata, and x402 challenge details before paid execution.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Evidence Boundary</h2>
+          <p>Delta Signal ATLAS-7 is SEC/XBRL-grounded issuer intelligence for crypto-exposed public companies. The system can route, summarize, render, and package returned evidence. It should not invent unsupported facts, silently fill missing rows, or turn evidence screens into personalized investment advice.</p>
+        </div>
+        <div class="note">
+          Before relying on any output, inspect source dates, filing dates where available, computed times, stale flags, caveats, quality flags, evidence hashes, renderer status, payload mode, route or tool provenance, and non-advice disclaimers.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Delta Signal ATLAS-7</strong>
+      <p>SEC/XBRL-grounded issuer intelligence for crypto-exposed public companies. Screening and diligence support only; not personalized investment advice.</p>
+      <p><a href="./index.html">Home</a> | <a href="./quickstart.md">Quickstart</a> | <a href="./llms.txt">llms.txt</a> | <a href="https://api.aitrailblazer.net/openapi.json">OpenAPI</a> | <a href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7">Glama connector</a></p>
+    </div>
+  </footer>
+
+  <script type="application/json" id="whats-new-provenance">
+    {
+      "artifact": "deltasignal_atlas7_whats_new",
+      "last_updated": "2026-05-27",
+      "sources": [
+        "aitrailblazer-web-intel-mcp CONTINUITY.md",
+        "aitrailblazer-web-intel-mcp git history through e731e69",
+        "Live verification snapshot from 2026-05-27 company-report aggregate rollout"
+      ],
+      "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
+    }
+  </script>
+</body>
+</html>

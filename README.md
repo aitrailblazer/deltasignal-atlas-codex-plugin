@@ -40,6 +40,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 
 ## Key Surfaces
 
+- **What's New** - [`whats-new.html`](./whats-new.html)
 - **MCP endpoint** - `https://api.aitrailblazer.net/mcp`
 - **Main website** - `https://aitrailblazer.com`
 - **StrategiX Visual MCP** - `https://aitrailblazer.github.io/strategix-visual-mcp/`
