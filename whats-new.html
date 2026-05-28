@@ -736,6 +736,52 @@ Estimated public x402 equivalent for readiness + company report + Morning Brief:
     <section class="section">
       <div class="wrap">
         <div class="section-head">
+          <h2>Context And Payload Hygiene</h2>
+          <p>The compact audit artifacts are useful for smoke validation, but duplicate summaries and compact-only payloads should not be treated as independent raw evidence. The client and report renderer should preserve that boundary visibly.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <strong>Duplicate artifact control</strong>
+            <span>When <code>ContextSHA256</code> matches, retain one canonical artifact summary and store duplicate filenames as provenance aliases. Preserve timing variance only when comparing performance.</span>
+          </div>
+          <div class="card">
+            <strong>Contract vs live proof</strong>
+            <span>OpenAPI confirms route availability and schema intent. MCP/live probes confirm workflow execution for tested paths. Raw issuer correctness still requires targeted evidence drilldowns.</span>
+          </div>
+          <div class="card">
+            <strong>Compact payload disclosure</strong>
+            <span>Compact responses should render as compact evidence, not full raw evidence. Cards should say when raw evidence is not attached and when a targeted drilldown is required.</span>
+          </div>
+          <div class="card">
+            <strong>Machine-path preservation</strong>
+            <span>Extraction and rendering layers must not mutate field paths such as <code>result.structuredContent.data</code>, <code>computed_at_utc</code>, or <code>source_date</code>.</span>
+          </div>
+        </div>
+        <div class="code-grid" style="margin-top: 18px;">
+          <div class="code-card">
+            <h3>Latency Classes From Prior Smoke</h3>
+            <pre><code>readiness: 547-575 ms, interactive-safe
+company_report: 492-658 ms, interactive-safe
+morning_brief: 10899-12398 ms, heavy composite
+design action: show progress/cache state for Morning Brief</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Renderer Fields To Preserve</h3>
+            <pre><code>source_date
+computed_at_utc or latest computed timestamp
+payload_mode and compact/full status
+caveats and non-advice boundary
+tool or route name
+public x402 equivalent price when relevant
+internal relay vs public payment boundary</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
           <h2>Route / Tool Drift Watchlist</h2>
           <p>The main production risk is divergence between public REST routes, MPP mirrors, MCP tools, and composite bundle behavior. These surfaces should be checked together whenever one changes.</p>
         </div>
@@ -779,8 +825,8 @@ Estimated public x402 equivalent for readiness + company report + Morning Brief:
           </article>
           <article class="timeline-item">
             <div class="date">Priority 3</div>
-            <h3>Unauthenticated x402 probe</h3>
-            <p>Probe <code>/v1/readiness</code> and <code>/v1/company-report/{ticker}</code> without payment to verify HTTP <code>402</code> body, challenge headers, Base network, USDC asset, and fixed-price metadata.</p>
+            <h3>Expand public x402 probes</h3>
+            <p>Readiness and company-report public unpaid probes now verify HTTP <code>402</code> body and x402 challenge headers. Extend the same check to <code>/v1/morning-brief/natural</code> and any new paid public route.</p>
           </article>
           <article class="timeline-item">
             <div class="date">Priority 4</div>
@@ -863,7 +909,8 @@ Estimated public x402 equivalent for readiness + company report + Morning Brief:
         "Live verification snapshot from 2026-05-27 company-report aggregate rollout",
         "Live public OpenAPI/x402 verification from 2026-05-28",
         "Compact Delta Signal results audit artifacts from 2026-05-28",
-        "Detailed OpenAPI route contract extraction from 2026-05-28"
+        "Detailed OpenAPI route contract extraction from 2026-05-28",
+        "Delta Signal context and payload hygiene audit from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
