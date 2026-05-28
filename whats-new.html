@@ -776,6 +776,24 @@ public x402 equivalent price when relevant
 internal relay vs public payment boundary</code></pre>
           </div>
         </div>
+        <div class="grid" style="margin-top: 18px;">
+          <div class="card">
+            <strong>Context footprint finding</strong>
+            <span>The repeated OpenAPI and RIOT audit chips represented roughly <code>134 KB</code> and <code>33.5K</code> prompt tokens before dedupe. Most of that signal collapses into one canonical OpenAPI contract card plus one live-smoke card with timing variance.</span>
+          </div>
+          <div class="card">
+            <strong>Canonical summary target</strong>
+            <span>Store a compact reusable card with API title/version, route count, key routes, public prices, <code>research_posture</code> present, <code>short_recommendation</code> absent, and the contract/live evidence boundary.</span>
+          </div>
+          <div class="card">
+            <strong><code>x_mcp_tools</code> discoverability</strong>
+            <span>The selected public route contracts expose empty <code>x_mcp_tools</code> arrays. If intentional, document that public x402 routes hide internal fan-out; otherwise add route-to-tool metadata or a separate composite-leg field.</span>
+          </div>
+          <div class="card">
+            <strong>Morning Brief UX</strong>
+            <span>At an observed average near <code>11.65 s</code>, Morning Brief should run with progress state, timeout handling, cached latest result, and background refresh rather than blocking the main app surface.</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -910,7 +928,8 @@ internal relay vs public payment boundary</code></pre>
         "Live public OpenAPI/x402 verification from 2026-05-28",
         "Compact Delta Signal results audit artifacts from 2026-05-28",
         "Detailed OpenAPI route contract extraction from 2026-05-28",
-        "Delta Signal context and payload hygiene audit from 2026-05-28"
+        "Delta Signal context and payload hygiene audit from 2026-05-28",
+        "Delta Signal prompt-context size and async UX audit from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
