@@ -794,6 +794,54 @@ internal relay vs public payment boundary</code></pre>
             <span>At an observed average near <code>11.65 s</code>, Morning Brief should run with progress state, timeout handling, cached latest result, and background refresh rather than blocking the main app surface.</span>
           </div>
         </div>
+        <div class="code-grid" style="margin-top: 18px;">
+          <div class="code-card">
+            <h3>Canonical Dedupe Rule</h3>
+            <pre><code>1. ContextSHA256 wins first:
+   same ContextSHA256 = same logical payload.
+   keep one canonical chip; preserve ArtifactSHA256 aliases.
+
+2. ArtifactSHA256 catches stored-byte duplicates:
+   same ArtifactSHA256 with different wrappers = same stored artifact.
+   keep the richer wrapper; preserve the other wrappers as references.
+
+3. route_contract_hash_v1 handles semantic OpenAPI identity:
+   dedupe route-contract subdocuments, not live audit chips.
+   live audit chips may carry distinct source dates, timings, and status.</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Contract Hash Canonicalization</h3>
+            <pre><code>extract: title, version, path_count, route path, method,
+operation_id, summary, description, parameters, responses,
+payment fields, and MCP/tool annotations when present
+
+drop: message id, filename, storage path, byte/token count,
+elapsed time, timestamps, prose headings, artifact metadata,
+formatting, and duplicate visible-message wrappers
+
+normalize: trim/collapse whitespace, preserve path case,
+sort routes and parameters, sort response codes, canonicalize
+payment amounts, then SHA256(canonical_json_utf8)</code></pre>
+          </div>
+        </div>
+        <div class="grid" style="margin-top: 18px;">
+          <div class="card">
+            <strong>Dedupe decision matrix</strong>
+            <span>Same <code>ContextSHA256</code>: exact duplicate. Same <code>ArtifactSHA256</code>: same stored artifact. Same normalized route-contract hash: same contract semantics. Same contract hash inside different live audits: keep both audits and reuse the contract reference. Different route-contract hash: flag contract drift.</span>
+          </div>
+          <div class="card">
+            <strong>Canonical selection priority</strong>
+            <span>Prefer non-excerpted full context, raw evidence over no raw evidence, structured JSON over prose, direct contract extraction over embedded contract snippets, live audit over route-only evidence for operational status, latest source date for time-sensitive objects, then earliest attached occurrence.</span>
+          </div>
+          <div class="card">
+            <strong>Applied OpenAPI group</strong>
+            <span>OpenAPI route-contract chips with <code>ContextSHA256=a7c1cb1638a1e9f2b26f624251574761d464e6b2ac52e2e31d7a0d4d4717204f</code> are exact logical duplicates. Preserve the five artifact hashes as aliases, not distinct evidence.</span>
+          </div>
+          <div class="card">
+            <strong>Applied live-audit group</strong>
+            <span>RIOT live audits with <code>ContextSHA256=da48e999c7fcff27224b718c9c2196becec03b31e11c0e89e446d91d5501291c</code> and <code>ac03c865209c1b5efb9245c870006d08b672401ad306d7790cd3d64558698622</code> are not exact duplicates. Deduplicate their embedded route-contract sections, but keep live timing/status evidence unless a separate normalized audit hash collapses them.</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -929,7 +977,8 @@ internal relay vs public payment boundary</code></pre>
         "Compact Delta Signal results audit artifacts from 2026-05-28",
         "Detailed OpenAPI route contract extraction from 2026-05-28",
         "Delta Signal context and payload hygiene audit from 2026-05-28",
-        "Delta Signal prompt-context size and async UX audit from 2026-05-28"
+        "Delta Signal prompt-context size and async UX audit from 2026-05-28",
+        "Canonical context-chip dedupe rule from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
