@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 27, 2026 - live backend verification included</p>
+      <p class="eyebrow">Updated May 28, 2026 - live public contract verification included</p>
       <h1>What's New in Delta Signal ATLAS-7</h1>
       <p class="subtitle">A public improvement log for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -410,6 +410,16 @@
             <span>The live schema now advertises 43 paths, including the company-report aggregate routes, so clients no longer need to infer the composite from MCP-only metadata.</span>
           </div>
           <div class="card">
+            <span class="status">FIXED</span>
+            <strong>Research Posture Contract</strong>
+            <span>The public schema now exposes <code>research_posture</code> and no longer exposes <code>short_recommendation</code>, keeping alpha output framed as diligence triage rather than advice.</span>
+          </div>
+          <div class="card">
+            <span class="status">FIXED</span>
+            <strong>x402 Error Body</strong>
+            <span>Public unpaid readiness and company-report calls now return developer-readable <code>payment_required</code> JSON plus the x402 challenge header.</span>
+          </div>
+          <div class="card">
             <span class="status">VERIFIED</span>
             <strong>Real MSTR Data Probe</strong>
             <span>Internal verification on May 27, 2026 returned MSTR fundamentals, alpha, peer ranking, covenant stress, readiness, and SPECTRA legs with <code>partial=false</code>.</span>
@@ -430,6 +440,18 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">May 28, 2026</div>
+            <h3>Public contract cleanup re-verified</h3>
+            <ul>
+              <li>Live OpenAPI is serving <code>DeltaSignal ATLAS</code> version <code>1.5.2</code> with <code>43</code> paths.</li>
+              <li><code>POST /mcp</code>, <code>GET /v1/readiness</code>, <code>GET /v1/company-report/{ticker}</code>, and <code>POST /v1/bundles/company-report</code> are present in the public route contract.</li>
+              <li>The alpha language contract now exposes <code>research_posture</code> and no longer exposes <code>short_recommendation</code>.</li>
+              <li>Unpaid public <code>GET /v1/readiness</code> returns HTTP <code>402</code> with a JSON body containing <code>error=payment_required</code>, the route name, retry guidance, docs URL, and an x402 challenge pointer.</li>
+              <li>Unpaid public <code>GET /v1/company-report/MSTR?output_mode=compact</code> returns HTTP <code>402</code> with the same developer-readable x402 pattern and a Base USDC challenge header.</li>
+            </ul>
+          </article>
+
           <article class="timeline-item">
             <div class="date">May 27, 2026</div>
             <h3>Company Report became a true OpenAPI-visible aggregate</h3>
@@ -544,7 +566,15 @@
           </div>
           <div class="card">
             <strong>Clearer safety boundary</strong>
-            <span>Delta Signal returns issuer-intelligence evidence and screens. It does not provide personalized investment advice, price targets, or portfolio recommendations.</span>
+            <span>Delta Signal returns issuer-intelligence evidence and research posture screens. It does not provide personalized investment advice, price targets, or portfolio recommendations.</span>
+          </div>
+          <div class="card">
+            <strong>Cleaner public contract</strong>
+            <span>Public schema language now uses <code>research_posture</code> for alpha outputs and avoids advice-like recommendation fields.</span>
+          </div>
+          <div class="card">
+            <strong>More useful payment failures</strong>
+            <span>Unauthenticated public calls return structured <code>payment_required</code> JSON so clients can distinguish x402 flow from ordinary server failure.</span>
           </div>
         </div>
       </div>
@@ -558,9 +588,16 @@
         </div>
         <div class="code-grid">
           <div class="code-card">
-            <h3>Confirm the OpenAPI aggregate route</h3>
+            <h3>Confirm the OpenAPI aggregate route and language contract</h3>
             <pre><code>curl -s https://api.aitrailblazer.net/openapi.json \
-  | jq '.paths["/v1/company-report/{ticker}"]'</code></pre>
+  | jq '{
+      version: .info.version,
+      path_count: (.paths | length),
+      company_report: has("/v1/company-report/{ticker}"),
+      bundle: has("/v1/bundles/company-report"),
+      research_posture: (tostring | contains("research_posture")),
+      short_recommendation: (tostring | contains("short_recommendation"))
+    }'</code></pre>
           </div>
           <div class="code-card">
             <h3>Probe public x402 behavior</h3>
@@ -605,11 +642,12 @@
   <script type="application/json" id="whats-new-provenance">
     {
       "artifact": "deltasignal_atlas7_whats_new",
-      "last_updated": "2026-05-27",
+      "last_updated": "2026-05-28",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through e731e69",
-        "Live verification snapshot from 2026-05-27 company-report aggregate rollout"
+        "Live verification snapshot from 2026-05-27 company-report aggregate rollout",
+        "Live public OpenAPI/x402 verification from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
