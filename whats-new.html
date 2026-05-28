@@ -436,6 +436,69 @@
     <section class="section alt">
       <div class="wrap">
         <div class="section-head">
+          <h2>Evidence Infrastructure Backlog</h2>
+          <p>The company-report route is now live, discoverable, and working as one client-facing call. The next phase is evidence-contract hardening so clients can diff, replay, batch, verify, and subscribe without route-specific inference.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <strong>Solved: aggregate access</strong>
+            <span><code>GET /v1/company-report/{ticker}</code> and <code>POST /v1/bundles/company-report</code> are present. A live MSTR report returned real data, <code>partial=false</code>, and 6 of 6 internal legs succeeded.</span>
+          </div>
+          <div class="card">
+            <strong>Solved: route posture</strong>
+            <span>OpenAPI 1.5.2 exposes 43 paths. <code>research_posture</code> is present and <code>short_recommendation</code> is absent, keeping output framed as diligence triage rather than action advice.</span>
+          </div>
+          <div class="card">
+            <strong>Partial: replayable evidence</strong>
+            <span><code>/v1/daily-changes/latest</code> returns <code>evidence_ref</code>, and <code>/v1/daily-changes/evidence</code> returns <code>page.next_args</code>, <code>next_offset</code>, <code>next_tool</code>, and raw tag pagination.</span>
+          </div>
+          <div class="card">
+            <strong>Open: infrastructure-grade evidence</strong>
+            <span>Universal provenance, semantic field deltas, evidence hash/ref semantics, coverage/freshness discovery, multi-ticker batch, webhook delivery, and field-level versioning remain open or partial.</span>
+          </div>
+        </div>
+        <div class="timeline" style="margin-top: 18px;">
+          <article class="timeline-item">
+            <div class="date">P0</div>
+            <h3>Universal evidence contract</h3>
+            <p>Add one mandatory <code>provenance</code> object across readiness, company report, daily changes, evidence drilldowns, alpha signals, fundamentals, peer ranking, covenant stress, and SPECTRA. Missing fields should return <code>null</code>, not disappear.</p>
+            <ul>
+              <li>Fields: <code>captured_at</code>, <code>observed_at</code>, <code>published_at</code>, <code>data_as_of</code>, <code>computed_at_utc</code>, <code>source_date</code>, <code>accession_number</code>, <code>evidence_ref</code>, <code>evidence_hash</code>, <code>schema_version</code>, <code>contract_version</code>.</li>
+              <li>Add semantic daily-change deltas with <code>field_path</code>, <code>prior_value</code>, <code>new_value</code>, <code>delta_type</code>, <code>threshold_crossed</code>, <code>materiality_score</code>, and evidence identifiers.</li>
+              <li>Document whether evidence refs are stable, what evidence hashes cover, how pagination affects hashes, and whether refs can be replayed after refresh.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="date">P1</div>
+            <h3>Scale and freshness ergonomics</h3>
+            <p>Add preflight and batch surfaces so clients do not need repeated paid single-name calls just to discover coverage, freshness, or availability.</p>
+            <ul>
+              <li>Add <code>GET /v1/companies</code>, <code>GET /v1/companies?changed_since=...</code>, and <code>GET /v1/ticker-freshness/{ticker}</code>.</li>
+              <li>Extend company-report bundle support to <code>tickers: []</code> with per-ticker result, partial flag, provenance, and error state.</li>
+              <li>Add snapshot metadata for company reports: <code>snapshot_id</code>, start/end timestamps, section count, max section skew, and whether sections share the same data-as-of boundary.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="date">P2</div>
+            <h3>Monitoring and contract maturity</h3>
+            <p>Move from pull-only reports toward durable monitoring and explicit field stability.</p>
+            <ul>
+              <li>Add webhook/subscription routes for material changes with event IDs, delivery signatures, replay cursors, field deltas, provenance, and evidence refs.</li>
+              <li>Add <code>GET /v1/contract/changelog</code> and <code>GET /v1/contract/fields</code> for stable field paths, deprecation windows, migration notes, and versioned daily-change fields.</li>
+              <li>Document route classes: free discovery, cheap freshness, paid compact, paid evidence, and internal/backend-relayed access.</li>
+              <li>Constrain renderer posture values to non-advice labels such as <code>constructive_evidence_screen</code>, <code>watchlist_candidate</code>, <code>risk_elevated</code>, <code>provenance_limited</code>, <code>data_stale</code>, and <code>insufficient_evidence</code>.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="note">
+          Bottleneck: evidence semantics are not yet standardized across routes. Until provenance, field deltas, and evidence hash semantics are uniform, high-volume monitoring still requires route-specific trust logic.
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
           <h2>Improvement Timeline</h2>
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
@@ -1078,7 +1141,8 @@ Spacing note: published paths use company-report. A copied
         "Delta Signal prompt-context size and async UX audit from 2026-05-28",
         "Canonical context-chip dedupe rule from 2026-05-28",
         "Normalized route-contract preimage and split-hash schema from 2026-05-28",
-        "Route-string sentinel hashes from 2026-05-28"
+        "Route-string sentinel hashes from 2026-05-28",
+        "Evidence infrastructure backlog audit from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
