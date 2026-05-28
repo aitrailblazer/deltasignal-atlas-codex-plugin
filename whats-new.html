@@ -703,6 +703,36 @@ Estimated public x402 equivalent for readiness + company report + Morning Brief:
       </div>
     </section>
 
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>OpenAPI Route Contract Snapshot</h2>
+          <p>Contract extraction confirms the public route names, operation IDs, declared inputs, response codes, and Base x402 price metadata. This is still contract proof; issuer-data correctness requires live probes and raw evidence drilldowns.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <strong><code>GET /v1/company-report/{ticker}</code></strong>
+            <span>Operation <code>getX402CompanyReport</code>. Required input: <code>ticker</code>. Optional inputs: <code>period</code>, <code>source_date</code>, <code>include_segments</code>, <code>include_related_party</code>, and <code>output_mode=compact</code>. Responses: <code>200</code>, <code>400</code>, <code>401</code>, <code>402</code>. Public equivalent: <code>$0.30</code> Base USDC x402.</span>
+          </div>
+          <div class="card">
+            <strong><code>POST /v1/bundles/company-report</code></strong>
+            <span>Operation <code>postX402CompanyReportBundle</code>. JSON-body variant for MCP-style clients that prefer body arguments. Responses: <code>200</code>, <code>400</code>, <code>401</code>, <code>402</code>. Public equivalent: <code>$0.30</code> Base USDC x402.</span>
+          </div>
+          <div class="card">
+            <strong><code>GET /v1/morning-brief/natural</code></strong>
+            <span>Operation <code>getX402MorningBriefNatural</code>. Optional inputs: <code>date</code>, <code>limit</code>, and <code>style</code>. Style changes tone and density only, not facts, caveats, or investment posture. Responses: <code>200</code>, <code>400</code>, <code>401</code>, <code>402</code>, <code>503</code>. Public equivalent: <code>$0.95</code> Base USDC x402.</span>
+          </div>
+          <div class="card">
+            <strong><code>GET /v1/readiness</code></strong>
+            <span>Operation <code>getX402DeltaSignalReadiness</code>. No business input required; placeholder query <code>_</code> documents an empty query schema for agent validators. Responses: <code>200</code>, <code>401</code>, <code>402</code>, <code>503</code>. Public equivalent: <code>$0.04</code> Base USDC x402.</span>
+          </div>
+        </div>
+        <div class="note">
+          Payment metadata declares fixed-price Base x402 with USDC. The natural Morning Brief and readiness contracts include protocol details for Base chain ID <code>8453</code>, Coinbase CDP facilitator, and exact x402 scheme. StrategiX internal mode continues to use backend-relayed access and does not execute wallet, MPP, settlement, or in-app payment flow.
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="wrap">
         <div class="section-head">
@@ -832,7 +862,8 @@ Estimated public x402 equivalent for readiness + company report + Morning Brief:
         "aitrailblazer-web-intel-mcp git history through e731e69",
         "Live verification snapshot from 2026-05-27 company-report aggregate rollout",
         "Live public OpenAPI/x402 verification from 2026-05-28",
-        "Compact Delta Signal results audit artifacts from 2026-05-28"
+        "Compact Delta Signal results audit artifacts from 2026-05-28",
+        "Detailed OpenAPI route contract extraction from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
