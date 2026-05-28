@@ -583,6 +583,117 @@
     <section class="section alt">
       <div class="wrap">
         <div class="section-head">
+          <h2>Audit-Grade Validation Plan</h2>
+          <p>Contract proof and live execution proof are separate. OpenAPI presence confirms the public route contract; live MCP or authenticated REST calls confirm backend execution and returned evidence shape.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <strong>OpenAPI contract layer</strong>
+            <span>Confirms route inventory, operation availability, schema intent, payment metadata, and governance fields such as <code>research_posture</code>.</span>
+          </div>
+          <div class="card">
+            <strong>Live execution layer</strong>
+            <span>Confirms a real call returns current source dates, compact payload status, caveats, provenance, timing, and non-advice language.</span>
+          </div>
+          <div class="card">
+            <strong>Renderer QA layer</strong>
+            <span>Confirms app cards preserve source dates, computed timestamps, payload mode, compact flags, caveats, evidence refs, and non-advice boundaries.</span>
+          </div>
+          <div class="card">
+            <strong>Payment boundary layer</strong>
+            <span>Confirms public unpaid calls return x402 <code>402</code> challenge details, while internal-key tests do not imply public payment success.</span>
+          </div>
+        </div>
+
+        <div class="code-grid" style="margin-top: 18px;">
+          <div class="code-card">
+            <h3>Compact Validation Matrix</h3>
+            <pre><code>OpenAPI route present: yes
+MCP live call succeeded: yes, in prior smoke
+Source date returned: 2026-05-28, in prior smoke
+Payload mode: compact
+Raw evidence attached: no
+x402 payment executed: no
+Public x402 equivalent documented: yes
+Investment-advice boundary preserved: yes</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>MCP / x402 Call Ledger</h3>
+            <pre><code>No new MCP or wallet call was made for this page update.
+Prior smoke:
+- readiness: live MCP ok, source_date=2026-05-28, elapsed=575 ms, /v1/readiness=$0.04
+- company_report RIOT: live MCP ok, source_date=2026-05-28, elapsed=492 ms, x402 equivalent=$0.30
+- morning_brief: live MCP ok, source_date=2026-05-28, latest activity=2026-05-27, elapsed=12398 ms
+- no in-app x402, wallet, MPP, settlement, or payment flow executed</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Route / Tool Drift Watchlist</h2>
+          <p>The main production risk is divergence between public REST routes, MPP mirrors, MCP tools, and composite bundle behavior. These surfaces should be checked together whenever one changes.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <strong>Base x402 routes</strong>
+            <span>Canonical public route family for Agentic Market and Coinbase x402 clients: <code>/v1/*</code>.</span>
+          </div>
+          <div class="card">
+            <strong>MPP mirror routes</strong>
+            <span>Parallel Tempo-compatible route family: <code>/mpp/v1/*</code>. Do not silently translate between route families.</span>
+          </div>
+          <div class="card">
+            <strong>MCP tools</strong>
+            <span>Agent-facing tools should stay aligned with the REST route contract, including compact mode, caveats, provenance, and pricing equivalents.</span>
+          </div>
+          <div class="card">
+            <strong>Composite bundles</strong>
+            <span>Company Report and Morning Brief should preserve the same evidence boundaries as the underlying routes while reducing client-side stitching.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Next Verification Priorities</h2>
+          <p>These checks turn route-level confidence into production assurance.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">Priority 1</div>
+            <h3>Second-ticker company-report smoke</h3>
+            <p>Repeat the company-report smoke with a second ticker from the latest daily-change slice to prove the aggregate is not only working for one issuer.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="date">Priority 2</div>
+            <h3>REST / MCP / bundle drift comparison</h3>
+            <p>Compare OpenAPI route inventory, MCP <code>tools/list</code>, and composite bundle outputs so route availability, tool names, prices, and payload modes stay synchronized.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="date">Priority 3</div>
+            <h3>Unauthenticated x402 probe</h3>
+            <p>Probe <code>/v1/readiness</code> and <code>/v1/company-report/{ticker}</code> without payment to verify HTTP <code>402</code> body, challenge headers, Base network, USDC asset, and fixed-price metadata.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="date">Priority 4</div>
+            <h3>App renderer regression</h3>
+            <p>Verify SwiftUI cards preserve <code>source_date</code>, <code>computed_at_utc</code>, <code>payload_mode</code>, compact flags, caveats, evidence references, x402 equivalent price, no-payment boundary, and non-advice language.</p>
+          </article>
+        </div>
+        <div class="note">
+          Compact mode preserves key status, dates, counts, summaries, pricing equivalents, and caveats. It does not expose the full raw evidence manifest in the visible response; use evidence drilldowns when raw issuer proof is required.
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-head">
           <h2>Live Checks</h2>
           <p>These commands show the current public contract. Paid public routes may return <code>402 Payment Required</code> until an x402-compatible client settles and retries.</p>
         </div>
