@@ -811,17 +811,82 @@ internal relay vs public payment boundary</code></pre>
           </div>
           <div class="code-card">
             <h3>Contract Hash Canonicalization</h3>
-            <pre><code>extract: title, version, path_count, route path, method,
-operation_id, summary, description, parameters, responses,
-payment fields, and MCP/tool annotations when present
+            <pre><code>route_contract_hash_v1 hashes interface, not prose:
+extract method, path, operation_id, parameters, request_body,
+responses, and payment metadata when the payment hash is not split
 
-drop: message id, filename, storage path, byte/token count,
-elapsed time, timestamps, prose headings, artifact metadata,
-formatting, and duplicate visible-message wrappers
+drop descriptions, summaries, examples, live response data,
+issuer data, runtime x402 challenge headers, elapsed times,
+source dates, wrapper metadata, filenames, and formatting
 
-normalize: trim/collapse whitespace, preserve path case,
-sort routes and parameters, sort response codes, canonicalize
-payment amounts, then SHA256(canonical_json_utf8)</code></pre>
+normalize: lowercase method, preserve OpenAPI path template,
+sort parameters by in/name, sort response codes numerically,
+use amount_usd strings, omit readiness "_" placeholder,
+then SHA256(canonical_json_utf8)</code></pre>
+          </div>
+        </div>
+        <div class="grid" style="margin-top: 18px;">
+          <div class="card">
+            <strong><code>interface_hash</code></strong>
+            <span>Detects breaking or behavioral route drift. Include OpenAPI identity, server, path names, HTTP methods, operation IDs, parameters, request bodies, response status codes, response schemas, components schemas, and request-shaping security schemes. Exclude prose, examples, and <code>x_payment_info</code>.</span>
+          </div>
+          <div class="card">
+            <strong><code>payment_hash</code></strong>
+            <span>Detects x402, chain, asset, route-price, and payment-policy drift. Include route path and method plus <code>x_payment_info</code>, protocol blocks, <code>amountUsd</code>, currency, asset, network, chain ID, facilitator, scheme, auth mode, payment methods, and price fields.</span>
+          </div>
+          <div class="card">
+            <strong><code>documentation_hash</code></strong>
+            <span>Detects docs and discoverability drift without marking interface or payment changes. Include info descriptions, route summaries/descriptions, parameter and response descriptions, schema descriptions, tags, caveats, natural-language endpoint notes, and Base x402 versus MPP compatibility notes.</span>
+          </div>
+          <div class="card">
+            <strong>Hash boundary</strong>
+            <span>The attached four-route projection is computable. Full production <code>interface_hash</code>, <code>payment_hash</code>, and <code>documentation_hash</code> for all 43 routes require raw <code>/openapi.json</code>, not only artifact/context hashes.</span>
+          </div>
+        </div>
+        <div class="code-grid" style="margin-top: 18px;">
+          <div class="code-card">
+            <h3>Route Contract Preimage Shape</h3>
+            <pre><code>{
+  "schema": "deltasignal.route_contract_preimage.v1",
+  "method": "get",
+  "path": "/v1/company-report/{ticker}",
+  "operation_id": "getX402CompanyReport",
+  "parameters": [],
+  "request_body": {"status": "none", "content_type": null, "schema": null},
+  "responses": ["200", "400", "401", "402"],
+  "payment": {
+    "scheme": "x402",
+    "auth_mode": "x402",
+    "network": "Base",
+    "asset": "USDC",
+    "currency": "USD",
+    "amount_usd": "0.300000",
+    "chain_id": null,
+    "price_mode": "fixed"
+  }
+}</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Split Hash Manifest</h3>
+            <pre><code>{
+  "schema_identity": {
+    "title": "DeltaSignal ATLAS",
+    "version": "1.5.2",
+    "openapi": "3.1.0",
+    "server": "https://api.aitrailblazer.net",
+    "route_count": 43
+  },
+  "hashes": {
+    "interface_hash": "sha256:&lt;interface_projection&gt;",
+    "payment_hash": "sha256:&lt;payment_projection&gt;",
+    "documentation_hash": "sha256:&lt;documentation_projection&gt;"
+  },
+  "evidence_boundary": {
+    "four_route_projection_computable": true,
+    "full_43_route_hash_computable_from_attached_context": false,
+    "full_raw_openapi_attached": false
+  }
+}</code></pre>
           </div>
         </div>
         <div class="grid" style="margin-top: 18px;">
@@ -978,7 +1043,8 @@ payment amounts, then SHA256(canonical_json_utf8)</code></pre>
         "Detailed OpenAPI route contract extraction from 2026-05-28",
         "Delta Signal context and payload hygiene audit from 2026-05-28",
         "Delta Signal prompt-context size and async UX audit from 2026-05-28",
-        "Canonical context-chip dedupe rule from 2026-05-28"
+        "Canonical context-chip dedupe rule from 2026-05-28",
+        "Normalized route-contract preimage and split-hash schema from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
