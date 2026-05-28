@@ -889,6 +889,39 @@ then SHA256(canonical_json_utf8)</code></pre>
 }</code></pre>
           </div>
         </div>
+        <div class="code-grid" style="margin-top: 18px;">
+          <div class="code-card">
+            <h3>Route-String Sentinel Hashes</h3>
+            <pre><code>preimage: exact UTF-8 route string, no trailing newline
+boundary: route path only, not full JSON contract or artifact file
+
+/v1/company-report/{ticker}
+sha256: ef99f95352ea899a5574c27aacb5210c43f6fded15ab9e16d34a2d8d5cab8aab
+
+/v1/bundles/company-report
+sha256: ee019dde021794847008cb2593bad8a40d44294f4191ff512d25d36452ffdf84
+
+/v1/morning-brief/natural
+sha256: 42c9e53fb604c2602d4a81ec39f43fae3da040e8429a796f5144d1ccd57b54bd
+
+/v1/readiness
+sha256: b211b65058ac1a3c1f0800569432558c46df9bae86072d9348087aa89beb765b</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Sentinel Boundary</h3>
+            <pre><code>Use route-string sentinels for quick path identity checks only.
+Do not substitute them for:
+- route_contract_hash_v1
+- interface_hash
+- payment_hash
+- documentation_hash
+- artifact SHA-256
+- live issuer-data verification
+
+Spacing note: published paths use company-report. A copied
+"company- report" spacing artifact hashes to a different value.</code></pre>
+          </div>
+        </div>
         <div class="grid" style="margin-top: 18px;">
           <div class="card">
             <strong>Dedupe decision matrix</strong>
@@ -1044,7 +1077,8 @@ then SHA256(canonical_json_utf8)</code></pre>
         "Delta Signal context and payload hygiene audit from 2026-05-28",
         "Delta Signal prompt-context size and async UX audit from 2026-05-28",
         "Canonical context-chip dedupe rule from 2026-05-28",
-        "Normalized route-contract preimage and split-hash schema from 2026-05-28"
+        "Normalized route-contract preimage and split-hash schema from 2026-05-28",
+        "Route-string sentinel hashes from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
