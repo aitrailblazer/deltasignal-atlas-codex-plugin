@@ -633,6 +633,79 @@ Prior smoke:
     <section class="section">
       <div class="wrap">
         <div class="section-head">
+          <h2>Results Audit Snapshot</h2>
+          <p>Verdict: pass with evidence-bound caveats. The public contracts are present, the backend-relayed MCP workflows completed in prior smoke runs, and the schema posture now avoids advice-like recommendation language.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <strong>OpenAPI contract passed</strong>
+            <span>Title <code>DeltaSignal ATLAS</code>; OpenAPI <code>3.1.0</code>; API version <code>1.5.2</code>; <code>43</code> paths; server <code>https://api.aitrailblazer.net</code>; MCP, MPP, and Base x402 surfaces present.</span>
+          </div>
+          <div class="card">
+            <strong>Required routes passed</strong>
+            <span><code>POST /mcp</code>, <code>GET /v1/readiness</code>, <code>GET /v1/company-report/{ticker}</code>, <code>POST /v1/bundles/company-report</code>, and <code>GET /v1/morning-brief/natural</code> are present.</span>
+          </div>
+          <div class="card">
+            <strong>Live MCP smoke passed</strong>
+            <span>Prior RIOT smoke artifacts reported readiness ok, company report ok, Morning Brief ok, 6 of 6 internal calls succeeded for Company Report and Morning Brief, and source date <code>2026-05-28</code>.</span>
+          </div>
+          <div class="card">
+            <strong>Language migration passed</strong>
+            <span><code>research_posture</code> is present and <code>short_recommendation</code> is absent. This keeps alpha output framed as diligence posture, not personalized investment recommendation.</span>
+          </div>
+        </div>
+        <div class="grid" style="margin-top: 18px;">
+          <div class="card">
+            <strong>Raw evidence caveat</strong>
+            <span>The attached smoke artifacts were compact / artifact-reference payloads with raw evidence unavailable. This verifies route presence, workflow completion, schema posture, and provenance handling, not full SEC fact extraction correctness.</span>
+          </div>
+          <div class="card">
+            <strong>x402 caveat resolved separately</strong>
+            <span>The attached smoke evidence did not execute wallet, MPP, settlement, or in-app x402 payment. A later public probe verified unpaid <code>402 payment_required</code> JSON and x402 challenge headers for readiness and company-report routes.</span>
+          </div>
+          <div class="card">
+            <strong>Latency variance only</strong>
+            <span>Duplicate RIOT smoke artifacts varied in timing only: readiness <code>575 ms</code> vs <code>547 ms</code>, company report <code>492 ms</code> vs <code>658 ms</code>, Morning Brief <code>12398 ms</code> vs <code>10899 ms</code>.</span>
+          </div>
+          <div class="card">
+            <strong>Operator takeaway</strong>
+            <span>The operational surface is healthy at contract and workflow-smoke level. Treat this as infrastructure readiness evidence, not issuer-data validation or investment advice.</span>
+          </div>
+        </div>
+        <div class="code-grid" style="margin-top: 18px;">
+          <div class="code-card">
+            <h3>Route Contract Extraction</h3>
+            <pre><code>{
+  "openapi_title": "DeltaSignal ATLAS",
+  "openapi_version": "1.5.2",
+  "path_count": 43,
+  "checks": {
+    "company_report_get": true,
+    "company_report_post": true,
+    "morning_brief_natural": true,
+    "readiness": true,
+    "has_research_posture": true,
+    "has_short_recommendation": false
+  },
+  "boundary": "OpenAPI contract extraction only; pair with live probes for issuer-data verification."
+}</code></pre>
+          </div>
+          <div class="code-card">
+            <h3>Priced Public Equivalents</h3>
+            <pre><code>GET /v1/readiness: $0.04 Base USDC
+GET /v1/company-report/{ticker}: $0.30 Base USDC
+POST /v1/bundles/company-report: $0.30 Base USDC
+GET /v1/morning-brief/natural: $0.95 Base USDC
+Observed internal smoke payment used: none
+Estimated public x402 equivalent for readiness + company report + Morning Brief: $1.29</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
           <h2>Route / Tool Drift Watchlist</h2>
           <p>The main production risk is divergence between public REST routes, MPP mirrors, MCP tools, and composite bundle behavior. These surfaces should be checked together whenever one changes.</p>
         </div>
@@ -758,7 +831,8 @@ Prior smoke:
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through e731e69",
         "Live verification snapshot from 2026-05-27 company-report aggregate rollout",
-        "Live public OpenAPI/x402 verification from 2026-05-28"
+        "Live public OpenAPI/x402 verification from 2026-05-28",
+        "Compact Delta Signal results audit artifacts from 2026-05-28"
       ],
       "boundary": "Public improvement log. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
