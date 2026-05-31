@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, not-found, and universe-route contracts added</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, not-found, universe-route, and field contracts added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -471,6 +471,10 @@
           <div class="card">
             <strong>Ready for backend deploy: universe routes locked</strong>
             <span>The no-ticker universe routes are now explicitly documented in backend help and OpenAPI source: <code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code>.</span>
+          </div>
+          <div class="card">
+            <strong>Ready for backend deploy: field contract discovery</strong>
+            <span><code>GET /v1/contract/fields</code> has been implemented in backend source as a free parser contract endpoint covering stable Jeff paths, billing fields, not-found semantics, route aliases, and universe route policy.</span>
           </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
@@ -564,6 +568,18 @@
               <li>OpenAPI operations now carry <code>x-deltasignal-route_scope=universe</code>, <code>x-deltasignal-path_ticker_free=true</code>, and <code>x-deltasignal-ticker_segment=forbidden</code>.</li>
               <li>The help response includes an explicit policy: do not append <code>/{ticker}</code>, <code>/UNIVERSE</code>, or any other path segment to these routes.</li>
               <li>Verification completed locally with focused help/OpenAPI/pricing/billing/not-found tests. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Field contract discovery implementation track</h3>
+            <ul>
+              <li>Added free backend discovery route <code>GET /v1/contract/fields</code>.</li>
+              <li>The field contract returns <code>deltasignal-field-contract-v1</code>, the canonical billing field <code>cost_usd</code>, not-found contract metadata, route aliases, and the path-ticker-free universe route set.</li>
+              <li>The stable parser-path list includes Jeff's current readiness, company-report, daily-changes, generic provenance, and stress aliases such as <code>stress_50pct</code> and <code>stressed_leverage_50pct</code>.</li>
+              <li>The served OpenAPI and help response now publish <code>/v1/contract/fields</code> as a free support/discovery route in backend source.</li>
+              <li>Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Public route availability still requires backend deployment.</li>
             </ul>
           </article>
 
@@ -1212,7 +1228,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of canonical /v1 billing field normalizer from 2026-05-31",
         "Backend source implementation of structured not_found route/ticker miss semantics from 2026-05-31",
         "Backend source implementation of universe route path-ticker-free OpenAPI/help contract from 2026-05-31",
-        "Local targeted pricing/billing/not-found/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
+        "Backend source implementation of free GET /v1/contract/fields from 2026-05-31",
+        "Local targeted pricing/billing/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
