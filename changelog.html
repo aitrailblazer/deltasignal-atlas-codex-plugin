@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 28, 2026 - live public contract verification included</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing discovery implementation track added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -456,6 +456,10 @@
             <strong>Open: infrastructure-grade evidence</strong>
             <span>Universal provenance, semantic field deltas, evidence hash/ref semantics, coverage/freshness discovery, multi-ticker batch, webhook delivery, and field-level versioning remain open or partial.</span>
           </div>
+          <div class="card">
+            <strong>Ready for backend deploy: pricing discovery</strong>
+            <span><code>GET /v1/pricing</code> has been implemented in the backend plan as a free machine-readable x402 route-pricing catalog. It exposes route URI, method, USD price, billing mode, ticker requirements, and <code>cost_usd</code> as the canonical billed-response field. Public availability depends on the next API backend deployment.</span>
+          </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
           <article class="timeline-item">
@@ -503,6 +507,18 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Pricing discovery implementation track</h3>
+            <ul>
+              <li>Added the first Jeff live-loop contract slice in backend source: <code>GET /v1/pricing</code>.</li>
+              <li>The route is designed as free discovery and returns a machine-readable x402 route catalog with <code>route_uri</code>, HTTP method, <code>price_usd</code>, billing mode, ticker requirements, and pricing source.</li>
+              <li>The pricing contract declares <code>cost_usd</code> as the canonical billed-response ledger field and treats <code>quoted_cost_usd</code> / <code>actual_cost_usd</code> as supplemental aliases when route-specific flows emit them.</li>
+              <li>The served OpenAPI document now publishes <code>/v1/pricing</code> as a free discovery route in the backend source.</li>
+              <li>Verification completed locally with targeted pricing/help/OpenAPI tests and the full <code>go test ./cmd/search-gateway/...</code> package suite. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
           <article class="timeline-item">
             <div class="date">May 28, 2026</div>
             <h3>Public contract cleanup re-verified</h3>
@@ -1128,8 +1144,8 @@ Spacing note: published paths use company-report. A copied
 
   <script type="application/json" id="changelog-provenance">
     {
-      "artifact": "deltasignal_atlas7_whats_new",
-      "last_updated": "2026-05-28",
+      "artifact": "deltasignal_atlas7_changelog",
+      "last_updated": "2026-05-31",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through e731e69",
@@ -1142,7 +1158,10 @@ Spacing note: published paths use company-report. A copied
         "Canonical context-chip dedupe rule from 2026-05-28",
         "Normalized route-contract preimage and split-hash schema from 2026-05-28",
         "Route-string sentinel hashes from 2026-05-28",
-        "Evidence infrastructure backlog audit from 2026-05-28"
+        "Evidence infrastructure backlog audit from 2026-05-28",
+        "ExecPlan_60 DeltaSignal Jeff live-loop API contract from 2026-05-31",
+        "Backend source implementation of free GET /v1/pricing from 2026-05-31",
+        "Local targeted pricing/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
