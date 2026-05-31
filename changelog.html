@@ -244,6 +244,26 @@
       font-weight: 800;
     }
 
+    .track {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+
+    .track code {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 8px;
+      border: 1px solid rgba(87, 216, 255, .26);
+      border-radius: 999px;
+      background: rgba(87, 216, 255, .08);
+      color: #c9f3ff;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
     .timeline {
       display: grid;
       gap: 16px;
@@ -407,11 +427,21 @@
           <div class="card">
             <span class="status">SOURCE</span>
             <strong>P0 Contract Hardening Slice</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-P0-CONTRACT-7A80E86</code>
+              <code>track: T+14m</code>
+              <code>commit: 7a80e86</code>
+            </div>
             <span>Backend source now adds route lifecycle metadata in <code>/v1/pricing</code>, <code>billing_status</code> in protected <code>/v1/</code> responses, explicit <code>not_charged</code> not-found semantics, and structured <code>invalid_path_scope</code> errors when no-ticker universe routes receive extra path segments such as <code>/UNIVERSE</code>.</span>
           </div>
           <div class="card">
             <span class="status">SOURCE</span>
             <strong>Standard Provenance Slice</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-P1-PROV-730DEF3</code>
+              <code>track: T+22m</code>
+              <code>commit: 730def3</code>
+            </div>
             <span>Backend source now injects a standard <code>deltasignal-provenance-v1</code> block into successful protected <code>/v1/</code> JSON object responses while preserving existing route-specific provenance fields.</span>
           </div>
           <div class="card">
@@ -578,6 +608,11 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>P1 standard provenance source implementation</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-P1-PROV-730DEF3</code>
+              <code>track: T+22m</code>
+              <code>commit: 730def3</code>
+            </div>
             <ul>
               <li>Added <code>deltasignal-provenance-v1</code> to the protected <code>/v1/</code> response normalization path in backend source.</li>
               <li>Successful JSON object responses now receive a top-level <code>provenance</code> object with route identity, <code>source_date</code>, <code>computed_at_utc</code>, ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.</li>
@@ -590,6 +625,11 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>P0 contract-hardening source implementation</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-P0-CONTRACT-7A80E86</code>
+              <code>track: T+14m</code>
+              <code>commit: 7a80e86</code>
+            </div>
             <ul>
               <li>Added <code>deltasignal-route-scope-v1</code> in backend source so no-ticker universe routes called with extra path segments return structured HTTP <code>400</code> <code>invalid_path_scope</code> instead of ambiguous 404 behavior.</li>
               <li>The protected no-ticker set is <code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code>.</li>
