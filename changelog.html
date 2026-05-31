@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing and billing contract implementation track added</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, and not-found contract implementation track added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -464,6 +464,10 @@
             <strong>Ready for backend deploy: canonical billing fields</strong>
             <span>Protected priced <code>/v1/</code> JSON object responses now pass through a shared billing normalizer in backend source. Successful route payloads receive numeric <code>cost_usd</code>, <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>billing_mode</code>, route identity, and payment status fields. Public availability depends on the next API backend deployment.</span>
           </div>
+          <div class="card">
+            <strong>Ready for backend deploy: structured not-found</strong>
+            <span>Route/ticker misses now use a structured <code>not_found</code> payload in backend source with <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, route identity, request ID, and a contract version. The explicit IREN SPECTRA miss is covered by regression test.</span>
+          </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
           <article class="timeline-item">
@@ -532,6 +536,18 @@
               <li>x402 paid responses preserve route price as both quote and actual cost. Internal API-key and free-tier grants report <code>actual_cost_usd=0</code> while preserving the route quote for budgeting.</li>
               <li>Errors, arrays, non-JSON bodies, and unpriced free discovery routes such as <code>/v1/pricing</code> are not rewritten by the billing normalizer.</li>
               <li>Verification completed locally with focused billing/pricing/help/OpenAPI tests. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Structured not-found implementation track</h3>
+            <ul>
+              <li>Added a shared structured <code>not_found</code> response contract in backend source.</li>
+              <li>Route/ticker misses now expose <code>status=not_found</code>, <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, <code>route_uri</code>, ticker or request key, request ID, and <code>not_found_contract_version</code>.</li>
+              <li><code>/v1/spectra-field-map/IREN</code> now has an explicit semantics path: <code>reason=historical_field_map_contract_missing</code>, <code>coverage_state=not_available_for_issuer</code>, and a seven-day retry hint.</li>
+              <li>The shape is also wired into fundamentals, alpha signals, covenant stress, peer ranking, daily changes, daily-change evidence, and field-map misses.</li>
+              <li>Verification completed locally with focused not-found, billing, pricing, help, and OpenAPI tests. Public route availability still requires backend deployment.</li>
             </ul>
           </article>
 
@@ -1178,7 +1194,8 @@ Spacing note: published paths use company-report. A copied
         "ExecPlan_60 DeltaSignal Jeff live-loop API contract from 2026-05-31",
         "Backend source implementation of free GET /v1/pricing from 2026-05-31",
         "Backend source implementation of canonical /v1 billing field normalizer from 2026-05-31",
-        "Local targeted pricing/billing/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
+        "Backend source implementation of structured not_found route/ticker miss semantics from 2026-05-31",
+        "Local targeted pricing/billing/not-found/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
