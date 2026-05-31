@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, and field contracts added</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, field, and coverage contracts added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -479,6 +479,10 @@
           <div class="card">
             <strong>Ready for backend deploy: response metadata envelope</strong>
             <span>Successful protected <code>/v1/</code> JSON object responses now receive top-level metadata keys and a <code>response_metadata</code> object with request, route, billing, cache, caveat, evidence-hash, and latency fields.</span>
+          </div>
+          <div class="card">
+            <strong>Ready for backend deploy: coverage discovery</strong>
+            <span><code>/companies</code> now exposes a machine-readable coverage contract in backend source with lookup ticker, CIK, supported routes, unavailable routes, last source date, and coverage status per issuer.</span>
           </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
@@ -596,6 +600,18 @@
               <li>The envelope includes <code>request_id</code>, <code>route_uri</code>, <code>source_date</code>, <code>computed_at_utc</code>, <code>ticker</code>, <code>cost_usd</code>, <code>billing_mode</code>, <code>cache_hit</code>, <code>payload_mode</code>, <code>quality_flags</code>, <code>caveats</code>, <code>evidence_hash</code>, <code>evidence_hash_version</code>, and <code>latency_ms</code>.</li>
               <li>Unavailable values are emitted as <code>null</code> or empty arrays where appropriate, so automation can parse a stable shape.</li>
               <li>Verification completed locally with focused billing, field-contract, help, OpenAPI, pricing, and not-found tests. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Coverage discovery implementation track</h3>
+            <ul>
+              <li>Extended <code>/companies</code> in backend source with <code>deltasignal-coverage-v1</code>.</li>
+              <li>Each issuer row now includes <code>ticker</code>, <code>lookup_ticker</code>, <code>cik</code>, <code>entity_name</code>, <code>supported_routes</code>, <code>unavailable_routes</code>, <code>last_source_date</code>, and <code>coverage_status</code>.</li>
+              <li>The field-contract route documents the stable coverage discovery fields for automation.</li>
+              <li>This lets clients preflight supported names and route availability before spending on paid drilldowns.</li>
+              <li>Verification completed locally with focused companies, field-contract, help, OpenAPI, pricing, billing, metadata, and not-found tests. Public route availability still requires backend deployment.</li>
             </ul>
           </article>
 
@@ -1246,7 +1262,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of universe route path-ticker-free OpenAPI/help contract from 2026-05-31",
         "Backend source implementation of free GET /v1/contract/fields from 2026-05-31",
         "Backend source implementation of deltasignal-response-metadata-v1 from 2026-05-31",
-        "Local targeted pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
+        "Backend source implementation of deltasignal-coverage-v1 in /companies from 2026-05-31",
+        "Local targeted companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
