@@ -430,6 +430,11 @@
             <span>Internal verification on May 27, 2026 returned MSTR fundamentals, alpha, peer ranking, covenant stress, readiness, and SPECTRA legs with <code>partial=false</code>.</span>
           </div>
           <div class="card">
+            <span class="status">FIXED</span>
+            <strong>IREN SPECTRA Coverage</strong>
+            <span><code>/v1/spectra-field-map/IREN</code> is no longer a structured miss. It now has an ATLAS-7 history-backed <code>SPECTRA-FIELD-MAP-v1</code> contract derived from three real IREN atlas-history rows, latest source date <code>2026-04-24</code>.</span>
+          </div>
+          <div class="card">
             <span class="status">BOUNDARY</span>
             <strong>Evidence Layer First</strong>
             <span>ATLAS remains a bounded evidence surface. Renderers and agents may summarize returned evidence, but should not invent facts or convert screens into investment advice.</span>
@@ -471,7 +476,11 @@
           </div>
           <div class="card">
             <strong>Live backend: structured not-found</strong>
-            <span>Route/ticker misses now use a structured <code>not_found</code> payload in backend source with <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, route identity, request ID, and a contract version. The explicit IREN SPECTRA miss is covered by regression test.</span>
+            <span>Route/ticker misses now use a structured <code>not_found</code> payload in backend source with <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, route identity, request ID, and a contract version. IREN SPECTRA has moved from miss semantics to repaired coverage.</span>
+          </div>
+          <div class="card">
+            <strong>Live backend: IREN SPECTRA repair</strong>
+            <span>The backend web bundle now includes <code>deltasignal-web/public/spectra-field-map/IREN/contract.json</code>, an ATLAS-7 history-backed SPECTRA field-map contract for IREN Limited. The source artifact preserves the three-row atlas-history input used to derive the chart context.</span>
           </div>
           <div class="card">
             <strong>Live backend: universe routes locked</strong>
@@ -578,9 +587,20 @@
             <ul>
               <li>Added a shared structured <code>not_found</code> response contract in backend source.</li>
               <li>Route/ticker misses now expose <code>status=not_found</code>, <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, <code>route_uri</code>, ticker or request key, request ID, and <code>not_found_contract_version</code>.</li>
-              <li><code>/v1/spectra-field-map/IREN</code> now has an explicit semantics path: <code>reason=historical_field_map_contract_missing</code>, <code>coverage_state=not_available_for_issuer</code>, and a seven-day retry hint.</li>
+              <li>SPECTRA misses still have an explicit semantics path: <code>reason=historical_field_map_contract_missing</code>, <code>coverage_state=not_available_for_issuer</code>, and a seven-day retry hint.</li>
               <li>The shape is also wired into fundamentals, alpha signals, covenant stress, peer ranking, daily changes, daily-change evidence, and field-map misses.</li>
               <li>Verification completed locally with focused not-found, billing, pricing, help, and OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>IREN SPECTRA coverage repair</h3>
+            <ul>
+              <li>Added <code>deltasignal-web/public/spectra-field-map/IREN/contract.json</code> so <code>/v1/spectra-field-map/IREN</code> can return a real field-map contract instead of a structured coverage miss.</li>
+              <li>The new IREN contract uses <code>mode=atlas7_historical_spectra</code>, <code>version=SPECTRA-FIELD-MAP-v1</code>, company <code>IREN Limited</code>, CIK <code>0001878848</code>, and latest source date <code>2026-04-24</code>.</li>
+              <li>The source lineage is preserved in <code>artifacts/spectra-field-map/IREN/atlas_history_source.json</code> with three real ATLAS-7 atlas-history rows.</li>
+              <li>Added a regression test that serves the IREN public contract and asserts <code>real_data=true</code> with three returned SPECTRA points.</li>
             </ul>
           </article>
 
