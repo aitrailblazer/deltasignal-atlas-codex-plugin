@@ -405,6 +405,16 @@
             <span>Backend revision <code>ca-web-intel-mcp--0000450</code> is live with pricing discovery, canonical billing fields, response metadata, structured not-found semantics, field contracts, coverage discovery, daily-change field deltas, evidence replay semantics, universe-route locks, and large-response guidance.</span>
           </div>
           <div class="card">
+            <span class="status">SOURCE</span>
+            <strong>P0 Contract Hardening Slice</strong>
+            <span>Backend source now adds route lifecycle metadata in <code>/v1/pricing</code>, <code>billing_status</code> in protected <code>/v1/</code> responses, explicit <code>not_charged</code> not-found semantics, and structured <code>invalid_path_scope</code> errors when no-ticker universe routes receive extra path segments such as <code>/UNIVERSE</code>.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE</span>
+            <strong>Standard Provenance Slice</strong>
+            <span>Backend source now injects a standard <code>deltasignal-provenance-v1</code> block into successful protected <code>/v1/</code> JSON object responses while preserving existing route-specific provenance fields.</span>
+          </div>
+          <div class="card">
             <span class="status">LIVE</span>
             <strong>Atomic Company Report</strong>
             <span><code>GET /v1/company-report/{ticker}</code> and <code>POST /v1/bundles/company-report</code> are now first-class REST/x402 routes backed by the server-enforced composite.</span>
@@ -510,6 +520,14 @@
             <strong>Live backend: evidence replay semantics</strong>
             <span><code>/v1/contract/fields</code> now publishes <code>deltasignal-evidence-replay-v1</code> with stability rules for <code>evidence_ref</code>, <code>evidence_hash</code>, <code>page.next_args</code>, and daily-change follow-up handles.</span>
           </div>
+          <div class="card">
+            <strong>Source update: route-scope errors</strong>
+            <span>No-ticker universe routes now have a source-level <code>deltasignal-route-scope-v1</code> contract. Extra path segments under readiness, latest daily changes, alpha opportunities, top stressed, and risk distribution return <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span>
+          </div>
+          <div class="card">
+            <strong>Source update: standard provenance</strong>
+            <span>Successful protected <code>/v1/</code> object responses now receive <code>provenance.contract_version=deltasignal-provenance-v1</code>, route identity, source date, ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.</span>
+          </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
           <article class="timeline-item">
@@ -557,6 +575,31 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>P1 standard provenance source implementation</h3>
+            <ul>
+              <li>Added <code>deltasignal-provenance-v1</code> to the protected <code>/v1/</code> response normalization path in backend source.</li>
+              <li>Successful JSON object responses now receive a top-level <code>provenance</code> object with route identity, <code>source_date</code>, <code>computed_at_utc</code>, ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.</li>
+              <li>If a route already emits <code>provenance</code>, the envelope preserves existing route-specific keys and fills only missing standard keys.</li>
+              <li><code>GET /v1/contract/fields</code> now documents the standard provenance field set, merge policy, and derived-evidence policy.</li>
+              <li>Verification completed locally with <code>GOWORK=off go test ./cmd/search-gateway/...</code>, HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit <code>730def3</code>. Backend rollout is separate from this changelog publication.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>P0 contract-hardening source implementation</h3>
+            <ul>
+              <li>Added <code>deltasignal-route-scope-v1</code> in backend source so no-ticker universe routes called with extra path segments return structured HTTP <code>400</code> <code>invalid_path_scope</code> instead of ambiguous 404 behavior.</li>
+              <li>The protected no-ticker set is <code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code>.</li>
+              <li><code>/v1/pricing</code> route entries now include lifecycle and scope metadata: <code>path_template</code>, <code>status</code>, <code>deprecated</code>, <code>replaced_by</code>, <code>billable</code>, and <code>route_scope</code>.</li>
+              <li>Successful protected <code>/v1/</code> JSON object responses now include <code>billing_status</code> at the top level and inside <code>response_metadata</code>.</li>
+              <li>Structured <code>not_found</code> payloads now include <code>reason_code</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</li>
+              <li>Verification completed locally with <code>GOWORK=off go test ./cmd/search-gateway/...</code>, HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit <code>7a80e86</code>. Backend rollout is separate from this changelog publication.</li>
+            </ul>
+          </article>
+
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Pricing discovery implementation track</h3>
