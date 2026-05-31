@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - Jeff live-loop API contract deployed</p>
+      <p class="eyebrow">Updated May 31, 2026 - Live-loop API contract deployed</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -401,7 +401,7 @@
         <div class="grid">
           <div class="card">
             <span class="status">LIVE</span>
-            <strong>Jeff Live-Loop Contract Deployed</strong>
+            <strong>Live-Loop API Contract Deployed</strong>
             <span>Backend revision <code>ca-web-intel-mcp--0000450</code> is live with pricing discovery, canonical billing fields, response metadata, structured not-found semantics, field contracts, coverage discovery, daily-change field deltas, evidence replay semantics, universe-route locks, and large-response guidance.</span>
           </div>
           <div class="card">
@@ -479,7 +479,7 @@
           </div>
           <div class="card">
             <strong>Live backend: field contract discovery</strong>
-            <span><code>GET /v1/contract/fields</code> has been implemented in backend source as a free parser contract endpoint covering stable Jeff paths, billing fields, not-found semantics, route aliases, and universe route policy.</span>
+            <span><code>GET /v1/contract/fields</code> has been implemented in backend source as a free parser contract endpoint covering stable parser paths, billing fields, not-found semantics, route aliases, and universe route policy.</span>
           </div>
           <div class="card">
             <strong>Live backend: response metadata envelope</strong>
@@ -552,7 +552,7 @@
             <div class="date">May 31, 2026</div>
             <h3>Pricing discovery implementation track</h3>
             <ul>
-              <li>Added the first Jeff live-loop contract slice in backend source: <code>GET /v1/pricing</code>.</li>
+              <li>Added the first live-loop contract slice in backend source: <code>GET /v1/pricing</code>.</li>
               <li>The route is designed as free discovery and returns a machine-readable x402 route catalog with <code>route_uri</code>, HTTP method, <code>price_usd</code>, billing mode, ticker requirements, and pricing source.</li>
               <li>The pricing contract declares <code>cost_usd</code> as the canonical billed-response ledger field and treats <code>quoted_cost_usd</code> / <code>actual_cost_usd</code> as supplemental aliases when route-specific flows emit them.</li>
               <li>The served OpenAPI document now publishes <code>/v1/pricing</code> as a free discovery route in the backend source.</li>
@@ -602,7 +602,7 @@
             <ul>
               <li>Added free backend discovery route <code>GET /v1/contract/fields</code>.</li>
               <li>The field contract returns <code>deltasignal-field-contract-v1</code>, the canonical billing field <code>cost_usd</code>, not-found contract metadata, route aliases, and the path-ticker-free universe route set.</li>
-              <li>The stable parser-path list includes Jeff's current readiness, company-report, daily-changes, generic provenance, and stress aliases such as <code>stress_50pct</code> and <code>stressed_leverage_50pct</code>.</li>
+              <li>The stable parser-path list includes the stable readiness, company-report, daily-changes, generic provenance, and stress aliases such as <code>stress_50pct</code> and <code>stressed_leverage_50pct</code>.</li>
               <li>The served OpenAPI and help response now publish <code>/v1/contract/fields</code> as a free support/discovery route in backend source.</li>
               <li>Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
@@ -1308,7 +1308,7 @@ Spacing note: published paths use company-report. A copied
         "Normalized route-contract preimage and split-hash schema from 2026-05-28",
         "Route-string sentinel hashes from 2026-05-28",
         "Evidence infrastructure backlog audit from 2026-05-28",
-        "ExecPlan_60 DeltaSignal Jeff live-loop API contract from 2026-05-31",
+        "ExecPlan_60 DeltaSignal live-loop API contract from 2026-05-31",
         "Backend source implementation of free GET /v1/pricing from 2026-05-31",
         "Backend source implementation of canonical /v1 billing field normalizer from 2026-05-31",
         "Backend source implementation of structured not_found route/ticker miss semantics from 2026-05-31",
