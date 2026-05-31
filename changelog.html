@@ -422,6 +422,10 @@
           <div class="card">
             <span class="status">LIVE</span>
             <strong>Live-Loop API Contract Deployed</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-LOOP-API-CONTRACT</code>
+              <code>track: T+06m</code>
+            </div>
             <span>Backend revision <code>ca-web-intel-mcp--0000450</code> is live with pricing discovery, canonical billing fields, response metadata, structured not-found semantics, field contracts, coverage discovery, daily-change field deltas, evidence replay semantics, universe-route locks, and large-response guidance.</span>
           </div>
           <div class="card">
@@ -447,36 +451,64 @@
           <div class="card">
             <span class="status">LIVE</span>
             <strong>Atomic Company Report</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-ATOMIC-COMPANY-REPORT</code>
+              <code>track: T+30m</code>
+            </div>
             <span><code>GET /v1/company-report/{ticker}</code> and <code>POST /v1/bundles/company-report</code> are now first-class REST/x402 routes backed by the server-enforced composite.</span>
           </div>
           <div class="card">
             <span class="status">LIVE</span>
             <strong>OpenAPI Discovery Fixed</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-OPENAPI-DISCOVERY-FIXED</code>
+              <code>track: T+38m</code>
+            </div>
             <span>The live schema now advertises 43 paths, including the company-report aggregate routes, so clients no longer need to infer the composite from MCP-only metadata.</span>
           </div>
           <div class="card">
             <span class="status">FIXED</span>
             <strong>Research Posture Contract</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-RESEARCH-POSTURE-CONTRACT</code>
+              <code>track: T+46m</code>
+            </div>
             <span>The public schema now exposes <code>research_posture</code> and no longer exposes <code>short_recommendation</code>, keeping alpha output framed as diligence triage rather than advice.</span>
           </div>
           <div class="card">
             <span class="status">FIXED</span>
             <strong>x402 Error Body</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-X402-ERROR-BODY</code>
+              <code>track: T+54m</code>
+            </div>
             <span>Public unpaid readiness and company-report calls now return developer-readable <code>payment_required</code> JSON plus the x402 challenge header.</span>
           </div>
           <div class="card">
             <span class="status">VERIFIED</span>
             <strong>Real MSTR Data Probe</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-REAL-MSTR-DATA-PROBE</code>
+              <code>track: T+62m</code>
+            </div>
             <span>Internal verification on May 27, 2026 returned MSTR fundamentals, alpha, peer ranking, covenant stress, readiness, and SPECTRA legs with <code>partial=false</code>.</span>
           </div>
           <div class="card">
             <span class="status">FIXED</span>
             <strong>IREN SPECTRA Coverage</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-IREN-SPECTRA-COVERAGE</code>
+              <code>track: T+70m</code>
+            </div>
             <span><code>/v1/spectra-field-map/IREN</code> is no longer a structured miss. It now has an ATLAS-7 history-backed <code>SPECTRA-FIELD-MAP-v1</code> contract derived from three real IREN atlas-history rows, latest source date <code>2026-04-24</code>.</span>
           </div>
           <div class="card">
             <span class="status">BOUNDARY</span>
             <strong>Evidence Layer First</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-EVIDENCE-LAYER-FIRST</code>
+              <code>track: T+78m</code>
+            </div>
             <span>ATLAS remains a bounded evidence surface. Renderers and agents may summarize returned evidence, but should not invent facts or convert screens into investment advice.</span>
           </div>
         </div>
@@ -492,70 +524,138 @@
         <div class="grid">
           <div class="card">
             <strong>Solved: aggregate access</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-SOLVED-AGGREGATE-ACCESS</code>
+              <code>track: T+330m</code>
+            </div>
             <span><code>GET /v1/company-report/{ticker}</code> and <code>POST /v1/bundles/company-report</code> are present. A live MSTR report returned real data, <code>partial=false</code>, and 6 of 6 internal legs succeeded.</span>
           </div>
           <div class="card">
             <strong>Solved: route posture</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-SOLVED-ROUTE-POSTURE</code>
+              <code>track: T+336m</code>
+            </div>
             <span>OpenAPI 1.5.2 exposes 43 paths. <code>research_posture</code> is present and <code>short_recommendation</code> is absent, keeping output framed as diligence triage rather than action advice.</span>
           </div>
           <div class="card">
             <strong>Partial: replayable evidence</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-PARTIAL-REPLAYABLE-EVIDENCE</code>
+              <code>track: T+342m</code>
+            </div>
             <span><code>/v1/daily-changes/latest</code> returns <code>evidence_ref</code>, and <code>/v1/daily-changes/evidence</code> returns <code>page.next_args</code>, <code>next_offset</code>, <code>next_tool</code>, and raw tag pagination.</span>
           </div>
           <div class="card">
             <strong>Open: infrastructure-grade evidence</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-OPEN-INFRASTRUCTURE-GRADE-EVIDENCE</code>
+              <code>track: T+348m</code>
+            </div>
             <span>Universal provenance, semantic field deltas, evidence hash/ref semantics, coverage/freshness discovery, multi-ticker batch, webhook delivery, and field-level versioning remain open or partial.</span>
           </div>
           <div class="card">
             <strong>Live backend: pricing discovery</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-PRICING-DISCOVERY</code>
+              <code>track: T+354m</code>
+            </div>
             <span><code>GET /v1/pricing</code> has been implemented in the backend plan as a free machine-readable x402 route-pricing catalog. It exposes route URI, method, USD price, billing mode, ticker requirements, and <code>cost_usd</code> as the canonical billed-response field. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</span>
           </div>
           <div class="card">
             <strong>Live backend: canonical billing fields</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-CANONICAL-BILLING-FIELDS</code>
+              <code>track: T+360m</code>
+            </div>
             <span>Protected priced <code>/v1/</code> JSON object responses now pass through a shared billing normalizer in backend source. Successful route payloads receive numeric <code>cost_usd</code>, <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>billing_mode</code>, route identity, and payment status fields. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</span>
           </div>
           <div class="card">
             <strong>Live backend: structured not-found</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-STRUCTURED-NOT-FOUND</code>
+              <code>track: T+366m</code>
+            </div>
             <span>Route/ticker misses now use a structured <code>not_found</code> payload in backend source with <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, route identity, request ID, and a contract version. IREN SPECTRA has moved from miss semantics to repaired coverage.</span>
           </div>
           <div class="card">
             <strong>Live backend: IREN SPECTRA repair</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-IREN-SPECTRA-REPAIR</code>
+              <code>track: T+372m</code>
+            </div>
             <span>The backend web bundle now includes <code>deltasignal-web/public/spectra-field-map/IREN/contract.json</code>, an ATLAS-7 history-backed SPECTRA field-map contract for IREN Limited. The source artifact preserves the three-row atlas-history input used to derive the chart context.</span>
           </div>
           <div class="card">
             <strong>Live backend: universe routes locked</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-UNIVERSE-ROUTES-LOCKED</code>
+              <code>track: T+378m</code>
+            </div>
             <span>The no-ticker universe routes are now explicitly documented in backend help and OpenAPI source: <code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code>.</span>
           </div>
           <div class="card">
             <strong>Live backend: field contract discovery</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-FIELD-CONTRACT-DISCOVERY</code>
+              <code>track: T+384m</code>
+            </div>
             <span><code>GET /v1/contract/fields</code> has been implemented in backend source as a free parser contract endpoint covering stable parser paths, billing fields, not-found semantics, route aliases, and universe route policy.</span>
           </div>
           <div class="card">
             <strong>Live backend: response metadata envelope</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-RESPONSE-METADATA-ENVELOPE</code>
+              <code>track: T+390m</code>
+            </div>
             <span>Successful protected <code>/v1/</code> JSON object responses now receive top-level metadata keys and a <code>response_metadata</code> object with request, route, billing, cache, caveat, evidence-hash, and latency fields.</span>
           </div>
           <div class="card">
             <strong>Live backend: coverage discovery</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-COVERAGE-DISCOVERY</code>
+              <code>track: T+396m</code>
+            </div>
             <span><code>/companies</code> now exposes a machine-readable coverage contract in backend source with lookup ticker, CIK, supported routes, unavailable routes, last source date, and coverage status per issuer.</span>
           </div>
           <div class="card">
             <strong>Live backend: large-response guidance</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-LARGE-RESPONSE-GUIDANCE</code>
+              <code>track: T+402m</code>
+            </div>
             <span><code>/help</code> now warns that company-report and daily-changes payloads can exceed 64 KB and tells AgentCash/Node users not to pipe large <code>npx agentcash fetch</code> stdout directly into another process.</span>
           </div>
           <div class="card">
             <strong>Live backend: daily-change field deltas</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-DAILY-CHANGE-FIELD</code>
+              <code>track: T+408m</code>
+            </div>
             <span>Compact daily changes now expose an interim tag-level <code>field_deltas</code> contract with field names, null prior/new values where unavailable, threshold flags, source dates, and durable evidence follow-up handles.</span>
           </div>
           <div class="card">
             <strong>Live backend: evidence replay semantics</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-BACKEND-EVIDENCE-REPLAY-SEMANTICS</code>
+              <code>track: T+414m</code>
+            </div>
             <span><code>/v1/contract/fields</code> now publishes <code>deltasignal-evidence-replay-v1</code> with stability rules for <code>evidence_ref</code>, <code>evidence_hash</code>, <code>page.next_args</code>, and daily-change follow-up handles.</span>
           </div>
           <div class="card">
             <strong>Source update: route-scope errors</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-SOURCE-UPDATE-ROUTE-SCOPE-ERRORS</code>
+              <code>track: T+420m</code>
+            </div>
             <span>No-ticker universe routes now have a source-level <code>deltasignal-route-scope-v1</code> contract. Extra path segments under readiness, latest daily changes, alpha opportunities, top stressed, and risk distribution return <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span>
           </div>
           <div class="card">
             <strong>Source update: standard provenance</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-SOURCE-UPDATE-STANDARD-PROVENANCE</code>
+              <code>track: T+426m</code>
+            </div>
             <span>Successful protected <code>/v1/</code> object responses now receive <code>provenance.contract_version=deltasignal-provenance-v1</code>, route identity, source date, ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.</span>
           </div>
         </div>
@@ -563,6 +663,10 @@
           <article class="timeline-item">
             <div class="date">P0</div>
             <h3>Universal evidence contract</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT</code>
+              <code>track: T+098m</code>
+            </div>
             <p>Add one mandatory <code>provenance</code> object across readiness, company report, daily changes, evidence drilldowns, alpha signals, fundamentals, peer ranking, covenant stress, and SPECTRA. Missing fields should return <code>null</code>, not disappear.</p>
             <ul>
               <li>Fields: <code>captured_at</code>, <code>observed_at</code>, <code>published_at</code>, <code>data_as_of</code>, <code>computed_at_utc</code>, <code>source_date</code>, <code>accession_number</code>, <code>evidence_ref</code>, <code>evidence_hash</code>, <code>schema_version</code>, <code>contract_version</code>.</li>
@@ -573,6 +677,10 @@
           <article class="timeline-item">
             <div class="date">P1</div>
             <h3>Scale and freshness ergonomics</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS</code>
+              <code>track: T+106m</code>
+            </div>
             <p>Add preflight and batch surfaces so clients do not need repeated paid single-name calls just to discover coverage, freshness, or availability.</p>
             <ul>
               <li>Add <code>GET /v1/companies</code>, <code>GET /v1/companies?changed_since=...</code>, and <code>GET /v1/ticker-freshness/{ticker}</code>.</li>
@@ -583,6 +691,10 @@
           <article class="timeline-item">
             <div class="date">P2</div>
             <h3>Monitoring and contract maturity</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY</code>
+              <code>track: T+114m</code>
+            </div>
             <p>Move from pull-only reports toward durable monitoring and explicit field stability.</p>
             <ul>
               <li>Add webhook/subscription routes for material changes with event IDs, delivery signatures, replay cursors, field deltas, provenance, and evidence refs.</li>
@@ -643,6 +755,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Pricing discovery implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK</code>
+              <code>track: T+122m</code>
+            </div>
             <ul>
               <li>Added the first live-loop contract slice in backend source: <code>GET /v1/pricing</code>.</li>
               <li>The route is designed as free discovery and returns a machine-readable x402 route catalog with <code>route_uri</code>, HTTP method, <code>price_usd</code>, billing mode, ticker requirements, and pricing source.</li>
@@ -655,6 +771,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Canonical billed-response fields implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION</code>
+              <code>track: T+130m</code>
+            </div>
             <ul>
               <li>Added a shared backend billing normalizer for protected priced <code>/v1/</code> routes.</li>
               <li>Successful JSON object responses now receive canonical numeric <code>cost_usd</code> plus <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>billing_mode</code>, <code>billing_contract_version</code>, route identity, payment status, and request ID.</li>
@@ -667,6 +787,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Structured not-found implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK</code>
+              <code>track: T+138m</code>
+            </div>
             <ul>
               <li>Added a shared structured <code>not_found</code> response contract in backend source.</li>
               <li>Route/ticker misses now expose <code>status=not_found</code>, <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, <code>route_uri</code>, ticker or request key, request ID, and <code>not_found_contract_version</code>.</li>
@@ -679,6 +803,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>IREN SPECTRA coverage repair</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR</code>
+              <code>track: T+146m</code>
+            </div>
             <ul>
               <li>Added <code>deltasignal-web/public/spectra-field-map/IREN/contract.json</code> so <code>/v1/spectra-field-map/IREN</code> can return a real field-map contract instead of a structured coverage miss.</li>
               <li>The new IREN contract uses <code>mode=atlas7_historical_spectra</code>, <code>version=SPECTRA-FIELD-MAP-v1</code>, company <code>IREN Limited</code>, CIK <code>0001878848</code>, and latest source date <code>2026-04-24</code>.</li>
@@ -690,6 +818,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Universe route contract implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</code>
+              <code>track: T+154m</code>
+            </div>
             <ul>
               <li>Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source.</li>
               <li>The no-ticker route set is <code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code>.</li>
@@ -702,6 +834,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Field contract discovery implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK</code>
+              <code>track: T+162m</code>
+            </div>
             <ul>
               <li>Added free backend discovery route <code>GET /v1/contract/fields</code>.</li>
               <li>The field contract returns <code>deltasignal-field-contract-v1</code>, the canonical billing field <code>cost_usd</code>, not-found contract metadata, route aliases, and the path-ticker-free universe route set.</li>
@@ -714,6 +850,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Response metadata envelope implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK</code>
+              <code>track: T+170m</code>
+            </div>
             <ul>
               <li>Added <code>deltasignal-response-metadata-v1</code> to the protected <code>/v1/</code> response normalization path.</li>
               <li>Successful JSON object payloads now receive top-level metadata fields and a <code>response_metadata</code> object.</li>
@@ -726,6 +866,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Coverage discovery implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK</code>
+              <code>track: T+178m</code>
+            </div>
             <ul>
               <li>Extended <code>/companies</code> in backend source with <code>deltasignal-coverage-v1</code>.</li>
               <li>Each issuer row now includes <code>ticker</code>, <code>lookup_ticker</code>, <code>cik</code>, <code>entity_name</code>, <code>supported_routes</code>, <code>unavailable_routes</code>, <code>last_source_date</code>, and <code>coverage_status</code>.</li>
@@ -738,6 +882,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Large-response handling implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK</code>
+              <code>track: T+186m</code>
+            </div>
             <ul>
               <li>Added public help guidance for large DeltaSignal responses in backend source.</li>
               <li>The help route now warns that company-report and daily-changes payloads can exceed 64 KB.</li>
@@ -750,6 +898,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Daily-change field-delta implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION</code>
+              <code>track: T+194m</code>
+            </div>
             <ul>
               <li>Added <code>deltasignal-daily-field-deltas-v1</code> to compact daily changes in backend source.</li>
               <li>The interim shape exposes CompanyFacts changed tags as <code>field_deltas</code> with <code>field_name</code>, <code>source_date</code>, ticker/CIK, <code>threshold_crossed</code>, and <code>evidence_ref</code>.</li>
@@ -762,6 +914,10 @@
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>Evidence replay semantics implementation track</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK</code>
+              <code>track: T+202m</code>
+            </div>
             <ul>
               <li>Added <code>deltasignal-evidence-replay-v1</code> to the free field-contract route in backend source.</li>
               <li>The contract documents <code>evidence_ref</code> stability for the same route, normalized arguments, source date, limit, and offset.</li>
@@ -774,6 +930,10 @@
           <article class="timeline-item">
             <div class="date">May 28, 2026</div>
             <h3>Public contract cleanup re-verified</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED</code>
+              <code>track: T+210m</code>
+            </div>
             <ul>
               <li>Live OpenAPI is serving <code>DeltaSignal ATLAS</code> version <code>1.5.2</code> with <code>43</code> paths.</li>
               <li><code>POST /mcp</code>, <code>GET /v1/readiness</code>, <code>GET /v1/company-report/{ticker}</code>, and <code>POST /v1/bundles/company-report</code> are present in the public route contract.</li>
@@ -786,6 +946,10 @@
           <article class="timeline-item">
             <div class="date">May 27, 2026</div>
             <h3>Company Report became a true OpenAPI-visible aggregate</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE</code>
+              <code>track: T+218m</code>
+            </div>
             <ul>
               <li>Added live REST/x402 routes: <code>GET /v1/company-report/{ticker}</code> and <code>POST /v1/bundles/company-report</code>.</li>
               <li>The aggregate returns readiness, company fundamentals, alpha signals, peer ranking, covenant stress, and advisory SPECTRA field-map support in one bounded response.</li>
@@ -798,6 +962,10 @@
           <article class="timeline-item">
             <div class="date">May 16, 2026</div>
             <h3>StrategiX Visual MCP and finished DeltaSignal deliverables</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</code>
+              <code>track: T+226m</code>
+            </div>
             <ul>
               <li>Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.</li>
               <li>Added finished DeltaSignal Intelligence Deliverables pricing, including a single daily Morning Brief PDF, monthly daily-brief subscription, and heavy multi-issuer deep brief.</li>
@@ -808,6 +976,10 @@
           <article class="timeline-item">
             <div class="date">May 14, 2026</div>
             <h3>Historical source dates, SPECTRA, and ATLAS-7 calculation history</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND</code>
+              <code>track: T+234m</code>
+            </div>
             <ul>
               <li>Added historical <code>source_date</code> support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.</li>
               <li>Added first-class calculation-history surfaces: <code>GET /v1/atlas7/calculation-history</code>, <code>GET /mpp/v1/atlas7/calculation-history</code>, and MCP <code>deltasignal_atlas7_calculation_history</code>.</li>
@@ -820,6 +992,10 @@
           <article class="timeline-item">
             <div class="date">May 14, 2026</div>
             <h3>Audit status, Morning Brief context, and public MCP discovery</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT</code>
+              <code>track: T+242m</code>
+            </div>
             <ul>
               <li>Added the Azure-native ATLAS-7 audit status surface: <code>GET /v1/atlas7/audit/latest</code> and MCP <code>deltasignal_atlas7_audit_status</code>.</li>
               <li>Audit status reports freshness, last successful run, issuer count, operation count, failure counts, artifact prefix, and job metadata.</li>
@@ -832,6 +1008,10 @@
           <article class="timeline-item">
             <div class="date">May 13-14, 2026</div>
             <h3>Full-universe regression and issuer identity hardening</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER</code>
+              <code>track: T+250m</code>
+            </div>
             <ul>
               <li>Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.</li>
               <li>Extended company report and quick ticker check composite coverage across the issuer universe.</li>
@@ -843,6 +1023,10 @@
           <article class="timeline-item">
             <div class="date">May 9-12, 2026</div>
             <h3>Natural Language briefs and compact evidence contracts</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT</code>
+              <code>track: T+258m</code>
+            </div>
             <ul>
               <li>Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.</li>
               <li>Renderer metadata includes mode, validation status, fallback reason, compiler/version fields, evidence hash where available, latency, tokens, cache status, and billing mode.</li>
@@ -854,6 +1038,10 @@
           <article class="timeline-item">
             <div class="date">May 1-8, 2026</div>
             <h3>Composite workflows, route discovery, and payment metadata</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND</code>
+              <code>track: T+266m</code>
+            </div>
             <ul>
               <li>Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.</li>
               <li>Added Arazzo workflow definitions so agents can inspect scenario plans before execution.</li>
@@ -865,6 +1053,10 @@
           <article class="timeline-item">
             <div class="date">April 24-30, 2026</div>
             <h3>Public x402 launch and Wardenclyffe/OpenAPI contract rollout</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE</code>
+              <code>track: T+274m</code>
+            </div>
             <ul>
               <li>Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.</li>
               <li>Raised public paid routes from test defaults to the launch pricing schedule.</li>
@@ -885,26 +1077,50 @@
         <div class="grid">
           <div class="card">
             <strong>Less client stitching</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LESS-CLIENT-STITCHING</code>
+              <code>track: T+432m</code>
+            </div>
             <span>Company Report no longer requires every client to manually sequence fundamentals, covenant stress, peer ranking, alpha signals, and SPECTRA.</span>
           </div>
           <div class="card">
             <strong>Better discovery</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-BETTER-DISCOVERY</code>
+              <code>track: T+438m</code>
+            </div>
             <span>OpenAPI, MCP discovery, Arazzo workflows, Glama metadata, and x402 challenges now describe more of the same live surface.</span>
           </div>
           <div class="card">
             <strong>Better provenance</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-BETTER-PROVENANCE</code>
+              <code>track: T+444m</code>
+            </div>
             <span>Source dates, computed timestamps, quality flags, stale flags, payload modes, hashes, and caveats are treated as operational fields, not decoration.</span>
           </div>
           <div class="card">
             <strong>Clearer safety boundary</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-CLEARER-SAFETY-BOUNDARY</code>
+              <code>track: T+450m</code>
+            </div>
             <span>Delta Signal returns issuer-intelligence evidence and research posture screens. It does not provide personalized investment advice, price targets, or portfolio recommendations.</span>
           </div>
           <div class="card">
             <strong>Cleaner public contract</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-CLEANER-PUBLIC-CONTRACT</code>
+              <code>track: T+456m</code>
+            </div>
             <span>Public schema language now uses <code>research_posture</code> for alpha outputs and avoids advice-like recommendation fields.</span>
           </div>
           <div class="card">
             <strong>More useful payment failures</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-MORE-USEFUL-PAYMENT-FAILURES</code>
+              <code>track: T+462m</code>
+            </div>
             <span>Unauthenticated public calls return structured <code>payment_required</code> JSON so clients can distinguish x402 flow from ordinary server failure.</span>
           </div>
         </div>
@@ -920,18 +1136,34 @@
         <div class="grid">
           <div class="card">
             <strong>OpenAPI contract layer</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-OPENAPI-CONTRACT-LAYER</code>
+              <code>track: T+468m</code>
+            </div>
             <span>Confirms route inventory, operation availability, schema intent, payment metadata, and governance fields such as <code>research_posture</code>.</span>
           </div>
           <div class="card">
             <strong>Live execution layer</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-EXECUTION-LAYER</code>
+              <code>track: T+474m</code>
+            </div>
             <span>Confirms a real call returns current source dates, compact payload status, caveats, provenance, timing, and non-advice language.</span>
           </div>
           <div class="card">
             <strong>Renderer QA layer</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-RENDERER-QA-LAYER</code>
+              <code>track: T+480m</code>
+            </div>
             <span>Confirms app cards preserve source dates, computed timestamps, payload mode, compact flags, caveats, evidence refs, and non-advice boundaries.</span>
           </div>
           <div class="card">
             <strong>Payment boundary layer</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-PAYMENT-BOUNDARY-LAYER</code>
+              <code>track: T+486m</code>
+            </div>
             <span>Confirms public unpaid calls return x402 <code>402</code> challenge details, while internal-key tests do not imply public payment success.</span>
           </div>
         </div>
@@ -939,6 +1171,10 @@
         <div class="code-grid" style="margin-top: 18px;">
           <div class="code-card">
             <h3>Compact Validation Matrix</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-COMPACT-VALIDATION-MATRIX</code>
+              <code>track: T+282m</code>
+            </div>
             <pre><code>OpenAPI route present: yes
 MCP live call succeeded: yes, in prior smoke
 Source date returned: 2026-05-28, in prior smoke
@@ -950,6 +1186,10 @@ Investment-advice boundary preserved: yes</code></pre>
           </div>
           <div class="code-card">
             <h3>MCP / x402 Call Ledger</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-MCP-X402-CALL-LEDGER</code>
+              <code>track: T+290m</code>
+            </div>
             <pre><code>No new MCP or wallet call was made for this page update.
 Prior smoke:
 - readiness: live MCP ok, source_date=2026-05-28, elapsed=575 ms, /v1/readiness=$0.04
@@ -970,42 +1210,78 @@ Prior smoke:
         <div class="grid">
           <div class="card">
             <strong>OpenAPI contract passed</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-OPENAPI-CONTRACT-PASSED</code>
+              <code>track: T+492m</code>
+            </div>
             <span>Title <code>DeltaSignal ATLAS</code>; OpenAPI <code>3.1.0</code>; API version <code>1.5.2</code>; <code>43</code> paths; server <code>https://api.aitrailblazer.net</code>; MCP, MPP, and Base x402 surfaces present.</span>
           </div>
           <div class="card">
             <strong>Required routes passed</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-REQUIRED-ROUTES-PASSED</code>
+              <code>track: T+498m</code>
+            </div>
             <span><code>POST /mcp</code>, <code>GET /v1/readiness</code>, <code>GET /v1/company-report/{ticker}</code>, <code>POST /v1/bundles/company-report</code>, and <code>GET /v1/morning-brief/natural</code> are present.</span>
           </div>
           <div class="card">
             <strong>Live MCP smoke passed</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LIVE-MCP-SMOKE-PASSED</code>
+              <code>track: T+504m</code>
+            </div>
             <span>Prior RIOT smoke artifacts reported readiness ok, company report ok, Morning Brief ok, 6 of 6 internal calls succeeded for Company Report and Morning Brief, and source date <code>2026-05-28</code>.</span>
           </div>
           <div class="card">
             <strong>Language migration passed</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LANGUAGE-MIGRATION-PASSED</code>
+              <code>track: T+510m</code>
+            </div>
             <span><code>research_posture</code> is present and <code>short_recommendation</code> is absent. This keeps alpha output framed as diligence posture, not personalized investment recommendation.</span>
           </div>
         </div>
         <div class="grid" style="margin-top: 18px;">
           <div class="card">
             <strong>Raw evidence caveat</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-RAW-EVIDENCE-CAVEAT</code>
+              <code>track: T+516m</code>
+            </div>
             <span>The attached smoke artifacts were compact / artifact-reference payloads with raw evidence unavailable. This verifies route presence, workflow completion, schema posture, and provenance handling, not full SEC fact extraction correctness.</span>
           </div>
           <div class="card">
             <strong>x402 caveat resolved separately</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-X402-CAVEAT-RESOLVED-SEPARATELY</code>
+              <code>track: T+522m</code>
+            </div>
             <span>The attached smoke evidence did not execute wallet, MPP, settlement, or in-app x402 payment. A later public probe verified unpaid <code>402 payment_required</code> JSON and x402 challenge headers for readiness and company-report routes.</span>
           </div>
           <div class="card">
             <strong>Latency variance only</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-LATENCY-VARIANCE-ONLY</code>
+              <code>track: T+528m</code>
+            </div>
             <span>Duplicate RIOT smoke artifacts varied in timing only: readiness <code>575 ms</code> vs <code>547 ms</code>, company report <code>492 ms</code> vs <code>658 ms</code>, Morning Brief <code>12398 ms</code> vs <code>10899 ms</code>.</span>
           </div>
           <div class="card">
             <strong>Operator takeaway</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-OPERATOR-TAKEAWAY</code>
+              <code>track: T+534m</code>
+            </div>
             <span>The operational surface is healthy at contract and workflow-smoke level. Treat this as infrastructure readiness evidence, not issuer-data validation or investment advice.</span>
           </div>
         </div>
         <div class="code-grid" style="margin-top: 18px;">
           <div class="code-card">
             <h3>Route Contract Extraction</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-ROUTE-CONTRACT-EXTRACTION</code>
+              <code>track: T+298m</code>
+            </div>
             <pre><code>{
   "openapi_title": "DeltaSignal ATLAS",
   "openapi_version": "1.5.2",
@@ -1023,6 +1299,10 @@ Prior smoke:
           </div>
           <div class="code-card">
             <h3>Priced Public Equivalents</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-PRICED-PUBLIC-EQUIVALENTS</code>
+              <code>track: T+306m</code>
+            </div>
             <pre><code>GET /v1/readiness: $0.04 Base USDC
 GET /v1/company-report/{ticker}: $0.30 Base USDC
 POST /v1/bundles/company-report: $0.30 Base USDC
@@ -1043,18 +1323,34 @@ Estimated public x402 equivalent for readiness + company report + Morning Brief:
         <div class="grid">
           <div class="card">
             <strong><code>GET /v1/company-report/{ticker}</code></strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-GET-V1-COMPANY-REPORT-TICKER</code>
+              <code>track: T+540m</code>
+            </div>
             <span>Operation <code>getX402CompanyReport</code>. Required input: <code>ticker</code>. Optional inputs: <code>period</code>, <code>source_date</code>, <code>include_segments</code>, <code>include_related_party</code>, and <code>output_mode=compact</code>. Responses: <code>200</code>, <code>400</code>, <code>401</code>, <code>402</code>. Public equivalent: <code>$0.30</code> Base USDC x402.</span>
           </div>
           <div class="card">
             <strong><code>POST /v1/bundles/company-report</code></strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-POST-V1-BUNDLES-COMPANY-REPORT</code>
+              <code>track: T+546m</code>
+            </div>
             <span>Operation <code>postX402CompanyReportBundle</code>. JSON-body variant for MCP-style clients that prefer body arguments. Responses: <code>200</code>, <code>400</code>, <code>401</code>, <code>402</code>. Public equivalent: <code>$0.30</code> Base USDC x402.</span>
           </div>
           <div class="card">
             <strong><code>GET /v1/morning-brief/natural</code></strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-GET-V1-MORNING-BRIEF-NATURAL</code>
+              <code>track: T+552m</code>
+            </div>
             <span>Operation <code>getX402MorningBriefNatural</code>. Optional inputs: <code>date</code>, <code>limit</code>, and <code>style</code>. Style changes tone and density only, not facts, caveats, or investment posture. Responses: <code>200</code>, <code>400</code>, <code>401</code>, <code>402</code>, <code>503</code>. Public equivalent: <code>$0.95</code> Base USDC x402.</span>
           </div>
           <div class="card">
             <strong><code>GET /v1/readiness</code></strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-GET-V1-READINESS</code>
+              <code>track: T+558m</code>
+            </div>
             <span>Operation <code>getX402DeltaSignalReadiness</code>. No business input required; placeholder query <code>_</code> documents an empty query schema for agent validators. Responses: <code>200</code>, <code>401</code>, <code>402</code>, <code>503</code>. Public equivalent: <code>$0.04</code> Base USDC x402.</span>
           </div>
         </div>
@@ -1073,24 +1369,44 @@ Estimated public x402 equivalent for readiness + company report + Morning Brief:
         <div class="grid">
           <div class="card">
             <strong>Duplicate artifact control</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-DUPLICATE-ARTIFACT-CONTROL</code>
+              <code>track: T+564m</code>
+            </div>
             <span>When <code>ContextSHA256</code> matches, retain one canonical artifact summary and store duplicate filenames as provenance aliases. Preserve timing variance only when comparing performance.</span>
           </div>
           <div class="card">
             <strong>Contract vs live proof</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-CONTRACT-VS-LIVE-PROOF</code>
+              <code>track: T+570m</code>
+            </div>
             <span>OpenAPI confirms route availability and schema intent. MCP/live probes confirm workflow execution for tested paths. Raw issuer correctness still requires targeted evidence drilldowns.</span>
           </div>
           <div class="card">
             <strong>Compact payload disclosure</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-COMPACT-PAYLOAD-DISCLOSURE</code>
+              <code>track: T+576m</code>
+            </div>
             <span>Compact responses should render as compact evidence, not full raw evidence. Cards should say when raw evidence is not attached and when a targeted drilldown is required.</span>
           </div>
           <div class="card">
             <strong>Machine-path preservation</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-MACHINE-PATH-PRESERVATION</code>
+              <code>track: T+582m</code>
+            </div>
             <span>Extraction and rendering layers must not mutate field paths such as <code>result.structuredContent.data</code>, <code>computed_at_utc</code>, or <code>source_date</code>.</span>
           </div>
         </div>
         <div class="code-grid" style="margin-top: 18px;">
           <div class="code-card">
             <h3>Latency Classes From Prior Smoke</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-LATENCY-CLASSES-FROM-PRIOR-SMOKE</code>
+              <code>track: T+314m</code>
+            </div>
             <pre><code>readiness: 547-575 ms, interactive-safe
 company_report: 492-658 ms, interactive-safe
 morning_brief: 10899-12398 ms, heavy composite
@@ -1098,6 +1414,10 @@ design action: show progress/cache state for Morning Brief</code></pre>
           </div>
           <div class="code-card">
             <h3>Renderer Fields To Preserve</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-RENDERER-FIELDS-TO-PRESERVE</code>
+              <code>track: T+322m</code>
+            </div>
             <pre><code>source_date
 computed_at_utc or latest computed timestamp
 payload_mode and compact/full status
@@ -1110,24 +1430,44 @@ internal relay vs public payment boundary</code></pre>
         <div class="grid" style="margin-top: 18px;">
           <div class="card">
             <strong>Context footprint finding</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-CONTEXT-FOOTPRINT-FINDING</code>
+              <code>track: T+588m</code>
+            </div>
             <span>The repeated OpenAPI and RIOT audit chips represented roughly <code>134 KB</code> and <code>33.5K</code> prompt tokens before dedupe. Most of that signal collapses into one canonical OpenAPI contract card plus one live-smoke card with timing variance.</span>
           </div>
           <div class="card">
             <strong>Canonical summary target</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-CANONICAL-SUMMARY-TARGET</code>
+              <code>track: T+594m</code>
+            </div>
             <span>Store a compact reusable card with API title/version, route count, key routes, public prices, <code>research_posture</code> present, <code>short_recommendation</code> absent, and the contract/live evidence boundary.</span>
           </div>
           <div class="card">
             <strong><code>x_mcp_tools</code> discoverability</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-X-MCP-TOOLS-DISCOVERABILITY</code>
+              <code>track: T+600m</code>
+            </div>
             <span>The selected public route contracts expose empty <code>x_mcp_tools</code> arrays. If intentional, document that public x402 routes hide internal fan-out; otherwise add route-to-tool metadata or a separate composite-leg field.</span>
           </div>
           <div class="card">
             <strong>Morning Brief UX</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-MORNING-BRIEF-UX</code>
+              <code>track: T+606m</code>
+            </div>
             <span>At an observed average near <code>11.65 s</code>, Morning Brief should run with progress state, timeout handling, cached latest result, and background refresh rather than blocking the main app surface.</span>
           </div>
         </div>
         <div class="code-grid" style="margin-top: 18px;">
           <div class="code-card">
             <h3>Canonical Dedupe Rule</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-CANONICAL-DEDUPE-RULE</code>
+              <code>track: T+330m</code>
+            </div>
             <pre><code>1. ContextSHA256 wins first:
    same ContextSHA256 = same logical payload.
    keep one canonical chip; preserve ArtifactSHA256 aliases.
@@ -1142,6 +1482,10 @@ internal relay vs public payment boundary</code></pre>
           </div>
           <div class="code-card">
             <h3>Contract Hash Canonicalization</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-CONTRACT-HASH-CANONICALIZATION</code>
+              <code>track: T+338m</code>
+            </div>
             <pre><code>route_contract_hash_v1 hashes interface, not prose:
 extract method, path, operation_id, parameters, request_body,
 responses, and payment metadata when the payment hash is not split
@@ -1159,24 +1503,44 @@ then SHA256(canonical_json_utf8)</code></pre>
         <div class="grid" style="margin-top: 18px;">
           <div class="card">
             <strong><code>interface_hash</code></strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-INTERFACE-HASH</code>
+              <code>track: T+612m</code>
+            </div>
             <span>Detects breaking or behavioral route drift. Include OpenAPI identity, server, path names, HTTP methods, operation IDs, parameters, request bodies, response status codes, response schemas, components schemas, and request-shaping security schemes. Exclude prose, examples, and <code>x_payment_info</code>.</span>
           </div>
           <div class="card">
             <strong><code>payment_hash</code></strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-PAYMENT-HASH</code>
+              <code>track: T+618m</code>
+            </div>
             <span>Detects x402, chain, asset, route-price, and payment-policy drift. Include route path and method plus <code>x_payment_info</code>, protocol blocks, <code>amountUsd</code>, currency, asset, network, chain ID, facilitator, scheme, auth mode, payment methods, and price fields.</span>
           </div>
           <div class="card">
             <strong><code>documentation_hash</code></strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-DOCUMENTATION-HASH</code>
+              <code>track: T+624m</code>
+            </div>
             <span>Detects docs and discoverability drift without marking interface or payment changes. Include info descriptions, route summaries/descriptions, parameter and response descriptions, schema descriptions, tags, caveats, natural-language endpoint notes, and Base x402 versus MPP compatibility notes.</span>
           </div>
           <div class="card">
             <strong>Hash boundary</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-HASH-BOUNDARY</code>
+              <code>track: T+630m</code>
+            </div>
             <span>The attached four-route projection is computable. Full production <code>interface_hash</code>, <code>payment_hash</code>, and <code>documentation_hash</code> for all 43 routes require raw <code>/openapi.json</code>, not only artifact/context hashes.</span>
           </div>
         </div>
         <div class="code-grid" style="margin-top: 18px;">
           <div class="code-card">
             <h3>Route Contract Preimage Shape</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-ROUTE-CONTRACT-PREIMAGE-SHAPE</code>
+              <code>track: T+346m</code>
+            </div>
             <pre><code>{
   "schema": "deltasignal.route_contract_preimage.v1",
   "method": "get",
@@ -1199,6 +1563,10 @@ then SHA256(canonical_json_utf8)</code></pre>
           </div>
           <div class="code-card">
             <h3>Split Hash Manifest</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-SPLIT-HASH-MANIFEST</code>
+              <code>track: T+354m</code>
+            </div>
             <pre><code>{
   "schema_identity": {
     "title": "DeltaSignal ATLAS",
@@ -1223,6 +1591,10 @@ then SHA256(canonical_json_utf8)</code></pre>
         <div class="code-grid" style="margin-top: 18px;">
           <div class="code-card">
             <h3>Route-String Sentinel Hashes</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-ROUTE-STRING-SENTINEL-HASHES</code>
+              <code>track: T+362m</code>
+            </div>
             <pre><code>preimage: exact UTF-8 route string, no trailing newline
 boundary: route path only, not full JSON contract or artifact file
 
@@ -1240,6 +1612,10 @@ sha256: b211b65058ac1a3c1f0800569432558c46df9bae86072d9348087aa89beb765b</code><
           </div>
           <div class="code-card">
             <h3>Sentinel Boundary</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-APRIL-24-SENTINEL-BOUNDARY</code>
+              <code>track: T+370m</code>
+            </div>
             <pre><code>Use route-string sentinels for quick path identity checks only.
 Do not substitute them for:
 - route_contract_hash_v1
@@ -1256,18 +1632,34 @@ Spacing note: published paths use company-report. A copied
         <div class="grid" style="margin-top: 18px;">
           <div class="card">
             <strong>Dedupe decision matrix</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-DEDUPE-DECISION-MATRIX</code>
+              <code>track: T+636m</code>
+            </div>
             <span>Same <code>ContextSHA256</code>: exact duplicate. Same <code>ArtifactSHA256</code>: same stored artifact. Same normalized route-contract hash: same contract semantics. Same contract hash inside different live audits: keep both audits and reuse the contract reference. Different route-contract hash: flag contract drift.</span>
           </div>
           <div class="card">
             <strong>Canonical selection priority</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-CANONICAL-SELECTION-PRIORITY</code>
+              <code>track: T+642m</code>
+            </div>
             <span>Prefer non-excerpted full context, raw evidence over no raw evidence, structured JSON over prose, direct contract extraction over embedded contract snippets, live audit over route-only evidence for operational status, latest source date for time-sensitive objects, then earliest attached occurrence.</span>
           </div>
           <div class="card">
             <strong>Applied OpenAPI group</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-APPLIED-OPENAPI-GROUP</code>
+              <code>track: T+648m</code>
+            </div>
             <span>OpenAPI route-contract chips with <code>ContextSHA256=a7c1cb1638a1e9f2b26f624251574761d464e6b2ac52e2e31d7a0d4d4717204f</code> are exact logical duplicates. Preserve the five artifact hashes as aliases, not distinct evidence.</span>
           </div>
           <div class="card">
             <strong>Applied live-audit group</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-APPLIED-LIVE-AUDIT-GROUP</code>
+              <code>track: T+654m</code>
+            </div>
             <span>RIOT live audits with <code>ContextSHA256=da48e999c7fcff27224b718c9c2196becec03b31e11c0e89e446d91d5501291c</code> and <code>ac03c865209c1b5efb9245c870006d08b672401ad306d7790cd3d64558698622</code> are not exact duplicates. Deduplicate their embedded route-contract sections, but keep live timing/status evidence unless a separate normalized audit hash collapses them.</span>
           </div>
         </div>
@@ -1283,18 +1675,34 @@ Spacing note: published paths use company-report. A copied
         <div class="grid">
           <div class="card">
             <strong>Base x402 routes</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-BASE-X402-ROUTES</code>
+              <code>track: T+660m</code>
+            </div>
             <span>Canonical public route family for Agentic Market and Coinbase x402 clients: <code>/v1/*</code>.</span>
           </div>
           <div class="card">
             <strong>MPP mirror routes</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-MPP-MIRROR-ROUTES</code>
+              <code>track: T+666m</code>
+            </div>
             <span>Parallel Tempo-compatible route family: <code>/mpp/v1/*</code>. Do not silently translate between route families.</span>
           </div>
           <div class="card">
             <strong>MCP tools</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-MCP-TOOLS</code>
+              <code>track: T+672m</code>
+            </div>
             <span>Agent-facing tools should stay aligned with the REST route contract, including compact mode, caveats, provenance, and pricing equivalents.</span>
           </div>
           <div class="card">
             <strong>Composite bundles</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-CARD-COMPOSITE-BUNDLES</code>
+              <code>track: T+678m</code>
+            </div>
             <span>Company Report and Morning Brief should preserve the same evidence boundaries as the underlying routes while reducing client-side stitching.</span>
           </div>
         </div>
@@ -1311,21 +1719,37 @@ Spacing note: published paths use company-report. A copied
           <article class="timeline-item">
             <div class="date">Priority 1</div>
             <h3>Second-ticker company-report smoke</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE</code>
+              <code>track: T+378m</code>
+            </div>
             <p>Repeat the company-report smoke with a second ticker from the latest daily-change slice to prove the aggregate is not only working for one issuer.</p>
           </article>
           <article class="timeline-item">
             <div class="date">Priority 2</div>
             <h3>REST / MCP / bundle drift comparison</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON</code>
+              <code>track: T+386m</code>
+            </div>
             <p>Compare OpenAPI route inventory, MCP <code>tools/list</code>, and composite bundle outputs so route availability, tool names, prices, and payload modes stay synchronized.</p>
           </article>
           <article class="timeline-item">
             <div class="date">Priority 3</div>
             <h3>Expand public x402 probes</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES</code>
+              <code>track: T+394m</code>
+            </div>
             <p>Readiness and company-report public unpaid probes now verify HTTP <code>402</code> body and x402 challenge headers. Extend the same check to <code>/v1/morning-brief/natural</code> and any new paid public route.</p>
           </article>
           <article class="timeline-item">
             <div class="date">Priority 4</div>
             <h3>App renderer regression</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION</code>
+              <code>track: T+402m</code>
+            </div>
             <p>Verify SwiftUI cards preserve <code>source_date</code>, <code>computed_at_utc</code>, <code>payload_mode</code>, compact flags, caveats, evidence references, x402 equivalent price, no-payment boundary, and non-advice language.</p>
           </article>
         </div>
@@ -1344,6 +1768,10 @@ Spacing note: published paths use company-report. A copied
         <div class="code-grid">
           <div class="code-card">
             <h3>Confirm the OpenAPI aggregate route and language contract</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-4-CONFIRM-THE-OPENAPI-AGGREGATE-ROUTE</code>
+              <code>track: T+410m</code>
+            </div>
             <pre><code>curl -s https://api.aitrailblazer.net/openapi.json \
   | jq '{
       version: .info.version,
@@ -1356,14 +1784,26 @@ Spacing note: published paths use company-report. A copied
           </div>
           <div class="code-card">
             <h3>Probe public x402 behavior</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-4-PROBE-PUBLIC-X402-BEHAVIOR</code>
+              <code>track: T+418m</code>
+            </div>
             <pre><code>curl -i "https://api.aitrailblazer.net/v1/company-report/MSTR?output_mode=compact"</code></pre>
           </div>
           <div class="code-card">
             <h3>Run readiness</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-4-RUN-READINESS</code>
+              <code>track: T+426m</code>
+            </div>
             <pre><code>curl -i https://api.aitrailblazer.net/v1/readiness</code></pre>
           </div>
           <div class="code-card">
             <h3>Inspect MCP discovery</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-PRIORITY-4-INSPECT-MCP-DISCOVERY</code>
+              <code>track: T+434m</code>
+            </div>
             <pre><code>curl -i https://api.aitrailblazer.net/mcp</code></pre>
           </div>
         </div>
