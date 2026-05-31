@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, field, coverage, daily-delta, and large-response contracts added</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, evidence, universe-route, field, coverage, daily-delta, and large-response contracts added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -491,6 +491,10 @@
           <div class="card">
             <strong>Ready for backend deploy: daily-change field deltas</strong>
             <span>Compact daily changes now expose an interim tag-level <code>field_deltas</code> contract with field names, null prior/new values where unavailable, threshold flags, source dates, and durable evidence follow-up handles.</span>
+          </div>
+          <div class="card">
+            <strong>Ready for backend deploy: evidence replay semantics</strong>
+            <span><code>/v1/contract/fields</code> now publishes <code>deltasignal-evidence-replay-v1</code> with stability rules for <code>evidence_ref</code>, <code>evidence_hash</code>, <code>page.next_args</code>, and daily-change follow-up handles.</span>
           </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
@@ -644,6 +648,18 @@
               <li><code>prior_value</code>, <code>new_value</code>, <code>delta</code>, and <code>percent_delta</code> are emitted as <code>null</code> unless the source row carries those values.</li>
               <li>The field-contract route documents this interim status so clients can consume it without mistaking tag-level deltas for numeric value changes.</li>
               <li>Verification completed locally with focused daily field-delta, field-contract, help, OpenAPI, pricing, billing, metadata, not-found, and coverage tests. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Evidence replay semantics implementation track</h3>
+            <ul>
+              <li>Added <code>deltasignal-evidence-replay-v1</code> to the free field-contract route in backend source.</li>
+              <li>The contract documents <code>evidence_ref</code> stability for the same route, normalized arguments, source date, limit, and offset.</li>
+              <li>It documents <code>evidence_hash</code> as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.</li>
+              <li>It marks <code>page.next_args</code>, <code>page.next_offset</code>, <code>page.next_tool</code>, and daily-change evidence handles as replayable while the referenced source date remains available.</li>
+              <li>Verification completed locally with focused field-contract and regression tests. Public route availability still requires backend deployment.</li>
             </ul>
           </article>
 
@@ -1297,7 +1313,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of deltasignal-coverage-v1 in /companies from 2026-05-31",
         "Backend source implementation of large-response AgentCash/Node pipe guidance from 2026-05-31",
         "Backend source implementation of deltasignal-daily-field-deltas-v1 from 2026-05-31",
-        "Local targeted daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
+        "Backend source implementation of deltasignal-evidence-replay-v1 from 2026-05-31",
+        "Local targeted evidence-replay/daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
