@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, field, and coverage contracts added</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, field, coverage, and large-response contracts added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -483,6 +483,10 @@
           <div class="card">
             <strong>Ready for backend deploy: coverage discovery</strong>
             <span><code>/companies</code> now exposes a machine-readable coverage contract in backend source with lookup ticker, CIK, supported routes, unavailable routes, last source date, and coverage status per issuer.</span>
+          </div>
+          <div class="card">
+            <strong>Ready for backend deploy: large-response guidance</strong>
+            <span><code>/help</code> now warns that company-report and daily-changes payloads can exceed 64 KB and tells AgentCash/Node users not to pipe large <code>npx agentcash fetch</code> stdout directly into another process.</span>
           </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
@@ -612,6 +616,18 @@
               <li>The field-contract route documents the stable coverage discovery fields for automation.</li>
               <li>This lets clients preflight supported names and route availability before spending on paid drilldowns.</li>
               <li>Verification completed locally with focused companies, field-contract, help, OpenAPI, pricing, billing, metadata, and not-found tests. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Large-response handling implementation track</h3>
+            <ul>
+              <li>Added public help guidance for large DeltaSignal responses in backend source.</li>
+              <li>The help route now warns that company-report and daily-changes payloads can exceed 64 KB.</li>
+              <li>The guidance calls out the AgentCash/Node path specifically: do not pipe large <code>npx agentcash fetch</code> stdout directly into another process.</li>
+              <li>Recommended automation patterns are file redirects, compact or paginated routes, and clients that fully drain stdout before process exit.</li>
+              <li>Verification completed locally with focused help and regression tests. Public route availability still requires backend deployment.</li>
             </ul>
           </article>
 
@@ -1263,6 +1279,7 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of free GET /v1/contract/fields from 2026-05-31",
         "Backend source implementation of deltasignal-response-metadata-v1 from 2026-05-31",
         "Backend source implementation of deltasignal-coverage-v1 in /companies from 2026-05-31",
+        "Backend source implementation of large-response AgentCash/Node pipe guidance from 2026-05-31",
         "Local targeted companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
