@@ -14,7 +14,7 @@ last_updated: 2026-05-10
 
 ![Version](https://img.shields.io/badge/version-ATLAS7_NL_DOCS_V1-blue) ![Status](https://img.shields.io/badge/status-phase--1-orange) ![API](https://img.shields.io/badge/API-OpenAPI%203.1-green) ![Safety](https://img.shields.io/badge/investment%20advice-no-red)
 
-Latest public improvement log: [`whats-new.html`](./whats-new.html).
+Latest public changelog: [`changelog.html`](./changelog.html).
 
 Delta Signal Natural Language Briefs convert canonical Delta Signal evidence into validated, audit-grade Markdown.
 
