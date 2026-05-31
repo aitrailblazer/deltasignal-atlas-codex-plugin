@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, not-found, universe-route, and field contracts added</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, and field contracts added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -475,6 +475,10 @@
           <div class="card">
             <strong>Ready for backend deploy: field contract discovery</strong>
             <span><code>GET /v1/contract/fields</code> has been implemented in backend source as a free parser contract endpoint covering stable Jeff paths, billing fields, not-found semantics, route aliases, and universe route policy.</span>
+          </div>
+          <div class="card">
+            <strong>Ready for backend deploy: response metadata envelope</strong>
+            <span>Successful protected <code>/v1/</code> JSON object responses now receive top-level metadata keys and a <code>response_metadata</code> object with request, route, billing, cache, caveat, evidence-hash, and latency fields.</span>
           </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
@@ -580,6 +584,18 @@
               <li>The stable parser-path list includes Jeff's current readiness, company-report, daily-changes, generic provenance, and stress aliases such as <code>stress_50pct</code> and <code>stressed_leverage_50pct</code>.</li>
               <li>The served OpenAPI and help response now publish <code>/v1/contract/fields</code> as a free support/discovery route in backend source.</li>
               <li>Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Response metadata envelope implementation track</h3>
+            <ul>
+              <li>Added <code>deltasignal-response-metadata-v1</code> to the protected <code>/v1/</code> response normalization path.</li>
+              <li>Successful JSON object payloads now receive top-level metadata fields and a <code>response_metadata</code> object.</li>
+              <li>The envelope includes <code>request_id</code>, <code>route_uri</code>, <code>source_date</code>, <code>computed_at_utc</code>, <code>ticker</code>, <code>cost_usd</code>, <code>billing_mode</code>, <code>cache_hit</code>, <code>payload_mode</code>, <code>quality_flags</code>, <code>caveats</code>, <code>evidence_hash</code>, <code>evidence_hash_version</code>, and <code>latency_ms</code>.</li>
+              <li>Unavailable values are emitted as <code>null</code> or empty arrays where appropriate, so automation can parse a stable shape.</li>
+              <li>Verification completed locally with focused billing, field-contract, help, OpenAPI, pricing, and not-found tests. Public route availability still requires backend deployment.</li>
             </ul>
           </article>
 
@@ -1229,7 +1245,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of structured not_found route/ticker miss semantics from 2026-05-31",
         "Backend source implementation of universe route path-ticker-free OpenAPI/help contract from 2026-05-31",
         "Backend source implementation of free GET /v1/contract/fields from 2026-05-31",
-        "Local targeted pricing/billing/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
+        "Backend source implementation of deltasignal-response-metadata-v1 from 2026-05-31",
+        "Local targeted pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
