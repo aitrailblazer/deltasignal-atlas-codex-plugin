@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, field, coverage, and large-response contracts added</p>
+      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, universe-route, field, coverage, daily-delta, and large-response contracts added</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -487,6 +487,10 @@
           <div class="card">
             <strong>Ready for backend deploy: large-response guidance</strong>
             <span><code>/help</code> now warns that company-report and daily-changes payloads can exceed 64 KB and tells AgentCash/Node users not to pipe large <code>npx agentcash fetch</code> stdout directly into another process.</span>
+          </div>
+          <div class="card">
+            <strong>Ready for backend deploy: daily-change field deltas</strong>
+            <span>Compact daily changes now expose an interim tag-level <code>field_deltas</code> contract with field names, null prior/new values where unavailable, threshold flags, source dates, and durable evidence follow-up handles.</span>
           </div>
         </div>
         <div class="timeline" style="margin-top: 18px;">
@@ -628,6 +632,18 @@
               <li>The guidance calls out the AgentCash/Node path specifically: do not pipe large <code>npx agentcash fetch</code> stdout directly into another process.</li>
               <li>Recommended automation patterns are file redirects, compact or paginated routes, and clients that fully drain stdout before process exit.</li>
               <li>Verification completed locally with focused help and regression tests. Public route availability still requires backend deployment.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">May 31, 2026</div>
+            <h3>Daily-change field-delta implementation track</h3>
+            <ul>
+              <li>Added <code>deltasignal-daily-field-deltas-v1</code> to compact daily changes in backend source.</li>
+              <li>The interim shape exposes CompanyFacts changed tags as <code>field_deltas</code> with <code>field_name</code>, <code>source_date</code>, ticker/CIK, <code>threshold_crossed</code>, and <code>evidence_ref</code>.</li>
+              <li><code>prior_value</code>, <code>new_value</code>, <code>delta</code>, and <code>percent_delta</code> are emitted as <code>null</code> unless the source row carries those values.</li>
+              <li>The field-contract route documents this interim status so clients can consume it without mistaking tag-level deltas for numeric value changes.</li>
+              <li>Verification completed locally with focused daily field-delta, field-contract, help, OpenAPI, pricing, billing, metadata, not-found, and coverage tests. Public route availability still requires backend deployment.</li>
             </ul>
           </article>
 
@@ -1280,7 +1296,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of deltasignal-response-metadata-v1 from 2026-05-31",
         "Backend source implementation of deltasignal-coverage-v1 in /companies from 2026-05-31",
         "Backend source implementation of large-response AgentCash/Node pipe guidance from 2026-05-31",
-        "Local targeted companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
+        "Backend source implementation of deltasignal-daily-field-deltas-v1 from 2026-05-31",
+        "Local targeted daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
