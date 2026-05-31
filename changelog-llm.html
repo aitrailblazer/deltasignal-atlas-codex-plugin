@@ -1,0 +1,2896 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM Changelog - Delta Signal ATLAS-7</title>
+  <meta name="description" content="LLM-optimized Delta Signal ATLAS-7 changelog with instructions, tripcodes, breadcrumbs, statistics, and ordered tracking river.">
+  <link rel="icon" href="./assets/logo.png" type="image/png">
+  <style>
+    :root { color-scheme: dark; --bg:#080a12; --panel:#111522; --ink:#f7f2e9; --muted:#b8b0a5; --line:rgba(87,216,255,.22); --cyan:#57d8ff; --gold:#ffb84d; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #080a12; color: var(--ink); line-height: 1.55; }
+    a { color: #ffd080; }
+    main, header, footer { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 36px 0 22px; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 4rem); }
+    h2 { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 24px; }
+    .breadcrumbs, .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .breadcrumbs a, .breadcrumbs span, code { border: 1px solid rgba(87,216,255,.24); border-radius: 999px; padding: 4px 8px; background: rgba(87,216,255,.07); color: #c9f3ff; font-weight: 700; }
+    .notice, .entry { border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: var(--panel); margin: 14px 0; }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin:18px 0; }
+    .stats div { border:1px solid rgba(87,216,255,.22); border-radius:12px; background:rgba(87,216,255,.07); padding:12px; }
+    .stats strong { display:block; color:#c9f3ff; font-size:1.45rem; }
+    .stats span { color:var(--muted); font-weight:700; }
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    th, td { border-bottom: 1px solid rgba(255,255,255,.1); padding: 8px; text-align: left; vertical-align: top; }
+    th { color: var(--gold); }
+    .river-table { max-height: 560px; overflow: auto; border: 1px solid var(--line); border-radius: 12px; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #05060b; }
+    footer { padding: 32px 0 44px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="breadcrumbs" aria-label="Breadcrumbs">
+      <a href="./index.html">Home</a>
+      <a href="./changelog.html">Human changelog</a>
+      <span>LLM changelog</span>
+      <a href="#tracking-river">Tracking river</a>
+      <a href="#machine-contract">Machine contract</a>
+    </nav>
+    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-05-31</code></p>
+    <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
+    <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
+    <div class="stats" aria-label="Changelog statistics">
+        <div><strong>114</strong><span>tracked changes</span></div>
+        <div><strong>29</strong><span>timeline entries</span></div>
+        <div><strong>112</strong><span>unique tripcodes</span></div>
+        <div><strong>114</strong><span>breadcrumb chips</span></div>
+        <div><strong>4</strong><span>visible commit references</span></div>
+        <div><strong>2</strong><span>unique source commits</span></div>
+    </div>
+  </header>
+  <main>
+    <section id="llm-instructions">
+      <h2>LLM Instructions</h2>
+      <div class="notice">
+        <ol>
+          <li>Use <code>tripcode</code> as the stable row identifier when citing or comparing changelog items.</li>
+          <li>Use <code>bread</code> as the breadcrumb path from page section to item title.</li>
+          <li>Use the <code>tracking river</code> order and <code>track</code> minute marker to preserve sequence across human and LLM pages.</li>
+          <li>Distinguish <code>LIVE</code>, <code>SOURCE</code>, <code>FIXED</code>, <code>VERIFIED</code>, and backlog items. Do not infer live deployment from source-only text.</li>
+          <li>Preserve the evidence boundary: Delta Signal outputs are diligence/evidence infrastructure, not personalized investment advice.</li>
+          <li>Do not invent missing route behavior, prices, schema fields, or issuer coverage. Treat absent fields as unknown unless explicitly marked unavailable/null.</li>
+          <li>When summarizing, include the relevant tripcode and bread for every material claim.</li>
+        </ol>
+      </div>
+    </section>
+    <section id="tracking-river">
+      <h2>Tracking River</h2>
+      <p>The river is the ordered stream of tracking chips extracted from the human changelog. It is the primary synchronization surface for LLMs.</p>
+      <div class="river-table">
+        <table>
+          <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
+          <tbody>
+          <tr><td>001</td><td><code>ATLAS-CARD-LIVE-LOOP-API-CONTRACT</code></td><td>Latest Live Improvements &gt; Live-Loop API Contract Deployed</td><td><code>T+06m</code></td><td></td></tr>
+          <tr><td>002</td><td><code>ATLAS-P0-CONTRACT-7A80E86</code></td><td>Latest Live Improvements &gt; P0 Contract Hardening Slice</td><td><code>T+14m</code></td><td>7a80e86</td></tr>
+          <tr><td>003</td><td><code>ATLAS-P1-PROV-730DEF3</code></td><td>Latest Live Improvements &gt; Standard Provenance Slice</td><td><code>T+22m</code></td><td>730def3</td></tr>
+          <tr><td>004</td><td><code>ATLAS-CARD-ATOMIC-COMPANY-REPORT</code></td><td>Latest Live Improvements &gt; Atomic Company Report</td><td><code>T+30m</code></td><td></td></tr>
+          <tr><td>005</td><td><code>ATLAS-CARD-OPENAPI-DISCOVERY-FIXED</code></td><td>Latest Live Improvements &gt; OpenAPI Discovery Fixed</td><td><code>T+38m</code></td><td></td></tr>
+          <tr><td>006</td><td><code>ATLAS-CARD-RESEARCH-POSTURE-CONTRACT</code></td><td>Latest Live Improvements &gt; Research Posture Contract</td><td><code>T+46m</code></td><td></td></tr>
+          <tr><td>007</td><td><code>ATLAS-CARD-X402-ERROR-BODY</code></td><td>Latest Live Improvements &gt; x402 Error Body</td><td><code>T+54m</code></td><td></td></tr>
+          <tr><td>008</td><td><code>ATLAS-CARD-REAL-MSTR-DATA-PROBE</code></td><td>Latest Live Improvements &gt; Real MSTR Data Probe</td><td><code>T+62m</code></td><td></td></tr>
+          <tr><td>009</td><td><code>ATLAS-CARD-IREN-SPECTRA-COVERAGE</code></td><td>Latest Live Improvements &gt; IREN SPECTRA Coverage</td><td><code>T+70m</code></td><td></td></tr>
+          <tr><td>010</td><td><code>ATLAS-CARD-EVIDENCE-LAYER-FIRST</code></td><td>Latest Live Improvements &gt; Evidence Layer First</td><td><code>T+78m</code></td><td></td></tr>
+          <tr><td>011</td><td><code>ATLAS-CARD-SOLVED-AGGREGATE-ACCESS</code></td><td>Evidence Infrastructure Backlog &gt; Solved: aggregate access</td><td><code>T+330m</code></td><td></td></tr>
+          <tr><td>012</td><td><code>ATLAS-CARD-SOLVED-ROUTE-POSTURE</code></td><td>Evidence Infrastructure Backlog &gt; Solved: route posture</td><td><code>T+336m</code></td><td></td></tr>
+          <tr><td>013</td><td><code>ATLAS-CARD-PARTIAL-REPLAYABLE-EVIDENCE</code></td><td>Evidence Infrastructure Backlog &gt; Partial: replayable evidence</td><td><code>T+342m</code></td><td></td></tr>
+          <tr><td>014</td><td><code>ATLAS-CARD-OPEN-INFRASTRUCTURE-GRADE-EVIDENCE</code></td><td>Evidence Infrastructure Backlog &gt; Open: infrastructure-grade evidence</td><td><code>T+348m</code></td><td></td></tr>
+          <tr><td>015</td><td><code>ATLAS-CARD-LIVE-BACKEND-PRICING-DISCOVERY</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: pricing discovery</td><td><code>T+354m</code></td><td></td></tr>
+          <tr><td>016</td><td><code>ATLAS-CARD-LIVE-BACKEND-CANONICAL-BILLING-FIELDS</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: canonical billing fields</td><td><code>T+360m</code></td><td></td></tr>
+          <tr><td>017</td><td><code>ATLAS-CARD-LIVE-BACKEND-STRUCTURED-NOT-FOUND</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: structured not-found</td><td><code>T+366m</code></td><td></td></tr>
+          <tr><td>018</td><td><code>ATLAS-CARD-LIVE-BACKEND-IREN-SPECTRA-REPAIR</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: IREN SPECTRA repair</td><td><code>T+372m</code></td><td></td></tr>
+          <tr><td>019</td><td><code>ATLAS-CARD-LIVE-BACKEND-UNIVERSE-ROUTES-LOCKED</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: universe routes locked</td><td><code>T+378m</code></td><td></td></tr>
+          <tr><td>020</td><td><code>ATLAS-CARD-LIVE-BACKEND-FIELD-CONTRACT-DISCOVERY</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: field contract discovery</td><td><code>T+384m</code></td><td></td></tr>
+          <tr><td>021</td><td><code>ATLAS-CARD-LIVE-BACKEND-RESPONSE-METADATA-ENVELOPE</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: response metadata envelope</td><td><code>T+390m</code></td><td></td></tr>
+          <tr><td>022</td><td><code>ATLAS-CARD-LIVE-BACKEND-COVERAGE-DISCOVERY</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: coverage discovery</td><td><code>T+396m</code></td><td></td></tr>
+          <tr><td>023</td><td><code>ATLAS-CARD-LIVE-BACKEND-LARGE-RESPONSE-GUIDANCE</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: large-response guidance</td><td><code>T+402m</code></td><td></td></tr>
+          <tr><td>024</td><td><code>ATLAS-CARD-LIVE-BACKEND-DAILY-CHANGE-FIELD</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: daily-change field deltas</td><td><code>T+408m</code></td><td></td></tr>
+          <tr><td>025</td><td><code>ATLAS-CARD-LIVE-BACKEND-EVIDENCE-REPLAY-SEMANTICS</code></td><td>Evidence Infrastructure Backlog &gt; Live backend: evidence replay semantics</td><td><code>T+414m</code></td><td></td></tr>
+          <tr><td>026</td><td><code>ATLAS-CARD-SOURCE-UPDATE-ROUTE-SCOPE-ERRORS</code></td><td>Evidence Infrastructure Backlog &gt; Source update: route-scope errors</td><td><code>T+420m</code></td><td></td></tr>
+          <tr><td>027</td><td><code>ATLAS-CARD-SOURCE-UPDATE-STANDARD-PROVENANCE</code></td><td>Evidence Infrastructure Backlog &gt; Source update: standard provenance</td><td><code>T+426m</code></td><td></td></tr>
+          <tr><td>028</td><td><code>ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT</code></td><td>Evidence Infrastructure Backlog &gt; Universal evidence contract</td><td><code>T+098m</code></td><td></td></tr>
+          <tr><td>029</td><td><code>ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS</code></td><td>Evidence Infrastructure Backlog &gt; Scale and freshness ergonomics</td><td><code>T+106m</code></td><td></td></tr>
+          <tr><td>030</td><td><code>ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY</code></td><td>Evidence Infrastructure Backlog &gt; Monitoring and contract maturity</td><td><code>T+114m</code></td><td></td></tr>
+          <tr><td>031</td><td><code>ATLAS-P1-PROV-730DEF3</code></td><td>Improvement Timeline &gt; P1 standard provenance source implementation</td><td><code>T+22m</code></td><td>730def3</td></tr>
+          <tr><td>032</td><td><code>ATLAS-P0-CONTRACT-7A80E86</code></td><td>Improvement Timeline &gt; P0 contract-hardening source implementation</td><td><code>T+14m</code></td><td>7a80e86</td></tr>
+          <tr><td>033</td><td><code>ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Pricing discovery implementation track</td><td><code>T+122m</code></td><td></td></tr>
+          <tr><td>034</td><td><code>ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION</code></td><td>Improvement Timeline &gt; Canonical billed-response fields implementation track</td><td><code>T+130m</code></td><td></td></tr>
+          <tr><td>035</td><td><code>ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Structured not-found implementation track</td><td><code>T+138m</code></td><td></td></tr>
+          <tr><td>036</td><td><code>ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR</code></td><td>Improvement Timeline &gt; IREN SPECTRA coverage repair</td><td><code>T+146m</code></td><td></td></tr>
+          <tr><td>037</td><td><code>ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Universe route contract implementation track</td><td><code>T+154m</code></td><td></td></tr>
+          <tr><td>038</td><td><code>ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Field contract discovery implementation track</td><td><code>T+162m</code></td><td></td></tr>
+          <tr><td>039</td><td><code>ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Response metadata envelope implementation track</td><td><code>T+170m</code></td><td></td></tr>
+          <tr><td>040</td><td><code>ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Coverage discovery implementation track</td><td><code>T+178m</code></td><td></td></tr>
+          <tr><td>041</td><td><code>ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Large-response handling implementation track</td><td><code>T+186m</code></td><td></td></tr>
+          <tr><td>042</td><td><code>ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION</code></td><td>Improvement Timeline &gt; Daily-change field-delta implementation track</td><td><code>T+194m</code></td><td></td></tr>
+          <tr><td>043</td><td><code>ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK</code></td><td>Improvement Timeline &gt; Evidence replay semantics implementation track</td><td><code>T+202m</code></td><td></td></tr>
+          <tr><td>044</td><td><code>ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED</code></td><td>Improvement Timeline &gt; Public contract cleanup re-verified</td><td><code>T+210m</code></td><td></td></tr>
+          <tr><td>045</td><td><code>ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE</code></td><td>Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate</td><td><code>T+218m</code></td><td></td></tr>
+          <tr><td>046</td><td><code>ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</code></td><td>Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables</td><td><code>T+226m</code></td><td></td></tr>
+          <tr><td>047</td><td><code>ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND</code></td><td>Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history</td><td><code>T+234m</code></td><td></td></tr>
+          <tr><td>048</td><td><code>ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT</code></td><td>Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery</td><td><code>T+242m</code></td><td></td></tr>
+          <tr><td>049</td><td><code>ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER</code></td><td>Improvement Timeline &gt; Full-universe regression and issuer identity hardening</td><td><code>T+250m</code></td><td></td></tr>
+          <tr><td>050</td><td><code>ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT</code></td><td>Improvement Timeline &gt; Natural Language briefs and compact evidence contracts</td><td><code>T+258m</code></td><td></td></tr>
+          <tr><td>051</td><td><code>ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND</code></td><td>Improvement Timeline &gt; Composite workflows, route discovery, and payment metadata</td><td><code>T+266m</code></td><td></td></tr>
+          <tr><td>052</td><td><code>ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE</code></td><td>Improvement Timeline &gt; Public x402 launch and Wardenclyffe/OpenAPI contract rollout</td><td><code>T+274m</code></td><td></td></tr>
+          <tr><td>053</td><td><code>ATLAS-CARD-LESS-CLIENT-STITCHING</code></td><td>What Changed For Builders &gt; Less client stitching</td><td><code>T+432m</code></td><td></td></tr>
+          <tr><td>054</td><td><code>ATLAS-CARD-BETTER-DISCOVERY</code></td><td>What Changed For Builders &gt; Better discovery</td><td><code>T+438m</code></td><td></td></tr>
+          <tr><td>055</td><td><code>ATLAS-CARD-BETTER-PROVENANCE</code></td><td>What Changed For Builders &gt; Better provenance</td><td><code>T+444m</code></td><td></td></tr>
+          <tr><td>056</td><td><code>ATLAS-CARD-CLEARER-SAFETY-BOUNDARY</code></td><td>What Changed For Builders &gt; Clearer safety boundary</td><td><code>T+450m</code></td><td></td></tr>
+          <tr><td>057</td><td><code>ATLAS-CARD-CLEANER-PUBLIC-CONTRACT</code></td><td>What Changed For Builders &gt; Cleaner public contract</td><td><code>T+456m</code></td><td></td></tr>
+          <tr><td>058</td><td><code>ATLAS-CARD-MORE-USEFUL-PAYMENT-FAILURES</code></td><td>What Changed For Builders &gt; More useful payment failures</td><td><code>T+462m</code></td><td></td></tr>
+          <tr><td>059</td><td><code>ATLAS-CARD-OPENAPI-CONTRACT-LAYER</code></td><td>Audit-Grade Validation Plan &gt; OpenAPI contract layer</td><td><code>T+468m</code></td><td></td></tr>
+          <tr><td>060</td><td><code>ATLAS-CARD-LIVE-EXECUTION-LAYER</code></td><td>Audit-Grade Validation Plan &gt; Live execution layer</td><td><code>T+474m</code></td><td></td></tr>
+          <tr><td>061</td><td><code>ATLAS-CARD-RENDERER-QA-LAYER</code></td><td>Audit-Grade Validation Plan &gt; Renderer QA layer</td><td><code>T+480m</code></td><td></td></tr>
+          <tr><td>062</td><td><code>ATLAS-CARD-PAYMENT-BOUNDARY-LAYER</code></td><td>Audit-Grade Validation Plan &gt; Payment boundary layer</td><td><code>T+486m</code></td><td></td></tr>
+          <tr><td>063</td><td><code>ATLAS-APRIL-24-COMPACT-VALIDATION-MATRIX</code></td><td>Audit-Grade Validation Plan &gt; Compact Validation Matrix</td><td><code>T+282m</code></td><td></td></tr>
+          <tr><td>064</td><td><code>ATLAS-APRIL-24-MCP-X402-CALL-LEDGER</code></td><td>Audit-Grade Validation Plan &gt; MCP / x402 Call Ledger</td><td><code>T+290m</code></td><td></td></tr>
+          <tr><td>065</td><td><code>ATLAS-CARD-OPENAPI-CONTRACT-PASSED</code></td><td>Results Audit Snapshot &gt; OpenAPI contract passed</td><td><code>T+492m</code></td><td></td></tr>
+          <tr><td>066</td><td><code>ATLAS-CARD-REQUIRED-ROUTES-PASSED</code></td><td>Results Audit Snapshot &gt; Required routes passed</td><td><code>T+498m</code></td><td></td></tr>
+          <tr><td>067</td><td><code>ATLAS-CARD-LIVE-MCP-SMOKE-PASSED</code></td><td>Results Audit Snapshot &gt; Live MCP smoke passed</td><td><code>T+504m</code></td><td></td></tr>
+          <tr><td>068</td><td><code>ATLAS-CARD-LANGUAGE-MIGRATION-PASSED</code></td><td>Results Audit Snapshot &gt; Language migration passed</td><td><code>T+510m</code></td><td></td></tr>
+          <tr><td>069</td><td><code>ATLAS-CARD-RAW-EVIDENCE-CAVEAT</code></td><td>Results Audit Snapshot &gt; Raw evidence caveat</td><td><code>T+516m</code></td><td></td></tr>
+          <tr><td>070</td><td><code>ATLAS-CARD-X402-CAVEAT-RESOLVED-SEPARATELY</code></td><td>Results Audit Snapshot &gt; x402 caveat resolved separately</td><td><code>T+522m</code></td><td></td></tr>
+          <tr><td>071</td><td><code>ATLAS-CARD-LATENCY-VARIANCE-ONLY</code></td><td>Results Audit Snapshot &gt; Latency variance only</td><td><code>T+528m</code></td><td></td></tr>
+          <tr><td>072</td><td><code>ATLAS-CARD-OPERATOR-TAKEAWAY</code></td><td>Results Audit Snapshot &gt; Operator takeaway</td><td><code>T+534m</code></td><td></td></tr>
+          <tr><td>073</td><td><code>ATLAS-APRIL-24-ROUTE-CONTRACT-EXTRACTION</code></td><td>Results Audit Snapshot &gt; Route Contract Extraction</td><td><code>T+298m</code></td><td></td></tr>
+          <tr><td>074</td><td><code>ATLAS-APRIL-24-PRICED-PUBLIC-EQUIVALENTS</code></td><td>Results Audit Snapshot &gt; Priced Public Equivalents</td><td><code>T+306m</code></td><td></td></tr>
+          <tr><td>075</td><td><code>ATLAS-CARD-GET-V1-COMPANY-REPORT-TICKER</code></td><td>OpenAPI Route Contract Snapshot &gt; GET /v1/company-report/{ticker}</td><td><code>T+540m</code></td><td></td></tr>
+          <tr><td>076</td><td><code>ATLAS-CARD-POST-V1-BUNDLES-COMPANY-REPORT</code></td><td>OpenAPI Route Contract Snapshot &gt; POST /v1/bundles/company-report</td><td><code>T+546m</code></td><td></td></tr>
+          <tr><td>077</td><td><code>ATLAS-CARD-GET-V1-MORNING-BRIEF-NATURAL</code></td><td>OpenAPI Route Contract Snapshot &gt; GET /v1/morning-brief/natural</td><td><code>T+552m</code></td><td></td></tr>
+          <tr><td>078</td><td><code>ATLAS-CARD-GET-V1-READINESS</code></td><td>OpenAPI Route Contract Snapshot &gt; GET /v1/readiness</td><td><code>T+558m</code></td><td></td></tr>
+          <tr><td>079</td><td><code>ATLAS-CARD-DUPLICATE-ARTIFACT-CONTROL</code></td><td>Context And Payload Hygiene &gt; Duplicate artifact control</td><td><code>T+564m</code></td><td></td></tr>
+          <tr><td>080</td><td><code>ATLAS-CARD-CONTRACT-VS-LIVE-PROOF</code></td><td>Context And Payload Hygiene &gt; Contract vs live proof</td><td><code>T+570m</code></td><td></td></tr>
+          <tr><td>081</td><td><code>ATLAS-CARD-COMPACT-PAYLOAD-DISCLOSURE</code></td><td>Context And Payload Hygiene &gt; Compact payload disclosure</td><td><code>T+576m</code></td><td></td></tr>
+          <tr><td>082</td><td><code>ATLAS-CARD-MACHINE-PATH-PRESERVATION</code></td><td>Context And Payload Hygiene &gt; Machine-path preservation</td><td><code>T+582m</code></td><td></td></tr>
+          <tr><td>083</td><td><code>ATLAS-APRIL-24-LATENCY-CLASSES-FROM-PRIOR-SMOKE</code></td><td>Context And Payload Hygiene &gt; Latency Classes From Prior Smoke</td><td><code>T+314m</code></td><td></td></tr>
+          <tr><td>084</td><td><code>ATLAS-APRIL-24-RENDERER-FIELDS-TO-PRESERVE</code></td><td>Context And Payload Hygiene &gt; Renderer Fields To Preserve</td><td><code>T+322m</code></td><td></td></tr>
+          <tr><td>085</td><td><code>ATLAS-CARD-CONTEXT-FOOTPRINT-FINDING</code></td><td>Context And Payload Hygiene &gt; Context footprint finding</td><td><code>T+588m</code></td><td></td></tr>
+          <tr><td>086</td><td><code>ATLAS-CARD-CANONICAL-SUMMARY-TARGET</code></td><td>Context And Payload Hygiene &gt; Canonical summary target</td><td><code>T+594m</code></td><td></td></tr>
+          <tr><td>087</td><td><code>ATLAS-CARD-X-MCP-TOOLS-DISCOVERABILITY</code></td><td>Context And Payload Hygiene &gt; x_mcp_tools discoverability</td><td><code>T+600m</code></td><td></td></tr>
+          <tr><td>088</td><td><code>ATLAS-CARD-MORNING-BRIEF-UX</code></td><td>Context And Payload Hygiene &gt; Morning Brief UX</td><td><code>T+606m</code></td><td></td></tr>
+          <tr><td>089</td><td><code>ATLAS-APRIL-24-CANONICAL-DEDUPE-RULE</code></td><td>Context And Payload Hygiene &gt; Canonical Dedupe Rule</td><td><code>T+330m</code></td><td></td></tr>
+          <tr><td>090</td><td><code>ATLAS-APRIL-24-CONTRACT-HASH-CANONICALIZATION</code></td><td>Context And Payload Hygiene &gt; Contract Hash Canonicalization</td><td><code>T+338m</code></td><td></td></tr>
+          <tr><td>091</td><td><code>ATLAS-CARD-INTERFACE-HASH</code></td><td>Context And Payload Hygiene &gt; interface_hash</td><td><code>T+612m</code></td><td></td></tr>
+          <tr><td>092</td><td><code>ATLAS-CARD-PAYMENT-HASH</code></td><td>Context And Payload Hygiene &gt; payment_hash</td><td><code>T+618m</code></td><td></td></tr>
+          <tr><td>093</td><td><code>ATLAS-CARD-DOCUMENTATION-HASH</code></td><td>Context And Payload Hygiene &gt; documentation_hash</td><td><code>T+624m</code></td><td></td></tr>
+          <tr><td>094</td><td><code>ATLAS-CARD-HASH-BOUNDARY</code></td><td>Context And Payload Hygiene &gt; Hash boundary</td><td><code>T+630m</code></td><td></td></tr>
+          <tr><td>095</td><td><code>ATLAS-APRIL-24-ROUTE-CONTRACT-PREIMAGE-SHAPE</code></td><td>Context And Payload Hygiene &gt; Route Contract Preimage Shape</td><td><code>T+346m</code></td><td></td></tr>
+          <tr><td>096</td><td><code>ATLAS-APRIL-24-SPLIT-HASH-MANIFEST</code></td><td>Context And Payload Hygiene &gt; Split Hash Manifest</td><td><code>T+354m</code></td><td></td></tr>
+          <tr><td>097</td><td><code>ATLAS-APRIL-24-ROUTE-STRING-SENTINEL-HASHES</code></td><td>Context And Payload Hygiene &gt; Route-String Sentinel Hashes</td><td><code>T+362m</code></td><td></td></tr>
+          <tr><td>098</td><td><code>ATLAS-APRIL-24-SENTINEL-BOUNDARY</code></td><td>Context And Payload Hygiene &gt; Sentinel Boundary</td><td><code>T+370m</code></td><td></td></tr>
+          <tr><td>099</td><td><code>ATLAS-CARD-DEDUPE-DECISION-MATRIX</code></td><td>Context And Payload Hygiene &gt; Dedupe decision matrix</td><td><code>T+636m</code></td><td></td></tr>
+          <tr><td>100</td><td><code>ATLAS-CARD-CANONICAL-SELECTION-PRIORITY</code></td><td>Context And Payload Hygiene &gt; Canonical selection priority</td><td><code>T+642m</code></td><td></td></tr>
+          <tr><td>101</td><td><code>ATLAS-CARD-APPLIED-OPENAPI-GROUP</code></td><td>Context And Payload Hygiene &gt; Applied OpenAPI group</td><td><code>T+648m</code></td><td></td></tr>
+          <tr><td>102</td><td><code>ATLAS-CARD-APPLIED-LIVE-AUDIT-GROUP</code></td><td>Context And Payload Hygiene &gt; Applied live-audit group</td><td><code>T+654m</code></td><td></td></tr>
+          <tr><td>103</td><td><code>ATLAS-CARD-BASE-X402-ROUTES</code></td><td>Route / Tool Drift Watchlist &gt; Base x402 routes</td><td><code>T+660m</code></td><td></td></tr>
+          <tr><td>104</td><td><code>ATLAS-CARD-MPP-MIRROR-ROUTES</code></td><td>Route / Tool Drift Watchlist &gt; MPP mirror routes</td><td><code>T+666m</code></td><td></td></tr>
+          <tr><td>105</td><td><code>ATLAS-CARD-MCP-TOOLS</code></td><td>Route / Tool Drift Watchlist &gt; MCP tools</td><td><code>T+672m</code></td><td></td></tr>
+          <tr><td>106</td><td><code>ATLAS-CARD-COMPOSITE-BUNDLES</code></td><td>Route / Tool Drift Watchlist &gt; Composite bundles</td><td><code>T+678m</code></td><td></td></tr>
+          <tr><td>107</td><td><code>ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE</code></td><td>Next Verification Priorities &gt; Second-ticker company-report smoke</td><td><code>T+378m</code></td><td></td></tr>
+          <tr><td>108</td><td><code>ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON</code></td><td>Next Verification Priorities &gt; REST / MCP / bundle drift comparison</td><td><code>T+386m</code></td><td></td></tr>
+          <tr><td>109</td><td><code>ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES</code></td><td>Next Verification Priorities &gt; Expand public x402 probes</td><td><code>T+394m</code></td><td></td></tr>
+          <tr><td>110</td><td><code>ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION</code></td><td>Next Verification Priorities &gt; App renderer regression</td><td><code>T+402m</code></td><td></td></tr>
+          <tr><td>111</td><td><code>ATLAS-PRIORITY-4-CONFIRM-THE-OPENAPI-AGGREGATE-ROUTE</code></td><td>Live Checks &gt; Confirm the OpenAPI aggregate route and language contract</td><td><code>T+410m</code></td><td></td></tr>
+          <tr><td>112</td><td><code>ATLAS-PRIORITY-4-PROBE-PUBLIC-X402-BEHAVIOR</code></td><td>Live Checks &gt; Probe public x402 behavior</td><td><code>T+418m</code></td><td></td></tr>
+          <tr><td>113</td><td><code>ATLAS-PRIORITY-4-RUN-READINESS</code></td><td>Live Checks &gt; Run readiness</td><td><code>T+426m</code></td><td></td></tr>
+          <tr><td>114</td><td><code>ATLAS-PRIORITY-4-INSPECT-MCP-DISCOVERY</code></td><td>Live Checks &gt; Inspect MCP discovery</td><td><code>T+434m</code></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="timeline-entries">
+      <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT">
+          <h3>Universal evidence contract</h3>
+          <p class="meta"><code>tripcode: ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT</code> <code>track: T+098m</code> <code>bread: Evidence Infrastructure Backlog &gt; Universal evidence contract</code></p>
+          <p>Add one mandatory provenance object across readiness, company report, daily changes, evidence drilldowns, alpha signals, fundamentals, peer ranking, covenant stress, and SPECTRA. Missing fields should return null , not disappear.</p>
+<ul>
+            <li>Fields: captured_at , observed_at , published_at , data_as_of , computed_at_utc , source_date , accession_number , evidence_ref , evidence_hash , schema_version , contract_version .</li>
+            <li>Add semantic daily-change deltas with field_path , prior_value , new_value , delta_type , threshold_crossed , materiality_score , and evidence identifiers.</li>
+            <li>Document whether evidence refs are stable, what evidence hashes cover, how pagination affects hashes, and whether refs can be replayed after refresh.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS">
+          <h3>Scale and freshness ergonomics</h3>
+          <p class="meta"><code>tripcode: ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS</code> <code>track: T+106m</code> <code>bread: Evidence Infrastructure Backlog &gt; Scale and freshness ergonomics</code></p>
+          <p>Add preflight and batch surfaces so clients do not need repeated paid single-name calls just to discover coverage, freshness, or availability.</p>
+<ul>
+            <li>Add GET /v1/companies , GET /v1/companies?changed_since=... , and GET /v1/ticker-freshness/{ticker} .</li>
+            <li>Extend company-report bundle support to tickers: [] with per-ticker result, partial flag, provenance, and error state.</li>
+            <li>Add snapshot metadata for company reports: snapshot_id , start/end timestamps, section count, max section skew, and whether sections share the same data-as-of boundary.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY">
+          <h3>Monitoring and contract maturity</h3>
+          <p class="meta"><code>tripcode: ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY</code> <code>track: T+114m</code> <code>bread: Evidence Infrastructure Backlog &gt; Monitoring and contract maturity</code></p>
+          <p>Move from pull-only reports toward durable monitoring and explicit field stability.</p>
+<ul>
+            <li>Add webhook/subscription routes for material changes with event IDs, delivery signatures, replay cursors, field deltas, provenance, and evidence refs.</li>
+            <li>Add GET /v1/contract/changelog and GET /v1/contract/fields for stable field paths, deprecation windows, migration notes, and versioned daily-change fields.</li>
+            <li>Document route classes: free discovery, cheap freshness, paid compact, paid evidence, and internal/backend-relayed access.</li>
+            <li>Constrain renderer posture values to non-advice labels such as constructive_evidence_screen , watchlist_candidate , risk_elevated , provenance_limited , data_stale , and insufficient_evidence .</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-P1-PROV-730DEF3">
+          <h3>P1 standard provenance source implementation</h3>
+          <p class="meta"><code>tripcode: ATLAS-P1-PROV-730DEF3</code> <code>track: T+22m</code> <code>bread: Improvement Timeline &gt; P1 standard provenance source implementation</code> <code>commit: 730def3</code></p>
+          <p>Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.</p>
+<ul>
+            <li>Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.</li>
+            <li>Successful JSON object responses now receive a top-level provenance object with route identity, source_date , computed_at_utc , ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.</li>
+            <li>If a route already emits provenance , the envelope preserves existing route-specific keys and fills only missing standard keys.</li>
+            <li>GET /v1/contract/fields now documents the standard provenance field set, merge policy, and derived-evidence policy.</li>
+            <li>Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 730def3 . Backend rollout is separate from this changelog publication.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-P0-CONTRACT-7A80E86">
+          <h3>P0 contract-hardening source implementation</h3>
+          <p class="meta"><code>tripcode: ATLAS-P0-CONTRACT-7A80E86</code> <code>track: T+14m</code> <code>bread: Improvement Timeline &gt; P0 contract-hardening source implementation</code> <code>commit: 7a80e86</code></p>
+          <p>Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.</p>
+<ul>
+            <li>Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.</li>
+            <li>The protected no-ticker set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .</li>
+            <li>/v1/pricing route entries now include lifecycle and scope metadata: path_template , status , deprecated , replaced_by , billable , and route_scope .</li>
+            <li>Successful protected /v1/ JSON object responses now include billing_status at the top level and inside response_metadata .</li>
+            <li>Structured not_found payloads now include reason_code , billing_behavior=not_charged , and cost_usd=0 .</li>
+            <li>Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 7a80e86 . Backend rollout is separate from this changelog publication.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK">
+          <h3>Pricing discovery implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK</code> <code>track: T+122m</code> <code>bread: Improvement Timeline &gt; Pricing discovery implementation track</code></p>
+          <p>Added the first live-loop contract slice in backend source: GET /v1/pricing .</p>
+<ul>
+            <li>Added the first live-loop contract slice in backend source: GET /v1/pricing .</li>
+            <li>The route is designed as free discovery and returns a machine-readable x402 route catalog with route_uri , HTTP method, price_usd , billing mode, ticker requirements, and pricing source.</li>
+            <li>The pricing contract declares cost_usd as the canonical billed-response ledger field and treats quoted_cost_usd / actual_cost_usd as supplemental aliases when route-specific flows emit them.</li>
+            <li>The served OpenAPI document now publishes /v1/pricing as a free discovery route in the backend source.</li>
+            <li>Verification completed locally with targeted pricing/help/OpenAPI tests and the full go test ./cmd/search-gateway/... package suite. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION">
+          <h3>Canonical billed-response fields implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION</code> <code>track: T+130m</code> <code>bread: Improvement Timeline &gt; Canonical billed-response fields implementation track</code></p>
+          <p>Added a shared backend billing normalizer for protected priced /v1/ routes.</p>
+<ul>
+            <li>Added a shared backend billing normalizer for protected priced /v1/ routes.</li>
+            <li>Successful JSON object responses now receive canonical numeric cost_usd plus quoted_cost_usd , actual_cost_usd , billing_mode , billing_contract_version , route identity, payment status, and request ID.</li>
+            <li>x402 paid responses preserve route price as both quote and actual cost. Internal API-key and free-tier grants report actual_cost_usd=0 while preserving the route quote for budgeting.</li>
+            <li>Errors, arrays, non-JSON bodies, and unpriced free discovery routes such as /v1/pricing are not rewritten by the billing normalizer.</li>
+            <li>Verification completed locally with focused billing/pricing/help/OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK">
+          <h3>Structured not-found implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK</code> <code>track: T+138m</code> <code>bread: Improvement Timeline &gt; Structured not-found implementation track</code></p>
+          <p>Added a shared structured not_found response contract in backend source.</p>
+<ul>
+            <li>Added a shared structured not_found response contract in backend source.</li>
+            <li>Route/ticker misses now expose status=not_found , reason , coverage_state , retry_after_days , route_uri , ticker or request key, request ID, and not_found_contract_version .</li>
+            <li>SPECTRA misses still have an explicit semantics path: reason=historical_field_map_contract_missing , coverage_state=not_available_for_issuer , and a seven-day retry hint.</li>
+            <li>The shape is also wired into fundamentals, alpha signals, covenant stress, peer ranking, daily changes, daily-change evidence, and field-map misses.</li>
+            <li>Verification completed locally with focused not-found, billing, pricing, help, and OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR">
+          <h3>IREN SPECTRA coverage repair</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR</code> <code>track: T+146m</code> <code>bread: Improvement Timeline &gt; IREN SPECTRA coverage repair</code></p>
+          <p>Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss.</p>
+<ul>
+            <li>Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss.</li>
+            <li>The new IREN contract uses mode=atlas7_historical_spectra , version=SPECTRA-FIELD-MAP-v1 , company IREN Limited , CIK 0001878848 , and latest source date 2026-04-24 .</li>
+            <li>The source lineage is preserved in artifacts/spectra-field-map/IREN/atlas_history_source.json with three real ATLAS-7 atlas-history rows.</li>
+            <li>Added a regression test that serves the IREN public contract and asserts real_data=true with three returned SPECTRA points.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK">
+          <h3>Universe route contract implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</code> <code>track: T+154m</code> <code>bread: Improvement Timeline &gt; Universe route contract implementation track</code></p>
+          <p>Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source.</p>
+<ul>
+            <li>Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source.</li>
+            <li>The no-ticker route set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .</li>
+            <li>OpenAPI operations now carry x-deltasignal-route_scope=universe , x-deltasignal-path_ticker_free=true , and x-deltasignal-ticker_segment=forbidden .</li>
+            <li>The help response includes an explicit policy: do not append /{ticker} , /UNIVERSE , or any other path segment to these routes.</li>
+            <li>Verification completed locally with focused help/OpenAPI/pricing/billing/not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK">
+          <h3>Field contract discovery implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK</code> <code>track: T+162m</code> <code>bread: Improvement Timeline &gt; Field contract discovery implementation track</code></p>
+          <p>Added free backend discovery route GET /v1/contract/fields .</p>
+<ul>
+            <li>Added free backend discovery route GET /v1/contract/fields .</li>
+            <li>The field contract returns deltasignal-field-contract-v1 , the canonical billing field cost_usd , not-found contract metadata, route aliases, and the path-ticker-free universe route set.</li>
+            <li>The stable parser-path list includes the stable readiness, company-report, daily-changes, generic provenance, and stress aliases such as stress_50pct and stressed_leverage_50pct .</li>
+            <li>The served OpenAPI and help response now publish /v1/contract/fields as a free support/discovery route in backend source.</li>
+            <li>Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK">
+          <h3>Response metadata envelope implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK</code> <code>track: T+170m</code> <code>bread: Improvement Timeline &gt; Response metadata envelope implementation track</code></p>
+          <p>Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path.</p>
+<ul>
+            <li>Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path.</li>
+            <li>Successful JSON object payloads now receive top-level metadata fields and a response_metadata object.</li>
+            <li>The envelope includes request_id , route_uri , source_date , computed_at_utc , ticker , cost_usd , billing_mode , cache_hit , payload_mode , quality_flags , caveats , evidence_hash , evidence_hash_version , and latency_ms .</li>
+            <li>Unavailable values are emitted as null or empty arrays where appropriate, so automation can parse a stable shape.</li>
+            <li>Verification completed locally with focused billing, field-contract, help, OpenAPI, pricing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK">
+          <h3>Coverage discovery implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK</code> <code>track: T+178m</code> <code>bread: Improvement Timeline &gt; Coverage discovery implementation track</code></p>
+          <p>Extended /companies in backend source with deltasignal-coverage-v1 .</p>
+<ul>
+            <li>Extended /companies in backend source with deltasignal-coverage-v1 .</li>
+            <li>Each issuer row now includes ticker , lookup_ticker , cik , entity_name , supported_routes , unavailable_routes , last_source_date , and coverage_status .</li>
+            <li>The field-contract route documents the stable coverage discovery fields for automation.</li>
+            <li>This lets clients preflight supported names and route availability before spending on paid drilldowns.</li>
+            <li>Verification completed locally with focused companies, field-contract, help, OpenAPI, pricing, billing, metadata, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK">
+          <h3>Large-response handling implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK</code> <code>track: T+186m</code> <code>bread: Improvement Timeline &gt; Large-response handling implementation track</code></p>
+          <p>Added public help guidance for large DeltaSignal responses in backend source.</p>
+<ul>
+            <li>Added public help guidance for large DeltaSignal responses in backend source.</li>
+            <li>The help route now warns that company-report and daily-changes payloads can exceed 64 KB.</li>
+            <li>The guidance calls out the AgentCash/Node path specifically: do not pipe large npx agentcash fetch stdout directly into another process.</li>
+            <li>Recommended automation patterns are file redirects, compact or paginated routes, and clients that fully drain stdout before process exit.</li>
+            <li>Verification completed locally with focused help and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION">
+          <h3>Daily-change field-delta implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION</code> <code>track: T+194m</code> <code>bread: Improvement Timeline &gt; Daily-change field-delta implementation track</code></p>
+          <p>Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source.</p>
+<ul>
+            <li>Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source.</li>
+            <li>The interim shape exposes CompanyFacts changed tags as field_deltas with field_name , source_date , ticker/CIK, threshold_crossed , and evidence_ref .</li>
+            <li>prior_value , new_value , delta , and percent_delta are emitted as null unless the source row carries those values.</li>
+            <li>The field-contract route documents this interim status so clients can consume it without mistaking tag-level deltas for numeric value changes.</li>
+            <li>Verification completed locally with focused daily field-delta, field-contract, help, OpenAPI, pricing, billing, metadata, not-found, and coverage tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK">
+          <h3>Evidence replay semantics implementation track</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK</code> <code>track: T+202m</code> <code>bread: Improvement Timeline &gt; Evidence replay semantics implementation track</code></p>
+          <p>Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source.</p>
+<ul>
+            <li>Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source.</li>
+            <li>The contract documents evidence_ref stability for the same route, normalized arguments, source date, limit, and offset.</li>
+            <li>It documents evidence_hash as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.</li>
+            <li>It marks page.next_args , page.next_offset , page.next_tool , and daily-change evidence handles as replayable while the referenced source date remains available.</li>
+            <li>Verification completed locally with focused field-contract and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED">
+          <h3>Public contract cleanup re-verified</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED</code> <code>track: T+210m</code> <code>bread: Improvement Timeline &gt; Public contract cleanup re-verified</code></p>
+          <p>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.</p>
+<ul>
+            <li>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.</li>
+            <li>POST /mcp , GET /v1/readiness , GET /v1/company-report/{ticker} , and POST /v1/bundles/company-report are present in the public route contract.</li>
+            <li>The alpha language contract now exposes research_posture and no longer exposes short_recommendation .</li>
+            <li>Unpaid public GET /v1/readiness returns HTTP 402 with a JSON body containing error=payment_required , the route name, retry guidance, docs URL, and an x402 challenge pointer.</li>
+            <li>Unpaid public GET /v1/company-report/MSTR?output_mode=compact returns HTTP 402 with the same developer-readable x402 pattern and a Base USDC challenge header.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE">
+          <h3>Company Report became a true OpenAPI-visible aggregate</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE</code> <code>track: T+218m</code> <code>bread: Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate</code></p>
+          <p>Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report .</p>
+<ul>
+            <li>Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report .</li>
+            <li>The aggregate returns readiness, company fundamentals, alpha signals, peer ranking, covenant stress, and advisory SPECTRA field-map support in one bounded response.</li>
+            <li>Public unauthenticated calls return the expected 402 x402 payment challenge.</li>
+            <li>Internal live MSTR verification returned status=ok , partial=false , and 6 of 6 internal legs succeeded.</li>
+            <li>Snapshot values from that verification: Strategy Inc, source date 2026-05-27 , alpha score 69 , peer rank 152/215 , stress live_stress_50pct=0.2566 , risk tier LOW , and SPECTRA mode atlas7_historical_spectra .</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED">
+          <h3>StrategiX Visual MCP and finished DeltaSignal deliverables</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</code> <code>track: T+226m</code> <code>bread: Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables</code></p>
+          <p>Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.</p>
+<ul>
+            <li>Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.</li>
+            <li>Added finished DeltaSignal Intelligence Deliverables pricing, including a single daily Morning Brief PDF, monthly daily-brief subscription, and heavy multi-issuer deep brief.</li>
+            <li>Kept StrategiX execution internal-beta gated so public users are not asked to pay for tools that are not public-paid yet.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND">
+          <h3>Historical source dates, SPECTRA, and ATLAS-7 calculation history</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND</code> <code>track: T+234m</code> <code>bread: Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history</code></p>
+          <p>Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.</p>
+<ul>
+            <li>Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.</li>
+            <li>Added first-class calculation-history surfaces: GET /v1/atlas7/calculation-history , GET /mpp/v1/atlas7/calculation-history , and MCP deltasignal_atlas7_calculation_history .</li>
+            <li>Calculation-history rows preserve covenant, fundamentals, peer, alpha, SPECTRA input, source fields, payload hash, and evidence hash fields.</li>
+            <li>MSTR SPECTRA was backfilled from real ATLAS history and exposed through GET /v1/spectra-field-map/MSTR .</li>
+            <li>Company Report MCP was expanded to six legs by including SPECTRA as an advisory field-map support leg.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT">
+          <h3>Audit status, Morning Brief context, and public MCP discovery</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT</code> <code>track: T+242m</code> <code>bread: Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery</code></p>
+          <p>Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status .</p>
+<ul>
+            <li>Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status .</li>
+            <li>Audit status reports freshness, last successful run, issuer count, operation count, failure counts, artifact prefix, and job metadata.</li>
+            <li>Live audit verification reported 215 issuers, 1,935 operations, 0 failed operations, 0 historical failures, and 0 composite failures.</li>
+            <li>Morning Brief was updated with alpha board audit context so first-time users can see board scope, issuer mix, low-quality demotions, and caveats.</li>
+            <li>Public MCP discovery was opened before payment: initialize and tools/list stay inspectable, while tools/call remains protected by x402, API key, or an explicit free-tier grant.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER">
+          <h3>Full-universe regression and issuer identity hardening</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER</code> <code>track: T+250m</code> <code>bread: Improvement Timeline &gt; Full-universe regression and issuer identity hardening</code></p>
+          <p>Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.</p>
+<ul>
+            <li>Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.</li>
+            <li>Extended company report and quick ticker check composite coverage across the issuer universe.</li>
+            <li>Canonicalized Strategy Inc as MSTR across issuer routes, ATLAS history rows, supported-company search, and x402 examples.</li>
+            <li>Canonicalized ambiguous Delta Signal issuer tickers and CIK aliases so public-company identity stays stable across CompanyFacts and ATLAS materialized rows.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT">
+          <h3>Natural Language briefs and compact evidence contracts</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT</code> <code>track: T+258m</code> <code>bread: Improvement Timeline &gt; Natural Language briefs and compact evidence contracts</code></p>
+          <p>Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.</p>
+<ul>
+            <li>Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.</li>
+            <li>Renderer metadata includes mode, validation status, fallback reason, compiler/version fields, evidence hash where available, latency, tokens, cache status, and billing mode.</li>
+            <li>Morning Brief Natural was updated to render returned alpha board evidence with issuer identity status, caveats, and non-advice language.</li>
+            <li>Default monitoring outputs stay compact, with raw evidence exposed through explicit drilldown routes instead of hidden client-side fan-out.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND">
+          <h3>Composite workflows, route discovery, and payment metadata</h3>
+          <p class="meta"><code>tripcode: ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND</code> <code>track: T+266m</code> <code>bread: Improvement Timeline &gt; Composite workflows, route discovery, and payment metadata</code></p>
+          <p>Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.</p>
+<ul>
+            <li>Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.</li>
+            <li>Added Arazzo workflow definitions so agents can inspect scenario plans before execution.</li>
+            <li>Updated OpenAPI and route metadata for public clients that discover paid resources before execution.</li>
+            <li>Improved x402 and MPP payment metadata so AgentCash-style crawlers can identify route prices and protocol families.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE">
+          <h3>Public x402 launch and Wardenclyffe/OpenAPI contract rollout</h3>
+          <p class="meta"><code>tripcode: ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE</code> <code>track: T+274m</code> <code>bread: Improvement Timeline &gt; Public x402 launch and Wardenclyffe/OpenAPI contract rollout</code></p>
+          <p>Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.</p>
+<ul>
+            <li>Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.</li>
+            <li>Raised public paid routes from test defaults to the launch pricing schedule.</li>
+            <li>Rolled out the Wardenclyffe/help/OpenAPI contract with updated readiness, help, schema shape, glossary, and debt coverage fields.</li>
+            <li>Added MPP discovery alongside x402 for compatible public-agent marketplaces and registry crawlers.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE">
+          <h3>Second-ticker company-report smoke</h3>
+          <p class="meta"><code>tripcode: ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE</code> <code>track: T+378m</code> <code>bread: Next Verification Priorities &gt; Second-ticker company-report smoke</code></p>
+          <p>Repeat the company-report smoke with a second ticker from the latest daily-change slice to prove the aggregate is not only working for one issuer.</p>
+
+        </article>
+        <article class="entry" id="ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON">
+          <h3>REST / MCP / bundle drift comparison</h3>
+          <p class="meta"><code>tripcode: ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON</code> <code>track: T+386m</code> <code>bread: Next Verification Priorities &gt; REST / MCP / bundle drift comparison</code></p>
+          <p>Compare OpenAPI route inventory, MCP tools/list , and composite bundle outputs so route availability, tool names, prices, and payload modes stay synchronized.</p>
+
+        </article>
+        <article class="entry" id="ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES">
+          <h3>Expand public x402 probes</h3>
+          <p class="meta"><code>tripcode: ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES</code> <code>track: T+394m</code> <code>bread: Next Verification Priorities &gt; Expand public x402 probes</code></p>
+          <p>Readiness and company-report public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to /v1/morning-brief/natural and any new paid public route.</p>
+
+        </article>
+        <article class="entry" id="ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION">
+          <h3>App renderer regression</h3>
+          <p class="meta"><code>tripcode: ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION</code> <code>track: T+402m</code> <code>bread: Next Verification Priorities &gt; App renderer regression</code></p>
+          <p>Verify SwiftUI cards preserve source_date , computed_at_utc , payload_mode , compact flags, caveats, evidence references, x402 equivalent price, no-payment boundary, and non-advice language.</p>
+
+        </article>
+    </section>
+    <section id="machine-contract">
+      <h2>Machine Contract</h2>
+      <p>The embedded JSON and XML below are inert source-of-truth mirrors for LLM/RAG ingestion.</p>
+      <pre><code>{
+  &quot;artifact&quot;: &quot;deltasignal_atlas7_changelog_llm&quot;,
+  &quot;version&quot;: &quot;changelog-llm-v1&quot;,
+  &quot;last_updated&quot;: &quot;2026-05-31&quot;,
+  &quot;stats&quot;: {
+    &quot;tracked_changes&quot;: 114,
+    &quot;timeline_entries&quot;: 29,
+    &quot;unique_tripcodes&quot;: 112,
+    &quot;breadcrumb_chips&quot;: 114,
+    &quot;visible_commit_references&quot;: 4,
+    &quot;unique_source_commits&quot;: [
+      &quot;730def3&quot;,
+      &quot;7a80e86&quot;
+    ]
+  },
+  &quot;tracking_river&quot;: [
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-LOOP-API-CONTRACT&quot;,
+      &quot;track&quot;: &quot;T+06m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; Live-Loop API Contract Deployed&quot;,
+      &quot;river_index&quot;: 1
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-P0-CONTRACT-7A80E86&quot;,
+      &quot;track&quot;: &quot;T+14m&quot;,
+      &quot;commit&quot;: &quot;7a80e86&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; P0 Contract Hardening Slice&quot;,
+      &quot;river_index&quot;: 2
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-P1-PROV-730DEF3&quot;,
+      &quot;track&quot;: &quot;T+22m&quot;,
+      &quot;commit&quot;: &quot;730def3&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; Standard Provenance Slice&quot;,
+      &quot;river_index&quot;: 3
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-ATOMIC-COMPANY-REPORT&quot;,
+      &quot;track&quot;: &quot;T+30m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; Atomic Company Report&quot;,
+      &quot;river_index&quot;: 4
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-OPENAPI-DISCOVERY-FIXED&quot;,
+      &quot;track&quot;: &quot;T+38m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; OpenAPI Discovery Fixed&quot;,
+      &quot;river_index&quot;: 5
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-RESEARCH-POSTURE-CONTRACT&quot;,
+      &quot;track&quot;: &quot;T+46m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; Research Posture Contract&quot;,
+      &quot;river_index&quot;: 6
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-X402-ERROR-BODY&quot;,
+      &quot;track&quot;: &quot;T+54m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; x402 Error Body&quot;,
+      &quot;river_index&quot;: 7
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-REAL-MSTR-DATA-PROBE&quot;,
+      &quot;track&quot;: &quot;T+62m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; Real MSTR Data Probe&quot;,
+      &quot;river_index&quot;: 8
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-IREN-SPECTRA-COVERAGE&quot;,
+      &quot;track&quot;: &quot;T+70m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; IREN SPECTRA Coverage&quot;,
+      &quot;river_index&quot;: 9
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-EVIDENCE-LAYER-FIRST&quot;,
+      &quot;track&quot;: &quot;T+78m&quot;,
+      &quot;bread&quot;: &quot;Latest Live Improvements &gt; Evidence Layer First&quot;,
+      &quot;river_index&quot;: 10
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-SOLVED-AGGREGATE-ACCESS&quot;,
+      &quot;track&quot;: &quot;T+330m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Solved: aggregate access&quot;,
+      &quot;river_index&quot;: 11
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-SOLVED-ROUTE-POSTURE&quot;,
+      &quot;track&quot;: &quot;T+336m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Solved: route posture&quot;,
+      &quot;river_index&quot;: 12
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-PARTIAL-REPLAYABLE-EVIDENCE&quot;,
+      &quot;track&quot;: &quot;T+342m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Partial: replayable evidence&quot;,
+      &quot;river_index&quot;: 13
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-OPEN-INFRASTRUCTURE-GRADE-EVIDENCE&quot;,
+      &quot;track&quot;: &quot;T+348m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Open: infrastructure-grade evidence&quot;,
+      &quot;river_index&quot;: 14
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-PRICING-DISCOVERY&quot;,
+      &quot;track&quot;: &quot;T+354m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: pricing discovery&quot;,
+      &quot;river_index&quot;: 15
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-CANONICAL-BILLING-FIELDS&quot;,
+      &quot;track&quot;: &quot;T+360m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: canonical billing fields&quot;,
+      &quot;river_index&quot;: 16
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-STRUCTURED-NOT-FOUND&quot;,
+      &quot;track&quot;: &quot;T+366m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: structured not-found&quot;,
+      &quot;river_index&quot;: 17
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-IREN-SPECTRA-REPAIR&quot;,
+      &quot;track&quot;: &quot;T+372m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: IREN SPECTRA repair&quot;,
+      &quot;river_index&quot;: 18
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-UNIVERSE-ROUTES-LOCKED&quot;,
+      &quot;track&quot;: &quot;T+378m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: universe routes locked&quot;,
+      &quot;river_index&quot;: 19
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-FIELD-CONTRACT-DISCOVERY&quot;,
+      &quot;track&quot;: &quot;T+384m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: field contract discovery&quot;,
+      &quot;river_index&quot;: 20
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-RESPONSE-METADATA-ENVELOPE&quot;,
+      &quot;track&quot;: &quot;T+390m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: response metadata envelope&quot;,
+      &quot;river_index&quot;: 21
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-COVERAGE-DISCOVERY&quot;,
+      &quot;track&quot;: &quot;T+396m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: coverage discovery&quot;,
+      &quot;river_index&quot;: 22
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-LARGE-RESPONSE-GUIDANCE&quot;,
+      &quot;track&quot;: &quot;T+402m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: large-response guidance&quot;,
+      &quot;river_index&quot;: 23
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-DAILY-CHANGE-FIELD&quot;,
+      &quot;track&quot;: &quot;T+408m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: daily-change field deltas&quot;,
+      &quot;river_index&quot;: 24
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-BACKEND-EVIDENCE-REPLAY-SEMANTICS&quot;,
+      &quot;track&quot;: &quot;T+414m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Live backend: evidence replay semantics&quot;,
+      &quot;river_index&quot;: 25
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-SOURCE-UPDATE-ROUTE-SCOPE-ERRORS&quot;,
+      &quot;track&quot;: &quot;T+420m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Source update: route-scope errors&quot;,
+      &quot;river_index&quot;: 26
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-SOURCE-UPDATE-STANDARD-PROVENANCE&quot;,
+      &quot;track&quot;: &quot;T+426m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Source update: standard provenance&quot;,
+      &quot;river_index&quot;: 27
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT&quot;,
+      &quot;track&quot;: &quot;T+098m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Universal evidence contract&quot;,
+      &quot;river_index&quot;: 28
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS&quot;,
+      &quot;track&quot;: &quot;T+106m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Scale and freshness ergonomics&quot;,
+      &quot;river_index&quot;: 29
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY&quot;,
+      &quot;track&quot;: &quot;T+114m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Monitoring and contract maturity&quot;,
+      &quot;river_index&quot;: 30
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-P1-PROV-730DEF3&quot;,
+      &quot;track&quot;: &quot;T+22m&quot;,
+      &quot;commit&quot;: &quot;730def3&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; P1 standard provenance source implementation&quot;,
+      &quot;river_index&quot;: 31
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-P0-CONTRACT-7A80E86&quot;,
+      &quot;track&quot;: &quot;T+14m&quot;,
+      &quot;commit&quot;: &quot;7a80e86&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; P0 contract-hardening source implementation&quot;,
+      &quot;river_index&quot;: 32
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+122m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Pricing discovery implementation track&quot;,
+      &quot;river_index&quot;: 33
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION&quot;,
+      &quot;track&quot;: &quot;T+130m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Canonical billed-response fields implementation track&quot;,
+      &quot;river_index&quot;: 34
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+138m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Structured not-found implementation track&quot;,
+      &quot;river_index&quot;: 35
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR&quot;,
+      &quot;track&quot;: &quot;T+146m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; IREN SPECTRA coverage repair&quot;,
+      &quot;river_index&quot;: 36
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+154m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Universe route contract implementation track&quot;,
+      &quot;river_index&quot;: 37
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+162m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Field contract discovery implementation track&quot;,
+      &quot;river_index&quot;: 38
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+170m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Response metadata envelope implementation track&quot;,
+      &quot;river_index&quot;: 39
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+178m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Coverage discovery implementation track&quot;,
+      &quot;river_index&quot;: 40
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+186m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Large-response handling implementation track&quot;,
+      &quot;river_index&quot;: 41
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION&quot;,
+      &quot;track&quot;: &quot;T+194m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Daily-change field-delta implementation track&quot;,
+      &quot;river_index&quot;: 42
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+202m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Evidence replay semantics implementation track&quot;,
+      &quot;river_index&quot;: 43
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED&quot;,
+      &quot;track&quot;: &quot;T+210m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Public contract cleanup re-verified&quot;,
+      &quot;river_index&quot;: 44
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE&quot;,
+      &quot;track&quot;: &quot;T+218m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate&quot;,
+      &quot;river_index&quot;: 45
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED&quot;,
+      &quot;track&quot;: &quot;T+226m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables&quot;,
+      &quot;river_index&quot;: 46
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND&quot;,
+      &quot;track&quot;: &quot;T+234m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history&quot;,
+      &quot;river_index&quot;: 47
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT&quot;,
+      &quot;track&quot;: &quot;T+242m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery&quot;,
+      &quot;river_index&quot;: 48
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER&quot;,
+      &quot;track&quot;: &quot;T+250m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Full-universe regression and issuer identity hardening&quot;,
+      &quot;river_index&quot;: 49
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT&quot;,
+      &quot;track&quot;: &quot;T+258m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Natural Language briefs and compact evidence contracts&quot;,
+      &quot;river_index&quot;: 50
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND&quot;,
+      &quot;track&quot;: &quot;T+266m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Composite workflows, route discovery, and payment metadata&quot;,
+      &quot;river_index&quot;: 51
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE&quot;,
+      &quot;track&quot;: &quot;T+274m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Public x402 launch and Wardenclyffe/OpenAPI contract rollout&quot;,
+      &quot;river_index&quot;: 52
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LESS-CLIENT-STITCHING&quot;,
+      &quot;track&quot;: &quot;T+432m&quot;,
+      &quot;bread&quot;: &quot;What Changed For Builders &gt; Less client stitching&quot;,
+      &quot;river_index&quot;: 53
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-BETTER-DISCOVERY&quot;,
+      &quot;track&quot;: &quot;T+438m&quot;,
+      &quot;bread&quot;: &quot;What Changed For Builders &gt; Better discovery&quot;,
+      &quot;river_index&quot;: 54
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-BETTER-PROVENANCE&quot;,
+      &quot;track&quot;: &quot;T+444m&quot;,
+      &quot;bread&quot;: &quot;What Changed For Builders &gt; Better provenance&quot;,
+      &quot;river_index&quot;: 55
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-CLEARER-SAFETY-BOUNDARY&quot;,
+      &quot;track&quot;: &quot;T+450m&quot;,
+      &quot;bread&quot;: &quot;What Changed For Builders &gt; Clearer safety boundary&quot;,
+      &quot;river_index&quot;: 56
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-CLEANER-PUBLIC-CONTRACT&quot;,
+      &quot;track&quot;: &quot;T+456m&quot;,
+      &quot;bread&quot;: &quot;What Changed For Builders &gt; Cleaner public contract&quot;,
+      &quot;river_index&quot;: 57
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-MORE-USEFUL-PAYMENT-FAILURES&quot;,
+      &quot;track&quot;: &quot;T+462m&quot;,
+      &quot;bread&quot;: &quot;What Changed For Builders &gt; More useful payment failures&quot;,
+      &quot;river_index&quot;: 58
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-OPENAPI-CONTRACT-LAYER&quot;,
+      &quot;track&quot;: &quot;T+468m&quot;,
+      &quot;bread&quot;: &quot;Audit-Grade Validation Plan &gt; OpenAPI contract layer&quot;,
+      &quot;river_index&quot;: 59
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-EXECUTION-LAYER&quot;,
+      &quot;track&quot;: &quot;T+474m&quot;,
+      &quot;bread&quot;: &quot;Audit-Grade Validation Plan &gt; Live execution layer&quot;,
+      &quot;river_index&quot;: 60
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-RENDERER-QA-LAYER&quot;,
+      &quot;track&quot;: &quot;T+480m&quot;,
+      &quot;bread&quot;: &quot;Audit-Grade Validation Plan &gt; Renderer QA layer&quot;,
+      &quot;river_index&quot;: 61
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-PAYMENT-BOUNDARY-LAYER&quot;,
+      &quot;track&quot;: &quot;T+486m&quot;,
+      &quot;bread&quot;: &quot;Audit-Grade Validation Plan &gt; Payment boundary layer&quot;,
+      &quot;river_index&quot;: 62
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-COMPACT-VALIDATION-MATRIX&quot;,
+      &quot;track&quot;: &quot;T+282m&quot;,
+      &quot;bread&quot;: &quot;Audit-Grade Validation Plan &gt; Compact Validation Matrix&quot;,
+      &quot;river_index&quot;: 63
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-MCP-X402-CALL-LEDGER&quot;,
+      &quot;track&quot;: &quot;T+290m&quot;,
+      &quot;bread&quot;: &quot;Audit-Grade Validation Plan &gt; MCP / x402 Call Ledger&quot;,
+      &quot;river_index&quot;: 64
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-OPENAPI-CONTRACT-PASSED&quot;,
+      &quot;track&quot;: &quot;T+492m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; OpenAPI contract passed&quot;,
+      &quot;river_index&quot;: 65
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-REQUIRED-ROUTES-PASSED&quot;,
+      &quot;track&quot;: &quot;T+498m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Required routes passed&quot;,
+      &quot;river_index&quot;: 66
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LIVE-MCP-SMOKE-PASSED&quot;,
+      &quot;track&quot;: &quot;T+504m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Live MCP smoke passed&quot;,
+      &quot;river_index&quot;: 67
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LANGUAGE-MIGRATION-PASSED&quot;,
+      &quot;track&quot;: &quot;T+510m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Language migration passed&quot;,
+      &quot;river_index&quot;: 68
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-RAW-EVIDENCE-CAVEAT&quot;,
+      &quot;track&quot;: &quot;T+516m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Raw evidence caveat&quot;,
+      &quot;river_index&quot;: 69
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-X402-CAVEAT-RESOLVED-SEPARATELY&quot;,
+      &quot;track&quot;: &quot;T+522m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; x402 caveat resolved separately&quot;,
+      &quot;river_index&quot;: 70
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-LATENCY-VARIANCE-ONLY&quot;,
+      &quot;track&quot;: &quot;T+528m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Latency variance only&quot;,
+      &quot;river_index&quot;: 71
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-OPERATOR-TAKEAWAY&quot;,
+      &quot;track&quot;: &quot;T+534m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Operator takeaway&quot;,
+      &quot;river_index&quot;: 72
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-ROUTE-CONTRACT-EXTRACTION&quot;,
+      &quot;track&quot;: &quot;T+298m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Route Contract Extraction&quot;,
+      &quot;river_index&quot;: 73
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-PRICED-PUBLIC-EQUIVALENTS&quot;,
+      &quot;track&quot;: &quot;T+306m&quot;,
+      &quot;bread&quot;: &quot;Results Audit Snapshot &gt; Priced Public Equivalents&quot;,
+      &quot;river_index&quot;: 74
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-GET-V1-COMPANY-REPORT-TICKER&quot;,
+      &quot;track&quot;: &quot;T+540m&quot;,
+      &quot;bread&quot;: &quot;OpenAPI Route Contract Snapshot &gt; GET /v1/company-report/{ticker}&quot;,
+      &quot;river_index&quot;: 75
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-POST-V1-BUNDLES-COMPANY-REPORT&quot;,
+      &quot;track&quot;: &quot;T+546m&quot;,
+      &quot;bread&quot;: &quot;OpenAPI Route Contract Snapshot &gt; POST /v1/bundles/company-report&quot;,
+      &quot;river_index&quot;: 76
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-GET-V1-MORNING-BRIEF-NATURAL&quot;,
+      &quot;track&quot;: &quot;T+552m&quot;,
+      &quot;bread&quot;: &quot;OpenAPI Route Contract Snapshot &gt; GET /v1/morning-brief/natural&quot;,
+      &quot;river_index&quot;: 77
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-GET-V1-READINESS&quot;,
+      &quot;track&quot;: &quot;T+558m&quot;,
+      &quot;bread&quot;: &quot;OpenAPI Route Contract Snapshot &gt; GET /v1/readiness&quot;,
+      &quot;river_index&quot;: 78
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-DUPLICATE-ARTIFACT-CONTROL&quot;,
+      &quot;track&quot;: &quot;T+564m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Duplicate artifact control&quot;,
+      &quot;river_index&quot;: 79
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-CONTRACT-VS-LIVE-PROOF&quot;,
+      &quot;track&quot;: &quot;T+570m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Contract vs live proof&quot;,
+      &quot;river_index&quot;: 80
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-COMPACT-PAYLOAD-DISCLOSURE&quot;,
+      &quot;track&quot;: &quot;T+576m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Compact payload disclosure&quot;,
+      &quot;river_index&quot;: 81
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-MACHINE-PATH-PRESERVATION&quot;,
+      &quot;track&quot;: &quot;T+582m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Machine-path preservation&quot;,
+      &quot;river_index&quot;: 82
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-LATENCY-CLASSES-FROM-PRIOR-SMOKE&quot;,
+      &quot;track&quot;: &quot;T+314m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Latency Classes From Prior Smoke&quot;,
+      &quot;river_index&quot;: 83
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-RENDERER-FIELDS-TO-PRESERVE&quot;,
+      &quot;track&quot;: &quot;T+322m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Renderer Fields To Preserve&quot;,
+      &quot;river_index&quot;: 84
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-CONTEXT-FOOTPRINT-FINDING&quot;,
+      &quot;track&quot;: &quot;T+588m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Context footprint finding&quot;,
+      &quot;river_index&quot;: 85
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-CANONICAL-SUMMARY-TARGET&quot;,
+      &quot;track&quot;: &quot;T+594m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Canonical summary target&quot;,
+      &quot;river_index&quot;: 86
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-X-MCP-TOOLS-DISCOVERABILITY&quot;,
+      &quot;track&quot;: &quot;T+600m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; x_mcp_tools discoverability&quot;,
+      &quot;river_index&quot;: 87
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-MORNING-BRIEF-UX&quot;,
+      &quot;track&quot;: &quot;T+606m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Morning Brief UX&quot;,
+      &quot;river_index&quot;: 88
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-CANONICAL-DEDUPE-RULE&quot;,
+      &quot;track&quot;: &quot;T+330m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Canonical Dedupe Rule&quot;,
+      &quot;river_index&quot;: 89
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-CONTRACT-HASH-CANONICALIZATION&quot;,
+      &quot;track&quot;: &quot;T+338m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Contract Hash Canonicalization&quot;,
+      &quot;river_index&quot;: 90
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-INTERFACE-HASH&quot;,
+      &quot;track&quot;: &quot;T+612m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; interface_hash&quot;,
+      &quot;river_index&quot;: 91
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-PAYMENT-HASH&quot;,
+      &quot;track&quot;: &quot;T+618m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; payment_hash&quot;,
+      &quot;river_index&quot;: 92
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-DOCUMENTATION-HASH&quot;,
+      &quot;track&quot;: &quot;T+624m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; documentation_hash&quot;,
+      &quot;river_index&quot;: 93
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-HASH-BOUNDARY&quot;,
+      &quot;track&quot;: &quot;T+630m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Hash boundary&quot;,
+      &quot;river_index&quot;: 94
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-ROUTE-CONTRACT-PREIMAGE-SHAPE&quot;,
+      &quot;track&quot;: &quot;T+346m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Route Contract Preimage Shape&quot;,
+      &quot;river_index&quot;: 95
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-SPLIT-HASH-MANIFEST&quot;,
+      &quot;track&quot;: &quot;T+354m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Split Hash Manifest&quot;,
+      &quot;river_index&quot;: 96
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-ROUTE-STRING-SENTINEL-HASHES&quot;,
+      &quot;track&quot;: &quot;T+362m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Route-String Sentinel Hashes&quot;,
+      &quot;river_index&quot;: 97
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-SENTINEL-BOUNDARY&quot;,
+      &quot;track&quot;: &quot;T+370m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Sentinel Boundary&quot;,
+      &quot;river_index&quot;: 98
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-DEDUPE-DECISION-MATRIX&quot;,
+      &quot;track&quot;: &quot;T+636m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Dedupe decision matrix&quot;,
+      &quot;river_index&quot;: 99
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-CANONICAL-SELECTION-PRIORITY&quot;,
+      &quot;track&quot;: &quot;T+642m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Canonical selection priority&quot;,
+      &quot;river_index&quot;: 100
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-APPLIED-OPENAPI-GROUP&quot;,
+      &quot;track&quot;: &quot;T+648m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Applied OpenAPI group&quot;,
+      &quot;river_index&quot;: 101
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-APPLIED-LIVE-AUDIT-GROUP&quot;,
+      &quot;track&quot;: &quot;T+654m&quot;,
+      &quot;bread&quot;: &quot;Context And Payload Hygiene &gt; Applied live-audit group&quot;,
+      &quot;river_index&quot;: 102
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-BASE-X402-ROUTES&quot;,
+      &quot;track&quot;: &quot;T+660m&quot;,
+      &quot;bread&quot;: &quot;Route / Tool Drift Watchlist &gt; Base x402 routes&quot;,
+      &quot;river_index&quot;: 103
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-MPP-MIRROR-ROUTES&quot;,
+      &quot;track&quot;: &quot;T+666m&quot;,
+      &quot;bread&quot;: &quot;Route / Tool Drift Watchlist &gt; MPP mirror routes&quot;,
+      &quot;river_index&quot;: 104
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-MCP-TOOLS&quot;,
+      &quot;track&quot;: &quot;T+672m&quot;,
+      &quot;bread&quot;: &quot;Route / Tool Drift Watchlist &gt; MCP tools&quot;,
+      &quot;river_index&quot;: 105
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-CARD-COMPOSITE-BUNDLES&quot;,
+      &quot;track&quot;: &quot;T+678m&quot;,
+      &quot;bread&quot;: &quot;Route / Tool Drift Watchlist &gt; Composite bundles&quot;,
+      &quot;river_index&quot;: 106
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE&quot;,
+      &quot;track&quot;: &quot;T+378m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; Second-ticker company-report smoke&quot;,
+      &quot;river_index&quot;: 107
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON&quot;,
+      &quot;track&quot;: &quot;T+386m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; REST / MCP / bundle drift comparison&quot;,
+      &quot;river_index&quot;: 108
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES&quot;,
+      &quot;track&quot;: &quot;T+394m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; Expand public x402 probes&quot;,
+      &quot;river_index&quot;: 109
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION&quot;,
+      &quot;track&quot;: &quot;T+402m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; App renderer regression&quot;,
+      &quot;river_index&quot;: 110
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-4-CONFIRM-THE-OPENAPI-AGGREGATE-ROUTE&quot;,
+      &quot;track&quot;: &quot;T+410m&quot;,
+      &quot;bread&quot;: &quot;Live Checks &gt; Confirm the OpenAPI aggregate route and language contract&quot;,
+      &quot;river_index&quot;: 111
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-4-PROBE-PUBLIC-X402-BEHAVIOR&quot;,
+      &quot;track&quot;: &quot;T+418m&quot;,
+      &quot;bread&quot;: &quot;Live Checks &gt; Probe public x402 behavior&quot;,
+      &quot;river_index&quot;: 112
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-4-RUN-READINESS&quot;,
+      &quot;track&quot;: &quot;T+426m&quot;,
+      &quot;bread&quot;: &quot;Live Checks &gt; Run readiness&quot;,
+      &quot;river_index&quot;: 113
+    },
+    {
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-4-INSPECT-MCP-DISCOVERY&quot;,
+      &quot;track&quot;: &quot;T+434m&quot;,
+      &quot;bread&quot;: &quot;Live Checks &gt; Inspect MCP discovery&quot;,
+      &quot;river_index&quot;: 114
+    }
+  ],
+  &quot;timeline_entries&quot;: [
+    {
+      &quot;river_index&quot;: 28,
+      &quot;date&quot;: &quot;P0&quot;,
+      &quot;title&quot;: &quot;Universal evidence contract&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT&quot;,
+      &quot;track&quot;: &quot;T+098m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Universal evidence contract&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Add one mandatory provenance object across readiness, company report, daily changes, evidence drilldowns, alpha signals, fundamentals, peer ranking, covenant stress, and SPECTRA. Missing fields should return null , not disappear.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Fields: captured_at , observed_at , published_at , data_as_of , computed_at_utc , source_date , accession_number , evidence_ref , evidence_hash , schema_version , contract_version .&quot;,
+        &quot;Add semantic daily-change deltas with field_path , prior_value , new_value , delta_type , threshold_crossed , materiality_score , and evidence identifiers.&quot;,
+        &quot;Document whether evidence refs are stable, what evidence hashes cover, how pagination affects hashes, and whether refs can be replayed after refresh.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 29,
+      &quot;date&quot;: &quot;P1&quot;,
+      &quot;title&quot;: &quot;Scale and freshness ergonomics&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS&quot;,
+      &quot;track&quot;: &quot;T+106m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Scale and freshness ergonomics&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Add preflight and batch surfaces so clients do not need repeated paid single-name calls just to discover coverage, freshness, or availability.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Add GET /v1/companies , GET /v1/companies?changed_since=... , and GET /v1/ticker-freshness/{ticker} .&quot;,
+        &quot;Extend company-report bundle support to tickers: [] with per-ticker result, partial flag, provenance, and error state.&quot;,
+        &quot;Add snapshot metadata for company reports: snapshot_id , start/end timestamps, section count, max section skew, and whether sections share the same data-as-of boundary.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 30,
+      &quot;date&quot;: &quot;P2&quot;,
+      &quot;title&quot;: &quot;Monitoring and contract maturity&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY&quot;,
+      &quot;track&quot;: &quot;T+114m&quot;,
+      &quot;bread&quot;: &quot;Evidence Infrastructure Backlog &gt; Monitoring and contract maturity&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Move from pull-only reports toward durable monitoring and explicit field stability.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Add webhook/subscription routes for material changes with event IDs, delivery signatures, replay cursors, field deltas, provenance, and evidence refs.&quot;,
+        &quot;Add GET /v1/contract/changelog and GET /v1/contract/fields for stable field paths, deprecation windows, migration notes, and versioned daily-change fields.&quot;,
+        &quot;Document route classes: free discovery, cheap freshness, paid compact, paid evidence, and internal/backend-relayed access.&quot;,
+        &quot;Constrain renderer posture values to non-advice labels such as constructive_evidence_screen , watchlist_candidate , risk_elevated , provenance_limited , data_stale , and insufficient_evidence .&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 3,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;P1 standard provenance source implementation&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-P1-PROV-730DEF3&quot;,
+      &quot;track&quot;: &quot;T+22m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; P1 standard provenance source implementation&quot;,
+      &quot;commit&quot;: &quot;730def3&quot;,
+      &quot;summary&quot;: &quot;Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.&quot;,
+        &quot;Successful JSON object responses now receive a top-level provenance object with route identity, source_date , computed_at_utc , ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.&quot;,
+        &quot;If a route already emits provenance , the envelope preserves existing route-specific keys and fills only missing standard keys.&quot;,
+        &quot;GET /v1/contract/fields now documents the standard provenance field set, merge policy, and derived-evidence policy.&quot;,
+        &quot;Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 730def3 . Backend rollout is separate from this changelog publication.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 2,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;P0 contract-hardening source implementation&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-P0-CONTRACT-7A80E86&quot;,
+      &quot;track&quot;: &quot;T+14m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; P0 contract-hardening source implementation&quot;,
+      &quot;commit&quot;: &quot;7a80e86&quot;,
+      &quot;summary&quot;: &quot;Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.&quot;,
+        &quot;The protected no-ticker set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .&quot;,
+        &quot;/v1/pricing route entries now include lifecycle and scope metadata: path_template , status , deprecated , replaced_by , billable , and route_scope .&quot;,
+        &quot;Successful protected /v1/ JSON object responses now include billing_status at the top level and inside response_metadata .&quot;,
+        &quot;Structured not_found payloads now include reason_code , billing_behavior=not_charged , and cost_usd=0 .&quot;,
+        &quot;Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 7a80e86 . Backend rollout is separate from this changelog publication.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 33,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Pricing discovery implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+122m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Pricing discovery implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added the first live-loop contract slice in backend source: GET /v1/pricing .&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added the first live-loop contract slice in backend source: GET /v1/pricing .&quot;,
+        &quot;The route is designed as free discovery and returns a machine-readable x402 route catalog with route_uri , HTTP method, price_usd , billing mode, ticker requirements, and pricing source.&quot;,
+        &quot;The pricing contract declares cost_usd as the canonical billed-response ledger field and treats quoted_cost_usd / actual_cost_usd as supplemental aliases when route-specific flows emit them.&quot;,
+        &quot;The served OpenAPI document now publishes /v1/pricing as a free discovery route in the backend source.&quot;,
+        &quot;Verification completed locally with targeted pricing/help/OpenAPI tests and the full go test ./cmd/search-gateway/... package suite. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 34,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Canonical billed-response fields implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION&quot;,
+      &quot;track&quot;: &quot;T+130m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Canonical billed-response fields implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added a shared backend billing normalizer for protected priced /v1/ routes.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added a shared backend billing normalizer for protected priced /v1/ routes.&quot;,
+        &quot;Successful JSON object responses now receive canonical numeric cost_usd plus quoted_cost_usd , actual_cost_usd , billing_mode , billing_contract_version , route identity, payment status, and request ID.&quot;,
+        &quot;x402 paid responses preserve route price as both quote and actual cost. Internal API-key and free-tier grants report actual_cost_usd=0 while preserving the route quote for budgeting.&quot;,
+        &quot;Errors, arrays, non-JSON bodies, and unpriced free discovery routes such as /v1/pricing are not rewritten by the billing normalizer.&quot;,
+        &quot;Verification completed locally with focused billing/pricing/help/OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 35,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Structured not-found implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+138m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Structured not-found implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added a shared structured not_found response contract in backend source.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added a shared structured not_found response contract in backend source.&quot;,
+        &quot;Route/ticker misses now expose status=not_found , reason , coverage_state , retry_after_days , route_uri , ticker or request key, request ID, and not_found_contract_version .&quot;,
+        &quot;SPECTRA misses still have an explicit semantics path: reason=historical_field_map_contract_missing , coverage_state=not_available_for_issuer , and a seven-day retry hint.&quot;,
+        &quot;The shape is also wired into fundamentals, alpha signals, covenant stress, peer ranking, daily changes, daily-change evidence, and field-map misses.&quot;,
+        &quot;Verification completed locally with focused not-found, billing, pricing, help, and OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 36,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;IREN SPECTRA coverage repair&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR&quot;,
+      &quot;track&quot;: &quot;T+146m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; IREN SPECTRA coverage repair&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss.&quot;,
+        &quot;The new IREN contract uses mode=atlas7_historical_spectra , version=SPECTRA-FIELD-MAP-v1 , company IREN Limited , CIK 0001878848 , and latest source date 2026-04-24 .&quot;,
+        &quot;The source lineage is preserved in artifacts/spectra-field-map/IREN/atlas_history_source.json with three real ATLAS-7 atlas-history rows.&quot;,
+        &quot;Added a regression test that serves the IREN public contract and asserts real_data=true with three returned SPECTRA points.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 37,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Universe route contract implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+154m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Universe route contract implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source.&quot;,
+        &quot;The no-ticker route set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .&quot;,
+        &quot;OpenAPI operations now carry x-deltasignal-route_scope=universe , x-deltasignal-path_ticker_free=true , and x-deltasignal-ticker_segment=forbidden .&quot;,
+        &quot;The help response includes an explicit policy: do not append /{ticker} , /UNIVERSE , or any other path segment to these routes.&quot;,
+        &quot;Verification completed locally with focused help/OpenAPI/pricing/billing/not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 38,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Field contract discovery implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+162m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Field contract discovery implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added free backend discovery route GET /v1/contract/fields .&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added free backend discovery route GET /v1/contract/fields .&quot;,
+        &quot;The field contract returns deltasignal-field-contract-v1 , the canonical billing field cost_usd , not-found contract metadata, route aliases, and the path-ticker-free universe route set.&quot;,
+        &quot;The stable parser-path list includes the stable readiness, company-report, daily-changes, generic provenance, and stress aliases such as stress_50pct and stressed_leverage_50pct .&quot;,
+        &quot;The served OpenAPI and help response now publish /v1/contract/fields as a free support/discovery route in backend source.&quot;,
+        &quot;Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 39,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Response metadata envelope implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+170m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Response metadata envelope implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path.&quot;,
+        &quot;Successful JSON object payloads now receive top-level metadata fields and a response_metadata object.&quot;,
+        &quot;The envelope includes request_id , route_uri , source_date , computed_at_utc , ticker , cost_usd , billing_mode , cache_hit , payload_mode , quality_flags , caveats , evidence_hash , evidence_hash_version , and latency_ms .&quot;,
+        &quot;Unavailable values are emitted as null or empty arrays where appropriate, so automation can parse a stable shape.&quot;,
+        &quot;Verification completed locally with focused billing, field-contract, help, OpenAPI, pricing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 40,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Coverage discovery implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+178m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Coverage discovery implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Extended /companies in backend source with deltasignal-coverage-v1 .&quot;,
+      &quot;bullets&quot;: [
+        &quot;Extended /companies in backend source with deltasignal-coverage-v1 .&quot;,
+        &quot;Each issuer row now includes ticker , lookup_ticker , cik , entity_name , supported_routes , unavailable_routes , last_source_date , and coverage_status .&quot;,
+        &quot;The field-contract route documents the stable coverage discovery fields for automation.&quot;,
+        &quot;This lets clients preflight supported names and route availability before spending on paid drilldowns.&quot;,
+        &quot;Verification completed locally with focused companies, field-contract, help, OpenAPI, pricing, billing, metadata, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 41,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Large-response handling implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+186m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Large-response handling implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added public help guidance for large DeltaSignal responses in backend source.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added public help guidance for large DeltaSignal responses in backend source.&quot;,
+        &quot;The help route now warns that company-report and daily-changes payloads can exceed 64 KB.&quot;,
+        &quot;The guidance calls out the AgentCash/Node path specifically: do not pipe large npx agentcash fetch stdout directly into another process.&quot;,
+        &quot;Recommended automation patterns are file redirects, compact or paginated routes, and clients that fully drain stdout before process exit.&quot;,
+        &quot;Verification completed locally with focused help and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 42,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Daily-change field-delta implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION&quot;,
+      &quot;track&quot;: &quot;T+194m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Daily-change field-delta implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source.&quot;,
+        &quot;The interim shape exposes CompanyFacts changed tags as field_deltas with field_name , source_date , ticker/CIK, threshold_crossed , and evidence_ref .&quot;,
+        &quot;prior_value , new_value , delta , and percent_delta are emitted as null unless the source row carries those values.&quot;,
+        &quot;The field-contract route documents this interim status so clients can consume it without mistaking tag-level deltas for numeric value changes.&quot;,
+        &quot;Verification completed locally with focused daily field-delta, field-contract, help, OpenAPI, pricing, billing, metadata, not-found, and coverage tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 43,
+      &quot;date&quot;: &quot;May 31, 2026&quot;,
+      &quot;title&quot;: &quot;Evidence replay semantics implementation track&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK&quot;,
+      &quot;track&quot;: &quot;T+202m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Evidence replay semantics implementation track&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source.&quot;,
+        &quot;The contract documents evidence_ref stability for the same route, normalized arguments, source date, limit, and offset.&quot;,
+        &quot;It documents evidence_hash as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.&quot;,
+        &quot;It marks page.next_args , page.next_offset , page.next_tool , and daily-change evidence handles as replayable while the referenced source date remains available.&quot;,
+        &quot;Verification completed locally with focused field-contract and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 44,
+      &quot;date&quot;: &quot;May 28, 2026&quot;,
+      &quot;title&quot;: &quot;Public contract cleanup re-verified&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED&quot;,
+      &quot;track&quot;: &quot;T+210m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Public contract cleanup re-verified&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.&quot;,
+        &quot;POST /mcp , GET /v1/readiness , GET /v1/company-report/{ticker} , and POST /v1/bundles/company-report are present in the public route contract.&quot;,
+        &quot;The alpha language contract now exposes research_posture and no longer exposes short_recommendation .&quot;,
+        &quot;Unpaid public GET /v1/readiness returns HTTP 402 with a JSON body containing error=payment_required , the route name, retry guidance, docs URL, and an x402 challenge pointer.&quot;,
+        &quot;Unpaid public GET /v1/company-report/MSTR?output_mode=compact returns HTTP 402 with the same developer-readable x402 pattern and a Base USDC challenge header.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 45,
+      &quot;date&quot;: &quot;May 27, 2026&quot;,
+      &quot;title&quot;: &quot;Company Report became a true OpenAPI-visible aggregate&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE&quot;,
+      &quot;track&quot;: &quot;T+218m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report .&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report .&quot;,
+        &quot;The aggregate returns readiness, company fundamentals, alpha signals, peer ranking, covenant stress, and advisory SPECTRA field-map support in one bounded response.&quot;,
+        &quot;Public unauthenticated calls return the expected 402 x402 payment challenge.&quot;,
+        &quot;Internal live MSTR verification returned status=ok , partial=false , and 6 of 6 internal legs succeeded.&quot;,
+        &quot;Snapshot values from that verification: Strategy Inc, source date 2026-05-27 , alpha score 69 , peer rank 152/215 , stress live_stress_50pct=0.2566 , risk tier LOW , and SPECTRA mode atlas7_historical_spectra .&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 46,
+      &quot;date&quot;: &quot;May 16, 2026&quot;,
+      &quot;title&quot;: &quot;StrategiX Visual MCP and finished DeltaSignal deliverables&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED&quot;,
+      &quot;track&quot;: &quot;T+226m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.&quot;,
+        &quot;Added finished DeltaSignal Intelligence Deliverables pricing, including a single daily Morning Brief PDF, monthly daily-brief subscription, and heavy multi-issuer deep brief.&quot;,
+        &quot;Kept StrategiX execution internal-beta gated so public users are not asked to pay for tools that are not public-paid yet.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 47,
+      &quot;date&quot;: &quot;May 14, 2026&quot;,
+      &quot;title&quot;: &quot;Historical source dates, SPECTRA, and ATLAS-7 calculation history&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND&quot;,
+      &quot;track&quot;: &quot;T+234m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.&quot;,
+        &quot;Added first-class calculation-history surfaces: GET /v1/atlas7/calculation-history , GET /mpp/v1/atlas7/calculation-history , and MCP deltasignal_atlas7_calculation_history .&quot;,
+        &quot;Calculation-history rows preserve covenant, fundamentals, peer, alpha, SPECTRA input, source fields, payload hash, and evidence hash fields.&quot;,
+        &quot;MSTR SPECTRA was backfilled from real ATLAS history and exposed through GET /v1/spectra-field-map/MSTR .&quot;,
+        &quot;Company Report MCP was expanded to six legs by including SPECTRA as an advisory field-map support leg.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 48,
+      &quot;date&quot;: &quot;May 14, 2026&quot;,
+      &quot;title&quot;: &quot;Audit status, Morning Brief context, and public MCP discovery&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT&quot;,
+      &quot;track&quot;: &quot;T+242m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status .&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status .&quot;,
+        &quot;Audit status reports freshness, last successful run, issuer count, operation count, failure counts, artifact prefix, and job metadata.&quot;,
+        &quot;Live audit verification reported 215 issuers, 1,935 operations, 0 failed operations, 0 historical failures, and 0 composite failures.&quot;,
+        &quot;Morning Brief was updated with alpha board audit context so first-time users can see board scope, issuer mix, low-quality demotions, and caveats.&quot;,
+        &quot;Public MCP discovery was opened before payment: initialize and tools/list stay inspectable, while tools/call remains protected by x402, API key, or an explicit free-tier grant.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 49,
+      &quot;date&quot;: &quot;May 13-14, 2026&quot;,
+      &quot;title&quot;: &quot;Full-universe regression and issuer identity hardening&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER&quot;,
+      &quot;track&quot;: &quot;T+250m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Full-universe regression and issuer identity hardening&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.&quot;,
+        &quot;Extended company report and quick ticker check composite coverage across the issuer universe.&quot;,
+        &quot;Canonicalized Strategy Inc as MSTR across issuer routes, ATLAS history rows, supported-company search, and x402 examples.&quot;,
+        &quot;Canonicalized ambiguous Delta Signal issuer tickers and CIK aliases so public-company identity stays stable across CompanyFacts and ATLAS materialized rows.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 50,
+      &quot;date&quot;: &quot;May 9-12, 2026&quot;,
+      &quot;title&quot;: &quot;Natural Language briefs and compact evidence contracts&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT&quot;,
+      &quot;track&quot;: &quot;T+258m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Natural Language briefs and compact evidence contracts&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.&quot;,
+        &quot;Renderer metadata includes mode, validation status, fallback reason, compiler/version fields, evidence hash where available, latency, tokens, cache status, and billing mode.&quot;,
+        &quot;Morning Brief Natural was updated to render returned alpha board evidence with issuer identity status, caveats, and non-advice language.&quot;,
+        &quot;Default monitoring outputs stay compact, with raw evidence exposed through explicit drilldown routes instead of hidden client-side fan-out.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 51,
+      &quot;date&quot;: &quot;May 1-8, 2026&quot;,
+      &quot;title&quot;: &quot;Composite workflows, route discovery, and payment metadata&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND&quot;,
+      &quot;track&quot;: &quot;T+266m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Composite workflows, route discovery, and payment metadata&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.&quot;,
+        &quot;Added Arazzo workflow definitions so agents can inspect scenario plans before execution.&quot;,
+        &quot;Updated OpenAPI and route metadata for public clients that discover paid resources before execution.&quot;,
+        &quot;Improved x402 and MPP payment metadata so AgentCash-style crawlers can identify route prices and protocol families.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 52,
+      &quot;date&quot;: &quot;April 24-30, 2026&quot;,
+      &quot;title&quot;: &quot;Public x402 launch and Wardenclyffe/OpenAPI contract rollout&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE&quot;,
+      &quot;track&quot;: &quot;T+274m&quot;,
+      &quot;bread&quot;: &quot;Improvement Timeline &gt; Public x402 launch and Wardenclyffe/OpenAPI contract rollout&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.&quot;,
+      &quot;bullets&quot;: [
+        &quot;Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.&quot;,
+        &quot;Raised public paid routes from test defaults to the launch pricing schedule.&quot;,
+        &quot;Rolled out the Wardenclyffe/help/OpenAPI contract with updated readiness, help, schema shape, glossary, and debt coverage fields.&quot;,
+        &quot;Added MPP discovery alongside x402 for compatible public-agent marketplaces and registry crawlers.&quot;
+      ]
+    },
+    {
+      &quot;river_index&quot;: 107,
+      &quot;date&quot;: &quot;Priority 1&quot;,
+      &quot;title&quot;: &quot;Second-ticker company-report smoke&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE&quot;,
+      &quot;track&quot;: &quot;T+378m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; Second-ticker company-report smoke&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Repeat the company-report smoke with a second ticker from the latest daily-change slice to prove the aggregate is not only working for one issuer.&quot;,
+      &quot;bullets&quot;: []
+    },
+    {
+      &quot;river_index&quot;: 108,
+      &quot;date&quot;: &quot;Priority 2&quot;,
+      &quot;title&quot;: &quot;REST / MCP / bundle drift comparison&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON&quot;,
+      &quot;track&quot;: &quot;T+386m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; REST / MCP / bundle drift comparison&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Compare OpenAPI route inventory, MCP tools/list , and composite bundle outputs so route availability, tool names, prices, and payload modes stay synchronized.&quot;,
+      &quot;bullets&quot;: []
+    },
+    {
+      &quot;river_index&quot;: 109,
+      &quot;date&quot;: &quot;Priority 3&quot;,
+      &quot;title&quot;: &quot;Expand public x402 probes&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES&quot;,
+      &quot;track&quot;: &quot;T+394m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; Expand public x402 probes&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Readiness and company-report public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to /v1/morning-brief/natural and any new paid public route.&quot;,
+      &quot;bullets&quot;: []
+    },
+    {
+      &quot;river_index&quot;: 110,
+      &quot;date&quot;: &quot;Priority 4&quot;,
+      &quot;title&quot;: &quot;App renderer regression&quot;,
+      &quot;tripcode&quot;: &quot;ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION&quot;,
+      &quot;track&quot;: &quot;T+402m&quot;,
+      &quot;bread&quot;: &quot;Next Verification Priorities &gt; App renderer regression&quot;,
+      &quot;commit&quot;: null,
+      &quot;summary&quot;: &quot;Verify SwiftUI cards preserve source_date , computed_at_utc , payload_mode , compact flags, caveats, evidence references, x402 equivalent price, no-payment boundary, and non-advice language.&quot;,
+      &quot;bullets&quot;: []
+    }
+  ]
+}</code></pre>
+    </section>
+  </main>
+  <footer>
+    <p><a href="./changelog.html">Human changelog</a> | <a href="./index.html">Home</a> | <a href="./llms.txt">llms.txt</a> | <a href="https://api.aitrailblazer.net/openapi.json">OpenAPI</a></p>
+  </footer>
+  <script type="application/json" id="changelog-llm-json">
+{
+  "artifact": "deltasignal_atlas7_changelog_llm",
+  "version": "changelog-llm-v1",
+  "last_updated": "2026-05-31",
+  "stats": {
+    "tracked_changes": 114,
+    "timeline_entries": 29,
+    "unique_tripcodes": 112,
+    "breadcrumb_chips": 114,
+    "visible_commit_references": 4,
+    "unique_source_commits": [
+      "730def3",
+      "7a80e86"
+    ]
+  },
+  "tracking_river": [
+    {
+      "tripcode": "ATLAS-CARD-LIVE-LOOP-API-CONTRACT",
+      "track": "T+06m",
+      "bread": "Latest Live Improvements > Live-Loop API Contract Deployed",
+      "river_index": 1
+    },
+    {
+      "tripcode": "ATLAS-P0-CONTRACT-7A80E86",
+      "track": "T+14m",
+      "commit": "7a80e86",
+      "bread": "Latest Live Improvements > P0 Contract Hardening Slice",
+      "river_index": 2
+    },
+    {
+      "tripcode": "ATLAS-P1-PROV-730DEF3",
+      "track": "T+22m",
+      "commit": "730def3",
+      "bread": "Latest Live Improvements > Standard Provenance Slice",
+      "river_index": 3
+    },
+    {
+      "tripcode": "ATLAS-CARD-ATOMIC-COMPANY-REPORT",
+      "track": "T+30m",
+      "bread": "Latest Live Improvements > Atomic Company Report",
+      "river_index": 4
+    },
+    {
+      "tripcode": "ATLAS-CARD-OPENAPI-DISCOVERY-FIXED",
+      "track": "T+38m",
+      "bread": "Latest Live Improvements > OpenAPI Discovery Fixed",
+      "river_index": 5
+    },
+    {
+      "tripcode": "ATLAS-CARD-RESEARCH-POSTURE-CONTRACT",
+      "track": "T+46m",
+      "bread": "Latest Live Improvements > Research Posture Contract",
+      "river_index": 6
+    },
+    {
+      "tripcode": "ATLAS-CARD-X402-ERROR-BODY",
+      "track": "T+54m",
+      "bread": "Latest Live Improvements > x402 Error Body",
+      "river_index": 7
+    },
+    {
+      "tripcode": "ATLAS-CARD-REAL-MSTR-DATA-PROBE",
+      "track": "T+62m",
+      "bread": "Latest Live Improvements > Real MSTR Data Probe",
+      "river_index": 8
+    },
+    {
+      "tripcode": "ATLAS-CARD-IREN-SPECTRA-COVERAGE",
+      "track": "T+70m",
+      "bread": "Latest Live Improvements > IREN SPECTRA Coverage",
+      "river_index": 9
+    },
+    {
+      "tripcode": "ATLAS-CARD-EVIDENCE-LAYER-FIRST",
+      "track": "T+78m",
+      "bread": "Latest Live Improvements > Evidence Layer First",
+      "river_index": 10
+    },
+    {
+      "tripcode": "ATLAS-CARD-SOLVED-AGGREGATE-ACCESS",
+      "track": "T+330m",
+      "bread": "Evidence Infrastructure Backlog > Solved: aggregate access",
+      "river_index": 11
+    },
+    {
+      "tripcode": "ATLAS-CARD-SOLVED-ROUTE-POSTURE",
+      "track": "T+336m",
+      "bread": "Evidence Infrastructure Backlog > Solved: route posture",
+      "river_index": 12
+    },
+    {
+      "tripcode": "ATLAS-CARD-PARTIAL-REPLAYABLE-EVIDENCE",
+      "track": "T+342m",
+      "bread": "Evidence Infrastructure Backlog > Partial: replayable evidence",
+      "river_index": 13
+    },
+    {
+      "tripcode": "ATLAS-CARD-OPEN-INFRASTRUCTURE-GRADE-EVIDENCE",
+      "track": "T+348m",
+      "bread": "Evidence Infrastructure Backlog > Open: infrastructure-grade evidence",
+      "river_index": 14
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-PRICING-DISCOVERY",
+      "track": "T+354m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: pricing discovery",
+      "river_index": 15
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-CANONICAL-BILLING-FIELDS",
+      "track": "T+360m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: canonical billing fields",
+      "river_index": 16
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-STRUCTURED-NOT-FOUND",
+      "track": "T+366m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: structured not-found",
+      "river_index": 17
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-IREN-SPECTRA-REPAIR",
+      "track": "T+372m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: IREN SPECTRA repair",
+      "river_index": 18
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-UNIVERSE-ROUTES-LOCKED",
+      "track": "T+378m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: universe routes locked",
+      "river_index": 19
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-FIELD-CONTRACT-DISCOVERY",
+      "track": "T+384m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: field contract discovery",
+      "river_index": 20
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-RESPONSE-METADATA-ENVELOPE",
+      "track": "T+390m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: response metadata envelope",
+      "river_index": 21
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-COVERAGE-DISCOVERY",
+      "track": "T+396m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: coverage discovery",
+      "river_index": 22
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-LARGE-RESPONSE-GUIDANCE",
+      "track": "T+402m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: large-response guidance",
+      "river_index": 23
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-DAILY-CHANGE-FIELD",
+      "track": "T+408m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: daily-change field deltas",
+      "river_index": 24
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-BACKEND-EVIDENCE-REPLAY-SEMANTICS",
+      "track": "T+414m",
+      "bread": "Evidence Infrastructure Backlog > Live backend: evidence replay semantics",
+      "river_index": 25
+    },
+    {
+      "tripcode": "ATLAS-CARD-SOURCE-UPDATE-ROUTE-SCOPE-ERRORS",
+      "track": "T+420m",
+      "bread": "Evidence Infrastructure Backlog > Source update: route-scope errors",
+      "river_index": 26
+    },
+    {
+      "tripcode": "ATLAS-CARD-SOURCE-UPDATE-STANDARD-PROVENANCE",
+      "track": "T+426m",
+      "bread": "Evidence Infrastructure Backlog > Source update: standard provenance",
+      "river_index": 27
+    },
+    {
+      "tripcode": "ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT",
+      "track": "T+098m",
+      "bread": "Evidence Infrastructure Backlog > Universal evidence contract",
+      "river_index": 28
+    },
+    {
+      "tripcode": "ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS",
+      "track": "T+106m",
+      "bread": "Evidence Infrastructure Backlog > Scale and freshness ergonomics",
+      "river_index": 29
+    },
+    {
+      "tripcode": "ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY",
+      "track": "T+114m",
+      "bread": "Evidence Infrastructure Backlog > Monitoring and contract maturity",
+      "river_index": 30
+    },
+    {
+      "tripcode": "ATLAS-P1-PROV-730DEF3",
+      "track": "T+22m",
+      "commit": "730def3",
+      "bread": "Improvement Timeline > P1 standard provenance source implementation",
+      "river_index": 31
+    },
+    {
+      "tripcode": "ATLAS-P0-CONTRACT-7A80E86",
+      "track": "T+14m",
+      "commit": "7a80e86",
+      "bread": "Improvement Timeline > P0 contract-hardening source implementation",
+      "river_index": 32
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK",
+      "track": "T+122m",
+      "bread": "Improvement Timeline > Pricing discovery implementation track",
+      "river_index": 33
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION",
+      "track": "T+130m",
+      "bread": "Improvement Timeline > Canonical billed-response fields implementation track",
+      "river_index": 34
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK",
+      "track": "T+138m",
+      "bread": "Improvement Timeline > Structured not-found implementation track",
+      "river_index": 35
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR",
+      "track": "T+146m",
+      "bread": "Improvement Timeline > IREN SPECTRA coverage repair",
+      "river_index": 36
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK",
+      "track": "T+154m",
+      "bread": "Improvement Timeline > Universe route contract implementation track",
+      "river_index": 37
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK",
+      "track": "T+162m",
+      "bread": "Improvement Timeline > Field contract discovery implementation track",
+      "river_index": 38
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK",
+      "track": "T+170m",
+      "bread": "Improvement Timeline > Response metadata envelope implementation track",
+      "river_index": 39
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK",
+      "track": "T+178m",
+      "bread": "Improvement Timeline > Coverage discovery implementation track",
+      "river_index": 40
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK",
+      "track": "T+186m",
+      "bread": "Improvement Timeline > Large-response handling implementation track",
+      "river_index": 41
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION",
+      "track": "T+194m",
+      "bread": "Improvement Timeline > Daily-change field-delta implementation track",
+      "river_index": 42
+    },
+    {
+      "tripcode": "ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK",
+      "track": "T+202m",
+      "bread": "Improvement Timeline > Evidence replay semantics implementation track",
+      "river_index": 43
+    },
+    {
+      "tripcode": "ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED",
+      "track": "T+210m",
+      "bread": "Improvement Timeline > Public contract cleanup re-verified",
+      "river_index": 44
+    },
+    {
+      "tripcode": "ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE",
+      "track": "T+218m",
+      "bread": "Improvement Timeline > Company Report became a true OpenAPI-visible aggregate",
+      "river_index": 45
+    },
+    {
+      "tripcode": "ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED",
+      "track": "T+226m",
+      "bread": "Improvement Timeline > StrategiX Visual MCP and finished DeltaSignal deliverables",
+      "river_index": 46
+    },
+    {
+      "tripcode": "ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND",
+      "track": "T+234m",
+      "bread": "Improvement Timeline > Historical source dates, SPECTRA, and ATLAS-7 calculation history",
+      "river_index": 47
+    },
+    {
+      "tripcode": "ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT",
+      "track": "T+242m",
+      "bread": "Improvement Timeline > Audit status, Morning Brief context, and public MCP discovery",
+      "river_index": 48
+    },
+    {
+      "tripcode": "ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER",
+      "track": "T+250m",
+      "bread": "Improvement Timeline > Full-universe regression and issuer identity hardening",
+      "river_index": 49
+    },
+    {
+      "tripcode": "ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT",
+      "track": "T+258m",
+      "bread": "Improvement Timeline > Natural Language briefs and compact evidence contracts",
+      "river_index": 50
+    },
+    {
+      "tripcode": "ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND",
+      "track": "T+266m",
+      "bread": "Improvement Timeline > Composite workflows, route discovery, and payment metadata",
+      "river_index": 51
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE",
+      "track": "T+274m",
+      "bread": "Improvement Timeline > Public x402 launch and Wardenclyffe/OpenAPI contract rollout",
+      "river_index": 52
+    },
+    {
+      "tripcode": "ATLAS-CARD-LESS-CLIENT-STITCHING",
+      "track": "T+432m",
+      "bread": "What Changed For Builders > Less client stitching",
+      "river_index": 53
+    },
+    {
+      "tripcode": "ATLAS-CARD-BETTER-DISCOVERY",
+      "track": "T+438m",
+      "bread": "What Changed For Builders > Better discovery",
+      "river_index": 54
+    },
+    {
+      "tripcode": "ATLAS-CARD-BETTER-PROVENANCE",
+      "track": "T+444m",
+      "bread": "What Changed For Builders > Better provenance",
+      "river_index": 55
+    },
+    {
+      "tripcode": "ATLAS-CARD-CLEARER-SAFETY-BOUNDARY",
+      "track": "T+450m",
+      "bread": "What Changed For Builders > Clearer safety boundary",
+      "river_index": 56
+    },
+    {
+      "tripcode": "ATLAS-CARD-CLEANER-PUBLIC-CONTRACT",
+      "track": "T+456m",
+      "bread": "What Changed For Builders > Cleaner public contract",
+      "river_index": 57
+    },
+    {
+      "tripcode": "ATLAS-CARD-MORE-USEFUL-PAYMENT-FAILURES",
+      "track": "T+462m",
+      "bread": "What Changed For Builders > More useful payment failures",
+      "river_index": 58
+    },
+    {
+      "tripcode": "ATLAS-CARD-OPENAPI-CONTRACT-LAYER",
+      "track": "T+468m",
+      "bread": "Audit-Grade Validation Plan > OpenAPI contract layer",
+      "river_index": 59
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-EXECUTION-LAYER",
+      "track": "T+474m",
+      "bread": "Audit-Grade Validation Plan > Live execution layer",
+      "river_index": 60
+    },
+    {
+      "tripcode": "ATLAS-CARD-RENDERER-QA-LAYER",
+      "track": "T+480m",
+      "bread": "Audit-Grade Validation Plan > Renderer QA layer",
+      "river_index": 61
+    },
+    {
+      "tripcode": "ATLAS-CARD-PAYMENT-BOUNDARY-LAYER",
+      "track": "T+486m",
+      "bread": "Audit-Grade Validation Plan > Payment boundary layer",
+      "river_index": 62
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-COMPACT-VALIDATION-MATRIX",
+      "track": "T+282m",
+      "bread": "Audit-Grade Validation Plan > Compact Validation Matrix",
+      "river_index": 63
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-MCP-X402-CALL-LEDGER",
+      "track": "T+290m",
+      "bread": "Audit-Grade Validation Plan > MCP / x402 Call Ledger",
+      "river_index": 64
+    },
+    {
+      "tripcode": "ATLAS-CARD-OPENAPI-CONTRACT-PASSED",
+      "track": "T+492m",
+      "bread": "Results Audit Snapshot > OpenAPI contract passed",
+      "river_index": 65
+    },
+    {
+      "tripcode": "ATLAS-CARD-REQUIRED-ROUTES-PASSED",
+      "track": "T+498m",
+      "bread": "Results Audit Snapshot > Required routes passed",
+      "river_index": 66
+    },
+    {
+      "tripcode": "ATLAS-CARD-LIVE-MCP-SMOKE-PASSED",
+      "track": "T+504m",
+      "bread": "Results Audit Snapshot > Live MCP smoke passed",
+      "river_index": 67
+    },
+    {
+      "tripcode": "ATLAS-CARD-LANGUAGE-MIGRATION-PASSED",
+      "track": "T+510m",
+      "bread": "Results Audit Snapshot > Language migration passed",
+      "river_index": 68
+    },
+    {
+      "tripcode": "ATLAS-CARD-RAW-EVIDENCE-CAVEAT",
+      "track": "T+516m",
+      "bread": "Results Audit Snapshot > Raw evidence caveat",
+      "river_index": 69
+    },
+    {
+      "tripcode": "ATLAS-CARD-X402-CAVEAT-RESOLVED-SEPARATELY",
+      "track": "T+522m",
+      "bread": "Results Audit Snapshot > x402 caveat resolved separately",
+      "river_index": 70
+    },
+    {
+      "tripcode": "ATLAS-CARD-LATENCY-VARIANCE-ONLY",
+      "track": "T+528m",
+      "bread": "Results Audit Snapshot > Latency variance only",
+      "river_index": 71
+    },
+    {
+      "tripcode": "ATLAS-CARD-OPERATOR-TAKEAWAY",
+      "track": "T+534m",
+      "bread": "Results Audit Snapshot > Operator takeaway",
+      "river_index": 72
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-ROUTE-CONTRACT-EXTRACTION",
+      "track": "T+298m",
+      "bread": "Results Audit Snapshot > Route Contract Extraction",
+      "river_index": 73
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-PRICED-PUBLIC-EQUIVALENTS",
+      "track": "T+306m",
+      "bread": "Results Audit Snapshot > Priced Public Equivalents",
+      "river_index": 74
+    },
+    {
+      "tripcode": "ATLAS-CARD-GET-V1-COMPANY-REPORT-TICKER",
+      "track": "T+540m",
+      "bread": "OpenAPI Route Contract Snapshot > GET /v1/company-report/{ticker}",
+      "river_index": 75
+    },
+    {
+      "tripcode": "ATLAS-CARD-POST-V1-BUNDLES-COMPANY-REPORT",
+      "track": "T+546m",
+      "bread": "OpenAPI Route Contract Snapshot > POST /v1/bundles/company-report",
+      "river_index": 76
+    },
+    {
+      "tripcode": "ATLAS-CARD-GET-V1-MORNING-BRIEF-NATURAL",
+      "track": "T+552m",
+      "bread": "OpenAPI Route Contract Snapshot > GET /v1/morning-brief/natural",
+      "river_index": 77
+    },
+    {
+      "tripcode": "ATLAS-CARD-GET-V1-READINESS",
+      "track": "T+558m",
+      "bread": "OpenAPI Route Contract Snapshot > GET /v1/readiness",
+      "river_index": 78
+    },
+    {
+      "tripcode": "ATLAS-CARD-DUPLICATE-ARTIFACT-CONTROL",
+      "track": "T+564m",
+      "bread": "Context And Payload Hygiene > Duplicate artifact control",
+      "river_index": 79
+    },
+    {
+      "tripcode": "ATLAS-CARD-CONTRACT-VS-LIVE-PROOF",
+      "track": "T+570m",
+      "bread": "Context And Payload Hygiene > Contract vs live proof",
+      "river_index": 80
+    },
+    {
+      "tripcode": "ATLAS-CARD-COMPACT-PAYLOAD-DISCLOSURE",
+      "track": "T+576m",
+      "bread": "Context And Payload Hygiene > Compact payload disclosure",
+      "river_index": 81
+    },
+    {
+      "tripcode": "ATLAS-CARD-MACHINE-PATH-PRESERVATION",
+      "track": "T+582m",
+      "bread": "Context And Payload Hygiene > Machine-path preservation",
+      "river_index": 82
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-LATENCY-CLASSES-FROM-PRIOR-SMOKE",
+      "track": "T+314m",
+      "bread": "Context And Payload Hygiene > Latency Classes From Prior Smoke",
+      "river_index": 83
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-RENDERER-FIELDS-TO-PRESERVE",
+      "track": "T+322m",
+      "bread": "Context And Payload Hygiene > Renderer Fields To Preserve",
+      "river_index": 84
+    },
+    {
+      "tripcode": "ATLAS-CARD-CONTEXT-FOOTPRINT-FINDING",
+      "track": "T+588m",
+      "bread": "Context And Payload Hygiene > Context footprint finding",
+      "river_index": 85
+    },
+    {
+      "tripcode": "ATLAS-CARD-CANONICAL-SUMMARY-TARGET",
+      "track": "T+594m",
+      "bread": "Context And Payload Hygiene > Canonical summary target",
+      "river_index": 86
+    },
+    {
+      "tripcode": "ATLAS-CARD-X-MCP-TOOLS-DISCOVERABILITY",
+      "track": "T+600m",
+      "bread": "Context And Payload Hygiene > x_mcp_tools discoverability",
+      "river_index": 87
+    },
+    {
+      "tripcode": "ATLAS-CARD-MORNING-BRIEF-UX",
+      "track": "T+606m",
+      "bread": "Context And Payload Hygiene > Morning Brief UX",
+      "river_index": 88
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-CANONICAL-DEDUPE-RULE",
+      "track": "T+330m",
+      "bread": "Context And Payload Hygiene > Canonical Dedupe Rule",
+      "river_index": 89
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-CONTRACT-HASH-CANONICALIZATION",
+      "track": "T+338m",
+      "bread": "Context And Payload Hygiene > Contract Hash Canonicalization",
+      "river_index": 90
+    },
+    {
+      "tripcode": "ATLAS-CARD-INTERFACE-HASH",
+      "track": "T+612m",
+      "bread": "Context And Payload Hygiene > interface_hash",
+      "river_index": 91
+    },
+    {
+      "tripcode": "ATLAS-CARD-PAYMENT-HASH",
+      "track": "T+618m",
+      "bread": "Context And Payload Hygiene > payment_hash",
+      "river_index": 92
+    },
+    {
+      "tripcode": "ATLAS-CARD-DOCUMENTATION-HASH",
+      "track": "T+624m",
+      "bread": "Context And Payload Hygiene > documentation_hash",
+      "river_index": 93
+    },
+    {
+      "tripcode": "ATLAS-CARD-HASH-BOUNDARY",
+      "track": "T+630m",
+      "bread": "Context And Payload Hygiene > Hash boundary",
+      "river_index": 94
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-ROUTE-CONTRACT-PREIMAGE-SHAPE",
+      "track": "T+346m",
+      "bread": "Context And Payload Hygiene > Route Contract Preimage Shape",
+      "river_index": 95
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-SPLIT-HASH-MANIFEST",
+      "track": "T+354m",
+      "bread": "Context And Payload Hygiene > Split Hash Manifest",
+      "river_index": 96
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-ROUTE-STRING-SENTINEL-HASHES",
+      "track": "T+362m",
+      "bread": "Context And Payload Hygiene > Route-String Sentinel Hashes",
+      "river_index": 97
+    },
+    {
+      "tripcode": "ATLAS-APRIL-24-SENTINEL-BOUNDARY",
+      "track": "T+370m",
+      "bread": "Context And Payload Hygiene > Sentinel Boundary",
+      "river_index": 98
+    },
+    {
+      "tripcode": "ATLAS-CARD-DEDUPE-DECISION-MATRIX",
+      "track": "T+636m",
+      "bread": "Context And Payload Hygiene > Dedupe decision matrix",
+      "river_index": 99
+    },
+    {
+      "tripcode": "ATLAS-CARD-CANONICAL-SELECTION-PRIORITY",
+      "track": "T+642m",
+      "bread": "Context And Payload Hygiene > Canonical selection priority",
+      "river_index": 100
+    },
+    {
+      "tripcode": "ATLAS-CARD-APPLIED-OPENAPI-GROUP",
+      "track": "T+648m",
+      "bread": "Context And Payload Hygiene > Applied OpenAPI group",
+      "river_index": 101
+    },
+    {
+      "tripcode": "ATLAS-CARD-APPLIED-LIVE-AUDIT-GROUP",
+      "track": "T+654m",
+      "bread": "Context And Payload Hygiene > Applied live-audit group",
+      "river_index": 102
+    },
+    {
+      "tripcode": "ATLAS-CARD-BASE-X402-ROUTES",
+      "track": "T+660m",
+      "bread": "Route / Tool Drift Watchlist > Base x402 routes",
+      "river_index": 103
+    },
+    {
+      "tripcode": "ATLAS-CARD-MPP-MIRROR-ROUTES",
+      "track": "T+666m",
+      "bread": "Route / Tool Drift Watchlist > MPP mirror routes",
+      "river_index": 104
+    },
+    {
+      "tripcode": "ATLAS-CARD-MCP-TOOLS",
+      "track": "T+672m",
+      "bread": "Route / Tool Drift Watchlist > MCP tools",
+      "river_index": 105
+    },
+    {
+      "tripcode": "ATLAS-CARD-COMPOSITE-BUNDLES",
+      "track": "T+678m",
+      "bread": "Route / Tool Drift Watchlist > Composite bundles",
+      "river_index": 106
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE",
+      "track": "T+378m",
+      "bread": "Next Verification Priorities > Second-ticker company-report smoke",
+      "river_index": 107
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON",
+      "track": "T+386m",
+      "bread": "Next Verification Priorities > REST / MCP / bundle drift comparison",
+      "river_index": 108
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES",
+      "track": "T+394m",
+      "bread": "Next Verification Priorities > Expand public x402 probes",
+      "river_index": 109
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION",
+      "track": "T+402m",
+      "bread": "Next Verification Priorities > App renderer regression",
+      "river_index": 110
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-4-CONFIRM-THE-OPENAPI-AGGREGATE-ROUTE",
+      "track": "T+410m",
+      "bread": "Live Checks > Confirm the OpenAPI aggregate route and language contract",
+      "river_index": 111
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-4-PROBE-PUBLIC-X402-BEHAVIOR",
+      "track": "T+418m",
+      "bread": "Live Checks > Probe public x402 behavior",
+      "river_index": 112
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-4-RUN-READINESS",
+      "track": "T+426m",
+      "bread": "Live Checks > Run readiness",
+      "river_index": 113
+    },
+    {
+      "tripcode": "ATLAS-PRIORITY-4-INSPECT-MCP-DISCOVERY",
+      "track": "T+434m",
+      "bread": "Live Checks > Inspect MCP discovery",
+      "river_index": 114
+    }
+  ],
+  "timeline_entries": [
+    {
+      "river_index": 28,
+      "date": "P0",
+      "title": "Universal evidence contract",
+      "tripcode": "ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT",
+      "track": "T+098m",
+      "bread": "Evidence Infrastructure Backlog > Universal evidence contract",
+      "commit": null,
+      "summary": "Add one mandatory provenance object across readiness, company report, daily changes, evidence drilldowns, alpha signals, fundamentals, peer ranking, covenant stress, and SPECTRA. Missing fields should return null , not disappear.",
+      "bullets": [
+        "Fields: captured_at , observed_at , published_at , data_as_of , computed_at_utc , source_date , accession_number , evidence_ref , evidence_hash , schema_version , contract_version .",
+        "Add semantic daily-change deltas with field_path , prior_value , new_value , delta_type , threshold_crossed , materiality_score , and evidence identifiers.",
+        "Document whether evidence refs are stable, what evidence hashes cover, how pagination affects hashes, and whether refs can be replayed after refresh."
+      ]
+    },
+    {
+      "river_index": 29,
+      "date": "P1",
+      "title": "Scale and freshness ergonomics",
+      "tripcode": "ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS",
+      "track": "T+106m",
+      "bread": "Evidence Infrastructure Backlog > Scale and freshness ergonomics",
+      "commit": null,
+      "summary": "Add preflight and batch surfaces so clients do not need repeated paid single-name calls just to discover coverage, freshness, or availability.",
+      "bullets": [
+        "Add GET /v1/companies , GET /v1/companies?changed_since=... , and GET /v1/ticker-freshness/{ticker} .",
+        "Extend company-report bundle support to tickers: [] with per-ticker result, partial flag, provenance, and error state.",
+        "Add snapshot metadata for company reports: snapshot_id , start/end timestamps, section count, max section skew, and whether sections share the same data-as-of boundary."
+      ]
+    },
+    {
+      "river_index": 30,
+      "date": "P2",
+      "title": "Monitoring and contract maturity",
+      "tripcode": "ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY",
+      "track": "T+114m",
+      "bread": "Evidence Infrastructure Backlog > Monitoring and contract maturity",
+      "commit": null,
+      "summary": "Move from pull-only reports toward durable monitoring and explicit field stability.",
+      "bullets": [
+        "Add webhook/subscription routes for material changes with event IDs, delivery signatures, replay cursors, field deltas, provenance, and evidence refs.",
+        "Add GET /v1/contract/changelog and GET /v1/contract/fields for stable field paths, deprecation windows, migration notes, and versioned daily-change fields.",
+        "Document route classes: free discovery, cheap freshness, paid compact, paid evidence, and internal/backend-relayed access.",
+        "Constrain renderer posture values to non-advice labels such as constructive_evidence_screen , watchlist_candidate , risk_elevated , provenance_limited , data_stale , and insufficient_evidence ."
+      ]
+    },
+    {
+      "river_index": 3,
+      "date": "May 31, 2026",
+      "title": "P1 standard provenance source implementation",
+      "tripcode": "ATLAS-P1-PROV-730DEF3",
+      "track": "T+22m",
+      "bread": "Improvement Timeline > P1 standard provenance source implementation",
+      "commit": "730def3",
+      "summary": "Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.",
+      "bullets": [
+        "Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.",
+        "Successful JSON object responses now receive a top-level provenance object with route identity, source_date , computed_at_utc , ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.",
+        "If a route already emits provenance , the envelope preserves existing route-specific keys and fills only missing standard keys.",
+        "GET /v1/contract/fields now documents the standard provenance field set, merge policy, and derived-evidence policy.",
+        "Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 730def3 . Backend rollout is separate from this changelog publication."
+      ]
+    },
+    {
+      "river_index": 2,
+      "date": "May 31, 2026",
+      "title": "P0 contract-hardening source implementation",
+      "tripcode": "ATLAS-P0-CONTRACT-7A80E86",
+      "track": "T+14m",
+      "bread": "Improvement Timeline > P0 contract-hardening source implementation",
+      "commit": "7a80e86",
+      "summary": "Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.",
+      "bullets": [
+        "Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.",
+        "The protected no-ticker set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .",
+        "/v1/pricing route entries now include lifecycle and scope metadata: path_template , status , deprecated , replaced_by , billable , and route_scope .",
+        "Successful protected /v1/ JSON object responses now include billing_status at the top level and inside response_metadata .",
+        "Structured not_found payloads now include reason_code , billing_behavior=not_charged , and cost_usd=0 .",
+        "Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 7a80e86 . Backend rollout is separate from this changelog publication."
+      ]
+    },
+    {
+      "river_index": 33,
+      "date": "May 31, 2026",
+      "title": "Pricing discovery implementation track",
+      "tripcode": "ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK",
+      "track": "T+122m",
+      "bread": "Improvement Timeline > Pricing discovery implementation track",
+      "commit": null,
+      "summary": "Added the first live-loop contract slice in backend source: GET /v1/pricing .",
+      "bullets": [
+        "Added the first live-loop contract slice in backend source: GET /v1/pricing .",
+        "The route is designed as free discovery and returns a machine-readable x402 route catalog with route_uri , HTTP method, price_usd , billing mode, ticker requirements, and pricing source.",
+        "The pricing contract declares cost_usd as the canonical billed-response ledger field and treats quoted_cost_usd / actual_cost_usd as supplemental aliases when route-specific flows emit them.",
+        "The served OpenAPI document now publishes /v1/pricing as a free discovery route in the backend source.",
+        "Verification completed locally with targeted pricing/help/OpenAPI tests and the full go test ./cmd/search-gateway/... package suite. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 34,
+      "date": "May 31, 2026",
+      "title": "Canonical billed-response fields implementation track",
+      "tripcode": "ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION",
+      "track": "T+130m",
+      "bread": "Improvement Timeline > Canonical billed-response fields implementation track",
+      "commit": null,
+      "summary": "Added a shared backend billing normalizer for protected priced /v1/ routes.",
+      "bullets": [
+        "Added a shared backend billing normalizer for protected priced /v1/ routes.",
+        "Successful JSON object responses now receive canonical numeric cost_usd plus quoted_cost_usd , actual_cost_usd , billing_mode , billing_contract_version , route identity, payment status, and request ID.",
+        "x402 paid responses preserve route price as both quote and actual cost. Internal API-key and free-tier grants report actual_cost_usd=0 while preserving the route quote for budgeting.",
+        "Errors, arrays, non-JSON bodies, and unpriced free discovery routes such as /v1/pricing are not rewritten by the billing normalizer.",
+        "Verification completed locally with focused billing/pricing/help/OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 35,
+      "date": "May 31, 2026",
+      "title": "Structured not-found implementation track",
+      "tripcode": "ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK",
+      "track": "T+138m",
+      "bread": "Improvement Timeline > Structured not-found implementation track",
+      "commit": null,
+      "summary": "Added a shared structured not_found response contract in backend source.",
+      "bullets": [
+        "Added a shared structured not_found response contract in backend source.",
+        "Route/ticker misses now expose status=not_found , reason , coverage_state , retry_after_days , route_uri , ticker or request key, request ID, and not_found_contract_version .",
+        "SPECTRA misses still have an explicit semantics path: reason=historical_field_map_contract_missing , coverage_state=not_available_for_issuer , and a seven-day retry hint.",
+        "The shape is also wired into fundamentals, alpha signals, covenant stress, peer ranking, daily changes, daily-change evidence, and field-map misses.",
+        "Verification completed locally with focused not-found, billing, pricing, help, and OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 36,
+      "date": "May 31, 2026",
+      "title": "IREN SPECTRA coverage repair",
+      "tripcode": "ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR",
+      "track": "T+146m",
+      "bread": "Improvement Timeline > IREN SPECTRA coverage repair",
+      "commit": null,
+      "summary": "Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss.",
+      "bullets": [
+        "Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss.",
+        "The new IREN contract uses mode=atlas7_historical_spectra , version=SPECTRA-FIELD-MAP-v1 , company IREN Limited , CIK 0001878848 , and latest source date 2026-04-24 .",
+        "The source lineage is preserved in artifacts/spectra-field-map/IREN/atlas_history_source.json with three real ATLAS-7 atlas-history rows.",
+        "Added a regression test that serves the IREN public contract and asserts real_data=true with three returned SPECTRA points."
+      ]
+    },
+    {
+      "river_index": 37,
+      "date": "May 31, 2026",
+      "title": "Universe route contract implementation track",
+      "tripcode": "ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK",
+      "track": "T+154m",
+      "bread": "Improvement Timeline > Universe route contract implementation track",
+      "commit": null,
+      "summary": "Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source.",
+      "bullets": [
+        "Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source.",
+        "The no-ticker route set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .",
+        "OpenAPI operations now carry x-deltasignal-route_scope=universe , x-deltasignal-path_ticker_free=true , and x-deltasignal-ticker_segment=forbidden .",
+        "The help response includes an explicit policy: do not append /{ticker} , /UNIVERSE , or any other path segment to these routes.",
+        "Verification completed locally with focused help/OpenAPI/pricing/billing/not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 38,
+      "date": "May 31, 2026",
+      "title": "Field contract discovery implementation track",
+      "tripcode": "ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK",
+      "track": "T+162m",
+      "bread": "Improvement Timeline > Field contract discovery implementation track",
+      "commit": null,
+      "summary": "Added free backend discovery route GET /v1/contract/fields .",
+      "bullets": [
+        "Added free backend discovery route GET /v1/contract/fields .",
+        "The field contract returns deltasignal-field-contract-v1 , the canonical billing field cost_usd , not-found contract metadata, route aliases, and the path-ticker-free universe route set.",
+        "The stable parser-path list includes the stable readiness, company-report, daily-changes, generic provenance, and stress aliases such as stress_50pct and stressed_leverage_50pct .",
+        "The served OpenAPI and help response now publish /v1/contract/fields as a free support/discovery route in backend source.",
+        "Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 39,
+      "date": "May 31, 2026",
+      "title": "Response metadata envelope implementation track",
+      "tripcode": "ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK",
+      "track": "T+170m",
+      "bread": "Improvement Timeline > Response metadata envelope implementation track",
+      "commit": null,
+      "summary": "Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path.",
+      "bullets": [
+        "Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path.",
+        "Successful JSON object payloads now receive top-level metadata fields and a response_metadata object.",
+        "The envelope includes request_id , route_uri , source_date , computed_at_utc , ticker , cost_usd , billing_mode , cache_hit , payload_mode , quality_flags , caveats , evidence_hash , evidence_hash_version , and latency_ms .",
+        "Unavailable values are emitted as null or empty arrays where appropriate, so automation can parse a stable shape.",
+        "Verification completed locally with focused billing, field-contract, help, OpenAPI, pricing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 40,
+      "date": "May 31, 2026",
+      "title": "Coverage discovery implementation track",
+      "tripcode": "ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK",
+      "track": "T+178m",
+      "bread": "Improvement Timeline > Coverage discovery implementation track",
+      "commit": null,
+      "summary": "Extended /companies in backend source with deltasignal-coverage-v1 .",
+      "bullets": [
+        "Extended /companies in backend source with deltasignal-coverage-v1 .",
+        "Each issuer row now includes ticker , lookup_ticker , cik , entity_name , supported_routes , unavailable_routes , last_source_date , and coverage_status .",
+        "The field-contract route documents the stable coverage discovery fields for automation.",
+        "This lets clients preflight supported names and route availability before spending on paid drilldowns.",
+        "Verification completed locally with focused companies, field-contract, help, OpenAPI, pricing, billing, metadata, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 41,
+      "date": "May 31, 2026",
+      "title": "Large-response handling implementation track",
+      "tripcode": "ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK",
+      "track": "T+186m",
+      "bread": "Improvement Timeline > Large-response handling implementation track",
+      "commit": null,
+      "summary": "Added public help guidance for large DeltaSignal responses in backend source.",
+      "bullets": [
+        "Added public help guidance for large DeltaSignal responses in backend source.",
+        "The help route now warns that company-report and daily-changes payloads can exceed 64 KB.",
+        "The guidance calls out the AgentCash/Node path specifically: do not pipe large npx agentcash fetch stdout directly into another process.",
+        "Recommended automation patterns are file redirects, compact or paginated routes, and clients that fully drain stdout before process exit.",
+        "Verification completed locally with focused help and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 42,
+      "date": "May 31, 2026",
+      "title": "Daily-change field-delta implementation track",
+      "tripcode": "ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION",
+      "track": "T+194m",
+      "bread": "Improvement Timeline > Daily-change field-delta implementation track",
+      "commit": null,
+      "summary": "Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source.",
+      "bullets": [
+        "Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source.",
+        "The interim shape exposes CompanyFacts changed tags as field_deltas with field_name , source_date , ticker/CIK, threshold_crossed , and evidence_ref .",
+        "prior_value , new_value , delta , and percent_delta are emitted as null unless the source row carries those values.",
+        "The field-contract route documents this interim status so clients can consume it without mistaking tag-level deltas for numeric value changes.",
+        "Verification completed locally with focused daily field-delta, field-contract, help, OpenAPI, pricing, billing, metadata, not-found, and coverage tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 43,
+      "date": "May 31, 2026",
+      "title": "Evidence replay semantics implementation track",
+      "tripcode": "ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK",
+      "track": "T+202m",
+      "bread": "Improvement Timeline > Evidence replay semantics implementation track",
+      "commit": null,
+      "summary": "Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source.",
+      "bullets": [
+        "Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source.",
+        "The contract documents evidence_ref stability for the same route, normalized arguments, source date, limit, and offset.",
+        "It documents evidence_hash as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.",
+        "It marks page.next_args , page.next_offset , page.next_tool , and daily-change evidence handles as replayable while the referenced source date remains available.",
+        "Verification completed locally with focused field-contract and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450."
+      ]
+    },
+    {
+      "river_index": 44,
+      "date": "May 28, 2026",
+      "title": "Public contract cleanup re-verified",
+      "tripcode": "ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED",
+      "track": "T+210m",
+      "bread": "Improvement Timeline > Public contract cleanup re-verified",
+      "commit": null,
+      "summary": "Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.",
+      "bullets": [
+        "Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.",
+        "POST /mcp , GET /v1/readiness , GET /v1/company-report/{ticker} , and POST /v1/bundles/company-report are present in the public route contract.",
+        "The alpha language contract now exposes research_posture and no longer exposes short_recommendation .",
+        "Unpaid public GET /v1/readiness returns HTTP 402 with a JSON body containing error=payment_required , the route name, retry guidance, docs URL, and an x402 challenge pointer.",
+        "Unpaid public GET /v1/company-report/MSTR?output_mode=compact returns HTTP 402 with the same developer-readable x402 pattern and a Base USDC challenge header."
+      ]
+    },
+    {
+      "river_index": 45,
+      "date": "May 27, 2026",
+      "title": "Company Report became a true OpenAPI-visible aggregate",
+      "tripcode": "ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE",
+      "track": "T+218m",
+      "bread": "Improvement Timeline > Company Report became a true OpenAPI-visible aggregate",
+      "commit": null,
+      "summary": "Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report .",
+      "bullets": [
+        "Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report .",
+        "The aggregate returns readiness, company fundamentals, alpha signals, peer ranking, covenant stress, and advisory SPECTRA field-map support in one bounded response.",
+        "Public unauthenticated calls return the expected 402 x402 payment challenge.",
+        "Internal live MSTR verification returned status=ok , partial=false , and 6 of 6 internal legs succeeded.",
+        "Snapshot values from that verification: Strategy Inc, source date 2026-05-27 , alpha score 69 , peer rank 152/215 , stress live_stress_50pct=0.2566 , risk tier LOW , and SPECTRA mode atlas7_historical_spectra ."
+      ]
+    },
+    {
+      "river_index": 46,
+      "date": "May 16, 2026",
+      "title": "StrategiX Visual MCP and finished DeltaSignal deliverables",
+      "tripcode": "ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED",
+      "track": "T+226m",
+      "bread": "Improvement Timeline > StrategiX Visual MCP and finished DeltaSignal deliverables",
+      "commit": null,
+      "summary": "Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.",
+      "bullets": [
+        "Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows.",
+        "Added finished DeltaSignal Intelligence Deliverables pricing, including a single daily Morning Brief PDF, monthly daily-brief subscription, and heavy multi-issuer deep brief.",
+        "Kept StrategiX execution internal-beta gated so public users are not asked to pay for tools that are not public-paid yet."
+      ]
+    },
+    {
+      "river_index": 47,
+      "date": "May 14, 2026",
+      "title": "Historical source dates, SPECTRA, and ATLAS-7 calculation history",
+      "tripcode": "ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND",
+      "track": "T+234m",
+      "bread": "Improvement Timeline > Historical source dates, SPECTRA, and ATLAS-7 calculation history",
+      "commit": null,
+      "summary": "Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.",
+      "bullets": [
+        "Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow.",
+        "Added first-class calculation-history surfaces: GET /v1/atlas7/calculation-history , GET /mpp/v1/atlas7/calculation-history , and MCP deltasignal_atlas7_calculation_history .",
+        "Calculation-history rows preserve covenant, fundamentals, peer, alpha, SPECTRA input, source fields, payload hash, and evidence hash fields.",
+        "MSTR SPECTRA was backfilled from real ATLAS history and exposed through GET /v1/spectra-field-map/MSTR .",
+        "Company Report MCP was expanded to six legs by including SPECTRA as an advisory field-map support leg."
+      ]
+    },
+    {
+      "river_index": 48,
+      "date": "May 14, 2026",
+      "title": "Audit status, Morning Brief context, and public MCP discovery",
+      "tripcode": "ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT",
+      "track": "T+242m",
+      "bread": "Improvement Timeline > Audit status, Morning Brief context, and public MCP discovery",
+      "commit": null,
+      "summary": "Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status .",
+      "bullets": [
+        "Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status .",
+        "Audit status reports freshness, last successful run, issuer count, operation count, failure counts, artifact prefix, and job metadata.",
+        "Live audit verification reported 215 issuers, 1,935 operations, 0 failed operations, 0 historical failures, and 0 composite failures.",
+        "Morning Brief was updated with alpha board audit context so first-time users can see board scope, issuer mix, low-quality demotions, and caveats.",
+        "Public MCP discovery was opened before payment: initialize and tools/list stay inspectable, while tools/call remains protected by x402, API key, or an explicit free-tier grant."
+      ]
+    },
+    {
+      "river_index": 49,
+      "date": "May 13-14, 2026",
+      "title": "Full-universe regression and issuer identity hardening",
+      "tripcode": "ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER",
+      "track": "T+250m",
+      "bread": "Improvement Timeline > Full-universe regression and issuer identity hardening",
+      "commit": null,
+      "summary": "Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.",
+      "bullets": [
+        "Added regression coverage for current REST surfaces, ATLAS-7 historical calculation surfaces, and MCP composite workflows.",
+        "Extended company report and quick ticker check composite coverage across the issuer universe.",
+        "Canonicalized Strategy Inc as MSTR across issuer routes, ATLAS history rows, supported-company search, and x402 examples.",
+        "Canonicalized ambiguous Delta Signal issuer tickers and CIK aliases so public-company identity stays stable across CompanyFacts and ATLAS materialized rows."
+      ]
+    },
+    {
+      "river_index": 50,
+      "date": "May 9-12, 2026",
+      "title": "Natural Language briefs and compact evidence contracts",
+      "tripcode": "ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT",
+      "track": "T+258m",
+      "bread": "Improvement Timeline > Natural Language briefs and compact evidence contracts",
+      "commit": null,
+      "summary": "Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.",
+      "bullets": [
+        "Natural Language briefs were formalized as evidence-to-Markdown compiler outputs, not new evidence sources.",
+        "Renderer metadata includes mode, validation status, fallback reason, compiler/version fields, evidence hash where available, latency, tokens, cache status, and billing mode.",
+        "Morning Brief Natural was updated to render returned alpha board evidence with issuer identity status, caveats, and non-advice language.",
+        "Default monitoring outputs stay compact, with raw evidence exposed through explicit drilldown routes instead of hidden client-side fan-out."
+      ]
+    },
+    {
+      "river_index": 51,
+      "date": "May 1-8, 2026",
+      "title": "Composite workflows, route discovery, and payment metadata",
+      "tripcode": "ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND",
+      "track": "T+266m",
+      "bread": "Improvement Timeline > Composite workflows, route discovery, and payment metadata",
+      "commit": null,
+      "summary": "Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.",
+      "bullets": [
+        "Published composite MCP presets for Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check.",
+        "Added Arazzo workflow definitions so agents can inspect scenario plans before execution.",
+        "Updated OpenAPI and route metadata for public clients that discover paid resources before execution.",
+        "Improved x402 and MPP payment metadata so AgentCash-style crawlers can identify route prices and protocol families."
+      ]
+    },
+    {
+      "river_index": 52,
+      "date": "April 24-30, 2026",
+      "title": "Public x402 launch and Wardenclyffe/OpenAPI contract rollout",
+      "tripcode": "ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE",
+      "track": "T+274m",
+      "bread": "Improvement Timeline > Public x402 launch and Wardenclyffe/OpenAPI contract rollout",
+      "commit": null,
+      "summary": "Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.",
+      "bullets": [
+        "Launched public DeltaSignal data routes as payable x402 seller endpoints while preserving internal API-key access.",
+        "Raised public paid routes from test defaults to the launch pricing schedule.",
+        "Rolled out the Wardenclyffe/help/OpenAPI contract with updated readiness, help, schema shape, glossary, and debt coverage fields.",
+        "Added MPP discovery alongside x402 for compatible public-agent marketplaces and registry crawlers."
+      ]
+    },
+    {
+      "river_index": 107,
+      "date": "Priority 1",
+      "title": "Second-ticker company-report smoke",
+      "tripcode": "ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE",
+      "track": "T+378m",
+      "bread": "Next Verification Priorities > Second-ticker company-report smoke",
+      "commit": null,
+      "summary": "Repeat the company-report smoke with a second ticker from the latest daily-change slice to prove the aggregate is not only working for one issuer.",
+      "bullets": []
+    },
+    {
+      "river_index": 108,
+      "date": "Priority 2",
+      "title": "REST / MCP / bundle drift comparison",
+      "tripcode": "ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON",
+      "track": "T+386m",
+      "bread": "Next Verification Priorities > REST / MCP / bundle drift comparison",
+      "commit": null,
+      "summary": "Compare OpenAPI route inventory, MCP tools/list , and composite bundle outputs so route availability, tool names, prices, and payload modes stay synchronized.",
+      "bullets": []
+    },
+    {
+      "river_index": 109,
+      "date": "Priority 3",
+      "title": "Expand public x402 probes",
+      "tripcode": "ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES",
+      "track": "T+394m",
+      "bread": "Next Verification Priorities > Expand public x402 probes",
+      "commit": null,
+      "summary": "Readiness and company-report public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to /v1/morning-brief/natural and any new paid public route.",
+      "bullets": []
+    },
+    {
+      "river_index": 110,
+      "date": "Priority 4",
+      "title": "App renderer regression",
+      "tripcode": "ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION",
+      "track": "T+402m",
+      "bread": "Next Verification Priorities > App renderer regression",
+      "commit": null,
+      "summary": "Verify SwiftUI cards preserve source_date , computed_at_utc , payload_mode , compact flags, caveats, evidence references, x402 equivalent price, no-payment boundary, and non-advice language.",
+      "bullets": []
+    }
+  ]
+}
+  </script>
+  <script type="application/xml" id="changelog-llm-xml">
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-05-31">
+  <stats tracked_changes="114" timeline_entries="29" unique_tripcodes="112" breadcrumb_chips="114" visible_commit_references="4" unique_source_commits="2" />
+  <instructions>
+    <instruction>Use tripcode as stable row identifier.</instruction>
+    <instruction>Use bread as breadcrumb path.</instruction>
+    <instruction>Use river_index and track as sequence markers.</instruction>
+    <instruction>Do not infer live deployment from source-only text.</instruction>
+    <instruction>Do not convert evidence summaries into personalized investment advice.</instruction>
+  </instructions>
+  <entries>
+    <entry river_index="28" tripcode="ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT" track="T+098m" bread="Evidence Infrastructure Backlog &gt; Universal evidence contract"><date>P0</date><title>Universal evidence contract</title></entry>
+    <entry river_index="29" tripcode="ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS" track="T+106m" bread="Evidence Infrastructure Backlog &gt; Scale and freshness ergonomics"><date>P1</date><title>Scale and freshness ergonomics</title></entry>
+    <entry river_index="30" tripcode="ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY" track="T+114m" bread="Evidence Infrastructure Backlog &gt; Monitoring and contract maturity"><date>P2</date><title>Monitoring and contract maturity</title></entry>
+    <entry river_index="3" tripcode="ATLAS-P1-PROV-730DEF3" track="T+22m" bread="Improvement Timeline &gt; P1 standard provenance source implementation"><date>May 31, 2026</date><title>P1 standard provenance source implementation</title></entry>
+    <entry river_index="2" tripcode="ATLAS-P0-CONTRACT-7A80E86" track="T+14m" bread="Improvement Timeline &gt; P0 contract-hardening source implementation"><date>May 31, 2026</date><title>P0 contract-hardening source implementation</title></entry>
+    <entry river_index="33" tripcode="ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK" track="T+122m" bread="Improvement Timeline &gt; Pricing discovery implementation track"><date>May 31, 2026</date><title>Pricing discovery implementation track</title></entry>
+    <entry river_index="34" tripcode="ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION" track="T+130m" bread="Improvement Timeline &gt; Canonical billed-response fields implementation track"><date>May 31, 2026</date><title>Canonical billed-response fields implementation track</title></entry>
+    <entry river_index="35" tripcode="ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK" track="T+138m" bread="Improvement Timeline &gt; Structured not-found implementation track"><date>May 31, 2026</date><title>Structured not-found implementation track</title></entry>
+    <entry river_index="36" tripcode="ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR" track="T+146m" bread="Improvement Timeline &gt; IREN SPECTRA coverage repair"><date>May 31, 2026</date><title>IREN SPECTRA coverage repair</title></entry>
+    <entry river_index="37" tripcode="ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK" track="T+154m" bread="Improvement Timeline &gt; Universe route contract implementation track"><date>May 31, 2026</date><title>Universe route contract implementation track</title></entry>
+    <entry river_index="38" tripcode="ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" track="T+162m" bread="Improvement Timeline &gt; Field contract discovery implementation track"><date>May 31, 2026</date><title>Field contract discovery implementation track</title></entry>
+    <entry river_index="39" tripcode="ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK" track="T+170m" bread="Improvement Timeline &gt; Response metadata envelope implementation track"><date>May 31, 2026</date><title>Response metadata envelope implementation track</title></entry>
+    <entry river_index="40" tripcode="ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK" track="T+178m" bread="Improvement Timeline &gt; Coverage discovery implementation track"><date>May 31, 2026</date><title>Coverage discovery implementation track</title></entry>
+    <entry river_index="41" tripcode="ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" track="T+186m" bread="Improvement Timeline &gt; Large-response handling implementation track"><date>May 31, 2026</date><title>Large-response handling implementation track</title></entry>
+    <entry river_index="42" tripcode="ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION" track="T+194m" bread="Improvement Timeline &gt; Daily-change field-delta implementation track"><date>May 31, 2026</date><title>Daily-change field-delta implementation track</title></entry>
+    <entry river_index="43" tripcode="ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK" track="T+202m" bread="Improvement Timeline &gt; Evidence replay semantics implementation track"><date>May 31, 2026</date><title>Evidence replay semantics implementation track</title></entry>
+    <entry river_index="44" tripcode="ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED" track="T+210m" bread="Improvement Timeline &gt; Public contract cleanup re-verified"><date>May 28, 2026</date><title>Public contract cleanup re-verified</title></entry>
+    <entry river_index="45" tripcode="ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE" track="T+218m" bread="Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate"><date>May 27, 2026</date><title>Company Report became a true OpenAPI-visible aggregate</title></entry>
+    <entry river_index="46" tripcode="ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED" track="T+226m" bread="Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables"><date>May 16, 2026</date><title>StrategiX Visual MCP and finished DeltaSignal deliverables</title></entry>
+    <entry river_index="47" tripcode="ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND" track="T+234m" bread="Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history"><date>May 14, 2026</date><title>Historical source dates, SPECTRA, and ATLAS-7 calculation history</title></entry>
+    <entry river_index="48" tripcode="ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT" track="T+242m" bread="Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery"><date>May 14, 2026</date><title>Audit status, Morning Brief context, and public MCP discovery</title></entry>
+    <entry river_index="49" tripcode="ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER" track="T+250m" bread="Improvement Timeline &gt; Full-universe regression and issuer identity hardening"><date>May 13-14, 2026</date><title>Full-universe regression and issuer identity hardening</title></entry>
+    <entry river_index="50" tripcode="ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT" track="T+258m" bread="Improvement Timeline &gt; Natural Language briefs and compact evidence contracts"><date>May 9-12, 2026</date><title>Natural Language briefs and compact evidence contracts</title></entry>
+    <entry river_index="51" tripcode="ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND" track="T+266m" bread="Improvement Timeline &gt; Composite workflows, route discovery, and payment metadata"><date>May 1-8, 2026</date><title>Composite workflows, route discovery, and payment metadata</title></entry>
+    <entry river_index="52" tripcode="ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE" track="T+274m" bread="Improvement Timeline &gt; Public x402 launch and Wardenclyffe/OpenAPI contract rollout"><date>April 24-30, 2026</date><title>Public x402 launch and Wardenclyffe/OpenAPI contract rollout</title></entry>
+    <entry river_index="107" tripcode="ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE" track="T+378m" bread="Next Verification Priorities &gt; Second-ticker company-report smoke"><date>Priority 1</date><title>Second-ticker company-report smoke</title></entry>
+    <entry river_index="108" tripcode="ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON" track="T+386m" bread="Next Verification Priorities &gt; REST / MCP / bundle drift comparison"><date>Priority 2</date><title>REST / MCP / bundle drift comparison</title></entry>
+    <entry river_index="109" tripcode="ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES" track="T+394m" bread="Next Verification Priorities &gt; Expand public x402 probes"><date>Priority 3</date><title>Expand public x402 probes</title></entry>
+    <entry river_index="110" tripcode="ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION" track="T+402m" bread="Next Verification Priorities &gt; App renderer regression"><date>Priority 4</date><title>App renderer regression</title></entry>
+  </entries>
+</changelog_llm>
+  </script>
+</body>
+</html>
