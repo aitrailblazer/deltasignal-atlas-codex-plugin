@@ -380,7 +380,7 @@
           <a href="https://api.aitrailblazer.net/mcp">MCP</a>
         </nav>
       </div>
-      <p class="eyebrow">Updated May 31, 2026 - pricing, billing, metadata, not-found, evidence, universe-route, field, coverage, daily-delta, and large-response contracts added</p>
+      <p class="eyebrow">Updated May 31, 2026 - Jeff live-loop API contract deployed</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="hero-actions">
@@ -399,6 +399,11 @@
           <p>These are the changes most likely to matter to builders integrating the public route surface or agent workflows right now.</p>
         </div>
         <div class="grid">
+          <div class="card">
+            <span class="status">LIVE</span>
+            <strong>Jeff Live-Loop Contract Deployed</strong>
+            <span>Backend revision <code>ca-web-intel-mcp--0000450</code> is live with pricing discovery, canonical billing fields, response metadata, structured not-found semantics, field contracts, coverage discovery, daily-change field deltas, evidence replay semantics, universe-route locks, and large-response guidance.</span>
+          </div>
           <div class="card">
             <span class="status">LIVE</span>
             <strong>Atomic Company Report</strong>
@@ -457,43 +462,43 @@
             <span>Universal provenance, semantic field deltas, evidence hash/ref semantics, coverage/freshness discovery, multi-ticker batch, webhook delivery, and field-level versioning remain open or partial.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: pricing discovery</strong>
-            <span><code>GET /v1/pricing</code> has been implemented in the backend plan as a free machine-readable x402 route-pricing catalog. It exposes route URI, method, USD price, billing mode, ticker requirements, and <code>cost_usd</code> as the canonical billed-response field. Public availability depends on the next API backend deployment.</span>
+            <strong>Live backend: pricing discovery</strong>
+            <span><code>GET /v1/pricing</code> has been implemented in the backend plan as a free machine-readable x402 route-pricing catalog. It exposes route URI, method, USD price, billing mode, ticker requirements, and <code>cost_usd</code> as the canonical billed-response field. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: canonical billing fields</strong>
-            <span>Protected priced <code>/v1/</code> JSON object responses now pass through a shared billing normalizer in backend source. Successful route payloads receive numeric <code>cost_usd</code>, <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>billing_mode</code>, route identity, and payment status fields. Public availability depends on the next API backend deployment.</span>
+            <strong>Live backend: canonical billing fields</strong>
+            <span>Protected priced <code>/v1/</code> JSON object responses now pass through a shared billing normalizer in backend source. Successful route payloads receive numeric <code>cost_usd</code>, <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>billing_mode</code>, route identity, and payment status fields. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: structured not-found</strong>
+            <strong>Live backend: structured not-found</strong>
             <span>Route/ticker misses now use a structured <code>not_found</code> payload in backend source with <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, route identity, request ID, and a contract version. The explicit IREN SPECTRA miss is covered by regression test.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: universe routes locked</strong>
+            <strong>Live backend: universe routes locked</strong>
             <span>The no-ticker universe routes are now explicitly documented in backend help and OpenAPI source: <code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code>.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: field contract discovery</strong>
+            <strong>Live backend: field contract discovery</strong>
             <span><code>GET /v1/contract/fields</code> has been implemented in backend source as a free parser contract endpoint covering stable Jeff paths, billing fields, not-found semantics, route aliases, and universe route policy.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: response metadata envelope</strong>
+            <strong>Live backend: response metadata envelope</strong>
             <span>Successful protected <code>/v1/</code> JSON object responses now receive top-level metadata keys and a <code>response_metadata</code> object with request, route, billing, cache, caveat, evidence-hash, and latency fields.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: coverage discovery</strong>
+            <strong>Live backend: coverage discovery</strong>
             <span><code>/companies</code> now exposes a machine-readable coverage contract in backend source with lookup ticker, CIK, supported routes, unavailable routes, last source date, and coverage status per issuer.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: large-response guidance</strong>
+            <strong>Live backend: large-response guidance</strong>
             <span><code>/help</code> now warns that company-report and daily-changes payloads can exceed 64 KB and tells AgentCash/Node users not to pipe large <code>npx agentcash fetch</code> stdout directly into another process.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: daily-change field deltas</strong>
+            <strong>Live backend: daily-change field deltas</strong>
             <span>Compact daily changes now expose an interim tag-level <code>field_deltas</code> contract with field names, null prior/new values where unavailable, threshold flags, source dates, and durable evidence follow-up handles.</span>
           </div>
           <div class="card">
-            <strong>Ready for backend deploy: evidence replay semantics</strong>
+            <strong>Live backend: evidence replay semantics</strong>
             <span><code>/v1/contract/fields</code> now publishes <code>deltasignal-evidence-replay-v1</code> with stability rules for <code>evidence_ref</code>, <code>evidence_hash</code>, <code>page.next_args</code>, and daily-change follow-up handles.</span>
           </div>
         </div>
@@ -551,7 +556,7 @@
               <li>The route is designed as free discovery and returns a machine-readable x402 route catalog with <code>route_uri</code>, HTTP method, <code>price_usd</code>, billing mode, ticker requirements, and pricing source.</li>
               <li>The pricing contract declares <code>cost_usd</code> as the canonical billed-response ledger field and treats <code>quoted_cost_usd</code> / <code>actual_cost_usd</code> as supplemental aliases when route-specific flows emit them.</li>
               <li>The served OpenAPI document now publishes <code>/v1/pricing</code> as a free discovery route in the backend source.</li>
-              <li>Verification completed locally with targeted pricing/help/OpenAPI tests and the full <code>go test ./cmd/search-gateway/...</code> package suite. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with targeted pricing/help/OpenAPI tests and the full <code>go test ./cmd/search-gateway/...</code> package suite. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -563,7 +568,7 @@
               <li>Successful JSON object responses now receive canonical numeric <code>cost_usd</code> plus <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>billing_mode</code>, <code>billing_contract_version</code>, route identity, payment status, and request ID.</li>
               <li>x402 paid responses preserve route price as both quote and actual cost. Internal API-key and free-tier grants report <code>actual_cost_usd=0</code> while preserving the route quote for budgeting.</li>
               <li>Errors, arrays, non-JSON bodies, and unpriced free discovery routes such as <code>/v1/pricing</code> are not rewritten by the billing normalizer.</li>
-              <li>Verification completed locally with focused billing/pricing/help/OpenAPI tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused billing/pricing/help/OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -575,7 +580,7 @@
               <li>Route/ticker misses now expose <code>status=not_found</code>, <code>reason</code>, <code>coverage_state</code>, <code>retry_after_days</code>, <code>route_uri</code>, ticker or request key, request ID, and <code>not_found_contract_version</code>.</li>
               <li><code>/v1/spectra-field-map/IREN</code> now has an explicit semantics path: <code>reason=historical_field_map_contract_missing</code>, <code>coverage_state=not_available_for_issuer</code>, and a seven-day retry hint.</li>
               <li>The shape is also wired into fundamentals, alpha signals, covenant stress, peer ranking, daily changes, daily-change evidence, and field-map misses.</li>
-              <li>Verification completed locally with focused not-found, billing, pricing, help, and OpenAPI tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused not-found, billing, pricing, help, and OpenAPI tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -587,7 +592,7 @@
               <li>The no-ticker route set is <code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code>.</li>
               <li>OpenAPI operations now carry <code>x-deltasignal-route_scope=universe</code>, <code>x-deltasignal-path_ticker_free=true</code>, and <code>x-deltasignal-ticker_segment=forbidden</code>.</li>
               <li>The help response includes an explicit policy: do not append <code>/{ticker}</code>, <code>/UNIVERSE</code>, or any other path segment to these routes.</li>
-              <li>Verification completed locally with focused help/OpenAPI/pricing/billing/not-found tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused help/OpenAPI/pricing/billing/not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -599,7 +604,7 @@
               <li>The field contract returns <code>deltasignal-field-contract-v1</code>, the canonical billing field <code>cost_usd</code>, not-found contract metadata, route aliases, and the path-ticker-free universe route set.</li>
               <li>The stable parser-path list includes Jeff's current readiness, company-report, daily-changes, generic provenance, and stress aliases such as <code>stress_50pct</code> and <code>stressed_leverage_50pct</code>.</li>
               <li>The served OpenAPI and help response now publish <code>/v1/contract/fields</code> as a free support/discovery route in backend source.</li>
-              <li>Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused field-contract, help, OpenAPI, pricing, billing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -611,7 +616,7 @@
               <li>Successful JSON object payloads now receive top-level metadata fields and a <code>response_metadata</code> object.</li>
               <li>The envelope includes <code>request_id</code>, <code>route_uri</code>, <code>source_date</code>, <code>computed_at_utc</code>, <code>ticker</code>, <code>cost_usd</code>, <code>billing_mode</code>, <code>cache_hit</code>, <code>payload_mode</code>, <code>quality_flags</code>, <code>caveats</code>, <code>evidence_hash</code>, <code>evidence_hash_version</code>, and <code>latency_ms</code>.</li>
               <li>Unavailable values are emitted as <code>null</code> or empty arrays where appropriate, so automation can parse a stable shape.</li>
-              <li>Verification completed locally with focused billing, field-contract, help, OpenAPI, pricing, and not-found tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused billing, field-contract, help, OpenAPI, pricing, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -623,7 +628,7 @@
               <li>Each issuer row now includes <code>ticker</code>, <code>lookup_ticker</code>, <code>cik</code>, <code>entity_name</code>, <code>supported_routes</code>, <code>unavailable_routes</code>, <code>last_source_date</code>, and <code>coverage_status</code>.</li>
               <li>The field-contract route documents the stable coverage discovery fields for automation.</li>
               <li>This lets clients preflight supported names and route availability before spending on paid drilldowns.</li>
-              <li>Verification completed locally with focused companies, field-contract, help, OpenAPI, pricing, billing, metadata, and not-found tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused companies, field-contract, help, OpenAPI, pricing, billing, metadata, and not-found tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -635,7 +640,7 @@
               <li>The help route now warns that company-report and daily-changes payloads can exceed 64 KB.</li>
               <li>The guidance calls out the AgentCash/Node path specifically: do not pipe large <code>npx agentcash fetch</code> stdout directly into another process.</li>
               <li>Recommended automation patterns are file redirects, compact or paginated routes, and clients that fully drain stdout before process exit.</li>
-              <li>Verification completed locally with focused help and regression tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused help and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -647,7 +652,7 @@
               <li>The interim shape exposes CompanyFacts changed tags as <code>field_deltas</code> with <code>field_name</code>, <code>source_date</code>, ticker/CIK, <code>threshold_crossed</code>, and <code>evidence_ref</code>.</li>
               <li><code>prior_value</code>, <code>new_value</code>, <code>delta</code>, and <code>percent_delta</code> are emitted as <code>null</code> unless the source row carries those values.</li>
               <li>The field-contract route documents this interim status so clients can consume it without mistaking tag-level deltas for numeric value changes.</li>
-              <li>Verification completed locally with focused daily field-delta, field-contract, help, OpenAPI, pricing, billing, metadata, not-found, and coverage tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused daily field-delta, field-contract, help, OpenAPI, pricing, billing, metadata, not-found, and coverage tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -659,7 +664,7 @@
               <li>The contract documents <code>evidence_ref</code> stability for the same route, normalized arguments, source date, limit, and offset.</li>
               <li>It documents <code>evidence_hash</code> as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.</li>
               <li>It marks <code>page.next_args</code>, <code>page.next_offset</code>, <code>page.next_tool</code>, and daily-change evidence handles as replayable while the referenced source date remains available.</li>
-              <li>Verification completed locally with focused field-contract and regression tests. Public route availability still requires backend deployment.</li>
+              <li>Verification completed locally with focused field-contract and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
             </ul>
           </article>
 
@@ -1314,6 +1319,7 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of large-response AgentCash/Node pipe guidance from 2026-05-31",
         "Backend source implementation of deltasignal-daily-field-deltas-v1 from 2026-05-31",
         "Backend source implementation of deltasignal-evidence-replay-v1 from 2026-05-31",
+        "Live backend deployment ca-web-intel-mcp--0000450 from clean git archive db4857a4bca75b3ffafcba77c159ce1b62df2400 on 2026-05-31",
         "Local targeted evidence-replay/daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
