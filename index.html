@@ -213,6 +213,50 @@
       color: #ffd1a3;
     }
 
+    .toc-panel {
+      width: min(920px, 100%);
+      margin: 0 auto 2.4rem;
+      border: 1px solid rgba(255, 154, 26, 0.26);
+      border-radius: 8px;
+      padding: 1rem;
+      background: rgba(17, 16, 15, 0.56);
+      text-align: left;
+    }
+
+    .toc-panel strong {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: #ffd1a3;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .toc-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid rgba(255, 154, 26, 0.24);
+      border-radius: 999px;
+      padding: 0 0.85rem;
+      color: var(--ink);
+      background: rgba(5, 5, 5, 0.4);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .toc-links a:hover {
+      border-color: rgba(255, 154, 26, 0.68);
+      color: #ffd1a3;
+    }
+
     .hero-actions {
       display: flex;
       justify-content: center;
@@ -1360,6 +1404,21 @@
         font-size: 0.86rem;
       }
 
+      .toc-panel {
+        padding: 0.85rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .toc-links {
+        gap: 0.45rem;
+      }
+
+      .toc-links a {
+        min-height: 32px;
+        padding: 0 0.68rem;
+        font-size: 0.78rem;
+      }
+
       .btn {
         width: 100%;
         max-width: 260px;
@@ -1454,6 +1513,20 @@
           <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">openapi.json</a>
         </nav>
         <p class="agent-primer"><strong>New agent/user path:</strong> read <code>llms-full.txt</code>, inspect <code>openapi.json</code>, run readiness, then run one bounded Morning Brief before any paid or production workflow.</p>
+        <nav class="toc-panel" aria-label="Page contents">
+          <strong>Page contents</strong>
+          <div class="toc-links">
+            <a href="#first-test">Start here</a>
+            <a href="#what-you-get">What you get</a>
+            <a href="#recommended-workflows">Workflows</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#x402">x402</a>
+            <a href="#install">Install</a>
+            <a href="#developer-docs">Docs</a>
+            <a href="#route-status">Route status</a>
+            <a href="#first-call-copy">First call</a>
+          </div>
+        </nav>
         <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
         <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
         <p class="tagline">
