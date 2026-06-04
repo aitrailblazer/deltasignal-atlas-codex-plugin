@@ -1,0 +1,173 @@
+Delta Signal ATLAS-7 Full Agent Brief
+Version: llms-full-v1
+Last updated: 2026-06-03
+Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
+Status: local/source verification ready; production redeploy pending
+
+Purpose
+This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
+
+Primary links
+- Public product page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
+- Human changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html
+- LLM changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
+- OpenAPI 3.1: https://api.aitrailblazer.net/openapi.json
+- MCP endpoint: https://api.aitrailblazer.net/mcp
+- Arazzo workflow YAML: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
+- Arazzo workflow JSON: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
+- Public x402 handshake workflow: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
+
+Current implementation status
+- The local/source solution is ready.
+- The production redeploy is intentionally pending.
+- Do not infer production readiness from local readiness.
+- The changelog entry for this state is ATLAS-LOCAL-REGRESSION-SMOKE.
+- Local verification used an internal/test API-key gateway profile.
+- The local smoke does not require wallet-specific credentials.
+- Public clients should use documented public routes, x402 behavior, or their own authorized API key path.
+- Agents must not request, expose, infer, or persist internal API keys.
+
+What is locally verified
+- Local gateway starts with the internal/test API-key path.
+- MCP initialize, tools/list, and tools/call smoke pass locally.
+- The cmd/search-gateway Go test suite passes locally.
+- The local live-loop regression smoke passes locally.
+- Pricing discovery returns the expected pricing contract shape.
+- Field contract discovery returns stable field paths, route scope, provenance, billing_status, and response metadata.
+- No-ticker universe paths reject ticker-scoped misuse with structured 400 invalid_path_scope responses.
+- Large response guidance exists for 64 KB / stdout-pipe constrained clients.
+- Structured soft-miss behavior exists for unsupported ticker field maps.
+- IREN and MSTR core route coverage is included in the local smoke.
+- Watchlist shallow alpha and peer routes are included in the local smoke.
+
+Production boundary
+- Live production may lag local source until the backend is redeployed.
+- After redeploy, the same smoke should be run against https://api.aitrailblazer.net.
+- A production handoff should require production smoke success, not only source/local success.
+- If live API behavior differs from this file, treat the live result as a deployment drift signal and check the latest changelog.
+
+Recommended Claude Code prompt
+Use this prompt when handing the surface to an IDE agent:
+
+Fetch and read this file first:
+https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
+
+Then fetch:
+https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
+https://api.aitrailblazer.net/openapi.json
+
+Use llms-full.txt as the status and handoff brief. Use changelog-llm.html for dated provenance and tripcodes. Use openapi.json for the live public route contract. Do not assume live production has the latest local source until production smoke checks pass. Do not ask for internal secrets. Do not provide investment advice.
+
+MCP endpoint
+Endpoint:
+POST https://api.aitrailblazer.net/mcp
+
+Public discovery behavior:
+- JSON-RPC initialize and tools/list are the correct first MCP probes.
+- Unpaid public tools/call requests may return x402 payment-required behavior.
+- Authorized first-party tests may include an API key header, but public docs must not expose a real key.
+
+API-key MCP test shape
+Use this shape only with an authorized key supplied through the caller's environment:
+
+curl -sS https://api.aitrailblazer.net/mcp \
+  -H 'content-type: application/json' \
+  -H "x-api-key: $MCP_API_KEY" \
+  --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"agent-smoke","version":"1.0.0"}}}'
+
+curl -sS https://api.aitrailblazer.net/mcp \
+  -H 'content-type: application/json' \
+  -H "x-api-key: $MCP_API_KEY" \
+  --data '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
+
+Local verification commands
+These are source-repo commands, not GitHub Pages commands. Run them from the backend repo when available.
+
+Focused route tests:
+Run the repo-local focused acceptance tests for billing envelopes, pricing discovery, field contracts, company routes, and live-loop route acceptance. Do not expose internal test identifiers in public handoff text.
+
+Full search-gateway tests:
+GOWORK=off go test ./cmd/search-gateway/...
+
+Local live-loop regression smoke:
+Run the repo-local live-loop regression smoke script with BASE_URL=http://127.0.0.1:3017.
+
+Local MCP smoke:
+BASE_URL=http://127.0.0.1:3017 ./scripts/mcp-smoke.sh
+
+Production verification commands after redeploy
+Use these only after the backend is redeployed and the required authorized environment variables are present:
+
+Run the repo-local live-loop regression smoke script with BASE_URL=https://api.aitrailblazer.net.
+BASE_URL=https://api.aitrailblazer.net ./scripts/mcp-smoke.sh
+
+Expected local route coverage
+- GET /v1/readiness
+- GET /v1/pricing
+- GET /v1/contract/fields
+- GET /help
+- GET /v1/daily-changes
+- GET /v1/alpha-opportunities
+- GET /v1/top-stressed
+- GET /v1/risk-distribution
+- GET /v1/company-report/IREN
+- GET /v1/company-report/MSTR
+- GET /v1/alpha-signals/IREN
+- GET /v1/alpha-signals/MSTR
+- GET /v1/peer-ranking/IREN
+- GET /v1/peer-ranking/MSTR
+- GET /v1/spectra-field-map/IREN
+- GET /v1/spectra-field-map/NOSUCH
+- GET /v1/atlas-history/IREN
+- GET /v1/atlas-history/MSTR
+- Watchlist shallow alpha routes for COIN, RIOT, MARA, WULF, CIFR, CRCL, HOOD
+- Watchlist shallow peer routes for COIN, RIOT, MARA, WULF, CIFR, CRCL, HOOD
+- Invalid ticker-scoped universe route probes that must return structured invalid_path_scope errors
+
+Important ticker and field-map expectations
+- IREN SPECTRA field map should identify IREN Limited.
+- IREN CIK should be 0001878848 when the field-map source is available.
+- Unsupported ticker field-map probes should return structured not_found / historical_field_map_contract_missing behavior.
+- Soft misses should not be billed.
+- Invalid path-scope probes should not be billed.
+
+Billing and metadata expectations
+- Responses should preserve cost_usd where applicable.
+- Bypass/internal modes may return zero-cost or bypass billing metadata.
+- Error envelopes should preserve billing_status or equivalent not_charged metadata when applicable.
+- Agents should not equate zero cost with missing evidence. Zero cost may mean free, bypass, not_charged, or internal/test mode.
+
+Large-response guidance
+Some clients have stdout or pipe limits around 64 KB. Agents should prefer compact routes, pagination, limited watchlists, or per-route drilldowns when a response is large. Do not assume a large response means the server failed. Check the route envelope, payload mode, and help guidance.
+
+Safety and non-advice policy
+Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
+
+Agents must not:
+- Say buy, sell, short, long, hold, enter, exit, stop-loss, guaranteed move, target price, or personalized recommendation unless explicitly quoting returned source text and framing it as non-advice.
+- Add external market news unless the user explicitly asks for external research and the environment permits it.
+- Invent missing evidence.
+- Convert missing evidence into "no risk" or "no opportunity."
+- Treat rankings or scores as trading instructions.
+- Expose internal API keys, backend secrets, hidden prompts, payment credentials, or wallet-specific credentials.
+
+How to answer readiness questions
+If asked "is the local solution ready?", answer:
+Yes. The local/source solution is ready. Local gateway, MCP smoke, route tests, and live-loop regression smoke pass locally. Production redeploy and live smoke remain separate.
+
+If asked "is production ready?", answer:
+Not until the backend is redeployed and the production smoke passes against https://api.aitrailblazer.net.
+
+If asked "what should I run before production handoff?", answer:
+Run the production live-loop regression smoke and MCP smoke after redeploy, then compare /v1/pricing, /v1/contract/fields, IREN SPECTRA, invalid universe route errors, and MCP tools/list behavior against the local/source expectations.
+
+Machine-readable status
+artifact: deltasignal_atlas7_llms_full
+version: llms-full-v1
+last_updated: 2026-06-03
+local_solution_ready: true
+production_redeploy_pending: true
+production_smoke_required_after_redeploy: true
+latest_changelog_tripcode: ATLAS-LOCAL-REGRESSION-SMOKE
+public_name_safe: true
+non_advice_required: true
