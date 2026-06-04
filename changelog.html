@@ -485,14 +485,14 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated May 31, 2026 - Live-loop API contract deployed</p>
+      <p class="eyebrow">Updated June 3, 2026 - Local regression smoke verified</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>114</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>29</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>112</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>114</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>115</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>30</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>113</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>115</strong><span>breadcrumb chips</span></div>
         <div class="stat"><strong>4</strong><span>visible commit refs</span></div>
         <div class="stat"><strong>2</strong><span>unique source commits</span></div>
       </div>
@@ -1198,6 +1198,12 @@
               <span>Live Checks &gt; Inspect MCP discovery</span>
               <code>T+434m</code>
             </div>
+            <div class="river-row">
+              <span>115</span>
+              <code>ATLAS-LOCAL-REGRESSION-SMOKE</code>
+              <span>Improvement Timeline &gt; Local regression smoke verified</span>
+              <code>T+442m</code>
+            </div>
         </div>
       </div>
     </section>
@@ -1208,6 +1214,16 @@
           <p>These are the changes most likely to matter to builders integrating the public route surface or agent workflows right now.</p>
         </div>
         <div class="grid">
+          <div class="card">
+            <span class="status">VERIFIED LOCAL</span>
+            <strong>Local Regression Smoke</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-LOCAL-REGRESSION-SMOKE</code>
+              <code>track: T+442m</code>
+              <code>bread: Improvement Timeline &gt; Local regression smoke verified</code>
+            </div>
+            <span>Source verification now includes an opt-in live-loop regression smoke for pricing, field contracts, universe route locks, readiness, IREN/MSTR core routes, watchlist shallow routes, atlas history, MCP readiness, and structured soft-miss behavior. This is local/internal-key verification; backend production redeploy remains separate.</span>
+          </div>
           <div class="card">
             <span class="status">LIVE</span>
             <strong>Live-Loop API Contract Deployed</strong>
@@ -1756,6 +1772,22 @@
               <li>It documents <code>evidence_hash</code> as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.</li>
               <li>It marks <code>page.next_args</code>, <code>page.next_offset</code>, <code>page.next_tool</code>, and daily-change evidence handles as replayable while the referenced source date remains available.</li>
               <li>Verification completed locally with focused field-contract and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">June 3, 2026</div>
+            <h3>Local regression smoke verified</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-LOCAL-REGRESSION-SMOKE</code>
+              <code>track: T+442m</code>
+              <code>bread: Improvement Timeline &gt; Local regression smoke verified</code>
+            </div>
+            <ul>
+              <li>The smoke runs without wallet-specific credentials by using an internal/test API key and the local gateway profile.</li>
+              <li>Coverage includes pricing discovery, field contract, large-response guidance, no-ticker universe route locks, readiness, daily changes, alpha opportunities, top stressed, risk distribution, IREN/MSTR company reports, alpha signals, peer ranking, SPECTRA field maps, atlas history, alternate-day watchlist alpha/peer routes, and a known structured soft miss.</li>
+              <li>Local verification passed with GOWORK=off go test ./cmd/search-gateway/..., focused acceptance tests, the local live-loop regression smoke script, and BASE_URL=http://127.0.0.1:3017 ./scripts/mcp-smoke.sh.</li>
+              <li>This is source/local verification only. Live API rollout remains a separate backend redeploy step.</li>
             </ul>
           </article>
 
@@ -2740,7 +2772,7 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-05-31",
+      "last_updated": "2026-06-03",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through e731e69",
@@ -2766,7 +2798,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of deltasignal-daily-field-deltas-v1 from 2026-05-31",
         "Backend source implementation of deltasignal-evidence-replay-v1 from 2026-05-31",
         "Live backend deployment ca-web-intel-mcp--0000450 from clean git archive db4857a4bca75b3ffafcba77c159ce1b62df2400 on 2026-05-31",
-        "Local targeted evidence-replay/daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31"
+        "Local targeted evidence-replay/daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31",
+        "Local regression smoke and MCP smoke against internal-key gateway profile from 2026-06-03"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }

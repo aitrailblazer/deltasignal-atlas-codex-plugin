@@ -39,14 +39,14 @@
       <a href="#tracking-river">Tracking river</a>
       <a href="#machine-contract">Machine contract</a>
     </nav>
-    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-05-31</code></p>
+    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-06-03</code></p>
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>114</strong><span>tracked changes</span></div>
-        <div><strong>29</strong><span>timeline entries</span></div>
-        <div><strong>112</strong><span>unique tripcodes</span></div>
-        <div><strong>114</strong><span>breadcrumb chips</span></div>
+        <div><strong>115</strong><span>tracked changes</span></div>
+        <div><strong>30</strong><span>timeline entries</span></div>
+        <div><strong>113</strong><span>unique tripcodes</span></div>
+        <div><strong>115</strong><span>breadcrumb chips</span></div>
         <div><strong>4</strong><span>visible commit references</span></div>
         <div><strong>2</strong><span>unique source commits</span></div>
     </div>
@@ -187,6 +187,7 @@
           <tr><td>112</td><td><code>ATLAS-PRIORITY-4-PROBE-PUBLIC-X402-BEHAVIOR</code></td><td>Live Checks &gt; Probe public x402 behavior</td><td><code>T+418m</code></td><td></td></tr>
           <tr><td>113</td><td><code>ATLAS-PRIORITY-4-RUN-READINESS</code></td><td>Live Checks &gt; Run readiness</td><td><code>T+426m</code></td><td></td></tr>
           <tr><td>114</td><td><code>ATLAS-PRIORITY-4-INSPECT-MCP-DISCOVERY</code></td><td>Live Checks &gt; Inspect MCP discovery</td><td><code>T+434m</code></td><td></td></tr>
+          <tr><td>115</td><td><code>ATLAS-LOCAL-REGRESSION-SMOKE</code></td><td>Improvement Timeline &gt; Local regression smoke verified</td><td><code>T+442m</code></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -378,6 +379,17 @@
             <li>It documents evidence_hash as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.</li>
             <li>It marks page.next_args , page.next_offset , page.next_tool , and daily-change evidence handles as replayable while the referenced source date remains available.</li>
             <li>Verification completed locally with focused field-contract and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-LOCAL-REGRESSION-SMOKE">
+          <h3>Local regression smoke verified</h3>
+          <p class="meta"><code>tripcode: ATLAS-LOCAL-REGRESSION-SMOKE</code> <code>track: T+442m</code> <code>bread: Improvement Timeline &gt; Local regression smoke verified</code></p>
+          <p>Added an opt-in live-loop regression smoke for the live-loop route set and verified it locally against an internal-key gateway profile before production redeploy.</p>
+<ul>
+            <li>The smoke runs without wallet-specific credentials by using an internal/test API key and the local gateway profile.</li>
+            <li>Coverage includes pricing discovery, field contract, large-response guidance, no-ticker universe route locks, readiness, daily changes, alpha opportunities, top stressed, risk distribution, IREN/MSTR company reports, alpha signals, peer ranking, SPECTRA field maps, atlas history, alternate-day watchlist alpha/peer routes, and a known structured soft miss.</li>
+            <li>Local verification passed with GOWORK=off go test ./cmd/search-gateway/..., focused acceptance tests, the local live-loop regression smoke script, and BASE_URL=http://127.0.0.1:3017 ./scripts/mcp-smoke.sh.</li>
+            <li>This is source/local verification only. Live API rollout remains a separate backend redeploy step.</li>
           </ul>
         </article>
         <article class="entry" id="ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED">
@@ -1685,12 +1697,12 @@
 {
   "artifact": "deltasignal_atlas7_changelog_llm",
   "version": "changelog-llm-v1",
-  "last_updated": "2026-05-31",
+  "last_updated": "2026-06-03",
   "stats": {
-    "tracked_changes": 114,
-    "timeline_entries": 29,
-    "unique_tripcodes": 112,
-    "breadcrumb_chips": 114,
+    "tracked_changes": 115,
+    "timeline_entries": 30,
+    "unique_tripcodes": 113,
+    "breadcrumb_chips": 115,
     "visible_commit_references": 4,
     "unique_source_commits": [
       "730def3",
@@ -2385,6 +2397,12 @@
       "track": "T+434m",
       "bread": "Live Checks > Inspect MCP discovery",
       "river_index": 114
+    },
+    {
+      "tripcode": "ATLAS-LOCAL-REGRESSION-SMOKE",
+      "track": "T+442m",
+      "bread": "Improvement Timeline > Local regression smoke verified",
+      "river_index": 115
     }
   ],
   "timeline_entries": [
@@ -2845,13 +2863,29 @@
       "commit": null,
       "summary": "Verify SwiftUI cards preserve source_date , computed_at_utc , payload_mode , compact flags, caveats, evidence references, x402 equivalent price, no-payment boundary, and non-advice language.",
       "bullets": []
+    },
+    {
+      "river_index": 115,
+      "date": "June 3, 2026",
+      "title": "Local regression smoke verified",
+      "tripcode": "ATLAS-LOCAL-REGRESSION-SMOKE",
+      "track": "T+442m",
+      "bread": "Improvement Timeline > Local regression smoke verified",
+      "commit": null,
+      "summary": "Added an opt-in live-loop regression smoke for the live-loop route set and verified it locally against an internal-key gateway profile before production redeploy.",
+      "bullets": [
+        "The smoke runs without wallet-specific credentials by using an internal/test API key and the local gateway profile.",
+        "Coverage includes pricing discovery, field contract, large-response guidance, no-ticker universe route locks, readiness, daily changes, alpha opportunities, top stressed, risk distribution, IREN/MSTR company reports, alpha signals, peer ranking, SPECTRA field maps, atlas history, alternate-day watchlist alpha/peer routes, and a known structured soft miss.",
+        "Local verification passed with GOWORK=off go test ./cmd/search-gateway/..., focused acceptance tests, the local live-loop regression smoke script, and BASE_URL=http://127.0.0.1:3017 ./scripts/mcp-smoke.sh.",
+        "This is source/local verification only. Live API rollout remains a separate backend redeploy step."
+      ]
     }
   ]
 }
   </script>
   <script type="application/xml" id="changelog-llm-xml">
-<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-05-31">
-  <stats tracked_changes="114" timeline_entries="29" unique_tripcodes="112" breadcrumb_chips="114" visible_commit_references="4" unique_source_commits="2" />
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-03">
+  <stats tracked_changes="115" timeline_entries="30" unique_tripcodes="113" breadcrumb_chips="115" visible_commit_references="4" unique_source_commits="2" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -2889,6 +2923,7 @@
     <entry river_index="108" tripcode="ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON" track="T+386m" bread="Next Verification Priorities &gt; REST / MCP / bundle drift comparison"><date>Priority 2</date><title>REST / MCP / bundle drift comparison</title></entry>
     <entry river_index="109" tripcode="ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES" track="T+394m" bread="Next Verification Priorities &gt; Expand public x402 probes"><date>Priority 3</date><title>Expand public x402 probes</title></entry>
     <entry river_index="110" tripcode="ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION" track="T+402m" bread="Next Verification Priorities &gt; App renderer regression"><date>Priority 4</date><title>App renderer regression</title></entry>
+    <entry river_index="115" tripcode="ATLAS-LOCAL-REGRESSION-SMOKE" track="T+442m" bread="Improvement Timeline &gt; Local regression smoke verified"><date>June 3, 2026</date><title>Local regression smoke verified</title></entry>
   </entries>
 </changelog_llm>
   </script>
