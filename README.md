@@ -100,9 +100,9 @@ Flow:
 1. Call `POST /mcp` with JSON-RPC `tools/list`.
 2. Do not send an internal key.
 3. Expect HTTP `200` with the public DeltaSignal tool inventory.
-4. Call a real tool such as `deltasignal_readiness` without payment.
-5. Expect HTTP `402 Payment Required`.
-6. Let the x402-capable client pay and retry the same `tools/call` request.
+4. Call a real tool such as `deltasignal_readiness` through the x402-capable client.
+5. Expect either an attached wallet-address free-tier grant to allow execution or HTTP `402 Payment Required`.
+6. If challenged, let the x402-capable client pay and retry the same `tools/call` request.
 
 Use this to confirm public MCP discovery and paid tool execution before real use.
 
@@ -230,11 +230,11 @@ Planned routes:
 - Payment rail: Base USDC through x402-capable clients
 - Seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
 
-First 5 calls are free where supported. After the free tier, compatible clients receive x402 payment requirements. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client.
+First calls are free where a wallet-address free-tier grant is configured or a free-tier policy applies. After the free tier, compatible clients receive x402 payment requirements. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client.
 
 ## Public x402 Probe
 
-Before paid use, inspect the payment contract without spending:
+Before paid use, inspect the payment contract. A plain unauthenticated request may return HTTP `402`; a compatible client with a configured wallet-address free-tier grant may execute under that grant:
 
 ```text
 GET https://api.aitrailblazer.net/v1/readiness

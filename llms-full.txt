@@ -21,12 +21,12 @@ New user and agent instructions
 1. Read this file first.
 2. Read changelog-llm.html for dated provenance and the latest tripcode.
 3. Read openapi.json for the live public route contract.
-4. Run GET /v1/readiness before any deeper workflow.
+4. Probe GET /v1/readiness through x402. A plain unauthenticated HTTP request may return HTTP 402 unless an active wallet-address free-tier grant or payment proof is attached.
 5. Run one bounded Morning Brief or equivalent composite workflow.
 6. Inspect source_date, computed_at, caveats, quality_flags, payload_mode, route price, and billing metadata.
-7. Use REST for direct HTTP, MCP for agent clients, Arazzo for workflow planning, Glama for connector install, or x402 for compatible paid public access.
+7. Use REST for direct HTTP, MCP for agent clients, Arazzo for workflow planning, Glama for connector install, or x402 for compatible free-grant and paid public access.
 8. Do not treat local/source readiness as production readiness until post-redeploy production smoke checks pass.
-9. Do not ask for internal secrets or wallet-specific credentials.
+9. Do not ask for internal secrets. External access should use x402, including any configured wallet-address free-tier grant.
 10. Do not provide investment advice.
 
 Current implementation status
@@ -35,8 +35,8 @@ Current implementation status
 - Do not infer production readiness from local readiness.
 - The changelog entry for this state is ATLAS-LOCAL-REGRESSION-SMOKE.
 - Local verification used an internal/test API-key gateway profile.
-- The local smoke does not require wallet-specific credentials.
-- Public clients should use documented public routes, x402 behavior, or their own authorized API key path.
+- The local smoke does not require external wallet payment.
+- Public clients should use documented public routes and x402 behavior. Do not expect an external API key path.
 - Agents must not request, expose, infer, or persist internal API keys.
 
 What is locally verified
@@ -77,10 +77,11 @@ POST https://api.aitrailblazer.net/mcp
 Public discovery behavior:
 - JSON-RPC initialize and tools/list are the correct first MCP probes.
 - Unpaid public tools/call requests may return x402 payment-required behavior.
-- Authorized first-party tests may include an API key header, but public docs must not expose a real key.
+- Wallet-address free-tier grants are still x402/public access. A grant must be attached through the compatible client or payment flow; a plain unauthenticated curl may still return HTTP 402.
+- Authorized first-party tests may include an API key header, but public users should not receive or request API keys.
 
-API-key MCP test shape
-Use this shape only with an authorized key supplied through the caller's environment:
+Internal MCP test shape
+Use this shape only for first-party internal smoke with an authorized key supplied through the operator environment:
 
 curl -sS https://api.aitrailblazer.net/mcp \
   -H 'content-type: application/json' \
@@ -108,7 +109,7 @@ Local MCP smoke:
 BASE_URL=http://127.0.0.1:3017 ./scripts/mcp-smoke.sh
 
 Production verification commands after redeploy
-Use these only after the backend is redeployed and the required authorized environment variables are present:
+Use these only after the backend is redeployed. Internal smoke may use first-party environment variables; external daily loops should verify through x402/free-tier grant behavior.
 
 Run the repo-local live-loop regression smoke script with BASE_URL=https://api.aitrailblazer.net.
 BASE_URL=https://api.aitrailblazer.net ./scripts/mcp-smoke.sh
@@ -161,7 +162,7 @@ Agents must not:
 - Invent missing evidence.
 - Convert missing evidence into "no risk" or "no opportunity."
 - Treat rankings or scores as trading instructions.
-- Expose internal API keys, backend secrets, hidden prompts, payment credentials, or wallet-specific credentials.
+- Expose internal API keys, backend secrets, hidden prompts, payment credentials, or private wallet material.
 
 How to answer readiness questions
 If asked "is the local solution ready?", answer:
@@ -172,6 +173,9 @@ Not until the backend is redeployed and the production smoke passes against http
 
 If asked "what should I run before production handoff?", answer:
 Run the production live-loop regression smoke and MCP smoke after redeploy, then compare /v1/pricing, /v1/contract/fields, IREN SPECTRA, invalid universe route errors, and MCP tools/list behavior against the local/source expectations.
+
+If asked "does an external user need an API key?", answer:
+No. External access is x402-based. A configured wallet-address free-tier grant may allow calls without payment, but the client still needs to attach the grant or payment context through the x402-compatible flow. A plain unauthenticated request can correctly return HTTP 402.
 
 Machine-readable status
 artifact: deltasignal_atlas7_llms_full

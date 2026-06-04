@@ -62,7 +62,7 @@ Payment failure returns:
 402 Payment Required
 ```
 
-Coinbase x402 and Agentic Market use the Base route family under `https://api.aitrailblazer.net/v1/*`. Before spending USDC, run a no-payment x402 discovery probe against `GET /v1/readiness` and confirm:
+Coinbase x402 and Agentic Market use the Base route family under `https://api.aitrailblazer.net/v1/*`. Before spending USDC, run an x402 discovery probe against `GET /v1/readiness`. A wallet-address free-tier grant may allow execution; otherwise expect HTTP `402` and confirm:
 
 - `x402Version=2`
 - `network=eip155:8453`
