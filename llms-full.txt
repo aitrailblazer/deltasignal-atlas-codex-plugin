@@ -17,6 +17,18 @@ Primary links
 - Arazzo workflow JSON: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
 - Public x402 handshake workflow: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
 
+New user and agent instructions
+1. Read this file first.
+2. Read changelog-llm.html for dated provenance and the latest tripcode.
+3. Read openapi.json for the live public route contract.
+4. Run GET /v1/readiness before any deeper workflow.
+5. Run one bounded Morning Brief or equivalent composite workflow.
+6. Inspect source_date, computed_at, caveats, quality_flags, payload_mode, route price, and billing metadata.
+7. Use REST for direct HTTP, MCP for agent clients, Arazzo for workflow planning, Glama for connector install, or x402 for compatible paid public access.
+8. Do not treat local/source readiness as production readiness until post-redeploy production smoke checks pass.
+9. Do not ask for internal secrets or wallet-specific credentials.
+10. Do not provide investment advice.
+
 Current implementation status
 - The local/source solution is ready.
 - The production redeploy is intentionally pending.
