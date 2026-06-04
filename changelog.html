@@ -485,16 +485,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 3, 2026 - Local regression smoke verified</p>
+      <p class="eyebrow">Updated June 4, 2026 - Wallet-signed grant auth for zero-balance clients</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>115</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>30</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>113</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>115</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>4</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>2</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>117</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>32</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>115</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>117</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>5</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>3</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -1204,6 +1204,18 @@
               <span>Improvement Timeline &gt; Local regression smoke verified</span>
               <code>T+442m</code>
             </div>
+            <div class="river-row">
+              <span>116</span>
+              <code>ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</code>
+              <span>Improvement Timeline &gt; Verified wallet grant settlement bypass</span>
+              <code>T+450m</code>
+            </div>
+            <div class="river-row">
+              <span>117</span>
+              <code>ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</code>
+              <span>Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients</span>
+              <code>T+458m</code>
+            </div>
         </div>
       </div>
     </section>
@@ -1214,6 +1226,26 @@
           <p>These are the changes most likely to matter to builders integrating the public route surface or agent workflows right now.</p>
         </div>
         <div class="grid">
+          <div class="card">
+            <span class="status">LIVE</span>
+            <strong>Wallet-Signed Grant Auth</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</code>
+              <code>track: T+458m</code>
+              <code>bread: Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients</code>
+            </div>
+            <span>Enrolled EVM wallets can now prove grant identity with signed wallet-grant headers before x402 payment middleware. This preserves the DB-backed grant ledger and enables grant-covered responses without requiring a funded x402 preflight.</span>
+          </div>
+          <div class="card">
+            <span class="status">LIVE</span>
+            <strong>Verified Wallet Grant Settlement Bypass</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</code>
+              <code>track: T+450m</code>
+              <code>bread: Improvement Timeline &gt; Verified wallet grant settlement bypass</code>
+            </div>
+            <span>Enrolled wallet clients can use their normal x402 retry while the server verifies the payer wallet, consumes the DB-backed grant counter, and skips paid settlement. Raw wallet headers remain untrusted.</span>
+          </div>
           <div class="card">
             <span class="status">VERIFIED LOCAL</span>
             <strong>Local Regression Smoke</strong>
@@ -1772,6 +1804,43 @@
               <li>It documents <code>evidence_hash</code> as stable for identical canonical evidence preimages and changed when hashed payload, source date, page contents, or selected arguments change.</li>
               <li>It marks <code>page.next_args</code>, <code>page.next_offset</code>, <code>page.next_tool</code>, and daily-change evidence handles as replayable while the referenced source date remains available.</li>
               <li>Verification completed locally with focused field-contract and regression tests. Live backend deployment verified on revision ca-web-intel-mcp--0000450.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">June 4, 2026</div>
+            <h3>Wallet-signed grant auth for zero-balance clients</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</code>
+              <code>track: T+458m</code>
+              <code>bread: Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients</code>
+            </div>
+            <ul>
+              <li>Added a signed wallet-grant path before x402 payment middleware for enrolled EVM wallets.</li>
+              <li>Callers send <code>X-DeltaSignal-Wallet</code>, <code>X-DeltaSignal-Wallet-Timestamp</code>, <code>X-DeltaSignal-Wallet-Nonce</code>, and <code>X-DeltaSignal-Wallet-Signature</code>.</li>
+              <li>The signature uses EIP-191 <code>personal_sign</code> over the canonical DeltaSignal grant message and defaults to a 300-second freshness window.</li>
+              <li>Matching requests consume the existing DB-backed grant counter and return <code>billing_mode=wallet_signed_grant</code>, <code>payment_status=grant_applied</code>, <code>cost_usd=0</code>, and <code>actual_cost_usd=0</code>.</li>
+              <li>HTTP 402 responses, <code>/help</code>, and <code>/openapi.json</code> now expose wallet-grant auth metadata for agent and developer discovery.</li>
+              <li>Live verification passed on revision <code>ca-web-intel-mcp--0000453</code> with an ephemeral enrolled wallet; the temporary grant row was removed after the smoke test.</li>
+              <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">June 4, 2026</div>
+            <h3>Verified wallet grant settlement bypass</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</code>
+              <code>track: T+450m</code>
+              <code>bread: Improvement Timeline &gt; Verified wallet grant settlement bypass</code>
+            </div>
+            <ul>
+              <li>Added source support for DB-backed verified-wallet grants: x402 verifies the signed payer wallet, matches it to the promo grant ledger, consumes the DB grant counter, returns a zero-amount grant settlement response, and skips paid settlement.</li>
+              <li>No API key or separate grant identifier is required for enrolled wallet clients; payer identity comes from x402 verification, not from client-supplied wallet headers.</li>
+              <li>The runtime records grant consumption in the existing DB counter and usage ledger, preserving route and tool metadata for audit.</li>
+              <li>Billing metadata reports zero actual cost with <code>billing_mode=verified_wallet_grant</code> and <code>payment_status=grant_applied</code> for grant-covered calls.</li>
+              <li>Raw wallet headers remain untrusted; callers without a matching verified wallet grant continue through normal x402 payment.</li>
+              <li>Verification passed with <code>GOWORK=off go test ./cmd/search-gateway</code>; production rollout is separate from this source changelog entry.</li>
             </ul>
           </article>
 
@@ -2772,7 +2841,7 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-06-03",
+      "last_updated": "2026-06-04",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through e731e69",
@@ -2797,6 +2866,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of large-response AgentCash/Node pipe guidance from 2026-05-31",
         "Backend source implementation of deltasignal-daily-field-deltas-v1 from 2026-05-31",
         "Backend source implementation of deltasignal-evidence-replay-v1 from 2026-05-31",
+        "Backend source implementation of verified-wallet DB grant settlement bypass from 2026-06-04",
+        "Live backend deployment ca-web-intel-mcp--0000453 from clean git archive c001f267ae6a5ac3067bdfba3131fad02c0cc709 on 2026-06-04",
         "Live backend deployment ca-web-intel-mcp--0000450 from clean git archive db4857a4bca75b3ffafcba77c159ce1b62df2400 on 2026-05-31",
         "Local targeted evidence-replay/daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31",
         "Local regression smoke and MCP smoke against internal-key gateway profile from 2026-06-03"
