@@ -102,6 +102,7 @@ Future artifact-backed bulk daily evidence exports are not inline chat responses
 - Preserve source dates, row counts, readiness fields, risk tiers, and debt coverage status when summarizing.
 - For named issuers, normalize tickers to uppercase before constructing routes.
 - For large endpoints such as company-report and daily-changes, do not pipe `npx agentcash fetch` stdout directly into another process; write the response to a file or use compact/paginated routes to avoid Node/pipe truncation around 64 KB.
+- Keep universe routes path-ticker-free. Do not append `/UNIVERSE`, `/{ticker}`, or any other path segment to `GET /v1/readiness`, `GET /v1/alpha-opportunities`, `GET /v1/top-stressed`, `GET /v1/risk-distribution`, or `GET /v1/daily-changes/latest`; use query parameters such as `limit` or `offset` where supported.
 - If payment tooling is unavailable, give the exact route and expected cost, then explain that payment execution needs an x402 or MPP-capable client.
 
 ## Common Prompts
