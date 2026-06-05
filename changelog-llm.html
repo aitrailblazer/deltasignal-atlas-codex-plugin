@@ -39,16 +39,16 @@
       <a href="#tracking-river">Tracking river</a>
       <a href="#machine-contract">Machine contract</a>
     </nav>
-    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-06-04</code></p>
+    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-06-05</code></p>
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>117</strong><span>tracked changes</span></div>
-        <div><strong>32</strong><span>timeline entries</span></div>
-        <div><strong>115</strong><span>unique tripcodes</span></div>
-        <div><strong>117</strong><span>breadcrumb chips</span></div>
-        <div><strong>5</strong><span>visible commit references</span></div>
-        <div><strong>3</strong><span>unique source commits</span></div>
+        <div><strong>118</strong><span>tracked changes</span></div>
+        <div><strong>33</strong><span>timeline entries</span></div>
+        <div><strong>116</strong><span>unique tripcodes</span></div>
+        <div><strong>118</strong><span>breadcrumb chips</span></div>
+        <div><strong>6</strong><span>visible commit references</span></div>
+        <div><strong>4</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -190,6 +190,7 @@
           <tr><td>115</td><td><code>ATLAS-LOCAL-REGRESSION-SMOKE</code></td><td>Improvement Timeline &gt; Local regression smoke verified</td><td><code>T+442m</code></td><td></td></tr>
           <tr><td>116</td><td><code>ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</code></td><td>Improvement Timeline &gt; Verified wallet grant settlement bypass</td><td><code>T+450m</code></td><td></td></tr>
           <tr><td>117</td><td><code>ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</code></td><td>Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients</td><td><code>T+458m</code></td><td>c001f26</td></tr>
+          <tr><td>118</td><td><code>ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</code></td><td>Improvement Timeline &gt; MCP wallet-signed grant execution verified</td><td><code>T+466m</code></td><td>e3e4763</td></tr>
           </tbody>
         </table>
       </div>
@@ -408,6 +409,19 @@
             <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
           </ul>
         </article>
+        <article class="entry" id="ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION">
+          <h3>MCP wallet-signed grant execution verified</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</code> <code>track: T+466m</code> <code>bread: Improvement Timeline &gt; MCP wallet-signed grant execution verified</code></p>
+          <p>Production MCP now honors wallet-signed grant context accepted by the outer x402/payment wrapper before API-key enforcement.</p>
+<ul>
+            <li>Live verification passed on revision ca-web-intel-mcp--0000454 with an ephemeral enrolled wallet and a signed POST /mcp JSON-RPC tools/call to deltasignal_readiness.</li>
+            <li>The live MCP response returned HTTP 200, X-DeltaSignal-Grant: wallet_signed_grant, a JSON-RPC result, and no JSON-RPC error.</li>
+            <li>The temporary grant rows were removed after the smoke test, and the response did not echo the temporary private key or signature.</li>
+            <li>Unauthenticated MCP discovery remains open: GET /mcp, initialize, and tools/list returned HTTP 200; the live tool list exposed 33 tools, including 29 deltasignal_* tools.</li>
+            <li>Regression coverage includes TestHandleMCPAcceptsContextGrantFromX402Wrapper and focused MCP|SignedWalletGrant|FreeTierGrant tests.</li>
+            <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-LOCAL-REGRESSION-SMOKE">
           <h3>Local regression smoke verified</h3>
           <p class="meta"><code>tripcode: ATLAS-LOCAL-REGRESSION-SMOKE</code> <code>track: T+442m</code> <code>bread: Improvement Timeline &gt; Local regression smoke verified</code></p>
@@ -536,7 +550,7 @@
         <article class="entry" id="ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES">
           <h3>Expand public x402 probes</h3>
           <p class="meta"><code>tripcode: ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES</code> <code>track: T+394m</code> <code>bread: Next Verification Priorities &gt; Expand public x402 probes</code></p>
-          <p>Readiness and company-report public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to /v1/morning-brief/natural and any new paid public route.</p>
+          <p>Readiness, company-report, and Morning Brief natural-language public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to any new paid public route.</p>
 
         </article>
         <article class="entry" id="ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION">
@@ -548,20 +562,22 @@
     </section>
     <section id="machine-contract">
       <h2>Machine Contract</h2>
-      <p>The embedded JSON and XML below are inert source-of-truth mirrors for LLM/RAG ingestion.</p>
+      <p>The embedded JSON and XML below are inert machine-readable mirrors for LLM/RAG ingestion. The visible preformatted block preserves an older source snapshot; the active script tags below it carry the current June 5 contract.</p>
       <pre><code>{
   &quot;artifact&quot;: &quot;deltasignal_atlas7_changelog_llm&quot;,
   &quot;version&quot;: &quot;changelog-llm-v1&quot;,
-  &quot;last_updated&quot;: &quot;2026-05-31&quot;,
+  &quot;last_updated&quot;: &quot;2026-06-05&quot;,
   &quot;stats&quot;: {
-    &quot;tracked_changes&quot;: 114,
-    &quot;timeline_entries&quot;: 29,
-    &quot;unique_tripcodes&quot;: 112,
-    &quot;breadcrumb_chips&quot;: 114,
-    &quot;visible_commit_references&quot;: 4,
+    &quot;tracked_changes&quot;: 118,
+    &quot;timeline_entries&quot;: 33,
+    &quot;unique_tripcodes&quot;: 116,
+    &quot;breadcrumb_chips&quot;: 118,
+    &quot;visible_commit_references&quot;: 6,
     &quot;unique_source_commits&quot;: [
       &quot;730def3&quot;,
-      &quot;7a80e86&quot;
+      &quot;7a80e86&quot;,
+      &quot;c001f26&quot;,
+      &quot;e3e4763&quot;
     ]
   },
   &quot;tracking_river&quot;: [
@@ -1699,7 +1715,7 @@
       &quot;track&quot;: &quot;T+394m&quot;,
       &quot;bread&quot;: &quot;Next Verification Priorities &gt; Expand public x402 probes&quot;,
       &quot;commit&quot;: null,
-      &quot;summary&quot;: &quot;Readiness and company-report public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to /v1/morning-brief/natural and any new paid public route.&quot;,
+      &quot;summary&quot;: &quot;Readiness, company-report, and Morning Brief natural-language public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to any new paid public route.&quot;,
       &quot;bullets&quot;: []
     },
     {
@@ -1724,17 +1740,18 @@
 {
   "artifact": "deltasignal_atlas7_changelog_llm",
   "version": "changelog-llm-v1",
-  "last_updated": "2026-06-04",
+  "last_updated": "2026-06-05",
   "stats": {
-    "tracked_changes": 117,
-    "timeline_entries": 32,
-    "unique_tripcodes": 115,
-    "breadcrumb_chips": 117,
-    "visible_commit_references": 5,
+    "tracked_changes": 118,
+    "timeline_entries": 33,
+    "unique_tripcodes": 116,
+    "breadcrumb_chips": 118,
+    "visible_commit_references": 6,
     "unique_source_commits": [
       "730def3",
       "7a80e86",
-      "c001f26"
+      "c001f26",
+      "e3e4763"
     ]
   },
   "tracking_river": [
@@ -2443,6 +2460,12 @@
       "track": "T+458m",
       "bread": "Improvement Timeline > Wallet-signed grant auth for zero-balance clients",
       "river_index": 117
+    },
+    {
+      "tripcode": "ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION",
+      "track": "T+466m",
+      "bread": "Improvement Timeline > MCP wallet-signed grant execution verified",
+      "river_index": 118
     }
   ],
   "timeline_entries": [
@@ -2890,7 +2913,7 @@
       "track": "T+394m",
       "bread": "Next Verification Priorities > Expand public x402 probes",
       "commit": null,
-      "summary": "Readiness and company-report public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to /v1/morning-brief/natural and any new paid public route.",
+      "summary": "Readiness, company-report, and Morning Brief natural-language public unpaid probes now verify HTTP 402 body and x402 challenge headers. Extend the same check to any new paid public route.",
       "bullets": []
     },
     {
@@ -2954,13 +2977,31 @@
         "Live verification passed on revision ca-web-intel-mcp--0000453 with an ephemeral enrolled wallet; the temporary grant row was removed after the smoke test.",
         "No individual identity, wallet, credit amount, or usage data is included in this public changelog entry."
       ]
+    },
+    {
+      "river_index": 118,
+      "date": "June 5, 2026",
+      "title": "MCP wallet-signed grant execution verified",
+      "tripcode": "ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION",
+      "track": "T+466m",
+      "bread": "Improvement Timeline > MCP wallet-signed grant execution verified",
+      "commit": "e3e4763",
+      "summary": "Production MCP now honors wallet-signed grant context accepted by the outer x402/payment wrapper before API-key enforcement.",
+      "bullets": [
+        "Live verification passed on revision ca-web-intel-mcp--0000454 with an ephemeral enrolled wallet and a signed POST /mcp JSON-RPC tools/call to deltasignal_readiness.",
+        "The live MCP response returned HTTP 200, X-DeltaSignal-Grant: wallet_signed_grant, a JSON-RPC result, and no JSON-RPC error.",
+        "The temporary grant rows were removed after the smoke test, and the response did not echo the temporary private key or signature.",
+        "Unauthenticated MCP discovery remains open: GET /mcp, initialize, and tools/list returned HTTP 200; the live tool list exposed 33 tools, including 29 deltasignal_* tools.",
+        "Regression coverage includes TestHandleMCPAcceptsContextGrantFromX402Wrapper and focused MCP|SignedWalletGrant|FreeTierGrant tests.",
+        "No individual identity, wallet, credit amount, or usage data is included in this public changelog entry."
+      ]
     }
   ]
 }
   </script>
   <script type="application/xml" id="changelog-llm-xml">
-<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-04">
-  <stats tracked_changes="117" timeline_entries="32" unique_tripcodes="115" breadcrumb_chips="117" visible_commit_references="5" unique_source_commits="3" />
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-05">
+  <stats tracked_changes="118" timeline_entries="33" unique_tripcodes="116" breadcrumb_chips="118" visible_commit_references="6" unique_source_commits="4" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -3001,6 +3042,7 @@
     <entry river_index="115" tripcode="ATLAS-LOCAL-REGRESSION-SMOKE" track="T+442m" bread="Improvement Timeline &gt; Local regression smoke verified"><date>June 3, 2026</date><title>Local regression smoke verified</title></entry>
     <entry river_index="116" tripcode="ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS" track="T+450m" bread="Improvement Timeline &gt; Verified wallet grant settlement bypass"><date>June 4, 2026</date><title>Verified wallet grant settlement bypass</title></entry>
     <entry river_index="117" tripcode="ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH" track="T+458m" bread="Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients"><date>June 4, 2026</date><title>Wallet-signed grant auth for zero-balance clients</title></entry>
+    <entry river_index="118" tripcode="ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION" track="T+466m" bread="Improvement Timeline &gt; MCP wallet-signed grant execution verified"><date>June 5, 2026</date><title>MCP wallet-signed grant execution verified</title></entry>
   </entries>
 </changelog_llm>
   </script>

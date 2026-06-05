@@ -485,16 +485,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 4, 2026 - Wallet-signed grant auth for zero-balance clients</p>
+      <p class="eyebrow">Updated June 5, 2026 - MCP wallet-signed grant execution verified</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>117</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>32</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>115</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>117</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>5</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>3</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>118</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>33</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>116</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>118</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>6</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>4</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -1216,6 +1216,12 @@
               <span>Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients</span>
               <code>T+458m</code>
             </div>
+            <div class="river-row">
+              <span>118</span>
+              <code>ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</code>
+              <span>Improvement Timeline &gt; MCP wallet-signed grant execution verified</span>
+              <code>T+466m</code>
+            </div>
         </div>
       </div>
     </section>
@@ -1235,6 +1241,16 @@
               <code>bread: Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients</code>
             </div>
             <span>Enrolled EVM wallets can now prove grant identity with signed wallet-grant headers before x402 payment middleware. This preserves the DB-backed grant ledger and enables grant-covered responses without requiring a funded x402 preflight.</span>
+          </div>
+          <div class="card">
+            <span class="status">VERIFIED</span>
+            <strong>MCP Wallet Grant Execution</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</code>
+              <code>track: T+466m</code>
+              <code>bread: Improvement Timeline &gt; MCP wallet-signed grant execution verified</code>
+            </div>
+            <span>Production MCP now honors wallet-signed grant context before API-key enforcement. A live signed <code>POST /mcp</code> <code>tools/call</code> to <code>deltasignal_readiness</code> returned HTTP <code>200</code>, <code>X-DeltaSignal-Grant: wallet_signed_grant</code>, a JSON-RPC result, and no JSON-RPC error on revision <code>ca-web-intel-mcp--0000454</code>.</span>
           </div>
           <div class="card">
             <span class="status">LIVE</span>
@@ -1827,6 +1843,25 @@
           </article>
 
           <article class="timeline-item">
+            <div class="date">June 5, 2026</div>
+            <h3>MCP wallet-signed grant execution verified</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</code>
+              <code>track: T+466m</code>
+              <code>bread: Improvement Timeline &gt; MCP wallet-signed grant execution verified</code>
+            </div>
+            <ul>
+              <li>Fixed the MCP auth gate so grant context accepted by the outer x402/payment wrapper is honored by <code>handleMCP</code> before API-key enforcement.</li>
+              <li>Live verification passed on revision <code>ca-web-intel-mcp--0000454</code> with an ephemeral enrolled wallet and a signed <code>POST /mcp</code> JSON-RPC <code>tools/call</code> to <code>deltasignal_readiness</code>.</li>
+              <li>The live MCP response returned HTTP <code>200</code>, <code>X-DeltaSignal-Grant: wallet_signed_grant</code>, a JSON-RPC result, and no JSON-RPC error.</li>
+              <li>The temporary grant rows were removed after the smoke test, and the response did not echo the temporary private key or signature.</li>
+              <li>Unauthenticated MCP discovery remains open: <code>GET /mcp</code>, <code>initialize</code>, and <code>tools/list</code> returned HTTP <code>200</code>; the live tool list exposed <code>33</code> tools, including <code>29</code> <code>deltasignal_*</code> tools.</li>
+              <li>Regression coverage includes <code>TestHandleMCPAcceptsContextGrantFromX402Wrapper</code> and focused <code>MCP|SignedWalletGrant|FreeTierGrant</code> tests.</li>
+              <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
             <div class="date">June 4, 2026</div>
             <h3>Verified wallet grant settlement bypass</h3>
             <div class="track">
@@ -2129,7 +2164,7 @@
               <code>bread: Audit-Grade Validation Plan &gt; Compact Validation Matrix</code>
             </div>
             <pre><code>OpenAPI route present: yes
-MCP live call succeeded: yes, in prior smoke
+MCP live call succeeded: yes, prior evidence workflow smoke and 2026-06-05 signed-wallet grant smoke
 Source date returned: 2026-05-28, in prior smoke
 Payload mode: compact
 Raw evidence attached: no
@@ -2144,12 +2179,15 @@ Investment-advice boundary preserved: yes</code></pre>
               <code>track: T+290m</code>
               <code>bread: Audit-Grade Validation Plan &gt; MCP / x402 Call Ledger</code>
             </div>
-            <pre><code>No new MCP or wallet call was made for this page update.
-Prior smoke:
+            <pre><code>Latest signed-wallet MCP grant smoke:
+- readiness: live POST /mcp tools/call ok, revision=ca-web-intel-mcp--0000454, grant=wallet_signed_grant, JSON-RPC result returned
+- temporary enrolled wallet and grant rows removed after verification
+- response did not echo the temporary private key or signature
+Prior evidence workflow smoke:
 - readiness: live MCP ok, source_date=2026-05-28, elapsed=575 ms, /v1/readiness=$0.04
 - company_report RIOT: live MCP ok, source_date=2026-05-28, elapsed=492 ms, x402 equivalent=$0.30
 - morning_brief: live MCP ok, source_date=2026-05-28, latest activity=2026-05-27, elapsed=12398 ms
-- no in-app x402, wallet, MPP, settlement, or payment flow executed</code></pre>
+- no paid USDC x402 settlement executed</code></pre>
           </div>
         </div>
       </div>
@@ -2187,7 +2225,7 @@ Prior smoke:
               <code>track: T+504m</code>
               <code>bread: Results Audit Snapshot &gt; Live MCP smoke passed</code>
             </div>
-            <span>Prior RIOT smoke artifacts reported readiness ok, company report ok, Morning Brief ok, 6 of 6 internal calls succeeded for Company Report and Morning Brief, and source date <code>2026-05-28</code>.</span>
+            <span>Prior RIOT smoke artifacts reported readiness ok, company report ok, Morning Brief ok, 6 of 6 internal calls succeeded for Company Report and Morning Brief, and source date <code>2026-05-28</code>. A later signed-wallet MCP grant smoke verified <code>POST /mcp</code> execution on revision <code>ca-web-intel-mcp--0000454</code>.</span>
           </div>
           <div class="card">
             <strong>Language migration passed</strong>
@@ -2216,7 +2254,7 @@ Prior smoke:
               <code>track: T+522m</code>
               <code>bread: Results Audit Snapshot &gt; x402 caveat resolved separately</code>
             </div>
-            <span>The attached smoke evidence did not execute wallet, MPP, settlement, or in-app x402 payment. A later public probe verified unpaid <code>402 payment_required</code> JSON and x402 challenge headers for readiness and company-report routes.</span>
+            <span>The attached smoke evidence did not execute paid wallet, MPP, settlement, or in-app x402 payment. Later public probes verified unpaid <code>402 payment_required</code> JSON and x402 challenge headers for readiness, company-report, and Morning Brief natural-language routes.</span>
           </div>
           <div class="card">
             <strong>Latency variance only</strong>
@@ -2740,7 +2778,7 @@ Spacing note: published paths use company-report. A copied
               <code>track: T+394m</code>
               <code>bread: Next Verification Priorities &gt; Expand public x402 probes</code>
             </div>
-            <p>Readiness and company-report public unpaid probes now verify HTTP <code>402</code> body and x402 challenge headers. Extend the same check to <code>/v1/morning-brief/natural</code> and any new paid public route.</p>
+            <p>Readiness, company-report, and Morning Brief natural-language public unpaid probes now verify HTTP <code>402</code> body and x402 challenge headers. Extend the same check to any new paid public route.</p>
           </article>
           <article class="timeline-item">
             <div class="date">Priority 4</div>
@@ -2841,7 +2879,7 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-06-04",
+      "last_updated": "2026-06-05",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through e731e69",
@@ -2868,6 +2906,9 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of deltasignal-evidence-replay-v1 from 2026-05-31",
         "Backend source implementation of verified-wallet DB grant settlement bypass from 2026-06-04",
         "Live backend deployment ca-web-intel-mcp--0000453 from clean git archive c001f267ae6a5ac3067bdfba3131fad02c0cc709 on 2026-06-04",
+        "Live backend deployment ca-web-intel-mcp--0000454 from clean git archive e3e47634ee1f434dead764d895427484340493ff on 2026-06-05",
+        "Live MCP signed-wallet grant smoke against POST /mcp tools/call deltasignal_readiness from 2026-06-05",
+        "Live public unpaid x402 probes for readiness, company-report, and Morning Brief natural-language routes from 2026-06-05",
         "Live backend deployment ca-web-intel-mcp--0000450 from clean git archive db4857a4bca75b3ffafcba77c159ce1b62df2400 on 2026-05-31",
         "Local targeted evidence-replay/daily-delta/companies/pricing/billing/metadata/not-found/field-contract/help/OpenAPI tests and go test ./cmd/search-gateway/... from 2026-05-31",
         "Local regression smoke and MCP smoke against internal-key gateway profile from 2026-06-03"
