@@ -103,6 +103,8 @@ Future artifact-backed bulk daily evidence exports are not inline chat responses
 - For named issuers, normalize tickers to uppercase before constructing routes.
 - For large endpoints such as company-report and daily-changes, do not pipe `npx agentcash fetch` stdout directly into another process; write the response to a file or use compact/paginated routes to avoid Node/pipe truncation around 64 KB.
 - Keep universe routes path-ticker-free. Do not append `/UNIVERSE`, `/{ticker}`, or any other path segment to `GET /v1/readiness`, `GET /v1/alpha-opportunities`, `GET /v1/top-stressed`, `GET /v1/risk-distribution`, or `GET /v1/daily-changes/latest`; use query parameters such as `limit` or `offset` where supported.
+- Treat structured `not_found` responses as soft misses, not hard failures. If a ticker-scoped route returns `status=not_found`, preserve `reason`, `coverage_state`, `retry_after_days`, `route_uri`, ticker/request key, and `billing_behavior`; do not retry that same endpoint/ticker pair until the retry window expires unless the user explicitly asks.
+- Current SPECTRA semantics: `IREN` is a supported field-map ticker; unsupported field-map tickers return `reason=historical_field_map_contract_missing`, `coverage_state=not_available_for_issuer`, `retry_after_days=7`, `billing_behavior=not_charged`, and `cost_usd=0`.
 - If payment tooling is unavailable, give the exact route and expected cost, then explain that payment execution needs an x402 or MPP-capable client.
 
 ## Common Prompts
