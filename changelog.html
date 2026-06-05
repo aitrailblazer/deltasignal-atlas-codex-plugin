@@ -485,16 +485,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 5, 2026 - MCP wallet-signed grant execution verified</p>
+      <p class="eyebrow">Updated June 5, 2026 - 215-row ATLAS-7 + SPECTRA coverage verified</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>120</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>35</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>117</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>120</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>6</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>4</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>121</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>36</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>119</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>121</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>9</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>7</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -514,6 +514,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>000</span>
+              <code>ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code>
+              <span>Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</span>
+              <code>T+490m</code>
+            </div>
             <div class="river-row">
               <span>001</span>
               <code>ATLAS-CARD-LIVE-LOOP-API-CONTRACT</code>
@@ -1245,6 +1251,17 @@
         </div>
         <div class="grid">
           <div class="card">
+            <span class="status">LIVE VERIFIED</span>
+            <strong>215-row ATLAS-7 + SPECTRA Coverage</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code>
+              <code>track: T+490m</code>
+              <code>commit: 8d7171e</code>
+              <code>bread: Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</code>
+            </div>
+            <span><code>/v1/spectra-field-map/{ticker_or_cik}</code> now prefers live ATLAS-history generation over static contracts. Production revision <code>ca-web-intel-mcp--0000461</code> verified SPECTRA HTTP <code>200</code> for <code>215/215</code> ATLAS-7 rows with <code>0</code> misses, <code>0</code> stale-static responses, source date <code>2026-06-04</code>, and CIK addressing for no-ticker rows.</span>
+          </div>
+          <div class="card">
             <span class="status">LIVE</span>
             <strong>Terminal Broker Contract</strong>
             <div class="track">
@@ -1871,6 +1888,27 @@
               <li>HTTP 402 responses, <code>/help</code>, and <code>/openapi.json</code> now expose wallet-grant auth metadata for agent and developer discovery.</li>
               <li>Live verification passed on revision <code>ca-web-intel-mcp--0000453</code> with an ephemeral enrolled wallet; the temporary grant row was removed after the smoke test.</li>
               <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">June 5, 2026</div>
+            <h3>Live ATLAS-history SPECTRA primary rollout</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code>
+              <code>track: T+490m</code>
+              <code>commit: 8d7171e</code>
+              <code>bread: Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</code>
+            </div>
+            <ul>
+              <li><code>/v1/spectra-field-map/{ticker_or_cik}</code> now first attempts runtime SPECTRA generation from ATLAS-7 history.</li>
+              <li>Static SPECTRA contracts remain available only as fallback when runtime ATLAS history is unavailable or returns no rows.</li>
+              <li>Production revision <code>ca-web-intel-mcp--0000461</code> verified SPECTRA HTTP <code>200</code> for <code>215/215</code> ATLAS-7 rows, with <code>0</code> misses and <code>0</code> non-runtime responses.</li>
+              <li>The full-universe probe used ticker addressing where available and zero-padded SEC CIK addressing for the 24 no-ticker ATLAS-7 rows.</li>
+              <li>Full-probe SPECTRA responses used <code>generation_mode=runtime_atlas_history</code>, <code>source_date=2026-06-04</code>, <code>points=42</code>, <code>static_contract=false</code>, and <code>real_data=true</code>.</li>
+              <li>Watchlist verification covered <code>COIN</code>, <code>RIOT</code>, <code>MARA</code>, <code>WULF</code>, <code>CIFR</code>, <code>CRCL</code>, and <code>HOOD</code> for <code>alpha-signals</code>, <code>peer-ranking</code>, and <code>spectra-field-map</code>.</li>
+              <li>Weekly verification covered <code>IREN</code> and <code>MSTR</code> for <code>atlas-history</code> and <code>spectra-field-map</code>.</li>
+              <li>The route remains an evidence and diligence surface only; SPECTRA field maps do not provide personalized investment advice, recommendations, or price targets.</li>
             </ul>
           </article>
 
@@ -2976,6 +3014,8 @@ Spacing note: published paths use company-report. A copied
         "Live backend deployment ca-web-intel-mcp--0000453 from clean git archive c001f267ae6a5ac3067bdfba3131fad02c0cc709 on 2026-06-04",
         "Live backend deployment ca-web-intel-mcp--0000454 from clean git archive e3e47634ee1f434dead764d895427484340493ff on 2026-06-05",
         "Live backend deployment ca-web-intel-mcp--0000456 from clean git archive a62f4c57678449e9285a02fef9e5edb42e891841 on 2026-06-05",
+        "Live backend deployment ca-web-intel-mcp--0000461 from clean git archive 8d7171e3398e48bc15c0637048dc7fd14e9ace6e on 2026-06-05",
+        "Live ATLAS-7 row universe SPECTRA verification from 2026-06-05: 215/215 HTTP 200, 0 misses, 0 non-runtime responses",
         "Live GET /v1/contract/fields terminal_broker contract verification from 2026-06-05",
         "Live MCP signed-wallet grant smoke against POST /mcp tools/call deltasignal_readiness from 2026-06-05",
         "Live public unpaid x402 probes for readiness, company-report, and Morning Brief natural-language routes from 2026-06-05",

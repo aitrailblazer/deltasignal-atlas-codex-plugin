@@ -43,12 +43,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>120</strong><span>tracked changes</span></div>
-        <div><strong>35</strong><span>timeline entries</span></div>
-        <div><strong>118</strong><span>unique tripcodes</span></div>
-        <div><strong>120</strong><span>breadcrumb chips</span></div>
-        <div><strong>8</strong><span>visible commit references</span></div>
-        <div><strong>6</strong><span>unique source commits</span></div>
+        <div><strong>121</strong><span>tracked changes</span></div>
+        <div><strong>36</strong><span>timeline entries</span></div>
+        <div><strong>119</strong><span>unique tripcodes</span></div>
+        <div><strong>121</strong><span>breadcrumb chips</span></div>
+        <div><strong>9</strong><span>visible commit references</span></div>
+        <div><strong>7</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -193,6 +193,7 @@
           <tr><td>118</td><td><code>ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</code></td><td>Improvement Timeline &gt; MCP wallet-signed grant execution verified</td><td><code>T+466m</code></td><td>e3e4763</td></tr>
           <tr><td>119</td><td><code>ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</code></td><td>Improvement Timeline &gt; Parser field contract hardened</td><td><code>T+474m</code></td><td>f64dc87</td></tr>
           <tr><td>120</td><td><code>ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</code></td><td>Improvement Timeline &gt; Terminal broker envelope contract</td><td><code>T+482m</code></td><td>a62f4c5</td></tr>
+          <tr><td>121</td><td><code>ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code></td><td>Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</td><td><code>T+490m</code></td><td>8d7171e</td></tr>
           </tbody>
         </table>
       </div>
@@ -448,6 +449,20 @@
             <li>The stable terminal envelope fields are endpoint_id, status, cache_status, quote_status, summary, evidence_summary, estimated_usd, cost_usd, and confirmation_token.</li>
             <li>Live verification passed on revision ca-web-intel-mcp--0000456; local regression coverage includes field-contract assertions for the broker datasets and envelope keys.</li>
             <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY">
+          <h3>Live ATLAS-history SPECTRA primary rollout</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code> <code>track: T+490m</code> <code>commit: 8d7171e</code> <code>bread: Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</code></p>
+          <p>/v1/spectra-field-map/{ticker_or_cik} now prefers runtime SPECTRA generation from ATLAS-7 history over static contracts.</p>
+<ul>
+            <li>Static SPECTRA contracts remain fallback only when runtime ATLAS history is unavailable or returns no rows.</li>
+            <li>Production revision ca-web-intel-mcp--0000461 verified SPECTRA HTTP 200 for 215/215 ATLAS-7 rows, with 0 misses and 0 non-runtime responses.</li>
+            <li>The full-universe probe used ticker addressing where available and zero-padded SEC CIK addressing for the 24 no-ticker ATLAS-7 rows.</li>
+            <li>Full-probe SPECTRA responses used generation_mode=runtime_atlas_history, source_date=2026-06-04, points=42, static_contract=false, and real_data=true.</li>
+            <li>Watchlist verification covered COIN, RIOT, MARA, WULF, CIFR, CRCL, and HOOD for alpha-signals, peer-ranking, and spectra-field-map.</li>
+            <li>Weekly verification covered IREN and MSTR for atlas-history and spectra-field-map.</li>
+            <li>The route remains evidence and diligence infrastructure only; it does not provide personalized investment advice, recommendations, or price targets.</li>
           </ul>
         </article>
         <article class="entry" id="ATLAS-LOCAL-REGRESSION-SMOKE">
@@ -1771,18 +1786,19 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-05",
   "stats": {
-    "tracked_changes": 120,
-    "timeline_entries": 35,
-    "unique_tripcodes": 118,
-    "breadcrumb_chips": 120,
-    "visible_commit_references": 8,
+    "tracked_changes": 121,
+    "timeline_entries": 36,
+    "unique_tripcodes": 119,
+    "breadcrumb_chips": 121,
+    "visible_commit_references": 9,
     "unique_source_commits": [
       "730def3",
       "7a80e86",
       "c001f26",
       "e3e4763",
       "f64dc87",
-      "a62f4c5"
+      "a62f4c5",
+      "8d7171e"
     ]
   },
   "tracking_river": [
@@ -2510,6 +2526,13 @@
       "commit": "a62f4c5",
       "bread": "Improvement Timeline > Terminal broker envelope contract",
       "river_index": 120
+    },
+    {
+      "tripcode": "ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY",
+      "track": "T+490m",
+      "commit": "8d7171e",
+      "bread": "Improvement Timeline > Live ATLAS-history SPECTRA primary rollout",
+      "river_index": 121
     }
   ],
   "timeline_entries": [
@@ -3075,13 +3098,32 @@
         "Live verification passed on revision ca-web-intel-mcp--0000456; local regression coverage includes field-contract assertions for the broker datasets and envelope keys.",
         "No individual identity, wallet, credit amount, or usage data is included in this public changelog entry."
       ]
+    },
+    {
+      "river_index": 121,
+      "date": "June 5, 2026",
+      "title": "Live ATLAS-history SPECTRA primary rollout",
+      "tripcode": "ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY",
+      "track": "T+490m",
+      "bread": "Improvement Timeline > Live ATLAS-history SPECTRA primary rollout",
+      "commit": "8d7171e",
+      "summary": "/v1/spectra-field-map/{ticker_or_cik} now prefers runtime SPECTRA generation from ATLAS-7 history over static contracts.",
+      "bullets": [
+        "Static SPECTRA contracts remain fallback only when runtime ATLAS history is unavailable or returns no rows.",
+        "Production revision ca-web-intel-mcp--0000461 verified SPECTRA HTTP 200 for 215/215 ATLAS-7 rows, with 0 misses and 0 non-runtime responses.",
+        "The full-universe probe used ticker addressing where available and zero-padded SEC CIK addressing for the 24 no-ticker ATLAS-7 rows.",
+        "Full-probe SPECTRA responses used generation_mode=runtime_atlas_history, source_date=2026-06-04, points=42, static_contract=false, and real_data=true.",
+        "Watchlist verification covered COIN, RIOT, MARA, WULF, CIFR, CRCL, and HOOD for alpha-signals, peer-ranking, and spectra-field-map.",
+        "Weekly verification covered IREN and MSTR for atlas-history and spectra-field-map.",
+        "The route remains evidence and diligence infrastructure only; it does not provide personalized investment advice, recommendations, or price targets."
+      ]
     }
   ]
 }
   </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-05">
-  <stats tracked_changes="120" timeline_entries="35" unique_tripcodes="118" breadcrumb_chips="120" visible_commit_references="8" unique_source_commits="6" />
+  <stats tracked_changes="121" timeline_entries="36" unique_tripcodes="119" breadcrumb_chips="121" visible_commit_references="9" unique_source_commits="7" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -3125,6 +3167,7 @@
     <entry river_index="118" tripcode="ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION" track="T+466m" bread="Improvement Timeline &gt; MCP wallet-signed grant execution verified"><date>June 5, 2026</date><title>MCP wallet-signed grant execution verified</title></entry>
     <entry river_index="119" tripcode="ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING" track="T+474m" bread="Improvement Timeline &gt; Parser field contract hardened"><date>June 5, 2026</date><title>Parser field contract hardened</title></entry>
     <entry river_index="120" tripcode="ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT" track="T+482m" bread="Improvement Timeline &gt; Terminal broker envelope contract"><date>June 5, 2026</date><title>Terminal broker envelope contract</title></entry>
+    <entry river_index="121" tripcode="ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY" track="T+490m" bread="Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout"><date>June 5, 2026</date><title>Live ATLAS-history SPECTRA primary rollout</title></entry>
   </entries>
 </changelog_llm>
   </script>
