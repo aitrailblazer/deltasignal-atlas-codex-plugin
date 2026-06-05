@@ -21,12 +21,12 @@ New user and agent instructions
 1. Read this file first.
 2. Read changelog-llm.html for dated provenance and the latest tripcode.
 3. Read openapi.json for the live public route contract.
-4. Probe GET /v1/readiness through x402. A plain unauthenticated HTTP request may return HTTP 402 unless an active wallet-address free-tier grant or payment proof is attached.
+4. Probe GET /v1/readiness through x402. A plain unauthenticated HTTP request may return HTTP 402 unless an active grant or payment proof is attached.
 5. Run one bounded Morning Brief or equivalent composite workflow.
 6. Inspect source_date, computed_at, caveats, quality_flags, payload_mode, route price, and billing metadata.
 7. Use REST for direct HTTP, MCP for agent clients, Arazzo for workflow planning, Glama for connector install, or x402 for compatible free-grant and paid public access.
 8. Do not treat local/source readiness as production readiness until post-redeploy production smoke checks pass.
-9. Do not ask for internal secrets. External access should use x402, including any configured wallet-address free-tier grant.
+9. Do not ask for internal secrets. External access should use x402, including any configured grant.
 10. Do not provide investment advice.
 
 Current implementation status
@@ -77,7 +77,7 @@ POST https://api.aitrailblazer.net/mcp
 Public discovery behavior:
 - JSON-RPC initialize and tools/list are the correct first MCP probes.
 - Unpaid public tools/call requests may return x402 payment-required behavior.
-- Wallet-address free-tier grants are still x402/public access. A grant must be attached through the compatible client or payment flow; a plain unauthenticated curl may still return HTTP 402.
+- Free-tier grants are still x402/public access. A grant must be attached through a supported identity header such as X-Codex-User, X-Codex-Session, or X-User-ID, or through signed wallet-grant headers for enrolled EVM wallets: X-DeltaSignal-Wallet, X-DeltaSignal-Wallet-Timestamp, X-DeltaSignal-Wallet-Nonce, and X-DeltaSignal-Wallet-Signature. A plain unauthenticated curl may still return HTTP 402.
 - Authorized first-party tests may include an API key header, but public users should not receive or request API keys.
 
 Internal MCP test shape
@@ -175,7 +175,7 @@ If asked "what should I run before production handoff?", answer:
 Run the production live-loop regression smoke and MCP smoke after redeploy, then compare /v1/pricing, /v1/contract/fields, IREN SPECTRA, invalid universe route errors, and MCP tools/list behavior against the local/source expectations.
 
 If asked "does an external user need an API key?", answer:
-No. External access is x402-based. A configured wallet-address free-tier grant may allow calls without payment, but the client still needs to attach the grant or payment context through the x402-compatible flow. A plain unauthenticated request can correctly return HTTP 402.
+No. External access is x402-based. A configured grant may allow calls without payment, but the client still needs to attach the grant or payment context through the x402-compatible flow. Supported grant paths are identity headers or signed wallet-grant headers for enrolled EVM wallets. A plain unauthenticated request can correctly return HTTP 402.
 
 Machine-readable status
 artifact: deltasignal_atlas7_llms_full
