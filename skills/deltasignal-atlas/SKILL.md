@@ -76,6 +76,8 @@ Daily Monitoring and Evidence are separate products. `deltasignal_daily_changes`
 
 Use readiness before higher-cost calls when freshness matters.
 
+When exact quote, budget-gate, or reconciliation accuracy matters, fetch `GET https://api.aitrailblazer.net/v1/pricing` first and treat it as the authoritative runtime route catalog. Read `routes[].route_uri`, `routes[].method`, `routes[].price_usd`, ticker/scope metadata, and the declared canonical cost field instead of relying on a hardcoded local table. Cache only by the returned contract/version metadata or refresh per run.
+
 | Route | Typical price | Purpose |
 | --- | ---: | --- |
 | `GET /mpp/v1/readiness` or `GET /v1/readiness` | `$0.04` | Latest service/data readiness and coverage snapshot |
@@ -103,6 +105,7 @@ Future artifact-backed bulk daily evidence exports are not inline chat responses
 - For named issuers, normalize tickers to uppercase before constructing routes.
 - For large endpoints such as company-report and daily-changes, do not pipe `npx agentcash fetch` stdout directly into another process; write the response to a file or use compact/paginated routes to avoid Node/pipe truncation around 64 KB.
 - Keep universe routes path-ticker-free. Do not append `/UNIVERSE`, `/{ticker}`, or any other path segment to `GET /v1/readiness`, `GET /v1/alpha-opportunities`, `GET /v1/top-stressed`, `GET /v1/risk-distribution`, or `GET /v1/daily-changes/latest`; use query parameters such as `limit` or `offset` where supported.
+- Use `GET /v1/pricing` as the upstream discovery source for live route prices. Treat hardcoded prices in client code or docs as fallback hints only; budget gates should prefer the live `price_usd` for the route/method being called.
 - Treat structured `not_found` responses as soft misses, not hard failures. If a ticker-scoped route returns `status=not_found`, preserve `reason`, `coverage_state`, `retry_after_days`, `route_uri`, ticker/request key, and `billing_behavior`; do not retry that same endpoint/ticker pair until the retry window expires unless the user explicitly asks.
 - Current SPECTRA semantics: `IREN` is a supported field-map ticker; unsupported field-map tickers return `reason=historical_field_map_contract_missing`, `coverage_state=not_available_for_issuer`, `retry_after_days=7`, `billing_behavior=not_charged`, and `cost_usd=0`.
 - For billing reconciliation, use numeric `cost_usd` as the canonical ledger field on successful protected `/v1/` JSON object responses. Treat `quoted_cost_usd` and `actual_cost_usd` as supplemental diagnostics: settled x402 calls should report the settled price, while API-key, internal, or grant-covered calls may preserve the route quote in `quoted_cost_usd` and return `cost_usd=0` / `actual_cost_usd=0`.
