@@ -101,6 +101,7 @@ Future artifact-backed bulk daily evidence exports are not inline chat responses
 - Treat DeltaSignal outputs as issuer intelligence, not investment advice.
 - Preserve source dates, row counts, readiness fields, risk tiers, and debt coverage status when summarizing.
 - For named issuers, normalize tickers to uppercase before constructing routes.
+- For large endpoints such as company-report and daily-changes, do not pipe `npx agentcash fetch` stdout directly into another process; write the response to a file or use compact/paginated routes to avoid Node/pipe truncation around 64 KB.
 - If payment tooling is unavailable, give the exact route and expected cost, then explain that payment execution needs an x402 or MPP-capable client.
 
 ## Common Prompts
