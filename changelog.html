@@ -489,10 +489,10 @@
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>118</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>33</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>119</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>34</strong><span>timeline entries</span></div>
         <div class="stat"><strong>116</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>118</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>119</strong><span>breadcrumb chips</span></div>
         <div class="stat"><strong>6</strong><span>visible commit refs</span></div>
         <div class="stat"><strong>4</strong><span>unique source commits</span></div>
       </div>
@@ -1222,6 +1222,12 @@
               <span>Improvement Timeline &gt; MCP wallet-signed grant execution verified</span>
               <code>T+466m</code>
             </div>
+            <div class="river-row">
+              <span>119</span>
+              <code>ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</code>
+              <span>Improvement Timeline &gt; Parser field contract hardened</span>
+              <code>T+474m</code>
+            </div>
         </div>
       </div>
     </section>
@@ -1251,6 +1257,16 @@
               <code>bread: Improvement Timeline &gt; MCP wallet-signed grant execution verified</code>
             </div>
             <span>Production MCP now honors wallet-signed grant context before API-key enforcement. A live signed <code>POST /mcp</code> <code>tools/call</code> to <code>deltasignal_readiness</code> returned HTTP <code>200</code>, <code>X-DeltaSignal-Grant: wallet_signed_grant</code>, a JSON-RPC result, and no JSON-RPC error on revision <code>ca-web-intel-mcp--0000454</code>.</span>
+          </div>
+          <div class="card">
+            <span class="status">LIVE</span>
+            <strong>Parser Field Contract Hardened</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</code>
+              <code>track: T+474m</code>
+              <code>bread: Improvement Timeline &gt; Parser field contract hardened</code>
+            </div>
+            <span><code>/v1/contract/fields</code> remains the versioned source of truth for stable parser paths. Production revision <code>ca-web-intel-mcp--0000455</code> now returns the documented company-report summary fields, confidence, ticker/source metadata, daily row-level ticker fields, readiness freshness fields, and stress compatibility fields.</span>
           </div>
           <div class="card">
             <span class="status">LIVE</span>
@@ -1857,6 +1873,24 @@
               <li>The temporary grant rows were removed after the smoke test, and the response did not echo the temporary private key or signature.</li>
               <li>Unauthenticated MCP discovery remains open: <code>GET /mcp</code>, <code>initialize</code>, and <code>tools/list</code> returned HTTP <code>200</code>; the live tool list exposed <code>33</code> tools, including <code>29</code> <code>deltasignal_*</code> tools.</li>
               <li>Regression coverage includes <code>TestHandleMCPAcceptsContextGrantFromX402Wrapper</code> and focused <code>MCP|SignedWalletGrant|FreeTierGrant</code> tests.</li>
+              <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">June 5, 2026</div>
+            <h3>Parser field contract hardened</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</code>
+              <code>track: T+474m</code>
+              <code>bread: Improvement Timeline &gt; Parser field contract hardened</code>
+            </div>
+            <ul>
+              <li><code>GET /v1/contract/fields</code> remains the versioned source of truth with <code>deltasignal-field-contract-v1</code>.</li>
+              <li>Company report composite responses now expose top-level <code>summary.current_read</code>, <code>summary.issuer_state</code>, <code>summary.subscriber_takeaway</code>, <code>confidence</code>, <code>ticker</code>, and <code>source_date</code>, while preserving <code>data.ticker</code>, <code>data.workflow</code>, <code>data.status</code>, and <code>mcp_summary</code>.</li>
+              <li>Daily changes rows now retain parser-stable <code>ticker</code> fields, with fallback identifiers when a listed ticker is unavailable.</li>
+              <li>The field contract explicitly documents daily row-level ticker paths and the stress compatibility fields <code>stress_50pct</code> / <code>stressed_leverage_50pct</code>.</li>
+              <li>Live verification passed on revision <code>ca-web-intel-mcp--0000455</code> with MSTR company report, latest daily changes, readiness, covenant stress, and field-contract probes.</li>
               <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
             </ul>
           </article>

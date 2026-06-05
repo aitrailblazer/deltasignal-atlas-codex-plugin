@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v1
-Last updated: 2026-06-03
+Last updated: 2026-06-05
 Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
-Status: local/source verification ready; production redeploy pending
+Status: production verified; parser field contract hardened on ca-web-intel-mcp--0000455
 
 Purpose
 This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
@@ -30,14 +30,24 @@ New user and agent instructions
 10. Do not provide investment advice.
 
 Current implementation status
-- The local/source solution is ready.
-- The production redeploy is intentionally pending.
-- Do not infer production readiness from local readiness.
-- The changelog entry for this state is ATLAS-LOCAL-REGRESSION-SMOKE.
-- Local verification used an internal/test API-key gateway profile.
-- The local smoke does not require external wallet payment.
+- The production API is live with the parser field contract hardening deployed on revision ca-web-intel-mcp--0000455.
+- The changelog entry for the latest field-stability state is ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING.
+- The local/source solution and production route probes have both passed for the documented parser-stable field set.
+- Internal verification may use an internal/test API-key gateway profile.
+- Public smoke should use x402, free-tier grant behavior, or signed wallet-grant behavior where configured.
 - Public clients should use documented public routes and x402 behavior. Do not expect an external API key path.
 - Agents must not request, expose, infer, or persist internal API keys.
+
+Versioned parser field contract
+- Treat GET /v1/contract/fields as the source of truth for parser-stable fields.
+- The current field contract version is deltasignal-field-contract-v1.
+- Additive changes are allowed under the current contract. Renames, removals, or type changes require a new contract_version.
+- Load-bearing readiness paths: ok, age_minutes, freshness_window_hours.
+- Load-bearing generic/provenance paths: ticker, route_uri, source_date.
+- Load-bearing company-report paths: summary.current_read, summary.issuer_state, summary.subscriber_takeaway, confidence, data.ticker, data.workflow, data.status, mcp_summary.
+- Load-bearing daily-changes paths: changed_companies, changes, data, rows, and row-level ticker where row arrays are returned.
+- Load-bearing stress compatibility paths: stress_50pct or stressed_leverage_50pct.
+- Live verification on ca-web-intel-mcp--0000455 confirmed MSTR company report, latest daily changes, readiness, covenant stress, and field-contract probes.
 
 What is locally verified
 - Local gateway starts with the internal/test API-key path.
@@ -53,8 +63,8 @@ What is locally verified
 - Watchlist shallow alpha and peer routes are included in the local smoke.
 
 Production boundary
-- Live production may lag local source until the backend is redeployed.
-- After redeploy, the same smoke should be run against https://api.aitrailblazer.net.
+- Live production is currently verified for the documented parser-stable field set.
+- After future backend changes, rerun the same smoke against https://api.aitrailblazer.net.
 - A production handoff should require production smoke success, not only source/local success.
 - If live API behavior differs from this file, treat the live result as a deployment drift signal and check the latest changelog.
 
