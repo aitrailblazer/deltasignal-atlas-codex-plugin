@@ -43,12 +43,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>119</strong><span>tracked changes</span></div>
-        <div><strong>34</strong><span>timeline entries</span></div>
-        <div><strong>116</strong><span>unique tripcodes</span></div>
-        <div><strong>119</strong><span>breadcrumb chips</span></div>
-        <div><strong>6</strong><span>visible commit references</span></div>
-        <div><strong>4</strong><span>unique source commits</span></div>
+        <div><strong>120</strong><span>tracked changes</span></div>
+        <div><strong>35</strong><span>timeline entries</span></div>
+        <div><strong>118</strong><span>unique tripcodes</span></div>
+        <div><strong>120</strong><span>breadcrumb chips</span></div>
+        <div><strong>8</strong><span>visible commit references</span></div>
+        <div><strong>6</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -192,6 +192,7 @@
           <tr><td>117</td><td><code>ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</code></td><td>Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients</td><td><code>T+458m</code></td><td>c001f26</td></tr>
           <tr><td>118</td><td><code>ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</code></td><td>Improvement Timeline &gt; MCP wallet-signed grant execution verified</td><td><code>T+466m</code></td><td>e3e4763</td></tr>
           <tr><td>119</td><td><code>ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</code></td><td>Improvement Timeline &gt; Parser field contract hardened</td><td><code>T+474m</code></td><td>f64dc87</td></tr>
+          <tr><td>120</td><td><code>ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</code></td><td>Improvement Timeline &gt; Terminal broker envelope contract</td><td><code>T+482m</code></td><td>a62f4c5</td></tr>
           </tbody>
         </table>
       </div>
@@ -433,6 +434,19 @@
             <li>Daily changes rows now retain parser-stable ticker fields, with fallback identifiers when a listed ticker is unavailable.</li>
             <li>The field contract explicitly documents daily row-level ticker paths and the stress compatibility fields stress_50pct / stressed_leverage_50pct.</li>
             <li>Live verification passed on revision ca-web-intel-mcp--0000455 with MSTR company report, latest daily changes, readiness, covenant stress, and field-contract probes.</li>
+            <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT">
+          <h3>Terminal broker envelope contract</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</code> <code>track: T+482m</code> <code>bread: Improvement Timeline &gt; Terminal broker envelope contract</code></p>
+          <p>GET /v1/contract/fields now publishes the terminal MCP-brokered ATLAS envelope contract.</p>
+<ul>
+            <li>The terminal_broker contract version is deltasignal-terminal-broker-v1.</li>
+            <li>The covered brokered datasets are covenant-stress, alpha-signals, and company-fundamentals.</li>
+            <li>Terminal clients can treat summaries as opaque payloads keyed by endpoint_id; server-side ATLAS code owns route-specific structured parsing.</li>
+            <li>The stable terminal envelope fields are endpoint_id, status, cache_status, quote_status, summary, evidence_summary, estimated_usd, cost_usd, and confirmation_token.</li>
+            <li>Live verification passed on revision ca-web-intel-mcp--0000456; local regression coverage includes field-contract assertions for the broker datasets and envelope keys.</li>
             <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
           </ul>
         </article>
@@ -1757,17 +1771,18 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-05",
   "stats": {
-    "tracked_changes": 119,
-    "timeline_entries": 34,
-    "unique_tripcodes": 117,
-    "breadcrumb_chips": 119,
-    "visible_commit_references": 7,
+    "tracked_changes": 120,
+    "timeline_entries": 35,
+    "unique_tripcodes": 118,
+    "breadcrumb_chips": 120,
+    "visible_commit_references": 8,
     "unique_source_commits": [
       "730def3",
       "7a80e86",
       "c001f26",
       "e3e4763",
-      "f64dc87"
+      "f64dc87",
+      "a62f4c5"
     ]
   },
   "tracking_river": [
@@ -2488,9 +2503,51 @@
       "track": "T+474m",
       "bread": "Improvement Timeline > Parser field contract hardened",
       "river_index": 119
+    },
+    {
+      "tripcode": "ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT",
+      "track": "T+482m",
+      "commit": "a62f4c5",
+      "bread": "Improvement Timeline > Terminal broker envelope contract",
+      "river_index": 120
     }
   ],
   "timeline_entries": [
+    {
+      "river_index": 2,
+      "date": "May 31, 2026",
+      "title": "P0 contract-hardening source implementation",
+      "tripcode": "ATLAS-P0-CONTRACT-7A80E86",
+      "track": "T+14m",
+      "bread": "Improvement Timeline > P0 contract-hardening source implementation",
+      "commit": "7a80e86",
+      "summary": "Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.",
+      "bullets": [
+        "Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.",
+        "The protected no-ticker set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .",
+        "/v1/pricing route entries now include lifecycle and scope metadata: path_template , status , deprecated , replaced_by , billable , and route_scope .",
+        "Successful protected /v1/ JSON object responses now include billing_status at the top level and inside response_metadata .",
+        "Structured not_found payloads now include reason_code , billing_behavior=not_charged , and cost_usd=0 .",
+        "Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 7a80e86 . Backend rollout is separate from this changelog publication."
+      ]
+    },
+    {
+      "river_index": 3,
+      "date": "May 31, 2026",
+      "title": "P1 standard provenance source implementation",
+      "tripcode": "ATLAS-P1-PROV-730DEF3",
+      "track": "T+22m",
+      "bread": "Improvement Timeline > P1 standard provenance source implementation",
+      "commit": "730def3",
+      "summary": "Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.",
+      "bullets": [
+        "Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.",
+        "Successful JSON object responses now receive a top-level provenance object with route identity, source_date , computed_at_utc , ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.",
+        "If a route already emits provenance , the envelope preserves existing route-specific keys and fills only missing standard keys.",
+        "GET /v1/contract/fields now documents the standard provenance field set, merge policy, and derived-evidence policy.",
+        "Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 730def3 . Backend rollout is separate from this changelog publication."
+      ]
+    },
     {
       "river_index": 28,
       "date": "P0",
@@ -2535,41 +2592,6 @@
         "Add GET /v1/contract/changelog and GET /v1/contract/fields for stable field paths, deprecation windows, migration notes, and versioned daily-change fields.",
         "Document route classes: free discovery, cheap freshness, paid compact, paid evidence, and internal/backend-relayed access.",
         "Constrain renderer posture values to non-advice labels such as constructive_evidence_screen , watchlist_candidate , risk_elevated , provenance_limited , data_stale , and insufficient_evidence ."
-      ]
-    },
-    {
-      "river_index": 3,
-      "date": "May 31, 2026",
-      "title": "P1 standard provenance source implementation",
-      "tripcode": "ATLAS-P1-PROV-730DEF3",
-      "track": "T+22m",
-      "bread": "Improvement Timeline > P1 standard provenance source implementation",
-      "commit": "730def3",
-      "summary": "Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.",
-      "bullets": [
-        "Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source.",
-        "Successful JSON object responses now receive a top-level provenance object with route identity, source_date , computed_at_utc , ticker, filing/accession fields where available, evidence hash/ref fields, data source, quality flag, and derived/proprietary markers.",
-        "If a route already emits provenance , the envelope preserves existing route-specific keys and fills only missing standard keys.",
-        "GET /v1/contract/fields now documents the standard provenance field set, merge policy, and derived-evidence policy.",
-        "Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 730def3 . Backend rollout is separate from this changelog publication."
-      ]
-    },
-    {
-      "river_index": 2,
-      "date": "May 31, 2026",
-      "title": "P0 contract-hardening source implementation",
-      "tripcode": "ATLAS-P0-CONTRACT-7A80E86",
-      "track": "T+14m",
-      "bread": "Improvement Timeline > P0 contract-hardening source implementation",
-      "commit": "7a80e86",
-      "summary": "Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.",
-      "bullets": [
-        "Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior.",
-        "The protected no-ticker set is /v1/readiness , /v1/daily-changes/latest , /v1/alpha-opportunities , /v1/top-stressed , and /v1/risk-distribution .",
-        "/v1/pricing route entries now include lifecycle and scope metadata: path_template , status , deprecated , replaced_by , billable , and route_scope .",
-        "Successful protected /v1/ JSON object responses now include billing_status at the top level and inside response_metadata .",
-        "Structured not_found payloads now include reason_code , billing_behavior=not_charged , and cost_usd=0 .",
-        "Verification completed locally with GOWORK=off go test ./cmd/search-gateway/... , HTML/XML/module validation for the source spec and ExecPlan, and clean deployment-worktree commit 7a80e86 . Backend rollout is separate from this changelog publication."
       ]
     },
     {
@@ -3035,13 +3057,31 @@
         "Live verification passed on revision ca-web-intel-mcp--0000455 with MSTR company report, latest daily changes, readiness, covenant stress, and field-contract probes.",
         "No individual identity, wallet, credit amount, or usage data is included in this public changelog entry."
       ]
+    },
+    {
+      "river_index": 120,
+      "date": "June 5, 2026",
+      "title": "Terminal broker envelope contract",
+      "tripcode": "ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT",
+      "track": "T+482m",
+      "bread": "Improvement Timeline > Terminal broker envelope contract",
+      "commit": "a62f4c5",
+      "summary": "GET /v1/contract/fields now publishes the terminal MCP-brokered ATLAS envelope contract.",
+      "bullets": [
+        "The terminal_broker contract version is deltasignal-terminal-broker-v1.",
+        "The covered brokered datasets are covenant-stress, alpha-signals, and company-fundamentals.",
+        "Terminal clients can treat summaries as opaque payloads keyed by endpoint_id; server-side ATLAS code owns route-specific structured parsing.",
+        "The stable terminal envelope fields are endpoint_id, status, cache_status, quote_status, summary, evidence_summary, estimated_usd, cost_usd, and confirmation_token.",
+        "Live verification passed on revision ca-web-intel-mcp--0000456; local regression coverage includes field-contract assertions for the broker datasets and envelope keys.",
+        "No individual identity, wallet, credit amount, or usage data is included in this public changelog entry."
+      ]
     }
   ]
 }
   </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-05">
-  <stats tracked_changes="119" timeline_entries="34" unique_tripcodes="117" breadcrumb_chips="119" visible_commit_references="7" unique_source_commits="5" />
+  <stats tracked_changes="120" timeline_entries="35" unique_tripcodes="118" breadcrumb_chips="120" visible_commit_references="8" unique_source_commits="6" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -3084,6 +3124,7 @@
     <entry river_index="117" tripcode="ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH" track="T+458m" bread="Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients"><date>June 4, 2026</date><title>Wallet-signed grant auth for zero-balance clients</title></entry>
     <entry river_index="118" tripcode="ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION" track="T+466m" bread="Improvement Timeline &gt; MCP wallet-signed grant execution verified"><date>June 5, 2026</date><title>MCP wallet-signed grant execution verified</title></entry>
     <entry river_index="119" tripcode="ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING" track="T+474m" bread="Improvement Timeline &gt; Parser field contract hardened"><date>June 5, 2026</date><title>Parser field contract hardened</title></entry>
+    <entry river_index="120" tripcode="ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT" track="T+482m" bread="Improvement Timeline &gt; Terminal broker envelope contract"><date>June 5, 2026</date><title>Terminal broker envelope contract</title></entry>
   </entries>
 </changelog_llm>
   </script>

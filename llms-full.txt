@@ -2,7 +2,7 @@ Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v1
 Last updated: 2026-06-05
 Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
-Status: production verified; parser field contract hardened on ca-web-intel-mcp--0000455
+Status: production verified; terminal broker contract deployed on ca-web-intel-mcp--0000456
 
 Purpose
 This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
@@ -30,8 +30,8 @@ New user and agent instructions
 10. Do not provide investment advice.
 
 Current implementation status
-- The production API is live with the parser field contract hardening deployed on revision ca-web-intel-mcp--0000455.
-- The changelog entry for the latest field-stability state is ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING.
+- The production API is live with the terminal broker envelope contract deployed on revision ca-web-intel-mcp--0000456.
+- The changelog entry for the latest field-stability state is ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT.
 - The local/source solution and production route probes have both passed for the documented parser-stable field set.
 - Internal verification may use an internal/test API-key gateway profile.
 - Public smoke should use x402, free-tier grant behavior, or signed wallet-grant behavior where configured.
@@ -49,13 +49,22 @@ Versioned parser field contract
 - Load-bearing stress compatibility paths: stress_50pct or stressed_leverage_50pct.
 - Live verification on ca-web-intel-mcp--0000455 confirmed MSTR company report, latest daily changes, readiness, covenant stress, and field-contract probes.
 
+Versioned terminal broker contract
+- Treat GET /v1/contract/fields and its terminal_broker object as the source of truth for terminal MCP-brokered ATLAS envelope fields.
+- The current terminal broker contract version is deltasignal-terminal-broker-v1.
+- Covered brokered datasets: covenant-stress, alpha-signals, and company-fundamentals.
+- Terminal clients should treat summaries as opaque and key results by endpoint_id. Server-side ATLAS code owns route-specific structured parsing.
+- Load-bearing terminal envelope fields: endpoint_id, status, cache_status, quote_status, summary, evidence_summary, estimated_usd, cost_usd, and confirmation_token.
+- Summary aliases: summary or evidence_summary. Price aliases: estimated_usd or cost_usd. Confirmation field: confirmation_token.
+- Live verification on ca-web-intel-mcp--0000456 confirmed the terminal_broker contract, covered datasets, and stable envelope fields.
+
 What is locally verified
 - Local gateway starts with the internal/test API-key path.
 - MCP initialize, tools/list, and tools/call smoke pass locally.
 - The cmd/search-gateway Go test suite passes locally.
 - The local live-loop regression smoke passes locally.
 - Pricing discovery returns the expected pricing contract shape.
-- Field contract discovery returns stable field paths, route scope, provenance, billing_status, and response metadata.
+- Field contract discovery returns stable field paths, route scope, provenance, billing_status, response metadata, and terminal_broker envelope metadata.
 - No-ticker universe paths reject ticker-scoped misuse with structured 400 invalid_path_scope responses.
 - Large response guidance exists for 64 KB / stdout-pipe constrained clients.
 - Structured soft-miss behavior exists for unsupported ticker field maps.
@@ -190,10 +199,10 @@ No. External access is x402-based. A configured grant may allow calls without pa
 Machine-readable status
 artifact: deltasignal_atlas7_llms_full
 version: llms-full-v1
-last_updated: 2026-06-03
+last_updated: 2026-06-05
 local_solution_ready: true
-production_redeploy_pending: true
-production_smoke_required_after_redeploy: true
-latest_changelog_tripcode: ATLAS-LOCAL-REGRESSION-SMOKE
+production_redeploy_pending: false
+production_smoke_required_after_redeploy: false
+latest_changelog_tripcode: ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT
 public_name_safe: true
 non_advice_required: true

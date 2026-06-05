@@ -489,10 +489,10 @@
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>119</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>34</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>116</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>119</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>120</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>35</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>117</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>120</strong><span>breadcrumb chips</span></div>
         <div class="stat"><strong>6</strong><span>visible commit refs</span></div>
         <div class="stat"><strong>4</strong><span>unique source commits</span></div>
       </div>
@@ -1228,6 +1228,12 @@
               <span>Improvement Timeline &gt; Parser field contract hardened</span>
               <code>T+474m</code>
             </div>
+            <div class="river-row">
+              <span>120</span>
+              <code>ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</code>
+              <span>Improvement Timeline &gt; Terminal broker envelope contract</span>
+              <code>T+482m</code>
+            </div>
         </div>
       </div>
     </section>
@@ -1238,6 +1244,16 @@
           <p>These are the changes most likely to matter to builders integrating the public route surface or agent workflows right now.</p>
         </div>
         <div class="grid">
+          <div class="card">
+            <span class="status">LIVE</span>
+            <strong>Terminal Broker Contract</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</code>
+              <code>track: T+482m</code>
+              <code>bread: Improvement Timeline &gt; Terminal broker envelope contract</code>
+            </div>
+            <span><code>/v1/contract/fields</code> now publishes <code>deltasignal-terminal-broker-v1</code> for MCP-brokered terminal datasets. Production revision <code>ca-web-intel-mcp--0000456</code> documents the opaque summary envelope for <code>covenant-stress</code>, <code>alpha-signals</code>, and <code>company-fundamentals</code>.</span>
+          </div>
           <div class="card">
             <span class="status">LIVE</span>
             <strong>Wallet-Signed Grant Auth</strong>
@@ -1873,6 +1889,24 @@
               <li>The temporary grant rows were removed after the smoke test, and the response did not echo the temporary private key or signature.</li>
               <li>Unauthenticated MCP discovery remains open: <code>GET /mcp</code>, <code>initialize</code>, and <code>tools/list</code> returned HTTP <code>200</code>; the live tool list exposed <code>33</code> tools, including <code>29</code> <code>deltasignal_*</code> tools.</li>
               <li>Regression coverage includes <code>TestHandleMCPAcceptsContextGrantFromX402Wrapper</code> and focused <code>MCP|SignedWalletGrant|FreeTierGrant</code> tests.</li>
+              <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="date">June 5, 2026</div>
+            <h3>Terminal broker envelope contract</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</code>
+              <code>track: T+482m</code>
+              <code>bread: Improvement Timeline &gt; Terminal broker envelope contract</code>
+            </div>
+            <ul>
+              <li><code>GET /v1/contract/fields</code> now includes <code>terminal_broker.contract_version=deltasignal-terminal-broker-v1</code>.</li>
+              <li>The covered MCP-brokered ATLAS datasets are <code>covenant-stress</code>, <code>alpha-signals</code>, and <code>company-fundamentals</code>.</li>
+              <li>Terminal clients can treat route summaries as opaque payloads keyed by <code>endpoint_id</code>; server-side ATLAS code owns route-specific structured parsing.</li>
+              <li>The stable terminal envelope fields are <code>endpoint_id</code>, <code>status</code>, <code>cache_status</code>, <code>quote_status</code>, <code>summary</code>, <code>evidence_summary</code>, <code>estimated_usd</code>, <code>cost_usd</code>, and <code>confirmation_token</code>.</li>
+              <li>Live verification passed on revision <code>ca-web-intel-mcp--0000456</code>; local regression coverage includes field-contract assertions for the broker datasets and envelope keys.</li>
               <li>No individual identity, wallet, credit amount, or usage data is included in this public changelog entry.</li>
             </ul>
           </article>
@@ -2941,6 +2975,8 @@ Spacing note: published paths use company-report. A copied
         "Backend source implementation of verified-wallet DB grant settlement bypass from 2026-06-04",
         "Live backend deployment ca-web-intel-mcp--0000453 from clean git archive c001f267ae6a5ac3067bdfba3131fad02c0cc709 on 2026-06-04",
         "Live backend deployment ca-web-intel-mcp--0000454 from clean git archive e3e47634ee1f434dead764d895427484340493ff on 2026-06-05",
+        "Live backend deployment ca-web-intel-mcp--0000456 from clean git archive a62f4c57678449e9285a02fef9e5edb42e891841 on 2026-06-05",
+        "Live GET /v1/contract/fields terminal_broker contract verification from 2026-06-05",
         "Live MCP signed-wallet grant smoke against POST /mcp tools/call deltasignal_readiness from 2026-06-05",
         "Live public unpaid x402 probes for readiness, company-report, and Morning Brief natural-language routes from 2026-06-05",
         "Live backend deployment ca-web-intel-mcp--0000450 from clean git archive db4857a4bca75b3ffafcba77c159ce1b62df2400 on 2026-05-31",
