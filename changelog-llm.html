@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>183</strong><span>tracked changes</span></div>
-        <div><strong>98</strong><span>timeline entries</span></div>
-        <div><strong>181</strong><span>unique tripcodes</span></div>
-        <div><strong>183</strong><span>breadcrumb chips</span></div>
-        <div><strong>70</strong><span>visible commit references</span></div>
-        <div><strong>98</strong><span>unique source commits</span></div>
+        <div><strong>185</strong><span>tracked changes</span></div>
+        <div><strong>100</strong><span>timeline entries</span></div>
+        <div><strong>183</strong><span>unique tripcodes</span></div>
+        <div><strong>185</strong><span>breadcrumb chips</span></div>
+        <div><strong>71</strong><span>visible commit references</span></div>
+        <div><strong>99</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,8 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>185</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 76.4 percent coverage</td><td><code>T+1002m</code></td><td>current changelog update</td></tr>
+          <tr><td>184</td><td><code>ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4</code></td><td>Improvement Timeline &gt; DeltaSignal defensive store/help/readiness coverage checkpoint</td><td><code>T+994m</code></td><td>c2ffd9b9</td></tr>
           <tr><td>183</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 76.3 percent coverage</td><td><code>T+986m</code></td><td>current changelog update</td></tr>
           <tr><td>182</td><td><code>ATLAS-JUN-6-DAILY-CHANGE-DISCOVERY-FALLBACK-COVERAGE-76P3</code></td><td>Improvement Timeline &gt; Daily-change discovery and fallback coverage checkpoint</td><td><code>T+978m</code></td><td>672d458d</td></tr>
           <tr><td>181</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 75.9 percent coverage</td><td><code>T+970m</code></td><td>current changelog update</td></tr>
@@ -266,6 +268,30 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4">
+          <h3>Consolidated June 6 public rollup to 76.4 percent coverage</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</code> <code>track: T+1002m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 76.4 percent coverage</code></p>
+          <p>The public changelog now includes the full June 6 public-safe update set through daily-change discovery/fallback coverage and DeltaSignal defensive store/help/readiness coverage at the verified 76.4% cmd/search-gateway package checkpoint.</p>
+          <ul>
+            <li>Rolls forward the 76.3% daily-change discovery/fallback checkpoint and the 76.4% defensive store/help/readiness checkpoint.</li>
+            <li>Keeps notification and digest work current: MCP daily all-delta framing, Microsoft Graph email delivery, signed webhooks, terminal delivery, receipts, subscription preferences, and x402 notification pricing tiers remain documented.</li>
+            <li>Keeps route-safety, pricing, field-contract, SPECTRA, ticker canonicalization, RSS/Atom feed, and LLM handoff updates in the public rollup.</li>
+            <li>Keeps the public/private boundary intact: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+            <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4">
+          <h3>DeltaSignal defensive store/help/readiness coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4</code> <code>track: T+994m</code> <code>commit: c2ffd9b9</code> <code>bread: Improvement Timeline &gt; DeltaSignal defensive store/help/readiness coverage checkpoint</code></p>
+          <p>Defensive DeltaSignal coverage now verifies concrete DB close behavior, non-GET help route rejection, readiness filing-source blank and invalid-date guardrails, uninitialized blob-store fallback behavior, and existing override/nil-store behavior; the verified cmd/search-gateway package coverage checkpoint reached 76.4%.</p>
+          <ul>
+            <li>Covered concrete deltaSignalStore Close behavior with an initialized DB handle.</li>
+            <li>Covered /help non-GET rejection while preserving existing public support route metadata.</li>
+            <li>Covered readiness filing-source guardrails for blank dates, invalid dates, uninitialized blob-store lookups, nil-store fallback, and override trimming.</li>
+            <li>Close and handleDeltaSignalHelp are now at 100%; resolveReadinessFilingSourceDate is at 93.3%.</li>
+            <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3">
           <h3>Consolidated June 6 public rollup to 76.3 percent coverage</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3</code> <code>track: T+986m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 76.3 percent coverage</code></p>
@@ -2536,12 +2562,12 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 183,
-    "timeline_entries": 98,
-    "unique_tripcodes": 181,
-    "breadcrumb_chips": 183,
-    "visible_commit_references": 70,
-    "unique_source_commits": 98
+    "tracked_changes": 185,
+    "timeline_entries": 100,
+    "unique_tripcodes": 183,
+    "breadcrumb_chips": 185,
+    "visible_commit_references": 71,
+    "unique_source_commits": 99
   },
   "tracking_river": [
     {
@@ -3709,6 +3735,20 @@
       "commit": "current changelog update",
       "bread": "Improvement Timeline > Consolidated June 6 public rollup to 76.3 percent coverage",
       "river_index": 183
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4",
+      "track": "T+994m",
+      "commit": "c2ffd9b9",
+      "bread": "Improvement Timeline > DeltaSignal defensive store/help/readiness coverage checkpoint",
+      "river_index": 184
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4",
+      "track": "T+1002m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 76.4 percent coverage",
+      "river_index": 185
     }
   ],
   "timeline_entries": [
@@ -5279,13 +5319,47 @@
         "Keeps the public/private boundary intact: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
         "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
       ]
+    },
+    {
+      "river_index": 184,
+      "date": "June 6, 2026",
+      "title": "DeltaSignal defensive store/help/readiness coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4",
+      "track": "T+994m",
+      "commit": "c2ffd9b9",
+      "bread": "Improvement Timeline > DeltaSignal defensive store/help/readiness coverage checkpoint",
+      "summary": "Defensive DeltaSignal coverage now verifies concrete DB close behavior, non-GET help route rejection, readiness filing-source blank and invalid-date guardrails, uninitialized blob-store fallback behavior, and existing override/nil-store behavior; the verified cmd/search-gateway package coverage checkpoint reached 76.4%.",
+      "bullets": [
+        "Covered concrete deltaSignalStore Close behavior with an initialized DB handle.",
+        "Covered /help non-GET rejection while preserving existing public support route metadata.",
+        "Covered readiness filing-source guardrails for blank dates, invalid dates, uninitialized blob-store lookups, nil-store fallback, and override trimming.",
+        "Close and handleDeltaSignalHelp are now at 100%; resolveReadinessFilingSourceDate is at 93.3%.",
+        "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
+      ]
+    },
+    {
+      "river_index": 185,
+      "date": "June 6, 2026",
+      "title": "Consolidated June 6 public rollup to 76.4 percent coverage",
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4",
+      "track": "T+1002m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 76.4 percent coverage",
+      "summary": "The public changelog now includes the full June 6 public-safe update set through daily-change discovery/fallback coverage and DeltaSignal defensive store/help/readiness coverage at the verified 76.4% cmd/search-gateway package checkpoint.",
+      "bullets": [
+        "Rolls forward the 76.3% daily-change discovery/fallback checkpoint and the 76.4% defensive store/help/readiness checkpoint.",
+        "Keeps notification and digest work current: MCP daily all-delta framing, Microsoft Graph email delivery, signed webhooks, terminal delivery, receipts, subscription preferences, and x402 notification pricing tiers remain documented.",
+        "Keeps route-safety, pricing, field-contract, SPECTRA, ticker canonicalization, RSS/Atom feed, and LLM handoff updates in the public rollup.",
+        "Keeps the public/private boundary intact: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
+        "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
+      ]
     }
   ]
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="183" timeline_entries="98" unique_tripcodes="181" breadcrumb_chips="183" visible_commit_references="70" unique_source_commits="98" />
+  <stats tracked_changes="185" timeline_entries="100" unique_tripcodes="183" breadcrumb_chips="185" visible_commit_references="71" unique_source_commits="99" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -5389,6 +5463,8 @@
     <entry river_index="179" tripcode="ATLAS-JUN-6-DELTASIGNAL-ROUTE-GUARD-COVERAGE-75P9" track="T+954m" bread="Improvement Timeline &gt; DeltaSignal route guard coverage checkpoint to 75.9 percent" commit="5674ca5b"><date>June 6, 2026</date><title>DeltaSignal route guard coverage checkpoint to 75.9 percent</title></entry>
     <entry river_index="180" tripcode="ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER" track="T+962m" bread="Improvement Timeline &gt; Notification pricing and delivery ladder public rollup" commit="current changelog update"><date>June 6, 2026</date><title>Notification pricing and delivery ladder public rollup</title></entry>
     <entry river_index="182" tripcode="ATLAS-JUN-6-DAILY-CHANGE-DISCOVERY-FALLBACK-COVERAGE-76P3" track="T+978m" bread="Improvement Timeline &gt; Daily-change discovery and fallback coverage checkpoint" commit="672d458d"><date>June 6, 2026</date><title>Daily-change discovery and fallback coverage checkpoint</title></entry>
+    <entry river_index="184" tripcode="ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4" track="T+994m" bread="Improvement Timeline &gt; DeltaSignal defensive store/help/readiness coverage checkpoint" commit="c2ffd9b9"><date>June 6, 2026</date><title>DeltaSignal defensive store/help/readiness coverage checkpoint</title></entry>
+    <entry river_index="185" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4" track="T+1002m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 76.4 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 76.4 percent coverage</title></entry>
     <entry river_index="183" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3" track="T+986m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 76.3 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 76.3 percent coverage</title></entry>
     <entry river_index="181" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9" track="T+970m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.9 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.9 percent coverage</title></entry>
     <entry river_index="173" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" track="T+906m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.6 percent coverage</title></entry>

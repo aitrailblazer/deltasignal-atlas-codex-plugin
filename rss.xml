@@ -9,6 +9,22 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Consolidated June 6 public rollup to 76.4 percent coverage</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</category>
+      <description>The public changelog now includes the full June 6 public-safe update set through daily-change discovery/fallback coverage and DeltaSignal defensive store/help/readiness coverage at the verified 76.4% cmd/search-gateway package checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 76.4 percent coverage Track: T+1002m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>DeltaSignal defensive store/help/readiness coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4</category>
+      <description>Defensive DeltaSignal coverage now verifies concrete DB close behavior, non-GET help route rejection, readiness filing-source blank and invalid-date guardrails, uninitialized blob-store fallback behavior, and existing override/nil-store behavior; the verified cmd/search-gateway package coverage checkpoint reached 76.4%. Breadcrumb: Improvement Timeline &gt; DeltaSignal defensive store/help/readiness coverage checkpoint Track: T+994m Commit: c2ffd9b9</description>
+    </item>
+    <item>
       <title>Consolidated June 6 public rollup to 76.3 percent coverage</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3</guid>
@@ -231,22 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-ALPHA-ROUTE-LOADER-COVERAGE-73P2</category>
       <description>Alpha route and loader coverage now verifies alpha-signals, alpha-opportunities, alpha audit, alpha universe, source-date resolution, window leaders, and query-error behavior; the verified cmd/search-gateway package coverage checkpoint reached 73.2%. Breadcrumb: Improvement Timeline &gt; Alpha routes and loader coverage checkpoint Track: T+770m Commit: 68c93eb2</description>
-    </item>
-    <item>
-      <title>Consolidated June 6 public rollup to 72.5 percent coverage</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5</category>
-      <description>The public changelog now includes the full June 6 public-safe update set through the ATLAS-7 history route/loaders coverage slice, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the 72.5% coverage checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 72.5 percent coverage Track: T+762m Commit: current changelog update</description>
-    </item>
-    <item>
-      <title>ATLAS-7 history route and loader coverage checkpoint</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5</category>
-      <description>ATLAS-7 calculation-history and point-in-time-history route coverage now verifies handlers, loader branches, source-date resolution, row helpers, scalar/hash extraction, nullable helpers, and query-error behavior; the verified cmd/search-gateway package coverage checkpoint reached 72.5%. Breadcrumb: Improvement Timeline &gt; ATLAS-7 history route and loader coverage checkpoint Track: T+754m Commit: 71420226</description>
     </item>
   </channel>
 </rss>
