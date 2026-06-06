@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, and coverage hardening</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, and coverage hardening to 67.3%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>133</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>48</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>131</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>133</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>36</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>65</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>136</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>51</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>134</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>136</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>39</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>68</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,24 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>136</span>
+              <code>ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</code>
+              <span>Improvement Timeline &gt; ATLAS and SPECTRA field-map route coverage checkpoint</span>
+              <code>T+610m</code>
+            </div>
+            <div class="river-row">
+              <span>135</span>
+              <code>ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE</code>
+              <span>Improvement Timeline &gt; Generic MCP server helper coverage checkpoint</span>
+              <code>T+602m</code>
+            </div>
+            <div class="river-row">
+              <span>134</span>
+              <code>ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE</code>
+              <span>Improvement Timeline &gt; DeltaSignal web static runtime coverage checkpoint</span>
+              <code>T+594m</code>
+            </div>
             <div class="river-row">
               <span>133</span>
               <code>ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</code>
@@ -1858,6 +1876,54 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT">
+            <div class="date">June 6, 2026</div>
+            <h3>ATLAS and SPECTRA field-map route coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</code>
+              <code>track: T+610m</code>
+              <code>commit: f2a12689</code>
+              <code>bread: Improvement Timeline &gt; ATLAS and SPECTRA field-map route coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered ATLAS and SPECTRA field-map validation for method-not-allowed, missing ticker, invalid ticker, and structured not-found behavior.</li>
+              <li>Covered JSON contract serving from local ATLAS and SPECTRA field-map directories, including the <code>/v1/spectra-field-map/{ticker}</code> route path.</li>
+              <li>Covered environment override lookup, multi-directory fallback, globbed contract directories, and latest-modified contract selection.</li>
+              <li>The latest verified <code>cmd/search-gateway</code> package coverage checkpoint is 67.3%; the active 100% coverage goal remains open.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>Generic MCP server helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE</code>
+              <code>track: T+602m</code>
+              <code>commit: fde35215</code>
+              <code>bread: Improvement Timeline &gt; Generic MCP server helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered textResult, errResult, and mcpAuthMiddleware at 100% for API-key, Bearer-token, disabled-auth, and overload rejection paths.</li>
+              <li>Added deterministic validation/error coverage for search, lookup, browse, and sources tool adapters without invoking external web services.</li>
+              <li>Covered MCP server and streamable handler construction branches so public MCP discovery and tool-envelope plumbing remain regression-protected.</li>
+              <li>The package coverage checkpoint advanced to 67.2%; remaining low-coverage areas still include dynamic crawler loops, live process execution, and storage-backed runtime paths.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>DeltaSignal web static runtime coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE</code>
+              <code>track: T+594m</code>
+              <code>commit: 28734684</code>
+              <code>bread: Improvement Timeline &gt; DeltaSignal web static runtime coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Added deterministic tests for the DeltaSignal static web runtime constructor, enabled/disabled branches, nil runtime behavior, and static asset dispatch.</li>
+              <li>Covered method rejection, missing assets, SPA fallback behavior, path extension detection, static request path cleaning, and gateway-reserved path handling.</li>
+              <li>The package coverage checkpoint advanced to 66.7%; this is still a work-in-progress checkpoint toward full gateway coverage, not a final 100% claim.</li>
+              <li>This is source coverage hardening only; it does not change public route semantics.</li>
+            </ul>
+          </article>
           <article class="timeline-item">
             <div class="date">June 6, 2026</div>
             <h3>Free-tier, helper, and route-safety coverage advanced to 66.6 percent</h3>

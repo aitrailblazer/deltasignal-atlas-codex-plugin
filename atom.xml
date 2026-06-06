@@ -8,6 +8,30 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>ATLAS and SPECTRA field-map route coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT" />
+    <summary>ATLAS/SPECTRA field-map handler coverage now verifies validation, not-found semantics, JSON contract serving, v1 SPECTRA dispatch, environment override resolution, glob fallback, and latest-contract selection. Breadcrumb: Improvement Timeline &gt; ATLAS and SPECTRA field-map route coverage checkpoint Track: T+610m Commit: f2a12689</summary>
+  </entry>
+  <entry>
+    <title>Generic MCP server helper coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE" />
+    <summary>Generic MCP helper coverage now exercises result wrappers, auth middleware, streamable handler construction, and tool-adapter validation/error branches. Breadcrumb: Improvement Timeline &gt; Generic MCP server helper coverage checkpoint Track: T+602m Commit: fde35215</summary>
+  </entry>
+  <entry>
+    <title>DeltaSignal web static runtime coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE" />
+    <summary>DeltaSignal web static runtime coverage now exercises constructor, disabled/nil runtime, method rejection, SPA fallback, asset serving, missing-asset, static path cleaning, and gateway-reserved path branches. Breadcrumb: Improvement Timeline &gt; DeltaSignal web static runtime coverage checkpoint Track: T+594m Commit: 28734684</summary>
+  </entry>
+  <entry>
     <title>Free-tier, helper, and route-safety coverage advanced to 66.6 percent</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</id>
@@ -222,29 +246,5 @@
     <updated>2026-05-31T00:00:00.000Z</updated>
     <category term="ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" />
     <summary>Added public help guidance for large DeltaSignal responses in backend source. Breadcrumb: Improvement Timeline &gt; Large-response handling implementation track Track: T+186m</summary>
-  </entry>
-  <entry>
-    <title>Coverage discovery implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK" />
-    <summary>Extended /companies in backend source with deltasignal-coverage-v1 . Breadcrumb: Improvement Timeline &gt; Coverage discovery implementation track Track: T+178m</summary>
-  </entry>
-  <entry>
-    <title>Response metadata envelope implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK" />
-    <summary>Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path. Breadcrumb: Improvement Timeline &gt; Response metadata envelope implementation track Track: T+170m</summary>
-  </entry>
-  <entry>
-    <title>Field contract discovery implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" />
-    <summary>Added free backend discovery route GET /v1/contract/fields . Breadcrumb: Improvement Timeline &gt; Field contract discovery implementation track Track: T+162m</summary>
   </entry>
 </feed>
