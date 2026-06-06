@@ -9,6 +9,22 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Consolidated June 6 public rollup to 74.7 percent coverage</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</category>
+      <description>The public changelog now includes the full June 6 public-safe update set through Codex compatibility-handler coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.7%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.7 percent coverage Track: T+850m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>Codex compatibility handler coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7</category>
+      <description>Codex compatibility-handler coverage now verifies auth and bad-JSON paths for Codex HTTP handlers, no-op and error branches in compatibility tool-call normalization, local MCP validation branches, and JSON-result fallback behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.7%. Breadcrumb: Improvement Timeline &gt; Codex compatibility handler coverage checkpoint Track: T+842m Commit: a6b1bb63</description>
+    </item>
+    <item>
       <title>Consolidated June 6 public rollup to 74.4 percent coverage</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</guid>
@@ -231,22 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</category>
       <description>StrategiX web static runtime coverage now verifies constructor, host matching, index serving, asset serving, SPA fallback, missing assets, and root handler dispatch. Breadcrumb: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint Track: T+618m Commit: b92b3076</description>
-    </item>
-    <item>
-      <title>ATLAS and SPECTRA field-map route coverage checkpoint</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</category>
-      <description>ATLAS/SPECTRA field-map handler coverage now verifies validation, not-found semantics, JSON contract serving, v1 SPECTRA dispatch, environment override resolution, glob fallback, and latest-contract selection. Breadcrumb: Improvement Timeline &gt; ATLAS and SPECTRA field-map route coverage checkpoint Track: T+610m Commit: f2a12689</description>
-    </item>
-    <item>
-      <title>Generic MCP server helper coverage checkpoint</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE</category>
-      <description>Generic MCP helper coverage now exercises result wrappers, auth middleware, streamable handler construction, and tool-adapter validation/error branches. Breadcrumb: Improvement Timeline &gt; Generic MCP server helper coverage checkpoint Track: T+602m Commit: fde35215</description>
     </item>
   </channel>
 </rss>
