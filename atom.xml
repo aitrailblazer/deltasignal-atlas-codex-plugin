@@ -8,6 +8,14 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Free-tier, helper, and route-safety coverage advanced to 66.6 percent</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT" />
+    <summary>The active coverage-hardening plan now records Web Intel helper coverage, native health/boolean normalization branches, free-tier admin handler branches, constructor metadata/time parsing, and a reserved-route safety fix. Breadcrumb: Improvement Timeline &gt; Free-tier, helper, and route-safety coverage advanced to 66.6 percent Track: T+586m Commit: c8bf5a66 / 33a19e4b</summary>
+  </entry>
+  <entry>
     <title>Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</id>
@@ -238,13 +246,5 @@
     <updated>2026-05-31T00:00:00.000Z</updated>
     <category term="ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" />
     <summary>Added free backend discovery route GET /v1/contract/fields . Breadcrumb: Improvement Timeline &gt; Field contract discovery implementation track Track: T+162m</summary>
-  </entry>
-  <entry>
-    <title>Universe route contract implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK" />
-    <summary>Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source. Breadcrumb: Improvement Timeline &gt; Universe route contract implementation track Track: T+154m</summary>
   </entry>
 </feed>

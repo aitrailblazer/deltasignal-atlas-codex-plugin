@@ -9,6 +9,14 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Free-tier, helper, and route-safety coverage advanced to 66.6 percent</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</category>
+      <description>The active coverage-hardening plan now records Web Intel helper coverage, native health/boolean normalization branches, free-tier admin handler branches, constructor metadata/time parsing, and a reserved-route safety fix. Breadcrumb: Improvement Timeline &gt; Free-tier, helper, and route-safety coverage advanced to 66.6 percent Track: T+586m Commit: c8bf5a66 / 33a19e4b</description>
+    </item>
+    <item>
       <title>Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</guid>
@@ -239,14 +247,6 @@
       <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK</category>
       <description>Added free backend discovery route GET /v1/contract/fields . Breadcrumb: Improvement Timeline &gt; Field contract discovery implementation track Track: T+162m</description>
-    </item>
-    <item>
-      <title>Universe route contract implementation track</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</guid>
-      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</category>
-      <description>Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source. Breadcrumb: Improvement Timeline &gt; Universe route contract implementation track Track: T+154m</description>
     </item>
   </channel>
 </rss>
