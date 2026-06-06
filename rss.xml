@@ -9,6 +9,30 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Consolidated June 6 public rollup to 73.9 percent coverage</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9</category>
+      <description>The public changelog now includes the full June 6 public-safe update set through risk-distribution and MCP composite-wrapper coverage hardening, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the 73.9% coverage checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 73.9 percent coverage Track: T+802m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>DeltaSignal MCP composite wrapper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MCP-COMPOSITE-WRAPPER-COVERAGE-73P9</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MCP-COMPOSITE-WRAPPER-COVERAGE-73P9</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-MCP-COMPOSITE-WRAPPER-COVERAGE-73P9</category>
+      <description>MCP composite wrapper coverage now verifies fail-closed behavior for Company Report, Issuer Deep Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and Daily Change Evidence wrappers; the verified cmd/search-gateway package coverage checkpoint reached 73.9%. Breadcrumb: Improvement Timeline &gt; DeltaSignal MCP composite wrapper coverage checkpoint Track: T+794m Commit: 6db4d2ad</description>
+    </item>
+    <item>
+      <title>Risk distribution route and loader coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-RISK-DISTRIBUTION-COVERAGE-73P3</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-RISK-DISTRIBUTION-COVERAGE-73P3</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-RISK-DISTRIBUTION-COVERAGE-73P3</category>
+      <description>Risk-distribution route coverage now verifies handler success, guardrails, loader error branches, and unavailable-store behavior; the verified cmd/search-gateway package coverage checkpoint reached 73.3%. Breadcrumb: Improvement Timeline &gt; Risk distribution route and loader coverage checkpoint Track: T+786m Commit: 5948be4d</description>
+    </item>
+    <item>
       <title>Consolidated June 6 public rollup to 73.2 percent coverage</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P2</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P2</guid>
@@ -223,30 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</category>
       <description>The ongoing 100% coverage goal advanced from the earlier recorded 64.2% checkpoint to a verified 65.0% package coverage checkpoint for cmd/search-gateway. Breadcrumb: Improvement Timeline &gt; Coverage hardening advanced to 65 percent package coverage Track: T+570m Commit: 9e443dce / 2883899a / af99bd8f / 6ec7f3c7 / 15c940ef / b19f42ce / 3a343700 / d48a7937 / 2c001cfc</description>
-    </item>
-    <item>
-      <title>Notification channel matrix and acceptance harness</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS</category>
-      <description>The notification product surface is recorded as a channel matrix: free pull feed, signed webhooks, terminal delivery, email delivery, paid MCP summaries, receipts/status lookup, and subscription preferences. Breadcrumb: Improvement Timeline &gt; Notification channel matrix and acceptance harness Track: T+562m Commit: 8e09e422 / b18df31e / 49920387 / 49ff7d2c</description>
-    </item>
-    <item>
-      <title>Notification x402 price ladder and contract verification</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER</category>
-      <description>Notification pricing is recorded as a separate low-cost alert layer with route-level x402 metadata, preserving higher prices for composed natural-language briefs and finished deliverables. Breadcrumb: Improvement Timeline &gt; Notification x402 price ladder and contract verification Track: T+554m Commit: e7c013fb / 7bdae295 / 6bba9aec</description>
-    </item>
-    <item>
-      <title>Notification delivery edge coverage hardened</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING</category>
-      <description>Notification test coverage expanded across universe loading, terminal failure paths, subscription persistence, email handler errors, event feed pagination, webhook receipt persistence, delivery edge paths, and notification summary edge cases. Breadcrumb: Improvement Timeline &gt; Notification delivery edge coverage hardened Track: T+546m Commit: 098affa8 / 0a18d314 / a5a1f666 / f22a8779 / bf4ffa40 / d348383c / b4868623 / 24505150 / 5ef08304 / 32adec97</description>
     </item>
   </channel>
 </rss>
