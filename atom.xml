@@ -8,6 +8,22 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 73.2 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P2" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P2</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P2" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through the alpha route/loaders coverage slice, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the 73.2% coverage checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 73.2 percent coverage Track: T+778m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>Alpha routes and loader coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-ALPHA-ROUTE-LOADER-COVERAGE-73P2" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-ALPHA-ROUTE-LOADER-COVERAGE-73P2</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-ALPHA-ROUTE-LOADER-COVERAGE-73P2" />
+    <summary>Alpha route and loader coverage now verifies alpha-signals, alpha-opportunities, alpha audit, alpha universe, source-date resolution, window leaders, and query-error behavior; the verified cmd/search-gateway package coverage checkpoint reached 73.2%. Breadcrumb: Improvement Timeline &gt; Alpha routes and loader coverage checkpoint Track: T+770m Commit: 68c93eb2</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 72.5 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5</id>
@@ -230,21 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING" />
     <summary>Notification test coverage expanded across universe loading, terminal failure paths, subscription persistence, email handler errors, event feed pagination, webhook receipt persistence, delivery edge paths, and notification summary edge cases. Breadcrumb: Improvement Timeline &gt; Notification delivery edge coverage hardened Track: T+546m Commit: 098affa8 / 0a18d314 / a5a1f666 / f22a8779 / bf4ffa40 / d348383c / b4868623 / 24505150 / 5ef08304 / 32adec97</summary>
-  </entry>
-  <entry>
-    <title>Business-day daily digest rollout</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST" />
-    <summary>Daily notification digest rendering now supports source-date grouping and five-business-day rollups so recipients can review each processing day separately instead of receiving one undifferentiated alert. Breadcrumb: Improvement Timeline &gt; Business-day daily digest rollout Track: T+538m Commit: 85ed8ecc / ebb0964f / 883829d9 / 7f264c5c / 8b7aa9f9 / 00ca35ac / 820c68bd</summary>
-  </entry>
-  <entry>
-    <title>Outlook and Microsoft Graph email delivery verified</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED" />
-    <summary>Notification email delivery now has both an Outlook SMTP path and a Microsoft Graph path recorded, with Graph used as the production-grade authenticated delivery channel for Delta Signal MCP notifications. Breadcrumb: Improvement Timeline &gt; Outlook and Microsoft Graph email delivery verified Track: T+530m Commit: f5088764 / 209b3584 / b7c6f962 / e8101983</summary>
   </entry>
 </feed>
