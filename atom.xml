@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Delta Signal ATLAS-7 Changelog</title>
+  <subtitle>Public changelog for Delta Signal ATLAS-7 MCP, OpenAPI, x402, notification, SPECTRA, and evidence-contract changes.</subtitle>
+  <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html" />
+  <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml" rel="self" type="application/atom+xml" />
+  <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog</id>
+  <updated>2026-06-06T00:00:00.000Z</updated>
+  <author><name>AITrailblazer</name></author>
+  <entry>
+    <title>ATLAS-7 ticker canonicalization audit</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION" />
+    <summary>The 215-row ATLAS-7 universe was audited against the SEC company tickers exchange reference and repaired where the current common-stock ticker was unambiguous. Breadcrumb: Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit Track: T+506m Commit: c49e722c</summary>
+  </entry>
+  <entry>
+    <title>Notification evidence digest and ATLAS-7 universe filtering</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST" />
+    <summary>Notification summaries now expose the daily evidence workload behind an alert and filter latest-change notification selection to the ATLAS-7 universe. Breadcrumb: Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering Track: T+498m Commit: f3410ac3 / c49e722c</summary>
+  </entry>
+  <entry>
+    <title>Live ATLAS-history SPECTRA primary rollout</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</id>
+    <updated>2026-06-05T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY" />
+    <summary>/v1/spectra-field-map/{ticker_or_cik} now prefers runtime SPECTRA generation from ATLAS-7 history over static contracts. Breadcrumb: Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout Track: T+490m Commit: 8d7171e</summary>
+  </entry>
+  <entry>
+    <title>Terminal broker envelope contract</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</id>
+    <updated>2026-06-05T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT" />
+    <summary>GET /v1/contract/fields now publishes the terminal MCP-brokered ATLAS envelope contract. Breadcrumb: Improvement Timeline &gt; Terminal broker envelope contract Track: T+482m Commit: a62f4c5</summary>
+  </entry>
+  <entry>
+    <title>Parser field contract hardened</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</id>
+    <updated>2026-06-05T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING" />
+    <summary>Production now returns the versioned parser-stable field set published by GET /v1/contract/fields. Breadcrumb: Improvement Timeline &gt; Parser field contract hardened Track: T+474m Commit: f64dc87</summary>
+  </entry>
+  <entry>
+    <title>MCP wallet-signed grant execution verified</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</id>
+    <updated>2026-06-05T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION" />
+    <summary>Production MCP now honors wallet-signed grant context accepted by the outer x402/payment wrapper before API-key enforcement. Breadcrumb: Improvement Timeline &gt; MCP wallet-signed grant execution verified Track: T+466m Commit: e3e4763</summary>
+  </entry>
+  <entry>
+    <title>Wallet-signed grant auth for zero-balance clients</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</id>
+    <updated>2026-06-04T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH" />
+    <summary>Added a signed wallet-grant path before x402 payment middleware so enrolled EVM wallets can prove grant identity without requiring a funded x402 payment preflight. Breadcrumb: Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients Track: T+458m Commit: c001f26</summary>
+  </entry>
+  <entry>
+    <title>Verified wallet grant settlement bypass</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</id>
+    <updated>2026-06-04T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS" />
+    <summary>Added source support for DB-backed verified-wallet grants: x402 verifies the signed payer wallet, matches it to the promo grant ledger, consumes the DB grant counter, returns a zero-amount grant settlement response, and skips paid settlement. Breadcrumb: Improvement Timeline &gt; Verified wallet grant settlement bypass Track: T+450m</summary>
+  </entry>
+  <entry>
+    <title>Local regression smoke verified</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-LOCAL-REGRESSION-SMOKE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-LOCAL-REGRESSION-SMOKE</id>
+    <updated>2026-06-03T00:00:00.000Z</updated>
+    <category term="ATLAS-LOCAL-REGRESSION-SMOKE" />
+    <summary>Added an opt-in live-loop regression smoke for the live-loop route set and verified it locally against an internal-key gateway profile before production redeploy. Breadcrumb: Improvement Timeline &gt; Local regression smoke verified Track: T+442m</summary>
+  </entry>
+  <entry>
+    <title>Audit status, Morning Brief context, and public MCP discovery</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT</id>
+    <updated>2026-05-14T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT" />
+    <summary>Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status . Breadcrumb: Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery Track: T+242m</summary>
+  </entry>
+  <entry>
+    <title>Historical source dates, SPECTRA, and ATLAS-7 calculation history</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND</id>
+    <updated>2026-05-14T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND" />
+    <summary>Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow. Breadcrumb: Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history Track: T+234m</summary>
+  </entry>
+  <entry>
+    <title>StrategiX Visual MCP and finished DeltaSignal deliverables</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</id>
+    <updated>2026-05-16T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED" />
+    <summary>Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows. Breadcrumb: Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables Track: T+226m</summary>
+  </entry>
+  <entry>
+    <title>Company Report became a true OpenAPI-visible aggregate</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE</id>
+    <updated>2026-05-27T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE" />
+    <summary>Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report . Breadcrumb: Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate Track: T+218m</summary>
+  </entry>
+  <entry>
+    <title>Public contract cleanup re-verified</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED</id>
+    <updated>2026-05-28T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED" />
+    <summary>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths. Breadcrumb: Improvement Timeline &gt; Public contract cleanup re-verified Track: T+210m</summary>
+  </entry>
+  <entry>
+    <title>Evidence replay semantics implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK" />
+    <summary>Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source. Breadcrumb: Improvement Timeline &gt; Evidence replay semantics implementation track Track: T+202m</summary>
+  </entry>
+  <entry>
+    <title>Daily-change field-delta implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION" />
+    <summary>Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source. Breadcrumb: Improvement Timeline &gt; Daily-change field-delta implementation track Track: T+194m</summary>
+  </entry>
+  <entry>
+    <title>Large-response handling implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" />
+    <summary>Added public help guidance for large DeltaSignal responses in backend source. Breadcrumb: Improvement Timeline &gt; Large-response handling implementation track Track: T+186m</summary>
+  </entry>
+  <entry>
+    <title>Coverage discovery implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK" />
+    <summary>Extended /companies in backend source with deltasignal-coverage-v1 . Breadcrumb: Improvement Timeline &gt; Coverage discovery implementation track Track: T+178m</summary>
+  </entry>
+  <entry>
+    <title>Response metadata envelope implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK" />
+    <summary>Added deltasignal-response-metadata-v1 to the protected /v1/ response normalization path. Breadcrumb: Improvement Timeline &gt; Response metadata envelope implementation track Track: T+170m</summary>
+  </entry>
+  <entry>
+    <title>Field contract discovery implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" />
+    <summary>Added free backend discovery route GET /v1/contract/fields . Breadcrumb: Improvement Timeline &gt; Field contract discovery implementation track Track: T+162m</summary>
+  </entry>
+  <entry>
+    <title>Universe route contract implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK" />
+    <summary>Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source. Breadcrumb: Improvement Timeline &gt; Universe route contract implementation track Track: T+154m</summary>
+  </entry>
+  <entry>
+    <title>IREN SPECTRA coverage repair</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR" />
+    <summary>Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss. Breadcrumb: Improvement Timeline &gt; IREN SPECTRA coverage repair Track: T+146m</summary>
+  </entry>
+  <entry>
+    <title>Structured not-found implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK" />
+    <summary>Added a shared structured not_found response contract in backend source. Breadcrumb: Improvement Timeline &gt; Structured not-found implementation track Track: T+138m</summary>
+  </entry>
+  <entry>
+    <title>Canonical billed-response fields implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION" />
+    <summary>Added a shared backend billing normalizer for protected priced /v1/ routes. Breadcrumb: Improvement Timeline &gt; Canonical billed-response fields implementation track Track: T+130m</summary>
+  </entry>
+  <entry>
+    <title>Pricing discovery implementation track</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK" />
+    <summary>Added the first live-loop contract slice in backend source: GET /v1/pricing . Breadcrumb: Improvement Timeline &gt; Pricing discovery implementation track Track: T+122m</summary>
+  </entry>
+  <entry>
+    <title>P1 standard provenance source implementation</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-P1-PROV-730DEF3" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-P1-PROV-730DEF3</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-P1-PROV-730DEF3" />
+    <summary>Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source. Breadcrumb: Improvement Timeline &gt; P1 standard provenance source implementation Track: T+22m Commit: 730def3</summary>
+  </entry>
+  <entry>
+    <title>P0 contract-hardening source implementation</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-P0-CONTRACT-7A80E86" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-P0-CONTRACT-7A80E86</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <category term="ATLAS-P0-CONTRACT-7A80E86" />
+    <summary>Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior. Breadcrumb: Improvement Timeline &gt; P0 contract-hardening source implementation Track: T+14m Commit: 7a80e86</summary>
+  </entry>
+</feed>

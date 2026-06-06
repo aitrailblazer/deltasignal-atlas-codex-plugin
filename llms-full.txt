@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v1
-Last updated: 2026-06-05
+Last updated: 2026-06-06
 Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
-Status: production verified; terminal broker contract deployed on ca-web-intel-mcp--0000456
+Status: production verified; changelog RSS and Atom subscription feeds added for periodic update tracking
 
 Purpose
 This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
@@ -11,6 +11,8 @@ Primary links
 - Public product page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
 - Human changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html
 - LLM changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
+- Changelog RSS: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
+- Changelog Atom: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
 - OpenAPI 3.1: https://api.aitrailblazer.net/openapi.json
 - MCP endpoint: https://api.aitrailblazer.net/mcp
 - Arazzo workflow YAML: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
@@ -19,7 +21,7 @@ Primary links
 
 New user and agent instructions
 1. Read this file first.
-2. Read changelog-llm.html for dated provenance and the latest tripcode.
+2. Read changelog-llm.html for dated provenance and the latest tripcode. Subscribe to rss.xml or atom.xml if you need periodic changelog updates without checking the UI manually.
 3. Read openapi.json for the live public route contract.
 4. Probe GET /v1/readiness through x402. A plain unauthenticated HTTP request may return HTTP 402 unless an active grant or payment proof is attached.
 5. Run one bounded Morning Brief or equivalent composite workflow.

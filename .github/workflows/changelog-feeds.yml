@@ -1,0 +1,51 @@
+name: Changelog Feeds
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - changelog.html
+      - changelog-llm.html
+      - scripts/generate-changelog-feeds.mjs
+      - .github/workflows/changelog-feeds.yml
+  schedule:
+    - cron: "37 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate RSS and Atom feeds
+        run: node scripts/generate-changelog-feeds.mjs
+
+      - name: Validate feed XML
+        run: |
+          ruby -rrexml/document -e 'ARGV.each { |path| REXML::Document.new(File.read(path)); puts "#{path} ok" }' rss.xml atom.xml
+
+      - name: Commit refreshed feeds
+        run: |
+          if git diff --quiet -- rss.xml atom.xml; then
+            echo "Changelog feeds already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rss.xml atom.xml
+          git commit -m "Refresh changelog feeds"
+          git push

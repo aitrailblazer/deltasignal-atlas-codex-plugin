@@ -41,6 +41,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 ## Key Surfaces
 
 - **Changelog** - [`changelog.html`](./changelog.html)
+- **Changelog feeds** - [`rss.xml`](./rss.xml) and [`atom.xml`](./atom.xml)
 - **MCP endpoint** - `https://api.aitrailblazer.net/mcp`
 - **Main website** - `https://aitrailblazer.com`
 - **StrategiX Visual MCP** - `https://aitrailblazer.github.io/strategix-visual-mcp/`
@@ -52,6 +53,16 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 - **Public handshake workflow** - [`arazzo/publicMcpX402Handshake.arazzo.yaml`](./arazzo/publicMcpX402Handshake.arazzo.yaml)
 - **Glama Connector** - [`net.aitrailblazer.api/delta-signal-atlas-7`](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 - **Registry refresh notes** - [`REGISTRY_REFRESH.md`](./REGISTRY_REFRESH.md)
+
+## Changelog Feed Maintenance
+
+`rss.xml` and `atom.xml` are generated from the machine-readable JSON embedded in [`changelog-llm.html`](./changelog-llm.html):
+
+```bash
+node scripts/generate-changelog-feeds.mjs
+```
+
+The `Changelog Feeds` GitHub Action runs on changelog pushes, daily schedule, and manual dispatch. It refreshes the feed files and commits them when they drift, while the discovery contract workflow fails if a pull request changes the changelog without regenerating the feeds.
 
 ## Quick Start
 

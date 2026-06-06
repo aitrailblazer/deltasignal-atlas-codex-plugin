@@ -57,3 +57,9 @@ jobs:
             exit 0
           fi
           go run ./cmd/validate-discovery --root ..
+
+      - name: Validate changelog feeds are current
+        run: |
+          node scripts/generate-changelog-feeds.mjs
+          ruby -rrexml/document -e 'ARGV.each { |path| REXML::Document.new(File.read(path)); puts "#{path} ok" }' rss.xml atom.xml
+          git diff --exit-code -- rss.xml atom.xml
