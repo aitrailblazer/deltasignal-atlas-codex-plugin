@@ -5,13 +5,13 @@
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html" />
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml" rel="self" type="application/atom+xml" />
   <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog</id>
-  <updated>2026-06-06T08:00:00.000Z</updated>
+  <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
     <title>OPML feed helper coverage checkpoint</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</id>
-    <updated>2026-06-06T08:00:00.000Z</updated>
+    <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE" />
     <summary>OPML feed helper coverage now verifies feed collection helpers, source ID derivation, source domain derivation, ID sanitation, and handler guard paths. Breadcrumb: Improvement Timeline &gt; OPML feed helper coverage checkpoint Track: T+626m Commit: 843189b3</summary>
   </entry>
@@ -19,7 +19,7 @@
     <title>StrategiX web static runtime coverage checkpoint</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</id>
-    <updated>2026-06-06T08:00:00.000Z</updated>
+    <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE" />
     <summary>StrategiX web static runtime coverage now verifies constructor, host matching, index serving, asset serving, SPA fallback, missing assets, and root handler dispatch. Breadcrumb: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint Track: T+618m Commit: b92b3076</summary>
   </entry>
@@ -246,21 +246,5 @@
     <updated>2026-05-31T00:00:00.000Z</updated>
     <category term="ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK" />
     <summary>Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source. Breadcrumb: Improvement Timeline &gt; Evidence replay semantics implementation track Track: T+202m</summary>
-  </entry>
-  <entry>
-    <title>Daily-change field-delta implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION" />
-    <summary>Added deltasignal-daily-field-deltas-v1 to compact daily changes in backend source. Breadcrumb: Improvement Timeline &gt; Daily-change field-delta implementation track Track: T+194m</summary>
-  </entry>
-  <entry>
-    <title>Large-response handling implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" />
-    <summary>Added public help guidance for large DeltaSignal responses in backend source. Breadcrumb: Improvement Timeline &gt; Large-response handling implementation track Track: T+186m</summary>
   </entry>
 </feed>
