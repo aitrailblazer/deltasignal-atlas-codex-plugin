@@ -8,6 +8,30 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 75.6 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through SPECTRA dynamic helper coverage and MCP validation/coercion coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 75.6%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage Track: T+906m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>MCP validation and coercion coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6" />
+    <summary>DeltaSignal MCP validation and coercion coverage now verifies bounded defaults, integer coercion, common argument checks, ticker validation, output-mode validation, daily-change evidence checks, and composite workflow guardrails; the verified cmd/search-gateway package coverage checkpoint reached 75.6%. Breadcrumb: Improvement Timeline &gt; MCP validation and coercion coverage checkpoint Track: T+898m Commit: 387a8abd</summary>
+  </entry>
+  <entry>
+    <title>SPECTRA dynamic helper coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4" />
+    <summary>SPECTRA dynamic helper coverage now verifies field-map row normalization, scalar coercion, point-date bounds, min/max normalization, compression/release labels, pressure/fair-value reads, rounding, and historical contract derivation; the verified cmd/search-gateway package coverage checkpoint reached 75.4%. Breadcrumb: Improvement Timeline &gt; SPECTRA dynamic helper coverage checkpoint Track: T+890m Commit: 71ceeb97</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 75.2 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2</id>
@@ -222,29 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC" />
     <summary>The public documentation set now treats changelog.html, changelog-llm.html, rss.xml, atom.xml, llms.txt, and llms-full.txt as synchronized release surfaces for recurring product updates. Breadcrumb: Improvement Timeline &gt; Periodic changelog and subscriber feed sync policy Track: T+674m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>DeltaSignal primitive helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE" />
-    <summary>DeltaSignal primitive parsing and ticker helper coverage now verifies bounded integers, optional floats and booleans, nullable numbers and JSON arrays, ticker display/resolution helpers, and generic integer/bool coercion. Breadcrumb: Improvement Timeline &gt; DeltaSignal primitive helper coverage checkpoint Track: T+666m Commit: b1b6b9b7</summary>
-  </entry>
-  <entry>
-    <title>Codex cache helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE" />
-    <summary>Codex cache and runtime helper coverage now verifies default cache-skip configuration, dynamic-search skip decisions, runtime path handling, cache metadata normalization, and deterministic helper branches. Breadcrumb: Improvement Timeline &gt; Codex cache helper coverage checkpoint Track: T+658m Commit: c848302d</summary>
-  </entry>
-  <entry>
-    <title>Subscriber changelog feeds and public rollup maintenance</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP" />
-    <summary>The public changelog now explicitly tracks RSS and Atom subscriber feeds as first-class update surfaces for notification, billing, coverage, MCP, SPECTRA, and route-contract changes. Breadcrumb: Improvement Timeline &gt; Subscriber changelog feeds and public rollup maintenance Track: T+650m Commit: current changelog update</summary>
   </entry>
 </feed>

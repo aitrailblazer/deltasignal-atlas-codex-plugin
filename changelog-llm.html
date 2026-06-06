@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>170</strong><span>tracked changes</span></div>
-        <div><strong>85</strong><span>timeline entries</span></div>
-        <div><strong>168</strong><span>unique tripcodes</span></div>
-        <div><strong>170</strong><span>breadcrumb chips</span></div>
-        <div><strong>61</strong><span>visible commit references</span></div>
-        <div><strong>90</strong><span>unique source commits</span></div>
+        <div><strong>173</strong><span>tracked changes</span></div>
+        <div><strong>88</strong><span>timeline entries</span></div>
+        <div><strong>171</strong><span>unique tripcodes</span></div>
+        <div><strong>173</strong><span>breadcrumb chips</span></div>
+        <div><strong>64</strong><span>visible commit references</span></div>
+        <div><strong>92</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,9 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>173</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage</td><td><code>T+906m</code></td><td>current changelog update</td></tr>
+          <tr><td>172</td><td><code>ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6</code></td><td>Improvement Timeline &gt; MCP validation and coercion coverage checkpoint</td><td><code>T+898m</code></td><td>387a8abd</td></tr>
+          <tr><td>171</td><td><code>ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4</code></td><td>Improvement Timeline &gt; SPECTRA dynamic helper coverage checkpoint</td><td><code>T+890m</code></td><td>71ceeb97</td></tr>
           <tr><td>170</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 75.2 percent coverage</td><td><code>T+882m</code></td><td>current changelog update</td></tr>
           <tr><td>169</td><td><code>ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2</code></td><td>Improvement Timeline &gt; DeltaSignal handler and helper guard coverage checkpoint</td><td><code>T+874m</code></td><td>b9029faa</td></tr>
           <tr><td>168</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 74.9 percent coverage</td><td><code>T+866m</code></td><td>current changelog update</td></tr>
@@ -253,6 +256,41 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6">
+          <h3>Consolidated June 6 public rollup to 75.6 percent coverage</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6</code> <code>track: T+906m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage</code></p>
+          <p>The public changelog now includes the full June 6 public-safe update set through SPECTRA dynamic helper coverage and MCP validation/coercion coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 75.6%.</p>
+          <ul>
+            <li>Rolls forward the public-safe notification work: free event discovery, Microsoft Graph email delivery, terminal delivery, signed webhooks, delivery receipts, retry/dead-letter status, durable subscriptions, paid MCP notification summaries, route pricing, and non-advice boundaries.</li>
+            <li>Rolls forward Daily Delta Signal Digest behavior: source-date-separated business-day blocks, ATLAS-7 universe matches, affected tickers, evidence workload statistics, drilldown availability, and optional market context when available.</li>
+            <li>Rolls forward ticker-quality work including ATLAS-7 universe filtering and canonical public ticker presentation, including warrant-to-common-stock display repair where the issuer evidence supports a primary common-share ticker.</li>
+            <li>Rolls forward source-test hardening through SPECTRA field-map contract derivation, numeric/date/pressure helpers, MCP ticker and output-mode validation, common argument coercion, Daily Change Evidence validation, and composite workflow validation.</li>
+            <li>Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+            <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6">
+          <h3>MCP validation and coercion coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6</code> <code>track: T+898m</code> <code>commit: 387a8abd</code> <code>bread: Improvement Timeline &gt; MCP validation and coercion coverage checkpoint</code></p>
+          <p>DeltaSignal MCP validation and coercion coverage now verifies bounded defaults, integer coercion, common argument checks, ticker validation, output-mode validation, daily-change evidence checks, and composite workflow guardrails; the verified cmd/search-gateway package coverage checkpoint reached 75.6%.</p>
+          <ul>
+            <li>Covered boundedDefault and anyInt coercion paths used by MCP-facing route argument normalization.</li>
+            <li>Covered common MCP argument validation, required ticker validation, composite output-mode validation, and direct tool validation branches.</li>
+            <li>Covered Daily Change Evidence validation plus Morning Brief and no-argument composite workflow validation.</li>
+            <li>This protects agent clients from ambiguous malformed requests while preserving route contracts, pricing behavior, and evidence boundaries.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4">
+          <h3>SPECTRA dynamic helper coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4</code> <code>track: T+890m</code> <code>commit: 71ceeb97</code> <code>bread: Improvement Timeline &gt; SPECTRA dynamic helper coverage checkpoint</code></p>
+          <p>SPECTRA dynamic helper coverage now verifies field-map row normalization, scalar coercion, point-date bounds, min/max normalization, compression/release labels, pressure/fair-value reads, rounding, and historical contract derivation; the verified cmd/search-gateway package coverage checkpoint reached 75.4%.</p>
+          <ul>
+            <li>Covered SPECTRA numeric, string, and boolean coercion helpers plus empty/dateless contract rejection paths.</li>
+            <li>Covered SPECTRA point-range and normalization behavior used to build dynamic field-map contracts from ATLAS-history-shaped rows.</li>
+            <li>Covered compression, release, pressure, and fair-value label derivation so field-map summaries remain stable for agent and UI readers.</li>
+            <li>This protects SPECTRA contract generation without changing public evidence semantics or expanding investment-advice behavior.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2">
           <h3>Consolidated June 6 public rollup to 75.2 percent coverage</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2</code> <code>track: T+882m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.2 percent coverage</code></p>
@@ -2377,12 +2415,12 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 170,
-    "timeline_entries": 85,
-    "unique_tripcodes": 168,
-    "breadcrumb_chips": 170,
-    "visible_commit_references": 61,
-    "unique_source_commits": 90
+    "tracked_changes": 173,
+    "timeline_entries": 88,
+    "unique_tripcodes": 171,
+    "breadcrumb_chips": 173,
+    "visible_commit_references": 64,
+    "unique_source_commits": 92
   },
   "tracking_river": [
     {
@@ -3459,6 +3497,27 @@
       "commit": "current changelog update",
       "bread": "Improvement Timeline > Consolidated June 6 public rollup to 75.2 percent coverage",
       "river_index": 170
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4",
+      "track": "T+890m",
+      "commit": "71ceeb97",
+      "bread": "Improvement Timeline > SPECTRA dynamic helper coverage checkpoint",
+      "river_index": 171
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6",
+      "track": "T+898m",
+      "commit": "387a8abd",
+      "bread": "Improvement Timeline > MCP validation and coercion coverage checkpoint",
+      "river_index": 172
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6",
+      "track": "T+906m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 75.6 percent coverage",
+      "river_index": 173
     }
   ],
   "timeline_entries": [
@@ -4818,13 +4877,63 @@
         "Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
         "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
       ]
+    },
+    {
+      "river_index": 171,
+      "date": "June 6, 2026",
+      "title": "SPECTRA dynamic helper coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4",
+      "track": "T+890m",
+      "commit": "71ceeb97",
+      "bread": "Improvement Timeline > SPECTRA dynamic helper coverage checkpoint",
+      "summary": "SPECTRA dynamic helper coverage now verifies field-map row normalization, scalar coercion, point-date bounds, min/max normalization, compression/release labels, pressure/fair-value reads, rounding, and historical contract derivation; the verified cmd/search-gateway package coverage checkpoint reached 75.4%.",
+      "bullets": [
+        "Covered SPECTRA numeric, string, and boolean coercion helpers plus empty/dateless contract rejection paths.",
+        "Covered SPECTRA point-range and normalization behavior used to build dynamic field-map contracts from ATLAS-history-shaped rows.",
+        "Covered compression, release, pressure, and fair-value label derivation so field-map summaries remain stable for agent and UI readers.",
+        "This protects SPECTRA contract generation without changing public evidence semantics or expanding investment-advice behavior."
+      ]
+    },
+    {
+      "river_index": 172,
+      "date": "June 6, 2026",
+      "title": "MCP validation and coercion coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6",
+      "track": "T+898m",
+      "commit": "387a8abd",
+      "bread": "Improvement Timeline > MCP validation and coercion coverage checkpoint",
+      "summary": "DeltaSignal MCP validation and coercion coverage now verifies bounded defaults, integer coercion, common argument checks, ticker validation, output-mode validation, daily-change evidence checks, and composite workflow guardrails; the verified cmd/search-gateway package coverage checkpoint reached 75.6%.",
+      "bullets": [
+        "Covered boundedDefault and anyInt coercion paths used by MCP-facing route argument normalization.",
+        "Covered common MCP argument validation, required ticker validation, composite output-mode validation, and direct tool validation branches.",
+        "Covered Daily Change Evidence validation plus Morning Brief and no-argument composite workflow validation.",
+        "This protects agent clients from ambiguous malformed requests while preserving route contracts, pricing behavior, and evidence boundaries."
+      ]
+    },
+    {
+      "river_index": 173,
+      "date": "June 6, 2026",
+      "title": "Consolidated June 6 public rollup to 75.6 percent coverage",
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6",
+      "track": "T+906m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 75.6 percent coverage",
+      "summary": "The public changelog now includes the full June 6 public-safe update set through SPECTRA dynamic helper coverage and MCP validation/coercion coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 75.6%.",
+      "bullets": [
+        "Rolls forward the public-safe notification work: free event discovery, Microsoft Graph email delivery, terminal delivery, signed webhooks, delivery receipts, retry/dead-letter status, durable subscriptions, paid MCP notification summaries, route pricing, and non-advice boundaries.",
+        "Rolls forward Daily Delta Signal Digest behavior: source-date-separated business-day blocks, ATLAS-7 universe matches, affected tickers, evidence workload statistics, drilldown availability, and optional market context when available.",
+        "Rolls forward ticker-quality work including ATLAS-7 universe filtering and canonical public ticker presentation, including warrant-to-common-stock display repair where the issuer evidence supports a primary common-share ticker.",
+        "Rolls forward source-test hardening through SPECTRA field-map contract derivation, numeric/date/pressure helpers, MCP ticker and output-mode validation, common argument coercion, Daily Change Evidence validation, and composite workflow validation.",
+        "Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
+        "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
+      ]
     }
   ]
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="170" timeline_entries="85" unique_tripcodes="168" breadcrumb_chips="170" visible_commit_references="61" unique_source_commits="90" />
+  <stats tracked_changes="173" timeline_entries="88" unique_tripcodes="171" breadcrumb_chips="173" visible_commit_references="64" unique_source_commits="92" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -4918,6 +5027,9 @@
     <entry river_index="160" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9" track="T+802m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 73.9 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 73.9 percent coverage</title></entry>
       <entry river_index="169" tripcode="ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2" track="T+874m" bread="Improvement Timeline &gt; DeltaSignal handler and helper guard coverage checkpoint" commit="b9029faa"><date>June 6, 2026</date><title>DeltaSignal handler and helper guard coverage checkpoint</title></entry>
     <entry river_index="170" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2" track="T+882m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.2 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.2 percent coverage</title></entry>
+    <entry river_index="171" tripcode="ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4" track="T+890m" bread="Improvement Timeline &gt; SPECTRA dynamic helper coverage checkpoint" commit="71ceeb97"><date>June 6, 2026</date><title>SPECTRA dynamic helper coverage checkpoint</title></entry>
+    <entry river_index="172" tripcode="ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6" track="T+898m" bread="Improvement Timeline &gt; MCP validation and coercion coverage checkpoint" commit="387a8abd"><date>June 6, 2026</date><title>MCP validation and coercion coverage checkpoint</title></entry>
+    <entry river_index="173" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" track="T+906m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.6 percent coverage</title></entry>
   </entries>
 </changelog_llm>
 </script>

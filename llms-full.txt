@@ -2,7 +2,7 @@ Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v1
 Last updated: 2026-06-06
 Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
-Status: production verified; changelog RSS and Atom subscription feeds added for periodic update tracking; latest public rollup includes notification channels, daily all-delta digests, Microsoft Graph email delivery, signed webhooks, terminal delivery, delivery receipts, subscription preferences, notification x402 pricing, SPECTRA, ticker canonicalization, static runtime coverage, OPML feed helper coverage, Marketplace helper coverage, Web Intel/Telegram helper coverage, Codex cache helper coverage, DeltaSignal primitive helper coverage, company-fundamentals metadata helper coverage, billing-envelope helper coverage, MCP summary helper coverage, SignalRadar MCP handler coverage, StrategiX Diagram MCP helper coverage, dedicated grant ledger coverage, ATLAS-7 history route/loaders coverage, alpha route/loaders coverage, risk-distribution route/loaders coverage, DeltaSignal MCP composite wrapper coverage, Codex process-runner coverage, dynamic crawler loop coverage, Codex compatibility-handler coverage, worker-proxy/store-constructor coverage, RSS/Atom subscription feeds, and ongoing 100% coverage work
+Status: production verified; changelog RSS and Atom subscription feeds added for periodic update tracking; latest public rollup includes notification channels, daily all-delta digests, Microsoft Graph email delivery, signed webhooks, terminal delivery, delivery receipts, subscription preferences, notification x402 pricing, SPECTRA, ticker canonicalization, static runtime coverage, OPML feed helper coverage, Marketplace helper coverage, Web Intel/Telegram helper coverage, Codex cache helper coverage, DeltaSignal primitive helper coverage, company-fundamentals metadata helper coverage, billing-envelope helper coverage, MCP summary helper coverage, SignalRadar MCP handler coverage, StrategiX Diagram MCP helper coverage, dedicated grant ledger coverage, ATLAS-7 history route/loaders coverage, alpha route/loaders coverage, risk-distribution route/loaders coverage, DeltaSignal MCP composite wrapper coverage, Codex process-runner coverage, dynamic crawler loop coverage, Codex compatibility-handler coverage, worker-proxy/store-constructor coverage, DeltaSignal helper/handler guard coverage, SPECTRA dynamic helper coverage, MCP validation/coercion coverage, RSS/Atom subscription feeds, and ongoing 100% coverage work
 
 Purpose
 This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
@@ -33,9 +33,9 @@ New user and agent instructions
 
 Current implementation status
 - The production API is live with the terminal broker envelope contract deployed on revision ca-web-intel-mcp--0000456.
-- The changelog entry for the latest public coverage/status rollup is ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2.
-- The latest public-safe notification/product rollup is ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP; the latest coverage checkpoint is ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2.
-- The latest source coverage checkpoints are ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2, ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4, ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7, ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9, and ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2.
+- The changelog entry for the latest public coverage/status rollup is ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6.
+- The latest public-safe notification/product rollup is ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP; the latest coverage checkpoint is ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6.
+- The latest source coverage checkpoints are ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2, ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4, ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7, ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9, ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2, ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4, and ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6.
 - The local/source solution and production route probes have both passed for the documented parser-stable field set.
 - Internal verification may use an internal/test API-key gateway profile.
 - Public smoke should use x402, free-tier grant behavior, or signed wallet-grant behavior where configured.
@@ -203,10 +203,10 @@ No. External access is x402-based. A configured grant may allow calls without pa
 Machine-readable status
 artifact: deltasignal_atlas7_llms_full
 version: llms-full-v1
-last_updated: 2026-06-05
+last_updated: 2026-06-06
 local_solution_ready: true
 production_redeploy_pending: false
 production_smoke_required_after_redeploy: false
-latest_changelog_tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2
+latest_changelog_tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6
 public_name_safe: true
 non_advice_required: true
