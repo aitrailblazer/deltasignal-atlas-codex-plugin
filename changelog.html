@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, OPML feeds, static runtimes, and coverage hardening to 67.7%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, and coverage hardening to 69.0%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>138</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>53</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>136</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>138</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>41</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>70</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>141</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>56</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>139</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>141</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>42</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>71</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,24 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>141</span>
+              <code>ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</code>
+              <span>Improvement Timeline &gt; Subscriber changelog feeds and public rollup maintenance</span>
+              <code>T+650m</code>
+            </div>
+            <div class="river-row">
+              <span>140</span>
+              <code>ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</code>
+              <span>Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint</span>
+              <code>T+642m</code>
+            </div>
+            <div class="river-row">
+              <span>139</span>
+              <code>ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE</code>
+              <span>Improvement Timeline &gt; Microsoft Marketplace client helper coverage checkpoint</span>
+              <code>T+634m</code>
+            </div>
             <div class="river-row">
               <span>138</span>
               <code>ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</code>
@@ -1358,6 +1376,39 @@
         </div>
         <div class="grid">
           <div class="card">
+            <span class="status">PUBLIC ROLLUP</span>
+            <strong>Subscriber Changelog Feeds and Public Rollup Maintenance</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</code>
+              <code>track: T+650m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Subscriber changelog feeds and public rollup maintenance</code>
+            </div>
+            <span>The public changelog now explicitly tracks RSS and Atom subscriber feeds as first-class update surfaces for notification, billing, coverage, MCP, SPECTRA, and route-contract changes. The feed content is generated from the LLM contract so subscribers receive the same tripcode, breadcrumb, and track markers used by agents.</span>
+          </div>
+          <div class="card">
+            <span class="status">LOCAL VERIFICATION</span>
+            <strong>Web Intel and Telegram Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</code>
+              <code>track: T+642m</code>
+              <code>commit: local verification</code>
+              <code>bread: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint</code>
+            </div>
+            <span>Active coverage work now exercises Web Intel deterministic result ordering, canonical link handling, fetched-item dedupe, search summaries, hot-cache keys, Telegram configuration parsing, webhook validation, authorization helpers, approval formatting, execution args, and compact response rendering. Latest local package coverage checkpoint is <code>69.0%</code>; the 100% goal remains open.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Microsoft Marketplace Client Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE</code>
+              <code>track: T+634m</code>
+              <code>commit: b42ea23b</code>
+              <code>bread: Improvement Timeline &gt; Microsoft Marketplace client helper coverage checkpoint</code>
+            </div>
+            <span>Microsoft Marketplace SaaS helper coverage now verifies client response handling, webhook secret validation, subscription provisioning, webhook action mapping, tier extraction, and marketplace string helpers. The committed package coverage checkpoint advanced to <code>68.3%</code> after this slice.</span>
+          </div>
+          <div class="card">
             <span class="status">SOURCE VERIFIED</span>
             <strong>OPML Feed Helper Coverage Checkpoint</strong>
             <div class="track">
@@ -1910,6 +1961,52 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP">
+            <div class="date">June 6, 2026</div>
+            <h3>Subscriber changelog feeds and public rollup maintenance</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</code>
+              <code>track: T+650m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Subscriber changelog feeds and public rollup maintenance</code>
+            </div>
+            <ul>
+              <li>Updated the human and LLM changelog surfaces with the latest public rollup while keeping private design-partner identifiers out of the public artifact.</li>
+              <li>Regenerated RSS and Atom feeds from the LLM contract so subscribers can follow the changelog without manually reopening the site.</li>
+              <li>Preserved the evidence boundary: changelog entries describe product and contract changes, not private support context or personalized financial advice.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>Web Intel and Telegram helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</code>
+              <code>track: T+642m</code>
+              <code>commit: local verification</code>
+              <code>bread: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Web Intel helper coverage now exercises deterministic result ordering, canonical link handling, fetched-item dedupe, summary generation, and hot-cache key construction.</li>
+              <li>Telegram helper coverage now exercises configuration parsing, webhook validation, allowed-user checks, approval actor authorization, text rendering, pending-approval formatting, and compact command execution arguments.</li>
+              <li>The latest local package coverage checkpoint reached <code>69.0%</code>; this remains a coverage-hardening checkpoint, not a claim that the broader 100% coverage goal is complete.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>Microsoft Marketplace client helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE</code>
+              <code>track: T+634m</code>
+              <code>commit: b42ea23b</code>
+              <code>bread: Improvement Timeline &gt; Microsoft Marketplace client helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Microsoft Marketplace SaaS helper coverage now verifies client response handling, webhook secret validation, subscription provisioning, webhook action mapping, tier extraction, and marketplace string helpers.</li>
+              <li>ResolveSubscription, GetOperation, response decoding, marketplace app selection, webhook handling, provisioning, and action/status helpers are covered at 100% for the targeted helper slice.</li>
+              <li>The committed package coverage checkpoint advanced to <code>68.3%</code> after this marketplace coverage slice.</li>
+              <li>This is billing and marketplace integration hardening only; it does not change notification evidence semantics, x402 settlement rules, or free discovery behavior.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE">
             <div class="date">June 6, 2026</div>
             <h3>OPML feed helper coverage checkpoint</h3>

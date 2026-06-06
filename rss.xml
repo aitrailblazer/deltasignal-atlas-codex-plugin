@@ -9,6 +9,30 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Subscriber changelog feeds and public rollup maintenance</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</category>
+      <description>The public changelog now explicitly tracks RSS and Atom subscriber feeds as first-class update surfaces for notification, billing, coverage, MCP, SPECTRA, and route-contract changes. Breadcrumb: Improvement Timeline &gt; Subscriber changelog feeds and public rollup maintenance Track: T+650m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>Web Intel and Telegram helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</category>
+      <description>Active coverage work added deterministic tests for Web Intel result helpers and Telegram bridge helper behavior, including sorting, dedupe, cache keys, text builders, authorization, approval IDs, execution args, and response formatting. Breadcrumb: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint Track: T+642m Commit: local verification</description>
+    </item>
+    <item>
+      <title>Microsoft Marketplace client helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE</category>
+      <description>Microsoft Marketplace SaaS helper coverage now verifies client response handling, webhook secret validation, subscription provisioning, webhook action mapping, tier extraction, and marketplace string helpers. Breadcrumb: Improvement Timeline &gt; Microsoft Marketplace client helper coverage checkpoint Track: T+634m Commit: b42ea23b</description>
+    </item>
+    <item>
       <title>OPML feed helper coverage checkpoint</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</guid>
@@ -223,30 +247,6 @@
       <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</category>
       <description>Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows. Breadcrumb: Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables Track: T+226m</description>
-    </item>
-    <item>
-      <title>Company Report became a true OpenAPI-visible aggregate</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE</guid>
-      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE</category>
-      <description>Added live REST/x402 routes: GET /v1/company-report/{ticker} and POST /v1/bundles/company-report . Breadcrumb: Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate Track: T+218m</description>
-    </item>
-    <item>
-      <title>Public contract cleanup re-verified</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED</category>
-      <description>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths. Breadcrumb: Improvement Timeline &gt; Public contract cleanup re-verified Track: T+210m</description>
-    </item>
-    <item>
-      <title>Evidence replay semantics implementation track</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK</guid>
-      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK</category>
-      <description>Added deltasignal-evidence-replay-v1 to the free field-contract route in backend source. Breadcrumb: Improvement Timeline &gt; Evidence replay semantics implementation track Track: T+202m</description>
     </item>
   </channel>
 </rss>
