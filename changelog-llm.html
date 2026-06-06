@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>185</strong><span>tracked changes</span></div>
-        <div><strong>100</strong><span>timeline entries</span></div>
-        <div><strong>183</strong><span>unique tripcodes</span></div>
-        <div><strong>185</strong><span>breadcrumb chips</span></div>
-        <div><strong>71</strong><span>visible commit references</span></div>
-        <div><strong>99</strong><span>unique source commits</span></div>
+        <div><strong>186</strong><span>tracked changes</span></div>
+        <div><strong>101</strong><span>timeline entries</span></div>
+        <div><strong>184</strong><span>unique tripcodes</span></div>
+        <div><strong>186</strong><span>breadcrumb chips</span></div>
+        <div><strong>72</strong><span>visible commit references</span></div>
+        <div><strong>100</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,7 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>186</td><td><code>ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY</code></td><td>Improvement Timeline &gt; Notification hardening and live verification checkpoint</td><td><code>T+1010m</code></td><td>c5ff4e56</td></tr>
           <tr><td>185</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 76.4 percent coverage</td><td><code>T+1002m</code></td><td>current changelog update</td></tr>
           <tr><td>184</td><td><code>ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4</code></td><td>Improvement Timeline &gt; DeltaSignal defensive store/help/readiness coverage checkpoint</td><td><code>T+994m</code></td><td>c2ffd9b9</td></tr>
           <tr><td>183</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 76.3 percent coverage</td><td><code>T+986m</code></td><td>current changelog update</td></tr>
@@ -268,6 +269,18 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY">
+          <h3>Notification hardening and live verification checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY</code> <code>track: T+1010m</code> <code>commit: c5ff4e56</code> <code>bread: Improvement Timeline &gt; Notification hardening and live verification checkpoint</code></p>
+          <p>The notification surface is now in hardening and verification mode: live production probes confirm the 215-issuer readiness count, MCP summary and webhook field-contract aliases, x402 notification-summary pricing metadata, and daily-breakdown evidence handles.</p>
+          <ul>
+            <li>Live readiness returned <code>ok=true</code>, <code>distinct_issuer_count=215</code>, <code>source_date=2026-06-06</code>, and <code>freshness_window_hours=36</code>.</li>
+            <li>The field contract now exposes <code>agentic_triggers.mcp_summary</code> and <code>agentic_triggers.webhook_delivery</code> aliases while preserving <code>paid_summary_route</code> and <code>signed_webhook_delivery</code>.</li>
+            <li>MCP notification summary daily breakdown rows now preserve <code>evidence_refs</code> and <code>suggested_routes</code>; email digest rows render the same handles.</li>
+            <li>Live pricing advertises <code>/v1/notifications/summaries/mcp</code> at <code>price_usd=0.18</code>, <code>credits_charged=18</code>, <code>billing_mode=x402</code>, and <code>cost_field=cost_usd</code>.</li>
+            <li>Gateway shutdown now waits briefly for crawler loops through a done channel, reducing shutdown-race risk before dependency teardown.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4">
           <h3>Consolidated June 6 public rollup to 76.4 percent coverage</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</code> <code>track: T+1002m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 76.4 percent coverage</code></p>
@@ -3749,6 +3762,13 @@
       "commit": "current changelog update",
       "bread": "Improvement Timeline > Consolidated June 6 public rollup to 76.4 percent coverage",
       "river_index": 185
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY",
+      "track": "T+1010m",
+      "commit": "c5ff4e56",
+      "bread": "Improvement Timeline > Notification hardening and live verification checkpoint",
+      "river_index": 186
     }
   ],
   "timeline_entries": [
@@ -5353,13 +5373,30 @@
         "Keeps the public/private boundary intact: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
         "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
       ]
+    },
+    {
+      "river_index": 186,
+      "date": "June 6, 2026",
+      "title": "Notification hardening and live verification checkpoint",
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY",
+      "track": "T+1010m",
+      "commit": "c5ff4e56",
+      "bread": "Improvement Timeline > Notification hardening and live verification checkpoint",
+      "summary": "The notification surface is now in hardening and verification mode: live production probes confirm the 215-issuer readiness count, MCP summary and webhook field-contract aliases, x402 notification-summary pricing metadata, and daily-breakdown evidence handles.",
+      "bullets": [
+        "Live readiness returned ok=true, distinct_issuer_count=215, source_date=2026-06-06, and freshness_window_hours=36.",
+        "The field contract exposes agentic_triggers.mcp_summary and agentic_triggers.webhook_delivery aliases while preserving paid_summary_route and signed_webhook_delivery.",
+        "MCP notification summary daily breakdown rows preserve evidence_refs and suggested_routes; email digest rows render the same handles.",
+        "Live pricing advertises /v1/notifications/summaries/mcp at price_usd=0.18, credits_charged=18, billing_mode=x402, and cost_field=cost_usd.",
+        "Gateway shutdown waits briefly for crawler loops through a done channel, reducing shutdown-race risk before dependency teardown."
+      ]
     }
   ]
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="185" timeline_entries="100" unique_tripcodes="183" breadcrumb_chips="185" visible_commit_references="71" unique_source_commits="99" />
+  <stats tracked_changes="186" timeline_entries="101" unique_tripcodes="184" breadcrumb_chips="186" visible_commit_references="72" unique_source_commits="100" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -5465,6 +5502,7 @@
     <entry river_index="182" tripcode="ATLAS-JUN-6-DAILY-CHANGE-DISCOVERY-FALLBACK-COVERAGE-76P3" track="T+978m" bread="Improvement Timeline &gt; Daily-change discovery and fallback coverage checkpoint" commit="672d458d"><date>June 6, 2026</date><title>Daily-change discovery and fallback coverage checkpoint</title></entry>
     <entry river_index="184" tripcode="ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4" track="T+994m" bread="Improvement Timeline &gt; DeltaSignal defensive store/help/readiness coverage checkpoint" commit="c2ffd9b9"><date>June 6, 2026</date><title>DeltaSignal defensive store/help/readiness coverage checkpoint</title></entry>
     <entry river_index="185" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4" track="T+1002m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 76.4 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 76.4 percent coverage</title></entry>
+    <entry river_index="186" tripcode="ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY" track="T+1010m" bread="Improvement Timeline &gt; Notification hardening and live verification checkpoint" commit="c5ff4e56"><date>June 6, 2026</date><title>Notification hardening and live verification checkpoint</title></entry>
     <entry river_index="183" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3" track="T+986m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 76.3 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 76.3 percent coverage</title></entry>
     <entry river_index="181" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9" track="T+970m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.9 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.9 percent coverage</title></entry>
     <entry river_index="173" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" track="T+906m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.6 percent coverage</title></entry>

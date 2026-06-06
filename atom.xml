@@ -8,6 +8,14 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Notification hardening and live verification checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY" />
+    <summary>Live production probes confirm Delta Signal notification hardening: 215-issuer readiness, MCP summary and webhook field-contract aliases, daily-breakdown evidence refs and suggested routes, x402 notification-summary pricing metadata, and crawler shutdown waiting. Breadcrumb: Improvement Timeline &gt; Notification hardening and live verification checkpoint Track: T+1010m Commit: c5ff4e56</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 76.4 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4</id>
