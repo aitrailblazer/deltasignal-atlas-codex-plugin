@@ -46,14 +46,14 @@
     }
 
     .hero {
-      min-height: 100vh;
+      min-height: auto;
       width: 100%;
       display: grid;
       place-items: center;
       position: relative;
       overflow: hidden;
-      padding: 5rem 1.5rem 4rem;
-      text-align: center;
+      padding: 2rem 1.25rem 1.75rem;
+      text-align: left;
       background:
         radial-gradient(circle at 50% 18%, rgba(255, 154, 26, 0.22), transparent 26rem),
         radial-gradient(circle at 72% 42%, rgba(227, 0, 85, 0.2), transparent 24rem),
@@ -112,10 +112,60 @@
       min-width: 0;
     }
 
+    .hero-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .hero-media {
+      margin: 0;
+      border: 1px solid rgba(255, 154, 26, 0.3);
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(255,154,26,.1), rgba(227,0,85,.08)),
+        rgba(10, 9, 8, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 26px 70px rgba(0, 0, 0, 0.32),
+        0 0 46px rgba(255, 70, 38, 0.14);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 390px;
+      object-fit: contain;
+      background: rgba(5, 5, 5, 0.72);
+    }
+
+    .hero-media figcaption {
+      padding: 0.75rem 0.9rem;
+      border-top: 1px solid rgba(255, 154, 26, 0.16);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
     .logo {
-      width: 152px;
-      height: 152px;
-      margin-bottom: 2.7rem;
+      width: 72px;
+      height: 72px;
+      flex: 0 0 auto;
       border-radius: 50%;
       background: #090807;
       box-shadow:
@@ -132,7 +182,7 @@
 
     .eyebrow {
       width: fit-content;
-      margin: 0 auto 1.5rem;
+      margin: 0;
       padding: 0.62rem 1rem;
       border: 1px solid rgba(255, 154, 26, 0.36);
       border-radius: 999px;
@@ -148,9 +198,9 @@
     }
 
     h1 {
-      margin: 0 auto 1.35rem;
-      font-size: clamp(3.5rem, 8.8vw, 6.6rem);
-      line-height: 0.94;
+      margin: 0 0 0.8rem;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 0.95;
       font-weight: 700;
       background: linear-gradient(90deg, var(--orange), var(--red), var(--magenta));
       -webkit-background-clip: text;
@@ -162,10 +212,10 @@
     }
 
     .tagline {
-      max-width: 760px;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: 0;
       color: #f1ded3;
-      font-size: clamp(1.2rem, 2.35vw, 1.82rem);
+      font-size: clamp(1.05rem, 1.6vw, 1.34rem);
       line-height: 1.45;
     }
 
@@ -178,10 +228,10 @@
 
     .agent-links {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
       gap: 0.65rem;
-      margin: 1rem auto 2.35rem;
+      margin: 1rem 0 0;
     }
 
     .agent-links a {
@@ -205,8 +255,8 @@
     }
 
     .agent-primer {
-      max-width: 820px;
-      margin: -1.35rem auto 2.35rem;
+      max-width: 920px;
+      margin: 1rem 0 0;
       color: var(--muted);
       font-size: 0.94rem;
     }
@@ -216,11 +266,11 @@
     }
 
     .toc-panel {
-      width: min(920px, 100%);
-      margin: 0 auto 2.4rem;
+      width: min(980px, 100%);
+      margin: 1.05rem 0 0;
       border: 1px solid rgba(255, 154, 26, 0.26);
       border-radius: 8px;
-      padding: 1rem;
+      padding: 0.9rem;
       background: rgba(17, 16, 15, 0.56);
       text-align: left;
     }
@@ -259,22 +309,51 @@
       color: #ffd1a3;
     }
 
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 1.3rem 0 0;
+    }
+
+    .quick-fact {
+      min-height: 118px;
+      padding: 0.85rem;
+      border: 1px solid rgba(255, 154, 26, 0.22);
+      border-radius: 8px;
+      background: rgba(17, 16, 15, 0.64);
+    }
+
+    .quick-fact strong {
+      display: block;
+      color: #ffd1a3;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .quick-fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     .hero-actions {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
-      gap: 1.15rem;
-      margin: 3.25rem 0 1.35rem;
+      gap: 0.75rem;
+      margin: 1.25rem 0 0;
     }
 
     .btn {
       display: inline-flex;
-      min-height: 62px;
+      min-height: 44px;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      padding: 0 2rem;
-      font-size: 1.08rem;
+      border-radius: 8px;
+      padding: 0 1rem;
+      font-size: 0.95rem;
       font-weight: 800;
       text-decoration: none;
       transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -293,13 +372,14 @@
     }
 
     .btn:hover {
-      transform: translateY(-5px);
+      transform: translateY(-2px);
       box-shadow: 0 0 76px rgba(255, 154, 26, 0.36);
     }
 
     .meter {
+      margin: 0.9rem 0 0;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 0.95rem;
     }
 
     .signal-visual {
@@ -1317,6 +1397,8 @@
 
       .prompt-grid,
       .feature-grid,
+      .quick-facts,
+      .hero-layout,
       .steps,
       .flow-map,
       .ticker-panel,
@@ -1333,7 +1415,7 @@
 
       .hero {
         min-height: auto;
-        padding: 3.5rem 1rem 3rem;
+        padding: 1.25rem 1rem 1.5rem;
       }
 
       .hero-inner {
@@ -1371,9 +1453,8 @@
       }
 
       .logo {
-        width: 116px;
-        height: 116px;
-        margin-bottom: 2rem;
+        width: 58px;
+        height: 58px;
       }
 
       h1 {
@@ -1387,12 +1468,12 @@
       }
 
       .hero-actions {
-        align-items: center;
-        margin-top: 2.25rem;
+        align-items: stretch;
+        margin-top: 1rem;
       }
 
       .agent-links {
-        margin: 0.85rem auto 1.85rem;
+        margin: 0.85rem 0 0;
       }
 
       .agent-links a {
@@ -1402,13 +1483,13 @@
       }
 
       .agent-primer {
-        margin: -1rem auto 1.6rem;
+        margin: 0.8rem 0 0;
         font-size: 0.86rem;
       }
 
       .toc-panel {
         padding: 0.85rem;
-        margin-bottom: 1.75rem;
+        margin: 1rem 0 0;
       }
 
       .toc-links {
@@ -1434,8 +1515,8 @@
 
       .meter {
         max-width: 290px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
         overflow-wrap: anywhere;
         font-size: 0.95rem;
       }
@@ -1507,72 +1588,57 @@
     <section class="hero">
       <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="eyebrow">MCP live • Open API published • Glama verified • x402 free-tier grants supported</p>
-        <nav class="agent-links" aria-label="Agent files">
-          <a href="./llms-full.txt">llms-full.txt</a>
-          <a href="./llms.txt">llms.txt</a>
-          <a href="./changelog-llm.html">changelog-llm.html</a>
-          <a href="./rss.xml">rss.xml</a>
-          <a href="./atom.xml">atom.xml</a>
-          <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">openapi.json</a>
-        </nav>
-        <p class="agent-primer"><strong>New agent/user path:</strong> read <code>llms-full.txt</code>, inspect <code>openapi.json</code>, probe readiness through x402/free-tier grant, then run one bounded Morning Brief before any paid or production workflow.</p>
-        <nav class="toc-panel" aria-label="Page contents">
-          <strong>Page contents</strong>
-          <div class="toc-links">
-            <a href="#first-test">Start here</a>
-            <a href="#what-you-get">What you get</a>
-            <a href="#recommended-workflows">Workflows</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#x402">x402</a>
-            <a href="#install">Install</a>
-            <a href="#developer-docs">Docs</a>
-            <a href="#route-status">Route status</a>
-            <a href="#first-call-copy">First call</a>
-          </div>
-        </nav>
-        <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
-        <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
-        <p class="tagline">
-          Filing-backed intelligence for crypto-exposed public companies.
-          <span>Run agent-ready Morning Briefs, issuer reports, pressure boards, alpha screens, and live ATLAS-history SPECTRA maps from SEC / XBRL evidence.</span>
-        </p>
-        <div class="hero-actions">
-          <a href="#recommended-workflows" class="btn btn-primary">Run Morning Brief</a>
-          <a href="./changelog.html" class="btn btn-secondary">Changelog</a>
-          <a href="./changelog-llm.html" class="btn btn-secondary">LLM Changelog</a>
-          <a href="./rss.xml" class="btn btn-secondary">RSS Feed</a>
-          <a href="#pricing" class="btn btn-secondary">View pricing</a>
-          <a href="https://aitrailblazer.github.io/strategix-visual-mcp/" class="btn btn-secondary">PDF deliverables</a>
+        <div class="hero-topline">
+          <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
+          <p class="eyebrow">MCP live • EDGAR verified • OpenAPI • SPECTRA • x402</p>
         </div>
-        <p class="meter">MCP live • Open API published • x402 enabled • Glama verified • 215-row ATLAS-7 + SPECTRA coverage verified</p>
-        <figure class="hero-infographic" aria-label="ATLAS-7 evidence pipeline infographic">
-          <img src="./assets/atlas7-evidence-pipeline.png" alt="ATLAS-7 evidence pipeline from SEC and XBRL evidence through the intelligence engine to agent-ready outputs.">
-          <figcaption>SEC/XBRL facts create the boundary. Agents can explain, package, and route, but not invent.</figcaption>
-        </figure>
-        <div class="sample-output" aria-label="Sample Delta Signal Morning Brief output">
-          <div class="sample-output-head">
-            <span>Sample Morning Brief</span>
-            <span class="status-dot">Evidence-preserving output</span>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
+            <p class="tagline">
+              Filing-backed issuer intelligence for the crypto-exposed public-company universe.
+              <span>Daily EDGAR CompanyFacts -> ATLAS-7 evidence rows -> SPECTRA field maps -> REST, MCP, Arazzo, and x402 workflows.</span>
+            </p>
+            <div class="quick-facts" aria-label="Delta Signal ATLAS-7 essentials">
+              <div class="quick-fact"><strong>What it is</strong><span>Evidence pipeline for 215 crypto-exposed public-company issuers, grounded in SEC/XBRL facts.</span></div>
+              <div class="quick-fact"><strong>How it updates</strong><span>Nightly EDGAR job waits for CompanyFacts, mirrors or reconstructs the date, then runs process-changes.</span></div>
+              <div class="quick-fact"><strong>What ATLAS-7 adds</strong><span>Daily changes, issuer history, stress, peer, alpha, readiness, caveats, and manifests for MCP tools.</span></div>
+              <div class="quick-fact"><strong>What SPECTRA adds</strong><span>Field-map contracts from ATLAS history: source dates, ranges, labels, provenance, and soft-miss states.</span></div>
+            </div>
+            <nav class="toc-panel" aria-label="Page contents">
+              <strong>Jump to</strong>
+              <div class="toc-links">
+                <a href="#generation-model">Generation</a>
+                <a href="#first-test">Start here</a>
+                <a href="#what-you-get">Outputs</a>
+                <a href="#recommended-workflows">Workflows</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#install">Install</a>
+                <a href="#developer-docs">Docs</a>
+                <a href="#route-status">Status</a>
+                <a href="#first-call-copy">First call</a>
+              </div>
+            </nav>
+            <div class="hero-actions">
+              <a href="#recommended-workflows" class="btn btn-primary">Run Morning Brief</a>
+              <a href="#generation-model" class="btn btn-secondary">How it works</a>
+              <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener" class="btn btn-secondary">OpenAPI</a>
+              <a href="./changelog-llm.html" class="btn btn-secondary">LLM Changelog</a>
+              <a href="#pricing" class="btn btn-secondary">View pricing</a>
+            </div>
+            <p class="meter">MCP live • EDGAR daily background task verified • Open API published • x402 enabled • Glama verified • 215-row ATLAS-7 + SPECTRA coverage verified</p>
+            <nav class="agent-links" aria-label="Agent files">
+              <a href="./llms-full.txt">llms-full.txt</a>
+              <a href="./llms.txt">llms.txt</a>
+              <a href="./changelog.html">changelog.html</a>
+              <a href="./rss.xml">rss.xml</a>
+              <a href="./atom.xml">atom.xml</a>
+            </nav>
           </div>
-          <div class="sample-output-body">
-            <div class="sample-line">
-              <strong>Readiness</strong>
-              <span>Live service state, active data slice, freshness, issuer count, and route/payment readiness.</span>
-            </div>
-            <div class="sample-line">
-              <strong>Universe</strong>
-              <span>215 ATLAS-7 rows with issuer-level SEC / XBRL evidence, addressable by ticker or CIK where no ticker is available.</span>
-            </div>
-            <div class="sample-line">
-              <strong>Includes</strong>
-              <span>Daily changes, risk distribution, top stressed issuers, alpha opportunities, source dates, and caveats.</span>
-            </div>
-            <div class="sample-line">
-              <strong>Output</strong>
-              <span>Agent-ready JSON or evidence-preserving Markdown. Screening and diligence support, not investment advice.</span>
-            </div>
-          </div>
+          <figure class="hero-media" aria-label="ATLAS-7 evidence pipeline infographic">
+            <img src="./assets/atlas7-evidence-pipeline.png" alt="ATLAS-7 evidence pipeline from SEC and XBRL evidence through the intelligence engine to agent-ready outputs.">
+            <figcaption>EDGAR evidence becomes ATLAS-7 issuer rows, SPECTRA maps, and MCP-ready outputs. Agents explain returned evidence; they do not invent it.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -1642,6 +1708,7 @@
         </div>
         <div class="feature-grid">
           <div class="feature"><strong>Issuer-level, not token-level</strong><span>Track public companies with crypto exposure instead of relying on generic market sentiment.</span></div>
+          <div class="feature"><strong>Daily EDGAR background task</strong><span>The MCP evidence base starts with the nightly EDGAR CompanyFacts mirror, readiness wait, process-changes run, delta summaries, intelligence artifacts, and manifest audit.</span></div>
           <div class="feature"><strong>Filing-backed fundamentals</strong><span>Use SEC / XBRL company facts as the evidence base for fundamentals and issuer context.</span></div>
           <div class="feature"><strong>Stress and peer context</strong><span>Compare covenant stress, risk tiers, and relative position across crypto-exposed public-company groups.</span></div>
           <div class="feature"><strong>Evidence-preserving output</strong><span>Compile structured evidence into Markdown while preserving source dates, caveats, quality flags, and disclaimers.</span></div>
@@ -1732,6 +1799,10 @@
         </div>
         <div class="workflow-strata" aria-label="Delta Signal architecture">
           <div class="workflow-stratum">
+            <strong>EDGAR daily task</strong>
+            <span>Nightly CompanyFacts readiness, Azure mirror/reconstruction, process-changes, delta summaries, intelligence artifacts, and manifests provide the MCP evidence base.</span>
+          </div>
+          <div class="workflow-stratum">
             <strong>SEC / XBRL filings</strong>
             <span>Issuer fundamentals, changed facts, filing dates, and source evidence enter the ATLAS-7 pipeline.</span>
           </div>
@@ -1744,12 +1815,36 @@
             <span>Clients receive JSON evidence or Markdown briefs with source dates, caveats, quality flags, hashes, and non-advice disclaimers.</span>
           </div>
         </div>
-        <div class="code">SEC / XBRL filings
+        <div class="code">EDGAR daily background task
+-> SEC / XBRL CompanyFacts mirror and reconstruction
 -> ATLAS-7 issuer pipeline
 -> risk, fundamentals, stress, peer, alpha, and daily-change surfaces
 -> REST / MCP / composite presets
 -> JSON evidence or Markdown briefs
 -> source dates, caveats, quality flags, hashes, and non-advice disclaimers</div>
+      </div>
+    </section>
+
+    <section class="section" id="generation-model">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How ATLAS-7 and SPECTRA are generated</h2>
+          <p>ATLAS-7 is the issuer evidence layer. SPECTRA is the field-map layer derived from ATLAS history for inspection, comparison, and agent-safe explanation.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><strong>ATLAS-7 generation</strong><span>The daily EDGAR task mirrors or reconstructs CompanyFacts, runs process-changes, matches the crypto-exposed public-company universe, normalizes ticker/CIK identity, and emits dated issuer evidence.</span></div>
+          <div class="feature"><strong>ATLAS-7 outputs</strong><span>The pipeline writes daily changes, per-CIK change blobs, digital-asset intelligence, calculation history, point-in-time history, readiness, caveats, and manifests that MCP tools can cite.</span></div>
+          <div class="feature"><strong>SPECTRA generation</strong><span>SPECTRA reads ATLAS-history-shaped rows for a ticker, resolves the active source date, normalizes numeric/date/boolean fields, derives pressure and range labels, and packages a field-map contract.</span></div>
+          <div class="feature"><strong>SPECTRA outputs</strong><span>Field-map contracts expose what the issuer evidence contains, where values came from, which date bounds apply, and which caveats or soft-miss states prevent overclaiming.</span></div>
+          <div class="feature"><strong>Agent boundary</strong><span>Agents may explain returned ATLAS-7 and SPECTRA evidence, but they must not invent missing facts, fill unavailable rows, or turn diligence signals into investment advice.</span></div>
+          <div class="feature"><strong>Public routes</strong><span>Use <code>/v1/atlas-history/{ticker}</code>, <code>/v1/point-in-time-history/{ticker}</code>, and <code>/v1/spectra-field-map/{ticker}</code> when a workflow needs the generated history or field-map contract.</span></div>
+        </div>
+        <div class="code">EDGAR CompanyFacts + daily feed + full-index
+-> CompanyFacts mirror or daily-feed reconstruction
+-> process-changes delta and intelligence artifacts
+-> ATLAS-7 issuer rows, history, risk, stress, alpha, peer, and daily-change evidence
+-> SPECTRA field-map contracts derived from ATLAS-history rows
+-> MCP/REST responses with source dates, caveats, quality flags, and non-advice boundaries</div>
       </div>
     </section>
 

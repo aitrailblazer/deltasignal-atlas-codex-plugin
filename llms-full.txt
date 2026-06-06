@@ -2,7 +2,7 @@ Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v1
 Last updated: 2026-06-06
 Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
-Status: production verified; changelog RSS and Atom subscription feeds added for periodic update tracking; latest public rollup includes notification channels, daily all-delta digests, Microsoft Graph email delivery, signed webhooks, terminal delivery, delivery receipts, subscription preferences, notification x402 pricing, notification pricing/delivery ladder documentation, SPECTRA, ticker canonicalization, static runtime coverage, OPML feed helper coverage, Marketplace helper coverage, Web Intel/Telegram helper coverage, Codex cache helper coverage, DeltaSignal primitive helper coverage, company-fundamentals metadata helper coverage, billing-envelope helper coverage, MCP summary helper coverage, SignalRadar MCP handler coverage, StrategiX Diagram MCP helper coverage, dedicated grant ledger coverage, ATLAS-7 history route/loaders coverage, alpha route/loaders coverage, risk-distribution route/loaders coverage, DeltaSignal MCP composite wrapper coverage, Codex process-runner coverage, dynamic crawler loop coverage, Codex compatibility-handler coverage, worker-proxy/store-constructor coverage, DeltaSignal helper/handler guard coverage, SPECTRA dynamic helper coverage, MCP validation/coercion coverage, OpenAPI payment helper coverage, Google News resolver coverage, native-health RSS status coverage, compatibility result helper coverage, DeltaSignal route guard coverage, daily-change discovery/fallback coverage, defensive store/help/readiness coverage to 76.4%, RSS/Atom subscription feeds, and ongoing 100% coverage work
+Status: production verified; changelog RSS and Atom subscription feeds added for periodic update tracking; latest public rollup includes notification channels, daily all-delta digests, Microsoft Graph email delivery, signed webhooks, terminal delivery, delivery receipts, subscription preferences, notification x402 pricing, notification pricing/delivery ladder documentation, EDGAR daily background-task provenance, CompanyFacts daily-feed reconstruction, Jun 1-5 trading-week audit reconciliation, ATLAS-7 generation documentation, SPECTRA generation documentation, SPECTRA, ticker canonicalization, static runtime coverage, OPML feed helper coverage, Marketplace helper coverage, Web Intel/Telegram helper coverage, Codex cache helper coverage, DeltaSignal primitive helper coverage, company-fundamentals metadata helper coverage, billing-envelope helper coverage, MCP summary helper coverage, SignalRadar MCP handler coverage, StrategiX Diagram MCP helper coverage, dedicated grant ledger coverage, ATLAS-7 history route/loaders coverage, alpha route/loaders coverage, risk-distribution route/loaders coverage, DeltaSignal MCP composite wrapper coverage, Codex process-runner coverage, dynamic crawler loop coverage, Codex compatibility-handler coverage, worker-proxy/store-constructor coverage, DeltaSignal helper/handler guard coverage, SPECTRA dynamic helper coverage, MCP validation/coercion coverage, OpenAPI payment helper coverage, Google News resolver coverage, native-health RSS status coverage, compatibility result helper coverage, DeltaSignal route guard coverage, daily-change discovery/fallback coverage, defensive store/help/readiness coverage to 76.4%, RSS/Atom subscription feeds, and ongoing 100% coverage work
 
 Purpose
 This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
@@ -33,14 +33,19 @@ New user and agent instructions
 
 Current implementation status
 - The production API is live with the terminal broker envelope contract deployed on revision ca-web-intel-mcp--0000456.
-- The changelog entry for the latest public hardening/status rollup is ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY.
-- The latest public-safe notification/product rollups are ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY, ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP, ATLAS-JUN-6-DAILY-ALL-DELTAS-MCP-NOTIFICATION-DIGEST, and ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER; the latest coverage checkpoint remains ATLAS-JUN-6-DELTASIGNAL-ROUTE-GUARD-COVERAGE-75P9, ATLAS-JUN-6-DAILY-CHANGE-DISCOVERY-FALLBACK-COVERAGE-76P3, and ATLAS-JUN-6-DELTASIGNAL-DEFENSIVE-COVERAGE-76P4.
+- The changelog entry for the latest public hardening/status rollup is ATLAS-JUN-6-SPECTRA-GENERATION-MODEL.
+- The latest public-safe EDGAR/MCP evidence-base rollups are ATLAS-JUN-6-EDGAR-DAILY-BACKGROUND-FOUNDATION, ATLAS-JUN-6-EDGAR-COMPANYFACTS-DAILY-FEED-RESTORE, ATLAS-JUN-6-EDGAR-WEEK-20260601-AUDIT-RECONCILIATION, ATLAS-JUN-6-ATLAS7-GENERATION-MODEL, and ATLAS-JUN-6-SPECTRA-GENERATION-MODEL; the latest notification/product rollups remain ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY, ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP, ATLAS-JUN-6-DAILY-ALL-DELTAS-MCP-NOTIFICATION-DIGEST, and ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER.
 - The latest source coverage checkpoints are ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2, ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4, ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7, ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9, ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2, ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4, ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6, ATLAS-JUN-6-OPENAPI-PAYMENT-HELPER-COVERAGE-75P7, ATLAS-JUN-6-GOOGLE-NEWS-RESOLVER-COVERAGE-75P8, ATLAS-JUN-6-NATIVE-HEALTH-RSS-COVERAGE-75P8, ATLAS-JUN-6-COMPAT-RESULT-HELPER-COVERAGE-75P8, and ATLAS-JUN-6-DELTASIGNAL-ROUTE-GUARD-COVERAGE-75P9.
 - The local/source solution and production route probes have both passed for the documented parser-stable field set.
 - Internal verification may use an internal/test API-key gateway profile.
 - Public smoke should use x402, free-tier grant behavior, or signed wallet-grant behavior where configured.
 - Public clients should use documented public routes and x402 behavior. Do not expect an external API key path.
 - Agents must not request, expose, infer, or persist internal API keys.
+
+ATLAS-7 and SPECTRA generation model
+- ATLAS-7 is generated from the daily EDGAR background task: CompanyFacts mirror or daily-feed reconstruction, process-changes deltas, crypto-exposed issuer matching, ticker/CIK normalization, dated issuer rows, calculation history, point-in-time history, caveats, manifests, and MCP-ready evidence envelopes.
+- SPECTRA is generated from ATLAS-history-shaped rows for a ticker: resolve source date and issuer identity, normalize numeric/date/boolean fields, derive pressure/range labels, package a field-map contract, and preserve provenance plus structured soft-miss states.
+- SPECTRA is not a separate facts source. It explains and maps generated ATLAS-7 history; missing rows must remain missing.
 
 Versioned parser field contract
 - Treat GET /v1/contract/fields as the source of truth for parser-stable fields.
@@ -63,6 +68,7 @@ Versioned terminal broker contract
 - Live verification on ca-web-intel-mcp--0000456 confirmed the terminal_broker contract, covered datasets, and stable envelope fields.
 
 What is locally verified
+- The EDGAR trading-week audit for 2026-06-01 through 2026-06-05 is complete for CompanyFacts ZIP, delta summary, and digital-assets delta coverage; 2026-06-02 is recovered_reconciled via daily-feed reconstruction with policy=daily_feed_reconstruction_canonical.
 - Local gateway starts with the internal/test API-key path.
 - MCP initialize, tools/list, and tools/call smoke pass locally.
 - The cmd/search-gateway Go test suite passes locally.
