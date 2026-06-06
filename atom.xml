@@ -5,8 +5,24 @@
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html" />
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml" rel="self" type="application/atom+xml" />
   <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog</id>
-  <updated>2026-06-06T00:00:00.000Z</updated>
+  <updated>2026-06-06T08:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
+  <entry>
+    <title>OPML feed helper coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</id>
+    <updated>2026-06-06T08:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE" />
+    <summary>OPML feed helper coverage now verifies feed collection helpers, source ID derivation, source domain derivation, ID sanitation, and handler guard paths. Breadcrumb: Improvement Timeline &gt; OPML feed helper coverage checkpoint Track: T+626m Commit: 843189b3</summary>
+  </entry>
+  <entry>
+    <title>StrategiX web static runtime coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</id>
+    <updated>2026-06-06T08:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE" />
+    <summary>StrategiX web static runtime coverage now verifies constructor, host matching, index serving, asset serving, SPA fallback, missing assets, and root handler dispatch. Breadcrumb: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint Track: T+618m Commit: b92b3076</summary>
+  </entry>
   <entry>
     <title>ATLAS and SPECTRA field-map route coverage checkpoint</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT" />

@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, and coverage hardening to 67.3%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, OPML feeds, static runtimes, and coverage hardening to 67.7%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>136</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>51</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>134</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>136</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>39</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>68</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>138</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>53</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>136</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>138</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>41</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>70</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,18 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>138</span>
+              <code>ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</code>
+              <span>Improvement Timeline &gt; OPML feed helper coverage checkpoint</span>
+              <code>T+626m</code>
+            </div>
+            <div class="river-row">
+              <span>137</span>
+              <code>ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</code>
+              <span>Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint</span>
+              <code>T+618m</code>
+            </div>
             <div class="river-row">
               <span>136</span>
               <code>ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</code>
@@ -1347,6 +1359,28 @@
         <div class="grid">
           <div class="card">
             <span class="status">SOURCE VERIFIED</span>
+            <strong>OPML Feed Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</code>
+              <code>track: T+626m</code>
+              <code>commit: 843189b3</code>
+              <code>bread: Improvement Timeline &gt; OPML feed helper coverage checkpoint</code>
+            </div>
+            <span>OPML feed helpers and handler guard paths are now covered, including malformed imports, unsupported methods, empty export behavior, feed collection helpers, source ID/domain derivation, and ID sanitation. Latest verified package coverage is <code>67.7%</code>; the 100% goal remains open.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>StrategiX Web Static Runtime Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</code>
+              <code>track: T+618m</code>
+              <code>commit: b92b3076</code>
+              <code>bread: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint</code>
+            </div>
+            <span>StrategiX static runtime tests now cover constructor behavior, host matching, index and asset serving, SPA fallback, missing assets, root handler dispatch, and host normalization. This protects the public landing/docs runtime without changing route semantics.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
             <strong>Free-tier, Helper, and Route-Safety Coverage Advanced to 66.6 Percent</strong>
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</code>
@@ -1876,6 +1910,38 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>OPML feed helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</code>
+              <code>track: T+626m</code>
+              <code>commit: 843189b3</code>
+              <code>bread: Improvement Timeline &gt; OPML feed helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Added deterministic coverage for OPML feed collection helpers, source ID derivation, source domain derivation, ID sanitation, and handler guard paths.</li>
+              <li>Verified malformed import bodies, unsupported methods, empty export behavior, and feed helper edge cases without calling external feed services.</li>
+              <li>The latest verified <code>cmd/search-gateway</code> package coverage checkpoint is <code>67.7%</code>; the active 100% coverage goal remains open.</li>
+              <li>Storage-backed OPML success paths remain a separate target because they require the concrete Postgres feed-source index rather than the pure helper layer.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>StrategiX web static runtime coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</code>
+              <code>track: T+618m</code>
+              <code>commit: b92b3076</code>
+              <code>bread: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered the StrategiX web static runtime constructor, host matching, index serving, static asset serving, SPA fallback, missing asset behavior, and root handler dispatch.</li>
+              <li>Verified host normalization and local static routing branches so the public landing/docs runtime stays regression-protected.</li>
+              <li>The package coverage checkpoint advanced to <code>67.5%</code> at this slice before the OPML feed helper checkpoint raised it to <code>67.7%</code>.</li>
+              <li>This is source coverage hardening only; it does not change public route semantics.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT">
             <div class="date">June 6, 2026</div>
             <h3>ATLAS and SPECTRA field-map route coverage checkpoint</h3>
@@ -1957,7 +2023,7 @@
               <li>Wallet-grant and zero-balance access lessons are preserved as public-safe architecture notes: signed wallet grant matching, DB-backed grant counters, canonical cost fields, and no exposure of individual names, email addresses, wallet addresses, grant amounts, or private settlement proofs.</li>
               <li>Parser and integrator contracts remain explicit: path-ticker-free universe routes, structured not-found behavior, response metadata envelopes, /v1/pricing, /v1/contract/fields, large-response guidance, and terminal broker envelope keys.</li>
               <li>Changelog operations now include human and LLM changelog surfaces plus RSS and Atom subscriber feeds generated from the machine-readable changelog contract.</li>
-              <li>Coverage hardening remains active, not complete: latest recorded backend package coverage is <code>66.6%</code>, with additional helper-branch tests in progress and the 100% goal still open.</li>
+              <li>Coverage hardening remains active, not complete: latest recorded backend package coverage is <code>67.7%</code>, with additional helper-branch tests in progress and the 100% goal still open.</li>
             </ul>
           </article>
           <article class="timeline-item">

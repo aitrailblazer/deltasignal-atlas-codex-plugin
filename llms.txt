@@ -22,6 +22,8 @@ Full agent handoff brief: https://aitrailblazer.github.io/deltasignal-atlas-code
 
 For changelog tracking, prefer `changelog-llm.html` when available. Use `tripcode` as the stable row key, `bread` as the breadcrumb path, and the ordered tracking river plus `track` minute marker to preserve sequence across human-readable and LLM-readable changelog surfaces.
 
+Latest public rollup tripcode: `ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE`. It follows the notification-v1, daily digest, Graph email, x402 pricing, SPECTRA, ticker canonicalization, static runtime, OPML helper, RSS/Atom feed, and coverage-hardening updates recorded on June 6, 2026.
+
 StrategiX exposes Delta Signal ATLAS-7 Natural Language Briefs for humans, agents, and developer workflows that need audit-grade Markdown summaries over canonical Delta Signal evidence.
 
 Natural Language Briefs are evidence-to-Markdown compiler outputs. They are not chatbot responses, analyst opinions, trade recommendations, or new evidence sources.

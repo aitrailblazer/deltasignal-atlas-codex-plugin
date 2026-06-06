@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>136</strong><span>tracked changes</span></div>
-        <div><strong>51</strong><span>timeline entries</span></div>
-        <div><strong>134</strong><span>unique tripcodes</span></div>
-        <div><strong>136</strong><span>breadcrumb chips</span></div>
-        <div><strong>39</strong><span>visible commit references</span></div>
-        <div><strong>68</strong><span>unique source commits</span></div>
+        <div><strong>138</strong><span>tracked changes</span></div>
+        <div><strong>53</strong><span>timeline entries</span></div>
+        <div><strong>136</strong><span>unique tripcodes</span></div>
+        <div><strong>138</strong><span>breadcrumb chips</span></div>
+        <div><strong>41</strong><span>visible commit references</span></div>
+        <div><strong>70</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,8 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>138</td><td><code>ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</code></td><td>Improvement Timeline &gt; OPML feed helper coverage checkpoint</td><td><code>T+626m</code></td><td>843189b3</td></tr>
+          <tr><td>137</td><td><code>ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</code></td><td>Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint</td><td><code>T+618m</code></td><td>b92b3076</td></tr>
           <tr><td>136</td><td><code>ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</code></td><td>Improvement Timeline &gt; ATLAS and SPECTRA field-map route coverage checkpoint</td><td><code>T+610m</code></td><td>f2a12689</td></tr>
           <tr><td>135</td><td><code>ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE</code></td><td>Improvement Timeline &gt; Generic MCP server helper coverage checkpoint</td><td><code>T+602m</code></td><td>fde35215</td></tr>
           <tr><td>134</td><td><code>ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE</code></td><td>Improvement Timeline &gt; DeltaSignal web static runtime coverage checkpoint</td><td><code>T+594m</code></td><td>28734684</td></tr>
@@ -219,6 +221,27 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE">
+          <h3>OPML feed helper coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</code> <code>track: T+626m</code> <code>commit: 843189b3</code> <code>bread: Improvement Timeline &gt; OPML feed helper coverage checkpoint</code></p>
+          <p>OPML feed helper coverage now verifies feed collection helpers, source ID derivation, source domain derivation, ID sanitation, and handler guard paths.</p>
+<ul>
+            <li>Added deterministic tests for malformed import bodies, unsupported methods, empty export behavior, and feed helper edge cases.</li>
+            <li>Verified helper coverage without calling external feed services or changing public route semantics.</li>
+            <li>The latest verified cmd/search-gateway package coverage checkpoint is 67.7%; the active 100% coverage goal remains open.</li>
+            <li>Storage-backed OPML success paths remain a separate target because they require the concrete Postgres feed-source index rather than the pure helper layer.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE">
+          <h3>StrategiX web static runtime coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</code> <code>track: T+618m</code> <code>commit: b92b3076</code> <code>bread: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint</code></p>
+          <p>StrategiX web static runtime coverage now verifies constructor, host matching, index serving, asset serving, SPA fallback, missing assets, and root handler dispatch.</p>
+<ul>
+            <li>Covered host normalization and local static routing branches so the public landing/docs runtime stays regression-protected.</li>
+            <li>The package coverage checkpoint advanced to 67.5% at this slice before the OPML feed helper checkpoint raised it to 67.7%.</li>
+            <li>This is source coverage hardening only; it does not change public route semantics.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT">
           <h3>ATLAS and SPECTRA field-map route coverage checkpoint</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</code> <code>track: T+610m</code> <code>commit: f2a12689</code> <code>bread: Improvement Timeline &gt; ATLAS and SPECTRA field-map route coverage checkpoint</code></p>
@@ -275,7 +298,7 @@
             <li>Wallet-grant and zero-balance access lessons are preserved as public-safe architecture notes: signed wallet grant matching, DB-backed grant counters, canonical cost fields, and no exposure of individual names, email addresses, wallet addresses, grant amounts, or private settlement proofs.</li>
             <li>Parser and integrator contracts remain explicit: path-ticker-free universe routes, structured not-found behavior, response metadata envelopes, /v1/pricing, /v1/contract/fields, large-response guidance, and terminal broker envelope keys.</li>
             <li>Changelog operations now include human and LLM changelog surfaces plus RSS and Atom subscriber feeds generated from the machine-readable changelog contract.</li>
-            <li>Coverage hardening remains active, not complete: latest recorded backend package coverage is <code>66.6%</code>, with additional helper-branch tests in progress and the 100% goal still open.</li>
+            <li>Coverage hardening remains active, not complete: latest recorded backend package coverage is <code>67.7%</code>, with additional helper-branch tests in progress and the 100% goal still open.</li>
           </ul>
         </article>
         <article class="entry" id="ATLAS-JUN-6-COVERAGE-HARDENING-65PCT">
@@ -1976,11 +1999,11 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 136,
-    "timeline_entries": 51,
-    "unique_tripcodes": 134,
-    "breadcrumb_chips": 136,
-    "visible_commit_references": 39,
+    "tracked_changes": 138,
+    "timeline_entries": 53,
+    "unique_tripcodes": 136,
+    "breadcrumb_chips": 138,
+    "visible_commit_references": 41,
     "unique_source_commits": [
       "730def3",
       "7a80e86",
@@ -2049,7 +2072,9 @@
       "33a19e4b",
       "28734684",
       "fde35215",
-      "f2a12689"
+      "f2a12689",
+      "b92b3076",
+      "843189b3"
     ]
   },
   "tracking_river": [
@@ -2889,6 +2914,20 @@
       "commit": "f2a12689",
       "bread": "Improvement Timeline > ATLAS and SPECTRA field-map route coverage checkpoint",
       "river_index": 136
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE",
+      "track": "T+618m",
+      "commit": "b92b3076",
+      "bread": "Improvement Timeline > StrategiX web static runtime coverage checkpoint",
+      "river_index": 137
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE",
+      "track": "T+626m",
+      "commit": "843189b3",
+      "bread": "Improvement Timeline > OPML feed helper coverage checkpoint",
+      "river_index": 138
     }
   ],
   "timeline_entries": [
@@ -3653,7 +3692,7 @@
         "Wallet-grant and zero-balance access lessons are preserved as public-safe architecture notes: signed wallet grant matching, DB-backed grant counters, canonical cost fields, and no exposure of individual names, email addresses, wallet addresses, grant amounts, or private settlement proofs.",
         "Parser and integrator contracts remain explicit: path-ticker-free universe routes, structured not-found behavior, response metadata envelopes, /v1/pricing, /v1/contract/fields, large-response guidance, and terminal broker envelope keys.",
         "Changelog operations now include human and LLM changelog surfaces plus RSS and Atom subscriber feeds generated from the machine-readable changelog contract.",
-        "Coverage hardening remains active, not complete: latest recorded backend package coverage is 66.6%, with additional helper-branch tests in progress and the 100% goal still open."
+        "Coverage hardening remains active, not complete: latest recorded backend package coverage is 67.7%, with additional helper-branch tests in progress and the 100% goal still open."
       ]
     },
     {
@@ -3719,13 +3758,43 @@
         "Covered environment override lookup, multi-directory fallback, globbed contract directories, and latest-modified contract selection.",
         "The latest verified cmd/search-gateway package coverage checkpoint is 67.3%; the active 100% coverage goal remains open."
       ]
+    },
+    {
+      "river_index": 137,
+      "date": "June 6, 2026",
+      "title": "StrategiX web static runtime coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE",
+      "track": "T+618m",
+      "commit": "b92b3076",
+      "bread": "Improvement Timeline > StrategiX web static runtime coverage checkpoint",
+      "summary": "StrategiX web static runtime coverage now verifies constructor, host matching, index serving, asset serving, SPA fallback, missing assets, and root handler dispatch.",
+      "bullets": [
+        "Covered host normalization and local static routing branches so the public landing/docs runtime stays regression-protected.",
+        "The package coverage checkpoint advanced to 67.5% at this slice before the OPML feed helper checkpoint raised it to 67.7%.",
+        "This is source coverage hardening only; it does not change public route semantics."
+      ]
+    },
+    {
+      "river_index": 138,
+      "date": "June 6, 2026",
+      "title": "OPML feed helper coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE",
+      "track": "T+626m",
+      "commit": "843189b3",
+      "bread": "Improvement Timeline > OPML feed helper coverage checkpoint",
+      "summary": "OPML feed helper coverage now verifies feed collection helpers, source ID derivation, source domain derivation, ID sanitation, and handler guard paths.",
+      "bullets": [
+        "Added deterministic tests for malformed import bodies, unsupported methods, empty export behavior, and feed helper edge cases.",
+        "The latest verified cmd/search-gateway package coverage checkpoint is 67.7%; the active 100% coverage goal remains open.",
+        "Storage-backed OPML success paths remain a separate target because they require the concrete Postgres feed-source index rather than the pure helper layer."
+      ]
     }
   ]
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="136" timeline_entries="51" unique_tripcodes="134" breadcrumb_chips="136" visible_commit_references="39" unique_source_commits="68" />
+  <stats tracked_changes="138" timeline_entries="53" unique_tripcodes="136" breadcrumb_chips="138" visible_commit_references="41" unique_source_commits="70" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -3784,6 +3853,8 @@
     <entry river_index="134" tripcode="ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE" track="T+594m" bread="Improvement Timeline &gt; DeltaSignal web static runtime coverage checkpoint" commit="28734684"><date>June 6, 2026</date><title>DeltaSignal web static runtime coverage checkpoint</title></entry>
     <entry river_index="135" tripcode="ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE" track="T+602m" bread="Improvement Timeline &gt; Generic MCP server helper coverage checkpoint" commit="fde35215"><date>June 6, 2026</date><title>Generic MCP server helper coverage checkpoint</title></entry>
     <entry river_index="136" tripcode="ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT" track="T+610m" bread="Improvement Timeline &gt; ATLAS and SPECTRA field-map route coverage checkpoint" commit="f2a12689"><date>June 6, 2026</date><title>ATLAS and SPECTRA field-map route coverage checkpoint</title></entry>
+    <entry river_index="137" tripcode="ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE" track="T+618m" bread="Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint" commit="b92b3076"><date>June 6, 2026</date><title>StrategiX web static runtime coverage checkpoint</title></entry>
+    <entry river_index="138" tripcode="ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE" track="T+626m" bread="Improvement Timeline &gt; OPML feed helper coverage checkpoint" commit="843189b3"><date>June 6, 2026</date><title>OPML feed helper coverage checkpoint</title></entry>
     <entry river_index="133" tripcode="ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT" track="T+586m" bread="Improvement Timeline &gt; Free-tier, helper, and route-safety coverage advanced to 66.6 percent" commit="c8bf5a66 / 33a19e4b"><date>June 6, 2026</date><title>Free-tier, helper, and route-safety coverage advanced to 66.6 percent</title></entry>
   </entries>
 </changelog_llm>

@@ -6,8 +6,24 @@
     <atom:link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml" rel="self" type="application/rss+xml" />
     <description>Public changelog for Delta Signal ATLAS-7 MCP, OpenAPI, x402, notification, SPECTRA, and evidence-contract changes.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 08:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>OPML feed helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 08:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</category>
+      <description>OPML feed helper coverage now verifies feed collection helpers, source ID derivation, source domain derivation, ID sanitation, and handler guard paths. Breadcrumb: Improvement Timeline &gt; OPML feed helper coverage checkpoint Track: T+626m Commit: 843189b3</description>
+    </item>
+    <item>
+      <title>StrategiX web static runtime coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 08:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</category>
+      <description>StrategiX web static runtime coverage now verifies constructor, host matching, index serving, asset serving, SPA fallback, missing assets, and root handler dispatch. Breadcrumb: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint Track: T+618m Commit: b92b3076</description>
+    </item>
     <item>
       <title>ATLAS and SPECTRA field-map route coverage checkpoint</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FIELD-MAP-ROUTE-COVERAGE-67PCT</link>
