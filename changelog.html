@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - notification channels, Graph email, business-day digests, x402 pricing, ticker canonicalization, feeds, and coverage hardening recorded</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, and coverage hardening</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>131</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>46</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>129</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>131</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>33</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>62</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>132</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>47</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>130</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>132</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>34</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>63</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>132</span>
+              <code>ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</code>
+              <span>Improvement Timeline &gt; Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</span>
+              <code>T+578m</code>
+            </div>
             <div class="river-row">
               <span>131</span>
               <code>ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</code>
@@ -1316,6 +1322,17 @@
         </div>
         <div class="grid">
           <div class="card">
+            <span class="status">PUBLIC ROLLUP</span>
+            <strong>Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</code>
+              <code>track: T+578m</code>
+              <code>commit: 8511550 / c49e722c / 8d7171e / c001f26 / e3e4763 / f64dc87 / a62f4c5 / 3aaa8c17</code>
+              <code>bread: Improvement Timeline &gt; Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</code>
+            </div>
+            <span>Public changelog rollup now records the recent notification, SPECTRA, wallet-grant, parser-contract, digest, feed, and coverage-hardening work without private design-partner details. The rollup keeps the public changelog useful for integrators while deliberately removing private design-partner names, addresses, mailbox details, secrets, and grant amounts.</span>
+          </div>
+          <div class="card">
             <span class="status">SOURCE VERIFIED</span>
             <strong>Coverage hardening advanced to 65 percent package coverage</strong>
             <div class="track">
@@ -1824,6 +1841,26 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</code>
+              <code>track: T+578m</code>
+              <code>commit: 8511550 / c49e722c / 8d7171e / c001f26 / e3e4763 / f64dc87 / a62f4c5 / 3aaa8c17</code>
+              <code>bread: Improvement Timeline &gt; Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</code>
+            </div>
+            <ul>
+              <li>Notification-v1 is captured as an MCP evidence-routing layer with free event discovery, signed webhooks, terminal delivery, Microsoft Graph email delivery, delivery receipts, retry/dead-letter status, durable subscriptions, and paid MCP summaries.</li>
+              <li>The Daily Delta Signal Digest framing is recorded as the default notification product direction: all ATLAS-7 matched issuer deltas after daily processing, grouped by source date, with five-business-day rollups and evidence workload statistics.</li>
+              <li>The x402 notification price ladder is documented separately from full workflow reruns: low-cost raw event alerts, ticker/watchlist alerts, workflow notifications, natural-language alert briefs, and finished PDF deliverables.</li>
+              <li>ATLAS-7 issuer coverage and SPECTRA status are recorded publicly: 215-row universe verification, runtime ATLAS-history SPECTRA primary behavior, watchlist route checks, and ticker canonicalization including FLD as Fold Holdings common stock.</li>
+              <li>Wallet-grant and zero-balance access lessons are preserved as public-safe architecture notes: signed wallet grant matching, DB-backed grant counters, canonical cost fields, and no exposure of individual names, email addresses, wallet addresses, grant amounts, or private settlement proofs.</li>
+              <li>Parser and integrator contracts remain explicit: path-ticker-free universe routes, structured not-found behavior, response metadata envelopes, /v1/pricing, /v1/contract/fields, large-response guidance, and terminal broker envelope keys.</li>
+              <li>Changelog operations now include human and LLM changelog surfaces plus RSS and Atom subscriber feeds generated from the machine-readable changelog contract.</li>
+              <li>Coverage hardening remains active, not complete: latest recorded backend package coverage is approximately 66.0%, with additional helper-branch tests in progress and the 100% goal still open.</li>
+            </ul>
+          </article>
           <article class="timeline-item">
             <div class="date">June 6, 2026</div>
             <h3>Coverage hardening advanced to 65 percent package coverage</h3>

@@ -9,6 +9,14 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</category>
+      <description>Public changelog rollup now records the recent notification, SPECTRA, wallet-grant, parser-contract, digest, feed, and coverage-hardening work without private design-partner details. Breadcrumb: Improvement Timeline &gt; Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds Track: T+578m Commit: 8511550 / c49e722c / 8d7171e / c001f26 / e3e4763 / f64dc87 / a62f4c5 / 3aaa8c17</description>
+    </item>
+    <item>
       <title>Coverage hardening advanced to 65 percent package coverage</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</guid>
@@ -239,14 +247,6 @@
       <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK</category>
       <description>Locked the five universe-scoped routes as path-ticker-free in backend help and served OpenAPI source. Breadcrumb: Improvement Timeline &gt; Universe route contract implementation track Track: T+154m</description>
-    </item>
-    <item>
-      <title>IREN SPECTRA coverage repair</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR</guid>
-      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR</category>
-      <description>Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss. Breadcrumb: Improvement Timeline &gt; IREN SPECTRA coverage repair Track: T+146m</description>
     </item>
   </channel>
 </rss>
