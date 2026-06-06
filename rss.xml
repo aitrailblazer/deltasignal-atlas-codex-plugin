@@ -9,6 +9,38 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Consolidated June 6 public rollup to 74.4 percent coverage</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</category>
+      <description>The public changelog now includes the full June 6 public-safe update set through notification delivery, daily all-delta digest framing, x402 notification pricing, RSS/Atom subscriber feeds, Codex process-runner coverage, dynamic crawler loop coverage, and the verified cmd/search-gateway package coverage checkpoint at 74.4%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage Track: T+834m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>Dynamic crawler loop coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</category>
+      <description>Dynamic feed-crawler coverage now verifies source-listing success and error paths, empty dynamic source sets, file-feed filtering, local dynamic RSS fetches, and canceled loop shutdown; the verified cmd/search-gateway package coverage checkpoint reached 74.4%. Breadcrumb: Improvement Timeline &gt; Dynamic crawler loop coverage checkpoint Track: T+826m Commit: af9f8718</description>
+    </item>
+    <item>
+      <title>Codex process-runner coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2</category>
+      <description>Codex process-runner coverage now verifies stdout/stderr callbacks, output caps, nonzero exits, context timeout behavior, and missing executable handling; the verified cmd/search-gateway package coverage checkpoint reached 74.2%. Breadcrumb: Improvement Timeline &gt; Codex process-runner coverage checkpoint Track: T+818m Commit: 7961225d</description>
+    </item>
+    <item>
+      <title>Notification digest, delivery, and x402 pricing rollup</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP</category>
+      <description>The notification surface is now documented as a Delta Signal MCP evidence-routing layer, not subscriber media: free metadata events, paid MCP summaries, signed webhooks, terminal and email delivery, business-day daily digests, route receipts, subscription preferences, and low-cost x402 notification pricing tiers. Breadcrumb: Improvement Timeline &gt; Notification digest, delivery, and x402 pricing rollup Track: T+810m Commit: current changelog update</description>
+    </item>
+    <item>
       <title>Consolidated June 6 public rollup to 73.9 percent coverage</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9</guid>

@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>160</strong><span>tracked changes</span></div>
-        <div><strong>75</strong><span>timeline entries</span></div>
-        <div><strong>158</strong><span>unique tripcodes</span></div>
-        <div><strong>160</strong><span>breadcrumb chips</span></div>
-        <div><strong>55</strong><span>visible commit references</span></div>
-        <div><strong>84</strong><span>unique source commits</span></div>
+        <div><strong>164</strong><span>tracked changes</span></div>
+        <div><strong>79</strong><span>timeline entries</span></div>
+        <div><strong>162</strong><span>unique tripcodes</span></div>
+        <div><strong>164</strong><span>breadcrumb chips</span></div>
+        <div><strong>57</strong><span>visible commit references</span></div>
+        <div><strong>86</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,10 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>164</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage</td><td><code>T+834m</code></td><td>current changelog update</td></tr>
+          <tr><td>163</td><td><code>ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</code></td><td>Improvement Timeline &gt; Dynamic crawler loop coverage checkpoint</td><td><code>T+826m</code></td><td>af9f8718</td></tr>
+          <tr><td>162</td><td><code>ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2</code></td><td>Improvement Timeline &gt; Codex process-runner coverage checkpoint</td><td><code>T+818m</code></td><td>7961225d</td></tr>
+          <tr><td>161</td><td><code>ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP</code></td><td>Improvement Timeline &gt; Notification digest, delivery, and x402 pricing rollup</td><td><code>T+810m</code></td><td>current changelog update</td></tr>
           <tr><td>160</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 73.9 percent coverage</td><td><code>T+802m</code></td><td>current changelog update</td></tr>
           <tr><td>159</td><td><code>ATLAS-JUN-6-MCP-COMPOSITE-WRAPPER-COVERAGE-73P9</code></td><td>Improvement Timeline &gt; DeltaSignal MCP composite wrapper coverage checkpoint</td><td><code>T+794m</code></td><td>6db4d2ad</td></tr>
           <tr><td>158</td><td><code>ATLAS-JUN-6-RISK-DISTRIBUTION-COVERAGE-73P3</code></td><td>Improvement Timeline &gt; Risk distribution route and loader coverage checkpoint</td><td><code>T+786m</code></td><td>5948be4d</td></tr>
@@ -243,6 +247,49 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4">
+          <h3>Consolidated June 6 public rollup to 74.4 percent coverage</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</code> <code>track: T+834m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage</code></p>
+          <p>The public changelog now includes the full June 6 public-safe update set through notification delivery, daily all-delta digest framing, x402 notification pricing, RSS/Atom subscriber feeds, Codex process-runner coverage, dynamic crawler loop coverage, and the verified cmd/search-gateway package coverage checkpoint at 74.4%.</p>
+          <ul>
+            <li>Rolls forward the public-safe notification work: free event discovery, Microsoft Graph email delivery, terminal delivery, signed webhooks, delivery receipts, retry/dead-letter status, durable subscriptions, paid MCP notification summaries, route pricing, and non-advice boundaries.</li>
+            <li>Records the Daily Delta Signal Digest direction as an MCP evidence-routing product: after daily processing, group each source date separately, include ATLAS-7 universe matches, evidence workload statistics, affected tickers, drilldown availability, and optional market context when available.</li>
+            <li>Rolls forward source-test hardening through Codex process-runner branches and the dynamic crawler loop after the risk-distribution and MCP composite-wrapper checkpoints.</li>
+            <li>Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+            <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4">
+          <h3>Dynamic crawler loop coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</code> <code>track: T+826m</code> <code>commit: af9f8718</code> <code>bread: Improvement Timeline &gt; Dynamic crawler loop coverage checkpoint</code></p>
+          <p>Dynamic feed-crawler coverage now verifies source-listing success and error paths, empty dynamic source sets, file-feed filtering, local dynamic RSS fetches, and canceled loop shutdown; the verified cmd/search-gateway package coverage checkpoint reached 74.4%.</p>
+          <ul>
+            <li>Introduced a narrow dynamic feed-source lister seam so crawler behavior can be regression-tested without changing production route semantics.</li>
+            <li>Covered dynamicCrawlOnce, dynamicCrawlerLoop, and crawlOnce behavior for dynamic source success, source-listing failure, empty results, file-feed skip behavior, HTTP RSS fetch behavior, and context cancellation.</li>
+            <li>This protects the background evidence-ingestion surface that feeds downstream notification, discovery, and web-intelligence workflows.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2">
+          <h3>Codex process-runner coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2</code> <code>track: T+818m</code> <code>commit: 7961225d</code> <code>bread: Improvement Timeline &gt; Codex process-runner coverage checkpoint</code></p>
+          <p>Codex process-runner coverage now verifies stdout/stderr callbacks, output caps, nonzero exits, context timeout behavior, and missing executable handling; the verified cmd/search-gateway package coverage checkpoint reached 74.2%.</p>
+          <ul>
+            <li>Added deterministic local executable tests for runCodexProcess so process lifecycle behavior is covered without invoking an external Codex binary.</li>
+            <li>Covered successful stdout/stderr streaming, callback aggregation, bounded output capture, nonzero exit propagation, context cancellation, and lookup failure handling.</li>
+            <li>This protects the gateway runtime path used by Codex-backed web-research and execution routes.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP">
+          <h3>Notification digest, delivery, and x402 pricing rollup</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP</code> <code>track: T+810m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Notification digest, delivery, and x402 pricing rollup</code></p>
+          <p>The notification surface is now documented as a Delta Signal MCP evidence-routing layer, not subscriber media: free metadata events, paid MCP summaries, signed webhooks, terminal and email delivery, business-day daily digests, route receipts, subscription preferences, and low-cost x402 notification pricing tiers.</p>
+          <ul>
+            <li>Frames every notification as an MCP evidence-routing alert with evidence route, delivery route, manage-preferences route, source dates, affected tickers, and non-advice boundary.</li>
+            <li>Documents the daily all-deltas digest direction: full ATLAS-7 universe filtering after processing, per-day grouping for five business days, workload statistics, candidate rows, matched tickers, delivered rows, and drilldown availability.</li>
+            <li>Records launch pricing guidance for notification-layer products: raw service/daily events, ticker alerts, watchlist alerts, bundled workflow notifications, natural-language alert briefs, and finished PDF delivery as separate x402-priced layers.</li>
+            <li>Keeps notification pricing below full workflow reruns while preserving the value ladder for Morning Briefs, Natural Language briefs, and finished reports.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9">
           <h3>Consolidated June 6 public rollup to 73.9 percent coverage</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9</code> <code>track: T+802m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 73.9 percent coverage</code></p>
@@ -2255,12 +2302,12 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 160,
-    "timeline_entries": 75,
-    "unique_tripcodes": 158,
-    "breadcrumb_chips": 160,
-    "visible_commit_references": 55,
-    "unique_source_commits": 84
+    "tracked_changes": 164,
+    "timeline_entries": 79,
+    "unique_tripcodes": 162,
+    "breadcrumb_chips": 164,
+    "visible_commit_references": 57,
+    "unique_source_commits": 86
   },
   "tracking_river": [
     {
@@ -3267,6 +3314,34 @@
       "commit": "current changelog update",
       "bread": "Improvement Timeline > Consolidated June 6 public rollup to 73.9 percent coverage",
       "river_index": 160
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4",
+      "track": "T+834m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 74.4 percent coverage",
+      "river_index": 164
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4",
+      "track": "T+826m",
+      "commit": "af9f8718",
+      "bread": "Improvement Timeline > Dynamic crawler loop coverage checkpoint",
+      "river_index": 163
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2",
+      "track": "T+818m",
+      "commit": "7961225d",
+      "bread": "Improvement Timeline > Codex process-runner coverage checkpoint",
+      "river_index": 162
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP",
+      "track": "T+810m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Notification digest, delivery, and x402 pricing rollup",
+      "river_index": 161
     }
   ],
   "timeline_entries": [
@@ -4464,13 +4539,76 @@
         "Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
         "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
       ]
+    },
+    {
+      "river_index": 164,
+      "date": "June 6, 2026",
+      "title": "Consolidated June 6 public rollup to 74.4 percent coverage",
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4",
+      "track": "T+834m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 74.4 percent coverage",
+      "summary": "The public changelog now includes the full June 6 public-safe update set through notification delivery, daily all-delta digest framing, x402 notification pricing, RSS/Atom subscriber feeds, Codex process-runner coverage, dynamic crawler loop coverage, and the verified cmd/search-gateway package coverage checkpoint at 74.4%.",
+      "bullets": [
+        "Rolls forward the public-safe notification work: free event discovery, Microsoft Graph email delivery, terminal delivery, signed webhooks, delivery receipts, retry/dead-letter status, durable subscriptions, paid MCP notification summaries, route pricing, and non-advice boundaries.",
+        "Records the Daily Delta Signal Digest direction as an MCP evidence-routing product: after daily processing, group each source date separately, include ATLAS-7 universe matches, evidence workload statistics, affected tickers, drilldown availability, and optional market context when available.",
+        "Rolls forward source-test hardening through Codex process-runner branches and the dynamic crawler loop after the risk-distribution and MCP composite-wrapper checkpoints.",
+        "Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
+        "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
+      ]
+    },
+    {
+      "river_index": 163,
+      "date": "June 6, 2026",
+      "title": "Dynamic crawler loop coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4",
+      "track": "T+826m",
+      "commit": "af9f8718",
+      "bread": "Improvement Timeline > Dynamic crawler loop coverage checkpoint",
+      "summary": "Dynamic feed-crawler coverage now verifies source-listing success and error paths, empty dynamic source sets, file-feed filtering, local dynamic RSS fetches, and canceled loop shutdown; the verified cmd/search-gateway package coverage checkpoint reached 74.4%.",
+      "bullets": [
+        "Introduced a narrow dynamic feed-source lister seam so crawler behavior can be regression-tested without changing production route semantics.",
+        "Covered dynamicCrawlOnce, dynamicCrawlerLoop, and crawlOnce behavior for dynamic source success, source-listing failure, empty results, file-feed skip behavior, HTTP RSS fetch behavior, and context cancellation.",
+        "This protects the background evidence-ingestion surface that feeds downstream notification, discovery, and web-intelligence workflows."
+      ]
+    },
+    {
+      "river_index": 162,
+      "date": "June 6, 2026",
+      "title": "Codex process-runner coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2",
+      "track": "T+818m",
+      "commit": "7961225d",
+      "bread": "Improvement Timeline > Codex process-runner coverage checkpoint",
+      "summary": "Codex process-runner coverage now verifies stdout/stderr callbacks, output caps, nonzero exits, context timeout behavior, and missing executable handling; the verified cmd/search-gateway package coverage checkpoint reached 74.2%.",
+      "bullets": [
+        "Added deterministic local executable tests for runCodexProcess so process lifecycle behavior is covered without invoking an external Codex binary.",
+        "Covered successful stdout/stderr streaming, callback aggregation, bounded output capture, nonzero exit propagation, context cancellation, and lookup failure handling.",
+        "This protects the gateway runtime path used by Codex-backed web-research and execution routes."
+      ]
+    },
+    {
+      "river_index": 161,
+      "date": "June 6, 2026",
+      "title": "Notification digest, delivery, and x402 pricing rollup",
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP",
+      "track": "T+810m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Notification digest, delivery, and x402 pricing rollup",
+      "summary": "The notification surface is now documented as a Delta Signal MCP evidence-routing layer, not subscriber media: free metadata events, paid MCP summaries, signed webhooks, terminal and email delivery, business-day daily digests, route receipts, subscription preferences, and low-cost x402 notification pricing tiers.",
+      "bullets": [
+        "Frames every notification as an MCP evidence-routing alert with evidence route, delivery route, manage-preferences route, source dates, affected tickers, and non-advice boundary.",
+        "Documents the daily all-deltas digest direction: full ATLAS-7 universe filtering after processing, per-day grouping for five business days, workload statistics, candidate rows, matched tickers, delivered rows, and drilldown availability.",
+        "Records launch pricing guidance for notification-layer products: raw service/daily events, ticker alerts, watchlist alerts, bundled workflow notifications, natural-language alert briefs, and finished PDF delivery as separate x402-priced layers.",
+        "Keeps notification pricing below full workflow reruns while preserving the value ladder for Morning Briefs, Natural Language briefs, and finished reports."
+      ]
     }
   ]
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="160" timeline_entries="75" unique_tripcodes="158" breadcrumb_chips="160" visible_commit_references="55" unique_source_commits="84" />
+  <stats tracked_changes="164" timeline_entries="79" unique_tripcodes="162" breadcrumb_chips="164" visible_commit_references="57" unique_source_commits="86" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -4553,6 +4691,10 @@
     <entry river_index="157" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P2" track="T+778m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 73.2 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 73.2 percent coverage</title></entry>
     <entry river_index="158" tripcode="ATLAS-JUN-6-RISK-DISTRIBUTION-COVERAGE-73P3" track="T+786m" bread="Improvement Timeline &gt; Risk distribution route and loader coverage checkpoint" commit="5948be4d"><date>June 6, 2026</date><title>Risk distribution route and loader coverage checkpoint</title></entry>
     <entry river_index="159" tripcode="ATLAS-JUN-6-MCP-COMPOSITE-WRAPPER-COVERAGE-73P9" track="T+794m" bread="Improvement Timeline &gt; DeltaSignal MCP composite wrapper coverage checkpoint" commit="6db4d2ad"><date>June 6, 2026</date><title>DeltaSignal MCP composite wrapper coverage checkpoint</title></entry>
+    <entry river_index="164" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4" track="T+834m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 74.4 percent coverage</title></entry>
+    <entry river_index="163" tripcode="ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4" track="T+826m" bread="Improvement Timeline &gt; Dynamic crawler loop coverage checkpoint" commit="af9f8718"><date>June 6, 2026</date><title>Dynamic crawler loop coverage checkpoint</title></entry>
+    <entry river_index="162" tripcode="ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2" track="T+818m" bread="Improvement Timeline &gt; Codex process-runner coverage checkpoint" commit="7961225d"><date>June 6, 2026</date><title>Codex process-runner coverage checkpoint</title></entry>
+    <entry river_index="161" tripcode="ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP" track="T+810m" bread="Improvement Timeline &gt; Notification digest, delivery, and x402 pricing rollup" commit="current changelog update"><date>June 6, 2026</date><title>Notification digest, delivery, and x402 pricing rollup</title></entry>
     <entry river_index="160" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-73P9" track="T+802m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 73.9 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 73.9 percent coverage</title></entry>
   </entries>
 </changelog_llm>
