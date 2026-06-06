@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>148</strong><span>tracked changes</span></div>
-        <div><strong>63</strong><span>timeline entries</span></div>
-        <div><strong>146</strong><span>unique tripcodes</span></div>
-        <div><strong>148</strong><span>breadcrumb chips</span></div>
-        <div><strong>48</strong><span>visible commit references</span></div>
-        <div><strong>77</strong><span>unique source commits</span></div>
+        <div><strong>151</strong><span>tracked changes</span></div>
+        <div><strong>66</strong><span>timeline entries</span></div>
+        <div><strong>149</strong><span>unique tripcodes</span></div>
+        <div><strong>151</strong><span>breadcrumb chips</span></div>
+        <div><strong>50</strong><span>visible commit references</span></div>
+        <div><strong>79</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,9 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>151</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage</td><td><code>T+730m</code></td><td>current changelog update</td></tr>
+          <tr><td>150</td><td><code>ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</code></td><td>Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint</td><td><code>T+722m</code></td><td>6276da5e</td></tr>
+          <tr><td>149</td><td><code>ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</code></td><td>Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint</td><td><code>T+714m</code></td><td>b12eb2f2</td></tr>
           <tr><td>148</td><td><code>ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code></td><td>Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint</td><td><code>T+706m</code></td><td>025ea07a</td></tr>
           <tr><td>147</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage</td><td><code>T+698m</code></td><td>current changelog update</td></tr>
           <tr><td>146</td><td><code>ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</code></td><td>Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint</td><td><code>T+690m</code></td><td>b4a67442</td></tr>
@@ -231,6 +234,39 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7">
+          <h3>Consolidated June 6 public rollup to 70.7 percent coverage</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</code> <code>track: T+730m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage</code></p>
+          <p>The public changelog now includes the full June 6 public-safe update set through SignalRadar MCP and StrategiX Diagram MCP coverage hardening, with the latest verified cmd/search-gateway package coverage checkpoint at 70.7%.</p>
+<ul>
+            <li>Rolls forward the public-safe June 6 change stream across notification-v1, Graph email delivery, daily all-delta digests, x402 notification pricing, signed webhooks, terminal delivery, paid MCP summaries, subscriptions, receipts, and RSS/Atom changelog feeds.</li>
+            <li>Adds the latest MCP source-test hardening checkpoints for SignalRadar MCP handlers and StrategiX Diagram MCP helpers, after the previously recorded MCP summary, billing-envelope, company-fundamentals, primitive, Codex cache, Web Intel, Telegram, Marketplace, OPML, static runtime, generic MCP, and field-map coverage slices.</li>
+            <li>Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+            <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7">
+          <h3>StrategiX Diagram MCP helper coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</code> <code>track: T+722m</code> <code>commit: 6276da5e</code> <code>bread: Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint</code></p>
+          <p>StrategiX Diagram MCP coverage now verifies tool definitions, call-dispatcher success and error paths, validation warnings and errors, render/package/search text helpers, compact metadata fallback, fit-fail reporting, pricing fallback, hash fallback, label shortening, and primitive helper branches.</p>
+<ul>
+            <li>Covered StrategiX Diagram MCP validate, render, package, and search tool definitions plus dispatcher success and malformed/unsupported-tool error branches.</li>
+            <li>Covered validation errors and warnings for duplicate IDs, missing labels, missing edge endpoints, missing referenced nodes, missing aspect and height constraints, and rendered-height fit failures.</li>
+            <li>Covered deterministic render/package/search text helpers, compact metadata fallback, pricing fallback, hash fallback, label shortening, first-positive/max-float fallbacks, and compact-string behavior.</li>
+            <li>The verified cmd/search-gateway package coverage checkpoint reached 70.7%; the active 100% package coverage goal remains open.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4">
+          <h3>SignalRadar MCP handler coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</code> <code>track: T+714m</code> <code>commit: b12eb2f2</code> <code>bread: Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint</code></p>
+          <p>SignalRadar MCP handler coverage now verifies tool discovery, tool recognition, stateless evidence/friction/repo-scan routing, store-not-configured errors, SQL-backed observation/list/match/session/action success paths, validation errors, and nil-store failures.</p>
+<ul>
+            <li>Covered SignalRadar MCP tool definitions, tool-name recognition, stateless evidence map generation, friction simulation, and repository scan routing.</li>
+            <li>Covered SQL-backed SignalRadar observation recording, opportunity listing, opportunity matching, session recording, and action recording success paths.</li>
+            <li>Covered store-not-configured errors, validation errors, and nil-store failures so MCP clients get structured errors instead of ambiguous failures.</li>
+            <li>The verified cmd/search-gateway package coverage checkpoint reached 70.4%; the active 100% package coverage goal remains open.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT">
           <h3>DeltaSignal MCP summary helper coverage checkpoint</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code> <code>track: T+706m</code> <code>commit: 025ea07a</code> <code>bread: Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint</code></p>
@@ -2053,11 +2089,11 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 148,
-    "timeline_entries": 63,
-    "unique_tripcodes": 146,
-    "breadcrumb_chips": 148,
-    "visible_commit_references": 48,
+    "tracked_changes": 151,
+    "timeline_entries": 66,
+    "unique_tripcodes": 149,
+    "breadcrumb_chips": 151,
+    "visible_commit_references": 50,
     "unique_source_commits": [
       "7a80e86",
       "730def3",
@@ -2135,7 +2171,9 @@
       "b1b6b9b7",
       "8c5d1e9e",
       "b4a67442",
-      "025ea07a"
+      "025ea07a",
+      "b12eb2f2",
+      "6276da5e"
     ]
   },
   "tracking_river": [
@@ -3059,6 +3097,27 @@
       "commit": "025ea07a",
       "bread": "Improvement Timeline > DeltaSignal MCP summary helper coverage checkpoint",
       "river_index": 148
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4",
+      "track": "T+714m",
+      "commit": "b12eb2f2",
+      "bread": "Improvement Timeline > SignalRadar MCP handler coverage checkpoint",
+      "river_index": 149
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7",
+      "track": "T+722m",
+      "commit": "6276da5e",
+      "bread": "Improvement Timeline > StrategiX Diagram MCP helper coverage checkpoint",
+      "river_index": 150
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7",
+      "track": "T+730m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 70.7 percent coverage",
+      "river_index": 151
     }
   ],
   "timeline_entries": [
@@ -4069,13 +4128,61 @@
         "Protected the MCP-facing summary envelope used by agent-readable notifications, compact evidence rendering, and route-response summaries without changing billing, route prices, or evidence semantics.",
         "The verified cmd/search-gateway package coverage checkpoint reached 70.0%; the active 100% package coverage goal remains open."
       ]
+    },
+    {
+      "river_index": 149,
+      "date": "June 6, 2026",
+      "title": "SignalRadar MCP handler coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4",
+      "track": "T+714m",
+      "commit": "b12eb2f2",
+      "bread": "Improvement Timeline > SignalRadar MCP handler coverage checkpoint",
+      "summary": "SignalRadar MCP handler coverage now verifies tool discovery, tool recognition, stateless evidence/friction/repo-scan routing, store-not-configured errors, SQL-backed observation/list/match/session/action success paths, validation errors, and nil-store failures.",
+      "bullets": [
+        "Covered SignalRadar MCP tool definitions, tool-name recognition, stateless evidence map generation, friction simulation, and repository scan routing.",
+        "Covered SQL-backed SignalRadar observation recording, opportunity listing, opportunity matching, session recording, and action recording success paths.",
+        "Covered store-not-configured errors, validation errors, and nil-store failures so MCP clients get structured errors instead of ambiguous failures.",
+        "The verified cmd/search-gateway package coverage checkpoint reached 70.4%; the active 100% package coverage goal remains open."
+      ]
+    },
+    {
+      "river_index": 150,
+      "date": "June 6, 2026",
+      "title": "StrategiX Diagram MCP helper coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7",
+      "track": "T+722m",
+      "commit": "6276da5e",
+      "bread": "Improvement Timeline > StrategiX Diagram MCP helper coverage checkpoint",
+      "summary": "StrategiX Diagram MCP coverage now verifies tool definitions, call-dispatcher success and error paths, validation warnings and errors, render/package/search text helpers, compact metadata fallback, fit-fail reporting, pricing fallback, hash fallback, label shortening, and primitive helper branches.",
+      "bullets": [
+        "Covered StrategiX Diagram MCP validate, render, package, and search tool definitions plus dispatcher success and malformed/unsupported-tool error branches.",
+        "Covered validation errors and warnings for duplicate IDs, missing labels, missing edge endpoints, missing referenced nodes, missing aspect and height constraints, and rendered-height fit failures.",
+        "Covered deterministic render/package/search text helpers, compact metadata fallback, pricing fallback, hash fallback, label shortening, first-positive/max-float fallbacks, and compact-string behavior.",
+        "The verified cmd/search-gateway package coverage checkpoint reached 70.7%; the active 100% package coverage goal remains open."
+      ]
+    },
+    {
+      "river_index": 151,
+      "date": "June 6, 2026",
+      "title": "Consolidated June 6 public rollup to 70.7 percent coverage",
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7",
+      "track": "T+730m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 70.7 percent coverage",
+      "summary": "The public changelog now includes the full June 6 public-safe update set through SignalRadar MCP and StrategiX Diagram MCP coverage hardening, with the latest verified cmd/search-gateway package coverage checkpoint at 70.7%.",
+      "bullets": [
+        "Rolls forward the public-safe June 6 change stream across notification-v1, Graph email delivery, daily all-delta digests, x402 notification pricing, signed webhooks, terminal delivery, paid MCP summaries, subscriptions, receipts, and RSS/Atom changelog feeds.",
+        "Adds the latest MCP source-test hardening checkpoints for SignalRadar MCP handlers and StrategiX Diagram MCP helpers, after the previously recorded MCP summary, billing-envelope, company-fundamentals, primitive, Codex cache, Web Intel, Telegram, Marketplace, OPML, static runtime, generic MCP, and field-map coverage slices.",
+        "Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
+        "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
+      ]
     }
   ]
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="148" timeline_entries="63" unique_tripcodes="146" breadcrumb_chips="148" visible_commit_references="48" unique_source_commits="77" />
+  <stats tracked_changes="151" timeline_entries="66" unique_tripcodes="149" breadcrumb_chips="151" visible_commit_references="50" unique_source_commits="79" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -4086,35 +4193,35 @@
   <entries>
     <entry river_index="2" tripcode="ATLAS-P0-CONTRACT-7A80E86" track="T+14m" bread="Improvement Timeline &gt; P0 contract-hardening source implementation" commit="7a80e86"><date>May 31, 2026</date><title>P0 contract-hardening source implementation</title></entry>
     <entry river_index="3" tripcode="ATLAS-P1-PROV-730DEF3" track="T+22m" bread="Improvement Timeline &gt; P1 standard provenance source implementation" commit="730def3"><date>May 31, 2026</date><title>P1 standard provenance source implementation</title></entry>
-    <entry river_index="28" tripcode="ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT" track="T+098m" bread="Evidence Infrastructure Backlog &gt; Universal evidence contract"><date>P0</date><title>Universal evidence contract</title></entry>
-    <entry river_index="29" tripcode="ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS" track="T+106m" bread="Evidence Infrastructure Backlog &gt; Scale and freshness ergonomics"><date>P1</date><title>Scale and freshness ergonomics</title></entry>
-    <entry river_index="30" tripcode="ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY" track="T+114m" bread="Evidence Infrastructure Backlog &gt; Monitoring and contract maturity"><date>P2</date><title>Monitoring and contract maturity</title></entry>
-    <entry river_index="33" tripcode="ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK" track="T+122m" bread="Improvement Timeline &gt; Pricing discovery implementation track"><date>May 31, 2026</date><title>Pricing discovery implementation track</title></entry>
-    <entry river_index="34" tripcode="ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION" track="T+130m" bread="Improvement Timeline &gt; Canonical billed-response fields implementation track"><date>May 31, 2026</date><title>Canonical billed-response fields implementation track</title></entry>
-    <entry river_index="35" tripcode="ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK" track="T+138m" bread="Improvement Timeline &gt; Structured not-found implementation track"><date>May 31, 2026</date><title>Structured not-found implementation track</title></entry>
-    <entry river_index="36" tripcode="ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR" track="T+146m" bread="Improvement Timeline &gt; IREN SPECTRA coverage repair"><date>May 31, 2026</date><title>IREN SPECTRA coverage repair</title></entry>
-    <entry river_index="37" tripcode="ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK" track="T+154m" bread="Improvement Timeline &gt; Universe route contract implementation track"><date>May 31, 2026</date><title>Universe route contract implementation track</title></entry>
-    <entry river_index="38" tripcode="ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" track="T+162m" bread="Improvement Timeline &gt; Field contract discovery implementation track"><date>May 31, 2026</date><title>Field contract discovery implementation track</title></entry>
-    <entry river_index="39" tripcode="ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK" track="T+170m" bread="Improvement Timeline &gt; Response metadata envelope implementation track"><date>May 31, 2026</date><title>Response metadata envelope implementation track</title></entry>
-    <entry river_index="40" tripcode="ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK" track="T+178m" bread="Improvement Timeline &gt; Coverage discovery implementation track"><date>May 31, 2026</date><title>Coverage discovery implementation track</title></entry>
-    <entry river_index="41" tripcode="ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" track="T+186m" bread="Improvement Timeline &gt; Large-response handling implementation track"><date>May 31, 2026</date><title>Large-response handling implementation track</title></entry>
-    <entry river_index="42" tripcode="ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION" track="T+194m" bread="Improvement Timeline &gt; Daily-change field-delta implementation track"><date>May 31, 2026</date><title>Daily-change field-delta implementation track</title></entry>
-    <entry river_index="43" tripcode="ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK" track="T+202m" bread="Improvement Timeline &gt; Evidence replay semantics implementation track"><date>May 31, 2026</date><title>Evidence replay semantics implementation track</title></entry>
-    <entry river_index="44" tripcode="ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED" track="T+210m" bread="Improvement Timeline &gt; Public contract cleanup re-verified"><date>May 28, 2026</date><title>Public contract cleanup re-verified</title></entry>
-    <entry river_index="45" tripcode="ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE" track="T+218m" bread="Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate"><date>May 27, 2026</date><title>Company Report became a true OpenAPI-visible aggregate</title></entry>
-    <entry river_index="46" tripcode="ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED" track="T+226m" bread="Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables"><date>May 16, 2026</date><title>StrategiX Visual MCP and finished DeltaSignal deliverables</title></entry>
-    <entry river_index="47" tripcode="ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND" track="T+234m" bread="Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history"><date>May 14, 2026</date><title>Historical source dates, SPECTRA, and ATLAS-7 calculation history</title></entry>
-    <entry river_index="48" tripcode="ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT" track="T+242m" bread="Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery"><date>May 14, 2026</date><title>Audit status, Morning Brief context, and public MCP discovery</title></entry>
-    <entry river_index="49" tripcode="ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER" track="T+250m" bread="Improvement Timeline &gt; Full-universe regression and issuer identity hardening"><date>May 13-14, 2026</date><title>Full-universe regression and issuer identity hardening</title></entry>
-    <entry river_index="50" tripcode="ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT" track="T+258m" bread="Improvement Timeline &gt; Natural Language briefs and compact evidence contracts"><date>May 9-12, 2026</date><title>Natural Language briefs and compact evidence contracts</title></entry>
-    <entry river_index="51" tripcode="ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND" track="T+266m" bread="Improvement Timeline &gt; Composite workflows, route discovery, and payment metadata"><date>May 1-8, 2026</date><title>Composite workflows, route discovery, and payment metadata</title></entry>
-    <entry river_index="52" tripcode="ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE" track="T+274m" bread="Improvement Timeline &gt; Public x402 launch and Wardenclyffe/OpenAPI contract rollout"><date>April 24-30, 2026</date><title>Public x402 launch and Wardenclyffe/OpenAPI contract rollout</title></entry>
-    <entry river_index="107" tripcode="ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE" track="T+378m" bread="Next Verification Priorities &gt; Second-ticker company-report smoke"><date>Priority 1</date><title>Second-ticker company-report smoke</title></entry>
-    <entry river_index="108" tripcode="ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON" track="T+386m" bread="Next Verification Priorities &gt; REST / MCP / bundle drift comparison"><date>Priority 2</date><title>REST / MCP / bundle drift comparison</title></entry>
-    <entry river_index="109" tripcode="ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES" track="T+394m" bread="Next Verification Priorities &gt; Expand public x402 probes"><date>Priority 3</date><title>Expand public x402 probes</title></entry>
-    <entry river_index="110" tripcode="ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION" track="T+402m" bread="Next Verification Priorities &gt; App renderer regression"><date>Priority 4</date><title>App renderer regression</title></entry>
-    <entry river_index="115" tripcode="ATLAS-LOCAL-REGRESSION-SMOKE" track="T+442m" bread="Improvement Timeline &gt; Local regression smoke verified"><date>June 3, 2026</date><title>Local regression smoke verified</title></entry>
-    <entry river_index="116" tripcode="ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS" track="T+450m" bread="Improvement Timeline &gt; Verified wallet grant settlement bypass"><date>June 4, 2026</date><title>Verified wallet grant settlement bypass</title></entry>
+    <entry river_index="28" tripcode="ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT" track="T+098m" bread="Evidence Infrastructure Backlog &gt; Universal evidence contract" commit=""><date>P0</date><title>Universal evidence contract</title></entry>
+    <entry river_index="29" tripcode="ATLAS-P1-SCALE-AND-FRESHNESS-ERGONOMICS" track="T+106m" bread="Evidence Infrastructure Backlog &gt; Scale and freshness ergonomics" commit=""><date>P1</date><title>Scale and freshness ergonomics</title></entry>
+    <entry river_index="30" tripcode="ATLAS-P2-MONITORING-AND-CONTRACT-MATURITY" track="T+114m" bread="Evidence Infrastructure Backlog &gt; Monitoring and contract maturity" commit=""><date>P2</date><title>Monitoring and contract maturity</title></entry>
+    <entry river_index="33" tripcode="ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK" track="T+122m" bread="Improvement Timeline &gt; Pricing discovery implementation track" commit=""><date>May 31, 2026</date><title>Pricing discovery implementation track</title></entry>
+    <entry river_index="34" tripcode="ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION" track="T+130m" bread="Improvement Timeline &gt; Canonical billed-response fields implementation track" commit=""><date>May 31, 2026</date><title>Canonical billed-response fields implementation track</title></entry>
+    <entry river_index="35" tripcode="ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK" track="T+138m" bread="Improvement Timeline &gt; Structured not-found implementation track" commit=""><date>May 31, 2026</date><title>Structured not-found implementation track</title></entry>
+    <entry river_index="36" tripcode="ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR" track="T+146m" bread="Improvement Timeline &gt; IREN SPECTRA coverage repair" commit=""><date>May 31, 2026</date><title>IREN SPECTRA coverage repair</title></entry>
+    <entry river_index="37" tripcode="ATLAS-MAY-31-UNIVERSE-ROUTE-CONTRACT-IMPLEMENTATION-TRACK" track="T+154m" bread="Improvement Timeline &gt; Universe route contract implementation track" commit=""><date>May 31, 2026</date><title>Universe route contract implementation track</title></entry>
+    <entry river_index="38" tripcode="ATLAS-MAY-31-FIELD-CONTRACT-DISCOVERY-IMPLEMENTATION-TRACK" track="T+162m" bread="Improvement Timeline &gt; Field contract discovery implementation track" commit=""><date>May 31, 2026</date><title>Field contract discovery implementation track</title></entry>
+    <entry river_index="39" tripcode="ATLAS-MAY-31-RESPONSE-METADATA-ENVELOPE-IMPLEMENTATION-TRACK" track="T+170m" bread="Improvement Timeline &gt; Response metadata envelope implementation track" commit=""><date>May 31, 2026</date><title>Response metadata envelope implementation track</title></entry>
+    <entry river_index="40" tripcode="ATLAS-MAY-31-COVERAGE-DISCOVERY-IMPLEMENTATION-TRACK" track="T+178m" bread="Improvement Timeline &gt; Coverage discovery implementation track" commit=""><date>May 31, 2026</date><title>Coverage discovery implementation track</title></entry>
+    <entry river_index="41" tripcode="ATLAS-MAY-31-LARGE-RESPONSE-HANDLING-IMPLEMENTATION-TRACK" track="T+186m" bread="Improvement Timeline &gt; Large-response handling implementation track" commit=""><date>May 31, 2026</date><title>Large-response handling implementation track</title></entry>
+    <entry river_index="42" tripcode="ATLAS-MAY-31-DAILY-CHANGE-FIELD-DELTA-IMPLEMENTATION" track="T+194m" bread="Improvement Timeline &gt; Daily-change field-delta implementation track" commit=""><date>May 31, 2026</date><title>Daily-change field-delta implementation track</title></entry>
+    <entry river_index="43" tripcode="ATLAS-MAY-31-EVIDENCE-REPLAY-SEMANTICS-IMPLEMENTATION-TRACK" track="T+202m" bread="Improvement Timeline &gt; Evidence replay semantics implementation track" commit=""><date>May 31, 2026</date><title>Evidence replay semantics implementation track</title></entry>
+    <entry river_index="44" tripcode="ATLAS-MAY-28-PUBLIC-CONTRACT-CLEANUP-RE-VERIFIED" track="T+210m" bread="Improvement Timeline &gt; Public contract cleanup re-verified" commit=""><date>May 28, 2026</date><title>Public contract cleanup re-verified</title></entry>
+    <entry river_index="45" tripcode="ATLAS-MAY-27-COMPANY-REPORT-BECAME-A-TRUE" track="T+218m" bread="Improvement Timeline &gt; Company Report became a true OpenAPI-visible aggregate" commit=""><date>May 27, 2026</date><title>Company Report became a true OpenAPI-visible aggregate</title></entry>
+    <entry river_index="46" tripcode="ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED" track="T+226m" bread="Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables" commit=""><date>May 16, 2026</date><title>StrategiX Visual MCP and finished DeltaSignal deliverables</title></entry>
+    <entry river_index="47" tripcode="ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND" track="T+234m" bread="Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history" commit=""><date>May 14, 2026</date><title>Historical source dates, SPECTRA, and ATLAS-7 calculation history</title></entry>
+    <entry river_index="48" tripcode="ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT" track="T+242m" bread="Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery" commit=""><date>May 14, 2026</date><title>Audit status, Morning Brief context, and public MCP discovery</title></entry>
+    <entry river_index="49" tripcode="ATLAS-MAY-13-FULL-UNIVERSE-REGRESSION-AND-ISSUER" track="T+250m" bread="Improvement Timeline &gt; Full-universe regression and issuer identity hardening" commit=""><date>May 13-14, 2026</date><title>Full-universe regression and issuer identity hardening</title></entry>
+    <entry river_index="50" tripcode="ATLAS-MAY-9-NATURAL-LANGUAGE-BRIEFS-AND-COMPACT" track="T+258m" bread="Improvement Timeline &gt; Natural Language briefs and compact evidence contracts" commit=""><date>May 9-12, 2026</date><title>Natural Language briefs and compact evidence contracts</title></entry>
+    <entry river_index="51" tripcode="ATLAS-MAY-1-COMPOSITE-WORKFLOWS-ROUTE-DISCOVERY-AND" track="T+266m" bread="Improvement Timeline &gt; Composite workflows, route discovery, and payment metadata" commit=""><date>May 1-8, 2026</date><title>Composite workflows, route discovery, and payment metadata</title></entry>
+    <entry river_index="52" tripcode="ATLAS-APRIL-24-PUBLIC-X402-LAUNCH-AND-WARDENCLYFFE" track="T+274m" bread="Improvement Timeline &gt; Public x402 launch and Wardenclyffe/OpenAPI contract rollout" commit=""><date>April 24-30, 2026</date><title>Public x402 launch and Wardenclyffe/OpenAPI contract rollout</title></entry>
+    <entry river_index="107" tripcode="ATLAS-PRIORITY-1-SECOND-TICKER-COMPANY-REPORT-SMOKE" track="T+378m" bread="Next Verification Priorities &gt; Second-ticker company-report smoke" commit=""><date>Priority 1</date><title>Second-ticker company-report smoke</title></entry>
+    <entry river_index="108" tripcode="ATLAS-PRIORITY-2-REST-MCP-BUNDLE-DRIFT-COMPARISON" track="T+386m" bread="Next Verification Priorities &gt; REST / MCP / bundle drift comparison" commit=""><date>Priority 2</date><title>REST / MCP / bundle drift comparison</title></entry>
+    <entry river_index="109" tripcode="ATLAS-PRIORITY-3-EXPAND-PUBLIC-X402-PROBES" track="T+394m" bread="Next Verification Priorities &gt; Expand public x402 probes" commit=""><date>Priority 3</date><title>Expand public x402 probes</title></entry>
+    <entry river_index="110" tripcode="ATLAS-PRIORITY-4-APP-RENDERER-REGRESSION" track="T+402m" bread="Next Verification Priorities &gt; App renderer regression" commit=""><date>Priority 4</date><title>App renderer regression</title></entry>
+    <entry river_index="115" tripcode="ATLAS-LOCAL-REGRESSION-SMOKE" track="T+442m" bread="Improvement Timeline &gt; Local regression smoke verified" commit=""><date>June 3, 2026</date><title>Local regression smoke verified</title></entry>
+    <entry river_index="116" tripcode="ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS" track="T+450m" bread="Improvement Timeline &gt; Verified wallet grant settlement bypass" commit=""><date>June 4, 2026</date><title>Verified wallet grant settlement bypass</title></entry>
     <entry river_index="117" tripcode="ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH" track="T+458m" bread="Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients" commit="c001f26"><date>June 4, 2026</date><title>Wallet-signed grant auth for zero-balance clients</title></entry>
     <entry river_index="118" tripcode="ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION" track="T+466m" bread="Improvement Timeline &gt; MCP wallet-signed grant execution verified" commit="e3e4763"><date>June 5, 2026</date><title>MCP wallet-signed grant execution verified</title></entry>
     <entry river_index="119" tripcode="ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING" track="T+474m" bread="Improvement Timeline &gt; Parser field contract hardened" commit="f64dc87"><date>June 5, 2026</date><title>Parser field contract hardened</title></entry>
@@ -4147,6 +4254,9 @@
     <entry river_index="146" tripcode="ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE" track="T+690m" bread="Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint" commit="b4a67442"><date>June 6, 2026</date><title>Billing envelope primitive helper coverage checkpoint</title></entry>
     <entry river_index="147" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5" track="T+698m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 69.5 percent coverage</title></entry>
     <entry river_index="148" tripcode="ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT" track="T+706m" bread="Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint" commit="025ea07a"><date>June 6, 2026</date><title>DeltaSignal MCP summary helper coverage checkpoint</title></entry>
+    <entry river_index="149" tripcode="ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4" track="T+714m" bread="Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint" commit="b12eb2f2"><date>June 6, 2026</date><title>SignalRadar MCP handler coverage checkpoint</title></entry>
+    <entry river_index="150" tripcode="ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7" track="T+722m" bread="Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint" commit="6276da5e"><date>June 6, 2026</date><title>StrategiX Diagram MCP helper coverage checkpoint</title></entry>
+    <entry river_index="151" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7" track="T+730m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 70.7 percent coverage</title></entry>
   </entries>
 </changelog_llm>
 </script>

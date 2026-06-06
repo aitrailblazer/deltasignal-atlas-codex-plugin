@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, periodic feed sync, and coverage hardening to 70.0%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, SignalRadar MCP, StrategiX Diagram MCP, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, periodic feed sync, and coverage hardening to 70.7%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>148</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>63</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>146</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>148</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>48</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>77</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>151</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>66</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>149</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>151</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>50</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>79</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,24 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>151</span>
+              <code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</code>
+              <span>Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage</span>
+              <code>T+730m</code>
+            </div>
+            <div class="river-row">
+              <span>150</span>
+              <code>ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</code>
+              <span>Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint</span>
+              <code>T+722m</code>
+            </div>
+            <div class="river-row">
+              <span>149</span>
+              <code>ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</code>
+              <span>Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint</span>
+              <code>T+714m</code>
+            </div>
             <div class="river-row">
               <span>148</span>
               <code>ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code>
@@ -1418,6 +1436,39 @@
         </div>
         <div class="grid">
           <div class="card">
+            <span class="status">PUBLIC ROLLUP</span>
+            <strong>Consolidated June 6 public rollup to 70.7 percent coverage</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</code>
+              <code>track: T+730m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage</code>
+            </div>
+            <span>The public changelog now includes the full June 6 public-safe update set through SignalRadar MCP and StrategiX Diagram MCP coverage hardening, with the latest verified cmd/search-gateway package coverage checkpoint at 70.7%.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>StrategiX Diagram MCP helper coverage checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</code>
+              <code>track: T+722m</code>
+              <code>commit: 6276da5e</code>
+              <code>bread: Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint</code>
+            </div>
+            <span>StrategiX Diagram MCP coverage now verifies tool definitions, call-dispatcher success and error paths, validation warnings and errors, render/package/search text helpers, compact metadata fallback, fit-fail reporting, pricing fallback, hash fallback, label shortening, and primitive helper branches.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>SignalRadar MCP handler coverage checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</code>
+              <code>track: T+714m</code>
+              <code>commit: b12eb2f2</code>
+              <code>bread: Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint</code>
+            </div>
+            <span>SignalRadar MCP handler coverage now verifies tool discovery, tool recognition, stateless evidence/friction/repo-scan routing, store-not-configured errors, SQL-backed observation/list/match/session/action success paths, validation errors, and nil-store failures.</span>
+          </div>
+          <div class="card">
             <span class="status">SOURCE VERIFIED</span>
             <strong>DeltaSignal MCP Summary Helper Coverage Checkpoint</strong>
             <div class="track">
@@ -2080,6 +2131,54 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7">
+            <div class="date">June 6, 2026</div>
+            <h3>Consolidated June 6 public rollup to 70.7 percent coverage</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</code>
+              <code>track: T+730m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage</code>
+            </div>
+            <ul>
+              <li>Rolls forward the public-safe June 6 change stream across notification-v1, Graph email delivery, daily all-delta digests, x402 notification pricing, signed webhooks, terminal delivery, paid MCP summaries, subscriptions, receipts, and RSS/Atom changelog feeds.</li>
+              <li>Adds the latest MCP source-test hardening checkpoints for SignalRadar MCP handlers and StrategiX Diagram MCP helpers, after the previously recorded MCP summary, billing-envelope, company-fundamentals, primitive, Codex cache, Web Intel, Telegram, Marketplace, OPML, static runtime, generic MCP, and field-map coverage slices.</li>
+              <li>Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+              <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7">
+            <div class="date">June 6, 2026</div>
+            <h3>StrategiX Diagram MCP helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</code>
+              <code>track: T+722m</code>
+              <code>commit: 6276da5e</code>
+              <code>bread: Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered StrategiX Diagram MCP validate, render, package, and search tool definitions plus dispatcher success and malformed/unsupported-tool error branches.</li>
+              <li>Covered validation errors and warnings for duplicate IDs, missing labels, missing edge endpoints, missing referenced nodes, missing aspect and height constraints, and rendered-height fit failures.</li>
+              <li>Covered deterministic render/package/search text helpers, compact metadata fallback, pricing fallback, hash fallback, label shortening, first-positive/max-float fallbacks, and compact-string behavior.</li>
+              <li>The verified cmd/search-gateway package coverage checkpoint reached 70.7%; the active 100% package coverage goal remains open.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4">
+            <div class="date">June 6, 2026</div>
+            <h3>SignalRadar MCP handler coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</code>
+              <code>track: T+714m</code>
+              <code>commit: b12eb2f2</code>
+              <code>bread: Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered SignalRadar MCP tool definitions, tool-name recognition, stateless evidence map generation, friction simulation, and repository scan routing.</li>
+              <li>Covered SQL-backed SignalRadar observation recording, opportunity listing, opportunity matching, session recording, and action recording success paths.</li>
+              <li>Covered store-not-configured errors, validation errors, and nil-store failures so MCP clients get structured errors instead of ambiguous failures.</li>
+              <li>The verified cmd/search-gateway package coverage checkpoint reached 70.4%; the active 100% package coverage goal remains open.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT">
             <div class="date">June 6, 2026</div>
             <h3>DeltaSignal MCP summary helper coverage checkpoint</h3>
@@ -3804,7 +3903,7 @@ Spacing note: published paths use company-report. A copied
       "last_updated": "2026-06-06",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
-        "aitrailblazer-web-intel-mcp git history through e731e69",
+        "aitrailblazer-web-intel-mcp git history through 6276da5e",
         "Live verification snapshot from 2026-05-27 company-report aggregate rollout",
         "Live public OpenAPI/x402 verification from 2026-05-28",
         "Compact Delta Signal results audit artifacts from 2026-05-28",

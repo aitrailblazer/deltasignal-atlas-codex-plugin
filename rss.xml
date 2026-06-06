@@ -9,6 +9,30 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Consolidated June 6 public rollup to 70.7 percent coverage</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</category>
+      <description>The public changelog now includes the full June 6 public-safe update set through SignalRadar MCP and StrategiX Diagram MCP coverage hardening, with the latest verified cmd/search-gateway package coverage checkpoint at 70.7%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage Track: T+730m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>StrategiX Diagram MCP helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</category>
+      <description>StrategiX Diagram MCP coverage now verifies tool definitions, call-dispatcher success and error paths, validation warnings and errors, render/package/search text helpers, compact metadata fallback, fit-fail reporting, pricing fallback, hash fallback, label shortening, and primitive helper branches. Breadcrumb: Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint Track: T+722m Commit: 6276da5e</description>
+    </item>
+    <item>
+      <title>SignalRadar MCP handler coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</category>
+      <description>SignalRadar MCP handler coverage now verifies tool discovery, tool recognition, stateless evidence/friction/repo-scan routing, store-not-configured errors, SQL-backed observation/list/match/session/action success paths, validation errors, and nil-store failures. Breadcrumb: Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint Track: T+714m Commit: b12eb2f2</description>
+    </item>
+    <item>
       <title>DeltaSignal MCP summary helper coverage checkpoint</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</guid>
@@ -223,30 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</category>
       <description>Notification summaries now expose the daily evidence workload behind an alert and filter latest-change notification selection to the ATLAS-7 universe. Breadcrumb: Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering Track: T+498m Commit: f3410ac3 / c49e722c</description>
-    </item>
-    <item>
-      <title>Live ATLAS-history SPECTRA primary rollout</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</guid>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</category>
-      <description>/v1/spectra-field-map/{ticker_or_cik} now prefers runtime SPECTRA generation from ATLAS-7 history over static contracts. Breadcrumb: Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout Track: T+490m Commit: 8d7171e</description>
-    </item>
-    <item>
-      <title>Terminal broker envelope contract</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</guid>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</category>
-      <description>GET /v1/contract/fields now publishes the terminal MCP-brokered ATLAS envelope contract. Breadcrumb: Improvement Timeline &gt; Terminal broker envelope contract Track: T+482m Commit: a62f4c5</description>
-    </item>
-    <item>
-      <title>Parser field contract hardened</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</guid>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</category>
-      <description>Production now returns the versioned parser-stable field set published by GET /v1/contract/fields. Breadcrumb: Improvement Timeline &gt; Parser field contract hardened Track: T+474m Commit: f64dc87</description>
     </item>
   </channel>
 </rss>
