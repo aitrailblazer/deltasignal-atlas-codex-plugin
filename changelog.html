@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, periodic feed sync, and coverage hardening to 69.4%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, periodic feed sync, and coverage hardening to 69.5%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>144</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>59</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>142</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>144</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>45</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>74</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>147</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>62</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>145</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>147</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>47</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>76</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,24 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>147</span>
+              <code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</code>
+              <span>Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage</span>
+              <code>T+698m</code>
+            </div>
+            <div class="river-row">
+              <span>146</span>
+              <code>ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</code>
+              <span>Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint</span>
+              <code>T+690m</code>
+            </div>
+            <div class="river-row">
+              <span>145</span>
+              <code>ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</code>
+              <span>Improvement Timeline &gt; Company fundamentals metadata helper coverage checkpoint</span>
+              <code>T+682m</code>
+            </div>
             <div class="river-row">
               <span>144</span>
               <code>ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</code>
@@ -1395,6 +1413,39 @@
         <div class="grid">
           <div class="card">
             <span class="status">PUBLIC ROLLUP</span>
+            <strong>Consolidated June 6 Public Rollup to 69.5 Percent Coverage</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</code>
+              <code>track: T+698m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage</code>
+            </div>
+            <span>The public changelog now includes the full June 6 public-safe update set: notification channels, daily all-delta digest behavior, Microsoft Graph email delivery, x402 notification pricing, signed delivery surfaces, SPECTRA and ATLAS-7 coverage work, ticker canonicalization, RSS/Atom subscriber feeds, route-contract hardening, and the latest source-test coverage checkpoints through <code>69.5%</code>.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Billing Envelope Primitive Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</code>
+              <code>track: T+690m</code>
+              <code>commit: b4a67442</code>
+              <code>bread: Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint</code>
+            </div>
+            <span>Billing-envelope helper coverage now verifies nullable booleans, nullable arrays, nested-string extraction, and billing response-writer header/body branches. This protects the public billing metadata envelope used by x402, grant, notification, pricing, and paid-summary routes.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Company Fundamentals Metadata Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</code>
+              <code>track: T+682m</code>
+              <code>commit: 8c5d1e9e</code>
+              <code>bread: Improvement Timeline &gt; Company fundamentals metadata helper coverage checkpoint</code>
+            </div>
+            <span>Company-fundamentals metadata helper coverage now verifies CIK normalization, linkbase-backed state, data-source classification, and quality-flag derivation. This keeps issuer fundamentals, digest summaries, and MCP evidence envelopes stable as ATLAS-7 coverage expands.</span>
+          </div>
+          <div class="card">
+            <span class="status">PUBLIC ROLLUP</span>
             <strong>Periodic Changelog and Subscriber Feed Sync Policy</strong>
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</code>
@@ -2012,6 +2063,52 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5">
+            <div class="date">June 6, 2026</div>
+            <h3>Consolidated June 6 public rollup to 69.5 percent coverage</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</code>
+              <code>track: T+698m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage</code>
+            </div>
+            <ul>
+              <li>Rolled the public changelog forward across the full June 6 workstream: notification-v1, daily digest, Graph email delivery, x402 notification pricing, paid MCP summaries, signed webhooks, terminal delivery, subscriptions, delivery receipts, and changelog RSS/Atom feeds.</li>
+              <li>Recorded the ATLAS-7 and SPECTRA-facing hardening work: field-map route coverage, live ATLAS-history SPECTRA primary behavior, ticker canonicalization, route-contract field stability, universe-scoped daily-change filtering, and evidence-preserving digest metadata.</li>
+              <li>Recorded the source-test hardening work through the latest verified package checkpoint of <code>69.5%</code>. This remains an in-progress coverage-hardening milestone, not a final 100% coverage claim.</li>
+              <li>Kept the public/private boundary intact: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>Billing envelope primitive helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</code>
+              <code>track: T+690m</code>
+              <code>commit: b4a67442</code>
+              <code>bread: Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered nullable billing helper branches for boolean and array values, including nil, typed, coercion, and fallback paths.</li>
+              <li>Covered nested billing metadata lookup and the billing response writer header/body paths so route-level cost and settlement metadata remain regression-protected.</li>
+              <li>The verified <code>cmd/search-gateway</code> package coverage checkpoint reached <code>69.5%</code>; the active 100% coverage goal remains open.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>Company fundamentals metadata helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</code>
+              <code>track: T+682m</code>
+              <code>commit: 8c5d1e9e</code>
+              <code>bread: Improvement Timeline &gt; Company fundamentals metadata helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered company-fundamentals metadata helper branches for normalized CIK strings, linkbase-backed state, data-source classification, and quality-flag derivation.</li>
+              <li>Protected the issuer fundamentals metadata used by company-fundamentals, company-report, MCP summaries, daily digests, and downstream parser-stable evidence envelopes.</li>
+              <li>The verified <code>cmd/search-gateway</code> package coverage checkpoint reached <code>69.5%</code>; the active 100% coverage goal remains open.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC">
             <div class="date">June 6, 2026</div>
             <h3>Periodic changelog and subscriber feed sync policy</h3>

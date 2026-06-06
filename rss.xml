@@ -9,6 +9,30 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Consolidated June 6 public rollup to 69.5 percent coverage</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</category>
+      <description>The public changelog now includes the full June 6 public-safe update set across notification-v1, daily digest behavior, billing, delivery channels, ATLAS-7/SPECTRA coverage, ticker canonicalization, feeds, route contracts, and coverage hardening through 69.5%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage Track: T+698m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>Billing envelope primitive helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</category>
+      <description>Billing-envelope primitive helper coverage now verifies nullable booleans, nullable arrays, nested-string extraction, and billing response-writer header/body behavior. Breadcrumb: Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint Track: T+690m Commit: b4a67442</description>
+    </item>
+    <item>
+      <title>Company fundamentals metadata helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</category>
+      <description>Company-fundamentals metadata helper coverage now verifies CIK normalization, linkbase-backed state, data-source classification, and quality-flag derivation. Breadcrumb: Improvement Timeline &gt; Company fundamentals metadata helper coverage checkpoint Track: T+682m Commit: 8c5d1e9e</description>
+    </item>
+    <item>
       <title>Periodic changelog and subscriber feed sync policy</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</guid>
@@ -223,30 +247,6 @@
       <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</category>
       <description>Production MCP now honors wallet-signed grant context accepted by the outer x402/payment wrapper before API-key enforcement. Breadcrumb: Improvement Timeline &gt; MCP wallet-signed grant execution verified Track: T+466m Commit: e3e4763</description>
-    </item>
-    <item>
-      <title>Wallet-signed grant auth for zero-balance clients</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</guid>
-      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-4-WALLET-SIGNED-GRANT-AUTH</category>
-      <description>Added a signed wallet-grant path before x402 payment middleware so enrolled EVM wallets can prove grant identity without requiring a funded x402 payment preflight. Breadcrumb: Improvement Timeline &gt; Wallet-signed grant auth for zero-balance clients Track: T+458m Commit: c001f26</description>
-    </item>
-    <item>
-      <title>Verified wallet grant settlement bypass</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</guid>
-      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-4-VERIFIED-WALLET-GRANT-SETTLEMENT-BYPASS</category>
-      <description>Added source support for DB-backed verified-wallet grants: x402 verifies the signed payer wallet, matches it to the promo grant ledger, consumes the DB grant counter, returns a zero-amount grant settlement response, and skips paid settlement. Breadcrumb: Improvement Timeline &gt; Verified wallet grant settlement bypass Track: T+450m</description>
-    </item>
-    <item>
-      <title>Local regression smoke verified</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-LOCAL-REGRESSION-SMOKE</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-LOCAL-REGRESSION-SMOKE</guid>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-LOCAL-REGRESSION-SMOKE</category>
-      <description>Added an opt-in live-loop regression smoke for the live-loop route set and verified it locally against an internal-key gateway profile before production redeploy. Breadcrumb: Improvement Timeline &gt; Local regression smoke verified Track: T+442m</description>
     </item>
   </channel>
 </rss>
