@@ -9,6 +9,14 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>DeltaSignal MCP summary helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</category>
+      <description>DeltaSignal MCP summary helper coverage now verifies evidence-time parsing, compact JSON generation, date-prefix handling, payload compaction detection, summary construction, numeric coercion, first-number extraction, suggested follow-up generation, and summary clamping. Breadcrumb: Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint Track: T+706m Commit: 025ea07a</description>
+    </item>
+    <item>
       <title>Consolidated June 6 public rollup to 69.5 percent coverage</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</guid>
@@ -239,14 +247,6 @@
       <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</category>
       <description>Production now returns the versioned parser-stable field set published by GET /v1/contract/fields. Breadcrumb: Improvement Timeline &gt; Parser field contract hardened Track: T+474m Commit: f64dc87</description>
-    </item>
-    <item>
-      <title>MCP wallet-signed grant execution verified</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</guid>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-5-MCP-WALLET-SIGNED-GRANT-EXECUTION</category>
-      <description>Production MCP now honors wallet-signed grant context accepted by the outer x402/payment wrapper before API-key enforcement. Breadcrumb: Improvement Timeline &gt; MCP wallet-signed grant execution verified Track: T+466m Commit: e3e4763</description>
     </item>
   </channel>
 </rss>

@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, periodic feed sync, and coverage hardening to 69.5%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, periodic feed sync, and coverage hardening to 70.0%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>147</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>62</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>145</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>147</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>47</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>76</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>148</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>63</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>146</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>148</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>48</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>77</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>148</span>
+              <code>ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code>
+              <span>Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint</span>
+              <code>T+706m</code>
+            </div>
             <div class="river-row">
               <span>147</span>
               <code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</code>
@@ -1412,6 +1418,17 @@
         </div>
         <div class="grid">
           <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>DeltaSignal MCP Summary Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code>
+              <code>track: T+706m</code>
+              <code>commit: 025ea07a</code>
+              <code>bread: Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint</code>
+            </div>
+            <span>MCP summary helper coverage now verifies evidence-time parsing, compact JSON generation, date-prefix handling, payload compaction detection, summary construction, numeric coercion, first-number extraction, suggested follow-up generation, and summary clamping. The verified package coverage checkpoint is now <code>70.0%</code>.</span>
+          </div>
+          <div class="card">
             <span class="status">PUBLIC ROLLUP</span>
             <strong>Consolidated June 6 Public Rollup to 69.5 Percent Coverage</strong>
             <div class="track">
@@ -2063,6 +2080,22 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT">
+            <div class="date">June 6, 2026</div>
+            <h3>DeltaSignal MCP summary helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code>
+              <code>track: T+706m</code>
+              <code>commit: 025ea07a</code>
+              <code>bread: Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered MCP summary helpers for evidence-time parsing, compact JSON generation, date prefixes, payload compaction detection, summary construction, numeric coercion, first-number extraction, suggested follow-ups, and summary clamping.</li>
+              <li>Protected the MCP-facing summary envelope used by agent-readable notifications, compact evidence rendering, and route-response summaries.</li>
+              <li>The verified <code>cmd/search-gateway</code> package coverage checkpoint reached <code>70.0%</code>; the active 100% coverage goal remains open.</li>
+              <li>This is source-test hardening only; it does not change route pricing, billing mode, x402 settlement, grant behavior, issuer classification, or the non-advice boundary.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5">
             <div class="date">June 6, 2026</div>
             <h3>Consolidated June 6 public rollup to 69.5 percent coverage</h3>

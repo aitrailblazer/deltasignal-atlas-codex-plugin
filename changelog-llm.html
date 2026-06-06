@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>147</strong><span>tracked changes</span></div>
-        <div><strong>62</strong><span>timeline entries</span></div>
-        <div><strong>145</strong><span>unique tripcodes</span></div>
-        <div><strong>147</strong><span>breadcrumb chips</span></div>
-        <div><strong>47</strong><span>visible commit references</span></div>
-        <div><strong>76</strong><span>unique source commits</span></div>
+        <div><strong>148</strong><span>tracked changes</span></div>
+        <div><strong>63</strong><span>timeline entries</span></div>
+        <div><strong>146</strong><span>unique tripcodes</span></div>
+        <div><strong>148</strong><span>breadcrumb chips</span></div>
+        <div><strong>48</strong><span>visible commit references</span></div>
+        <div><strong>77</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,7 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>148</td><td><code>ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code></td><td>Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint</td><td><code>T+706m</code></td><td>025ea07a</td></tr>
           <tr><td>147</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage</td><td><code>T+698m</code></td><td>current changelog update</td></tr>
           <tr><td>146</td><td><code>ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</code></td><td>Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint</td><td><code>T+690m</code></td><td>b4a67442</td></tr>
           <tr><td>145</td><td><code>ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</code></td><td>Improvement Timeline &gt; Company fundamentals metadata helper coverage checkpoint</td><td><code>T+682m</code></td><td>8c5d1e9e</td></tr>
@@ -230,6 +231,16 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT">
+          <h3>DeltaSignal MCP summary helper coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</code> <code>track: T+706m</code> <code>commit: 025ea07a</code> <code>bread: Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint</code></p>
+          <p>DeltaSignal MCP summary helper coverage now verifies evidence-time parsing, compact JSON generation, date-prefix handling, payload compaction detection, summary construction, numeric coercion, first-number extraction, suggested follow-up generation, and summary clamping.</p>
+<ul>
+            <li>Covered parseDeltaSignalEvidenceTime, compactJSONString, datePrefix, deltaSignalMCPPayloadIsCompacted, deltaSignalMCPSummary, deltaSignalMCPFloatFromAny, deltaSignalMCPNumberFromAny, deltaSignalMCPFirstNumberAt, deltaSignalMCPSuggestedFollowUps, and clampDeltaSignalMCPSummary helper behavior.</li>
+            <li>Protected the MCP-facing summary envelope used by agent-readable notifications, compact evidence rendering, and route-response summaries without changing billing, route prices, or evidence semantics.</li>
+            <li>The verified cmd/search-gateway package coverage checkpoint reached 70.0%; the active 100% package coverage goal remains open.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5">
           <h3>Consolidated June 6 public rollup to 69.5 percent coverage</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</code> <code>track: T+698m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage</code></p>
@@ -2042,11 +2053,11 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 147,
-    "timeline_entries": 62,
-    "unique_tripcodes": 145,
-    "breadcrumb_chips": 147,
-    "visible_commit_references": 47,
+    "tracked_changes": 148,
+    "timeline_entries": 63,
+    "unique_tripcodes": 146,
+    "breadcrumb_chips": 148,
+    "visible_commit_references": 48,
     "unique_source_commits": [
       "7a80e86",
       "730def3",
@@ -2123,7 +2134,8 @@
       "c848302d",
       "b1b6b9b7",
       "8c5d1e9e",
-      "b4a67442"
+      "b4a67442",
+      "025ea07a"
     ]
   },
   "tracking_river": [
@@ -3040,6 +3052,13 @@
       "commit": "current changelog update",
       "bread": "Improvement Timeline > Consolidated June 6 public rollup to 69.5 percent coverage",
       "river_index": 147
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT",
+      "track": "T+706m",
+      "commit": "025ea07a",
+      "bread": "Improvement Timeline > DeltaSignal MCP summary helper coverage checkpoint",
+      "river_index": 148
     }
   ],
   "timeline_entries": [
@@ -4035,13 +4054,28 @@
         "Rolls up SPECTRA and ATLAS-7 hardening: live ATLAS-history SPECTRA primary behavior, field-map route coverage, ticker canonicalization, route-contract stability, universe-scoped daily-change filtering, and evidence-preserving digest metadata.",
         "Rolls up source-test coverage checkpoints through 69.5% package coverage while preserving the open 100% coverage goal and avoiding private support identifiers."
       ]
+    },
+    {
+      "river_index": 148,
+      "date": "June 6, 2026",
+      "title": "DeltaSignal MCP summary helper coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT",
+      "track": "T+706m",
+      "commit": "025ea07a",
+      "bread": "Improvement Timeline > DeltaSignal MCP summary helper coverage checkpoint",
+      "summary": "DeltaSignal MCP summary helper coverage now verifies evidence-time parsing, compact JSON generation, date-prefix handling, payload compaction detection, summary construction, numeric coercion, first-number extraction, suggested follow-up generation, and summary clamping.",
+      "bullets": [
+        "Covered parseDeltaSignalEvidenceTime, compactJSONString, datePrefix, deltaSignalMCPPayloadIsCompacted, deltaSignalMCPSummary, deltaSignalMCPFloatFromAny, deltaSignalMCPNumberFromAny, deltaSignalMCPFirstNumberAt, deltaSignalMCPSuggestedFollowUps, and clampDeltaSignalMCPSummary helper behavior.",
+        "Protected the MCP-facing summary envelope used by agent-readable notifications, compact evidence rendering, and route-response summaries without changing billing, route prices, or evidence semantics.",
+        "The verified cmd/search-gateway package coverage checkpoint reached 70.0%; the active 100% package coverage goal remains open."
+      ]
     }
   ]
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="147" timeline_entries="62" unique_tripcodes="145" breadcrumb_chips="147" visible_commit_references="47" unique_source_commits="76" />
+  <stats tracked_changes="148" timeline_entries="63" unique_tripcodes="146" breadcrumb_chips="148" visible_commit_references="48" unique_source_commits="77" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -4112,6 +4146,7 @@
     <entry river_index="145" tripcode="ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE" track="T+682m" bread="Improvement Timeline &gt; Company fundamentals metadata helper coverage checkpoint" commit="8c5d1e9e"><date>June 6, 2026</date><title>Company fundamentals metadata helper coverage checkpoint</title></entry>
     <entry river_index="146" tripcode="ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE" track="T+690m" bread="Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint" commit="b4a67442"><date>June 6, 2026</date><title>Billing envelope primitive helper coverage checkpoint</title></entry>
     <entry river_index="147" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5" track="T+698m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 69.5 percent coverage</title></entry>
+    <entry river_index="148" tripcode="ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT" track="T+706m" bread="Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint" commit="025ea07a"><date>June 6, 2026</date><title>DeltaSignal MCP summary helper coverage checkpoint</title></entry>
   </entries>
 </changelog_llm>
 </script>
