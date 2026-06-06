@@ -9,6 +9,30 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Periodic changelog and subscriber feed sync policy</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</category>
+      <description>The public documentation set now treats changelog.html, changelog-llm.html, rss.xml, atom.xml, llms.txt, and llms-full.txt as synchronized release surfaces for recurring product updates. Breadcrumb: Improvement Timeline &gt; Periodic changelog and subscriber feed sync policy Track: T+674m Commit: current changelog update</description>
+    </item>
+    <item>
+      <title>DeltaSignal primitive helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE</category>
+      <description>DeltaSignal primitive parsing and ticker helper coverage now verifies bounded integers, optional floats and booleans, nullable numbers and JSON arrays, ticker display/resolution helpers, and generic integer/bool coercion. Breadcrumb: Improvement Timeline &gt; DeltaSignal primitive helper coverage checkpoint Track: T+666m Commit: b1b6b9b7</description>
+    </item>
+    <item>
+      <title>Codex cache helper coverage checkpoint</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE</category>
+      <description>Codex cache and runtime helper coverage now verifies default cache-skip configuration, dynamic-search skip decisions, runtime path handling, cache metadata normalization, and deterministic helper branches. Breadcrumb: Improvement Timeline &gt; Codex cache helper coverage checkpoint Track: T+658m Commit: c848302d</description>
+    </item>
+    <item>
       <title>Subscriber changelog feeds and public rollup maintenance</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</guid>
@@ -22,7 +46,7 @@
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</guid>
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</category>
-      <description>Active coverage work added deterministic tests for Web Intel result helpers and Telegram bridge helper behavior, including sorting, dedupe, cache keys, text builders, authorization, approval IDs, execution args, and response formatting. Breadcrumb: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint Track: T+642m Commit: local verification</description>
+      <description>Committed Web Intel and Telegram helper coverage now verifies deterministic result helpers, Telegram bridge helpers, cache keys, authorization checks, approval formatting, and response rendering. Breadcrumb: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint Track: T+642m Commit: 7b3396aa</description>
     </item>
     <item>
       <title>Microsoft Marketplace client helper coverage checkpoint</title>
@@ -223,30 +247,6 @@
       <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-LOCAL-REGRESSION-SMOKE</category>
       <description>Added an opt-in live-loop regression smoke for the live-loop route set and verified it locally against an internal-key gateway profile before production redeploy. Breadcrumb: Improvement Timeline &gt; Local regression smoke verified Track: T+442m</description>
-    </item>
-    <item>
-      <title>Audit status, Morning Brief context, and public MCP discovery</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-14-AUDIT-STATUS-MORNING-BRIEF-CONTEXT</category>
-      <description>Added the Azure-native ATLAS-7 audit status surface: GET /v1/atlas7/audit/latest and MCP deltasignal_atlas7_audit_status . Breadcrumb: Improvement Timeline &gt; Audit status, Morning Brief context, and public MCP discovery Track: T+242m</description>
-    </item>
-    <item>
-      <title>Historical source dates, SPECTRA, and ATLAS-7 calculation history</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-14-HISTORICAL-SOURCE-DATES-SPECTRA-AND</category>
-      <description>Added historical source_date support for company fundamentals, covenant stress, peer ranking, alpha signals, and the MCP company-report flow. Breadcrumb: Improvement Timeline &gt; Historical source dates, SPECTRA, and ATLAS-7 calculation history Track: T+234m</description>
-    </item>
-    <item>
-      <title>StrategiX Visual MCP and finished DeltaSignal deliverables</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</guid>
-      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-MAY-16-STRATEGIX-VISUAL-MCP-AND-FINISHED</category>
-      <description>Published the public StrategiX Visual MCP discovery surface for evidence-to-visual artifact workflows. Breadcrumb: Improvement Timeline &gt; StrategiX Visual MCP and finished DeltaSignal deliverables Track: T+226m</description>
     </item>
   </channel>
 </rss>

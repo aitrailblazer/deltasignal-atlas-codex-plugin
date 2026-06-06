@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, and coverage hardening to 69.0%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, periodic feed sync, and coverage hardening to 69.4%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>141</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>56</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>139</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>141</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>42</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>71</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>144</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>59</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>142</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>144</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>45</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>74</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,24 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>144</span>
+              <code>ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</code>
+              <span>Improvement Timeline &gt; Periodic changelog and subscriber feed sync policy</span>
+              <code>T+674m</code>
+            </div>
+            <div class="river-row">
+              <span>143</span>
+              <code>ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE</code>
+              <span>Improvement Timeline &gt; DeltaSignal primitive helper coverage checkpoint</span>
+              <code>T+666m</code>
+            </div>
+            <div class="river-row">
+              <span>142</span>
+              <code>ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE</code>
+              <span>Improvement Timeline &gt; Codex cache helper coverage checkpoint</span>
+              <code>T+658m</code>
+            </div>
             <div class="river-row">
               <span>141</span>
               <code>ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</code>
@@ -1377,6 +1395,39 @@
         <div class="grid">
           <div class="card">
             <span class="status">PUBLIC ROLLUP</span>
+            <strong>Periodic Changelog and Subscriber Feed Sync Policy</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</code>
+              <code>track: T+674m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Periodic changelog and subscriber feed sync policy</code>
+            </div>
+            <span>The public documentation set now treats <code>changelog.html</code>, <code>changelog-llm.html</code>, <code>rss.xml</code>, <code>atom.xml</code>, <code>llms.txt</code>, and <code>llms-full.txt</code> as synchronized release surfaces. The feed generator uses the LLM contract so subscriber feeds keep stable tripcodes and breadcrumbs.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>DeltaSignal Primitive Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE</code>
+              <code>track: T+666m</code>
+              <code>commit: b1b6b9b7</code>
+              <code>bread: Improvement Timeline &gt; DeltaSignal primitive helper coverage checkpoint</code>
+            </div>
+            <span>DeltaSignal primitive parsing and ticker helper coverage now verifies bounded integers, optional floats and booleans, nullable numbers and JSON arrays, ticker display/resolution helpers, and generic integer/bool coercion. Latest verified <code>cmd/search-gateway</code> package coverage is <code>69.4%</code>; the 100% goal remains open.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Codex Cache Helper Coverage Checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE</code>
+              <code>track: T+658m</code>
+              <code>commit: c848302d</code>
+              <code>bread: Improvement Timeline &gt; Codex cache helper coverage checkpoint</code>
+            </div>
+            <span>Codex cache and runtime helper coverage now verifies default cache-skip configuration, dynamic-search skip decisions, runtime path handling, cache metadata normalization, and deterministic helper branches. The verified package checkpoint reached <code>69.3%</code>.</span>
+          </div>
+          <div class="card">
+            <span class="status">PUBLIC ROLLUP</span>
             <strong>Subscriber Changelog Feeds and Public Rollup Maintenance</strong>
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP</code>
@@ -1392,10 +1443,10 @@
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</code>
               <code>track: T+642m</code>
-              <code>commit: local verification</code>
+              <code>commit: 7b3396aa</code>
               <code>bread: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint</code>
             </div>
-            <span>Active coverage work now exercises Web Intel deterministic result ordering, canonical link handling, fetched-item dedupe, search summaries, hot-cache keys, Telegram configuration parsing, webhook validation, authorization helpers, approval formatting, execution args, and compact response rendering. Latest local package coverage checkpoint is <code>69.0%</code>; the 100% goal remains open.</span>
+            <span>Committed coverage now exercises Web Intel deterministic result ordering, canonical link handling, fetched-item dedupe, search summaries, hot-cache keys, Telegram configuration parsing, webhook validation, authorization helpers, approval formatting, execution args, and compact response rendering. Latest verified package coverage checkpoint is <code>69.1%</code>; the 100% goal remains open.</span>
           </div>
           <div class="card">
             <span class="status">SOURCE VERIFIED</span>
@@ -1961,6 +2012,51 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC">
+            <div class="date">June 6, 2026</div>
+            <h3>Periodic changelog and subscriber feed sync policy</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</code>
+              <code>track: T+674m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Periodic changelog and subscriber feed sync policy</code>
+            </div>
+            <ul>
+              <li>Set the public changelog, LLM changelog, RSS feed, Atom feed, llms.txt, and llms-full.txt as synchronized release surfaces for recurring product updates.</li>
+              <li>Kept RSS and Atom subscription links exposed from the changelog and landing page so subscribers can track changes without manually checking the UI.</li>
+              <li>Preserved the public/private boundary: no design-partner names, mailbox details, wallet addresses, secrets, or grant amounts are exposed in the public artifact.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>DeltaSignal primitive helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-DELTASIGNAL-PRIMITIVE-HELPER-COVERAGE</code>
+              <code>track: T+666m</code>
+              <code>commit: b1b6b9b7</code>
+              <code>bread: Improvement Timeline &gt; DeltaSignal primitive helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered bounded integers, optional floats and booleans, nullable numbers, nullable JSON arrays, null integer handling, generic integer/bool coercion, and fallback ticker helpers.</li>
+              <li>Covered DeltaSignal ticker display, resolved ticker, and ticker-resolution status helpers used by route envelopes and digest surfaces.</li>
+              <li>The verified <code>cmd/search-gateway</code> package coverage checkpoint reached <code>69.4%</code>; the active 100% coverage goal remains open.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE">
+            <div class="date">June 6, 2026</div>
+            <h3>Codex cache helper coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-CODEX-CACHE-HELPER-COVERAGE</code>
+              <code>track: T+658m</code>
+              <code>commit: c848302d</code>
+              <code>bread: Improvement Timeline &gt; Codex cache helper coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered default cache-skip configuration and dynamic-search skip decisions so cache-bypass behavior remains explicit and regression-protected.</li>
+              <li>Covered Codex runtime helper branches for metadata parsing, cache records, path handling, and deterministic response helpers without calling external services.</li>
+              <li>The verified package coverage checkpoint reached <code>69.3%</code>; the active 100% coverage goal remains open.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP">
             <div class="date">June 6, 2026</div>
             <h3>Subscriber changelog feeds and public rollup maintenance</h3>
@@ -1982,13 +2078,13 @@
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</code>
               <code>track: T+642m</code>
-              <code>commit: local verification</code>
+              <code>commit: 7b3396aa</code>
               <code>bread: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint</code>
             </div>
             <ul>
               <li>Web Intel helper coverage now exercises deterministic result ordering, canonical link handling, fetched-item dedupe, summary generation, and hot-cache key construction.</li>
-              <li>Telegram helper coverage now exercises configuration parsing, webhook validation, allowed-user checks, approval actor authorization, text rendering, pending-approval formatting, and compact command execution arguments.</li>
-              <li>The latest local package coverage checkpoint reached <code>69.0%</code>; this remains a coverage-hardening checkpoint, not a claim that the broader 100% coverage goal is complete.</li>
+              <li>Telegram helper coverage now exercises configuration parsing, webhook validation, allowed-user checks, approval actor authorization, text rendering, pending-approval formatting, compact command execution arguments, and response formatting.</li>
+              <li>The verified package coverage checkpoint reached <code>69.1%</code>; this remains a coverage-hardening checkpoint, not a claim that the broader 100% coverage goal is complete.</li>
             </ul>
           </article>
           <article class="timeline-item" id="ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE">
@@ -3613,6 +3709,10 @@ Spacing note: published paths use company-report. A copied
         "Daily Delta Signal Digest product framing from 2026-06-06: full ATLAS-7 matched issuer daily-delta digest after processing, evidence workload stats, ticker context where available, BTC/ATLAS backdrop, drilldown links, and non-advice boundary",
         "Source commit f3410ac3 adding notification evidence statistics to DeltaSignal notification emails",
         "Source commit c49e722c adding ATLAS-7 universe filtering, ticker canonicalization, FLDDW to FLD compatibility, and canonicalizer blank-ticker repair support",
+        "Source commit 7b3396aa covering Web Intel and Telegram helper branches with package coverage checkpoint 69.1%",
+        "Source commit c848302d covering Codex cache and runtime helper branches with package coverage checkpoint 69.3%",
+        "Source commit b1b6b9b7 covering DeltaSignal primitive parsing and ticker helper branches with package coverage checkpoint 69.4%",
+        "Public changelog maintenance update from 2026-06-06: changelog.html, changelog-llm.html, rss.xml, atom.xml, llms.txt, and llms-full.txt synchronized for periodic subscriber tracking",
         "ATLAS-7 215 issuer ticker audit from 2026-06-06: 14 high-confidence current ticker repairs applied, post-repair SEC-current mismatches = 0, Fold Holdings CIK 0001889123 canonical ticker = FLD",
         "Pre-deploy notification email verification from 2026-06-06 showing ATLAS-7 universe match statistics and daily-change evidence work summary",
         "Live GET /v1/contract/fields terminal_broker contract verification from 2026-06-05",
