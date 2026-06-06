@@ -8,6 +8,70 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 75.9 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through notification digest polish, notification pricing/delivery ladder, OpenAPI payment helper coverage, Google News resolver coverage, native-health RSS coverage, compatibility result helper coverage, and DeltaSignal route guard coverage at the verified 75.9% cmd/search-gateway package checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.9 percent coverage Track: T+970m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>Notification pricing and delivery ladder public rollup</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER" />
+    <summary>The changelog now records notification pricing as a separate low-cost alert layer: event pings, ticker alerts, watchlist alerts, bundled workflow notifications, natural-language alert briefs, and PDF deliveries are distinct from full workflow reruns. Breadcrumb: Improvement Timeline &gt; Notification pricing and delivery ladder public rollup Track: T+962m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>DeltaSignal route guard coverage checkpoint to 75.9 percent</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DELTASIGNAL-ROUTE-GUARD-COVERAGE-75P9" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DELTASIGNAL-ROUTE-GUARD-COVERAGE-75P9</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-DELTASIGNAL-ROUTE-GUARD-COVERAGE-75P9" />
+    <summary>DeltaSignal route guard coverage now verifies covenant-stress detail/list and raw top-stressed guard branches, including method rejection, authorization failures, validation errors, missing ticker handling, and unavailable-store responses; the verified cmd/search-gateway package coverage checkpoint reached 75.9%. Breadcrumb: Improvement Timeline &gt; DeltaSignal route guard coverage checkpoint to 75.9 percent Track: T+954m Commit: 5674ca5b</summary>
+  </entry>
+  <entry>
+    <title>Compatibility result helper coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPAT-RESULT-HELPER-COVERAGE-75P8" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPAT-RESULT-HELPER-COVERAGE-75P8</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPAT-RESULT-HELPER-COVERAGE-75P8" />
+    <summary>Compatibility result helper coverage now verifies JSON-RPC marshal fallback branches and warning-list normalization; the verified cmd/search-gateway package coverage checkpoint remained 75.8% after rounding. Breadcrumb: Improvement Timeline &gt; Compatibility result helper coverage checkpoint Track: T+946m Commit: 6253b602</summary>
+  </entry>
+  <entry>
+    <title>Native health RSS status coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NATIVE-HEALTH-RSS-COVERAGE-75P8" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NATIVE-HEALTH-RSS-COVERAGE-75P8</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NATIVE-HEALTH-RSS-COVERAGE-75P8" />
+    <summary>Native health payload coverage now verifies the configured-but-unhealthy RSS index branch with Codex CLI status available; the verified cmd/search-gateway package coverage checkpoint remained 75.8% after rounding. Breadcrumb: Improvement Timeline &gt; Native health RSS status coverage checkpoint Track: T+938m Commit: 71aa7598</summary>
+  </entry>
+  <entry>
+    <title>Google News resolver coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-GOOGLE-NEWS-RESOLVER-COVERAGE-75P8" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-GOOGLE-NEWS-RESOLVER-COVERAGE-75P8</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-GOOGLE-NEWS-RESOLVER-COVERAGE-75P8" />
+    <summary>Google News resolver coverage now verifies invalid-link fallback, redirect resolution, user-agent behavior, and stories-path fallback behavior; the verified cmd/search-gateway package coverage checkpoint reached 75.8%. Breadcrumb: Improvement Timeline &gt; Google News resolver coverage checkpoint Track: T+930m Commit: 1cdb9335</summary>
+  </entry>
+  <entry>
+    <title>OpenAPI payment helper coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-OPENAPI-PAYMENT-HELPER-COVERAGE-75P7" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-OPENAPI-PAYMENT-HELPER-COVERAGE-75P7</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-OPENAPI-PAYMENT-HELPER-COVERAGE-75P7" />
+    <summary>OpenAPI payment helper coverage now verifies Postgres DSN normalization, OpenAPI object cloning, payment amount coercion, and nested pricing metadata extraction; the verified cmd/search-gateway package coverage checkpoint reached 75.7%. Breadcrumb: Improvement Timeline &gt; OpenAPI payment helper coverage checkpoint Track: T+922m Commit: 0928270e</summary>
+  </entry>
+  <entry>
+    <title>Daily all-delta MCP notification digest polish</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DAILY-ALL-DELTAS-MCP-NOTIFICATION-DIGEST" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DAILY-ALL-DELTAS-MCP-NOTIFICATION-DIGEST</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-DAILY-ALL-DELTAS-MCP-NOTIFICATION-DIGEST" />
+    <summary>The notification product is now documented as a Delta Signal MCP evidence-routing digest: after daily processing, recipients can receive per-source-date issuer deltas scoped to the full ATLAS-7 universe, with workload statistics, canonical tickers, routes, and non-advice boundaries. Breadcrumb: Improvement Timeline &gt; Daily all-delta MCP notification digest polish Track: T+914m Commit: current changelog update</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 75.6 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6</id>
@@ -182,69 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8" />
     <summary>SQL-backed dedicated grant ledger coverage now verifies grant seeding, wallet identity mapping, consumption, exhaustion, usage reporting, query error propagation, and close paths; the verified cmd/search-gateway package coverage checkpoint reached 71.8%. Breadcrumb: Improvement Timeline &gt; Dedicated grant ledger coverage checkpoint Track: T+738m Commit: 43ca8cab</summary>
-  </entry>
-  <entry>
-    <title>Consolidated June 6 public rollup to 70.7 percent coverage</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7" />
-    <summary>The public changelog now includes the full June 6 public-safe update set through SignalRadar MCP and StrategiX Diagram MCP coverage hardening, with the latest verified cmd/search-gateway package coverage checkpoint at 70.7%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 70.7 percent coverage Track: T+730m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>StrategiX Diagram MCP helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-STRATEGIX-DIAGRAM-MCP-COVERAGE-70P7" />
-    <summary>StrategiX Diagram MCP coverage now verifies tool definitions, call-dispatcher success and error paths, validation warnings and errors, render/package/search text helpers, compact metadata fallback, fit-fail reporting, pricing fallback, hash fallback, label shortening, and primitive helper branches. Breadcrumb: Improvement Timeline &gt; StrategiX Diagram MCP helper coverage checkpoint Track: T+722m Commit: 6276da5e</summary>
-  </entry>
-  <entry>
-    <title>SignalRadar MCP handler coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-SIGNALRADAR-MCP-COVERAGE-70P4" />
-    <summary>SignalRadar MCP handler coverage now verifies tool discovery, tool recognition, stateless evidence/friction/repo-scan routing, store-not-configured errors, SQL-backed observation/list/match/session/action success paths, validation errors, and nil-store failures. Breadcrumb: Improvement Timeline &gt; SignalRadar MCP handler coverage checkpoint Track: T+714m Commit: b12eb2f2</summary>
-  </entry>
-  <entry>
-    <title>DeltaSignal MCP summary helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-MCP-SUMMARY-HELPER-COVERAGE-70PCT" />
-    <summary>DeltaSignal MCP summary helper coverage now verifies evidence-time parsing, compact JSON generation, date-prefix handling, payload compaction detection, summary construction, numeric coercion, first-number extraction, suggested follow-up generation, and summary clamping. Breadcrumb: Improvement Timeline &gt; DeltaSignal MCP summary helper coverage checkpoint Track: T+706m Commit: 025ea07a</summary>
-  </entry>
-  <entry>
-    <title>Consolidated June 6 public rollup to 69.5 percent coverage</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-69P5" />
-    <summary>The public changelog now includes the full June 6 public-safe update set across notification-v1, daily digest behavior, billing, delivery channels, ATLAS-7/SPECTRA coverage, ticker canonicalization, feeds, route contracts, and coverage hardening through 69.5%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 69.5 percent coverage Track: T+698m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>Billing envelope primitive helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-BILLING-ENVELOPE-HELPER-COVERAGE" />
-    <summary>Billing-envelope primitive helper coverage now verifies nullable booleans, nullable arrays, nested-string extraction, and billing response-writer header/body behavior. Breadcrumb: Improvement Timeline &gt; Billing envelope primitive helper coverage checkpoint Track: T+690m Commit: b4a67442</summary>
-  </entry>
-  <entry>
-    <title>Company fundamentals metadata helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-COMPANY-FUNDAMENTALS-METADATA-COVERAGE" />
-    <summary>Company-fundamentals metadata helper coverage now verifies CIK normalization, linkbase-backed state, data-source classification, and quality-flag derivation. Breadcrumb: Improvement Timeline &gt; Company fundamentals metadata helper coverage checkpoint Track: T+682m Commit: 8c5d1e9e</summary>
-  </entry>
-  <entry>
-    <title>Periodic changelog and subscriber feed sync policy</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-CHANGELOG-PERIODIC-FEED-SYNC" />
-    <summary>The public documentation set now treats changelog.html, changelog-llm.html, rss.xml, atom.xml, llms.txt, and llms-full.txt as synchronized release surfaces for recurring product updates. Breadcrumb: Improvement Timeline &gt; Periodic changelog and subscriber feed sync policy Track: T+674m Commit: current changelog update</summary>
   </entry>
 </feed>
