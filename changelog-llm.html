@@ -39,16 +39,16 @@
       <a href="#tracking-river">Tracking river</a>
       <a href="#machine-contract">Machine contract</a>
     </nav>
-    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-06-05</code></p>
+    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-06-06</code></p>
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>121</strong><span>tracked changes</span></div>
-        <div><strong>36</strong><span>timeline entries</span></div>
-        <div><strong>119</strong><span>unique tripcodes</span></div>
-        <div><strong>121</strong><span>breadcrumb chips</span></div>
-        <div><strong>9</strong><span>visible commit references</span></div>
-        <div><strong>7</strong><span>unique source commits</span></div>
+        <div><strong>123</strong><span>tracked changes</span></div>
+        <div><strong>38</strong><span>timeline entries</span></div>
+        <div><strong>121</strong><span>unique tripcodes</span></div>
+        <div><strong>123</strong><span>breadcrumb chips</span></div>
+        <div><strong>11</strong><span>visible commit references</span></div>
+        <div><strong>9</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -194,12 +194,36 @@
           <tr><td>119</td><td><code>ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING</code></td><td>Improvement Timeline &gt; Parser field contract hardened</td><td><code>T+474m</code></td><td>f64dc87</td></tr>
           <tr><td>120</td><td><code>ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT</code></td><td>Improvement Timeline &gt; Terminal broker envelope contract</td><td><code>T+482m</code></td><td>a62f4c5</td></tr>
           <tr><td>121</td><td><code>ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code></td><td>Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</td><td><code>T+490m</code></td><td>8d7171e</td></tr>
+          <tr><td>122</td><td><code>ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</code></td><td>Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering</td><td><code>T+498m</code></td><td>f3410ac3 / c49e722c</td></tr>
+          <tr><td>123</td><td><code>ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</code></td><td>Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit</td><td><code>T+506m</code></td><td>c49e722c</td></tr>
           </tbody>
         </table>
       </div>
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST">
+          <h3>Notification evidence digest and ATLAS-7 universe filtering</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</code> <code>track: T+498m</code> <code>commit: f3410ac3 / c49e722c</code> <code>bread: Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering</code></p>
+          <p>Notification summaries now expose the daily evidence workload behind an alert and filter latest-change notification selection to the ATLAS-7 universe.</p>
+<ul>
+            <li>Emails include source route, feed compute time, changed-company count, CompanyFacts fact changes, changed/new files, raw delta bytes, candidate rows inspected, ATLAS-7 universe matches, universe source date, delivered tickers, delivered row count, and evidence-drilldown availability.</li>
+            <li>Latest-change notification selection intersects daily-change candidates with the ATLAS-7 universe by ticker or CIK, so public digests do not promote non-universe candidates.</li>
+            <li>Pre-deploy verification delivered a local email probe showing 109 changed companies, 5081 CompanyFacts fact changes, 7678466 raw delta bytes, 7 DeltaSignal candidates, and 1/215 ATLAS-7 universe match.</li>
+            <li>The route remains an evidence-routing alert surface and does not provide personalized investment advice, recommendations, price targets, or order instructions.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION">
+          <h3>ATLAS-7 ticker canonicalization audit</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</code> <code>track: T+506m</code> <code>commit: c49e722c</code> <code>bread: Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit</code></p>
+          <p>The 215-row ATLAS-7 universe was audited against the SEC company tickers exchange reference and repaired where the current common-stock ticker was unambiguous.</p>
+<ul>
+            <li>Fourteen high-confidence current ticker repairs were applied across DeltaSignal tables for the 215 universe.</li>
+            <li>Fold Holdings, Inc. now surfaces as common-stock ticker FLD for CIK 0001889123; FLDDW is treated as a legacy warrant alias.</li>
+            <li>Post-repair verification showed 0 SEC-current mismatches for the 215-row universe.</li>
+            <li>Thirteen SEC-missing blank-ticker rows and one ambiguous common/warrant case remain intentionally unresolved rather than guessed.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT">
           <h3>Universal evidence contract</h3>
           <p class="meta"><code>tripcode: ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT</code> <code>track: T+098m</code> <code>bread: Evidence Infrastructure Backlog &gt; Universal evidence contract</code></p>
@@ -605,7 +629,7 @@
     </section>
     <section id="machine-contract">
       <h2>Machine Contract</h2>
-      <p>The embedded JSON and XML below are inert machine-readable mirrors for LLM/RAG ingestion. The visible preformatted block preserves an older source snapshot; the active script tags below it carry the current June 5 contract.</p>
+      <p>The embedded JSON and XML below are inert machine-readable mirrors for LLM/RAG ingestion. The visible preformatted block preserves an older source snapshot; the active script tags below it carry the current June 6 contract.</p>
       <pre><code>{
   &quot;artifact&quot;: &quot;deltasignal_atlas7_changelog_llm&quot;,
   &quot;version&quot;: &quot;changelog-llm-v1&quot;,
@@ -1784,13 +1808,13 @@
 {
   "artifact": "deltasignal_atlas7_changelog_llm",
   "version": "changelog-llm-v1",
-  "last_updated": "2026-06-05",
+  "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 121,
-    "timeline_entries": 36,
-    "unique_tripcodes": 119,
-    "breadcrumb_chips": 121,
-    "visible_commit_references": 9,
+    "tracked_changes": 123,
+    "timeline_entries": 38,
+    "unique_tripcodes": 121,
+    "breadcrumb_chips": 123,
+    "visible_commit_references": 11,
     "unique_source_commits": [
       "730def3",
       "7a80e86",
@@ -1798,7 +1822,9 @@
       "e3e4763",
       "f64dc87",
       "a62f4c5",
-      "8d7171e"
+      "8d7171e",
+      "f3410ac3",
+      "c49e722c"
     ]
   },
   "tracking_river": [
@@ -2533,6 +2559,20 @@
       "commit": "8d7171e",
       "bread": "Improvement Timeline > Live ATLAS-history SPECTRA primary rollout",
       "river_index": 121
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST",
+      "track": "T+498m",
+      "commit": "f3410ac3 / c49e722c",
+      "bread": "Improvement Timeline > Notification evidence digest and ATLAS-7 universe filtering",
+      "river_index": 122
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION",
+      "track": "T+506m",
+      "commit": "c49e722c",
+      "bread": "Improvement Timeline > ATLAS-7 ticker canonicalization audit",
+      "river_index": 123
     }
   ],
   "timeline_entries": [
@@ -3117,13 +3157,45 @@
         "Weekly verification covered IREN and MSTR for atlas-history and spectra-field-map.",
         "The route remains evidence and diligence infrastructure only; it does not provide personalized investment advice, recommendations, or price targets."
       ]
+    },
+    {
+      "river_index": 122,
+      "date": "June 6, 2026",
+      "title": "Notification evidence digest and ATLAS-7 universe filtering",
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST",
+      "track": "T+498m",
+      "bread": "Improvement Timeline > Notification evidence digest and ATLAS-7 universe filtering",
+      "commit": "f3410ac3 / c49e722c",
+      "summary": "Notification summaries now expose the daily evidence workload behind an alert and filter latest-change notification selection to the ATLAS-7 universe.",
+      "bullets": [
+        "Emails include source route, feed compute time, changed-company count, CompanyFacts fact changes, changed/new files, raw delta bytes, candidate rows inspected, ATLAS-7 universe matches, universe source date, delivered tickers, delivered row count, and evidence-drilldown availability.",
+        "Latest-change notification selection intersects daily-change candidates with the ATLAS-7 universe by ticker or CIK, so public digests do not promote non-universe candidates.",
+        "Pre-deploy verification delivered a local email probe showing 109 changed companies, 5081 CompanyFacts fact changes, 7678466 raw delta bytes, 7 DeltaSignal candidates, and 1/215 ATLAS-7 universe match.",
+        "The route remains an evidence-routing alert surface and does not provide personalized investment advice, recommendations, price targets, or order instructions."
+      ]
+    },
+    {
+      "river_index": 123,
+      "date": "June 6, 2026",
+      "title": "ATLAS-7 ticker canonicalization audit",
+      "tripcode": "ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION",
+      "track": "T+506m",
+      "bread": "Improvement Timeline > ATLAS-7 ticker canonicalization audit",
+      "commit": "c49e722c",
+      "summary": "The 215-row ATLAS-7 universe was audited against the SEC company tickers exchange reference and repaired where the current common-stock ticker was unambiguous.",
+      "bullets": [
+        "Fourteen high-confidence current ticker repairs were applied across DeltaSignal tables for the 215 universe.",
+        "Fold Holdings, Inc. now surfaces as common-stock ticker FLD for CIK 0001889123; FLDDW is treated as a legacy warrant alias.",
+        "Post-repair verification showed 0 SEC-current mismatches for the 215-row universe.",
+        "Thirteen SEC-missing blank-ticker rows and one ambiguous common/warrant case remain intentionally unresolved rather than guessed."
+      ]
     }
   ]
 }
   </script>
   <script type="application/xml" id="changelog-llm-xml">
-<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-05">
-  <stats tracked_changes="121" timeline_entries="36" unique_tripcodes="119" breadcrumb_chips="121" visible_commit_references="9" unique_source_commits="7" />
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
+  <stats tracked_changes="123" timeline_entries="38" unique_tripcodes="121" breadcrumb_chips="123" visible_commit_references="11" unique_source_commits="9" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -3168,6 +3240,8 @@
     <entry river_index="119" tripcode="ATLAS-JUN-5-PARSER-FIELD-CONTRACT-HARDENING" track="T+474m" bread="Improvement Timeline &gt; Parser field contract hardened"><date>June 5, 2026</date><title>Parser field contract hardened</title></entry>
     <entry river_index="120" tripcode="ATLAS-JUN-5-TERMINAL-BROKER-CONTRACT" track="T+482m" bread="Improvement Timeline &gt; Terminal broker envelope contract"><date>June 5, 2026</date><title>Terminal broker envelope contract</title></entry>
     <entry river_index="121" tripcode="ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY" track="T+490m" bread="Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout"><date>June 5, 2026</date><title>Live ATLAS-history SPECTRA primary rollout</title></entry>
+    <entry river_index="122" tripcode="ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST" track="T+498m" bread="Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering"><date>June 6, 2026</date><title>Notification evidence digest and ATLAS-7 universe filtering</title></entry>
+    <entry river_index="123" tripcode="ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION" track="T+506m" bread="Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit"><date>June 6, 2026</date><title>ATLAS-7 ticker canonicalization audit</title></entry>
   </entries>
 </changelog_llm>
   </script>

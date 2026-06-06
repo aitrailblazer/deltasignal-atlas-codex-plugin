@@ -485,16 +485,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 5, 2026 - 215-row ATLAS-7 + SPECTRA coverage verified</p>
+      <p class="eyebrow">Updated June 6, 2026 - ATLAS-7 ticker canonicalization and notification evidence digest verified</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>121</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>36</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>119</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>121</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>9</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>7</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>123</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>38</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>121</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>123</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>11</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>9</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -514,6 +514,18 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>122</span>
+              <code>ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</code>
+              <span>Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering</span>
+              <code>T+498m</code>
+            </div>
+            <div class="river-row">
+              <span>123</span>
+              <code>ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</code>
+              <span>Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit</span>
+              <code>T+506m</code>
+            </div>
             <div class="river-row">
               <span>000</span>
               <code>ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code>
@@ -1250,6 +1262,28 @@
           <p>These are the changes most likely to matter to builders integrating the public route surface or agent workflows right now.</p>
         </div>
         <div class="grid">
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Notification Evidence Digest</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</code>
+              <code>track: T+498m</code>
+              <code>commit: f3410ac3 / c49e722c</code>
+              <code>bread: Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering</code>
+            </div>
+            <span>Notification email summaries now expose the work behind a daily issuer alert: source route, feed compute time, changed-company count, CompanyFacts fact changes, changed/new files, raw delta bytes, candidate rows inspected, ATLAS-7 universe match count, universe source date, delivered tickers, delivered row count, and evidence-drilldown availability. Latest-change notification selection is filtered to the ATLAS-7 universe so public digests do not promote non-universe candidate rows.</span>
+          </div>
+          <div class="card">
+            <span class="status">LIVE DB VERIFIED</span>
+            <strong>ATLAS-7 Ticker Canonicalization Audit</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</code>
+              <code>track: T+506m</code>
+              <code>commit: c49e722c</code>
+              <code>bread: Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit</code>
+            </div>
+            <span>The 215-row ATLAS-7 universe was compared against the SEC company tickers exchange reference. Fourteen high-confidence current ticker repairs were applied across DeltaSignal tables, including Fold Holdings common stock <code>FLD</code> replacing warrant ticker <code>FLDDW</code>. Post-repair verification showed <code>0</code> SEC-current mismatches for the 215 universe; ambiguous or SEC-missing cases remain untouched instead of guessed.</span>
+          </div>
           <div class="card">
             <span class="status">LIVE VERIFIED</span>
             <strong>215-row ATLAS-7 + SPECTRA Coverage</strong>
@@ -2985,7 +3019,7 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-06-05",
+      "last_updated": "2026-06-06",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through e731e69",
@@ -3016,6 +3050,10 @@ Spacing note: published paths use company-report. A copied
         "Live backend deployment ca-web-intel-mcp--0000456 from clean git archive a62f4c57678449e9285a02fef9e5edb42e891841 on 2026-06-05",
         "Live backend deployment ca-web-intel-mcp--0000461 from clean git archive 8d7171e3398e48bc15c0637048dc7fd14e9ace6e on 2026-06-05",
         "Live ATLAS-7 row universe SPECTRA verification from 2026-06-05: 215/215 HTTP 200, 0 misses, 0 non-runtime responses",
+        "Source commit f3410ac3 adding notification evidence statistics to DeltaSignal notification emails",
+        "Source commit c49e722c adding ATLAS-7 universe filtering, ticker canonicalization, FLDDW to FLD compatibility, and canonicalizer blank-ticker repair support",
+        "ATLAS-7 215 issuer ticker audit from 2026-06-06: 14 high-confidence current ticker repairs applied, post-repair SEC-current mismatches = 0, Fold Holdings CIK 0001889123 canonical ticker = FLD",
+        "Pre-deploy notification email verification from 2026-06-06 showing ATLAS-7 universe match statistics and daily-change evidence work summary",
         "Live GET /v1/contract/fields terminal_broker contract verification from 2026-06-05",
         "Live MCP signed-wallet grant smoke against POST /mcp tools/call deltasignal_readiness from 2026-06-05",
         "Live public unpaid x402 probes for readiness, company-report, and Morning Brief natural-language routes from 2026-06-05",
