@@ -200,6 +200,7 @@
           <tr><td>121</td><td><code>ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code></td><td>Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</td><td><code>T+490m</code></td><td>8d7171e</td></tr>
           <tr><td>122</td><td><code>ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</code></td><td>Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering</td><td><code>T+498m</code></td><td>f3410ac3 / c49e722c</td></tr>
           <tr><td>123</td><td><code>ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</code></td><td>Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit</td><td><code>T+506m</code></td><td>c49e722c</td></tr>
+          <tr><td>124</td><td><code>ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code></td><td>Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</td><td><code>T+514m</code></td><td>bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032</td></tr>
           </tbody>
         </table>
       </div>
@@ -226,6 +227,17 @@
             <li>Fold Holdings, Inc. now surfaces as common-stock ticker FLD for CIK 0001889123; FLDDW is treated as a legacy warrant alias.</li>
             <li>Post-repair verification showed 0 SEC-current mismatches for the 215-row universe.</li>
             <li>Thirteen SEC-missing blank-ticker rows and one ambiguous common/warrant case remain intentionally unresolved rather than guessed.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING">
+          <h3>Changelog feed automation and coverage-hardening rollup</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code> <code>track: T+514m</code> <code>commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032</code> <code>bread: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</code></p>
+          <p>The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details.</p>
+<ul>
+            <li>Added RSS and Atom discovery links to the human and LLM changelog surfaces, plus a generator and GitHub Actions checks so feed files stay aligned with dated changelog entries.</li>
+            <li>Recorded deterministic coverage-hardening progress across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, and report-row helpers.</li>
+            <li>Latest verified package coverage for <code>cmd/search-gateway</code> is in progress at 62.8%, with local gates passing for Go tests, secret scan, whitespace check, and ExecPlan XML validation.</li>
+            <li>This is a source/test hardening entry, not a final 100% coverage claim and not a live deployment marker.</li>
           </ul>
         </article>
         <article class="entry" id="ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT">
@@ -1814,11 +1826,11 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 123,
-    "timeline_entries": 38,
-    "unique_tripcodes": 121,
-    "breadcrumb_chips": 123,
-    "visible_commit_references": 11,
+    "tracked_changes": 124,
+    "timeline_entries": 39,
+    "unique_tripcodes": 122,
+    "breadcrumb_chips": 124,
+    "visible_commit_references": 17,
     "unique_source_commits": [
       "730def3",
       "7a80e86",
@@ -1828,7 +1840,13 @@
       "a62f4c5",
       "8d7171e",
       "f3410ac3",
-      "c49e722c"
+      "c49e722c",
+      "bc60b15",
+      "bb86f6a8",
+      "46a5051d",
+      "3ec093e5",
+      "e985df05",
+      "734bb032"
     ]
   },
   "tracking_river": [
@@ -2577,6 +2595,13 @@
       "commit": "c49e722c",
       "bread": "Improvement Timeline > ATLAS-7 ticker canonicalization audit",
       "river_index": 123
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING",
+      "track": "T+514m",
+      "commit": "bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032",
+      "bread": "Improvement Timeline > Changelog feed automation and coverage-hardening rollup",
+      "river_index": 124
     }
   ],
   "timeline_entries": [
@@ -3193,13 +3218,29 @@
         "Post-repair verification showed 0 SEC-current mismatches for the 215-row universe.",
         "Thirteen SEC-missing blank-ticker rows and one ambiguous common/warrant case remain intentionally unresolved rather than guessed."
       ]
+    },
+    {
+      "river_index": 124,
+      "date": "June 6, 2026",
+      "title": "Changelog feed automation and coverage-hardening rollup",
+      "tripcode": "ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING",
+      "track": "T+514m",
+      "bread": "Improvement Timeline > Changelog feed automation and coverage-hardening rollup",
+      "commit": "bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032",
+      "summary": "The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details.",
+      "bullets": [
+        "Added RSS and Atom discovery links to the human and LLM changelog surfaces, plus a generator and GitHub Actions checks so feed files stay aligned with dated changelog entries.",
+        "Recorded deterministic coverage-hardening progress across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, and report-row helpers.",
+        "Latest verified package coverage for cmd/search-gateway is in progress at 62.8%, with local gates passing for Go tests, secret scan, whitespace check, and ExecPlan XML validation.",
+        "This is a source/test hardening entry, not a final 100% coverage claim and not a live deployment marker."
+      ]
     }
   ]
 }
   </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="123" timeline_entries="38" unique_tripcodes="121" breadcrumb_chips="123" visible_commit_references="11" unique_source_commits="9" />
+  <stats tracked_changes="124" timeline_entries="39" unique_tripcodes="122" breadcrumb_chips="124" visible_commit_references="17" unique_source_commits="15" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -3246,6 +3287,7 @@
     <entry river_index="121" tripcode="ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY" track="T+490m" bread="Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout"><date>June 5, 2026</date><title>Live ATLAS-history SPECTRA primary rollout</title></entry>
     <entry river_index="122" tripcode="ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST" track="T+498m" bread="Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering"><date>June 6, 2026</date><title>Notification evidence digest and ATLAS-7 universe filtering</title></entry>
     <entry river_index="123" tripcode="ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION" track="T+506m" bread="Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit"><date>June 6, 2026</date><title>ATLAS-7 ticker canonicalization audit</title></entry>
+    <entry river_index="124" tripcode="ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING" track="T+514m" bread="Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup"><date>June 6, 2026</date><title>Changelog feed automation and coverage-hardening rollup</title></entry>
   </entries>
 </changelog_llm>
   </script>

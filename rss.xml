@@ -9,6 +9,14 @@
     <lastBuildDate>Sat, 06 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Changelog feed automation and coverage-hardening rollup</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</guid>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</category>
+      <description>The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details. Breadcrumb: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup Track: T+514m Commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032</description>
+    </item>
+    <item>
       <title>ATLAS-7 ticker canonicalization audit</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</guid>
