@@ -8,6 +8,22 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 71.8 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through the dedicated grant ledger coverage slice, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the 71.8% coverage checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 71.8 percent coverage Track: T+746m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>Dedicated grant ledger coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8" />
+    <summary>SQL-backed dedicated grant ledger coverage now verifies grant seeding, wallet identity mapping, consumption, exhaustion, usage reporting, query error propagation, and close paths; the verified cmd/search-gateway package coverage checkpoint reached 71.8%. Breadcrumb: Improvement Timeline &gt; Dedicated grant ledger coverage checkpoint Track: T+738m Commit: 43ca8cab</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 70.7 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</id>
@@ -230,21 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING" />
     <summary>The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details. Breadcrumb: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup Track: T+514m Commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22</summary>
-  </entry>
-  <entry>
-    <title>ATLAS-7 ticker canonicalization audit</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION" />
-    <summary>The 215-row ATLAS-7 universe was audited against the SEC company tickers exchange reference and repaired where the current common-stock ticker was unambiguous. Breadcrumb: Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit Track: T+506m Commit: c49e722c</summary>
-  </entry>
-  <entry>
-    <title>Notification evidence digest and ATLAS-7 universe filtering</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST" />
-    <summary>Notification summaries now expose the daily evidence workload behind an alert and filter latest-change notification selection to the ATLAS-7 universe. Breadcrumb: Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering Track: T+498m Commit: f3410ac3 / c49e722c</summary>
   </entry>
 </feed>

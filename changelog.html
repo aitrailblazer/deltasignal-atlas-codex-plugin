@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, SignalRadar MCP, StrategiX Diagram MCP, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, periodic feed sync, and coverage hardening to 70.7%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, SignalRadar MCP, StrategiX Diagram MCP, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, periodic feed sync, grant-ledger regression hardening, and coverage hardening to 71.8%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>151</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>66</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>149</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>151</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>50</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>79</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>153</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>68</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>151</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>153</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>51</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>80</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,18 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>153</span>
+              <code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8</code>
+              <span>Improvement Timeline &gt; Consolidated June 6 public rollup to 71.8 percent coverage</span>
+              <code>T+746m</code>
+            </div>
+            <div class="river-row">
+              <span>152</span>
+              <code>ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8</code>
+              <span>Improvement Timeline &gt; Dedicated grant ledger coverage checkpoint</span>
+              <code>T+738m</code>
+            </div>
             <div class="river-row">
               <span>151</span>
               <code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</code>
@@ -1437,6 +1449,28 @@
         <div class="grid">
           <div class="card">
             <span class="status">PUBLIC ROLLUP</span>
+            <strong>Consolidated June 6 public rollup to 71.8 percent coverage</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8</code>
+              <code>track: T+746m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 71.8 percent coverage</code>
+            </div>
+            <span>The public changelog now includes the full June 6 public-safe update set through the dedicated grant ledger coverage slice, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the 71.8% coverage checkpoint.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Dedicated grant ledger coverage checkpoint</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8</code>
+              <code>track: T+738m</code>
+              <code>commit: 43ca8cab</code>
+              <code>bread: Improvement Timeline &gt; Dedicated grant ledger coverage checkpoint</code>
+            </div>
+            <span>SQL-backed dedicated grant ledger coverage now verifies grant seeding, wallet identity mapping, consumption, exhaustion, usage reporting, query error propagation, and close paths; the verified cmd/search-gateway package coverage checkpoint reached 71.8%.</span>
+          </div>
+          <div class="card">
+            <span class="status">PUBLIC ROLLUP</span>
             <strong>Consolidated June 6 public rollup to 70.7 percent coverage</strong>
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7</code>
@@ -2131,6 +2165,37 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8">
+            <div class="date">June 6, 2026</div>
+            <h3>Consolidated June 6 public rollup to 71.8 percent coverage</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8</code>
+              <code>track: T+746m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 71.8 percent coverage</code>
+            </div>
+            <ul>
+              <li>Rolls forward the public-safe June 6 change stream across notification-v1, Graph email delivery, daily all-delta digests, x402 notification pricing, signed webhooks, terminal delivery, paid MCP summaries, subscriptions, delivery receipts, RSS/Atom changelog feeds, and periodic changelog synchronization.</li>
+              <li>Rolls forward source-test hardening through the dedicated grant ledger, after SignalRadar MCP, StrategiX Diagram MCP, MCP summary, billing-envelope, company-fundamentals, primitive, Codex cache, Web Intel, Telegram, Marketplace, OPML, static runtime, generic MCP, and field-map coverage slices.</li>
+              <li>Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+              <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8">
+            <div class="date">June 6, 2026</div>
+            <h3>Dedicated grant ledger coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8</code>
+              <code>track: T+738m</code>
+              <code>commit: 43ca8cab</code>
+              <code>bread: Improvement Timeline &gt; Dedicated grant ledger coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered the Postgres-backed dedicated grant ledger path for ensure/seed behavior, empty DSN guardrails, grant lookup, grant consumption, missing-wallet handling, exhausted-grant handling, wallet identity mapping, and wallet fallback behavior.</li>
+              <li>Covered usage reporting, recent usage reads, direct query helper scanning, query error propagation, and close/nil branches so grant-backed zero-balance execution remains regression-protected without exposing private wallet identities.</li>
+              <li>The verified cmd/search-gateway package coverage checkpoint reached 71.8%; the active 100% package coverage goal remains open.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-70P7">
             <div class="date">June 6, 2026</div>
             <h3>Consolidated June 6 public rollup to 70.7 percent coverage</h3>
