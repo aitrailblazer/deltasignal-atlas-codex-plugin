@@ -8,6 +8,22 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 75.2 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through DeltaSignal helper branches and HTTP handler guard coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 75.2%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.2 percent coverage Track: T+882m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>DeltaSignal handler and helper guard coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2" />
+    <summary>DeltaSignal helper and handler guard coverage now verifies small helper branches, native health readiness reporting, and fail-closed HTTP behavior; the verified cmd/search-gateway package coverage checkpoint reached 75.2%. Breadcrumb: Improvement Timeline &gt; DeltaSignal handler and helper guard coverage checkpoint Track: T+874m Commit: b9029faa</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 74.9 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</id>
@@ -230,21 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-CHANGELOG-SUBSCRIBER-FEED-ROLLUP" />
     <summary>The public changelog now explicitly tracks RSS and Atom subscriber feeds as first-class update surfaces for notification, billing, coverage, MCP, SPECTRA, and route-contract changes. Breadcrumb: Improvement Timeline &gt; Subscriber changelog feeds and public rollup maintenance Track: T+650m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>Web Intel and Telegram helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-WEBINTEL-TELEGRAM-HELPER-COVERAGE" />
-    <summary>Committed Web Intel and Telegram helper coverage now verifies deterministic result helpers, Telegram bridge helpers, cache keys, authorization checks, approval formatting, and response rendering. Breadcrumb: Improvement Timeline &gt; Web Intel and Telegram helper coverage checkpoint Track: T+642m Commit: 7b3396aa</summary>
-  </entry>
-  <entry>
-    <title>Microsoft Marketplace client helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE" />
-    <summary>Microsoft Marketplace SaaS helper coverage now verifies client response handling, webhook secret validation, subscription provisioning, webhook action mapping, tier extraction, and marketplace string helpers. Breadcrumb: Improvement Timeline &gt; Microsoft Marketplace client helper coverage checkpoint Track: T+634m Commit: b42ea23b</summary>
   </entry>
 </feed>
