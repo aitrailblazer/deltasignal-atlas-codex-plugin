@@ -46,7 +46,7 @@
     }
 
     .hero {
-      min-height: min(760px, 100svh);
+      min-height: min(720px, 100svh);
       width: 100%;
       display: grid;
       place-items: center;
@@ -72,7 +72,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center right;
-      opacity: 0.72;
+      opacity: 0.82;
       filter: saturate(1.08) contrast(1.05);
       pointer-events: none;
       z-index: 0;
@@ -148,9 +148,9 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.78fr);
-      gap: 0;
-      align-items: start;
+      grid-template-columns: minmax(0, 0.88fr) minmax(320px, 0.58fr);
+      gap: 1.35rem;
+      align-items: center;
     }
 
     .hero-copy {
@@ -331,6 +331,35 @@
       display: block;
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    .hero-map {
+      margin: 0;
+      min-width: 0;
+      border: 1px solid rgba(255, 154, 26, 0.34);
+      border-radius: 8px;
+      background: rgba(7, 6, 5, 0.68);
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.4),
+        0 0 64px rgba(255, 70, 38, 0.2);
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-map img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-map figcaption {
+      padding: 0.78rem 0.9rem;
+      border-top: 1px solid rgba(255, 154, 26, 0.2);
+      color: #f1ded3;
+      font-size: 0.86rem;
+      font-weight: 700;
     }
 
     .hero-actions {
@@ -1437,6 +1466,7 @@
       }
 
       .hero-copy,
+      .hero-map,
       .quick-facts,
       .toc-panel,
       .agent-links,
@@ -1456,6 +1486,7 @@
       }
 
       .hero-inner > *,
+      .hero-map,
       .hero-infographic,
       .sample-output,
       .signal-visual,
@@ -1505,6 +1536,15 @@
 
       .quick-fact {
         min-height: auto;
+      }
+
+      .hero-map {
+        margin-top: 1rem;
+        max-width: min(100%, 340px);
+      }
+
+      .hero-map figcaption {
+        font-size: 0.8rem;
       }
 
       .quick-fact strong,
@@ -1632,7 +1672,7 @@
 <body>
   <main>
     <section class="hero">
-      <img class="hero-image" src="./assets/atlas7-evidence-pipeline.png" alt="ATLAS-7 EDGAR evidence pipeline map">
+      <img class="hero-image" src="./assets/atlas7-evidence-pipeline.png" alt="">
       <div class="hero-image-scrim" aria-hidden="true"></div>
       <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
@@ -1683,6 +1723,10 @@
               <a href="./atom.xml">atom.xml</a>
             </nav>
           </div>
+          <figure class="hero-map">
+            <img src="./assets/atlas7-evidence-pipeline.png" alt="ATLAS-7 daily EDGAR evidence pipeline from CompanyFacts ingestion to MCP outputs">
+            <figcaption>Hero evidence map: EDGAR CompanyFacts readiness, recovery, ATLAS-7 rows, SPECTRA maps, MCP, REST, and x402.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
