@@ -8,6 +8,22 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 76.3 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P3" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through daily-change discovery/fallback coverage, readiness and CompanyFacts status helpers, daily movement loaders, route guards, notification digest polish, notification pricing/delivery ladder, and RSS/Atom subscriber feeds at the verified 76.3% cmd/search-gateway package checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 76.3 percent coverage Track: T+986m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>Daily-change discovery and fallback coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DAILY-CHANGE-DISCOVERY-FALLBACK-COVERAGE-76P3" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DAILY-CHANGE-DISCOVERY-FALLBACK-COVERAGE-76P3</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-DAILY-CHANGE-DISCOVERY-FALLBACK-COVERAGE-76P3" />
+    <summary>Daily-change discovery and fallback coverage now verifies crypto issuer discovery rows, missing discovery relation soft-unavailable behavior, scan and row-iteration errors, tracked-issuer summary variants, and synthesized daily-change fallback snapshots; the verified cmd/search-gateway package coverage checkpoint reached 76.3%. Breadcrumb: Improvement Timeline &gt; Daily-change discovery and fallback coverage checkpoint Track: T+978m Commit: 672d458d</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 75.9 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9</id>
@@ -230,21 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5" />
     <summary>ATLAS-7 calculation-history and point-in-time-history route coverage now verifies handlers, loader branches, source-date resolution, row helpers, scalar/hash extraction, nullable helpers, and query-error behavior; the verified cmd/search-gateway package coverage checkpoint reached 72.5%. Breadcrumb: Improvement Timeline &gt; ATLAS-7 history route and loader coverage checkpoint Track: T+754m Commit: 71420226</summary>
-  </entry>
-  <entry>
-    <title>Consolidated June 6 public rollup to 71.8 percent coverage</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8" />
-    <summary>The public changelog now includes the full June 6 public-safe update set through the dedicated grant ledger coverage slice, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the 71.8% coverage checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 71.8 percent coverage Track: T+746m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>Dedicated grant ledger coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-DEDICATED-GRANT-LEDGER-COVERAGE-71P8" />
-    <summary>SQL-backed dedicated grant ledger coverage now verifies grant seeding, wallet identity mapping, consumption, exhaustion, usage reporting, query error propagation, and close paths; the verified cmd/search-gateway package coverage checkpoint reached 71.8%. Breadcrumb: Improvement Timeline &gt; Dedicated grant ledger coverage checkpoint Track: T+738m Commit: 43ca8cab</summary>
   </entry>
 </feed>
