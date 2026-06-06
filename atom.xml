@@ -8,6 +8,22 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 74.9 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through worker-proxy and DeltaSignal store-constructor coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.9%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.9 percent coverage Track: T+866m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>Worker proxy and DeltaSignal store constructor coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9" />
+    <summary>Worker proxy and store-constructor coverage now verifies authorized proxy forwarding with query/body/header preservation, transport-error behavior, proxy response-header filtering, OpenAPI template fallback loading, and no-op DeltaSignal store close behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.9%. Breadcrumb: Improvement Timeline &gt; Worker proxy and DeltaSignal store constructor coverage checkpoint Track: T+858m Commit: 4e4d7d64</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 74.7 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</id>
@@ -230,21 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-MARKETPLACE-HELPER-COVERAGE" />
     <summary>Microsoft Marketplace SaaS helper coverage now verifies client response handling, webhook secret validation, subscription provisioning, webhook action mapping, tier extraction, and marketplace string helpers. Breadcrumb: Improvement Timeline &gt; Microsoft Marketplace client helper coverage checkpoint Track: T+634m Commit: b42ea23b</summary>
-  </entry>
-  <entry>
-    <title>OPML feed helper coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-OPML-FEED-HELPER-COVERAGE" />
-    <summary>OPML feed helper coverage now verifies feed collection helpers, source ID derivation, source domain derivation, ID sanitation, and handler guard paths. Breadcrumb: Improvement Timeline &gt; OPML feed helper coverage checkpoint Track: T+626m Commit: 843189b3</summary>
-  </entry>
-  <entry>
-    <title>StrategiX web static runtime coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-STRATEGIX-WEB-STATIC-COVERAGE" />
-    <summary>StrategiX web static runtime coverage now verifies constructor, host matching, index serving, asset serving, SPA fallback, missing assets, and root handler dispatch. Breadcrumb: Improvement Timeline &gt; StrategiX web static runtime coverage checkpoint Track: T+618m Commit: b92b3076</summary>
   </entry>
 </feed>

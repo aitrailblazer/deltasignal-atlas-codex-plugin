@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>166</strong><span>tracked changes</span></div>
-        <div><strong>81</strong><span>timeline entries</span></div>
-        <div><strong>164</strong><span>unique tripcodes</span></div>
-        <div><strong>166</strong><span>breadcrumb chips</span></div>
-        <div><strong>58</strong><span>visible commit references</span></div>
-        <div><strong>87</strong><span>unique source commits</span></div>
+        <div><strong>168</strong><span>tracked changes</span></div>
+        <div><strong>83</strong><span>timeline entries</span></div>
+        <div><strong>166</strong><span>unique tripcodes</span></div>
+        <div><strong>168</strong><span>breadcrumb chips</span></div>
+        <div><strong>59</strong><span>visible commit references</span></div>
+        <div><strong>88</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,8 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>168</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 74.9 percent coverage</td><td><code>T+866m</code></td><td>current changelog update</td></tr>
+          <tr><td>167</td><td><code>ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9</code></td><td>Improvement Timeline &gt; Worker proxy and DeltaSignal store constructor coverage checkpoint</td><td><code>T+858m</code></td><td>4e4d7d64</td></tr>
           <tr><td>166</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 74.7 percent coverage</td><td><code>T+850m</code></td><td>current changelog update</td></tr>
           <tr><td>165</td><td><code>ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7</code></td><td>Improvement Timeline &gt; Codex compatibility handler coverage checkpoint</td><td><code>T+842m</code></td><td>a6b1bb63</td></tr>
           <tr><td>164</td><td><code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</code></td><td>Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage</td><td><code>T+834m</code></td><td>current changelog update</td></tr>
@@ -249,6 +251,29 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9">
+          <h3>Consolidated June 6 public rollup to 74.9 percent coverage</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</code> <code>track: T+866m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.9 percent coverage</code></p>
+          <p>The public changelog now includes the full June 6 public-safe update set through worker-proxy and DeltaSignal store-constructor coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.9%.</p>
+          <ul>
+            <li>Rolls forward the public-safe notification work: free event discovery, Microsoft Graph email delivery, terminal delivery, signed webhooks, delivery receipts, retry/dead-letter status, durable subscriptions, paid MCP notification summaries, route pricing, and non-advice boundaries.</li>
+            <li>Rolls forward Daily Delta Signal Digest behavior: source-date-separated business-day blocks, ATLAS-7 universe matches, affected tickers, evidence workload statistics, drilldown availability, and optional market context when available.</li>
+            <li>Rolls forward source-test hardening through Codex compatibility handlers, process-runner branches, dynamic crawler loops, worker proxy forwarding/error paths, response-header copying, and DeltaSignal store constructor fallback branches.</li>
+            <li>Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+            <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+          </ul>
+        </article>
+        <article class="entry" id="ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9">
+          <h3>Worker proxy and DeltaSignal store constructor coverage checkpoint</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9</code> <code>track: T+858m</code> <code>commit: 4e4d7d64</code> <code>bread: Improvement Timeline &gt; Worker proxy and DeltaSignal store constructor coverage checkpoint</code></p>
+          <p>Worker proxy and store-constructor coverage now verifies authorized proxy forwarding with query/body/header preservation, transport-error behavior, proxy response-header filtering, OpenAPI template fallback loading, and no-op DeltaSignal store close behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.9%.</p>
+          <ul>
+            <li>Covered worker proxy path forwarding and error handling without changing public route behavior.</li>
+            <li>Covered response-header copy rules so proxied responses do not preserve stale Content-Length values and do replace existing destination header values.</li>
+            <li>Covered DeltaSignal store initialization when no Postgres DSN is configured, including embedded OpenAPI template loading and close behavior.</li>
+            <li>This protects backend proxy and startup fallback paths used by agent-facing web-intelligence and DeltaSignal API surfaces.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7">
           <h3>Consolidated June 6 public rollup to 74.7 percent coverage</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</code> <code>track: T+850m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.7 percent coverage</code></p>
@@ -2326,12 +2351,12 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 166,
-    "timeline_entries": 81,
-    "unique_tripcodes": 164,
-    "breadcrumb_chips": 166,
-    "visible_commit_references": 58,
-    "unique_source_commits": 87
+    "tracked_changes": 168,
+    "timeline_entries": 83,
+    "unique_tripcodes": 166,
+    "breadcrumb_chips": 168,
+    "visible_commit_references": 59,
+    "unique_source_commits": 88
   },
   "tracking_river": [
     {
@@ -3359,6 +3384,20 @@
       "commit": "current changelog update",
       "bread": "Improvement Timeline > Consolidated June 6 public rollup to 74.7 percent coverage",
       "river_index": 166
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9",
+      "track": "T+858m",
+      "commit": "4e4d7d64",
+      "bread": "Improvement Timeline > Worker proxy and DeltaSignal store constructor coverage checkpoint",
+      "river_index": 167
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9",
+      "track": "T+866m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 74.9 percent coverage",
+      "river_index": 168
     },
     {
       "tripcode": "ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4",
@@ -4628,6 +4667,40 @@
       ]
     },
     {
+      "river_index": 167,
+      "date": "June 6, 2026",
+      "title": "Worker proxy and DeltaSignal store constructor coverage checkpoint",
+      "tripcode": "ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9",
+      "track": "T+858m",
+      "commit": "4e4d7d64",
+      "bread": "Improvement Timeline > Worker proxy and DeltaSignal store constructor coverage checkpoint",
+      "summary": "Worker proxy and store-constructor coverage now verifies authorized proxy forwarding with query/body/header preservation, transport-error behavior, proxy response-header filtering, OpenAPI template fallback loading, and no-op DeltaSignal store close behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.9%.",
+      "bullets": [
+        "Covered worker proxy path forwarding and error handling without changing public route behavior.",
+        "Covered response-header copy rules so proxied responses do not preserve stale Content-Length values and do replace existing destination header values.",
+        "Covered DeltaSignal store initialization when no Postgres DSN is configured, including embedded OpenAPI template loading and close behavior.",
+        "This protects backend proxy and startup fallback paths used by agent-facing web-intelligence and DeltaSignal API surfaces."
+      ]
+    },
+    {
+      "river_index": 168,
+      "date": "June 6, 2026",
+      "title": "Consolidated June 6 public rollup to 74.9 percent coverage",
+      "tripcode": "ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9",
+      "track": "T+866m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > Consolidated June 6 public rollup to 74.9 percent coverage",
+      "summary": "The public changelog now includes the full June 6 public-safe update set through worker-proxy and DeltaSignal store-constructor coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.9%.",
+      "bullets": [
+        "Rolls forward the public-safe notification work: free event discovery, Microsoft Graph email delivery, terminal delivery, signed webhooks, delivery receipts, retry/dead-letter status, durable subscriptions, paid MCP notification summaries, route pricing, and non-advice boundaries.",
+        "Rolls forward Daily Delta Signal Digest behavior: source-date-separated business-day blocks, ATLAS-7 universe matches, affected tickers, evidence workload statistics, drilldown availability, and optional market context when available.",
+        "Rolls forward source-test hardening through Codex compatibility handlers, process-runner branches, dynamic crawler loops, worker proxy forwarding/error paths, response-header copying, and DeltaSignal store constructor fallback branches.",
+        "Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.",
+        "The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim."
+      ]
+
+    },
+    {
       "river_index": 163,
       "date": "June 6, 2026",
       "title": "Dynamic crawler loop coverage checkpoint",
@@ -4678,7 +4751,7 @@
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="166" timeline_entries="81" unique_tripcodes="164" breadcrumb_chips="166" visible_commit_references="58" unique_source_commits="87" />
+  <stats tracked_changes="168" timeline_entries="83" unique_tripcodes="166" breadcrumb_chips="168" visible_commit_references="59" unique_source_commits="88" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -4764,6 +4837,8 @@
     <entry river_index="164" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4" track="T+834m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 74.4 percent coverage</title></entry>
     <entry river_index="165" tripcode="ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7" track="T+842m" bread="Improvement Timeline &gt; Codex compatibility handler coverage checkpoint" commit="a6b1bb63"><date>June 6, 2026</date><title>Codex compatibility handler coverage checkpoint</title></entry>
     <entry river_index="166" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7" track="T+850m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 74.7 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 74.7 percent coverage</title></entry>
+    <entry river_index="167" tripcode="ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9" track="T+858m" bread="Improvement Timeline &gt; Worker proxy and DeltaSignal store constructor coverage checkpoint" commit="4e4d7d64"><date>June 6, 2026</date><title>Worker proxy and DeltaSignal store constructor coverage checkpoint</title></entry>
+    <entry river_index="168" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9" track="T+866m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 74.9 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 74.9 percent coverage</title></entry>
     <entry river_index="163" tripcode="ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4" track="T+826m" bread="Improvement Timeline &gt; Dynamic crawler loop coverage checkpoint" commit="af9f8718"><date>June 6, 2026</date><title>Dynamic crawler loop coverage checkpoint</title></entry>
     <entry river_index="162" tripcode="ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2" track="T+818m" bread="Improvement Timeline &gt; Codex process-runner coverage checkpoint" commit="7961225d"><date>June 6, 2026</date><title>Codex process-runner coverage checkpoint</title></entry>
     <entry river_index="161" tripcode="ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP" track="T+810m" bread="Improvement Timeline &gt; Notification digest, delivery, and x402 pricing rollup" commit="current changelog update"><date>June 6, 2026</date><title>Notification digest, delivery, and x402 pricing rollup</title></entry>
