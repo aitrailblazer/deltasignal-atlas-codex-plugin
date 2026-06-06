@@ -247,36 +247,4 @@
     <category term="ATLAS-JUN-6-GENERIC-MCP-HELPER-COVERAGE" />
     <summary>Generic MCP helper coverage now exercises result wrappers, auth middleware, streamable handler construction, and tool-adapter validation/error branches. Breadcrumb: Improvement Timeline &gt; Generic MCP server helper coverage checkpoint Track: T+602m Commit: fde35215</summary>
   </entry>
-  <entry>
-    <title>DeltaSignal web static runtime coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-WEB-STATIC-RUNTIME-COVERAGE" />
-    <summary>DeltaSignal web static runtime coverage now exercises constructor, disabled/nil runtime, method rejection, SPA fallback, asset serving, missing-asset, static path cleaning, and gateway-reserved path branches. Breadcrumb: Improvement Timeline &gt; DeltaSignal web static runtime coverage checkpoint Track: T+594m Commit: 28734684</summary>
-  </entry>
-  <entry>
-    <title>Free-tier, helper, and route-safety coverage advanced to 66.6 percent</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-FREE-TIER-HELPER-COVERAGE-66PCT" />
-    <summary>The active coverage-hardening plan now records Web Intel helper coverage, native health/boolean normalization branches, free-tier admin handler branches, constructor metadata/time parsing, and a reserved-route safety fix. Breadcrumb: Improvement Timeline &gt; Free-tier, helper, and route-safety coverage advanced to 66.6 percent Track: T+586m Commit: c8bf5a66 / 33a19e4b</summary>
-  </entry>
-  <entry>
-    <title>Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-PUBLIC-ROLLUP-NOTIFICATIONS-COVERAGE" />
-    <summary>Public changelog rollup now records the recent notification, SPECTRA, wallet-grant, parser-contract, digest, feed, and coverage-hardening work without private design-partner details. Breadcrumb: Improvement Timeline &gt; Public rollup for notifications, coverage, SPECTRA, grants, and changelog feeds Track: T+578m Commit: 8511550 / c49e722c / 8d7171e / c001f26 / e3e4763 / f64dc87 / a62f4c5 / 3aaa8c17</summary>
-  </entry>
-  <entry>
-    <title>Coverage hardening advanced to 65 percent package coverage</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COVERAGE-HARDENING-65PCT" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-COVERAGE-HARDENING-65PCT" />
-    <summary>The ongoing 100% coverage goal advanced from the earlier recorded 64.2% checkpoint to a verified 65.0% package coverage checkpoint for cmd/search-gateway. Breadcrumb: Improvement Timeline &gt; Coverage hardening advanced to 65 percent package coverage Track: T+570m Commit: 9e443dce / 2883899a / af99bd8f / 6ec7f3c7 / 15c940ef / b19f42ce / 3a343700 / d48a7937 / 2c001cfc</summary>
-  </entry>
 </feed>
