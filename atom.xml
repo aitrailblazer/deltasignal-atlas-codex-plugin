@@ -8,6 +8,22 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Consolidated June 6 public rollup to 72.5 percent coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5" />
+    <summary>The public changelog now includes the full June 6 public-safe update set through the ATLAS-7 history route/loaders coverage slice, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the 72.5% coverage checkpoint. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 72.5 percent coverage Track: T+762m Commit: current changelog update</summary>
+  </entry>
+  <entry>
+    <title>ATLAS-7 history route and loader coverage checkpoint</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5" />
+    <summary>ATLAS-7 calculation-history and point-in-time-history route coverage now verifies handlers, loader branches, source-date resolution, row helpers, scalar/hash extraction, nullable helpers, and query-error behavior; the verified cmd/search-gateway package coverage checkpoint reached 72.5%. Breadcrumb: Improvement Timeline &gt; ATLAS-7 history route and loader coverage checkpoint Track: T+754m Commit: 71420226</summary>
+  </entry>
+  <entry>
     <title>Consolidated June 6 public rollup to 71.8 percent coverage</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8</id>
@@ -230,21 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED" />
     <summary>Notification email delivery now has both an Outlook SMTP path and a Microsoft Graph path recorded, with Graph used as the production-grade authenticated delivery channel for Delta Signal MCP notifications. Breadcrumb: Improvement Timeline &gt; Outlook and Microsoft Graph email delivery verified Track: T+530m Commit: f5088764 / 209b3584 / b7c6f962 / e8101983</summary>
-  </entry>
-  <entry>
-    <title>Notification channels, paid summaries, subscriptions, and daily digest rollout</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST" />
-    <summary>Notification-v1 is now recorded as a multi-channel MCP evidence-routing layer with free event discovery, paid summaries, delivery transports, subscriptions, receipts, pricing, and daily digest framing. Breadcrumb: Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout Track: T+522m Commit: 8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c</summary>
-  </entry>
-  <entry>
-    <title>Changelog feed automation and coverage-hardening rollup</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING" />
-    <summary>The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details. Breadcrumb: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup Track: T+514m Commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22</summary>
   </entry>
 </feed>

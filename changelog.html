@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, SignalRadar MCP, StrategiX Diagram MCP, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, periodic feed sync, grant-ledger regression hardening, and coverage hardening to 71.8%</p>
+      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for notifications, Graph email, daily digests, x402 pricing, SPECTRA, grants, ticker canonicalization, feeds, route safety, field maps, MCP helpers, SignalRadar MCP, StrategiX Diagram MCP, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, ATLAS-7 history route/loaders, periodic feed sync, grant-ledger regression hardening, and coverage hardening to 72.5%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>153</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>68</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>151</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>153</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>51</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>80</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>155</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>70</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>153</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>155</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>52</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>81</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,18 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>155</span>
+              <code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5</code>
+              <span>Improvement Timeline &gt; Consolidated June 6 public rollup to 72.5 percent coverage</span>
+              <code>T+762m</code>
+            </div>
+            <div class="river-row">
+              <span>154</span>
+              <code>ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5</code>
+              <span>Improvement Timeline &gt; ATLAS-7 history route and loader coverage checkpoint</span>
+              <code>T+754m</code>
+            </div>
             <div class="river-row">
               <span>153</span>
               <code>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8</code>
@@ -2165,6 +2177,37 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5">
+            <div class="date">June 6, 2026</div>
+            <h3>Consolidated June 6 public rollup to 72.5 percent coverage</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-72P5</code>
+              <code>track: T+762m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Consolidated June 6 public rollup to 72.5 percent coverage</code>
+            </div>
+            <ul>
+              <li>Rolls forward the full public-safe June 6 update set across notification-v1, Graph email delivery, daily all-delta digests, x402 notification pricing, signed webhooks, terminal delivery, paid MCP summaries, subscriptions, delivery receipts, RSS/Atom changelog feeds, and periodic changelog synchronization.</li>
+              <li>Rolls forward source-test hardening through ATLAS-7 calculation-history and point-in-time-history routes, after dedicated grant ledger, SignalRadar MCP, StrategiX Diagram MCP, MCP summary, billing-envelope, company-fundamentals, primitive, Codex cache, Web Intel, Telegram, Marketplace, OPML, static runtime, generic MCP, and field-map coverage slices.</li>
+              <li>Preserves the public/private boundary: no individual design-partner names, mailbox details, wallet addresses, private credit amounts, secrets, or private support artifacts are included.</li>
+              <li>The active 100% package coverage goal remains open; this entry is a dated checkpoint, not a final coverage claim.</li>
+            </ul>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5">
+            <div class="date">June 6, 2026</div>
+            <h3>ATLAS-7 history route and loader coverage checkpoint</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-ATLAS7-HISTORY-ROUTE-COVERAGE-72P5</code>
+              <code>track: T+754m</code>
+              <code>commit: 71420226</code>
+              <code>bread: Improvement Timeline &gt; ATLAS-7 history route and loader coverage checkpoint</code>
+            </div>
+            <ul>
+              <li>Covered ATLAS-7 calculation-history and point-in-time-history handlers for method guards, auth guards, validation, loader success, JSON response shape, and source-date resolution paths.</li>
+              <li>Covered SQL loader and row-shaping helpers for calculation-history rows, scalar and hash extraction, point-in-time history rows, nullable float/bool helpers, missing-source behavior, and query error propagation.</li>
+              <li>The verified cmd/search-gateway package coverage checkpoint reached 72.5%; the active 100% package coverage goal remains open.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-71P8">
             <div class="date">June 6, 2026</div>
             <h3>Consolidated June 6 public rollup to 71.8 percent coverage</h3>
@@ -3968,7 +4011,7 @@ Spacing note: published paths use company-report. A copied
       "last_updated": "2026-06-06",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
-        "aitrailblazer-web-intel-mcp git history through 6276da5e",
+        "aitrailblazer-web-intel-mcp git history through 71420226",
         "Live verification snapshot from 2026-05-27 company-report aggregate rollout",
         "Live public OpenAPI/x402 verification from 2026-05-28",
         "Compact Delta Signal results audit artifacts from 2026-05-28",
@@ -4006,6 +4049,8 @@ Spacing note: published paths use company-report. A copied
         "Source commit 7b3396aa covering Web Intel and Telegram helper branches with package coverage checkpoint 69.1%",
         "Source commit c848302d covering Codex cache and runtime helper branches with package coverage checkpoint 69.3%",
         "Source commit b1b6b9b7 covering DeltaSignal primitive parsing and ticker helper branches with package coverage checkpoint 69.4%",
+        "Source commit 43ca8cab covering SQL-backed dedicated grant ledger behavior with package coverage checkpoint 71.8%",
+        "Source commit 71420226 covering ATLAS-7 calculation-history and point-in-time-history routes, loaders, source-date resolution, row helpers, and nullable helpers with package coverage checkpoint 72.5%",
         "Public changelog maintenance update from 2026-06-06: changelog.html, changelog-llm.html, rss.xml, atom.xml, llms.txt, and llms-full.txt synchronized for periodic subscriber tracking",
         "ATLAS-7 215 issuer ticker audit from 2026-06-06: 14 high-confidence current ticker repairs applied, post-repair SEC-current mismatches = 0, Fold Holdings CIK 0001889123 canonical ticker = FLD",
         "Pre-deploy notification email verification from 2026-06-06 showing ATLAS-7 universe match statistics and daily-change evidence work summary",
