@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - changelog feeds, ticker canonicalization, notification digest, and coverage hardening recorded</p>
+      <p class="eyebrow">Updated June 6, 2026 - notification channels, changelog feeds, ticker canonicalization, digest evidence, and coverage hardening recorded</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>124</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>39</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>122</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>124</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>17</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>15</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>125</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>40</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>123</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>125</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>27</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>25</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>125</span>
+              <code>ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</code>
+              <span>Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout</span>
+              <code>T+522m</code>
+            </div>
             <div class="river-row">
               <span>124</span>
               <code>ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code>
@@ -1275,14 +1281,25 @@
         <div class="grid">
           <div class="card">
             <span class="status">SOURCE VERIFIED</span>
+            <strong>Notification Channels, Pricing, and Daily Digest Rollout</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</code>
+              <code>track: T+522m</code>
+              <code>commit: 8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c</code>
+              <code>bread: Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout</code>
+            </div>
+            <span>Notification-v1 is now recorded as a multi-channel evidence-routing layer: free event probe, email delivery, terminal delivery, signed webhook delivery with receipts/retries, durable subscription preferences, paid MCP notification summaries, route pricing metadata, and a Daily Delta Signal Digest framing. Public text explicitly names MCP/agent users as the audience and keeps the non-advice boundary intact.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
             <strong>Changelog Feed Automation and Coverage-Hardening Rollup</strong>
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code>
               <code>track: T+514m</code>
-              <code>commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032</code>
+              <code>commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22</code>
               <code>bread: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</code>
             </div>
-            <span>The public changelog now has RSS and Atom subscriber feeds, a feed generator, and scheduled/feed-drift checks. The same rollup records ongoing coverage-hardening work across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, and report-row helpers. Current package coverage is still in progress at <code>62.8%</code>; this entry is a transparent source/test hardening note, not a final <code>100%</code> coverage claim.</span>
+            <span>The public changelog now has RSS and Atom subscriber feeds, a feed generator, and scheduled/feed-drift checks. The same rollup records ongoing coverage-hardening work across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, report-row helpers, alpha helpers, feed management, gateway helpers, x402 config, MPP helpers, and audit status helpers. Current package coverage is still in progress at <code>64.2%</code>; this entry is a transparent source/test hardening note, not a final <code>100%</code> coverage claim.</span>
           </div>
           <div class="card">
             <span class="status">SOURCE VERIFIED</span>
@@ -1705,6 +1722,26 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Notification channels, paid summaries, subscriptions, and daily digest rollout</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</code>
+              <code>track: T+522m</code>
+              <code>commit: 8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c</code>
+              <code>bread: Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout</code>
+            </div>
+            <ul>
+              <li>Notification-v1 is recorded as a public MCP evidence-routing layer, not a Substack/newsletter surface and not an investment-advice product.</li>
+              <li>Free discovery remains available through <code>GET /v1/events/latest</code> with metadata-only notification events, schema version, cost metadata, and non-advice boundary language.</li>
+              <li>Email delivery, terminal delivery, signed webhook delivery, delivery receipts, retry/dead-letter status, and durable subscription preferences are documented as the production notification paths.</li>
+              <li><code>POST /v1/notifications/summaries/mcp</code> is recorded as the paid agent-readable notification-summary path with x402 billing metadata and route pricing in the public discovery surface.</li>
+              <li>The launch pricing ladder distinguishes low-cost event alerts, bundled workflow notifications, natural-language alert briefs, and finished PDF deliverables so notifications do not undercut full evidence workflows.</li>
+              <li>The product framing moved from a narrow watchlist alert to a Daily Delta Signal Digest: all ATLAS-7 matched issuer deltas after processing, evidence workload stats, ticker context where available, BTC/ATLAS backdrop, drilldown links, and manage-preferences links.</li>
+              <li>Public changelog wording omits private design-partner names, wallet addresses, email addresses, and grant amounts while preserving the real integration lessons.</li>
+            </ul>
+          </article>
+
           <article class="timeline-item">
             <div class="date">May 31, 2026</div>
             <h3>P1 standard provenance source implementation</h3>
@@ -3072,6 +3109,11 @@ Spacing note: published paths use company-report. A copied
         "Live backend deployment ca-web-intel-mcp--0000456 from clean git archive a62f4c57678449e9285a02fef9e5edb42e891841 on 2026-06-05",
         "Live backend deployment ca-web-intel-mcp--0000461 from clean git archive 8d7171e3398e48bc15c0637048dc7fd14e9ace6e on 2026-06-05",
         "Live ATLAS-7 row universe SPECTRA verification from 2026-06-05: 215/215 HTTP 200, 0 misses, 0 non-runtime responses",
+        "Notification-v1 live baseline from 2026-06-05: free /v1/events/latest metadata feed, /v1/contract/fields, /help, schema_version=deltasignal.notification.v1, cost_usd=0, and non-advice boundary verified",
+        "Notification delivery implementation from 2026-06-06: email delivery, terminal delivery, signed webhook delivery, delivery receipts, retry/dead-letter status, durable subscriptions, and manage-preferences route",
+        "Paid notification summary implementation from 2026-06-06: POST /v1/notifications/summaries/mcp protected by public x402, advertised in OpenAPI/help/pricing/field contract, priced at $0.10 in the verified route metadata",
+        "Notification pricing recommendation from 2026-06-06: event alerts, ticker alerts, watchlist alerts, workflow notifications, natural-language alert briefs, and PDF deliverables are separate notification-layer products",
+        "Daily Delta Signal Digest product framing from 2026-06-06: full ATLAS-7 matched issuer daily-delta digest after processing, evidence workload stats, ticker context where available, BTC/ATLAS backdrop, drilldown links, and non-advice boundary",
         "Source commit f3410ac3 adding notification evidence statistics to DeltaSignal notification emails",
         "Source commit c49e722c adding ATLAS-7 universe filtering, ticker canonicalization, FLDDW to FLD compatibility, and canonicalizer blank-ticker repair support",
         "ATLAS-7 215 issuer ticker audit from 2026-06-06: 14 high-confidence current ticker repairs applied, post-repair SEC-current mismatches = 0, Fold Holdings CIK 0001889123 canonical ticker = FLD",

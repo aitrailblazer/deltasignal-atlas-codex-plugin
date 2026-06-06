@@ -47,12 +47,12 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>123</strong><span>tracked changes</span></div>
-        <div><strong>38</strong><span>timeline entries</span></div>
-        <div><strong>121</strong><span>unique tripcodes</span></div>
-        <div><strong>123</strong><span>breadcrumb chips</span></div>
-        <div><strong>11</strong><span>visible commit references</span></div>
-        <div><strong>9</strong><span>unique source commits</span></div>
+        <div><strong>125</strong><span>tracked changes</span></div>
+        <div><strong>40</strong><span>timeline entries</span></div>
+        <div><strong>123</strong><span>unique tripcodes</span></div>
+        <div><strong>125</strong><span>breadcrumb chips</span></div>
+        <div><strong>27</strong><span>visible commit references</span></div>
+        <div><strong>25</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,7 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>125</td><td><code>ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</code></td><td>Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout</td><td><code>T+522m</code></td><td>8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c</td></tr>
           <tr><td>001</td><td><code>ATLAS-CARD-LIVE-LOOP-API-CONTRACT</code></td><td>Latest Live Improvements &gt; Live-Loop API Contract Deployed</td><td><code>T+06m</code></td><td></td></tr>
           <tr><td>002</td><td><code>ATLAS-P0-CONTRACT-7A80E86</code></td><td>Latest Live Improvements &gt; P0 Contract Hardening Slice</td><td><code>T+14m</code></td><td>7a80e86</td></tr>
           <tr><td>003</td><td><code>ATLAS-P1-PROV-730DEF3</code></td><td>Latest Live Improvements &gt; Standard Provenance Slice</td><td><code>T+22m</code></td><td>730def3</td></tr>
@@ -200,13 +201,26 @@
           <tr><td>121</td><td><code>ATLAS-JUN-5-LIVE-ATLAS-SPECTRA-PRIMARY</code></td><td>Improvement Timeline &gt; Live ATLAS-history SPECTRA primary rollout</td><td><code>T+490m</code></td><td>8d7171e</td></tr>
           <tr><td>122</td><td><code>ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</code></td><td>Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering</td><td><code>T+498m</code></td><td>f3410ac3 / c49e722c</td></tr>
           <tr><td>123</td><td><code>ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION</code></td><td>Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit</td><td><code>T+506m</code></td><td>c49e722c</td></tr>
-          <tr><td>124</td><td><code>ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code></td><td>Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</td><td><code>T+514m</code></td><td>bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032</td></tr>
+          <tr><td>124</td><td><code>ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code></td><td>Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</td><td><code>T+514m</code></td><td>bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22</td></tr>
           </tbody>
         </table>
       </div>
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST">
+          <h3>Notification channels, paid summaries, subscriptions, and daily digest rollout</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</code> <code>track: T+522m</code> <code>commit: 8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c</code> <code>bread: Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout</code></p>
+          <p>Notification-v1 is now recorded as a multi-channel MCP evidence-routing layer with free event discovery, paid summaries, delivery transports, subscriptions, receipts, pricing, and daily digest framing.</p>
+<ul>
+            <li>Free discovery remains available through <code>GET /v1/events/latest</code> with metadata-only events, schema version, cost metadata, and non-advice boundary language.</li>
+            <li>Email delivery, terminal delivery, signed webhook delivery, delivery receipts, retry/dead-letter status, and durable subscription preferences are documented as production notification paths.</li>
+            <li><code>POST /v1/notifications/summaries/mcp</code> is recorded as the paid agent-readable notification-summary path with x402 billing metadata and route pricing in the public discovery surface.</li>
+            <li>The launch pricing ladder distinguishes low-cost event alerts, bundled workflow notifications, natural-language alert briefs, and finished PDF deliverables.</li>
+            <li>The product framing moved from narrow watchlist alerting to a Daily Delta Signal Digest: all ATLAS-7 matched issuer deltas after processing, evidence workload stats, ticker context where available, BTC/ATLAS backdrop, drilldown links, and manage-preferences links.</li>
+            <li>Public changelog wording omits private design-partner names, wallet addresses, email addresses, and grant amounts while preserving the real integration lessons.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST">
           <h3>Notification evidence digest and ATLAS-7 universe filtering</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST</code> <code>track: T+498m</code> <code>commit: f3410ac3 / c49e722c</code> <code>bread: Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering</code></p>
@@ -231,12 +245,12 @@
         </article>
         <article class="entry" id="ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING">
           <h3>Changelog feed automation and coverage-hardening rollup</h3>
-          <p class="meta"><code>tripcode: ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code> <code>track: T+514m</code> <code>commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032</code> <code>bread: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</code></p>
+          <p class="meta"><code>tripcode: ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</code> <code>track: T+514m</code> <code>commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22</code> <code>bread: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</code></p>
           <p>The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details.</p>
 <ul>
             <li>Added RSS and Atom discovery links to the human and LLM changelog surfaces, plus a generator and GitHub Actions checks so feed files stay aligned with dated changelog entries.</li>
-            <li>Recorded deterministic coverage-hardening progress across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, and report-row helpers.</li>
-            <li>Latest verified package coverage for <code>cmd/search-gateway</code> is in progress at 62.8%, with local gates passing for Go tests, secret scan, whitespace check, and ExecPlan XML validation.</li>
+            <li>Recorded deterministic coverage-hardening progress across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, report-row helpers, alpha helpers, feed management, gateway helpers, x402 config, MPP helpers, and audit status helpers.</li>
+            <li>Latest verified package coverage for <code>cmd/search-gateway</code> is in progress at 64.2%, with local gates passing for Go tests, secret scan, whitespace check, and ExecPlan XML validation.</li>
             <li>This is a source/test hardening entry, not a final 100% coverage claim and not a live deployment marker.</li>
           </ul>
         </article>
@@ -1826,11 +1840,11 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-06",
   "stats": {
-    "tracked_changes": 124,
-    "timeline_entries": 39,
-    "unique_tripcodes": 122,
-    "breadcrumb_chips": 124,
-    "visible_commit_references": 17,
+    "tracked_changes": 125,
+    "timeline_entries": 40,
+    "unique_tripcodes": 123,
+    "breadcrumb_chips": 125,
+    "visible_commit_references": 27,
     "unique_source_commits": [
       "730def3",
       "7a80e86",
@@ -1846,7 +1860,17 @@
       "46a5051d",
       "3ec093e5",
       "e985df05",
-      "734bb032"
+      "734bb032",
+      "f69d56d9",
+      "e1eaa5c2",
+      "01014632",
+      "265a90b9",
+      "3519a814",
+      "7874cb22",
+      "8511550",
+      "4f27f9d",
+      "83d182a",
+      "620f91a"
     ]
   },
   "tracking_river": [
@@ -2599,9 +2623,16 @@
     {
       "tripcode": "ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING",
       "track": "T+514m",
-      "commit": "bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032",
+      "commit": "bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22",
       "bread": "Improvement Timeline > Changelog feed automation and coverage-hardening rollup",
       "river_index": 124
+    },
+    {
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST",
+      "track": "T+522m",
+      "commit": "8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c",
+      "bread": "Improvement Timeline > Notification channels, paid summaries, subscriptions, and daily digest rollout",
+      "river_index": 125
     }
   ],
   "timeline_entries": [
@@ -3226,13 +3257,31 @@
       "tripcode": "ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING",
       "track": "T+514m",
       "bread": "Improvement Timeline > Changelog feed automation and coverage-hardening rollup",
-      "commit": "bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032",
+      "commit": "bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22",
       "summary": "The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details.",
       "bullets": [
         "Added RSS and Atom discovery links to the human and LLM changelog surfaces, plus a generator and GitHub Actions checks so feed files stay aligned with dated changelog entries.",
-        "Recorded deterministic coverage-hardening progress across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, and report-row helpers.",
-        "Latest verified package coverage for cmd/search-gateway is in progress at 62.8%, with local gates passing for Go tests, secret scan, whitespace check, and ExecPlan XML validation.",
+        "Recorded deterministic coverage-hardening progress across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, report-row helpers, alpha helpers, feed management, gateway helpers, x402 config, MPP helpers, and audit status helpers.",
+        "Latest verified package coverage for cmd/search-gateway is in progress at 64.2%, with local gates passing for Go tests, secret scan, whitespace check, and ExecPlan XML validation.",
         "This is a source/test hardening entry, not a final 100% coverage claim and not a live deployment marker."
+      ]
+    },
+    {
+      "river_index": 125,
+      "date": "June 6, 2026",
+      "title": "Notification channels, paid summaries, subscriptions, and daily digest rollout",
+      "tripcode": "ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST",
+      "track": "T+522m",
+      "bread": "Improvement Timeline > Notification channels, paid summaries, subscriptions, and daily digest rollout",
+      "commit": "8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c",
+      "summary": "Notification-v1 is now recorded as a multi-channel MCP evidence-routing layer with free event discovery, paid summaries, delivery transports, subscriptions, receipts, pricing, and daily digest framing.",
+      "bullets": [
+        "Free discovery remains available through GET /v1/events/latest with metadata-only events, schema version, cost metadata, and non-advice boundary language.",
+        "Email delivery, terminal delivery, signed webhook delivery, delivery receipts, retry/dead-letter status, and durable subscription preferences are documented as production notification paths.",
+        "POST /v1/notifications/summaries/mcp is recorded as the paid agent-readable notification-summary path with x402 billing metadata and route pricing in the public discovery surface.",
+        "The launch pricing ladder distinguishes low-cost event alerts, bundled workflow notifications, natural-language alert briefs, and finished PDF deliverables.",
+        "The product framing moved from narrow watchlist alerting to a Daily Delta Signal Digest: all ATLAS-7 matched issuer deltas after processing, evidence workload stats, ticker context where available, BTC/ATLAS backdrop, drilldown links, and manage-preferences links.",
+        "Public changelog wording omits private design-partner names, wallet addresses, email addresses, and grant amounts while preserving the real integration lessons."
       ]
     }
   ]
@@ -3240,7 +3289,7 @@
   </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="124" timeline_entries="39" unique_tripcodes="122" breadcrumb_chips="124" visible_commit_references="17" unique_source_commits="15" />
+  <stats tracked_changes="125" timeline_entries="40" unique_tripcodes="123" breadcrumb_chips="125" visible_commit_references="27" unique_source_commits="25" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -3288,6 +3337,7 @@
     <entry river_index="122" tripcode="ATLAS-JUN-6-NOTIFICATION-EVIDENCE-DIGEST" track="T+498m" bread="Improvement Timeline &gt; Notification evidence digest and ATLAS-7 universe filtering"><date>June 6, 2026</date><title>Notification evidence digest and ATLAS-7 universe filtering</title></entry>
     <entry river_index="123" tripcode="ATLAS-JUN-6-ATLAS7-TICKER-CANONICALIZATION" track="T+506m" bread="Improvement Timeline &gt; ATLAS-7 ticker canonicalization audit"><date>June 6, 2026</date><title>ATLAS-7 ticker canonicalization audit</title></entry>
     <entry river_index="124" tripcode="ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING" track="T+514m" bread="Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup"><date>June 6, 2026</date><title>Changelog feed automation and coverage-hardening rollup</title></entry>
+    <entry river_index="125" tripcode="ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST" track="T+522m" bread="Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout"><date>June 6, 2026</date><title>Notification channels, paid summaries, subscriptions, and daily digest rollout</title></entry>
   </entries>
 </changelog_llm>
   </script>

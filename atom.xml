@@ -8,12 +8,20 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Notification channels, paid summaries, subscriptions, and daily digest rollout</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST" />
+    <summary>Notification-v1 is now recorded as a multi-channel MCP evidence-routing layer with free event discovery, paid summaries, delivery transports, subscriptions, receipts, pricing, and daily digest framing. Breadcrumb: Improvement Timeline &gt; Notification channels, paid summaries, subscriptions, and daily digest rollout Track: T+522m Commit: 8511550 / 4f27f9d / 83d182a / 620f91a / f3410ac3 / c49e722c</summary>
+  </entry>
+  <entry>
     <title>Changelog feed automation and coverage-hardening rollup</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING</id>
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-CHANGELOG-FEEDS-COVERAGE-HARDENING" />
-    <summary>The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details. Breadcrumb: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup Track: T+514m Commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032</summary>
+    <summary>The public changelog now has subscriber feeds and a consolidated rollup of the ongoing coverage-hardening work, without private design-partner names or local operator details. Breadcrumb: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup Track: T+514m Commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22</summary>
   </entry>
   <entry>
     <title>ATLAS-7 ticker canonicalization audit</title>
