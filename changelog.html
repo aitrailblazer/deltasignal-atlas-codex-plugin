@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - notification channels, changelog feeds, ticker canonicalization, digest evidence, and coverage hardening recorded</p>
+      <p class="eyebrow">Updated June 6, 2026 - notification channels, Graph email, business-day digests, x402 pricing, ticker canonicalization, feeds, and coverage hardening recorded</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>125</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>40</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>123</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>125</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>27</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>25</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>131</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>46</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>129</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>131</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>33</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>62</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,42 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>131</span>
+              <code>ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</code>
+              <span>Improvement Timeline &gt; Coverage hardening advanced to 65 percent package coverage</span>
+              <code>T+570m</code>
+            </div>
+            <div class="river-row">
+              <span>130</span>
+              <code>ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS</code>
+              <span>Improvement Timeline &gt; Notification channel matrix and acceptance harness</span>
+              <code>T+562m</code>
+            </div>
+            <div class="river-row">
+              <span>129</span>
+              <code>ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER</code>
+              <span>Improvement Timeline &gt; Notification x402 price ladder and contract verification</span>
+              <code>T+554m</code>
+            </div>
+            <div class="river-row">
+              <span>128</span>
+              <code>ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING</code>
+              <span>Improvement Timeline &gt; Notification delivery edge coverage hardened</span>
+              <code>T+546m</code>
+            </div>
+            <div class="river-row">
+              <span>127</span>
+              <code>ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST</code>
+              <span>Improvement Timeline &gt; Business-day daily digest rollout</span>
+              <code>T+538m</code>
+            </div>
+            <div class="river-row">
+              <span>126</span>
+              <code>ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED</code>
+              <span>Improvement Timeline &gt; Outlook and Microsoft Graph email delivery verified</span>
+              <code>T+530m</code>
+            </div>
             <div class="river-row">
               <span>125</span>
               <code>ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</code>
@@ -1281,6 +1317,72 @@
         <div class="grid">
           <div class="card">
             <span class="status">SOURCE VERIFIED</span>
+            <strong>Coverage hardening advanced to 65 percent package coverage</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</code>
+              <code>track: T+570m</code>
+              <code>commit: 9e443dce / 2883899a / af99bd8f / 6ec7f3c7 / 15c940ef / b19f42ce / 3a343700 / d48a7937 / 2c001cfc</code>
+              <code>bread: Improvement Timeline &gt; Coverage hardening advanced to 65 percent package coverage</code>
+            </div>
+            <span>The ongoing 100% coverage goal advanced from the earlier recorded 64.2% checkpoint to a verified 65.0% package coverage checkpoint for cmd/search-gateway.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Notification channel matrix and acceptance harness</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS</code>
+              <code>track: T+562m</code>
+              <code>commit: 8e09e422 / b18df31e / 49920387 / 49ff7d2c</code>
+              <code>bread: Improvement Timeline &gt; Notification channel matrix and acceptance harness</code>
+            </div>
+            <span>The notification product surface is recorded as a channel matrix: free pull feed, signed webhooks, terminal delivery, email delivery, paid MCP summaries, receipts/status lookup, and subscription preferences.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Notification x402 price ladder and contract verification</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER</code>
+              <code>track: T+554m</code>
+              <code>commit: e7c013fb / 7bdae295 / 6bba9aec</code>
+              <code>bread: Improvement Timeline &gt; Notification x402 price ladder and contract verification</code>
+            </div>
+            <span>Notification pricing is recorded as a separate low-cost alert layer with route-level x402 metadata, preserving higher prices for composed natural-language briefs and finished deliverables.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Notification delivery edge coverage hardened</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING</code>
+              <code>track: T+546m</code>
+              <code>commit: 098affa8 / 0a18d314 / a5a1f666 / f22a8779 / bf4ffa40 / d348383c / b4868623 / 24505150 / 5ef08304 / 32adec97</code>
+              <code>bread: Improvement Timeline &gt; Notification delivery edge coverage hardened</code>
+            </div>
+            <span>Notification test coverage expanded across universe loading, terminal failure paths, subscription persistence, email handler errors, event feed pagination, webhook receipt persistence, delivery edge paths, and notification summary edge cases.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
+            <strong>Business-day daily digest rollout</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST</code>
+              <code>track: T+538m</code>
+              <code>commit: 85ed8ecc / ebb0964f / 883829d9 / 7f264c5c / 8b7aa9f9 / 00ca35ac / 820c68bd</code>
+              <code>bread: Improvement Timeline &gt; Business-day daily digest rollout</code>
+            </div>
+            <span>Daily notification digest rendering now supports source-date grouping and five-business-day rollups so recipients can review each processing day separately instead of receiving one undifferentiated alert.</span>
+          </div>
+          <div class="card">
+            <span class="status">LIVE VERIFIED</span>
+            <strong>Outlook and Microsoft Graph email delivery verified</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED</code>
+              <code>track: T+530m</code>
+              <code>commit: f5088764 / 209b3584 / b7c6f962 / e8101983</code>
+              <code>bread: Improvement Timeline &gt; Outlook and Microsoft Graph email delivery verified</code>
+            </div>
+            <span>Notification email delivery now has both an Outlook SMTP path and a Microsoft Graph path recorded, with Graph used as the production-grade authenticated delivery channel for Delta Signal MCP notifications.</span>
+          </div>
+          <div class="card">
+            <span class="status">SOURCE VERIFIED</span>
             <strong>Notification Channels, Pricing, and Daily Digest Rollout</strong>
             <div class="track">
               <code>tripcode: ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</code>
@@ -1299,7 +1401,7 @@
               <code>commit: bc60b15 / bb86f6a8 / 46a5051d / 3ec093e5 / e985df05 / 734bb032 / f69d56d9 / e1eaa5c2 / 01014632 / 265a90b9 / 3519a814 / 7874cb22</code>
               <code>bread: Improvement Timeline &gt; Changelog feed automation and coverage-hardening rollup</code>
             </div>
-            <span>The public changelog now has RSS and Atom subscriber feeds, a feed generator, and scheduled/feed-drift checks. The same rollup records ongoing coverage-hardening work across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, report-row helpers, alpha helpers, feed management, gateway helpers, x402 config, MPP helpers, and audit status helpers. Current package coverage is still in progress at <code>64.2%</code>; this entry is a transparent source/test hardening note, not a final <code>100%</code> coverage claim.</span>
+            <span>The public changelog now has RSS and Atom subscriber feeds, a feed generator, and scheduled/feed-drift checks. The same rollup records ongoing coverage-hardening work across EDGAR index helpers, CompanyFacts daily-delta digest helpers, MCP helper paths, public report helpers, report-row helpers, alpha helpers, feed management, gateway helpers, x402 config, MPP helpers, and audit status helpers. Current package coverage is still in progress at <code>65.0%</code>; this entry is a transparent source/test hardening note, not a final <code>100%</code> coverage claim.</span>
           </div>
           <div class="card">
             <span class="status">SOURCE VERIFIED</span>
@@ -1722,6 +1824,102 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Coverage hardening advanced to 65 percent package coverage</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</code>
+              <code>track: T+570m</code>
+              <code>commit: 9e443dce / 2883899a / af99bd8f / 6ec7f3c7 / 15c940ef / b19f42ce / 3a343700 / d48a7937 / 2c001cfc</code>
+              <code>bread: Improvement Timeline &gt; Coverage hardening advanced to 65 percent package coverage</code>
+            </div>
+            <ul>
+              <li>Added coverage for ATLAS-7 history helper paths, DeltaSignal helper paths, compatibility helpers, articles sync handler, Codex runtime coverage, crawler hardening, rolling brief helpers, thesis readiness helpers, morning brief issuer helpers, and public daily brief handler paths.</li>
+              <li>Latest verified focused slices include public daily brief MCP response wrapping, method/auth/format behavior, morning-brief issuer selection/dedupe/drilldown helpers, and rolling brief normalization.</li>
+              <li>The coverage goal remains active; this is not a final 100% coverage claim.</li>
+              <li>Verification continues to use Go tests, coverage profiles, secret scan, whitespace checks, and ExecPlan HTML/XML validation.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Notification channel matrix and acceptance harness</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS</code>
+              <code>track: T+562m</code>
+              <code>commit: 8e09e422 / b18df31e / 49920387 / 49ff7d2c</code>
+              <code>bread: Improvement Timeline &gt; Notification channel matrix and acceptance harness</code>
+            </div>
+            <ul>
+              <li>Added notification delivery channels and expanded the partner acceptance harness for end-to-end delivery verification.</li>
+              <li>Recorded the notification acceptance packet with public-safe requirements for no-polling delivery, receipts, retries, pricing disclosure, and non-advice boundaries.</li>
+              <li>Kept signed webhook delivery as the core no-polling integration substrate, with terminal and email treated as convenience delivery channels.</li>
+              <li>Maintained separation between raw free event discovery and paid interpretation or delivery products.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Notification x402 price ladder and contract verification</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER</code>
+              <code>track: T+554m</code>
+              <code>commit: e7c013fb / 7bdae295 / 6bba9aec</code>
+              <code>bread: Improvement Timeline &gt; Notification x402 price ladder and contract verification</code>
+            </div>
+            <ul>
+              <li>Added the notification x402 price ladder: low-cost event alerts, ticker-level alerts, bundled workflow notifications, natural-language alert briefs, and finished PDF delivery tiers.</li>
+              <li>Aligned notification contract verification around <code>route_uri</code>, <code>billing_mode</code>, <code>payment_status</code>, <code>billing_status</code>, <code>cost_usd</code>, <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>credits</code> metadata, and <code>request_id</code>.</li>
+              <li>Hardened remaining notification integration gaps so public discovery, pricing metadata, delivery contracts, and test coverage stay aligned.</li>
+              <li>This changelog entry records route-contract and test hardening; it does not expose private settlement proofs or customer billing details.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Notification delivery edge coverage hardened</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING</code>
+              <code>track: T+546m</code>
+              <code>commit: 098affa8 / 0a18d314 / a5a1f666 / f22a8779 / bf4ffa40 / d348383c / b4868623 / 24505150 / 5ef08304 / 32adec97</code>
+              <code>bread: Improvement Timeline &gt; Notification delivery edge coverage hardened</code>
+            </div>
+            <ul>
+              <li>Covered notification universe-index loading and fallback behavior.</li>
+              <li>Covered terminal delivery failure paths, receipt persistence, and cursor-safe response behavior.</li>
+              <li>Covered email sender and handler errors without relying on live credentials in tests.</li>
+              <li>Covered webhook delivery and receipt failure paths, plus event feed pagination and stored summary loading edge cases.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Business-day daily digest rollout</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST</code>
+              <code>track: T+538m</code>
+              <code>commit: 85ed8ecc / ebb0964f / 883829d9 / 7f264c5c / 8b7aa9f9 / 00ca35ac / 820c68bd</code>
+              <code>bread: Improvement Timeline &gt; Business-day daily digest rollout</code>
+            </div>
+            <ul>
+              <li>Added a business-day selector for notification digests and rendered each source date as its own section.</li>
+              <li>Expanded email rendering so the latest day and the prior five business days can be delivered as a separated digest view.</li>
+              <li>Preserved daily evidence workload metrics per section: changed companies, fact changes, changed/new files, raw bytes, candidate rows, ATLAS-7 universe matches, delivered rows, and drilldown availability.</li>
+              <li>Recorded the rollout as MCP notification infrastructure, not subscriber media or investment advice.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="date">June 6, 2026</div>
+            <h3>Outlook and Microsoft Graph email delivery verified</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED</code>
+              <code>track: T+530m</code>
+              <code>commit: f5088764 / 209b3584 / b7c6f962 / e8101983</code>
+              <code>bread: Improvement Timeline &gt; Outlook and Microsoft Graph email delivery verified</code>
+            </div>
+            <ul>
+              <li>Added Outlook SMTP delivery support and documented the authentication blocker caused by tenant consent and shell-special password characters during operator setup.</li>
+              <li>Added Microsoft Graph notification delivery support and verified a real Graph delivery probe from the configured organization mailbox.</li>
+              <li>Recorded Graph email delivery verification without exposing the mailbox password, OAuth tokens, tenant secret material, or private recipient details.</li>
+              <li>Email notifications keep the MCP evidence-routing framing, source route, delivery route, manage-preferences route, and non-advice boundary.</li>
+            </ul>
+          </article>
           <article class="timeline-item">
             <div class="date">June 6, 2026</div>
             <h3>Notification channels, paid summaries, subscriptions, and daily digest rollout</h3>

@@ -8,6 +8,54 @@
   <updated>2026-06-06T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Coverage hardening advanced to 65 percent package coverage</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COVERAGE-HARDENING-65PCT" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COVERAGE-HARDENING-65PCT</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-COVERAGE-HARDENING-65PCT" />
+    <summary>The ongoing 100% coverage goal advanced from the earlier recorded 64.2% checkpoint to a verified 65.0% package coverage checkpoint for cmd/search-gateway. Breadcrumb: Improvement Timeline &gt; Coverage hardening advanced to 65 percent package coverage Track: T+570m Commit: 9e443dce / 2883899a / af99bd8f / 6ec7f3c7 / 15c940ef / b19f42ce / 3a343700 / d48a7937 / 2c001cfc</summary>
+  </entry>
+  <entry>
+    <title>Notification channel matrix and acceptance harness</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NOTIFICATION-CHANNEL-MATRIX-HARNESS" />
+    <summary>The notification product surface is recorded as a channel matrix: free pull feed, signed webhooks, terminal delivery, email delivery, paid MCP summaries, receipts/status lookup, and subscription preferences. Breadcrumb: Improvement Timeline &gt; Notification channel matrix and acceptance harness Track: T+562m Commit: 8e09e422 / b18df31e / 49920387 / 49ff7d2c</summary>
+  </entry>
+  <entry>
+    <title>Notification x402 price ladder and contract verification</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NOTIFICATION-X402-PRICE-LADDER" />
+    <summary>Notification pricing is recorded as a separate low-cost alert layer with route-level x402 metadata, preserving higher prices for composed natural-language briefs and finished deliverables. Breadcrumb: Improvement Timeline &gt; Notification x402 price ladder and contract verification Track: T+554m Commit: e7c013fb / 7bdae295 / 6bba9aec</summary>
+  </entry>
+  <entry>
+    <title>Notification delivery edge coverage hardened</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-NOTIFICATION-DELIVERY-COVERAGE-HARDENING" />
+    <summary>Notification test coverage expanded across universe loading, terminal failure paths, subscription persistence, email handler errors, event feed pagination, webhook receipt persistence, delivery edge paths, and notification summary edge cases. Breadcrumb: Improvement Timeline &gt; Notification delivery edge coverage hardened Track: T+546m Commit: 098affa8 / 0a18d314 / a5a1f666 / f22a8779 / bf4ffa40 / d348383c / b4868623 / 24505150 / 5ef08304 / 32adec97</summary>
+  </entry>
+  <entry>
+    <title>Business-day daily digest rollout</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-BUSINESS-DAY-DAILY-DIGEST" />
+    <summary>Daily notification digest rendering now supports source-date grouping and five-business-day rollups so recipients can review each processing day separately instead of receiving one undifferentiated alert. Breadcrumb: Improvement Timeline &gt; Business-day daily digest rollout Track: T+538m Commit: 85ed8ecc / ebb0964f / 883829d9 / 7f264c5c / 8b7aa9f9 / 00ca35ac / 820c68bd</summary>
+  </entry>
+  <entry>
+    <title>Outlook and Microsoft Graph email delivery verified</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED</id>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-6-GRAPH-EMAIL-DELIVERY-VERIFIED" />
+    <summary>Notification email delivery now has both an Outlook SMTP path and a Microsoft Graph path recorded, with Graph used as the production-grade authenticated delivery channel for Delta Signal MCP notifications. Breadcrumb: Improvement Timeline &gt; Outlook and Microsoft Graph email delivery verified Track: T+530m Commit: f5088764 / 209b3584 / b7c6f962 / e8101983</summary>
+  </entry>
+  <entry>
     <title>Notification channels, paid summaries, subscriptions, and daily digest rollout</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-NOTIFICATION-CHANNELS-PRICING-DIGEST</id>
@@ -198,45 +246,5 @@
     <updated>2026-05-31T00:00:00.000Z</updated>
     <category term="ATLAS-MAY-31-IREN-SPECTRA-COVERAGE-REPAIR" />
     <summary>Added deltasignal-web/public/spectra-field-map/IREN/contract.json so /v1/spectra-field-map/IREN can return a real field-map contract instead of a structured coverage miss. Breadcrumb: Improvement Timeline &gt; IREN SPECTRA coverage repair Track: T+146m</summary>
-  </entry>
-  <entry>
-    <title>Structured not-found implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-STRUCTURED-NOT-FOUND-IMPLEMENTATION-TRACK" />
-    <summary>Added a shared structured not_found response contract in backend source. Breadcrumb: Improvement Timeline &gt; Structured not-found implementation track Track: T+138m</summary>
-  </entry>
-  <entry>
-    <title>Canonical billed-response fields implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-CANONICAL-BILLED-RESPONSE-FIELDS-IMPLEMENTATION" />
-    <summary>Added a shared backend billing normalizer for protected priced /v1/ routes. Breadcrumb: Improvement Timeline &gt; Canonical billed-response fields implementation track Track: T+130m</summary>
-  </entry>
-  <entry>
-    <title>Pricing discovery implementation track</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-MAY-31-PRICING-DISCOVERY-IMPLEMENTATION-TRACK" />
-    <summary>Added the first live-loop contract slice in backend source: GET /v1/pricing . Breadcrumb: Improvement Timeline &gt; Pricing discovery implementation track Track: T+122m</summary>
-  </entry>
-  <entry>
-    <title>P1 standard provenance source implementation</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-P1-PROV-730DEF3" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-P1-PROV-730DEF3</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-P1-PROV-730DEF3" />
-    <summary>Added deltasignal-provenance-v1 to the protected /v1/ response normalization path in backend source. Breadcrumb: Improvement Timeline &gt; P1 standard provenance source implementation Track: T+22m Commit: 730def3</summary>
-  </entry>
-  <entry>
-    <title>P0 contract-hardening source implementation</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-P0-CONTRACT-7A80E86" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-P0-CONTRACT-7A80E86</id>
-    <updated>2026-05-31T00:00:00.000Z</updated>
-    <category term="ATLAS-P0-CONTRACT-7A80E86" />
-    <summary>Added deltasignal-route-scope-v1 in backend source so no-ticker universe routes called with extra path segments return structured HTTP 400 invalid_path_scope instead of ambiguous 404 behavior. Breadcrumb: Improvement Timeline &gt; P0 contract-hardening source implementation Track: T+14m Commit: 7a80e86</summary>
   </entry>
 </feed>
