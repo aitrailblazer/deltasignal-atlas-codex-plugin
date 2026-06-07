@@ -47,16 +47,20 @@
     }
 
     .hero {
-      min-height: min(620px, 84svh);
+      min-height: min(680px, 86svh);
       width: 100%;
       display: grid;
       place-items: center;
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      padding: 1.45rem 1.25rem 1.75rem;
+      padding: 1.35rem 1.25rem 1.6rem;
       text-align: left;
-      background: #050505;
+      background:
+        linear-gradient(90deg, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.82) 36%, rgba(5, 5, 5, 0.28) 70%, rgba(5, 5, 5, 0.08) 100%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0.08) 0%, rgba(5, 5, 5, 0.14) 58%, rgba(5, 5, 5, 0.78) 100%),
+        url("./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible") center right / cover no-repeat,
+        #050505;
       border-bottom: 1px solid rgba(255, 117, 34, 0.2);
     }
 
@@ -64,8 +68,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.7) 34%, rgba(5, 5, 5, 0.2) 66%, rgba(5, 5, 5, 0.04) 100%),
-        linear-gradient(180deg, rgba(5, 5, 5, 0.04) 0%, rgba(5, 5, 5, 0.02) 50%, rgba(5, 5, 5, 0.58) 100%);
+        radial-gradient(circle at 78% 30%, rgba(255, 154, 26, 0.12), transparent 18rem),
+        radial-gradient(circle at 88% 72%, rgba(227, 0, 85, 0.1), transparent 18rem);
       pointer-events: none;
       z-index: 0;
     }
@@ -120,13 +124,13 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 640px) minmax(320px, 460px);
-      gap: 1.25rem;
+      grid-template-columns: minmax(0, 700px);
+      gap: 1rem;
       align-items: center;
     }
 
     .hero-copy {
-      max-width: 640px;
+      max-width: 700px;
       min-width: 0;
       text-shadow: 0 2px 18px rgba(0, 0, 0, 0.64);
     }
@@ -280,17 +284,18 @@
 
     .quick-facts {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-      margin: 1.3rem 0 0;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.55rem;
+      margin: 1rem 0 0;
     }
 
     .quick-fact {
-      min-height: 118px;
-      padding: 0.85rem;
+      min-height: 104px;
+      padding: 0.75rem;
       border: 1px solid rgba(255, 154, 26, 0.22);
       border-radius: 8px;
-      background: rgba(17, 16, 15, 0.64);
+      background: rgba(17, 16, 15, 0.72);
+      backdrop-filter: blur(8px);
     }
 
     .quick-fact strong {
@@ -308,17 +313,14 @@
     }
 
     .hero-map {
-      position: relative;
-      z-index: 4;
-      margin: 0;
-      min-width: 0;
-      border: 1px solid rgba(255, 154, 26, 0.34);
-      border-radius: 8px;
-      background: rgba(7, 6, 5, 0.68);
-      box-shadow:
-        0 24px 80px rgba(0, 0, 0, 0.4),
-        0 0 64px rgba(255, 70, 38, 0.2);
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
       overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
     }
 
     .hero-map img {
@@ -1431,7 +1433,11 @@
       .hero {
         min-height: auto;
         padding: 1.25rem 1rem 1.5rem;
-        background: #050505;
+        background:
+          linear-gradient(180deg, rgba(5, 5, 5, 0.12) 0%, rgba(5, 5, 5, 0.72) 32%, rgba(5, 5, 5, 0.98) 82%),
+          linear-gradient(90deg, rgba(5, 5, 5, 0.66), rgba(5, 5, 5, 0.1), rgba(5, 5, 5, 0.32)),
+          url("./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible") center top / cover no-repeat,
+          #050505;
       }
 
       .hero-image-scrim {
@@ -1520,8 +1526,14 @@
 
       .hero-map {
         order: -1;
-        margin-top: 1rem;
-        max-width: min(100%, 340px);
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
       }
 
       .hero-map figcaption {
