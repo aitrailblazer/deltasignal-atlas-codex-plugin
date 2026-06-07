@@ -6,7 +6,7 @@
   <meta name="description" content="Delta Signal ATLAS-7 - SEC-grounded risk, fundamentals, daily monitoring, SPECTRA field maps, evidence drilldowns, and signal intelligence for the 215-row crypto-exposed public-company universe through MCP, Open API, and x402.">
   <title>Delta Signal ATLAS-7 • SEC-Grounded Issuer Intelligence</title>
   <link rel="icon" href="./assets/logo.png" type="image/png">
-  <link rel="preload" as="image" href="./assets/atlas7-evidence-pipeline.png">
+  <link rel="preload" as="image" href="./assets/atlas7-evidence-pipeline.png?v=20260606-hero">
   <link rel="alternate" type="application/rss+xml" title="Delta Signal ATLAS-7 Changelog RSS" href="./rss.xml">
   <link rel="alternate" type="application/atom+xml" title="Delta Signal ATLAS-7 Changelog Atom" href="./atom.xml">
   <meta property="og:image" content="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/assets/atlas7-evidence-pipeline.png">
@@ -47,22 +47,22 @@
     }
 
     .hero {
-      min-height: min(720px, 100svh);
+      min-height: min(690px, 94svh);
       width: 100%;
       display: grid;
       place-items: center;
       position: relative;
       overflow: hidden;
-      padding: 2rem 1.25rem 2.25rem;
+      padding: 1.45rem 1.25rem 1.75rem;
       text-align: left;
       background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.76) 46%, rgba(5, 5, 5, 0.18) 78%, rgba(5, 5, 5, 0.46) 100%),
-        linear-gradient(180deg, rgba(20, 11, 8, 0.5) 0%, rgba(5, 5, 5, 0.88) 100%),
-        radial-gradient(circle at 26% 18%, rgba(255, 154, 26, 0.24), transparent 25rem),
-        radial-gradient(circle at 78% 42%, rgba(227, 0, 85, 0.18), transparent 24rem);
-      background-position: center, center, center, center;
+        linear-gradient(90deg, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.58) 52%, rgba(5, 5, 5, 0.12) 100%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.2) 48%, rgba(5, 5, 5, 0.84) 100%),
+        url("./assets/atlas7-evidence-pipeline.png?v=20260606-hero"),
+        #050505;
+      background-position: center, center, center top, center;
       background-repeat: no-repeat;
-      background-size: auto, auto, auto, auto;
+      background-size: auto, auto, contain, auto;
       border-bottom: 1px solid rgba(255, 117, 34, 0.2);
     }
 
@@ -71,10 +71,10 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center right;
-      opacity: 0.82;
-      filter: saturate(1.08) contrast(1.05);
+      object-fit: contain;
+      object-position: center top;
+      opacity: 1;
+      filter: brightness(1.14) saturate(1.12) contrast(1.08);
       pointer-events: none;
       z-index: 0;
     }
@@ -83,8 +83,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0.82) 44%, rgba(5, 5, 5, 0.22) 78%, rgba(5, 5, 5, 0.48) 100%),
-        linear-gradient(180deg, rgba(5, 5, 5, 0.08) 0%, rgba(5, 5, 5, 0.78) 96%);
+        linear-gradient(90deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0.74) 30%, rgba(5, 5, 5, 0.22) 58%, rgba(5, 5, 5, 0) 100%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.08) 48%, rgba(5, 5, 5, 0.82) 100%);
       pointer-events: none;
       z-index: 0;
     }
@@ -149,12 +149,12 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.88fr) minmax(320px, 0.58fr);
-      gap: 1.35rem;
+      grid-template-columns: minmax(0, 780px);
       align-items: center;
     }
 
     .hero-copy {
+      max-width: 780px;
       min-width: 0;
     }
 
@@ -405,6 +405,20 @@
       margin: 0.9rem 0 0;
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    .hero-image-credit {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0.75rem 0 0;
+      border: 1px solid rgba(255, 154, 26, 0.22);
+      border-radius: 999px;
+      padding: 0.5rem 0.75rem;
+      background: rgba(5, 5, 5, 0.54);
+      color: #ffe4cf;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
     }
 
     .signal-visual {
@@ -1442,28 +1456,31 @@
         min-height: auto;
         padding: 1.25rem 1rem 1.5rem;
         background:
-          linear-gradient(180deg, rgba(5, 5, 5, 0.68) 0%, rgba(5, 5, 5, 0.92) 42%, rgba(5, 5, 5, 0.98) 100%);
+          linear-gradient(180deg, rgba(5, 5, 5, 0.48) 0%, rgba(5, 5, 5, 0.88) 42%, rgba(5, 5, 5, 0.98) 100%),
+          url("./assets/atlas7-evidence-pipeline.png?v=20260606-hero"),
+          #050505;
         background-position: center top;
         background-repeat: no-repeat;
-        background-size: auto;
+        background-size: contain;
       }
 
       .hero-image {
         height: 44vh;
         min-height: 300px;
         object-position: center top;
-        opacity: 0.62;
+        opacity: 0.9;
       }
 
       .hero-image-scrim {
         background:
-          linear-gradient(180deg, rgba(5, 5, 5, 0.28) 0%, rgba(5, 5, 5, 0.82) 32%, rgba(5, 5, 5, 0.98) 78%),
-          linear-gradient(90deg, rgba(5, 5, 5, 0.72), rgba(5, 5, 5, 0.18), rgba(5, 5, 5, 0.72));
+          linear-gradient(180deg, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0.72) 34%, rgba(5, 5, 5, 0.98) 80%),
+          linear-gradient(90deg, rgba(5, 5, 5, 0.68), rgba(5, 5, 5, 0.05), rgba(5, 5, 5, 0.36));
       }
 
       .hero-inner {
         width: calc(100vw - 2rem);
         max-width: calc(100vw - 2rem);
+        padding-top: 8.25rem;
       }
 
       .hero-copy,
@@ -1473,6 +1490,7 @@
       .agent-links,
       .agent-primer,
       .meter,
+      .hero-image-credit,
       .hero-actions {
         width: 100%;
         max-width: min(100%, 340px);
@@ -1481,9 +1499,7 @@
       }
 
       .hero-topline {
-        display: grid;
-        justify-items: start;
-        gap: 0.75rem;
+        display: none;
       }
 
       .hero-inner > *,
@@ -1673,7 +1689,7 @@
 <body>
   <main>
     <section class="hero">
-      <img class="hero-image" src="./assets/atlas7-evidence-pipeline.png" alt="" decoding="async" fetchpriority="high">
+      <img class="hero-image" src="./assets/atlas7-evidence-pipeline.png?v=20260606-hero" alt="" decoding="async" fetchpriority="high">
       <div class="hero-image-scrim" aria-hidden="true"></div>
       <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
@@ -1716,6 +1732,7 @@
               <a href="#pricing" class="btn btn-secondary">View pricing</a>
             </div>
             <p class="meter">MCP live • EDGAR daily background task verified • Open API published • x402 enabled • Glama verified • 215-row ATLAS-7 + SPECTRA coverage verified</p>
+            <p class="hero-image-credit">SEC/XBRL evidence base -> ATLAS-7 intelligence engine -> agent-ready outputs.</p>
             <nav class="agent-links" aria-label="Agent files">
               <a href="./llms-full.txt">llms-full.txt</a>
               <a href="./llms.txt">llms.txt</a>
@@ -1724,10 +1741,6 @@
               <a href="./atom.xml">atom.xml</a>
             </nav>
           </div>
-          <figure class="hero-map">
-            <img src="./assets/atlas7-evidence-pipeline.png" alt="ATLAS-7 daily EDGAR evidence pipeline from CompanyFacts ingestion to MCP outputs">
-            <figcaption>Hero evidence map: EDGAR CompanyFacts readiness, recovery, ATLAS-7 rows, SPECTRA maps, MCP, REST, and x402.</figcaption>
-          </figure>
         </div>
       </div>
     </section>
