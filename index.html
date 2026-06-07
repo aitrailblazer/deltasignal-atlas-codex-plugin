@@ -6,7 +6,7 @@
   <meta name="description" content="Delta Signal ATLAS-7 - SEC-grounded risk, fundamentals, daily monitoring, SPECTRA field maps, evidence drilldowns, and signal intelligence for the 215-row crypto-exposed public-company universe through MCP, Open API, and x402.">
   <title>Delta Signal ATLAS-7 • SEC-Grounded Issuer Intelligence</title>
   <link rel="icon" href="./assets/logo.png" type="image/png">
-  <link rel="preload" as="image" href="./assets/atlas7-evidence-pipeline.png?v=20260606-hero-visible">
+  <link rel="preload" as="image" href="./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible">
   <link rel="alternate" type="application/rss+xml" title="Delta Signal ATLAS-7 Changelog RSS" href="./rss.xml">
   <link rel="alternate" type="application/atom+xml" title="Delta Signal ATLAS-7 Changelog Atom" href="./atom.xml">
   <meta property="og:image" content="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/assets/atlas7-evidence-pipeline.png">
@@ -47,44 +47,25 @@
     }
 
     .hero {
-      min-height: min(650px, 88svh);
+      min-height: min(620px, 84svh);
       width: 100%;
       display: grid;
       place-items: center;
       position: relative;
+      isolation: isolate;
       overflow: hidden;
       padding: 1.45rem 1.25rem 1.75rem;
       text-align: left;
-      background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.76) 0%, rgba(5, 5, 5, 0.34) 46%, rgba(5, 5, 5, 0.02) 100%),
-        linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.08) 46%, rgba(5, 5, 5, 0.58) 100%),
-        url("./assets/atlas7-evidence-pipeline.png?v=20260606-hero-visible"),
-        #050505;
-      background-position: center, center, center top, center;
-      background-repeat: no-repeat;
-      background-size: auto, auto, contain, auto;
+      background: #050505;
       border-bottom: 1px solid rgba(255, 117, 34, 0.2);
-    }
-
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0.9;
-      filter: brightness(1.18) saturate(1.14) contrast(1.08);
-      pointer-events: none;
-      z-index: 0;
     }
 
     .hero-image-scrim {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.64) 32%, rgba(5, 5, 5, 0.18) 64%, rgba(5, 5, 5, 0.02) 100%),
-        linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.03) 48%, rgba(5, 5, 5, 0.48) 100%);
+        linear-gradient(90deg, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.7) 34%, rgba(5, 5, 5, 0.2) 66%, rgba(5, 5, 5, 0.04) 100%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0.04) 0%, rgba(5, 5, 5, 0.02) 50%, rgba(5, 5, 5, 0.58) 100%);
       pointer-events: none;
       z-index: 0;
     }
@@ -122,20 +103,10 @@
       to { background-position: 0 900px; }
     }
 
-    #particles {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.58;
-      pointer-events: none;
-      z-index: 1;
-    }
-
     .hero-inner {
       width: min(var(--max), 100%);
       position: relative;
-      z-index: 2;
+      z-index: 1;
       min-width: 0;
     }
 
@@ -149,13 +120,15 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 780px);
+      grid-template-columns: minmax(0, 640px) minmax(320px, 460px);
+      gap: 1.25rem;
       align-items: center;
     }
 
     .hero-copy {
-      max-width: 780px;
+      max-width: 640px;
       min-width: 0;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.64);
     }
 
     .logo {
@@ -335,6 +308,8 @@
     }
 
     .hero-map {
+      position: relative;
+      z-index: 4;
       margin: 0;
       min-width: 0;
       border: 1px solid rgba(255, 154, 26, 0.34);
@@ -344,14 +319,15 @@
         0 24px 80px rgba(0, 0, 0, 0.4),
         0 0 64px rgba(255, 70, 38, 0.2);
       overflow: hidden;
-      backdrop-filter: blur(8px);
     }
 
     .hero-map img {
+      position: relative;
+      z-index: 1;
       display: block;
       width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       object-position: center;
     }
 
@@ -1455,34 +1431,19 @@
       .hero {
         min-height: auto;
         padding: 1.25rem 1rem 1.5rem;
-        background:
-          linear-gradient(180deg, rgba(5, 5, 5, 0.26) 0%, rgba(5, 5, 5, 0.78) 42%, rgba(5, 5, 5, 0.98) 100%),
-          url("./assets/atlas7-evidence-pipeline.png?v=20260606-hero-visible"),
-          #050505;
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-
-      .hero-image {
-        height: 250px;
-        min-height: 220px;
-        max-height: 270px;
-        object-fit: contain;
-        object-position: center top;
-        opacity: 1;
+        background: #050505;
       }
 
       .hero-image-scrim {
         background:
-          linear-gradient(180deg, rgba(5, 5, 5, 0.02) 0%, rgba(5, 5, 5, 0.64) 34%, rgba(5, 5, 5, 0.98) 80%),
+          linear-gradient(180deg, rgba(5, 5, 5, 0.02) 0%, rgba(5, 5, 5, 0.42) 30%, rgba(5, 5, 5, 0.98) 78%),
           linear-gradient(90deg, rgba(5, 5, 5, 0.56), rgba(5, 5, 5, 0.02), rgba(5, 5, 5, 0.24));
       }
 
       .hero-inner {
         width: calc(100vw - 2rem);
         max-width: calc(100vw - 2rem);
-        padding-top: 15.25rem;
+        padding-top: 0;
       }
 
       .hero-copy,
@@ -1558,6 +1519,7 @@
       }
 
       .hero-map {
+        order: -1;
         margin-top: 1rem;
         max-width: min(100%, 340px);
       }
@@ -1691,9 +1653,7 @@
 <body>
   <main>
     <section class="hero">
-      <img class="hero-image" src="./assets/atlas7-evidence-pipeline.png?v=20260606-hero-visible" alt="ATLAS-7 evidence pipeline from SEC CompanyFacts ingestion through EDGAR reconstruction, SPECTRA field maps, and MCP outputs" decoding="async" fetchpriority="high">
       <div class="hero-image-scrim" aria-hidden="true"></div>
-      <canvas id="particles" aria-hidden="true"></canvas>
       <div class="hero-inner">
         <div class="hero-topline">
           <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
@@ -1743,6 +1703,10 @@
               <a href="./atom.xml">atom.xml</a>
             </nav>
           </div>
+          <figure class="hero-map">
+            <img src="./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible" alt="ATLAS-7 Evidence Pipeline diagram showing SEC/XBRL evidence, ATLAS-7 intelligence, agent-ready outputs, access rails, and validation layers" loading="eager" decoding="async">
+            <figcaption>ATLAS-7 generation path: SEC/XBRL evidence -> deterministic intelligence engine -> MCP, REST, Arazzo, Glama, and x402 outputs.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -2510,97 +2474,5 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
   </footer>
 
   <script type="module" src="./assets/delta-signal-landing.js?v=arazzo-workflows-20260511"></script>
-  <script>
-    (() => {
-      const canvas = document.getElementById("particles");
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!canvas || reduceMotion) return;
-
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-      let width = 0;
-      let height = 0;
-      let dpr = 1;
-      let particles = [];
-      const colors = ["#ff9a1a", "#ff3028", "#e30055"];
-
-      function resize() {
-        dpr = Math.min(window.devicePixelRatio || 1, 2);
-        width = canvas.clientWidth;
-        height = canvas.clientHeight;
-        canvas.width = Math.floor(width * dpr);
-        canvas.height = Math.floor(height * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        init();
-      }
-
-      class Particle {
-        constructor() {
-          this.x = Math.random() * width;
-          this.y = Math.random() * height;
-          this.size = Math.random() * 2 + 0.8;
-          this.vx = Math.random() * 0.42 - 0.21;
-          this.vy = Math.random() * 0.42 - 0.21;
-          this.color = colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        update() {
-          this.x += this.vx;
-          this.y += this.vy;
-          if (this.x < 0 || this.x > width) this.vx *= -1;
-          if (this.y < 0 || this.y > height) this.vy *= -1;
-        }
-
-        draw() {
-          ctx.fillStyle = this.color;
-          ctx.shadowBlur = 14;
-          ctx.shadowColor = this.color;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      function init() {
-        const baseCount = width < 760 ? 46 : 90;
-        particles = Array.from({ length: baseCount }, () => new Particle());
-      }
-
-      function connect() {
-        const maxDistance = width < 760 ? 92 : 128;
-        ctx.shadowBlur = 0;
-        for (let a = 0; a < particles.length; a += 1) {
-          for (let b = a + 1; b < particles.length; b += 1) {
-            const dx = particles[a].x - particles[b].x;
-            const dy = particles[a].y - particles[b].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < maxDistance) {
-              const alpha = (1 - distance / maxDistance) * 0.34;
-              ctx.strokeStyle = `rgba(255, 154, 26, ${alpha})`;
-              ctx.lineWidth = 0.7;
-              ctx.beginPath();
-              ctx.moveTo(particles[a].x, particles[a].y);
-              ctx.lineTo(particles[b].x, particles[b].y);
-              ctx.stroke();
-            }
-          }
-        }
-      }
-
-      function animate() {
-        ctx.clearRect(0, 0, width, height);
-        particles.forEach((particle) => {
-          particle.update();
-          particle.draw();
-        });
-        connect();
-        requestAnimationFrame(animate);
-      }
-
-      window.addEventListener("resize", resize, { passive: true });
-      resize();
-      animate();
-    })();
-  </script>
 </body>
 </html>
