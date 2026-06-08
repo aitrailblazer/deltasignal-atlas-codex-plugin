@@ -47,10 +47,10 @@
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>192</strong><span>tracked changes</span></div>
-        <div><strong>107</strong><span>timeline entries</span></div>
-        <div><strong>190</strong><span>unique tripcodes</span></div>
-        <div><strong>192</strong><span>breadcrumb chips</span></div>
+        <div><strong>193</strong><span>tracked changes</span></div>
+        <div><strong>108</strong><span>timeline entries</span></div>
+        <div><strong>191</strong><span>unique tripcodes</span></div>
+        <div><strong>193</strong><span>breadcrumb chips</span></div>
         <div><strong>75</strong><span>visible commit references</span></div>
         <div><strong>103</strong><span>unique source commits</span></div>
     </div>
@@ -77,6 +77,7 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>193</td><td><code>ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</code></td><td>Improvement Timeline &gt; LLM evidence-routing guardrails and TripCode discovery caveat</td><td><code>T+1066m</code></td><td>current changelog update</td></tr>
           <tr><td>192</td><td><code>ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING</code></td><td>Improvement Timeline &gt; Live readiness and MCP evidence hardening deployed</td><td><code>T+1058m</code></td><td>4cb93a38 / fd5ec09c</td></tr>
           <tr><td>191</td><td><code>ATLAS-JUN-6-SPECTRA-GENERATION-MODEL</code></td><td>Improvement Timeline &gt; SPECTRA generation model documented</td><td><code>T+1050m</code></td><td>current changelog update</td></tr>
           <tr><td>190</td><td><code>ATLAS-JUN-6-ATLAS7-GENERATION-MODEL</code></td><td>Improvement Timeline &gt; ATLAS-7 generation model documented</td><td><code>T+1042m</code></td><td>current changelog update</td></tr>
@@ -275,6 +276,17 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS">
+          <h3>LLM evidence-routing guardrails and TripCode discovery caveat</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</code> <code>track: T+1066m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; LLM evidence-routing guardrails and TripCode discovery caveat</code></p>
+          <p>The LLM handoff files and plugin skill now explicitly separate ATLAS-7 as the SEC/XBRL evidence layer, SPECTRA as the ATLAS-history field-map layer, and TripCode/River research as discovery-gated unless the live MCP tools and required River/index blobs are present.</p>
+          <ul>
+            <li>Updated llms.txt and llms-full.txt with strict evidence routing, preferred broad/issuer/daily/TripCode workflow order, metadata preservation rules, and hard non-advice prohibitions.</li>
+            <li>Updated the bundled DeltaSignal skill instructions so agents check live MCP tools/list before claiming TripCode tools are public-production callable.</li>
+            <li>Documented the HUT TripCode boundary: local/source proof may exist, but public execution still depends on deployed MCP discovery plus the required TF-RIVER-HUT and by_issuer/HUT resolver blobs.</li>
+            <li>Preserved public-safe language and avoided private design-partner details, wallet addresses, mailbox details, secrets, or personalized financial advice.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING">
           <h3>Live readiness and MCP evidence hardening deployed</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING</code> <code>track: T+1058m</code> <code>commit: 4cb93a38 / fd5ec09c</code> <code>bread: Improvement Timeline &gt; Live readiness and MCP evidence hardening deployed</code></p>
@@ -2649,10 +2661,10 @@
   "version": "changelog-llm-v1",
   "last_updated": "2026-06-08",
   "stats": {
-    "tracked_changes": 192,
-    "timeline_entries": 107,
-    "unique_tripcodes": 190,
-    "breadcrumb_chips": 192,
+    "tracked_changes": 193,
+    "timeline_entries": 108,
+    "unique_tripcodes": 191,
+    "breadcrumb_chips": 193,
     "visible_commit_references": 75,
     "unique_source_commits": 103
   },
@@ -3885,9 +3897,32 @@
       "commit": "4cb93a38 / fd5ec09c",
       "bread": "Improvement Timeline > Live readiness and MCP evidence hardening deployed",
       "river_index": 192
+    },
+    {
+      "tripcode": "ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS",
+      "track": "T+1066m",
+      "commit": "current changelog update",
+      "bread": "Improvement Timeline > LLM evidence-routing guardrails and TripCode discovery caveat",
+      "river_index": 193
     }
   ],
   "timeline_entries": [
+    {
+      "river_index": 193,
+      "date": "June 8, 2026",
+      "title": "LLM evidence-routing guardrails and TripCode discovery caveat",
+      "tripcode": "ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS",
+      "track": "T+1066m",
+      "bread": "Improvement Timeline > LLM evidence-routing guardrails and TripCode discovery caveat",
+      "commit": "current changelog update",
+      "summary": "The LLM handoff files and plugin skill now explicitly separate ATLAS-7 as the SEC/XBRL evidence layer, SPECTRA as the ATLAS-history field-map layer, and TripCode/River research as discovery-gated unless the live MCP tools and required River/index blobs are present.",
+      "bullets": [
+        "Updated llms.txt and llms-full.txt with strict evidence routing, preferred broad/issuer/daily/TripCode workflow order, metadata preservation rules, and hard non-advice prohibitions.",
+        "Updated the bundled DeltaSignal skill instructions so agents check live MCP tools/list before claiming TripCode tools are public-production callable.",
+        "Documented the HUT TripCode boundary: local/source proof may exist, but public execution still depends on deployed MCP discovery plus the required TF-RIVER-HUT and by_issuer/HUT resolver blobs.",
+        "Preserved public-safe language and avoided private design-partner details, wallet addresses, mailbox details, secrets, or personalized financial advice."
+      ]
+    },
     {
       "river_index": 2,
       "date": "May 31, 2026",
@@ -5610,7 +5645,7 @@
 </script>
   <script type="application/xml" id="changelog-llm-xml">
 <changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="192" timeline_entries="107" unique_tripcodes="190" breadcrumb_chips="192" visible_commit_references="75" unique_source_commits="103" />
+  <stats tracked_changes="193" timeline_entries="108" unique_tripcodes="191" breadcrumb_chips="193" visible_commit_references="75" unique_source_commits="103" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -5726,6 +5761,7 @@
     <entry river_index="181" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P9" track="T+970m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.9 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.9 percent coverage</title></entry>
     <entry river_index="173" tripcode="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" track="T+906m" bread="Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage" commit="current changelog update"><date>June 6, 2026</date><title>Consolidated June 6 public rollup to 75.6 percent coverage</title></entry>
     <entry river_index="192" tripcode="ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING" track="T+1058m" bread="Improvement Timeline &gt; Live readiness and MCP evidence hardening deployed" commit="4cb93a38 / fd5ec09c"><date>June 8, 2026</date><title>Live readiness and MCP evidence hardening deployed</title></entry>
+    <entry river_index="193" tripcode="ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS" track="T+1066m" bread="Improvement Timeline &gt; LLM evidence-routing guardrails and TripCode discovery caveat" commit="current changelog update"><date>June 8, 2026</date><title>LLM evidence-routing guardrails and TripCode discovery caveat</title></entry>
   </entries>
 </changelog_llm>
 </script>

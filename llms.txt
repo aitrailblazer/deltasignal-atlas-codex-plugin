@@ -34,6 +34,16 @@ Natural Language Briefs are evidence-to-Markdown compiler outputs. They are not 
 
 Current public hardening checkpoint: `ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING`. Production revision `ca-web-intel-mcp--0000484` serves OpenAPI with 56 paths, live `/v1/pricing`, live `/v1/contract/fields`, structured `invalid_path_scope` for universe-route misuse, HUT issuer-evidence readiness, and a 97.5% `cmd/search-gateway` source coverage checkpoint.
 
+Strict ATLAS-7 / SPECTRA rule:
+
+- Treat ATLAS-7 as the SEC/XBRL-grounded evidence layer.
+- Treat SPECTRA as the ATLAS-history field-map layer, not as a separate source of truth.
+- Preserve source dates, computed times, filing dates where returned, stale flags, caveats, quality flags, evidence hashes, payload mode, route provenance, billing metadata, and the non-advice boundary.
+- Missing evidence stays missing. Do not infer, backfill, fabricate, or convert a soft miss into "no risk" or "no opportunity."
+- Preferred broad workflow: readiness -> Morning Brief -> risk distribution -> top stressed -> alpha opportunities -> issuer drilldowns only as needed.
+- Preferred issuer workflow: company report -> fundamentals -> covenant stress -> peer ranking -> alpha signals -> SPECTRA field map -> ATLAS / point-in-time history.
+- Hard prohibition: do not produce buy/sell/short/long/hold, entry/exit, stop-loss, price target, guaranteed-move, or personalized recommendation language.
+
 TripCode research continuity lets subscribers turn DeltaSignal article subtitles into machine-readable research objects:
 
 - `TF-SUB` resolves DeltaSignal article and narrative research nodes from Azure Blob.
@@ -41,9 +51,11 @@ TripCode research continuity lets subscribers turn DeltaSignal article subtitles
 - `TF-DS` is reserved for computed DeltaSignal signal nodes.
 - `TF-RIVER` is reserved for issuer thesis River nodes.
 - Substack post IDs, canonical URLs, slugs, and publish timestamps are secondary publication metadata. They must not define or change TF-SUB identity.
-- If a user provides `ATLAS-7 TripCode: TF-SUB-...`, call `deltasignal_resolve_article_tripcode` first, then follow returned continuity links. If evidence is missing, say it is missing.
-- If a user asks for the full article thesis map and prior article nodes are not provided, call `deltasignal_list_article_tripcodes` with the current TF-SUB TripCode, TF-RIVER TripCode, or issuer first. Then call `deltasignal_article_thesis_map` with the discovered River continuity.
-- If a user asks what changed across the whole River, call `deltasignal_reverse_search_river`. Use `deltasignal_resolve_river_tripcode` for the raw River graph, `deltasignal_search_by_claim` for claim lookup, and `deltasignal_compare_claim_to_evidence` for one-claim evidence status.
+- If current MCP discovery exposes TripCode tools and the user provides `ATLAS-7 TripCode: TF-SUB-...`, call `deltasignal_resolve_article_tripcode` first, then follow returned continuity links. If evidence is missing, say it is missing.
+- If current discovery exposes the required tools and a user asks for the full article thesis map, list article/River nodes first, then call the thesis-map tool with discovered River continuity.
+- If current discovery exposes the required tools and a user asks what changed across the whole River, use the River resolver, River reverse search, claim search, and claim/evidence comparison tools in that order.
+- TripCode/River public availability is discovery-gated. Local/source proof, stale public MCP output, or planned tools are not enough to claim public production availability.
+- Known HUT River readiness caveat: public execution may require `trendforge/v1/resolver/objects/TF-RIVER/TF-RIVER-HUT.json` and `trendforge/v1/resolver/indexes/by_issuer/HUT.json`; if either is unavailable, report missing/unavailable state instead of inventing continuity.
 - TripCode subscriber execution uses the public MCP/x402 surface: discovery is free, tools/call may require grant/free-tier/x402 payment proof, and paid article content or LLM-friendly Markdown must be entitlement-gated.
 - If entitlement is not verified, return metadata, permitted summaries, continuity links, and restricted or missing status. Do not leak full paid content and do not invent unavailable evidence.
 

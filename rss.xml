@@ -9,6 +9,14 @@
     <lastBuildDate>Mon, 08 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>LLM evidence-routing guardrails and TripCode discovery caveat</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</category>
+      <description>The LLM handoff files and plugin skill now explicitly separate ATLAS-7 as the SEC/XBRL evidence layer, SPECTRA as the ATLAS-history field-map layer, and TripCode/River research as discovery-gated unless the live MCP tools and required River/index blobs are present. Breadcrumb: Improvement Timeline &gt; LLM evidence-routing guardrails and TripCode discovery caveat Track: T+1066m Commit: current changelog update</description>
+    </item>
+    <item>
       <title>Live readiness and MCP evidence hardening deployed</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING</guid>
@@ -239,14 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</category>
       <description>The public changelog now includes the full June 6 public-safe update set through notification delivery, daily all-delta digest framing, x402 notification pricing, RSS/Atom subscriber feeds, Codex process-runner coverage, dynamic crawler loop coverage, and the verified cmd/search-gateway package coverage checkpoint at 74.4%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage Track: T+834m Commit: current changelog update</description>
-    </item>
-    <item>
-      <title>Dynamic crawler loop coverage checkpoint</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4</category>
-      <description>Dynamic feed-crawler coverage now verifies source-listing success and error paths, empty dynamic source sets, file-feed filtering, local dynamic RSS fetches, and canceled loop shutdown; the verified cmd/search-gateway package coverage checkpoint reached 74.4%. Breadcrumb: Improvement Timeline &gt; Dynamic crawler loop coverage checkpoint Track: T+826m Commit: af9f8718</description>
     </item>
   </channel>
 </rss>

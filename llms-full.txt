@@ -47,6 +47,21 @@ ATLAS-7 and SPECTRA generation model
 - SPECTRA is generated from ATLAS-history-shaped rows for a ticker: resolve source date and issuer identity, normalize numeric/date/boolean fields, derive pressure/range labels, package a field-map contract, and preserve provenance plus structured soft-miss states.
 - SPECTRA is not a separate facts source. It explains and maps generated ATLAS-7 history; missing rows must remain missing.
 
+Strict evidence routing rules
+- ATLAS-7 is the evidence layer. It can support issuer diligence, market-wide screening, daily-change inspection, and bounded workflow summaries, but it must not be treated as a discretionary trading system.
+- SPECTRA is the field-map layer over generated ATLAS-history rows. It can explain pressure/range state, lineage, caveats, and date bounds when available. It must not invent unavailable history.
+- Preserve source_date, computed_at, filing dates where returned, stale flags, caveats, quality_flags, evidence hashes where available, payload_mode, route_uri, billing metadata, and the non-advice boundary.
+- Missing evidence remains missing. Soft misses should be described with the returned reason, coverage_state, retry_after_days, and billing_behavior when present.
+- Do not produce buy/sell/short/long/hold, entry/exit, stop-loss, price target, guaranteed-move, or personalized recommendation language.
+- Do not add external market news unless the user explicitly requests external research and the environment permits it.
+- Do not let Natural Language rendering, TripCode article memory, or Gemini synthesis override returned caveats or source metadata.
+
+Default workflow order
+- Broad market workflow: readiness, Morning Brief, risk distribution, top stressed, alpha opportunities, then issuer drilldowns only as needed.
+- Issuer workflow: company report, company fundamentals, covenant stress, peer ranking, alpha signals, SPECTRA field map, then ATLAS history or point-in-time history.
+- Daily evidence workflow: daily-changes/latest first, then daily-change evidence for named ticker/CIK only when the user asks to inspect proof.
+- TripCode workflow: resolve article TripCode, list article/River nodes, build thesis map, compare claims to filing evidence, then report missing evidence, weakened assumptions, invalidation logic, and monitor-next items.
+
 Versioned parser field contract
 - Treat GET /v1/contract/fields as the source of truth for parser-stable fields.
 - The current field contract version is deltasignal-field-contract-v1.
@@ -121,6 +136,25 @@ curl -sS https://api.aitrailblazer.net/mcp \
   -H 'content-type: application/json' \
   -H "x-api-key: $MCP_API_KEY" \
   --data '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
+
+TripCode and River research availability
+TripCode research continuity is a Delta Signal product direction and source/local workflow for turning article subtitles into machine-readable research objects. Public MCP availability must be confirmed through live tools/list discovery before agents claim a TripCode tool is production-callable.
+
+If discovery exposes TripCode tools:
+- Resolve a `TF-SUB` article TripCode first.
+- List article TripCodes or issuer River nodes before building a full thesis map.
+- Preserve article identity, resolver identity, evidence identity, source dates, caveats, and non-advice language.
+- Compare claims to filing-backed evidence only through returned TF-XBRL/evidence refs or available ATLAS-7 issuer routes.
+
+If discovery does not expose TripCode tools:
+- Say the public MCP surface does not currently expose that TripCode capability.
+- Offer the supported ATLAS-7 issuer workflow instead: company report, fundamentals, covenant stress, peer ranking, alpha signals, SPECTRA field map, and daily-change evidence.
+- Do not fabricate article objects, River nodes, claim status, or filing evidence.
+
+Known HUT TripCode readiness caveat:
+- Local/source proof may exist for HUT research continuity, but public execution depends on deployed MCP tools and required Azure Blob objects.
+- Missing River root/index blobs, including trendforge/v1/resolver/objects/TF-RIVER/TF-RIVER-HUT.json or trendforge/v1/resolver/indexes/by_issuer/HUT.json, must be reported as missing/unavailable.
+- A narrative HUT thesis is not the same as raw MCP evidence. Verify contract claims, financing structure, insider activity, valuation, and Delta Signal issuer-level outputs before presenting an evidence-backed HUT note.
 
 Local verification commands
 These are source-repo commands, not GitHub Pages commands. Run them from the backend repo when available.

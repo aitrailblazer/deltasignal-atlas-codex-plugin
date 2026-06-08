@@ -64,6 +64,39 @@ Composite presets are discounted server-enforced workflows. Public Builder prici
 
 Daily Monitoring and Evidence are separate products. `deltasignal_daily_changes` is compact by default and should not be used as a bulk evidence export. Use `deltasignal_daily_change_evidence` only when the user asks to inspect raw proof for a named issuer or CIK.
 
+## TripCode Research Continuity
+
+Use TripCode tools when a user has a DeltaSignal article subtitle with `ATLAS-7 TripCode: TF-SUB-...` and wants Codex or Claude Code to load the machine-readable research object behind the article.
+
+Important rules:
+
+- First confirm the live MCP `tools/list` exposes the TripCode tool you intend to call. Local/source proof, planned tools, or stale public MCP output are not enough to claim public production availability.
+- `TF-SUB` resolves DeltaSignal article/research objects stored in Azure Blob.
+- `TF-XBRL` resolves SEC/XBRL evidence nodes and must preserve SEC identifiers.
+- `TF-DS` is reserved for computed DeltaSignal signal nodes.
+- `TF-RIVER` is reserved for issuer thesis River nodes.
+- Substack post IDs, URLs, slugs, and publication times are secondary publication metadata. They must not define or change the TF-SUB TripCode.
+- If a resolver returns missing evidence, say it is missing. Do not invent article objects, filing evidence, or River state.
+- If the public MCP surface does not expose TripCode tools, use the supported ATLAS-7 issuer workflow instead: company report, fundamentals, covenant stress, peer ranking, alpha signals, SPECTRA field map, and daily-change evidence.
+- For the HUT proof path, missing `trendforge/v1/resolver/objects/TF-RIVER/TF-RIVER-HUT.json` or `trendforge/v1/resolver/indexes/by_issuer/HUT.json` means River continuity is unavailable until those deployed blobs exist.
+
+TripCode tool pricing:
+
+| MCP tool | Typical price | Purpose |
+| --- | ---: | --- |
+| `deltasignal_generate_article_tripcode` | `$0.00` | Generate a deterministic TF-SUB article/research identity before publication |
+| `deltasignal_resolve_article_tripcode` | `$0.02` | Resolve an article subtitle TripCode into its Azure Blob research object |
+| `deltasignal_generate_filing_tripcode` | `$0.00` | Generate a deterministic TF-XBRL identity from supplied SEC/XBRL tuple data |
+| `deltasignal_resolve_filing_tripcode` | `$0.02` | Resolve a TF-XBRL filing evidence object |
+| `deltasignal_compare_article_to_filing_evidence` | `$0.08` | Return a compact article-to-filing verification packet |
+| `deltasignal_article_thesis_map` | `$0.30` | Return the eight-section article-centered thesis map |
+| `deltasignal_resolve_river_tripcode` | `$0.05` | Resolve a persistent TF-RIVER issuer thesis graph |
+| `deltasignal_reverse_search_river` | `$0.30` | Reconstruct thesis deltas, confirmations, weakened assumptions, risks, scenarios, and monitors |
+| `deltasignal_search_by_claim` | `$0.05` | Search River claims by query or claim hash |
+| `deltasignal_search_by_issuer` | `$0.05` | Find issuer index, active River root, and TF-SUB article nodes |
+| `deltasignal_compare_claim_to_evidence` | `$0.08` | Compare one claim to River evidence refs |
+| Future deep River synthesis | `$0.75-$1.20` | Heavier multi-River synthesis across article, evidence, computed signals, and proof milestones |
+
 ## Operator Audit Status
 
 - Use `deltasignal_atlas7_audit_status` when the user asks whether ATLAS-7 is healthy, current, monitored, Azure-native, or fully regression-tested.
@@ -90,6 +123,16 @@ When exact quote, budget-gate, or reconciliation accuracy matters, fetch `GET ht
 | `GET /mpp/v1/covenant-stress` or `GET /v1/covenant-stress` | `$0.08` | Filter or list the active covenant stress slice |
 | `GET /mpp/v1/spectra-field-map/{ticker}` or `GET /v1/spectra-field-map/{ticker}` | `$0.08` | Historical field-map pressure and filing choreography |
 | `GET /mpp/v1/covenant-stress/{ticker}` or `GET /v1/covenant-stress/{ticker}` | `$0.10` | Detailed ATLAS-7 covenant stress for one issuer |
+| MCP `deltasignal_resolve_article_tripcode` | `$0.02` | Article TripCode to Azure Blob research object |
+| MCP `deltasignal_list_article_tripcodes` | `$0.02` | Prior TF-SUB article nodes by current TripCode, River, or issuer |
+| MCP `deltasignal_resolve_river_tripcode` | `$0.05` | Persistent TF-RIVER issuer graph |
+| MCP `deltasignal_reverse_search_river` | `$0.30` | River thesis-lineage reconstruction |
+| MCP `deltasignal_search_by_claim` | `$0.05` | River claim lookup |
+| MCP `deltasignal_search_by_issuer` | `$0.05` | Issuer River discovery |
+| MCP `deltasignal_compare_claim_to_evidence` | `$0.08` | Claim-to-evidence comparison |
+| MCP `deltasignal_resolve_filing_tripcode` | `$0.02` | TF-XBRL TripCode to filing evidence object |
+| MCP `deltasignal_compare_article_to_filing_evidence` | `$0.08` | Compact article-to-filing verification packet |
+| MCP `deltasignal_article_thesis_map` | `$0.30` | Article-centered River thesis map |
 
 Supported list filters include `limit`, `offset`, `risk_tier`, `min_stress`, `linkbase_only`, and debt coverage status filters where exposed by the route.
 
@@ -122,6 +165,15 @@ Future artifact-backed bulk daily evidence exports are not inline chat responses
 - "What changed today?" -> call `deltasignal_daily_changes`.
 - "Show me why ARKB moved" -> call `deltasignal_daily_change_evidence` with `ticker=ARKB` and the source date from Daily Monitoring when available.
 - "Is the full ATLAS-7 audit healthy?" -> call `deltasignal_atlas7_audit_status`.
+- "Load this article TripCode TF-SUB-..." -> call `deltasignal_resolve_article_tripcode`.
+- "Compare this article TripCode to its filing evidence" -> resolve the TF-SUB object, resolve linked TF-XBRL objects, then call `deltasignal_compare_article_to_filing_evidence`.
+- "Discover prior articles in this issuer River" -> call `deltasignal_list_article_tripcodes` with `current_tripcode`, `river`, or `issuer`.
+- "Resolve this River TripCode" -> call `deltasignal_resolve_river_tripcode`.
+- "What changed across this issuer River?" -> call `deltasignal_reverse_search_river`.
+- "Search this River for a claim" -> call `deltasignal_search_by_claim`.
+- "Compare this claim to evidence" -> call `deltasignal_compare_claim_to_evidence`.
+- "Build the thesis map from this article TripCode" -> call `deltasignal_list_article_tripcodes` first when prior nodes are not supplied, then call `deltasignal_article_thesis_map` with the article TripCode and discovered River/evidence continuity.
+- "Generate a TripCode for this draft article" -> call `deltasignal_generate_article_tripcode` with ticker, title, research_slug, research_date, and optional research_version.
 - "Quick check MARA" -> call `deltasignal_quick_ticker_check` with `ticker=MARA`.
 - "Is DeltaSignal current?" -> call readiness.
 - "Which issuers are most stressed?" -> call top-stressed.
