@@ -9,6 +9,14 @@
     <lastBuildDate>Mon, 08 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
     <item>
+      <title>Coinbase x402 and Codex marketplace reviewer positioning</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-COINBASE-CODEX-MARKETPLACE-REVIEW-POSITIONING</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-8-COINBASE-CODEX-MARKETPLACE-REVIEW-POSITIONING</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-8-COINBASE-CODEX-MARKETPLACE-REVIEW-POSITIONING</category>
+      <description>The public docs and marketplace metadata now frame Delta Signal ATLAS-7 as a Codex-ready, x402-payable issuer-intelligence evidence service for reviewers: install, discover, inspect route metadata, trigger 402, retry with proof, and inspect provenance. Breadcrumb: Improvement Timeline &gt; Coinbase x402 and Codex marketplace reviewer positioning Track: T+1074m Commit: current changelog update</description>
+    </item>
+    <item>
       <title>LLM evidence-routing guardrails and TripCode discovery caveat</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</link>
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</guid>
@@ -239,14 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7</category>
       <description>Codex compatibility-handler coverage now verifies auth and bad-JSON paths for Codex HTTP handlers, no-op and error branches in compatibility tool-call normalization, local MCP validation branches, and JSON-result fallback behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.7%. Breadcrumb: Improvement Timeline &gt; Codex compatibility handler coverage checkpoint Track: T+842m Commit: a6b1bb63</description>
-    </item>
-    <item>
-      <title>Consolidated June 6 public rollup to 74.4 percent coverage</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P4</category>
-      <description>The public changelog now includes the full June 6 public-safe update set through notification delivery, daily all-delta digest framing, x402 notification pricing, RSS/Atom subscriber feeds, Codex process-runner coverage, dynamic crawler loop coverage, and the verified cmd/search-gateway package coverage checkpoint at 74.4%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.4 percent coverage Track: T+834m Commit: current changelog update</description>
     </item>
   </channel>
 </rss>

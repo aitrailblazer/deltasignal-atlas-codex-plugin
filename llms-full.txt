@@ -31,6 +31,45 @@ New user and agent instructions
 9. Do not ask for internal secrets. External access should use x402, including any configured grant.
 10. Do not provide investment advice.
 
+Coinbase x402 / Codex marketplace reviewer packet
+Delta Signal ATLAS-7 should be reviewed as a Codex-ready, x402-payable issuer-intelligence evidence service.
+
+Core reviewer claim:
+Discover tools -> inspect route metadata -> receive 402 challenge -> settle through Base USDC -> retry with proof -> receive structured evidence or evidence-preserving Markdown with provenance.
+
+Review surfaces:
+- Codex install and hosted MCP discovery.
+- OpenAPI public route contracts.
+- Arazzo workflow plans for bounded scenario routing.
+- x402 challenge and retry behavior.
+- Route-level pricing and payment metadata.
+- Evidence-preserving output boundaries.
+
+Recommended first reviewer test:
+GET https://api.aitrailblazer.net/v1/readiness
+
+A plain unauthenticated request may correctly return HTTP 402 with an x402 challenge. A compatible client or active grant context should attach payment proof or grant context, retry, and inspect returned metadata.
+
+Reviewer checklist:
+- MCP tools/list works before paid execution.
+- OpenAPI is reachable.
+- Arazzo workflow metadata is reachable.
+- Paid or grant-gated routes return coherent HTTP 402 challenge metadata without proof.
+- x402 metadata includes network, asset, seller, amount, and retry information.
+- Bazaar metadata includes route template, output example, merchant resources, seller payTo, and payment metadata.
+- Paid retry returns JSON or Markdown preserving source dates, computed timestamps, stale flags, caveats, quality flags, evidence hashes where available, payload mode, route or tool provenance, and non-advice boundaries.
+- No Agentic Market or Coinbase first-party verification claim is made unless Coinbase or the relevant UI confirms it.
+
+Primary public marketplace workflows:
+- Morning Brief, typically $0.18 when exposed as the composite workflow.
+- Company Report, typically $0.30.
+- Pressure Board, typically $0.14.
+- Alpha Sweep, typically $0.14.
+- Quick Ticker Check, typically $0.18.
+- Natural Language top-stressed and Morning Brief Markdown routes, typically $0.95 where live route metadata confirms them.
+
+TripCode/River subscriber research is a near-term extension. Do not market TripCode tools as public marketplace-ready unless live MCP discovery exposes them and the required River/index blobs are available.
+
 Current implementation status
 - The production API is live on revision ca-web-intel-mcp--0000484 with OpenAPI 56 paths, /v1/pricing, /v1/contract/fields, notification routes, and the terminal broker envelope contract.
 - The changelog entry for the latest public hardening/status rollup is ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING.

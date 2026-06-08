@@ -16,6 +16,33 @@ Agents discover, pay, and execute deterministic workflows through MCP tools, Ope
 
 Also available as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7). Smithery remains available as an alternate connector path.
 
+## Coinbase x402 / Codex Marketplace Review Focus
+
+Delta Signal ATLAS-7 should be reviewed as a Codex-ready, x402-payable financial evidence service, not as a generic chat plugin.
+
+The public review surface is ATLAS-7 issuer intelligence:
+
+- MCP discovery before paid execution.
+- OpenAPI route contracts with reachable REST routes and 402 response behavior.
+- Arazzo workflow metadata for bounded scenario planning.
+- x402 challenge and retry behavior through Base USDC.
+- Route-level pricing and payment metadata.
+- Evidence-preserving JSON or Markdown outputs with source dates, caveats, quality flags, payload mode, route provenance, and non-advice boundaries.
+
+Recommended reviewer path:
+
+1. Install the Coinbase payments MCP and this Codex plugin.
+2. Inspect MCP `tools/list` before any paid call.
+3. Inspect `https://api.aitrailblazer.net/openapi.json`.
+4. Probe `GET https://api.aitrailblazer.net/v1/readiness`.
+5. Confirm that a plain unauthenticated paid route may return HTTP `402 Payment Required`.
+6. Retry through an x402-compatible client or an active grant context.
+7. Inspect returned metadata before trusting rendered prose.
+
+Marketplace reviewers should validate `extensions.bazaar.routeTemplate=/v1/readiness`, an output example, merchant resources, seller `payTo`, amount/network/asset metadata, and the absence of unsupported Agentic Market first-party verification claims.
+
+TripCode / River subscriber research is a near-term extension. Do not market TripCode tools as public marketplace-ready unless the deployed public MCP endpoint exposes them and the required River / issuer index blobs are available.
+
 ## How Agents Know and Run Workflows
 
 The public landing page includes the animated workflow runner. The same contract is machine-readable here:
@@ -198,6 +225,8 @@ Agents should prefer these server-enforced composites for common scenarios inste
 
 Article-to-evidence continuity for DeltaSignal subscribers.
 
+Marketplace caveat: this workflow is discovery-gated. Do not claim it is public marketplace-ready unless the deployed MCP `tools/list` exposes the TripCode tools and the required River / issuer index blobs are available. If discovery does not expose these tools, use the supported ATLAS-7 issuer workflow instead.
+
 Flow:
 
 1. Read the `ATLAS-7 TripCode: TF-SUB-...` value from a DeltaSignal article subtitle.
@@ -232,6 +261,9 @@ Composite presets:
 Granular tools:
 
 - `deltasignal_readiness`
+
+Discovery-gated TripCode / River tools. Call only when live MCP `tools/list` exposes them:
+
 - `deltasignal_generate_article_tripcode` - authoring-time TF-SUB identity generation; local, deterministic, typical price $0.00.
 - `deltasignal_resolve_article_tripcode` - resolves an article subtitle TripCode into the Azure Blob research object; typical price $0.02.
 - `deltasignal_list_article_tripcodes` - discovers prior TF-SUB article nodes from a current article TripCode, River TripCode, or issuer symbol; typical price $0.02.
@@ -244,6 +276,9 @@ Granular tools:
 - `deltasignal_resolve_filing_tripcode` - resolves known TF-XBRL filing evidence; typical price $0.02.
 - `deltasignal_compare_article_to_filing_evidence` - compares one article node to linked filing evidence; typical price $0.08.
 - `deltasignal_article_thesis_map` - resolves one article-centered River into the eight-section subscriber thesis map; typical price $0.30.
+
+Public ATLAS-7 issuer tools:
+
 - `deltasignal_top_stressed`
 - `deltasignal_covenant_stress`
 - `deltasignal_peer_ranking`
@@ -259,6 +294,8 @@ All tools are read-only, schema-validated, and bounded for agent use.
 ## TripCode Resolver Pricing
 
 TripCode tools are MCP-first research-continuity utilities. They are priced to make subscriber article resolution cheap while keeping higher-value synthesis separate.
+
+Public marketplace caveat: TripCode / River tools must be treated as a near-term extension unless live MCP discovery exposes them. The strongest Coinbase / Codex marketplace path today is ATLAS-7 x402 issuer intelligence: readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and issuer drilldowns.
 
 | MCP tool | Typical price | Purpose |
 | --- | ---: | --- |

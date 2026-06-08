@@ -40,7 +40,46 @@ Every successful brief ends with:
 Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
 ```
 
+## Coinbase x402 / Codex Marketplace Reviewer Quickstart
+
+Review Delta Signal ATLAS-7 as a paid evidence API for Codex workflows.
+
+Start with discovery, not payment:
+
+1. Install Coinbase payments MCP.
+2. Install the Codex plugin.
+3. Confirm hosted MCP `tools/list` works before paid execution.
+4. Inspect OpenAPI and Arazzo metadata.
+5. Probe `GET https://api.aitrailblazer.net/v1/readiness`.
+6. Confirm HTTP `402` challenge behavior when payment or grant proof is required.
+7. Retry through an x402-compatible client or active grant context.
+8. Confirm returned JSON or Markdown preserves source dates, caveats, quality flags, evidence hashes where available, payload mode, route provenance, and the non-advice boundary.
+
+Reviewer pass conditions:
+
+- OpenAPI declares public route contracts and 402 behavior.
+- MCP discovery is available before paid execution.
+- x402 challenge includes coherent network, asset, seller, amount, and retry metadata.
+- Bazaar metadata includes route template, output example, merchant resources, seller `payTo`, and payment metadata.
+- No Agentic Market first-party verification claim is made until Coinbase or the relevant UI confirms it.
+
+Primary public workflows for review:
+
+- Morning Brief
+- Company Report
+- Pressure Board
+- Alpha Sweep
+- Quick Ticker Check
+- issuer fundamentals
+- covenant stress
+- peer ranking
+- alpha signals
+- daily changes
+- SPECTRA field maps
+
 ## TripCode Research Continuity Quickstart
+
+Public marketplace caveat: TripCode / River subscriber research is a near-term extension unless the live public MCP endpoint exposes the relevant tools. If discovery does not list the TripCode tools, treat this section as source/local product direction and use the supported ATLAS-7 issuer workflow instead.
 
 When a DeltaSignal article subtitle includes `ATLAS-7 TripCode: TF-SUB-...`, an MCP-enabled agent can load the research object behind the article instead of relying only on copied prose.
 

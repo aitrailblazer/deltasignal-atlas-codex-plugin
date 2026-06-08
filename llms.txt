@@ -277,6 +277,14 @@ Coinbase x402 and Agentic Market callers must use the Base route family under `h
 
 Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
 
+Coinbase x402 / Codex marketplace reviewer framing:
+
+- Review Delta Signal as a Codex-ready, x402-payable financial evidence service, not as a generic LLM plugin.
+- Validate discovery before paid execution: MCP tools/list, OpenAPI, Arazzo, and x402 metadata.
+- Validate the lifecycle: install -> discover -> inspect route metadata -> receive HTTP 402 -> settle through Base USDC -> retry with proof -> inspect provenance.
+- Primary public review workflows: readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, daily changes, issuer fundamentals, covenant stress, peer ranking, alpha signals, and SPECTRA field maps.
+- TripCode/River subscriber research is a near-term extension unless live MCP discovery exposes those tools and required River/index blobs are available.
+
 ## Recommended Agent Behavior
 
 If a user asks for a live Delta Signal Morning Brief:
