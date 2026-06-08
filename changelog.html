@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 6, 2026 - public rollup updated for Delta Signal MCP notifications, daily all-delta digests, Microsoft Graph email delivery, terminal delivery, signed webhooks, delivery receipts, subscription preferences, x402 notification pricing, ATLAS-7 universe filtering, ticker canonicalization, RSS/Atom changelog feeds, route safety, field maps, MCP helpers, SignalRadar MCP, StrategiX Diagram MCP, Marketplace helpers, Web Intel, Telegram helpers, OPML feeds, static runtimes, Codex cache helpers, primitive DeltaSignal helpers, company-fundamentals metadata helpers, billing-envelope helpers, MCP summary helpers, ATLAS-7 history route/loaders, alpha route/loaders, risk-distribution route/loaders, MCP composite wrappers, Codex process-runner coverage, dynamic crawler loop coverage, Codex compatibility-handler coverage, worker proxy/store constructor branches, DeltaSignal helper/handler guard branches, SPECTRA dynamic helper branches, MCP validation/coercion branches, OpenAPI payment helpers, Google News resolver branches, native-health RSS status, compatibility result helpers, additional DeltaSignal route guard branches, daily-change discovery/fallback branches, defensive store/help/readiness branches, notification pricing and delivery ladder documentation, notification hardening verification, EDGAR daily background-task provenance, CompanyFacts daily-feed reconstruction, Jun 1-5 trading-week audit reconciliation, ATLAS-7 generation documentation, SPECTRA generation documentation, and coverage hardening to 76.4%</p>
+      <p class="eyebrow">Updated June 8, 2026 - public rollup updated for live readiness and MCP evidence hardening, Azure revision ca-web-intel-mcp--0000484, OpenAPI 56-path verification, live /v1/pricing and /v1/contract/fields discovery, HUT issuer-evidence readiness, structured invalid_path_scope behavior for universe routes, issuer evidence envelope fields, public x402 challenge verification, deployment ledger commit fd5ec09c, and cmd/search-gateway source coverage hardening to 97.5%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>191</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>106</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>189</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>191</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>73</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>101</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>192</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>107</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>190</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>192</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>75</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>103</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>192</span>
+              <code>ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING</code>
+              <span>Improvement Timeline &gt; Live readiness and MCP evidence hardening deployed</span>
+              <code>T+1058m</code>
+            </div>
             <div class="river-row">
               <span>191</span>
               <code>ATLAS-JUN-6-SPECTRA-GENERATION-MODEL</code>
@@ -1856,7 +1862,7 @@
               <code>track: T+336m</code>
               <code>bread: Evidence Infrastructure Backlog &gt; Solved: route posture</code>
             </div>
-            <span>OpenAPI 1.5.2 exposes 43 paths. <code>research_posture</code> is present and <code>short_recommendation</code> is absent, keeping output framed as diligence triage rather than action advice.</span>
+            <span>OpenAPI 1.5.2 now exposes 56 paths after the June 8 hardening rollout. Earlier audit snapshots showed 43 paths. <code>research_posture</code> is present and <code>short_recommendation</code> is absent, keeping output framed as diligence triage rather than action advice.</span>
           </div>
           <div class="card">
             <strong>Partial: replayable evidence</strong>
@@ -2055,6 +2061,25 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING">
+            <div class="date">June 8, 2026</div>
+            <h3>Live readiness and MCP evidence hardening deployed</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING</code>
+              <code>track: T+1058m</code>
+              <code>commit: 4cb93a38 / fd5ec09c</code>
+              <code>bread: Improvement Timeline &gt; Live readiness and MCP evidence hardening deployed</code>
+            </div>
+            <p>Production now serves the hardened DeltaSignal readiness and MCP evidence surface from Azure revision ca-web-intel-mcp--0000484, with 56 OpenAPI paths, live pricing discovery, live field-contract discovery, structured invalid-path-scope errors, and a 97.5% cmd/search-gateway source coverage checkpoint.</p>
+            <ul>
+              <li>Deployed Azure Container App revision ca-web-intel-mcp--0000484 from clean git-archive source commit 4cb93a38b9a438055caf279e51474b86db737c62 using image acrgniwebintel001.azurecr.io/ca-web-intel-mcp:skill-20260608045057 and digest sha256:0e2a137494de91fb4471226ee6e58269dcb1564d3ac3b6d156ff94b7e39203b7.</li>
+              <li>Post-rollout live probes verified <code>/health</code> 200, <code>/openapi.json</code> with 56 paths, <code>/v1/pricing</code> 200, <code>/v1/contract/fields</code> 200, <code>/v1/events/latest</code> present, and HUT company-report plus SPECTRA field-map routes protected by expected public x402 402 challenges.</li>
+              <li>No-ticker universe misuse is now explicit: <code>/v1/readiness/UNIVERSE</code> and <code>/v1/daily-changes/latest/UNIVERSE</code> return HTTP 400 <code>invalid_path_scope</code> with <code>billing_behavior=not_charged</code>, <code>cost_usd=0</code>, <code>path_ticker_free=true</code>, and <code>deltasignal-route-scope-v1</code> metadata.</li>
+              <li>The HUT-driven evidence-readiness slice documents company-report envelope fields for agent consumers: issuer_evidence_envelope, evidence_sections, spectra_metadata, publication_audit_block, route_uri, source_date, computed_at, caveats, quality_flags, and non-advice boundaries.</li>
+              <li>Local verification before deploy passed go test ./cmd/search-gateway/... with coverage profile at 97.5%, plus gofmt check, secret scan, whitespace check, deploy audit, and post-rollout smoke probes.</li>
+              <li>Public boundary: this entry contains only public-safe route, revision, coverage, and contract metadata. It excludes private design-partner names, mailboxes, wallet addresses, grant amounts, and support artifacts.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-6-SPECTRA-GENERATION-MODEL">
             <div class="date">June 6, 2026</div>
             <h3>SPECTRA generation model documented</h3>
@@ -3577,9 +3602,9 @@
               <code>commit: </code>
               <code>bread: Improvement Timeline &gt; Public contract cleanup re-verified</code>
             </div>
-            <p>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.</p>
+            <p>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 56 paths after the June 8 hardening rollout. Earlier audit snapshots showed 43 paths.</p>
             <ul>
-              <li>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 43 paths.</li>
+              <li>Live OpenAPI is serving DeltaSignal ATLAS version 1.5.2 with 56 paths after the June 8 hardening rollout; this historical entry originally recorded an earlier 43-path snapshot.</li>
               <li>POST /mcp , GET /v1/readiness , GET /v1/company-report/{ticker} , and POST /v1/bundles/company-report are present in the public route contract.</li>
               <li>The alpha language contract now exposes research_posture and no longer exposes short_recommendation .</li>
               <li>Unpaid public GET /v1/readiness returns HTTP 402 with a JSON body containing error=payment_required , the route name, retry guidance, docs URL, and an x402 challenge pointer.</li>
@@ -3970,7 +3995,7 @@ Prior evidence workflow smoke:
               <code>track: T+492m</code>
               <code>bread: Results Audit Snapshot &gt; OpenAPI contract passed</code>
             </div>
-            <span>Title <code>DeltaSignal ATLAS</code>; OpenAPI <code>3.1.0</code>; API version <code>1.5.2</code>; <code>43</code> paths; server <code>https://api.aitrailblazer.net</code>; MCP, MPP, and Base x402 surfaces present.</span>
+            <span>Title <code>DeltaSignal ATLAS</code>; OpenAPI <code>3.1.0</code>; API version <code>1.5.2</code>; live API now exposes <code>56</code> paths; earlier audit snapshots showed <code>43</code> paths; server <code>https://api.aitrailblazer.net</code>; MCP, MPP, and Base x402 surfaces present.</span>
           </div>
           <div class="card">
             <strong>Required routes passed</strong>

@@ -5,8 +5,16 @@
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html" />
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml" rel="self" type="application/atom+xml" />
   <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog</id>
-  <updated>2026-06-06T00:00:00.000Z</updated>
+  <updated>2026-06-08T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
+  <entry>
+    <title>Live readiness and MCP evidence hardening deployed</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING</id>
+    <updated>2026-06-08T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING" />
+    <summary>Production now serves the hardened DeltaSignal readiness and MCP evidence surface from Azure revision ca-web-intel-mcp--0000484, with 56 OpenAPI paths, live pricing discovery, live field-contract discovery, structured invalid-path-scope errors, and a 97.5% cmd/search-gateway source coverage checkpoint. Breadcrumb: Improvement Timeline &gt; Live readiness and MCP evidence hardening deployed Track: T+1058m Commit: 4cb93a38 / fd5ec09c</summary>
+  </entry>
   <entry>
     <title>SPECTRA generation model documented</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-SPECTRA-GENERATION-MODEL" />
@@ -238,13 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-DYNAMIC-CRAWLER-COVERAGE-74P4" />
     <summary>Dynamic feed-crawler coverage now verifies source-listing success and error paths, empty dynamic source sets, file-feed filtering, local dynamic RSS fetches, and canceled loop shutdown; the verified cmd/search-gateway package coverage checkpoint reached 74.4%. Breadcrumb: Improvement Timeline &gt; Dynamic crawler loop coverage checkpoint Track: T+826m Commit: af9f8718</summary>
-  </entry>
-  <entry>
-    <title>Codex process-runner coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-CODEX-PROCESS-RUNNER-COVERAGE-74P2" />
-    <summary>Codex process-runner coverage now verifies stdout/stderr callbacks, output caps, nonzero exits, context timeout behavior, and missing executable handling; the verified cmd/search-gateway package coverage checkpoint reached 74.2%. Breadcrumb: Improvement Timeline &gt; Codex process-runner coverage checkpoint Track: T+818m Commit: 7961225d</summary>
   </entry>
 </feed>

@@ -6,7 +6,7 @@
 [![Discovery Contract](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml/badge.svg)](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml)
 [![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 
-Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies.
+Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies. Latest public checkpoint: `ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING` on Azure revision `ca-web-intel-mcp--0000484`, with OpenAPI 56 paths, live pricing/field-contract discovery, HUT issuer-evidence readiness, and 97.5% `cmd/search-gateway` source coverage.
 
 Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live Azure service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
 
@@ -194,6 +194,31 @@ Preferred MCP composite tools for common user intents.
 
 Agents should prefer these server-enforced composites for common scenarios instead of manually fanning out low-level tools.
 
+### 8. `tripCodeResearchContinuity`
+
+Article-to-evidence continuity for DeltaSignal subscribers.
+
+Flow:
+
+1. Read the `ATLAS-7 TripCode: TF-SUB-...` value from a DeltaSignal article subtitle.
+2. Call MCP tool `deltasignal_resolve_article_tripcode` with that TripCode.
+3. Use returned `continuity.linked_xbrl_tripcodes`, `linked_ds_tripcodes`, and `river_tripcodes` to load filing evidence, computed DeltaSignal signals, and issuer thesis River context.
+4. If a draft article is being prepared before publication, call `deltasignal_generate_article_tripcode` with DeltaSignal research identity fields. Do not use a Substack post ID as canonical identity.
+5. If the user asks for the full subscriber thesis map and prior article nodes are not already provided, call `deltasignal_list_article_tripcodes` with the current TripCode, TF-RIVER TripCode, or issuer symbol to discover prior TF-SUB nodes automatically.
+6. Call `deltasignal_resolve_river_tripcode` when the user wants the full persistent River graph, or `deltasignal_reverse_search_river` when the user wants thesis-lineage reconstruction.
+7. Call `deltasignal_article_thesis_map` with the current article TripCode and the discovered River/evidence continuity. Do not require the subscriber to paste old TripCodes by hand.
+8. If the article names filing evidence only, call `deltasignal_resolve_filing_tripcode`, then `deltasignal_compare_article_to_filing_evidence` for a compact verification packet.
+
+Use this when a subscriber asks Codex or Claude Code to turn a DeltaSignal article into a machine-readable thesis map.
+
+Public subscriber access is through MCP/x402:
+
+1. Discovery is free: plugin page, `tools/list`, OpenAPI, Arazzo, `llms.txt`, and `.well-known/x402`.
+2. Public `tools/call` may require a grant, free-tier allowance, or x402 payment proof.
+3. x402-compatible clients receive a 402 challenge, pay through Base USDC, then retry the same request.
+4. Full paid article text and LLM-friendly Markdown are entitlement-gated. If access is not verified, tools should return metadata, permitted summaries, continuity links, and `restricted` or `missing` status rather than leaking paid content.
+5. Internal authoring write tools are not exposed publicly.
+
 ## Available MCP Tools
 
 Composite presets:
@@ -207,6 +232,18 @@ Composite presets:
 Granular tools:
 
 - `deltasignal_readiness`
+- `deltasignal_generate_article_tripcode` - authoring-time TF-SUB identity generation; local, deterministic, typical price $0.00.
+- `deltasignal_resolve_article_tripcode` - resolves an article subtitle TripCode into the Azure Blob research object; typical price $0.02.
+- `deltasignal_list_article_tripcodes` - discovers prior TF-SUB article nodes from a current article TripCode, River TripCode, or issuer symbol; typical price $0.02.
+- `deltasignal_resolve_river_tripcode` - resolves a TF-RIVER issuer thesis graph from Azure Blob; typical price $0.05.
+- `deltasignal_reverse_search_river` - reconstructs River thesis lineage and the eight-section subscriber map from an issuer, TripCode, or claim; typical price $0.30.
+- `deltasignal_search_by_claim` - searches River claim records by query or claim hash; typical price $0.05.
+- `deltasignal_search_by_issuer` - discovers the issuer index, active River root, and article nodes; typical price $0.05.
+- `deltasignal_compare_claim_to_evidence` - compares one claim to River evidence refs and marks missing evidence explicitly; typical price $0.08.
+- `deltasignal_generate_filing_tripcode` - generates a TF-XBRL evidence identity from SEC/XBRL tuple data; local, deterministic, typical price $0.00.
+- `deltasignal_resolve_filing_tripcode` - resolves known TF-XBRL filing evidence; typical price $0.02.
+- `deltasignal_compare_article_to_filing_evidence` - compares one article node to linked filing evidence; typical price $0.08.
+- `deltasignal_article_thesis_map` - resolves one article-centered River into the eight-section subscriber thesis map; typical price $0.30.
 - `deltasignal_top_stressed`
 - `deltasignal_covenant_stress`
 - `deltasignal_peer_ranking`
@@ -218,6 +255,26 @@ Granular tools:
 - `deltasignal_atlas7_audit_status` - operator health check for the Azure-native 215-issuer ATLAS-7 regression audit; reports freshness, artifact prefix, operation count, historical failures, composite failures, and health state. This is a readiness/audit surface, not an issuer-analysis route.
 
 All tools are read-only, schema-validated, and bounded for agent use.
+
+## TripCode Resolver Pricing
+
+TripCode tools are MCP-first research-continuity utilities. They are priced to make subscriber article resolution cheap while keeping higher-value synthesis separate.
+
+| MCP tool | Typical price | Purpose |
+| --- | ---: | --- |
+| `deltasignal_generate_article_tripcode` | `$0.00` | Generate a deterministic TF-SUB article/research identity before publication |
+| `deltasignal_resolve_article_tripcode` | `$0.02` | Resolve an article subtitle TripCode into its Azure Blob research object |
+| `deltasignal_list_article_tripcodes` | `$0.02` | Discover prior TF-SUB nodes from a current article, TF-RIVER, or issuer River |
+| `deltasignal_resolve_river_tripcode` | `$0.05` | Resolve the persistent TF-RIVER issuer thesis graph |
+| `deltasignal_reverse_search_river` | `$0.30` | Reconstruct thesis deltas, confirmations, weakened assumptions, risks, scenarios, and monitors |
+| `deltasignal_search_by_claim` | `$0.05` | Search River claims by normalized claim text or hash |
+| `deltasignal_search_by_issuer` | `$0.05` | Find issuer index, active River root, and TF-SUB article nodes |
+| `deltasignal_compare_claim_to_evidence` | `$0.08` | Compare one claim to River evidence refs and preserve missing evidence |
+| `deltasignal_generate_filing_tripcode` | `$0.00` | Generate a deterministic TF-XBRL identity from supplied SEC/XBRL tuple data |
+| `deltasignal_resolve_filing_tripcode` | `$0.02` | Resolve a TF-XBRL filing evidence object |
+| `deltasignal_compare_article_to_filing_evidence` | `$0.08` | Return a compact article-to-filing verification packet |
+| `deltasignal_article_thesis_map` | `$0.30` | Resolve one article-centered River into a current thesis map |
+| Future deep River synthesis | `$0.75-$1.20` | Heavier multi-River synthesis across article, evidence, computed signals, and milestones |
 
 ## Natural Language Briefs
 

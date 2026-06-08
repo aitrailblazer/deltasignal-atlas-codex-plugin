@@ -16,6 +16,8 @@ last_updated: 2026-05-10
 
 Latest public changelog: [`changelog.html`](./changelog.html).
 
+June 8 live contract checkpoint: production revision `ca-web-intel-mcp--0000484` exposes OpenAPI with 56 paths, `GET /v1/pricing`, `GET /v1/contract/fields`, structured `invalid_path_scope` errors for universe-route path misuse, HUT issuer-evidence readiness, and public x402 challenges for protected issuer routes.
+
 Delta Signal Natural Language Briefs convert canonical Delta Signal evidence into validated, audit-grade Markdown.
 
 They are designed for developer workflows that need human-readable summaries without losing provenance, source dates, caveats, quality flags, null handling, or evidence boundaries.
@@ -37,6 +39,40 @@ Every successful brief ends with:
 ```text
 Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
 ```
+
+## TripCode Research Continuity Quickstart
+
+When a DeltaSignal article subtitle includes `ATLAS-7 TripCode: TF-SUB-...`, an MCP-enabled agent can load the research object behind the article instead of relying only on copied prose.
+
+Recommended flow:
+
+1. Read the article subtitle and extract the current `TF-SUB` TripCode.
+2. Call MCP tool `deltasignal_resolve_article_tripcode`.
+3. Inspect returned `research_payload`, `continuity`, `publication_targets`, and `azure_blob_paths`.
+4. Resolve linked `TF-XBRL` evidence nodes with `deltasignal_resolve_filing_tripcode`.
+5. Run `deltasignal_compare_article_to_filing_evidence` when the user asks what changed, what was confirmed, what weakened, or what to monitor next.
+6. If prior article nodes are not supplied, run `deltasignal_list_article_tripcodes` with the current TripCode, River TripCode, or issuer symbol to discover prior TF-SUB nodes automatically.
+7. Run `deltasignal_resolve_river_tripcode` for the full River graph, or `deltasignal_reverse_search_river` for thesis-lineage reconstruction.
+8. Run `deltasignal_article_thesis_map` when the user asks for the full eight-section thesis map across the article, prior River, filing evidence, computed DeltaSignal nodes, and monitor milestones.
+
+Typical MCP prices:
+
+| MCP tool | Price |
+| --- | ---: |
+| `deltasignal_generate_article_tripcode` | `$0.00` |
+| `deltasignal_resolve_article_tripcode` | `$0.02` |
+| `deltasignal_list_article_tripcodes` | `$0.02` |
+| `deltasignal_resolve_river_tripcode` | `$0.05` |
+| `deltasignal_reverse_search_river` | `$0.30` |
+| `deltasignal_search_by_claim` | `$0.05` |
+| `deltasignal_search_by_issuer` | `$0.05` |
+| `deltasignal_compare_claim_to_evidence` | `$0.08` |
+| `deltasignal_generate_filing_tripcode` | `$0.00` |
+| `deltasignal_resolve_filing_tripcode` | `$0.02` |
+| `deltasignal_compare_article_to_filing_evidence` | `$0.08` |
+| `deltasignal_article_thesis_map` | `$0.30` |
+
+Do not use Substack post ID, URL, slug, or publication timestamp as canonical TF-SUB identity. Those are publication metadata only. If a resolver returns missing evidence, keep it as missing evidence.
 
 ## Base URL
 

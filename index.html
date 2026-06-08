@@ -1681,7 +1681,7 @@
       <div class="hero-inner">
         <div class="hero-topline">
           <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
-          <p class="eyebrow">MCP live • EDGAR verified • SPECTRA • x402</p>
+          <p class="eyebrow">MCP live • EDGAR verified • SPECTRA • x402 • OpenAPI 56 paths</p>
         </div>
         <div class="hero-layout">
           <div class="hero-copy">
@@ -1717,7 +1717,7 @@
               <a href="./changelog-llm.html" class="btn btn-secondary">LLM Changelog</a>
               <a href="#pricing" class="btn btn-secondary">View pricing</a>
             </div>
-            <p class="meter">MCP live • EDGAR daily background task verified • Open API published • x402 enabled • Glama verified • 215-row ATLAS-7 + SPECTRA coverage verified</p>
+            <p class="meter">MCP live • EDGAR daily background task verified • OpenAPI 56 paths • pricing + field contract live • x402 enabled • 215-row ATLAS-7 + SPECTRA coverage verified</p>
             <p class="hero-image-credit">Hero visual: SEC/XBRL evidence base -> ATLAS-7 intelligence engine -> agent-ready outputs.</p>
             <nav class="agent-links" aria-label="Agent files">
               <a href="./llms-full.txt">llms-full.txt</a>
@@ -1782,6 +1782,13 @@
             <p>Check source dates, caveats, quality flags, evidence hashes, renderer status, and non-advice disclaimers before using the result.</p>
             <p><a href="./quickstart.md">Read response metadata guide</a></p>
           </div>
+        </div>
+
+        <div class="tool-grid" style="margin-top:1.5rem;">
+          <div class="tool"><strong>Live contract snapshot</strong><span>June 8 rollout: Azure revision <code>ca-web-intel-mcp--0000484</code>, source commit <code>4cb93a38</code>, OpenAPI exposes <code>56</code> paths, and <code>/v1/pricing</code> plus <code>/v1/contract/fields</code> return HTTP 200.</span></div>
+          <div class="tool"><strong>HUT evidence readiness</strong><span>HUT company-report and SPECTRA field-map routes are live behind public x402 challenges. Agent-facing envelopes document <code>issuer_evidence_envelope</code>, <code>evidence_sections</code>, <code>spectra_metadata</code>, and <code>publication_audit_block</code>.</span></div>
+          <div class="tool"><strong>Universe route safety</strong><span>No-ticker universe routes reject extra path segments such as <code>/UNIVERSE</code> with structured <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span></div>
+          <div class="tool"><strong>Current hardening checkpoint</strong><span>Source verification reached <code>97.5%</code> package coverage for <code>cmd/search-gateway</code>, with gofmt, secret scan, whitespace check, deploy audit, and live smoke probes passing.</span></div>
         </div>
         <div class="tool-grid" style="margin-top:1.5rem;">
           <div class="tool"><strong>Readiness should show</strong><span>Service state, active source date, issuer count, live-price status, audit freshness, and route/payment readiness.</span></div>
@@ -2162,10 +2169,23 @@
 @DeltaSignal top_stressed tickers:MARA,RIOT,HUT,CLSK
 @DeltaSignal risk_distribution tickers:COIN,MSTR,MARA,RIOT
 @DeltaSignal daily_changes
-@DeltaSignal daily_change_evidence ticker:ARKB limit:100</div>
+@DeltaSignal daily_change_evidence ticker:ARKB limit:100
+@DeltaSignal resolve_article_tripcode tripcode:TF-SUB-DA79A58372
+@DeltaSignal compare_article_to_filing_evidence article_tripcode:TF-SUB-DA79A58372
+@DeltaSignal article_thesis_map article_tripcode:TF-SUB-DA79A58372 ticker:HUT</div>
 
         <div class="tool-grid" style="margin-top:2rem;">
           <div class="tool"><strong>readiness</strong><span>Check whether Delta Signal is live and which data slice is active.</span></div>
+          <div class="tool"><strong>generate_article_tripcode</strong><span>Authoring-time TF-SUB identity generation before publication. Local, deterministic. Typical price: $0.00.</span></div>
+          <div class="tool"><strong>resolve_article_tripcode</strong><span>Resolve an article subtitle TripCode into the Azure Blob research object behind a DeltaSignal article. Typical price: $0.02.</span></div>
+          <div class="tool"><strong>list_article_tripcodes</strong><span>Discover prior TF-SUB article nodes from a current TripCode, issuer River, or TF-RIVER object. Typical price: $0.02.</span></div>
+          <div class="tool"><strong>resolve_river_tripcode</strong><span>Resolve the persistent TF-RIVER issuer thesis graph. Typical price: $0.05.</span></div>
+          <div class="tool"><strong>reverse_search_river</strong><span>Reconstruct thesis deltas, confirmations, weakened assumptions, risks, scenarios, and monitors. Typical price: $0.30.</span></div>
+          <div class="tool"><strong>search_by_claim</strong><span>Find matching River claims by query or claim hash. Typical price: $0.05.</span></div>
+          <div class="tool"><strong>compare_claim_to_evidence</strong><span>Compare one claim to River evidence refs and preserve missing evidence. Typical price: $0.08.</span></div>
+          <div class="tool"><strong>resolve_filing_tripcode</strong><span>Resolve TF-XBRL evidence while preserving SEC accession, CIK, filing period, and source-document boundaries. Typical price: $0.02.</span></div>
+          <div class="tool"><strong>compare_article_to_filing_evidence</strong><span>Compact article-to-filing verification packet for claims, confirmed signals, weakened assumptions, and monitor items. Typical price: $0.08.</span></div>
+          <div class="tool"><strong>article_thesis_map</strong><span>Eight-section subscriber thesis map from one article TripCode plus River, filing, and DeltaSignal continuity. Typical price: $0.30.</span></div>
           <div class="tool"><strong>alpha_signals</strong><span>Identify positive or negative signal pressure for one issuer.</span></div>
           <div class="tool"><strong>covenant_stress</strong><span>Inspect debt covenant and financial stress evidence for one issuer.</span></div>
           <div class="tool"><strong>top_stressed</strong><span>Rank the highest-stress crypto public companies.</span></div>
@@ -2175,6 +2195,33 @@
           <div class="tool"><strong>daily_changes</strong><span>Compact Daily Monitoring: freshness, counts, changed-company rows, and evidence refs. Typical public route price: $0.03.</span></div>
           <div class="tool"><strong>daily_change_evidence</strong><span>Retrieve issuer-level proof for changed XBRL tags and source-date evidence.</span></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="tripcodes">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>TripCode research continuity</h2>
+          <p>Subscribers can paste the TripCode from a DeltaSignal article subtitle into Codex or Claude Code and load the machine-readable research object, linked filing evidence, computed signals, and issuer River context through MCP/x402.</p>
+        </div>
+        <div class="tool-grid" style="margin-top:2rem;">
+          <div class="tool"><strong>TF-SUB</strong><span>Article and narrative research nodes. Generated from DeltaSignal research identity, not Substack post ID. Resolve price: $0.02.</span></div>
+          <div class="tool"><strong>TF-XBRL</strong><span>SEC/XBRL evidence nodes. Preserves accession, CIK, form, period, source documents, and caveats. Resolve price: $0.02.</span></div>
+          <div class="tool"><strong>TF-DS</strong><span>Computed DeltaSignal signal nodes for future resolver expansion: alpha, stress, SPECTRA, peer, and readiness outputs.</span></div>
+          <div class="tool"><strong>TF-RIVER</strong><span>Issuer thesis Rivers group prior TF-SUB article nodes, TF-XBRL evidence, TF-DS signals, claim lineage, and monitoring checkpoints. Resolve price: $0.05. Reverse search: $0.30.</span></div>
+          <div class="tool"><strong>Compare</strong><span>Article-to-filing verification returns confirmed signals, weakened assumptions, execution bridge risks, proof milestones, and monitor items. Price: $0.08.</span></div>
+          <div class="tool"><strong>Thesis Map</strong><span>One-call subscriber output with what changed, confirmed signals, weakened assumptions, bridge risks, 2027 proof milestones, scenario map, invalidation rules, and monitors. Price: $0.30.</span></div>
+          <div class="tool"><strong>Authoring</strong><span>Generate article and filing TripCodes for deterministic authoring metadata. Price: $0.00 for generation tools.</span></div>
+          <div class="tool"><strong>MCP/x402 Subscriber Flow</strong><span>Discovery is free. Paid tools/call uses grant, free-tier allowance, or x402 payment and retry. Full paid article content is entitlement-gated.</span></div>
+        </div>
+        <div class="code" style="margin-top:2rem;"><strong>Subscriber prompt</strong>
+Use DeltaSignal MCP.
+Load article TripCode TF-SUB-XXXXXXXXXX.
+Discover prior TF-SUB article nodes in the issuer River.
+Reverse-search the River for thesis deltas and claim lineage.
+Build the article thesis map from the current article and discovered River continuity.
+If an x402 challenge is returned, use a compatible x402 client or grant and retry.
+Return missing or restricted content explicitly. Do not invent facts.</div>
       </div>
     </section>
 
@@ -2237,7 +2284,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
         <div class="link-grid">
           <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
             <strong>Open API 3.1</strong>
-            <span>Public route contract for raw, composite, x402, and Natural Language Delta Signal surfaces.</span>
+            <span>Public route contract for raw, composite, x402, Natural Language, pricing discovery, field-contract discovery, and notification surfaces. Current live contract exposes 56 paths.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
           </a>
           <a class="link-card" href="./changelog.html">
@@ -2488,7 +2535,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
     <p style="max-width:860px;margin:0 auto 1.5rem;">SEC / XBRL-grounded issuer intelligence for crypto-exposed public companies. Delta Signal converts filings, issuer fundamentals, covenant stress, peer rankings, daily changes, risk distribution, and alpha signals into structured JSON, bounded workflow outputs, and evidence-preserving Markdown briefs.</p>
     <div class="workflow-strata" style="text-align:left;">
       <div class="workflow-stratum"><strong>Start</strong><span><a href="https://aitrailblazer.com" target="_blank" rel="noopener">AITrailblazer.com</a><br><a href="https://aitrailblazer.github.io/strategix-visual-mcp/" target="_blank" rel="noopener">StrategiX Visual MCP</a><br><a href="https://substack.com/@deltasignalai" target="_blank" rel="noopener">Delta Signal Substack</a><br><a href="./changelog.html">Changelog</a><br><a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">Readiness</a><br><a href="#recommended-workflows">Morning Brief</a><br><a href="./quickstart.md">Quickstart</a><br><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI</a><br><a href="#install">MCP connector</a><br><a href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">Glama connector</a></span></div>
-      <div class="workflow-stratum"><strong>Workflows</strong><span>Morning Brief<br>Company Report<br>Pressure Board<br>Alpha Sweep<br>Quick Ticker Check<br>Peer Context<br>Daily Change Evidence Drilldown</span></div>
+      <div class="workflow-stratum"><strong>Workflows</strong><span>Morning Brief<br>Company Report<br>Pressure Board<br>Alpha Sweep<br>Quick Ticker Check<br>Peer Context<br>Daily Change Evidence Drilldown<br>Article TripCode Resolution<br>Article-to-Filing Verification</span></div>
       <div class="workflow-stratum"><strong>Developer Resources</strong><span><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI schema</a><br><a href="./arazzo/deltasignal-arazzo.yaml">Arazzo YAML</a><br><a href="./arazzo/deltasignal-arazzo.json">Arazzo JSON</a><br><a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">MCP endpoint</a><br><a href="./arazzo/publicMcpX402Handshake.arazzo.yaml">x402 handshake</a><br><a href="./llms.txt">llms.txt</a><br><a href="./llms-full.txt">llms-full.txt</a></span></div>
     </div>
     <p style="max-width:980px;margin:1.5rem auto 0;">Delta Signal outputs are evidence packages, not unconstrained AI opinions. Natural Language briefs render returned evidence into readable Markdown; they do not create new evidence, fill missing data, override source caveats, convert screens into recommendations, or provide personalized investment advice. If evidence is missing, it remains missing and should be surfaced as a caveat.</p>
