@@ -69,6 +69,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 
 - **Changelog** - [`changelog.html`](./changelog.html)
 - **Changelog feeds** - [`rss.xml`](./rss.xml) and [`atom.xml`](./atom.xml)
+- **Claude Code project guide** - [`CLAUDE.md`](./CLAUDE.md)
 - **MCP endpoint** - `https://api.aitrailblazer.net/mcp`
 - **Main website** - `https://aitrailblazer.com`
 - **StrategiX Visual MCP** - `https://aitrailblazer.github.io/strategix-visual-mcp/`

@@ -8,6 +8,14 @@
   <updated>2026-06-08T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
   <entry>
+    <title>Claude Code MCP project guide added</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE</id>
+    <updated>2026-06-08T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE" />
+    <summary>The repository now includes a full CLAUDE.md guide for Claude Code work on the Delta Signal ATLAS-7 / SPECTRA / x402 / TripCode research-agent stack. Breadcrumb: Improvement Timeline &gt; Claude Code MCP project guide added Track: T+1082m Commit: current changelog update</summary>
+  </entry>
+  <entry>
     <title>Coinbase x402 and Codex marketplace reviewer positioning</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-COINBASE-CODEX-MARKETPLACE-REVIEW-POSITIONING" />
     <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-8-COINBASE-CODEX-MARKETPLACE-REVIEW-POSITIONING</id>
@@ -238,13 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7" />
     <summary>The public changelog now includes the full June 6 public-safe update set through Codex compatibility-handler coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.7%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.7 percent coverage Track: T+850m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>Codex compatibility handler coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-CODEX-COMPAT-HANDLER-COVERAGE-74P7" />
-    <summary>Codex compatibility-handler coverage now verifies auth and bad-JSON paths for Codex HTTP handlers, no-op and error branches in compatibility tool-call normalization, local MCP validation branches, and JSON-result fallback behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.7%. Breadcrumb: Improvement Timeline &gt; Codex compatibility handler coverage checkpoint Track: T+842m Commit: a6b1bb63</summary>
   </entry>
 </feed>
