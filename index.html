@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Delta Signal ATLAS-7 - SEC-grounded risk, fundamentals, daily monitoring, SPECTRA field maps, evidence drilldowns, and signal intelligence for the 215-row crypto-exposed public-company universe through MCP, Open API, and x402.">
+  <meta name="description" content="Delta Signal ATLAS-7 - SEC-grounded risk, fundamentals, daily monitoring, SPECTRA field maps, evidence drilldowns, notification routing, Claude Code guidance, and signal intelligence for the 215-row crypto-exposed public-company universe through MCP, Open API, and x402.">
   <title>Delta Signal ATLAS-7 • SEC-Grounded Issuer Intelligence</title>
   <link rel="icon" href="./assets/logo.png" type="image/png">
   <link rel="preload" as="image" href="./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible">
@@ -1729,6 +1729,7 @@
                 <a href="#generation-model">Generation</a>
                 <a href="#first-test">Start here</a>
                 <a href="#what-you-get">Outputs</a>
+                <a href="#integration-hardening">Hardening</a>
                 <a href="#recommended-workflows">Workflows</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#install">Install</a>
@@ -1742,6 +1743,7 @@
               <a href="#generation-model" class="btn btn-secondary">How it works</a>
               <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener" class="btn btn-secondary">OpenAPI</a>
               <a href="./changelog-llm.html" class="btn btn-secondary">LLM Changelog</a>
+              <a href="./CLAUDE.md" class="btn btn-secondary">Claude Code Guide</a>
               <a href="#pricing" class="btn btn-secondary">View pricing</a>
             </div>
             <p class="meter">MCP live • EDGAR daily background task verified • OpenAPI 56 paths • pricing + field contract live • x402 enabled • 215-row ATLAS-7 + SPECTRA coverage verified</p>
@@ -1842,6 +1844,26 @@
           <div class="feature"><strong>Agent-native access</strong><span>Use MCP, REST, Open API, Arazzo workflows, or x402-compatible public clients.</span></div>
           <div class="feature"><strong>Readiness and daily changes</strong><span>Monitor service health, active data slice, changed companies, changed facts, and evidence references.</span></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="integration-hardening">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Live-loop hardening now documented</h2>
+          <p>Recent integration pressure tests tightened the production contract for grants, pricing, field stability, MCP composites, large payloads, notification delivery, and soft-miss semantics.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="tool"><strong>Dedicated grant path</strong><span>Enrolled wallet-grant users can execute through the DB-backed grant ledger without an API key. Raw unsigned wallet headers are not a grant identity; clients should use supported signed wallet-grant headers or issued identity headers.</span></div>
+          <div class="tool"><strong>Billing envelope</strong><span><code>cost_usd</code> is the canonical charged-cost field. Public x402 settlements may also expose <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>credits_charged</code>, <code>billing_mode</code>, <code>payment_status</code>, <code>billing_status</code>, and <code>request_id</code>. Grant and internal bypass paths should not report public spend.</span></div>
+          <div class="tool"><strong>Pricing discovery</strong><span>Use <code>/v1/pricing</code> as the live route-pricing source of truth and <code>/v1/contract/fields</code> for canonical response-field semantics. Avoid hardcoded budget tables when current route metadata is available.</span></div>
+          <div class="tool"><strong>Universe route invariant</strong><span><code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code> are universe-scoped routes and should remain path-ticker-free.</span></div>
+          <div class="tool"><strong>MCP composites exposed</strong><span>MCP clients should discover composite tools before execution and prefer bounded presets such as Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check when they match the user intent.</span></div>
+          <div class="tool"><strong>SPECTRA soft misses</strong><span>A structured <code>not_found</code> means no evidence is currently available for that endpoint/ticker pair, not a system failure. Clients can suppress known soft misses briefly and re-probe on a cadence because coverage can be backfilled later.</span></div>
+          <div class="tool"><strong>Large payload note</strong><span>For large endpoints such as Company Report, ATLAS history, and Daily Changes, AgentCash/Node integrations should write or redirect output to a file before parsing instead of piping through a short-lived Node process that may truncate stdout around 64 KB.</span></div>
+          <div class="tool"><strong>No-polling notifications</strong><span>The notification substrate includes free event discovery, email and terminal delivery, signed webhooks, delivery receipts, retry/dead-letter handling, subscriptions, and paid MCP notification summaries for agent-readable interpretation.</span></div>
+        </div>
+        <p class="mini-note">These improvements are public integration guidance. Private design-partner names, mailboxes, wallet addresses, grant balances, and support artifacts are intentionally excluded from this page.</p>
       </div>
     </section>
 
@@ -2495,6 +2517,45 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           <div class="tool"><strong>Composite routes</strong><span>Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check are the recommended first workflow layer when exposed by MCP/composite metadata.</span></div>
           <div class="tool"><strong>Planned briefs</strong><span>covenant_stress_natural and additional peer ranking, alpha signals, company fundamentals, risk distribution, and daily changes briefs should be treated as roadmap until current references mark them callable.</span></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="claude-code-guide">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Claude Code and agent setup</h2>
+          <p>Use the project guide before running Delta Signal from Claude Code, Codex, or any MCP-compatible coding agent. It keeps the first run bounded and evidence-preserving.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">Guide</div>
+            <h3>Open CLAUDE.md</h3>
+            <p>The Claude Code guide explains MCP install commands, readiness checks, composite-first tool use, x402 boundaries, TripCode caveats, and refusal rules.</p>
+            <p><a href="./CLAUDE.md">Read CLAUDE.md</a></p>
+          </div>
+          <div class="step">
+            <div class="step-number">Install</div>
+            <h3>Add the MCP endpoint</h3>
+            <p>Install Coinbase payments support where needed, then add <code>https://api.aitrailblazer.net/mcp</code> as the Delta Signal ATLAS-7 MCP server.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">First Run</div>
+            <h3>Discover, then execute</h3>
+            <p>Start with MCP <code>tools/list</code>, check readiness, run one bounded composite, then inspect source dates, caveats, quality flags, payment metadata, and non-advice boundaries.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">Boundary</div>
+            <h3>Evidence first</h3>
+            <p>Agents may summarize returned evidence, but they must not invent missing facts, override caveats, turn screens into recommendations, or claim unavailable drilldowns were fetched.</p>
+          </div>
+        </div>
+        <div class="code"><strong>Claude Code MCP install reference</strong>
+npx @coinbase/payments-mcp install --client claude-code
+claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.net/mcp
+
+# First prompt:
+# Give me a Delta Signal morning brief, then show source_date,
+# route_uri, cost_usd, caveats, and non-advice boundary.</div>
       </div>
     </section>
 

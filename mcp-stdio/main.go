@@ -77,6 +77,112 @@ type quickTickerCheckArgs struct {
 	OutputMode string `json:"output_mode"`
 }
 
+type articleTripCodeArgs struct {
+	Ticker                string   `json:"ticker,omitempty"`
+	Issuer                string   `json:"issuer,omitempty"`
+	Title                 string   `json:"title,omitempty"`
+	Subtitle              string   `json:"subtitle,omitempty"`
+	Author                string   `json:"author,omitempty"`
+	ArticleBody           string   `json:"article_body,omitempty"`
+	ResearchID            string   `json:"research_id,omitempty"`
+	ResearchSlug          string   `json:"research_slug,omitempty"`
+	ResearchDate          string   `json:"research_date,omitempty"`
+	ResearchVersion       string   `json:"research_version,omitempty"`
+	Publication           string   `json:"publication,omitempty"`
+	Platform              string   `json:"platform,omitempty"`
+	PostID                string   `json:"post_id,omitempty"`
+	CanonicalURL          string   `json:"canonical_url,omitempty"`
+	PublishedAt           string   `json:"published_at,omitempty"`
+	PublicationState      string   `json:"publication_state,omitempty"`
+	ThesisLine            string   `json:"thesis_line,omitempty"`
+	ClaimSummary          []string `json:"claim_summary,omitempty"`
+	MonitoringChecklist   []string `json:"monitoring_checklist,omitempty"`
+	InvalidationChecklist []string `json:"invalidation_checklist,omitempty"`
+	PriorArticleTripCodes []string `json:"prior_article_tripcodes,omitempty"`
+	LinkedXBRLTripCodes   []string `json:"linked_xbrl_tripcodes,omitempty"`
+	LinkedDSTripCodes     []string `json:"linked_ds_tripcodes,omitempty"`
+	RiverTripCodes        []string `json:"river_tripcodes,omitempty"`
+}
+
+type resolveTripCodeArgs struct {
+	TripCode string `json:"tripcode"`
+}
+
+type filingTripCodeArgs struct {
+	Ticker                   string   `json:"ticker,omitempty"`
+	Issuer                   string   `json:"issuer,omitempty"`
+	CIK                      string   `json:"cik,omitempty"`
+	Company                  string   `json:"company,omitempty"`
+	AccessionNumber          string   `json:"accession_number,omitempty"`
+	FilingType               string   `json:"filing_type,omitempty"`
+	FilingPeriod             string   `json:"filing_period,omitempty"`
+	FilingDate               string   `json:"filing_date,omitempty"`
+	ReportDate               string   `json:"report_date,omitempty"`
+	PrimaryFiling            string   `json:"primary_filing,omitempty"`
+	XBRLInstance             string   `json:"xbrl_instance,omitempty"`
+	CompanyFactsSnapshot     string   `json:"companyfacts_snapshot,omitempty"`
+	DeltaSignalMethodVersion string   `json:"deltasignal_method_version,omitempty"`
+	LatestArticleNode        string   `json:"latest_article_node,omitempty"`
+	ArticleTripCode          string   `json:"article_tripcode,omitempty"`
+	ResearchRiver            []string `json:"research_river,omitempty"`
+}
+
+type articleFilingCompareArgs struct {
+	ArticleTripCode string   `json:"article_tripcode,omitempty"`
+	FilingTripCodes []string `json:"filing_tripcodes,omitempty"`
+	Ticker          string   `json:"ticker,omitempty"`
+	ComparisonFocus string   `json:"comparison_focus,omitempty"`
+}
+
+type articleThesisMapArgs struct {
+	TripCode              string   `json:"tripcode,omitempty"`
+	ArticleTripCode       string   `json:"article_tripcode,omitempty"`
+	FilingTripCodes       []string `json:"filing_tripcodes,omitempty"`
+	PriorArticleTripCodes []string `json:"prior_article_tripcodes,omitempty"`
+	LinkedXBRLTripCodes   []string `json:"linked_xbrl_tripcodes,omitempty"`
+	LinkedDSTripCodes     []string `json:"linked_ds_tripcodes,omitempty"`
+	RiverTripCodes        []string `json:"river_tripcodes,omitempty"`
+	Ticker                string   `json:"ticker,omitempty"`
+	Issuer                string   `json:"issuer,omitempty"`
+	Title                 string   `json:"title,omitempty"`
+	ThesisLine            string   `json:"thesis_line,omitempty"`
+	ComparisonFocus       string   `json:"comparison_focus,omitempty"`
+}
+
+type articleTripCodeListArgs struct {
+	CurrentTripCode    string   `json:"current_tripcode,omitempty"`
+	ArticleTripCode    string   `json:"article_tripcode,omitempty"`
+	TripCode           string   `json:"tripcode,omitempty"`
+	Issuer             string   `json:"issuer,omitempty"`
+	Ticker             string   `json:"ticker,omitempty"`
+	River              string   `json:"river,omitempty"`
+	RiverTripCodes     []string `json:"river_tripcodes,omitempty"`
+	ObjectType         string   `json:"object_type,omitempty"`
+	IncludeUnpublished bool     `json:"include_unpublished,omitempty"`
+	Limit              int      `json:"limit,omitempty"`
+}
+
+type riverTripCodeArgs struct {
+	RiverTripCode      string   `json:"river_tripcode,omitempty"`
+	TripCode           string   `json:"tripcode,omitempty"`
+	River              string   `json:"river,omitempty"`
+	RiverTripCodes     []string `json:"river_tripcodes,omitempty"`
+	SeedTripCode       string   `json:"seed_tripcode,omitempty"`
+	CurrentTripCode    string   `json:"current_tripcode,omitempty"`
+	ArticleTripCode    string   `json:"article_tripcode,omitempty"`
+	Issuer             string   `json:"issuer,omitempty"`
+	Ticker             string   `json:"ticker,omitempty"`
+	Query              string   `json:"query,omitempty"`
+	ClaimText          string   `json:"claim_text,omitempty"`
+	ClaimHash          string   `json:"claim_hash,omitempty"`
+	Mode               string   `json:"mode,omitempty"`
+	IncludeXBRL        bool     `json:"include_xbrl,omitempty"`
+	IncludeDS          bool     `json:"include_ds,omitempty"`
+	TimeWindow         string   `json:"time_window,omitempty"`
+	IncludeUnpublished bool     `json:"include_unpublished,omitempty"`
+	Limit              int      `json:"limit,omitempty"`
+}
+
 type compositeLeg struct {
 	Name        string
 	Path        string
@@ -92,7 +198,7 @@ func main() {
 		Name:    "deltasignal-atlas-7",
 		Version: "0.2.0",
 	}, &mcp.ServerOptions{
-		Instructions: "DeltaSignal ATLAS-7 delivers SEC-grounded financial intelligence for crypto public companies. Prefer composite MCP tools for common workflows: deltasignal_morning_brief, deltasignal_company_report, deltasignal_pressure_board, deltasignal_alpha_sweep, and deltasignal_quick_ticker_check. Use deltasignal_atlas7_audit_status when the user asks whether the full Azure-native 215-issuer regression audit is healthy. First 5 granular calls are free where supported; paid live usage is charged through x402 USDC micropayments.",
+		Instructions: "DeltaSignal ATLAS-7 delivers SEC-grounded financial intelligence and TripCode research continuity for crypto public companies. Prefer composite MCP tools for common workflows: deltasignal_morning_brief, deltasignal_company_report, deltasignal_pressure_board, deltasignal_alpha_sweep, and deltasignal_quick_ticker_check. Use deltasignal_resolve_article_tripcode when a DeltaSignal article subtitle contains ATLAS-7 TripCode: TF-SUB-..., then follow linked TF-XBRL, TF-DS, and TF-RIVER continuity nodes. Use deltasignal_list_article_tripcodes before thesis maps when prior issuer River article nodes are not supplied. Use deltasignal_atlas7_audit_status when the user asks whether the full Azure-native 215-issuer regression audit is healthy. First 5 granular calls are free where supported; paid live usage is charged through x402 USDC micropayments.",
 	})
 
 	mcp.AddTool(server, tool("deltasignal_morning_brief", "Server-enforced daily DeltaSignal scan. Internally calls readiness, daily_changes, risk_distribution, top_stressed(limit=10), and alpha_opportunities(limit=10). Use this for morning briefs and daily scans instead of manually chaining granular tools.", noArgCompositeSchema()), client.morningBrief)
@@ -106,6 +212,19 @@ func main() {
 		"properties":           map[string]any{},
 		"additionalProperties": false,
 	}), client.readiness)
+
+	mcp.AddTool(server, tool("deltasignal_generate_article_tripcode", "Generates a deterministic TF-SUB article/research TripCode from DeltaSignal research identity before publication. Substack post ID, URL, slug, and publish time are secondary metadata and must not change identity. Typical price: $0.00.", articleTripCodeSchema()), client.generateArticleTripCode)
+	mcp.AddTool(server, tool("deltasignal_resolve_article_tripcode", "Resolves a TF-SUB article subtitle TripCode into the Azure Blob research object behind the DeltaSignal article, including research payload, publication targets, continuity links, and resolver paths. Typical price: $0.02.", tripCodeResolveSchema("Required TF-SUB article TripCode, for example TF-SUB-DA79A58372.")), client.resolveArticleTripCode)
+	mcp.AddTool(server, tool("deltasignal_list_article_tripcodes", "Discovers prior TF-SUB article nodes for an issuer River from the current article TripCode, a TF-RIVER TripCode, or an issuer symbol. Use before deltasignal_article_thesis_map when subscribers should not paste old article TripCodes manually. Typical price: $0.02.", articleTripCodeListSchema()), client.listArticleTripCodes)
+	mcp.AddTool(server, tool("deltasignal_resolve_river_tripcode", "Resolves a TF-RIVER issuer thesis graph from Azure Blob. Use this when the subscriber starts from a River TripCode or issuer River. Typical price: $0.05.", riverTripCodeSchema()), client.resolveRiverTripCode)
+	mcp.AddTool(server, tool("deltasignal_reverse_search_river", "Reverse-searches one issuer River to reconstruct thesis deltas, prior confirmations, weakened assumptions, bridge risks, proof milestones, scenarios, invalidations, and monitors. Typical price: $0.30.", riverReverseSearchSchema()), client.reverseSearchRiver)
+	mcp.AddTool(server, tool("deltasignal_search_by_claim", "Searches a River for matching thesis claims by query, claim_text, or claim_hash. Typical price: $0.05.", riverClaimSearchSchema()), client.searchByClaim)
+	mcp.AddTool(server, tool("deltasignal_search_by_issuer", "Finds the issuer index, active TF-RIVER root, and TF-SUB article nodes for an issuer. Typical price: $0.05.", riverIssuerSearchSchema()), client.searchByIssuer)
+	mcp.AddTool(server, tool("deltasignal_compare_claim_to_evidence", "Compares one claim to River claim records and evidence refs while preserving missing evidence. Typical price: $0.08.", riverClaimSearchSchema()), client.compareClaimToEvidence)
+	mcp.AddTool(server, tool("deltasignal_generate_filing_tripcode", "Generates a deterministic TF-XBRL evidence TripCode from supplied SEC/XBRL tuple data. This does not replace SEC accession numbers, CIKs, filing types, reporting periods, or XBRL concept identities. Typical price: $0.00.", filingTripCodeSchema()), client.generateFilingTripCode)
+	mcp.AddTool(server, tool("deltasignal_resolve_filing_tripcode", "Resolves a TF-XBRL filing evidence TripCode while preserving official SEC identity fields and evidence caveats. Typical price: $0.02.", tripCodeResolveSchema("Required TF-XBRL filing evidence TripCode.")), client.resolveFilingTripCode)
+	mcp.AddTool(server, tool("deltasignal_compare_article_to_filing_evidence", "Compares one TF-SUB article node to linked TF-XBRL filing evidence and returns a compact verification packet: changed data, confirmed signals, weakened assumptions, risks, proof milestones, and monitors. Typical price: $0.08.", articleFilingCompareSchema()), client.compareArticleToFilingEvidence)
+	mcp.AddTool(server, tool("deltasignal_article_thesis_map", "Builds the eight-section subscriber thesis map from one article TripCode plus River, filing, and DeltaSignal continuity. HUT MVP can use seeded HUT filing evidence when no filing_tripcodes are supplied. Typical price: $0.30.", articleThesisMapSchema()), client.articleThesisMap)
 
 	mcp.AddTool(server, tool("deltasignal_top_stressed", "Ranks the most stressed crypto public companies in the active DeltaSignal slice, using covenant stress, debt coverage, quality flags, and current issuer risk signals for triage workflows.", map[string]any{
 		"type": "object",
@@ -259,6 +378,54 @@ func (c *deltaClient) dailyChanges(ctx context.Context, _ *mcp.CallToolRequest, 
 
 func (c *deltaClient) auditStatus(ctx context.Context, _ *mcp.CallToolRequest, _ readinessArgs) (*mcp.CallToolResult, any, error) {
 	return c.get(ctx, "/v1/atlas7/audit/latest", nil)
+}
+
+func (c *deltaClient) generateArticleTripCode(ctx context.Context, _ *mcp.CallToolRequest, args articleTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_generate_article_tripcode", args)
+}
+
+func (c *deltaClient) resolveArticleTripCode(ctx context.Context, _ *mcp.CallToolRequest, args resolveTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_resolve_article_tripcode", args)
+}
+
+func (c *deltaClient) listArticleTripCodes(ctx context.Context, _ *mcp.CallToolRequest, args articleTripCodeListArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_list_article_tripcodes", args)
+}
+
+func (c *deltaClient) resolveRiverTripCode(ctx context.Context, _ *mcp.CallToolRequest, args riverTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_resolve_river_tripcode", args)
+}
+
+func (c *deltaClient) reverseSearchRiver(ctx context.Context, _ *mcp.CallToolRequest, args riverTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_reverse_search_river", args)
+}
+
+func (c *deltaClient) searchByClaim(ctx context.Context, _ *mcp.CallToolRequest, args riverTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_search_by_claim", args)
+}
+
+func (c *deltaClient) searchByIssuer(ctx context.Context, _ *mcp.CallToolRequest, args riverTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_search_by_issuer", args)
+}
+
+func (c *deltaClient) compareClaimToEvidence(ctx context.Context, _ *mcp.CallToolRequest, args riverTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_compare_claim_to_evidence", args)
+}
+
+func (c *deltaClient) generateFilingTripCode(ctx context.Context, _ *mcp.CallToolRequest, args filingTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_generate_filing_tripcode", args)
+}
+
+func (c *deltaClient) resolveFilingTripCode(ctx context.Context, _ *mcp.CallToolRequest, args resolveTripCodeArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_resolve_filing_tripcode", args)
+}
+
+func (c *deltaClient) compareArticleToFilingEvidence(ctx context.Context, _ *mcp.CallToolRequest, args articleFilingCompareArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_compare_article_to_filing_evidence", args)
+}
+
+func (c *deltaClient) articleThesisMap(ctx context.Context, _ *mcp.CallToolRequest, args articleThesisMapArgs) (*mcp.CallToolResult, any, error) {
+	return c.callHostedMCPTool(ctx, "deltasignal_article_thesis_map", args)
 }
 
 func (c *deltaClient) morningBrief(ctx context.Context, _ *mcp.CallToolRequest, args outputModeArgs) (*mcp.CallToolResult, any, error) {
@@ -495,6 +662,79 @@ func (c *deltaClient) get(ctx context.Context, path string, q url.Values) (*mcp.
 	return result(payload, false)
 }
 
+func (c *deltaClient) callHostedMCPTool(ctx context.Context, toolName string, args any) (*mcp.CallToolResult, any, error) {
+	endpoint, err := url.Parse(c.baseURL + "/mcp")
+	if err != nil {
+		return nil, nil, err
+	}
+	body, err := json.Marshal(map[string]any{
+		"jsonrpc": "2.0",
+		"id":      "deltasignal-plugin",
+		"method":  "tools/call",
+		"params": map[string]any{
+			"name":      toolName,
+			"arguments": args,
+		},
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, endpoint.String(), strings.NewReader(string(body)))
+	if err != nil {
+		return nil, nil, err
+	}
+	req.Header.Set("Accept", "application/json")
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("X-Codex-User", c.codexUser)
+	if c.mode == "local" {
+		req.Header.Set("X-Test-Mode", "free")
+	}
+	if c.mode == "internal" && c.apiKey == "" {
+		return result(map[string]any{
+			"error":        "DELTASIGNAL_API_KEY is required when DELTASIGNAL_PAYMENT_MODE=internal",
+			"payment_mode": c.mode,
+			"url":          endpoint.String(),
+			"tool":         toolName,
+		}, true)
+	}
+	if c.apiKey != "" {
+		req.Header.Set("x-api-key", c.apiKey)
+	}
+
+	resp, err := c.httpClient.Do(req)
+	if err != nil {
+		return result(map[string]any{"error": err.Error(), "url": endpoint.String(), "tool": toolName}, true)
+	}
+	defer resp.Body.Close()
+
+	respBody, readErr := io.ReadAll(io.LimitReader(resp.Body, maxResponseBytes+1))
+	if readErr != nil {
+		return result(map[string]any{"error": readErr.Error(), "status": resp.StatusCode, "url": endpoint.String(), "tool": toolName}, true)
+	}
+	if len(respBody) > maxResponseBytes {
+		return result(map[string]any{"error": "response body too large", "status": resp.StatusCode, "url": endpoint.String(), "tool": toolName}, true)
+	}
+	payload := map[string]any{
+		"status":       resp.StatusCode,
+		"url":          endpoint.String(),
+		"tool":         toolName,
+		"payment_mode": c.mode,
+		"data":         parseJSON(respBody),
+	}
+	if resp.StatusCode == http.StatusPaymentRequired {
+		payload["payment_required"] = map[string]any{
+			"payment_required": resp.Header.Get("PAYMENT-REQUIRED"),
+			"www_authenticate": resp.Header.Get("WWW-Authenticate"),
+			"note":             "Public MCP tools/call requires x402 payment unless a free-tier grant applies. Use a hosted x402-capable MCP client or internal API key.",
+		}
+		return result(payload, true)
+	}
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return result(payload, true)
+	}
+	return result(payload, false)
+}
+
 func normalizeMode(raw string) string {
 	switch strings.ToLower(strings.TrimSpace(raw)) {
 	case "local", "dev", "test", "free":
@@ -596,6 +836,192 @@ func quickTickerCheckSchema() map[string]any {
 		},
 		"required":             []string{"ticker"},
 		"additionalProperties": false,
+	}
+}
+
+func articleTripCodeSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"ticker":                  boundedStringSchema("Primary issuer ticker.", 1, maxTickerLength),
+			"issuer":                  boundedStringSchema("Primary issuer symbol when ticker is not supplied.", 1, maxTickerLength),
+			"title":                   boundedStringSchema("Article title.", 1, 220),
+			"subtitle":                boundedStringSchema("Article subtitle before TripCode writeback.", 0, 260),
+			"author":                  boundedStringSchema("Article author or publication author.", 0, 120),
+			"article_body":            boundedStringSchema("Optional article body for provenance hash, not canonical identity.", 0, 20000),
+			"research_id":             boundedStringSchema("Optional explicit DeltaSignal research ID.", 0, 160),
+			"research_slug":           boundedStringSchema("Stable DeltaSignal research slug.", 1, 120),
+			"research_date":           dateSchema("Stable DeltaSignal research date."),
+			"research_version":        boundedStringSchema("Optional research version. Defaults to 1.", 0, 16),
+			"publication":             boundedStringSchema("Publication name. Defaults to DeltaSignal.", 0, 120),
+			"platform":                boundedStringSchema("Publication platform. Defaults to Substack.", 0, 64),
+			"post_id":                 boundedStringSchema("Optional Substack post ID. Secondary metadata only.", 0, 80),
+			"canonical_url":           boundedStringSchema("Optional public canonical URL. Secondary metadata only.", 0, 500),
+			"published_at":            boundedStringSchema("Optional publication timestamp.", 0, 64),
+			"publication_state":       boundedStringSchema("Optional article state such as draft or published_or_linked.", 0, 64),
+			"thesis_line":             boundedStringSchema("Optional concise thesis line.", 0, 400),
+			"claim_summary":           arraySchema("Optional claim summary bullets."),
+			"monitoring_checklist":    arraySchema("Optional monitoring checklist."),
+			"invalidation_checklist":  arraySchema("Optional invalidation checklist."),
+			"prior_article_tripcodes": arraySchema("Optional prior TF-SUB TripCodes in this River."),
+			"linked_xbrl_tripcodes":   arraySchema("Optional linked TF-XBRL evidence TripCodes."),
+			"linked_ds_tripcodes":     arraySchema("Optional linked TF-DS signal TripCodes."),
+			"river_tripcodes":         arraySchema("Optional linked TF-RIVER TripCodes."),
+		},
+		"required":             []string{"title"},
+		"additionalProperties": false,
+	}
+}
+
+func tripCodeResolveSchema(description string) map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"tripcode": boundedStringSchema(description, 8, 120),
+		},
+		"required":             []string{"tripcode"},
+		"additionalProperties": false,
+	}
+}
+
+func filingTripCodeSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"ticker":                     boundedStringSchema("Issuer ticker. HUT uses the seeded MVP defaults when no filing overrides are supplied.", 1, maxTickerLength),
+			"issuer":                     boundedStringSchema("Issuer ticker or short symbol.", 1, maxTickerLength),
+			"cik":                        boundedStringSchema("SEC CIK, with or without CIK prefix.", 1, 16),
+			"company":                    boundedStringSchema("SEC registrant company name.", 1, 160),
+			"accession_number":           boundedStringSchema("SEC accession number when filing-specific.", 1, 32),
+			"filing_type":                boundedStringSchema("SEC form type such as 10-Q or 8-K.", 1, 24),
+			"filing_period":              boundedStringSchema("Normalized filing period such as 2026-Q1.", 1, 24),
+			"filing_date":                dateSchema("SEC filing date."),
+			"report_date":                dateSchema("SEC report date or period end."),
+			"primary_filing":             boundedStringSchema("Primary SEC filing document reference.", 1, 240),
+			"xbrl_instance":              boundedStringSchema("XBRL instance document reference when available.", 1, 240),
+			"companyfacts_snapshot":      boundedStringSchema("CompanyFacts snapshot reference when available.", 1, 240),
+			"deltasignal_method_version": boundedStringSchema("Optional method version override.", 1, 80),
+			"latest_article_node":        boundedStringSchema("Optional latest TF-SUB article node linked to this evidence object.", 1, 80),
+			"article_tripcode":           boundedStringSchema("Optional TF-SUB article node linked to this evidence object.", 1, 80),
+			"research_river":             arraySchema("Optional prior TF-SUB article TripCodes linked to this filing object."),
+		},
+		"additionalProperties": false,
+	}
+}
+
+func articleFilingCompareSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"article_tripcode": boundedStringSchema("Optional TF-SUB article node TripCode to compare against filing evidence.", 1, 80),
+			"filing_tripcodes": arraySchema("Optional TF-XBRL filing evidence TripCodes."),
+			"ticker":           boundedStringSchema("Optional issuer ticker. HUT with no filing_tripcodes loads the default HUT filing pack.", 1, maxTickerLength),
+			"comparison_focus": boundedStringSchema("Optional comparison focus.", 0, 160),
+		},
+		"additionalProperties": false,
+	}
+}
+
+func articleThesisMapSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"tripcode":                boundedStringSchema("Optional TF-SUB article TripCode alias. Prefer article_tripcode.", 8, 120),
+			"article_tripcode":        boundedStringSchema("Optional TF-SUB article TripCode from the article subtitle.", 8, 120),
+			"filing_tripcodes":        arraySchema("Optional TF-XBRL filing evidence TripCodes."),
+			"prior_article_tripcodes": arraySchema("Optional prior TF-SUB TripCodes in the issuer River."),
+			"linked_xbrl_tripcodes":   arraySchema("Optional linked TF-XBRL evidence TripCodes from the current article object."),
+			"linked_ds_tripcodes":     arraySchema("Optional linked TF-DS computed signal TripCodes."),
+			"river_tripcodes":         arraySchema("Optional linked TF-RIVER TripCodes."),
+			"ticker":                  boundedStringSchema("Optional issuer ticker. HUT with no filing_tripcodes loads the seeded HUT filing pack.", 1, maxTickerLength),
+			"issuer":                  boundedStringSchema("Optional issuer symbol.", 1, maxTickerLength),
+			"title":                   boundedStringSchema("Optional current article title.", 0, 220),
+			"thesis_line":             boundedStringSchema("Optional current article thesis line.", 0, 400),
+			"comparison_focus":        boundedStringSchema("Optional thesis-map focus.", 0, 160),
+		},
+		"additionalProperties": false,
+	}
+}
+
+func articleTripCodeListSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"current_tripcode":    boundedStringSchema("Optional current TF-SUB article TripCode used as the River seed.", 8, 120),
+			"article_tripcode":    boundedStringSchema("Optional TF-SUB article TripCode alias for current_tripcode.", 8, 120),
+			"tripcode":            boundedStringSchema("Optional TF-SUB or TF-RIVER TripCode alias.", 8, 120),
+			"issuer":              boundedStringSchema("Optional issuer symbol used to discover the issuer River.", 1, maxTickerLength),
+			"ticker":              boundedStringSchema("Optional ticker alias for issuer.", 1, maxTickerLength),
+			"river":               boundedStringSchema("Optional River symbol or TF-RIVER TripCode.", 1, 120),
+			"river_tripcodes":     arraySchema("Optional known TF-RIVER TripCodes to resolve before issuer-index fallback."),
+			"object_type":         boundedStringSchema("Object type to discover. MVP supports TF-SUB only.", 1, 20),
+			"include_unpublished": boolSchema("When true, include draft/unpublished TF-SUB nodes returned by the River object."),
+			"limit":               boundedIntSchema("Maximum article nodes to return.", 1, maxLimit),
+		},
+		"additionalProperties": false,
+	}
+}
+
+func riverTripCodeSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"river_tripcode":      boundedStringSchema("Optional TF-RIVER TripCode.", 8, 140),
+			"tripcode":            boundedStringSchema("Optional TF-RIVER TripCode or TF-SUB seed TripCode.", 8, 140),
+			"river":               boundedStringSchema("Optional TF-RIVER TripCode or issuer shorthand.", 1, 140),
+			"river_tripcodes":     arraySchema("Optional known TF-RIVER TripCodes."),
+			"seed_tripcode":       boundedStringSchema("Optional seed TF-SUB, TF-XBRL, TF-DS, or TF-RIVER TripCode.", 8, 140),
+			"current_tripcode":    boundedStringSchema("Optional current TF-SUB article TripCode.", 8, 140),
+			"article_tripcode":    boundedStringSchema("Optional current TF-SUB article TripCode alias.", 8, 140),
+			"issuer":              boundedStringSchema("Optional issuer symbol.", 1, maxTickerLength),
+			"ticker":              boundedStringSchema("Optional ticker alias for issuer.", 1, maxTickerLength),
+			"include_unpublished": boolSchema("When true, include draft/unpublished article nodes."),
+			"limit":               boundedIntSchema("Maximum result rows.", 1, maxLimit),
+		},
+		"additionalProperties": false,
+	}
+}
+
+func riverReverseSearchSchema() map[string]any {
+	schema := riverTripCodeSchema()
+	properties := schema["properties"].(map[string]any)
+	properties["query"] = boundedStringSchema("Optional reverse-search question or claim.", 0, 600)
+	properties["claim_text"] = boundedStringSchema("Optional claim text alias.", 0, 600)
+	properties["claim_hash"] = boundedStringSchema("Optional normalized claim hash.", 0, 128)
+	properties["mode"] = boundedStringSchema("Reverse-search mode. Defaults to thesis_delta.", 0, 64)
+	properties["include_xbrl"] = boolSchema("When true, include TF-XBRL evidence refs.")
+	properties["include_ds"] = boolSchema("When true, include TF-DS computed signal refs.")
+	properties["time_window"] = boundedStringSchema("Optional time window label.", 0, 80)
+	return schema
+}
+
+func riverClaimSearchSchema() map[string]any {
+	schema := riverTripCodeSchema()
+	properties := schema["properties"].(map[string]any)
+	properties["query"] = boundedStringSchema("Claim text to search or compare.", 0, 600)
+	properties["claim_text"] = boundedStringSchema("Claim text alias.", 0, 600)
+	properties["claim_hash"] = boundedStringSchema("Optional normalized claim hash.", 0, 128)
+	return schema
+}
+
+func riverIssuerSearchSchema() map[string]any {
+	return map[string]any{
+		"type": "object",
+		"properties": map[string]any{
+			"issuer":              boundedStringSchema("Issuer symbol.", 1, maxTickerLength),
+			"ticker":              boundedStringSchema("Ticker alias for issuer.", 1, maxTickerLength),
+			"include_unpublished": boolSchema("When true, include draft/unpublished article nodes."),
+			"limit":               boundedIntSchema("Maximum result rows.", 1, maxLimit),
+		},
+		"additionalProperties": false,
+	}
+}
+
+func arraySchema(description string) map[string]any {
+	return map[string]any{
+		"type":        "array",
+		"description": description,
+		"items":       boundedStringSchema("String item.", 1, 500),
 	}
 }
 
