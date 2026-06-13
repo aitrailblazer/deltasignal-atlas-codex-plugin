@@ -751,6 +751,33 @@
       text-align: center;
     }
 
+    .design-partner-note {
+      max-width: 980px;
+      margin: -1.3rem auto 1.6rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(255, 154, 26, 0.3);
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(255, 154, 26, 0.1), rgba(227, 0, 85, 0.07)),
+        rgba(17, 16, 15, 0.92);
+      color: var(--muted);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+    }
+
+    .design-partner-note strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #ffd1a3;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+    }
+
+    .design-partner-note span {
+      display: block;
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
     .steps {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2063,6 +2090,10 @@
         <div class="section-head">
           <h2>Pricing for first workflows</h2>
           <p>Start with free discovery and first calls where a grant or free-tier policy applies. Paid public usage is route-level, usage-based, and declared in OpenAPI/MCP metadata. Builder pricing uses 1 credit = $0.01 of Delta Signal usage value.</p>
+        </div>
+        <div class="design-partner-note">
+          <strong>Design partner feedback and ownership boundary</strong>
+          <span>Delta Signal works with design partners to improve route contracts, field naming, pricing metadata, workflow ergonomics, output limits, and agent-facing documentation. Feedback, suggestions, feature requests, bug reports, and workflow observations may be used by Delta Signal without restriction, compensation, royalty, or ownership claim, while each party retains ownership of its pre-existing technology, code, data, systems, and confidential materials.</span>
         </div>
         <div class="tool-grid" style="margin-bottom:1.5rem;">
           <div class="tool"><strong>Morning Brief</strong><span>$0.18. Default daily market scan: readiness, daily changes, risk distribution, top stressed issuers, and alpha opportunities.</span></div>
