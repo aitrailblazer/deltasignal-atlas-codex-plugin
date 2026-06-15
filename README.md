@@ -215,7 +215,7 @@ Preferred MCP composite tools for common user intents.
 | Preset | Intent | Price metadata |
 | --- | --- | --- |
 | `deltasignal_morning_brief` | Daily market scan | `$0.18` |
-| `deltasignal_company_report` | Full single-ticker diligence | `$0.30` |
+| `deltasignal_company_report` | Full single-ticker diligence | `$0.60` standard display; `$0.45-$0.75` route-declared range |
 | `deltasignal_pressure_board` | Risk-focused monitoring | `$0.14` |
 | `deltasignal_alpha_sweep` | Opportunity-focused market screen | `$0.14` |
 | `deltasignal_quick_ticker_check` | Fast single-name sanity check | `$0.18` |

@@ -298,6 +298,7 @@ If a user asks for a Company Report:
 
 - Require a ticker.
 - Route to the backend `deltasignal_company_report` composite.
+- Treat `$0.60` as the standard public display price and `$0.45-$0.75` as the route-declared range. Confirm the final charge through `/v1/pricing`, OpenAPI metadata, or the x402 challenge before execution.
 - Do not substitute a default ticker.
 
 If a user asks for a Scenario:
