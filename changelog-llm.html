@@ -43,16 +43,16 @@
       <a href="#tracking-river">Tracking river</a>
       <a href="#machine-contract">Machine contract</a>
     </nav>
-    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-06-08</code></p>
+    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-06-16</code></p>
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>195</strong><span>tracked changes</span></div>
-        <div><strong>110</strong><span>timeline entries</span></div>
-        <div><strong>193</strong><span>unique tripcodes</span></div>
-        <div><strong>195</strong><span>breadcrumb chips</span></div>
-        <div><strong>75</strong><span>visible commit references</span></div>
-        <div><strong>103</strong><span>unique source commits</span></div>
+        <div><strong>196</strong><span>tracked changes</span></div>
+        <div><strong>111</strong><span>timeline entries</span></div>
+        <div><strong>194</strong><span>unique tripcodes</span></div>
+        <div><strong>196</strong><span>breadcrumb chips</span></div>
+        <div><strong>76</strong><span>visible commit references</span></div>
+        <div><strong>104</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -77,6 +77,7 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>196</td><td><code>ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</code></td><td>Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed</td><td><code>T+1090m</code></td><td>981f25ae</td></tr>
           <tr><td>195</td><td><code>ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE</code></td><td>Improvement Timeline &gt; Claude Code MCP project guide added</td><td><code>T+1082m</code></td><td>current changelog update</td></tr>
           <tr><td>194</td><td><code>ATLAS-JUN-8-COINBASE-CODEX-MARKETPLACE-REVIEW-POSITIONING</code></td><td>Improvement Timeline &gt; Coinbase x402 and Codex marketplace reviewer positioning</td><td><code>T+1074m</code></td><td>current changelog update</td></tr>
           <tr><td>193</td><td><code>ATLAS-JUN-8-LLM-EVIDENCE-ROUTING-GUARDRAILS</code></td><td>Improvement Timeline &gt; LLM evidence-routing guardrails and TripCode discovery caveat</td><td><code>T+1066m</code></td><td>current changelog update</td></tr>
@@ -278,6 +279,20 @@
     </section>
     <section id="timeline-entries">
       <h2>Timeline Entries</h2>
+        <article class="entry" id="ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER">
+          <h3>Audit-grade Natural Language Morning Brief renderer deployed</h3>
+          <p class="meta"><code>tripcode: ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</code> <code>track: T+1090m</code> <code>commit: 981f25ae</code> <code>bread: Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed</code></p>
+          <p>Production now serves audit-grade Natural Language Morning Brief output from Azure revision ca-web-intel-mcp--0000527, with score interpretation, concrete risk-distribution snapshot, stale source-period caveats, safer route recommendations, and cached/precomputed MCP reuse.</p>
+          <ul>
+            <li>Deployed revision ca-web-intel-mcp--0000527 from commit 981f25ae415fadd702208ec85be0ecc86e9ca95b using image acrgniwebintel001.azurecr.io/ca-web-intel-mcp:skill-20260616071440 and digest sha256:e2587e0f130987759c897531c839091cfd71a62938b663284afc263a802f2a82.</li>
+            <li>Natural brief output now includes Score Interpretation for Stress 50%, Risk Tier, Alpha Score, Board Rank, and Resilience Percentile so readers understand what each numeric field means.</li>
+            <li>Market-Wide Risk Board now renders bucket counts and percentages when risk-distribution data is present.</li>
+            <li>Top-stressed rows now flag stale source periods relative to the daily-change reference date instead of presenting older issuer metrics as same-day evidence.</li>
+            <li>Evidence limits now explicitly state compact evidence mode, source-date boundary, screen-not-recommendation status, and missing-evidence behavior.</li>
+            <li>Drilldowns now prefer Company Report, raw covenant stress, daily-change evidence, and issuer fundamentals; natural covenant stress is only referenced when current route metadata marks it live.</li>
+            <li>Live MCP probe verified cache_hit=true, source_date=2026-06-16, model=deterministic-atlas7-nl-renderer, tokens_used=1652, latency_ms=174, and cost_usd=0.95.</li>
+          </ul>
+        </article>
         <article class="entry" id="ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE">
           <h3>Claude Code MCP project guide added</h3>
           <p class="meta"><code>tripcode: ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE</code> <code>track: T+1082m</code> <code>commit: current changelog update</code> <code>bread: Improvement Timeline &gt; Claude Code MCP project guide added</code></p>
@@ -2683,14 +2698,14 @@
 {
   "artifact": "deltasignal_atlas7_changelog_llm",
   "version": "changelog-llm-v1",
-  "last_updated": "2026-06-08",
+  "last_updated": "2026-06-16",
   "stats": {
-    "tracked_changes": 195,
-    "timeline_entries": 110,
-    "unique_tripcodes": 193,
-    "breadcrumb_chips": 195,
-    "visible_commit_references": 75,
-    "unique_source_commits": 103
+    "tracked_changes": 196,
+    "timeline_entries": 111,
+    "unique_tripcodes": 194,
+    "breadcrumb_chips": 196,
+    "visible_commit_references": 76,
+    "unique_source_commits": 104
   },
   "tracking_river": [
     {
@@ -3942,9 +3957,35 @@
       "commit": "current changelog update",
       "bread": "Improvement Timeline > Claude Code MCP project guide added",
       "river_index": 195
+    },
+    {
+      "tripcode": "ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER",
+      "track": "T+1090m",
+      "commit": "981f25ae",
+      "bread": "Improvement Timeline > Audit-grade Natural Language Morning Brief renderer deployed",
+      "river_index": 196
     }
   ],
   "timeline_entries": [
+    {
+      "river_index": 196,
+      "date": "June 16, 2026",
+      "title": "Audit-grade Natural Language Morning Brief renderer deployed",
+      "tripcode": "ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER",
+      "track": "T+1090m",
+      "bread": "Improvement Timeline > Audit-grade Natural Language Morning Brief renderer deployed",
+      "commit": "981f25ae",
+      "summary": "Production now serves audit-grade Natural Language Morning Brief output from Azure revision ca-web-intel-mcp--0000527, with score interpretation, concrete risk-distribution snapshot, stale source-period caveats, safer route recommendations, and cached/precomputed MCP reuse.",
+      "bullets": [
+        "Deployed revision ca-web-intel-mcp--0000527 from commit 981f25ae415fadd702208ec85be0ecc86e9ca95b using image acrgniwebintel001.azurecr.io/ca-web-intel-mcp:skill-20260616071440 and digest sha256:e2587e0f130987759c897531c839091cfd71a62938b663284afc263a802f2a82.",
+        "Natural brief output now includes Score Interpretation for Stress 50%, Risk Tier, Alpha Score, Board Rank, and Resilience Percentile so readers understand what each numeric field means.",
+        "Market-Wide Risk Board now renders bucket counts and percentages when risk-distribution data is present.",
+        "Top-stressed rows now flag stale source periods relative to the daily-change reference date instead of presenting older issuer metrics as same-day evidence.",
+        "Evidence limits now explicitly state compact evidence mode, source-date boundary, screen-not-recommendation status, and missing-evidence behavior.",
+        "Drilldowns now prefer Company Report, raw covenant stress, daily-change evidence, and issuer fundamentals; natural covenant stress is only referenced when current route metadata marks it live.",
+        "Live MCP probe verified cache_hit=true, source_date=2026-06-16, model=deterministic-atlas7-nl-renderer, tokens_used=1652, latency_ms=174, and cost_usd=0.95."
+      ]
+    },
     {
       "river_index": 195,
       "date": "June 8, 2026",
@@ -5714,8 +5755,8 @@
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
-<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-06">
-  <stats tracked_changes="195" timeline_entries="110" unique_tripcodes="193" breadcrumb_chips="195" visible_commit_references="75" unique_source_commits="103" />
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-16">
+  <stats tracked_changes="196" timeline_entries="111" unique_tripcodes="194" breadcrumb_chips="196" visible_commit_references="76" unique_source_commits="104" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -5724,6 +5765,7 @@
     <instruction>Preserve the non-advice evidence boundary.</instruction>
   </instructions>
   <entries>
+    <entry river_index="196" tripcode="ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER" track="T+1090m" bread="Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed" commit="981f25ae"><date>June 16, 2026</date><title>Audit-grade Natural Language Morning Brief renderer deployed</title></entry>
     <entry river_index="2" tripcode="ATLAS-P0-CONTRACT-7A80E86" track="T+14m" bread="Improvement Timeline &gt; P0 contract-hardening source implementation" commit="7a80e86"><date>May 31, 2026</date><title>P0 contract-hardening source implementation</title></entry>
     <entry river_index="3" tripcode="ATLAS-P1-PROV-730DEF3" track="T+22m" bread="Improvement Timeline &gt; P1 standard provenance source implementation" commit="730def3"><date>May 31, 2026</date><title>P1 standard provenance source implementation</title></entry>
     <entry river_index="28" tripcode="ATLAS-P0-UNIVERSAL-EVIDENCE-CONTRACT" track="T+098m" bread="Evidence Infrastructure Backlog &gt; Universal evidence contract" commit=""><date>P0</date><title>Universal evidence contract</title></entry>

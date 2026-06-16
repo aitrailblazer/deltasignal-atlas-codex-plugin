@@ -6,8 +6,16 @@
     <atom:link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml" rel="self" type="application/rss+xml" />
     <description>Public changelog for Delta Signal ATLAS-7 MCP, OpenAPI, x402, notification, SPECTRA, and evidence-contract changes.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Audit-grade Natural Language Morning Brief renderer deployed</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</guid>
+      <pubDate>Tue, 16 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</category>
+      <description>Production now serves audit-grade Natural Language Morning Brief output from Azure revision ca-web-intel-mcp--0000527, with score interpretation, concrete risk-distribution snapshot, stale source-period caveats, safer route recommendations, and cached/precomputed MCP reuse. Breadcrumb: Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed Track: T+1090m Commit: 981f25ae</description>
+    </item>
     <item>
       <title>Claude Code MCP project guide added</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE</link>
@@ -239,14 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9</category>
       <description>Worker proxy and store-constructor coverage now verifies authorized proxy forwarding with query/body/header preservation, transport-error behavior, proxy response-header filtering, OpenAPI template fallback loading, and no-op DeltaSignal store close behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.9%. Breadcrumb: Improvement Timeline &gt; Worker proxy and DeltaSignal store constructor coverage checkpoint Track: T+858m Commit: 4e4d7d64</description>
-    </item>
-    <item>
-      <title>Consolidated June 6 public rollup to 74.7 percent coverage</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P7</category>
-      <description>The public changelog now includes the full June 6 public-safe update set through Codex compatibility-handler coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.7%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.7 percent coverage Track: T+850m Commit: current changelog update</description>
     </item>
   </channel>
 </rss>

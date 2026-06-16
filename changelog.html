@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 8, 2026 - public rollup updated for the Claude Code MCP project guide, Coinbase x402 / Codex marketplace reviewer positioning, live readiness and MCP evidence hardening, Azure revision ca-web-intel-mcp--0000484, OpenAPI 56-path verification, live /v1/pricing and /v1/contract/fields discovery, HUT issuer-evidence readiness, structured invalid_path_scope behavior for universe routes, issuer evidence envelope fields, strict ATLAS-7/SPECTRA LLM guardrails, TripCode public-discovery caveats, public x402 challenge verification, deployment ledger commit fd5ec09c, and cmd/search-gateway source coverage hardening to 97.5%</p>
+      <p class="eyebrow">Updated June 16, 2026 - public rollup updated for the audit-grade Natural Language Morning Brief renderer, scheduled precompute/cache reuse, Azure revision ca-web-intel-mcp--0000527, live MCP cache-hit verification, Claude Code MCP project guide, Coinbase x402 / Codex marketplace reviewer positioning, live readiness and MCP evidence hardening, OpenAPI 56-path verification, live /v1/pricing and /v1/contract/fields discovery, HUT issuer-evidence readiness, structured invalid_path_scope behavior for universe routes, issuer evidence envelope fields, strict ATLAS-7/SPECTRA LLM guardrails, TripCode public-discovery caveats, public x402 challenge verification, deployment ledger commit fd5ec09c, and cmd/search-gateway source coverage hardening to 97.5%</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>195</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>110</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>193</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>195</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>75</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>103</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>196</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>111</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>194</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>196</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>76</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>104</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>196</span>
+              <code>ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</code>
+              <span>Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed</span>
+              <code>T+1090m</code>
+            </div>
             <div class="river-row">
               <span>195</span>
               <code>ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE</code>
@@ -2079,6 +2085,26 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER">
+            <div class="date">June 16, 2026</div>
+            <h3>Audit-grade Natural Language Morning Brief renderer deployed</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</code>
+              <code>track: T+1090m</code>
+              <code>commit: 981f25ae</code>
+              <code>bread: Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed</code>
+            </div>
+            <p>Production now serves audit-grade Natural Language Morning Brief output from Azure revision ca-web-intel-mcp--0000527, with score interpretation, concrete risk-distribution snapshot, stale source-period caveats, safer route recommendations, and cached/precomputed MCP reuse.</p>
+            <ul>
+              <li>Deployed revision ca-web-intel-mcp--0000527 from commit 981f25ae415fadd702208ec85be0ecc86e9ca95b using image acrgniwebintel001.azurecr.io/ca-web-intel-mcp:skill-20260616071440 and digest sha256:e2587e0f130987759c897531c839091cfd71a62938b663284afc263a802f2a82.</li>
+              <li>Natural brief output now includes Score Interpretation for Stress 50%, Risk Tier, Alpha Score, Board Rank, and Resilience Percentile so readers understand what each numeric field means.</li>
+              <li>Market-Wide Risk Board now renders bucket counts and percentages when risk-distribution data is present.</li>
+              <li>Top-stressed rows now flag stale source periods relative to the daily-change reference date instead of presenting older issuer metrics as same-day evidence.</li>
+              <li>Evidence limits now explicitly state compact evidence mode, source-date boundary, screen-not-recommendation status, and missing-evidence behavior.</li>
+              <li>Drilldowns now prefer Company Report, raw covenant stress, daily-change evidence, and issuer fundamentals; natural covenant stress is only referenced when current route metadata marks it live.</li>
+              <li>Live MCP probe verified cache_hit=true, source_date=2026-06-16, model=deterministic-atlas7-nl-renderer, tokens_used=1652, latency_ms=174, and cost_usd=0.95.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-8-CLAUDE-CODE-MCP-PROJECT-GUIDE">
             <div class="date">June 8, 2026</div>
             <h3>Claude Code MCP project guide added</h3>
@@ -4736,7 +4762,7 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-06-06",
+      "last_updated": "2026-06-16",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through af9f8718",
@@ -4805,7 +4831,8 @@ Spacing note: published paths use company-report. A copied
         "Source commit 6253b602 covering compatibility JSON-RPC result helper fallback branches and warning normalization with package coverage checkpoint 75.8%",
         "Source commit 5674ca5b covering DeltaSignal covenant-stress and top-stressed route guard branches with package coverage checkpoint 75.9%",
         "Public changelog maintenance update from 2026-06-06: added daily all-delta MCP notification digest polish, notification pricing/delivery ladder, new 75.7%-75.9% coverage checkpoints, RSS/Atom refresh, and consolidated 75.9% public rollup",
-        "Live notification hardening deployment ca-web-intel-mcp--0000479 from clean git archive c5ff4e56dbec58fca6c11bd0b96ee0e60cf9fddd on 2026-06-06: field-contract aliases, daily-breakdown evidence refs, suggested routes, pricing at $0.18 / 18 credits, and crawler shutdown waiting verified"
+        "Live notification hardening deployment ca-web-intel-mcp--0000479 from clean git archive c5ff4e56dbec58fca6c11bd0b96ee0e60cf9fddd on 2026-06-06: field-contract aliases, daily-breakdown evidence refs, suggested routes, pricing at $0.18 / 18 credits, and crawler shutdown waiting verified",
+        "Live natural-brief deployment ca-web-intel-mcp--0000527 from clean source commit 981f25ae415fadd702208ec85be0ecc86e9ca95b on 2026-06-16: audit-grade Natural Language Morning Brief renderer, scheduled precompute/cache reuse, cache-hit MCP verification, score interpretation, risk-distribution snapshot, stale source-period caveats, and safer drilldown recommendations"
       ],
       "boundary": "Public changelog. Values are dated verification snapshots, not investment advice or current market recommendations."
     }
