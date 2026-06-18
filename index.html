@@ -1740,10 +1740,10 @@
             </nav>
             <div class="hero-actions">
               <a href="#recommended-workflows" class="btn btn-primary">Run Morning Brief</a>
+              <a href="./llms-full.txt" class="btn btn-secondary">Agent Brief</a>
               <a href="#generation-model" class="btn btn-secondary">How it works</a>
               <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener" class="btn btn-secondary">OpenAPI</a>
               <a href="./changelog-llm.html" class="btn btn-secondary">LLM Changelog</a>
-              <a href="./CLAUDE.md" class="btn btn-secondary">Claude Code Guide</a>
               <a href="#pricing" class="btn btn-secondary">View pricing</a>
             </div>
             <p class="meter">MCP live • EDGAR daily background task verified • OpenAPI 47 paths • /v1/pricing + /v1/contract/fields live • signed grant-session flow live • x402 enabled</p>
@@ -1791,7 +1791,7 @@
           <div class="step">
             <div class="step-number">Step 1</div>
             <h3>Read the agent brief</h3>
-            <p>Start with the plain-text handoff. It states local-vs-production status, agent boundaries, MCP shape, and the current verification claim.</p>
+            <p>Start with the plain-text operator brief. It defines the trust order, latest public verification anchor, signed grant-session flow, pricing and discovery surfaces, and the parser and billing assumptions agents are allowed to make.</p>
             <p><a href="./llms-full.txt">Open llms-full.txt</a></p>
           </div>
           <div class="step">
@@ -1815,6 +1815,7 @@
         </div>
 
         <div class="tool-grid" style="margin-top:1.5rem;">
+          <div class="tool"><strong>Agent read order</strong><span>For IDEs and autonomous clients, fetch <code>llms-full.txt</code> first, then <code>changelog-llm.html</code>, then <code>openapi.json</code>, then <code>/v1/pricing</code>, then <code>/v1/contract/fields</code>. That order cuts down drift and prevents stale parser or pricing assumptions.</span></div>
           <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>47</code> paths, live <code>/v1/pricing</code>, live <code>/v1/contract/fields</code>, Company Report at <code>0.6</code> cost_usd, and a signed wallet-grant challenge/session flow.</span></div>
           <div class="tool"><strong>HUT evidence readiness</strong><span>HUT company-report and SPECTRA field-map routes are live behind public x402 challenges. Agent-facing envelopes document <code>issuer_evidence_envelope</code>, <code>evidence_sections</code>, <code>spectra_metadata</code>, and <code>publication_audit_block</code>.</span></div>
           <div class="tool"><strong>Universe route safety</strong><span>No-ticker universe routes reject extra path segments such as <code>/UNIVERSE</code> with structured <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span></div>
@@ -2151,6 +2152,7 @@
           <div class="tool"><strong>Route-Level Pricing</strong><span>Each paid route declares its own cost. Read <code>/v1/pricing</code> before execution; for example, live Company Report pricing is currently <code>0.6</code> cost_usd.</span></div>
           <div class="tool"><strong>x402 Challenge and Retry</strong><span>When a paid public route requires payment, the server returns an x402 challenge. Compatible clients settle through Base USDC and retry with payment proof.</span></div>
           <div class="tool"><strong>Grant Debit Semantics</strong><span>Budget grants currently debit by <code>route_declared_price</code>. The contract reports <code>grant_cache_treatment=fresh_and_cached_charge_same_route_quote</code>, so fresh and cached covered reads consume the same route quote unless the public contract changes.</span></div>
+          <div class="tool"><strong>Runway caution</strong><span>Do not infer grant runway units from legacy credit language alone. Use explicit budget or remaining fields only when production exposes them; otherwise treat grant coverage as best-effort and fall back to x402 when it no longer applies.</span></div>
           <div class="tool"><strong>What You Receive</strong><span>Paid output still preserves source dates, route metadata, caveats, quality flags, evidence references or hashes where available, and the non-advice boundary.</span></div>
         </div>
         <ds-x402-checklist>
