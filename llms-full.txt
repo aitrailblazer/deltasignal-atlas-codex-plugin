@@ -1,11 +1,22 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v1
-Last updated: 2026-06-08
+Version: llms-full-v2
+Last updated: 2026-06-18
 Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
-Status: production verified; latest live rollout ca-web-intel-mcp--0000484 deployed from source commit 4cb93a38 with OpenAPI 56 paths, live /v1/pricing, live /v1/contract/fields, HUT issuer-evidence readiness, structured invalid_path_scope route safety, source coverage checkpoint 97.5%, RSS/Atom subscription feeds, and ongoing hardening work
+Status: production verified through the June 8 rollout; current integration guidance additionally reflects the wallet grant-session flow, budget-grant runway fields, /v1/grants/status discovery, Company Report pricing correction, and ongoing hardening work
 
 Purpose
 This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
+
+Fast contract answers
+- Pricing source of truth: GET /v1/pricing.
+- Wallet grant flow: GET /v1/grant/challenge -> EIP-191 personal_sign -> POST /v1/grant/session -> attach X-DeltaSignal-Grant-Token.
+- Grant runway discovery: GET /v1/grants/status.
+- Budget-grant runway fields: grant_budget_usd and grant_remaining_usd are authoritative.
+- Budget-grant compatibility fields: in the grant-session mint response, grant_limit and grant_credit_equivalent_* are usd_cents_equivalent compatibility views, not raw USD and not request count.
+- Grant debit policy: route_declared_price.
+- Grant cache treatment: fresh_and_cached_charge_same_route_quote.
+- Customer-visible billing fields: cost_usd is the actual charged customer amount and is 0 for grant, API-key, internal, or discovery bypasses. quoted_cost_usd is the public route quote. actual_cost_usd is the externally settled or charged amount. grant_debit_usd is promotional budget consumed by the covered request. credits_charged is the cent-equivalent charged amount for customer-visible settled spend.
+- Compact company-report evidence may leave nested freshness fields null when no single canonical upstream timestamp exists; rely on top-level data.evidence_hash as the integrity anchor.
 
 Primary links
 - Public product page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
@@ -62,11 +73,25 @@ Reviewer checklist:
 
 Primary public marketplace workflows:
 - Morning Brief, typically $0.18 when exposed as the composite workflow.
-- Company Report, typically $0.30.
+- Company Report, standard display price $0.60 with a route-declared range of $0.45-$0.75 when current route metadata confirms it.
 - Pressure Board, typically $0.14.
 - Alpha Sweep, typically $0.14.
 - Quick Ticker Check, typically $0.18.
 - Natural Language top-stressed and Morning Brief Markdown routes, typically $0.95 where live route metadata confirms them.
+
+Grant, pricing, and billing contract updates
+- Treat GET /v1/pricing as the live route-pricing source of truth. Do not hardcode Company Report at $0.30; the corrected standard display price is $0.60 and the route-declared range is $0.45-$0.75.
+- Wallet-native grant access is a signed session flow, not a raw unsigned wallet-header bypass:
+  1. GET /v1/grant/challenge?wallet=<wallet>
+  2. Sign the returned message with EIP-191 personal_sign
+  3. POST /v1/grant/session with wallet, timestamp, and signature
+  4. Attach X-DeltaSignal-Grant-Token on protected requests
+- Plain unsigned wallet headers should not unlock grants.
+- GET /v1/grants/status is the grant runway/status discovery route when exposed by the current contract.
+- For budget grants, treat grant_budget_usd and grant_remaining_usd as the authoritative runway fields. In the grant-session mint response, grant_limit, grant_credit_equivalent_limit, and grant_credit_equivalent_remaining are compatibility cents-equivalent views with grant_limit_type=compatibility_credit_equivalent and grant_limit_unit=usd_cents_equivalent.
+- Promotional budget currently debits by route_declared_price, and grant_cache_treatment=fresh_and_cached_charge_same_route_quote means fresh and cached covered reads consume the same route quote unless the contract changes.
+- For grant-covered, API-key, internal, or discovery-bypass calls, cost_usd should remain the customer-visible charged amount, typically zero. Prefer quoted_cost_usd for the public route quote, grant_debit_usd for promotional budget consumed, and actual_cost_usd or settlement/payment proof for externally settled x402 spend. For plain x402 calls, reconcile real spend from settlement or payment proof rather than relying only on cost_usd.
+- Compact company-report evidence may legitimately leave nested freshness fields null where no single canonical upstream timestamp exists. Prefer the top-level data.evidence_hash as the integrity anchor.
 
 TripCode/River subscriber research is a near-term extension. Do not market TripCode tools as public marketplace-ready unless live MCP discovery exposes them and the required River/index blobs are available.
 
@@ -77,7 +102,7 @@ Current implementation status
 - The latest source coverage checkpoint is ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING at 97.5% for cmd/search-gateway, following the June 6 coverage checkpoints through 76.4%.
 - The local/source solution and production route probes have both passed for the documented parser-stable field set.
 - Internal verification may use an internal/test API-key gateway profile.
-- Public smoke should use x402, free-tier grant behavior, or signed wallet-grant behavior where configured.
+- Public smoke should use x402, issued identity grants, or the signed wallet grant-session flow where configured.
 - Public clients should use documented public routes and x402 behavior. Do not expect an external API key path.
 - Agents must not request, expose, infer, or persist internal API keys.
 
@@ -107,7 +132,8 @@ Versioned parser field contract
 - Additive changes are allowed under the current contract. Renames, removals, or type changes require a new contract_version.
 - Load-bearing readiness paths: ok, age_minutes, freshness_window_hours.
 - Load-bearing generic/provenance paths: ticker, route_uri, source_date.
-- Load-bearing company-report paths: summary.current_read, summary.issuer_state, summary.subscriber_takeaway, confidence, data.ticker, data.workflow, data.status, mcp_summary.
+- Load-bearing company-report wrapper paths: mcp_summary, data, provenance, suggested_follow_ups, and top-level billing metadata when present.
+- Company-report parsers should prefer mcp_summary plus the structured data payload. Do not key primary parsing to ad hoc summary aliases such as summary.current_read, summary.issuer_state, or summary.subscriber_takeaway.
 - Load-bearing daily-changes paths: changed_companies, changes, data, rows, and row-level ticker where row arrays are returned.
 - Load-bearing stress compatibility paths: stress_50pct or stressed_leverage_50pct.
 - Live verification on ca-web-intel-mcp--0000455 confirmed MSTR company report, latest daily changes, readiness, covenant stress, and field-contract probes.
@@ -160,7 +186,12 @@ POST https://api.aitrailblazer.net/mcp
 Public discovery behavior:
 - JSON-RPC initialize and tools/list are the correct first MCP probes.
 - Unpaid public tools/call requests may return x402 payment-required behavior.
-- Free-tier grants are still x402/public access. A grant must be attached through a supported identity header such as X-Codex-User, X-Codex-Session, or X-User-ID, or through signed wallet-grant headers for enrolled EVM wallets: X-DeltaSignal-Wallet, X-DeltaSignal-Wallet-Timestamp, X-DeltaSignal-Wallet-Nonce, and X-DeltaSignal-Wallet-Signature. A plain unauthenticated curl may still return HTTP 402.
+- Free-tier and design-partner grants are still public/x402-aware access. A grant may be attached through a supported issued identity header such as X-Codex-User, X-Codex-Session, or X-User-ID, or through the wallet grant-session flow:
+  - GET /v1/grant/challenge?wallet=<wallet>
+  - personal_sign the returned message
+  - POST /v1/grant/session
+  - attach X-DeltaSignal-Grant-Token
+- Plain unsigned wallet headers are not sufficient grant proof. A plain unauthenticated curl may still return HTTP 402.
 - Authorized first-party tests may include an API key header, but public users should not receive or request API keys.
 
 Internal MCP test shape
@@ -277,12 +308,12 @@ If asked "what should I run before production handoff?", answer:
 Run the production live-loop regression smoke and MCP smoke after redeploy, then compare /v1/pricing, /v1/contract/fields, IREN SPECTRA, invalid universe route errors, and MCP tools/list behavior against the local/source expectations.
 
 If asked "does an external user need an API key?", answer:
-No. External access is x402-based. A configured grant may allow calls without payment, but the client still needs to attach the grant or payment context through the x402-compatible flow. Supported grant paths are identity headers or signed wallet-grant headers for enrolled EVM wallets. A plain unauthenticated request can correctly return HTTP 402.
+No. External access is x402-based. A configured grant may allow calls without payment, but the client still needs to attach the grant or payment context through the x402-compatible flow. Supported grant paths are issued identity headers or the wallet grant-session flow for enrolled EVM wallets. A plain unauthenticated request can correctly return HTTP 402.
 
 Machine-readable status
 artifact: deltasignal_atlas7_llms_full
-version: llms-full-v1
-last_updated: 2026-06-08
+version: llms-full-v2
+last_updated: 2026-06-18
 local_solution_ready: true
 production_redeploy_pending: false
 production_smoke_required_after_redeploy: false
