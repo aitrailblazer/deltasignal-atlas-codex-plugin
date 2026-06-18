@@ -295,11 +295,11 @@ Q: What should I trust for price reconciliation?
 A: Trust settlement or payment proof for actual x402 spend. Use cost_usd as the Delta Signal response-envelope signal.
 
 Q: Should I assume /v1/grants/status exists?
-A: No. Only use it if openapi.json or a live probe confirms it.
+A: The current public surface includes it, but still trust openapi.json or a live probe over any stale note.
 
 Machine-readable footer
 kind: delta-signal-llms-full
-version: llms-full-v3
+version: llms-full-v4
 last_updated: 2026-06-18
 verification_anchor: public_docs_aligned_to_latest_production_notes
 public_openapi_paths: 47
