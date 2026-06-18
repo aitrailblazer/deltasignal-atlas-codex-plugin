@@ -1,5 +1,5 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v3
+Version: llms-full-v4
 Last updated: 2026-06-18
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
 Status: public handoff brief aligned to the most recent production verification notes and GitHub Pages contract update on 2026-06-18
@@ -21,21 +21,21 @@ Use sources in this order when there is any conflict:
 5. The landing page or older notes.
 
 Primary links
-- Product page: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/
-- Agent brief: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
-- Compact handoff: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/llms.txt
-- Human changelog: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html
-- LLM changelog: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
-- Changelog RSS: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
-- Changelog Atom: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
+- Product page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
+- Agent brief: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
+- Compact handoff: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms.txt
+- Human changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html
+- LLM changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
+- Changelog RSS: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
+- Changelog Atom: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
 - OpenAPI 3.1: https://api.aittrailblazer.net/openapi.json
 - MCP endpoint: https://api.aittrailblazer.net/mcp
 - Pricing contract: https://api.aittrailblazer.net/v1/pricing
 - Field contract: https://api.aittrailblazer.net/v1/contract/fields
 - Grant challenge: https://api.aittrailblazer.net/v1/grant/challenge?wallet=<wallet>
-- Arazzo workflow YAML: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
-- Arazzo workflow JSON: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
-- Public x402 handshake workflow: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
+- Arazzo workflow YAML: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
+- Arazzo workflow JSON: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
+- Public x402 handshake workflow: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
 
 Read order for agents
 1. Read this file.
@@ -51,12 +51,13 @@ These are the contract notes that the GitHub Pages docs are intentionally aligne
 - /v1/pricing and /v1/contract/fields were live public discovery surfaces.
 - Company Report was reported at cost_usd 0.6.
 - Wallet-grant access used a signed challenge -> personal_sign -> session -> token flow.
-- Public /v1/grants/status was not part of the last confirmed live surface.
+- Public /v1/grants/status was part of the confirmed live surface and reported budget-style runway semantics for the verified grant path.
 
 How to think about public drift
 - If production now exposes more than this file says, trust production.
 - If source branches or private notes mention fields or routes that production does not expose, do not assume they are live.
-- If /v1/grants/status is missing, do not synthesize grant runway from undocumented fields.
+- If /v1/grants/status is present, trust its explicit runway fields over legacy grant wording.
+- If /v1/grants/status is absent, do not synthesize grant runway from undocumented fields.
 - If pricing text and /v1/pricing disagree, trust /v1/pricing and the route-specific challenge.
 
 Fast-start behavior
@@ -79,15 +80,19 @@ Grant rules
 - Some first-party or partner flows may also use issued identity headers, but public wallet integrations should implement the signed session flow above.
 
 Grant sizing and runway rules
-- Do not guess the unit of a grant limit field unless the live contract states it explicitly.
-- Prefer explicit runway fields when production exposes them.
-- If production does not expose grant runway fields publicly, treat grant coverage as boolean for public integrations and let x402 fallback handle exhaustion.
-- Do not assume fresh reads and cached reads bill differently unless the live contract says so.
+- Do not guess the unit of a grant field unless the live contract states it explicitly.
+- Prefer explicit runway fields from /v1/grants/status or the current grant-aware billing envelope when production exposes them.
+- When the live contract reports fields such as grant_limit_type=budget_usd, grant_limit_unit=usd, grant_budget_usd, or grant_remaining_usd, treat the grant as a USD-denominated budget grant rather than a request count.
+- Signed grant-session tokens are the authorization artifact; grant runway semantics come from the live billing/status fields, not from the existence of the token alone.
+- Budget grants currently debit by route-declared price when the live contract says so.
+- The live contract currently reports grant_cache_treatment=fresh_and_cached_charge_same_route_quote for the verified budget-grant path, so fresh and cached covered reads should be treated the same unless production changes.
+- If production does not expose runway fields publicly, treat grant coverage as boolean for public integrations and let x402 fallback handle exhaustion.
 
 Pricing and reconciliation
 - /v1/pricing is the authoritative public route-pricing surface.
 - Company Report is no longer the older 0.30 display assumption. The corrected public display contract is 0.60 standard price with a route-declared range of 0.45-0.75 where the live metadata says so.
 - Grant-covered, API-key-bypassed, or internal responses may show cost_usd 0 in the response body.
+- Budget-grant or discovery envelopes may also expose grant-aware billing fields such as billing_mode, payment_status, billing_status, quoted_cost_usd, actual_cost_usd, credits_charged, or route-declared grant semantics. Treat them as response-envelope billing data, not as a substitute for x402 settlement proof when the wallet moved.
 - For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from cost_usd.
 - Treat cost_usd as the Delta Signal response-envelope billing signal, not the sole authority for externally settled x402 spend.
 
@@ -127,6 +132,7 @@ Reviewer checklist
 - OpenAPI is reachable.
 - /v1/pricing is reachable and route costs are coherent.
 - /v1/contract/fields is reachable and exposes the parser-stable field set you plan to rely on.
+- If /v1/grants/status is exposed for the caller context, its runway fields are internally coherent and match the active grant model you intend to use.
 - Paid or grant-gated routes return coherent HTTP 402 challenge metadata without proof.
 - Paid retry preserves evidence dates, caveats, quality flags, billing metadata, and non-advice boundaries.
 - No Coinbase first-party verification claim should be made unless Coinbase or the relevant UI explicitly confirms it.
@@ -219,18 +225,20 @@ Production boundary
 
 Recommended IDE-agent prompt
 Fetch and read this file first:
-https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
+https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
 
 Then fetch:
-https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
+https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
 https://api.aittrailblazer.net/openapi.json
 https://api.aittrailblazer.net/v1/pricing
 https://api.aittrailblazer.net/v1/contract/fields
+https://api.aittrailblazer.net/v1/grants/status
 
 Use llms-full.txt as the operator brief.
 Use changelog-llm.html for dated provenance.
 Use openapi.json for the live public route contract.
 Use /v1/pricing and /v1/contract/fields before hard-coding prices or parser fields.
+Use /v1/grants/status when available to resolve explicit grant budget and runway semantics.
 Do not assume undeployed source changes are live.
 Do not ask for internal secrets.
 Do not provide investment advice.
