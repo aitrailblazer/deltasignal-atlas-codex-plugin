@@ -1,29 +1,33 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v4
+Version: llms-full-v5
 Last updated: 2026-06-18
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: public handoff brief aligned to the most recent production verification notes and GitHub Pages contract update on 2026-06-18
+Status: canonical public operator brief for the live GitHub Pages surface
 
 Purpose
-This file is the shortest complete public operator brief for Delta Signal ATLAS-7. Read it before changelogs, before marketing copy, and before hard-coding route assumptions.
+This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
 
-What Delta Signal is
+One-screen summary
 - Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies.
-- The evidence base starts from SEC / XBRL facts and Delta Signal processing, then surfaces through REST, MCP, OpenAPI, Arazzo, signed grant-session access, and x402-compatible public routes.
-- The product is evidence-first. It is not a trading-bot contract and not an investment-advice surface.
+- The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions.
+- The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
+- Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
+- Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough.
+- `/v1/pricing` is the public pricing source of truth. `/v1/contract/fields` is the parser-field source of truth.
+- For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from `cost_usd`.
 
 Trust order
-Use sources in this order when there is any conflict:
-1. Live production response from the exact route you are calling.
-2. Live public discovery metadata: openapi.json, /v1/pricing, /v1/contract/fields.
+When two sources disagree, trust them in this order:
+1. Live production response from the exact route and caller context you are using.
+2. Live public discovery metadata: `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, and MCP discovery.
 3. This file.
-4. changelog-llm.html for dated provenance.
+4. `changelog-llm.html` for dated drift history.
 5. The landing page or older notes.
 
 Primary links
 - Product page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
-- Agent brief: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
-- Compact handoff: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms.txt
+- Canonical brief: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
+- Compact brief: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms.txt
 - Human changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html
 - LLM changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
 - Changelog RSS: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
@@ -32,110 +36,130 @@ Primary links
 - MCP endpoint: https://api.aittrailblazer.net/mcp
 - Pricing contract: https://api.aittrailblazer.net/v1/pricing
 - Field contract: https://api.aittrailblazer.net/v1/contract/fields
+- Readiness: https://api.aittrailblazer.net/v1/readiness
 - Grant challenge: https://api.aittrailblazer.net/v1/grant/challenge?wallet=<wallet>
 - Arazzo workflow YAML: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
-- Arazzo workflow JSON: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
-- Public x402 handshake workflow: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
+- Arazzo workflow JSON: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
+- Public x402 handshake workflow: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
 
 Read order for agents
+Use this order unless the user asks for a narrower probe:
 1. Read this file.
-2. Read changelog-llm.html if you need dated public provenance or drift history.
-3. Read openapi.json for the current public route map.
-4. Read /v1/pricing before assuming any route cost.
-5. Read /v1/contract/fields before hard-coding parser fields.
+2. Read `changelog-llm.html` if you need dated drift history or public provenance.
+3. Read `openapi.json` for the current public route map.
+4. Read `/v1/pricing` before assuming route cost or grant debit behavior.
+5. Read `/v1/contract/fields` before wiring a parser.
 6. Probe one bounded route or MCP workflow before scaling usage.
 
-Most recent public verification snapshot
-These are the contract notes that the GitHub Pages docs are intentionally aligned to:
-- OpenAPI was reported at 47 public paths.
-- /v1/pricing and /v1/contract/fields were live public discovery surfaces.
-- Company Report was reported at cost_usd 0.6.
-- Wallet-grant access used a signed challenge -> personal_sign -> session -> token flow.
-- Public /v1/grants/status was part of the confirmed live surface and reported budget-style runway semantics for the verified grant path.
+Exact first probes
+These are the safest first validation calls for a new integration:
+- `GET /v1/pricing`
+- `GET /v1/contract/fields`
+- `GET /v1/readiness`
+- `POST /mcp initialize`
+- `POST /mcp tools/list`
 
-How to think about public drift
+Do not start by:
+- assuming a route price from an old note
+- assuming grant units from a single legacy field name
+- assuming SPECTRA summary aliases are the parser contract
+- assuming public MCP exposes every internal or newly built tool
+- treating a plain HTTP 402 as proof of service failure
+
+Most recent public verification anchor
+The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
+- OpenAPI was observed at 47 public paths.
+- `/v1/pricing` and `/v1/contract/fields` were live public discovery surfaces.
+- Company Report was observed at `cost_usd: 0.6` with a public standard display price of `$0.60` and a live route-declared range of `$0.45-$0.75`.
+- Wallet grants used a signed challenge -> `personal_sign` -> session -> token flow.
+- `/v1/grants/status` was part of the confirmed live public surface for contexts where explicit grant-runway reporting was available.
+- Verified budget-grant reporting exposed USD-style runway semantics rather than request-count semantics.
+
+How to think about drift
 - If production now exposes more than this file says, trust production.
 - If source branches or private notes mention fields or routes that production does not expose, do not assume they are live.
-- If /v1/grants/status is present, trust its explicit runway fields over legacy grant wording.
-- If /v1/grants/status is absent, do not synthesize grant runway from undocumented fields.
-- If pricing text and /v1/pricing disagree, trust /v1/pricing and the route-specific challenge.
+- If `/v1/grants/status` is exposed for the caller, trust its explicit runway fields over older grant wording.
+- If pricing prose and `/v1/pricing` disagree, trust `/v1/pricing` and the route-specific challenge.
+- If the contract adds fields, treat the public surface as additive unless a newer contract explicitly marks a breaking change.
+
+What Delta Signal is
+- Delta Signal ATLAS-7 is an issuer-intelligence and evidence-rendering layer grounded in SEC / XBRL filings and Delta Signal processing.
+- It produces structured market and issuer workflows such as Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and Daily Change evidence views.
+- It returns evidence, metadata, caveats, and billing context designed for machine use.
+
+What Delta Signal is not
+- Not a broker.
+- Not a wallet or settlement service.
+- Not a promise that every route is free.
+- Not a substitute for settlement proof when x402 actually moved funds.
+- Not an authorization to invent evidence, infer freshness, or convert uncertainty into conviction.
 
 Fast-start behavior
-- Start with readiness, Morning Brief, or another bounded workflow.
-- Inspect metadata before parsing the narrative summary.
-- Preserve source dates, computed timestamps, quality flags, caveats, stale indicators, evidence hashes where available, and non-advice language.
-- Never ask for internal secrets or internal API keys.
+- Start with readiness or another bounded workflow.
+- Inspect metadata before trusting the narrative summary.
+- Preserve source dates, computed timestamps, caveats, quality flags, stale indicators, and evidence hashes where available.
+- Never ask for internal secrets or internal API keys in a public integration path.
 
 Public grant flow
 For enrolled EVM wallets, the documented wallet grant flow is:
-1. GET /v1/grant/challenge?wallet=<wallet>
-2. personal_sign the returned message exactly as provided
-3. POST /v1/grant/session with wallet, timestamp, and signature
-4. Attach the returned token in X-DeltaSignal-Grant-Token before settlement
+1. `GET /v1/grant/challenge?wallet=<wallet>`
+2. `personal_sign` the returned message exactly as provided
+3. `POST /v1/grant/session` with wallet, timestamp, and signature
+4. Attach the returned token in `X-DeltaSignal-Grant-Token` before settlement
 
 Grant rules
-- Plain unsigned wallet headers are intentionally not sufficient grant proof.
-- The wallet flow is separate from ordinary x402 payment settlement.
-- If grant issuance fails, expires, or is unavailable, the client should fall back to ordinary x402 without blocking the request path.
+- Plain unsigned wallet headers are intentionally rejected as grant proof.
+- The signed grant-session token is the authorization artifact.
+- The wallet grant flow is separate from ordinary x402 settlement.
+- If grant issuance fails, expires, or is unavailable, the client should fall back to ordinary x402 instead of blocking the request path.
 - Some first-party or partner flows may also use issued identity headers, but public wallet integrations should implement the signed session flow above.
 
 Grant sizing and runway rules
 - Do not guess the unit of a grant field unless the live contract states it explicitly.
-- Prefer explicit runway fields from /v1/grants/status or the current grant-aware billing envelope when production exposes them.
-- When the live contract reports fields such as grant_limit_type=budget_usd, grant_limit_unit=usd, grant_budget_usd, or grant_remaining_usd, treat the grant as a USD-denominated budget grant rather than a request count.
-- Signed grant-session tokens are the authorization artifact; grant runway semantics come from the live billing/status fields, not from the existence of the token alone.
-- Budget grants currently debit by route-declared price when the live contract says so.
-- The live contract currently reports grant_cache_treatment=fresh_and_cached_charge_same_route_quote for the verified budget-grant path, so fresh and cached covered reads should be treated the same unless production changes.
-- If production does not expose runway fields publicly, treat grant coverage as boolean for public integrations and let x402 fallback handle exhaustion.
+- If production exposes `grant_limit_type=budget_usd`, `grant_limit_unit=usd`, `grant_budget_usd`, or `grant_remaining_usd`, treat the grant as a USD-denominated budget grant.
+- If production exposes a debit policy such as `grant_debit_policy=route_declared_price`, use that policy rather than legacy "credit" wording.
+- If production exposes `grant_cache_treatment=fresh_and_cached_charge_same_route_quote`, assume fresh and cached covered reads debit the same route quote unless the live contract changes.
+- If public runway fields are absent, treat grant coverage as boolean in public integrations and rely on x402 fallback for exhaustion handling.
 
-Pricing and reconciliation
-- /v1/pricing is the authoritative public route-pricing surface.
-- Company Report is no longer the older 0.30 display assumption. The corrected public display contract is 0.60 standard price with a route-declared range of 0.45-0.75 where the live metadata says so.
-- Grant-covered, API-key-bypassed, or internal responses may show cost_usd 0 in the response body.
-- Budget-grant or discovery envelopes may also expose grant-aware billing fields such as billing_mode, payment_status, billing_status, quoted_cost_usd, actual_cost_usd, credits_charged, or route-declared grant semantics. Treat them as response-envelope billing data, not as a substitute for x402 settlement proof when the wallet moved.
-- For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from cost_usd.
-- Treat cost_usd as the Delta Signal response-envelope billing signal, not the sole authority for externally settled x402 spend.
+Pricing and billing rules
+- `/v1/pricing` is the authoritative public route-pricing surface.
+- Company Report is not the older `$0.30` assumption. The corrected public display contract is `$0.60` standard with a live route-declared range of `$0.45-$0.75`.
+- Grant-covered, API-key-bypassed, or discovery responses may show `cost_usd: 0`.
+- Public grant or x402 billing envelopes may also expose fields such as `billing_mode`, `payment_status`, `billing_status`, `quoted_cost_usd`, `actual_cost_usd`, `credits_charged`, and request-scoped billing metadata.
+- Treat those fields as Delta Signal response-envelope billing data.
+- For plain x402 calls, reconcile real spend from settlement or payment proof when the wallet moved.
+- Treat `cost_usd` as the Delta Signal billing-envelope signal, not the sole authority for externally settled x402 spend.
 
 Primary public workflows
 - Morning Brief: readiness, daily changes, risk distribution, top stressed issuers, alpha opportunities, caveats, and non-advice framing.
-- Company Report: single-issuer diligence across SEC / XBRL fundamentals, covenant stress, peer ranking, alpha signals, source metadata, quality flags, and live history or SPECTRA context when available.
+- Company Report: single-issuer diligence across SEC / XBRL fundamentals, covenant stress, peer ranking, alpha signals, source metadata, quality flags, and live history or SPECTRA context where available.
 - Pressure Board: stress-oriented market view.
 - Alpha Sweep: opportunity-oriented screen.
 - Quick Ticker Check: bounded issuer triage.
-- Natural Language routes: evidence-preserving rendered Markdown; they do not create new evidence.
+- Natural Language routes: readable Markdown or rendered output that should preserve evidence boundaries rather than inventing new evidence.
 
 Representative public route pricing
-- Morning Brief: typically 0.18 when exposed that way.
-- Company Report: 0.6 according to the most recent public pricing verification note.
-- Pressure Board: typically 0.14.
-- Alpha Sweep: typically 0.14.
-- Quick Ticker Check: typically 0.18.
-- Natural Language top-stressed and Morning Brief Markdown routes: typically 0.95 when the live route metadata confirms them.
+Treat these as examples, not hard-coded truth:
+- Morning Brief: typically `0.18` when exposed that way.
+- Company Report: `0.6` according to the current public verification anchor.
+- Pressure Board: typically `0.14`.
+- Alpha Sweep: typically `0.14`.
+- Quick Ticker Check: typically `0.18`.
+- Natural Language top-stressed and Morning Brief Markdown routes: typically `0.95` when the live route metadata confirms them.
 
-Review posture
-Review Delta Signal as a public issuer-intelligence evidence surface with:
-- MCP discovery
-- OpenAPI route contracts
-- Arazzo workflow plans
-- x402 payment challenge and retry behavior
-- strict evidence-preservation boundaries
+Parser contract
+- Treat `/v1/contract/fields` as the source of truth for parser-stable field names and paths.
+- Treat the public contract as additive-only unless a new contract version says otherwise.
+- Hard-code only fields you have verified in the live contract.
+- Do not assume future or internal grant-ledger fields are public just because code or private notes mention them.
+- Company Report parsers should prefer `mcp_summary` plus the documented structured nested fields, not ad hoc or SPECTRA-specific summary aliases.
 
-Recommended first reviewer probes
-- GET https://api.aittrailblazer.net/v1/pricing
-- GET https://api.aittrailblazer.net/v1/contract/fields
-- GET https://api.aittrailblazer.net/v1/readiness
-- POST https://api.aittrailblazer.net/mcp initialize
-- POST https://api.aittrailblazer.net/mcp tools/list
-
-Reviewer checklist
-- MCP initialize and tools/list work before paid execution.
-- OpenAPI is reachable.
-- /v1/pricing is reachable and route costs are coherent.
-- /v1/contract/fields is reachable and exposes the parser-stable field set you plan to rely on.
-- If /v1/grants/status is exposed for the caller context, its runway fields are internally coherent and match the active grant model you intend to use.
-- Paid or grant-gated routes return coherent HTTP 402 challenge metadata without proof.
-- Paid retry preserves evidence dates, caveats, quality flags, billing metadata, and non-advice boundaries.
-- No Coinbase first-party verification claim should be made unless Coinbase or the relevant UI explicitly confirms it.
+Load-bearing field paths
+- Readiness: `ok`, `age_minutes`, `freshness_window_hours`.
+- Generic provenance: `ticker`, `route_uri`, `source_date`.
+- Company Report: `mcp_summary`, `confidence`, `data.ticker`, `data.workflow`, `data.status`, and the documented nested per-section fields.
+- Daily changes: `changed_companies`, `changes`, `data`, `rows`, and row-level `ticker` where arrays are returned.
+- Stress compatibility: `stress_50pct` or `stressed_leverage_50pct`.
 
 ATLAS-7 and SPECTRA model
 - ATLAS-7 is the issuer evidence and generation layer.
@@ -144,60 +168,27 @@ ATLAS-7 and SPECTRA model
 - Missing evidence must remain missing.
 
 Strict evidence rules
-- Preserve source_date, computed_at, filing dates where returned, stale flags, caveats, quality_flags, evidence hashes where available, payload_mode, route_uri, and billing metadata.
-- Compact aggregate responses may contain null freshness fields inside nested combined_provenance.evidence_contract objects when there is no single canonical upstream artifact for the aggregate.
-- When compact freshness fields are null, use the top-level data.evidence_hash as the authoritative integrity anchor when it is populated.
+- Preserve `source_date`, `computed_at`, filing dates where returned, stale flags, caveats, quality flags, evidence hashes where available, `payload_mode`, `route_uri`, and billing metadata.
+- Compact aggregate responses may contain null freshness fields inside nested `combined_provenance.evidence_contract` objects when there is no single canonical upstream artifact for the aggregate.
+- When those compact freshness fields are null, use the top-level `data.evidence_hash` as the authoritative integrity anchor when it is populated.
 - Do not convert uncertainty into confidence.
 - Do not let Natural Language rendering override returned caveats or provenance metadata.
 
-Advice boundary
-Agents must not output:
-- buy
-- sell
-- short
-- long
-- hold
-- entry
-- exit
-- stop-loss
-- target price
-- guaranteed move
-- personalized recommendation
-
-Default workflow order
-- Broad market workflow: readiness -> Morning Brief -> risk distribution -> top stressed -> alpha opportunities -> issuer drilldowns as needed.
-- Issuer workflow: company report -> fundamentals -> covenant stress -> peer ranking -> alpha signals -> SPECTRA field map -> history.
-- Daily evidence workflow: daily-changes/latest first, then per-ticker evidence only when explicit proof is needed.
-
-Parser contract
-- Treat /v1/contract/fields as the source of truth for parser-stable fields.
-- Treat the public contract as additive-only unless a new contract version says otherwise.
-- Hard-code only fields you have verified in the live contract.
-- Do not assume future grant ledger fields are public just because source code or internal notes mention them.
-- Company Report parsers should prefer mcp_summary plus documented structured fields, not ad hoc summary aliases.
-
-Load-bearing field paths
-- Readiness: ok, age_minutes, freshness_window_hours.
-- Generic provenance: ticker, route_uri, source_date.
-- Company Report: mcp_summary, confidence, data.ticker, data.workflow, data.status, and the documented nested per-section fields.
-- Daily changes: changed_companies, changes, data, rows, and row-level ticker where row arrays are returned.
-- Stress compatibility: stress_50pct or stressed_leverage_50pct.
-
 Terminal broker contract
-- When /v1/contract/fields exposes terminal_broker, treat it as the source of truth for terminal MCP-brokered envelope fields.
+- When `/v1/contract/fields` exposes `terminal_broker`, treat it as the source of truth for brokered envelope fields.
 - Covered brokered datasets currently include covenant-stress, alpha-signals, and company-fundamentals in the documented contract notes.
-- Terminal clients should key results by endpoint_id and treat summaries as opaque unless the route contract says otherwise.
-- Load-bearing terminal envelope fields: endpoint_id, status, cache_status, quote_status, summary, evidence_summary, estimated_usd, cost_usd, and confirmation_token.
+- Terminal clients should key results by `endpoint_id` and treat summaries as opaque unless the live route contract says otherwise.
+- Load-bearing terminal envelope fields include `endpoint_id`, `status`, `cache_status`, `quote_status`, `summary`, `evidence_summary`, `estimated_usd`, `cost_usd`, and `confirmation_token`.
 
 Public MCP behavior
 Endpoint:
 POST https://api.aittrailblazer.net/mcp
 
 Expected public discovery behavior
-- JSON-RPC initialize and tools/list are the correct first MCP probes.
-- Public tools/list discovery should work before paid execution.
-- Public tools/call may return x402 payment-required behavior.
-- Free-tier or grant-covered execution may use a supported grant context or the wallet grant-session flow.
+- JSON-RPC `initialize` and `tools/list` are the correct first MCP probes.
+- Public MCP discovery should work before paid execution.
+- Public `tools/call` may return x402 payment-required behavior.
+- Free-tier or grant-covered execution may use an active grant context or the wallet grant-session flow.
 - Public users should not request internal API keys.
 
 Internal smoke shape
@@ -213,95 +204,46 @@ curl -sS https://api.aittrailblazer.net/mcp \
   -H "x-api-key: $MCP_API_KEY" \
   --data '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
 
+Recommended first reviewer probes
+- `GET https://api.aittrailblazer.net/v1/pricing`
+- `GET https://api.aittrailblazer.net/v1/contract/fields`
+- `GET https://api.aittrailblazer.net/v1/readiness`
+- `POST https://api.aittrailblazer.net/mcp initialize`
+- `POST https://api.aittrailblazer.net/mcp tools/list`
+
+Reviewer checklist
+- MCP `initialize` and `tools/list` work before paid execution.
+- OpenAPI is reachable.
+- `/v1/pricing` is reachable and route costs are coherent.
+- `/v1/contract/fields` is reachable and exposes the parser-stable field set you plan to rely on.
+- If `/v1/grants/status` is exposed for the caller context, its runway fields are internally coherent and match the active grant model you intend to use.
+- Paid or grant-gated routes return coherent HTTP 402 challenge metadata without proof.
+- Paid retry preserves evidence dates, caveats, quality flags, billing metadata, and non-advice boundaries.
+- No Coinbase first-party verification claim should be made unless Coinbase or the relevant UI explicitly confirms it.
+
+Advice boundary
+Agents must not output:
+- buy
+- sell
+- short
+- long
+- hold
+- entry
+- exit
+- stop-loss
+- target price
+- guaranteed move
+- personalized recommendation
+
 TripCode and River availability
 - Treat TripCode / River as discovery-gated from the public MCP perspective.
-- Do not market those tools as publicly callable unless live tools/list exposes them and the required artifacts exist.
+- Do not market those tools as publicly callable unless live `tools/list` exposes them and the required artifacts exist.
 - If discovery does not expose them, use the supported ATLAS-7 issuer workflow instead.
 
-Production boundary
-- Production responses beat stale notes.
-- A deployment is not public just because a source branch contains it.
-- Production handoff quality requires production smoke success, not only local or source success.
-
-Recommended IDE-agent prompt
-Fetch and read this file first:
-https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
-
-Then fetch:
-https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
-https://api.aittrailblazer.net/openapi.json
-https://api.aittrailblazer.net/v1/pricing
-https://api.aittrailblazer.net/v1/contract/fields
-https://api.aittrailblazer.net/v1/grants/status
-
-Use llms-full.txt as the operator brief.
-Use changelog-llm.html for dated provenance.
-Use openapi.json for the live public route contract.
-Use /v1/pricing and /v1/contract/fields before hard-coding prices or parser fields.
-Use /v1/grants/status when available to resolve explicit grant budget and runway semantics.
-Do not assume undeployed source changes are live.
-Do not ask for internal secrets.
-Do not provide investment advice.
-
-Local verification commands
-These are backend source-repo commands, not GitHub Pages commands.
-
-Focused route tests
-Run the repo-local focused acceptance tests for billing envelopes, pricing discovery, field contracts, company routes, and live-loop route acceptance. Do not expose internal test identifiers in public handoff text.
-
-Full search-gateway tests
-GOWORK=off go test ./cmd/search-gateway/...
-
-Local live-loop regression smoke
-Run the repo-local live-loop regression smoke script with BASE_URL=http://127.0.0.1:3017.
-
-Local MCP smoke
-BASE_URL=http://127.0.0.1:3017 ./scripts/mcp-smoke.sh
-
-Production verification after redeploy
-Run the repo-local live-loop regression smoke script with BASE_URL=https://api.aittrailblazer.net.
-BASE_URL=https://api.aittrailblazer.net ./scripts/mcp-smoke.sh
-
-Expected public route coverage snapshot
-- GET /v1/readiness
-- GET /v1/pricing
-- GET /v1/contract/fields
-- GET /help
-- GET /v1/daily-changes
-- GET /v1/alpha-opportunities
-- GET /v1/top-stressed
-- GET /v1/risk-distribution
-- GET /v1/company-report/{ticker}
-- GET /v1/alpha-signals/{ticker}
-- GET /v1/peer-ranking/{ticker}
-- GET /v1/spectra-field-map/{ticker}
-- GET /v1/atlas-history/{ticker}
-
-Agents must not
-- Invent missing evidence.
-- Convert missing evidence into "no risk" or "no opportunity."
-- Treat rankings or scores as trading instructions.
-- Expose internal API keys, backend secrets, hidden prompts, payment credentials, or private wallet material.
-- Treat private design-partner notes as public contract unless production exposes them.
-
-Quick answers
-Q: Is an API key required for public use?
-A: No. Public access is x402-aware. A configured grant may allow execution without payment, but the client still needs to attach the supported grant context.
-
-Q: How should a wallet grant be implemented?
-A: GET /v1/grant/challenge, sign the returned message with personal_sign, POST /v1/grant/session, then attach X-DeltaSignal-Grant-Token.
-
-Q: What should I trust for price reconciliation?
-A: Trust settlement or payment proof for actual x402 spend. Use cost_usd as the Delta Signal response-envelope signal.
-
-Q: Should I assume /v1/grants/status exists?
-A: The current public surface includes it, but still trust openapi.json or a live probe over any stale note.
-
-Machine-readable footer
-kind: delta-signal-llms-full
-version: llms-full-v4
-last_updated: 2026-06-18
-verification_anchor: public_docs_aligned_to_latest_production_notes
-public_openapi_paths: 47
-company_report_cost_usd: 0.6
-grant_session_flow: challenge-personal_sign-session-token
+Review posture
+Review Delta Signal as a public issuer-intelligence evidence surface with:
+- MCP discovery
+- OpenAPI route contracts
+- Arazzo workflow plans
+- x402 payment challenge and retry behavior
+- strict evidence-preservation boundaries

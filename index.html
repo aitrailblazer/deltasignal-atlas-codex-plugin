@@ -1722,6 +1722,7 @@
               <div class="quick-fact"><strong>How it updates</strong><span>Nightly EDGAR waits for CompanyFacts, mirrors or reconstructs the date, then runs process-changes.</span></div>
               <div class="quick-fact"><strong>What ATLAS-7 adds</strong><span>Daily changes, issuer history, stress, peers, alpha, readiness, caveats, and MCP manifests.</span></div>
               <div class="quick-fact"><strong>How to integrate</strong><span>Discover through OpenAPI, /v1/pricing, and /v1/contract/fields; use signed grant sessions or x402 for execution.</span></div>
+              <div class="quick-fact"><strong>Best first probes</strong><span>Read llms-full.txt, then check pricing, field contract, readiness, and MCP discovery before any paid or grant-covered call.</span></div>
             </div>
             <nav class="toc-panel" aria-label="Page contents">
               <strong>Jump to</strong>
@@ -1791,7 +1792,7 @@
           <div class="step">
             <div class="step-number">Step 1</div>
             <h3>Read the agent brief</h3>
-            <p>Start with the plain-text operator brief. It defines the trust order, latest public verification anchor, signed grant-session flow, pricing and discovery surfaces, and the parser and billing assumptions agents are allowed to make.</p>
+            <p>Start with the plain-text operator brief. It gives the exact read order, first probes, trust order, signed grant-session flow, pricing source of truth, parser contract, and billing assumptions agents are allowed to make.</p>
             <p><a href="./llms-full.txt">Open llms-full.txt</a></p>
           </div>
           <div class="step">
@@ -1815,8 +1816,9 @@
         </div>
 
         <div class="tool-grid" style="margin-top:1.5rem;">
-          <div class="tool"><strong>Agent read order</strong><span>For IDEs and autonomous clients, fetch <code>llms-full.txt</code> first, then <code>changelog-llm.html</code>, then <code>openapi.json</code>, then <code>/v1/pricing</code>, then <code>/v1/contract/fields</code>. That order cuts down drift and prevents stale parser or pricing assumptions.</span></div>
-          <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>47</code> paths, live <code>/v1/pricing</code>, live <code>/v1/contract/fields</code>, live <code>/v1/grants/status</code> for explicit grant-runway reporting, Company Report at <code>0.6</code> cost_usd, and a signed wallet-grant challenge/session flow.</span></div>
+          <div class="tool"><strong>Agent read order</strong><span>For IDEs and autonomous clients, fetch <code>llms-full.txt</code> first, then <code>changelog-llm.html</code>, then <code>openapi.json</code>, then <code>/v1/pricing</code>, then <code>/v1/contract/fields</code>. That order cuts down drift and prevents stale parser, grant, or pricing assumptions.</span></div>
+          <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>47</code> paths, live <code>/v1/pricing</code>, live <code>/v1/contract/fields</code>, live <code>/v1/grants/status</code> for explicit grant-runway reporting where exposed, Company Report at <code>0.6</code> cost_usd, and a signed wallet-grant challenge/session flow.</span></div>
+          <div class="tool"><strong>Billing rule</strong><span>Treat <code>/v1/pricing</code> as the quote source and the response billing envelope as Delta Signal billing metadata. For plain x402 calls, reconcile actual spend from settlement or payment proof when the wallet moves.</span></div>
           <div class="tool"><strong>HUT evidence readiness</strong><span>HUT company-report and SPECTRA field-map routes are live behind public x402 challenges. Agent-facing envelopes document <code>issuer_evidence_envelope</code>, <code>evidence_sections</code>, <code>spectra_metadata</code>, and <code>publication_audit_block</code>.</span></div>
           <div class="tool"><strong>Universe route safety</strong><span>No-ticker universe routes reject extra path segments such as <code>/UNIVERSE</code> with structured <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span></div>
           <div class="tool"><strong>Current hardening checkpoint</strong><span>Recent integration pressure tests tightened pricing discovery, parser-field stability, compact evidence handling, large-payload guardrails, and grant-session contract wording. Public docs now track the live surface, including explicit budget-grant runway fields when production exposes them, not undeployed source expectations.</span></div>
@@ -2366,7 +2368,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           </a>
           <a class="link-card" href="./llms-full.txt">
             <strong>Full Agent Brief</strong>
-            <span>Current public handoff for IDE agents with live pricing, signed grant-session flow, parser guidance, MCP call shape, and production boundaries.</span>
+            <span>Canonical operator contract for IDE agents: exact read order, first probes, grant sizing rules, billing and reconciliation rules, parser guidance, MCP call shape, and production boundaries.</span>
             <code>./llms-full.txt</code>
           </a>
           <a class="link-card" href="./CLAUDE.md">
