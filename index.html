@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Delta Signal ATLAS-7 - SEC-grounded risk, fundamentals, daily monitoring, SPECTRA field maps, evidence drilldowns, notification routing, Claude Code guidance, and signal intelligence for the 215-row crypto-exposed public-company universe through MCP, Open API, and x402.">
+  <meta name="description" content="Delta Signal ATLAS-7 - SEC-grounded issuer intelligence through MCP, OpenAPI, signed grant sessions, live pricing discovery, field-contract discovery, and x402-compatible public access.">
   <title>Delta Signal ATLAS-7 • SEC-Grounded Issuer Intelligence</title>
   <link rel="icon" href="./assets/logo.png" type="image/png">
   <link rel="preload" as="image" href="./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible">
@@ -1708,20 +1708,20 @@
       <div class="hero-inner">
         <div class="hero-topline">
           <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
-          <p class="eyebrow">MCP live • EDGAR verified • SPECTRA • x402 • OpenAPI 56 paths</p>
+          <p class="eyebrow">MCP live • EDGAR verified • SPECTRA • signed grants • x402 • OpenAPI 47 paths</p>
         </div>
         <div class="hero-layout">
           <div class="hero-copy">
             <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
             <p class="tagline">
               Filing-backed issuer intelligence for the crypto-exposed public-company universe.
-              <span>Daily EDGAR CompanyFacts -> ATLAS-7 evidence rows -> SPECTRA field maps -> REST, MCP, Arazzo, and x402 workflows.</span>
+              <span>Daily EDGAR CompanyFacts -> ATLAS-7 evidence rows -> SPECTRA field maps -> REST, MCP, Arazzo, signed grant-session access, and x402 workflows.</span>
             </p>
             <div class="quick-facts" aria-label="Delta Signal ATLAS-7 essentials">
               <div class="quick-fact"><strong>What it is</strong><span>Evidence pipeline for 215 crypto-exposed issuers grounded in SEC/XBRL facts.</span></div>
               <div class="quick-fact"><strong>How it updates</strong><span>Nightly EDGAR waits for CompanyFacts, mirrors or reconstructs the date, then runs process-changes.</span></div>
               <div class="quick-fact"><strong>What ATLAS-7 adds</strong><span>Daily changes, issuer history, stress, peers, alpha, readiness, caveats, and MCP manifests.</span></div>
-              <div class="quick-fact"><strong>What SPECTRA adds</strong><span>Field-map contracts from ATLAS history: dates, ranges, labels, provenance, and soft-miss states.</span></div>
+              <div class="quick-fact"><strong>How to integrate</strong><span>Discover through OpenAPI, /v1/pricing, and /v1/contract/fields; use signed grant sessions or x402 for execution.</span></div>
             </div>
             <nav class="toc-panel" aria-label="Page contents">
               <strong>Jump to</strong>
@@ -1746,7 +1746,7 @@
               <a href="./CLAUDE.md" class="btn btn-secondary">Claude Code Guide</a>
               <a href="#pricing" class="btn btn-secondary">View pricing</a>
             </div>
-            <p class="meter">MCP live • EDGAR daily background task verified • OpenAPI 56 paths • pricing + field contract live • x402 enabled • 215-row ATLAS-7 + SPECTRA coverage verified</p>
+            <p class="meter">MCP live • EDGAR daily background task verified • OpenAPI 47 paths • /v1/pricing + /v1/contract/fields live • signed grant-session flow live • x402 enabled</p>
             <p class="hero-image-credit">Hero visual: SEC/XBRL evidence base -> ATLAS-7 intelligence engine -> agent-ready outputs.</p>
             <nav class="agent-links" aria-label="Agent files">
               <a href="./CLAUDE.md">CLAUDE.md</a>
@@ -1759,7 +1759,7 @@
           </div>
           <figure class="hero-map">
             <img src="./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible" alt="ATLAS-7 Evidence Pipeline diagram showing SEC/XBRL evidence, ATLAS-7 intelligence, agent-ready outputs, access rails, and validation layers" loading="eager" decoding="async">
-            <figcaption>ATLAS-7 generation path: SEC/XBRL evidence -> deterministic intelligence engine -> MCP, REST, Arazzo, Glama, and x402 outputs.</figcaption>
+            <figcaption>ATLAS-7 generation path: SEC/XBRL evidence -> deterministic intelligence engine -> MCP, REST, Arazzo, signed grant sessions, and x402 outputs.</figcaption>
           </figure>
         </div>
       </div>
@@ -1815,10 +1815,10 @@
         </div>
 
         <div class="tool-grid" style="margin-top:1.5rem;">
-          <div class="tool"><strong>Live contract snapshot</strong><span>June 8 rollout: Azure revision <code>ca-web-intel-mcp--0000484</code>, source commit <code>4cb93a38</code>, OpenAPI exposes <code>56</code> paths, and <code>/v1/pricing</code> plus <code>/v1/contract/fields</code> return HTTP 200.</span></div>
+          <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>47</code> paths, live <code>/v1/pricing</code>, live <code>/v1/contract/fields</code>, Company Report at <code>0.6</code> cost_usd, and a signed wallet-grant challenge/session flow.</span></div>
           <div class="tool"><strong>HUT evidence readiness</strong><span>HUT company-report and SPECTRA field-map routes are live behind public x402 challenges. Agent-facing envelopes document <code>issuer_evidence_envelope</code>, <code>evidence_sections</code>, <code>spectra_metadata</code>, and <code>publication_audit_block</code>.</span></div>
           <div class="tool"><strong>Universe route safety</strong><span>No-ticker universe routes reject extra path segments such as <code>/UNIVERSE</code> with structured <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span></div>
-          <div class="tool"><strong>Current hardening checkpoint</strong><span>Source verification reached <code>97.5%</code> package coverage for <code>cmd/search-gateway</code>, with gofmt, secret scan, whitespace check, deploy audit, and live smoke probes passing.</span></div>
+          <div class="tool"><strong>Current hardening checkpoint</strong><span>Recent integration pressure tests tightened pricing discovery, parser-field stability, compact evidence handling, large-payload guardrails, and grant-session contract wording. Public docs now track the live surface, not undeployed source expectations.</span></div>
         </div>
         <div class="tool-grid" style="margin-top:1.5rem;">
           <div class="tool"><strong>Readiness should show</strong><span>Service state, active source date, issuer count, live-price status, audit freshness, and route/payment readiness.</span></div>
@@ -1855,9 +1855,8 @@
         </div>
         <div class="tool-grid">
           <div class="tool"><strong>Dedicated grant path</strong><span>Enrolled wallet-grant users should use the challenge/session flow: <code>GET /v1/grant/challenge</code>, EIP-191 <code>personal_sign</code>, <code>POST /v1/grant/session</code>, then attach <code>X-DeltaSignal-Grant-Token</code>. Raw unsigned wallet headers are not a grant identity.</span></div>
-          <div class="tool"><strong>Billing envelope</strong><span><code>cost_usd</code> is the customer-visible charged-cost field and should stay <code>0</code> for grant, API-key, internal, or discovery bypasses. Public x402 settlements may also expose <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>credits_charged</code>, <code>billing_mode</code>, <code>payment_status</code>, <code>billing_status</code>, <code>grant_debit_usd</code>, and <code>request_id</code>; reconcile actual x402 spend from settlement or payment proof.</span></div>
+          <div class="tool"><strong>Billing envelope</strong><span><code>cost_usd</code> is the customer-visible charged-cost field and should stay <code>0</code> for grant, API-key, internal, or discovery bypasses. Public x402 settlements may also expose <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>credits_charged</code>, <code>billing_mode</code>, <code>payment_status</code>, <code>billing_status</code>, and <code>request_id</code>; reconcile actual x402 spend from settlement or payment proof.</span></div>
           <div class="tool"><strong>Pricing discovery</strong><span>Use <code>/v1/pricing</code> as the live route-pricing source of truth and <code>/v1/contract/fields</code> for canonical response-field semantics. Company Report is no longer the older $0.30 display price; the corrected standard display price is $0.60 with a route-declared range of $0.45-$0.75.</span></div>
-          <div class="tool"><strong>Grant runway discovery</strong><span>When the current contract exposes <code>/v1/grants/status</code>, treat <code>grant_budget_usd</code> and <code>grant_remaining_usd</code> as the authoritative runway fields. In the grant-session mint response, compatibility fields such as <code>grant_limit</code> and <code>grant_credit_equivalent_*</code> are cents-equivalent views and should not be treated as raw USD or request count.</span></div>
           <div class="tool"><strong>Universe route invariant</strong><span><code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code> are universe-scoped routes and should remain path-ticker-free.</span></div>
           <div class="tool"><strong>MCP composites exposed</strong><span>MCP clients should discover composite tools before execution and prefer bounded presets such as Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check when they match the user intent.</span></div>
           <div class="tool"><strong>SPECTRA soft misses</strong><span>A structured <code>not_found</code> means no evidence is currently available for that endpoint/ticker pair, not a system failure. Clients can suppress known soft misses briefly and re-probe on a cadence because coverage can be backfilled later.</span></div>
@@ -2112,7 +2111,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Pricing for first workflows</h2>
-          <p>Start with free discovery and first calls where a grant or free-tier policy applies. Paid public usage is route-level, usage-based, and declared in OpenAPI/MCP metadata. Builder pricing uses 1 credit = $0.01 for customer-visible settled spend, while budget-grant runway is tracked in USD through <code>grant_budget_usd</code> and <code>grant_remaining_usd</code>.</p>
+          <p>Start with free discovery and first calls where a grant or free-tier policy applies. Paid public usage is route-level, usage-based, and declared in live route metadata. Check <code>/v1/pricing</code> first, then confirm with the route-specific x402 challenge when needed.</p>
         </div>
         <div class="design-partner-note">
           <strong>Design partner feedback and ownership boundary</strong>
@@ -2136,7 +2135,7 @@
           <div class="tool"><strong>Granular reads</strong><span>Typical public reads run about $0.03-$0.10 depending on route: daily changes, readiness, risk distribution, top-stressed, peer ranking, alpha signals, covenant stress, SPECTRA, and issuer detail.</span></div>
           <div class="tool"><strong>Payment rail</strong><span>Compatible public clients use Base USDC via x402 on <code>/v1/*</code>. Tempo/MPP clients use the matching <code>/mpp/v1/*</code> route family.</span></div>
         </div>
-        <p class="mini-note">Prices are examples from the current public route metadata. Always confirm <code>/v1/pricing</code>, the route-specific x402 challenge, or OpenAPI metadata before paid execution. When a budget grant is active, use <code>/v1/grants/status</code> plus <code>grant_budget_usd</code> and <code>grant_remaining_usd</code> for runway rather than compatibility fields from the session mint response.</p>
+        <p class="mini-note">Live route metadata is the source of truth. Use <code>/v1/pricing</code> for current cost discovery, then reconcile actual x402 spend from settlement or payment proof when the wallet moves.</p>
       </div>
     </section>
 
@@ -2148,8 +2147,8 @@
         </div>
         <div class="tool-grid" style="margin-bottom:1.5rem;">
           <div class="tool"><strong>Free Discovery</strong><span>Inspect before you spend: service discovery, MCP tool listing, OpenAPI route inspection, readiness probe, and workflow metadata. Route execution may require x402 payment proof or an active grant.</span></div>
-          <div class="tool"><strong>Free-Tier and Design-Partner Grants</strong><span>Grant-covered calls can use issued identity headers or the wallet grant-session flow for enrolled EVM wallets: <code>GET /v1/grant/challenge</code>, sign, <code>POST /v1/grant/session</code>, then attach <code>X-DeltaSignal-Grant-Token</code>. Raw unsigned wallet headers are not a grant identity, and <code>/v1/grants/status</code> is the public runway probe when exposed by the current contract.</span></div>
-          <div class="tool"><strong>Route-Level Pricing</strong><span>Each paid route declares its own cost. Granular routes, composite workflows, and Natural Language briefs may have different prices based on what they compute or compile.</span></div>
+          <div class="tool"><strong>Grant Sessions</strong><span>Grant-covered calls can use issued identity headers or the wallet grant-session flow for enrolled EVM wallets: <code>GET /v1/grant/challenge</code> -> <code>personal_sign</code> -> <code>POST /v1/grant/session</code> -> attach <code>X-DeltaSignal-Grant-Token</code>. Raw unsigned wallet headers do not unlock grants.</span></div>
+          <div class="tool"><strong>Route-Level Pricing</strong><span>Each paid route declares its own cost. Read <code>/v1/pricing</code> before execution; for example, live Company Report pricing is currently <code>0.6</code> cost_usd.</span></div>
           <div class="tool"><strong>x402 Challenge and Retry</strong><span>When a paid public route requires payment, the server returns an x402 challenge. Compatible clients settle through Base USDC and retry with payment proof.</span></div>
           <div class="tool"><strong>Grant Debit Semantics</strong><span>Budget grants currently debit by <code>route_declared_price</code>. The contract reports <code>grant_cache_treatment=fresh_and_cached_charge_same_route_quote</code>, so fresh and cached covered reads consume the same route quote unless the public contract changes.</span></div>
           <div class="tool"><strong>What You Receive</strong><span>Paid output still preserves source dates, route metadata, caveats, quality flags, evidence references or hashes where available, and the non-advice boundary.</span></div>
@@ -2163,7 +2162,7 @@
 5. Client retries with proof.
 6. Delta Signal returns JSON or evidence-preserving Markdown.</div>
         </ds-x402-checklist>
-        <p class="mini-note">Use free discovery and an x402 grant-aware test call before running paid workflows. <a href="#recommended-workflows">Run a Morning Brief</a>, <a href="#pricing">review pricing</a>, or <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">view route metadata</a>.</p>
+        <p class="mini-note">Use free discovery and one grant-aware or x402-aware test call before running paid workflows. Start with <code>/v1/pricing</code>, <code>/v1/contract/fields</code>, or a bounded Morning Brief.</p>
       </div>
     </section>
 
@@ -2325,13 +2324,23 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
       <div class="wrap">
         <div class="section-head">
           <h2>Reference surfaces</h2>
-          <p>Inspect the exact contracts when you need implementation detail: schemas, workflows, MCP endpoint, Glama connector, x402 handshake, and agent-readable guidance.</p>
+          <p>Inspect the exact contracts when you need implementation detail: schemas, pricing, parser fields, workflows, MCP endpoint, x402 handshake, and agent-readable guidance.</p>
         </div>
         <div class="link-grid">
           <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
             <strong>Open API 3.1</strong>
-            <span>Public route contract for raw, composite, x402, Natural Language, pricing discovery, field-contract discovery, and notification surfaces. Current live contract exposes 56 paths.</span>
+            <span>Public route contract for raw, composite, x402, Natural Language, pricing discovery, and field-contract discovery surfaces. Current live contract exposes 47 paths.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/v1/pricing" target="_blank" rel="noopener">
+            <strong>Live Pricing</strong>
+            <span>Authoritative route cost discovery for public clients, including current cost_usd values and grant-session metadata.</span>
+            <code>https://api.aitrailblazer.net/v1/pricing</code>
+          </a>
+          <a class="link-card" href="https://api.aitrailblazer.net/v1/contract/fields" target="_blank" rel="noopener">
+            <strong>Field Contract</strong>
+            <span>Parser-stable field discovery for response paths you should preserve or key on before you wire an agent parser.</span>
+            <code>https://api.aitrailblazer.net/v1/contract/fields</code>
           </a>
           <a class="link-card" href="./changelog.html">
             <strong>Changelog</strong>
@@ -2355,7 +2364,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           </a>
           <a class="link-card" href="./llms-full.txt">
             <strong>Full Agent Brief</strong>
-            <span>Plain-text handoff for IDE agents with status, MCP call shape, smoke commands, route coverage, and production boundaries.</span>
+            <span>Current public handoff for IDE agents with live pricing, signed grant-session flow, parser guidance, MCP call shape, and production boundaries.</span>
             <code>./llms-full.txt</code>
           </a>
           <a class="link-card" href="./CLAUDE.md">
@@ -2386,7 +2395,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
       <div class="wrap">
         <div class="section-head">
           <h2>Coinbase x402 / Codex marketplace review path</h2>
-          <p>Review Delta Signal as a paid evidence API for Codex workflows: install, discover, inspect route metadata, trigger an x402 challenge, retry with proof, and verify returned provenance before trusting rendered prose.</p>
+          <p>Review Delta Signal as a paid evidence API for Codex workflows: install, discover, inspect route metadata, use grant-session or x402 challenge flow, retry with proof or token, and verify returned provenance before trusting rendered prose.</p>
         </div>
         <div class="surface-stage" aria-label="Coinbase x402 and Bazaar validation flow">
           <div class="surface-card">
@@ -2420,7 +2429,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           </a>
           <a class="link-card" href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">
             <strong>No-Payment Probe</strong>
-            <span>Use an x402-capable discovery client to inspect payment requirements before paying.</span>
+            <span>Use an x402-capable discovery client to inspect pricing and payment requirements before paying or attaching a grant token.</span>
             <code>GET https://api.aitrailblazer.net/v1/readiness</code>
           </a>
           <a class="link-card" href="https://docs.cdp.coinbase.com/x402/welcome" target="_blank" rel="noopener">
@@ -2433,7 +2442,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           <div class="tool"><strong>Readiness route</strong><span>Recommended first reviewer test; returns current service state or a valid public payment challenge.</span></div>
           <div class="tool"><strong>MCP discovery</strong><span>Works before paid calls so agents can inspect available tools.</span></div>
           <div class="tool"><strong>OpenAPI contract</strong><span>Shows reachable public routes, route metadata, and 402 response shape.</span></div>
-          <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, and amount metadata before retry.</span></div>
+          <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, and amount metadata before retry. Public clients should reconcile actual spend from settlement or payment proof.</span></div>
           <div class="tool"><strong>Paid retry</strong><span>Returns structured JSON or Markdown evidence after compatible payment proof.</span></div>
           <div class="tool"><strong>Response metadata</strong><span>Includes source dates, caveats, quality flags, and non-advice boundaries.</span></div>
           <div class="tool"><strong>Review target</strong><span>Validate ATLAS-7 x402 issuer intelligence first: Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and issuer drilldowns.</span></div>
@@ -2451,7 +2460,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
         <div class="surface-stage" aria-label="Animated public MCP and x402 discovery flows">
           <div class="surface-card">
             <h3>Public MCP + Open API</h3>
-            <p>Agents can inspect the hosted Streamable HTTP MCP endpoint and Open API contract, including daily monitoring, evidence routes, and the Azure audit-status surface, then use x402 routes under <code>/v1/*</code> for paid public access.</p>
+            <p>Agents can inspect the hosted Streamable HTTP MCP endpoint and public route contract, then use signed grant-session access or x402 routes under <code>/v1/*</code> for execution.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">Agent client</div>
@@ -2605,7 +2614,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
         </div>
         <div class="workflow-strata" style="margin-bottom:1.5rem;">
           <div class="workflow-stratum"><strong>For agents</strong><span>Discover the service contract, select a bounded workflow, execute through MCP or REST, preserve the returned metadata, and render evidence without inventing unsupported claims.</span></div>
-          <div class="workflow-stratum"><strong>For developers</strong><span>Start with readiness through x402/free-tier grant behavior and Quickstart, then inspect OpenAPI and Arazzo for exact schemas, route sequences, or workflow automation.</span></div>
+          <div class="workflow-stratum"><strong>For developers</strong><span>Start with <code>/v1/pricing</code>, <code>/v1/contract/fields</code>, and readiness through the correct grant or x402 path, then inspect OpenAPI and Arazzo for exact schemas or workflow automation.</span></div>
           <div class="workflow-stratum"><strong>For analysts</strong><span>Use Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and Peer Context as research inputs, not recommendations.</span></div>
         </div>
         <div class="hero-actions" style="margin:0;">
@@ -2631,7 +2640,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
       <div class="workflow-stratum"><strong>Developer Resources</strong><span><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI schema</a><br><a href="./arazzo/deltasignal-arazzo.yaml">Arazzo YAML</a><br><a href="./arazzo/deltasignal-arazzo.json">Arazzo JSON</a><br><a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">MCP endpoint</a><br><a href="./arazzo/publicMcpX402Handshake.arazzo.yaml">x402 handshake</a><br><a href="./CLAUDE.md">CLAUDE.md</a><br><a href="./llms.txt">llms.txt</a><br><a href="./llms-full.txt">llms-full.txt</a></span></div>
     </div>
     <p style="max-width:980px;margin:1.5rem auto 0;">Delta Signal outputs are evidence packages, not unconstrained AI opinions. Natural Language briefs render returned evidence into readable Markdown; they do not create new evidence, fill missing data, override source caveats, convert screens into recommendations, or provide personalized investment advice. If evidence is missing, it remains missing and should be surfaced as a caveat.</p>
-    <p style="max-width:980px;margin:1rem auto 0;">Discovery is free. Public x402-compatible clients can inspect metadata and tools before paid execution. Paid calls may return a 402 challenge, after which compatible clients can submit payment proof, retry, and receive structured JSON or Markdown evidence. Verify route availability, pricing, freshness, and payment behavior through current readiness and route metadata.</p>
+    <p style="max-width:980px;margin:1rem auto 0;">Discovery is free. Public clients should inspect <code>/v1/pricing</code>, <code>/v1/contract/fields</code>, OpenAPI, and MCP tools before execution. Paid calls may return a 402 challenge, while enrolled-wallet grants use a signed session token. Verify route availability, pricing, freshness, and payment behavior from the current live contract before trusting any cached note.</p>
     <p style="max-width:980px;margin:1rem auto 0;">Before relying on any output, inspect source dates, filing dates where available, computed times, stale flags, caveats, quality flags, evidence hashes, renderer status, payload mode, route or tool provenance, and non-advice disclaimers.</p>
     <p style="max-width:980px;margin:1rem auto 0;">Delta Signal ATLAS-7 provides issuer intelligence, evidence routing, risk-screening outputs, and structured research briefs. It does not provide personalized investment advice, portfolio recommendations, price targets, or guarantees of issuer performance.</p>
   </footer>

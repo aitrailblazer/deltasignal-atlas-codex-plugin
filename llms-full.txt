@@ -2,189 +2,159 @@ Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v2
 Last updated: 2026-06-18
 Audience: Claude Code, Codex, Cursor, IDE agents, MCP clients, integration reviewers
-Status: production verified through the June 8 rollout; current integration guidance additionally reflects the wallet grant-session flow, budget-grant runway fields, /v1/grants/status discovery, Company Report pricing correction, and ongoing hardening work
+Status: public contract verified against live endpoints on 2026-06-18; OpenAPI 47 paths, live /v1/pricing, live /v1/contract/fields, signed wallet-grant session challenge flow live, Company Report cost_usd 0.6, and public /v1/grants/status not deployed
 
 Purpose
-This file is the plain-text source for agents that need to understand the Delta Signal ATLAS-7 public API, MCP endpoint, local verification state, and production handoff boundary without parsing the HTML changelog.
-
-Fast contract answers
-- Pricing source of truth: GET /v1/pricing.
-- Wallet grant flow: GET /v1/grant/challenge -> EIP-191 personal_sign -> POST /v1/grant/session -> attach X-DeltaSignal-Grant-Token.
-- Grant runway discovery: GET /v1/grants/status.
-- Budget-grant runway fields: grant_budget_usd and grant_remaining_usd are authoritative.
-- Budget-grant compatibility fields: in the grant-session mint response, grant_limit and grant_credit_equivalent_* are usd_cents_equivalent compatibility views, not raw USD and not request count.
-- Grant debit policy: route_declared_price.
-- Grant cache treatment: fresh_and_cached_charge_same_route_quote.
-- Customer-visible billing fields: cost_usd is the actual charged customer amount and is 0 for grant, API-key, internal, or discovery bypasses. quoted_cost_usd is the public route quote. actual_cost_usd is the externally settled or charged amount. grant_debit_usd is promotional budget consumed by the covered request. credits_charged is the cent-equivalent charged amount for customer-visible settled spend.
-- Compact company-report evidence may leave nested freshness fields null when no single canonical upstream timestamp exists; rely on top-level data.evidence_hash as the integrity anchor.
+This is the plain-text handoff file for agents that need the current public Delta Signal contract without parsing the landing page or changelog first.
 
 Primary links
 - Public product page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
-- Human changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html
-- LLM changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
-- Changelog RSS: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
-- Changelog Atom: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
-- OpenAPI 3.1: https://api.aitrailblazer.net/openapi.json
-- MCP endpoint: https://api.aitrailblazer.net/mcp
-- Arazzo workflow YAML: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
-- Arazzo workflow JSON: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
-- Public x402 handshake workflow: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
+- Human changelog: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html
+- LLM changelog: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
+- Changelog RSS: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
+- Changelog Atom: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
+- OpenAPI 3.1: https://api.aittrailblazer.net/openapi.json
+- MCP endpoint: https://api.aittrailblazer.net/mcp
+- Live pricing contract: https://api.aittrailblazer.net/v1/pricing
+- Live field contract: https://api.aittrailblazer.net/v1/contract/fields
+- Grant challenge: https://api.aittrailblazer.net/v1/grant/challenge?wallet=<wallet>
+- Arazzo workflow YAML: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
+- Arazzo workflow JSON: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
+- Public x402 handshake workflow: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
 
-New user and agent instructions
+Start here
 1. Read this file first.
-2. Read changelog-llm.html for dated provenance and the latest tripcode. Subscribe to rss.xml or atom.xml if you need periodic changelog updates without checking the UI manually.
+2. Read changelog-llm.html for dated provenance and public tripcodes.
 3. Read openapi.json for the live public route contract.
-4. Probe GET /v1/readiness through x402. A plain unauthenticated HTTP request may return HTTP 402 unless an active grant or payment proof is attached.
-5. Run one bounded Morning Brief or equivalent composite workflow.
-6. Inspect source_date, computed_at, caveats, quality_flags, payload_mode, route price, and billing metadata.
-7. Use REST for direct HTTP, MCP for agent clients, Arazzo for workflow planning, Glama for connector install, or x402 for compatible free-grant and paid public access.
-8. Do not treat local/source readiness as production readiness until post-redeploy production smoke checks pass.
-9. Do not ask for internal secrets. External access should use x402, including any configured grant.
-10. Do not provide investment advice.
+4. Read /v1/pricing for route costs and grant-session metadata.
+5. Read /v1/contract/fields for parser-stable field paths before you hard-code a response parser.
+6. Probe readiness or one bounded composite workflow through the public x402 path.
+7. Preserve source dates, computed timestamps, caveats, quality flags, evidence hashes where available, billing metadata, and the non-advice boundary.
+8. Do not ask for internal secrets or internal API keys.
+9. Do not provide investment advice.
 
-Coinbase x402 / Codex marketplace reviewer packet
+Live public discovery snapshot
+- OpenAPI is currently live with 47 public paths.
+- /v1/pricing is the live source of truth for public route cost_usd values and grant-session discovery metadata.
+- Current public /v1/pricing reports GET /v1/company-report/{ticker} at cost_usd 0.6.
+- Current public /v1/pricing does not publish grant_programs.
+- Current public /v1/pricing returns grant_session metadata including challenge_endpoint, session_endpoint, token_header, supported, requires_personal_sign, requires_enrolled_wallet, and x402_required_after_credit.
+- Current public /v1/contract/fields is live, but it does not currently publish extended grant billing fields such as grant_program, grant_debit_usd, grant_cache_treatment, grant_budget_usd, or grant_remaining_usd.
+- Current public OpenAPI does not expose /v1/grants/status.
+- Public wallet-grant access uses a signed session flow, not raw unsigned wallet headers.
+
+Public grant flow
+For enrolled EVM wallets, the current public grant flow is:
+1. GET /v1/grant/challenge?wallet=<wallet>
+2. personal_sign the returned message exactly as provided
+3. POST /v1/grant/session with wallet, timestamp, and signature
+4. attach the returned token in X-DeltaSignal-Grant-Token before x402 settlement
+
+Important grant notes
+- Unsigned wallet headers are intentionally not enough to unlock grants.
+- The challenge response currently includes message_template_version wallet-grant-session-v1, required_session_fields wallet/timestamp/signature, sign_method personal_sign, and token_header X-DeltaSignal-Grant-Token.
+- If a grant is unavailable or exhausted, the client should fall back to ordinary x402 without blocking the request path.
+- Identity-header grants may still exist for some public or partner flows, but wallet grants should be documented and implemented as challenge -> sign -> session -> token.
+
+Pricing and billing rules
+- Treat /v1/pricing as the authoritative public discovery surface for route cost_usd.
+- Company Report is currently priced at 0.6 cost_usd on the live route metadata.
+- If a marketing or cached table disagrees with /v1/pricing, trust /v1/pricing and the route-specific x402 challenge.
+- Grant-covered or API-key-bypassed responses may show zero on the in-response billing envelope even when the same route would normally have a nonzero public cost.
+- For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from cost_usd.
+- Treat cost_usd as the Delta Signal response envelope signal, while x402 settlement remains externally settled and independently auditable.
+
+Primary public workflows
+- Morning Brief: bounded daily market scan for readiness, daily changes, risk distribution, top stressed issuers, and alpha opportunities.
+- Company Report: full single-issuer diligence bundle across SEC/XBRL fundamentals, covenant stress, peer ranking, alpha signals, source metadata, quality flags, and live history/SPECTRA context when available.
+- Pressure Board: market stress view with top stressed issuers and triage context.
+- Alpha Sweep: research-candidate screen with market-wide opportunity pressure.
+- Quick Ticker Check: fast issuer triage.
+- Natural Language briefs: evidence-preserving Markdown routes that render Delta Signal evidence; they do not create new evidence.
+
+Representative public route pricing
+- Morning Brief: typically 0.18 when the composite workflow is exposed that way.
+- Company Report: currently 0.6 according to live /v1/pricing.
+- Pressure Board: typically 0.14.
+- Alpha Sweep: typically 0.14.
+- Quick Ticker Check: typically 0.18.
+- Natural Language top-stressed and Morning Brief Markdown routes: typically 0.95 where the live route metadata confirms them.
+
+Reviewer packet
 Delta Signal ATLAS-7 should be reviewed as a Codex-ready, x402-payable issuer-intelligence evidence service.
 
-Core reviewer claim:
-Discover tools -> inspect route metadata -> receive 402 challenge -> settle through Base USDC -> retry with proof -> receive structured evidence or evidence-preserving Markdown with provenance.
+Core reviewer claim
+Discover tools -> inspect route metadata -> receive a 402 challenge when payment is required -> settle through a compatible x402 flow -> retry with proof or grant token -> receive structured evidence or evidence-preserving Markdown with provenance.
 
-Review surfaces:
-- Codex install and hosted MCP discovery.
+Review surfaces
+- Hosted MCP discovery and tools/list.
 - OpenAPI public route contracts.
+- /v1/pricing and /v1/contract/fields discovery.
 - Arazzo workflow plans for bounded scenario routing.
 - x402 challenge and retry behavior.
-- Route-level pricing and payment metadata.
 - Evidence-preserving output boundaries.
 
-Recommended first reviewer test:
-GET https://api.aitrailblazer.net/v1/readiness
+Recommended first reviewer tests
+- GET https://api.aittrailblazer.net/v1/pricing
+- GET https://api.aittrailblazer.net/v1/contract/fields
+- GET https://api.aittrailblazer.net/v1/readiness
 
-A plain unauthenticated request may correctly return HTTP 402 with an x402 challenge. A compatible client or active grant context should attach payment proof or grant context, retry, and inspect returned metadata.
-
-Reviewer checklist:
-- MCP tools/list works before paid execution.
+Reviewer checklist
+- MCP initialize and tools/list work before paid execution.
 - OpenAPI is reachable.
-- Arazzo workflow metadata is reachable.
+- /v1/pricing is reachable and route costs are coherent.
+- /v1/contract/fields is reachable and exposes the parser-stable field set you plan to rely on.
 - Paid or grant-gated routes return coherent HTTP 402 challenge metadata without proof.
-- x402 metadata includes network, asset, seller, amount, and retry information.
-- Bazaar metadata includes route template, output example, merchant resources, seller payTo, and payment metadata.
+- x402 metadata includes network, asset, seller, amount, and retry information when payment is required.
 - Paid retry returns JSON or Markdown preserving source dates, computed timestamps, stale flags, caveats, quality flags, evidence hashes where available, payload mode, route or tool provenance, and non-advice boundaries.
-- No Agentic Market or Coinbase first-party verification claim is made unless Coinbase or the relevant UI confirms it.
+- No Coinbase first-party verification claim should be made unless Coinbase or the relevant UI explicitly confirms it.
 
-Primary public marketplace workflows:
-- Morning Brief, typically $0.18 when exposed as the composite workflow.
-- Company Report, standard display price $0.60 with a route-declared range of $0.45-$0.75 when current route metadata confirms it.
-- Pressure Board, typically $0.14.
-- Alpha Sweep, typically $0.14.
-- Quick Ticker Check, typically $0.18.
-- Natural Language top-stressed and Morning Brief Markdown routes, typically $0.95 where live route metadata confirms them.
+ATLAS-7 and SPECTRA model
+- ATLAS-7 is the evidence layer built from SEC/XBRL and Delta Signal generation logic.
+- SPECTRA is the field-map and interpretation layer over ATLAS-history-shaped rows.
+- SPECTRA is not a separate evidence source and must not invent unavailable issuer history.
+- Missing evidence must remain missing.
 
-Grant, pricing, and billing contract updates
-- Treat GET /v1/pricing as the live route-pricing source of truth. Do not hardcode Company Report at $0.30; the corrected standard display price is $0.60 and the route-declared range is $0.45-$0.75.
-- Wallet-native grant access is a signed session flow, not a raw unsigned wallet-header bypass:
-  1. GET /v1/grant/challenge?wallet=<wallet>
-  2. Sign the returned message with EIP-191 personal_sign
-  3. POST /v1/grant/session with wallet, timestamp, and signature
-  4. Attach X-DeltaSignal-Grant-Token on protected requests
-- Plain unsigned wallet headers should not unlock grants.
-- GET /v1/grants/status is the grant runway/status discovery route when exposed by the current contract.
-- For budget grants, treat grant_budget_usd and grant_remaining_usd as the authoritative runway fields. In the grant-session mint response, grant_limit, grant_credit_equivalent_limit, and grant_credit_equivalent_remaining are compatibility cents-equivalent views with grant_limit_type=compatibility_credit_equivalent and grant_limit_unit=usd_cents_equivalent.
-- Promotional budget currently debits by route_declared_price, and grant_cache_treatment=fresh_and_cached_charge_same_route_quote means fresh and cached covered reads consume the same route quote unless the contract changes.
-- For grant-covered, API-key, internal, or discovery-bypass calls, cost_usd should remain the customer-visible charged amount, typically zero. Prefer quoted_cost_usd for the public route quote, grant_debit_usd for promotional budget consumed, and actual_cost_usd or settlement/payment proof for externally settled x402 spend. For plain x402 calls, reconcile real spend from settlement or payment proof rather than relying only on cost_usd.
-- Compact company-report evidence may legitimately leave nested freshness fields null where no single canonical upstream timestamp exists. Prefer the top-level data.evidence_hash as the integrity anchor.
-
-TripCode/River subscriber research is a near-term extension. Do not market TripCode tools as public marketplace-ready unless live MCP discovery exposes them and the required River/index blobs are available.
-
-Current implementation status
-- The production API is live on revision ca-web-intel-mcp--0000484 with OpenAPI 56 paths, /v1/pricing, /v1/contract/fields, notification routes, and the terminal broker envelope contract.
-- The changelog entry for the latest public hardening/status rollup is ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING.
-- The latest public-safe EDGAR/MCP evidence-base rollups are ATLAS-JUN-6-EDGAR-DAILY-BACKGROUND-FOUNDATION, ATLAS-JUN-6-EDGAR-COMPANYFACTS-DAILY-FEED-RESTORE, ATLAS-JUN-6-EDGAR-WEEK-20260601-AUDIT-RECONCILIATION, ATLAS-JUN-6-ATLAS7-GENERATION-MODEL, and ATLAS-JUN-6-SPECTRA-GENERATION-MODEL; the latest notification/product rollups remain ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY, ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP, ATLAS-JUN-6-DAILY-ALL-DELTAS-MCP-NOTIFICATION-DIGEST, and ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER.
-- The latest source coverage checkpoint is ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING at 97.5% for cmd/search-gateway, following the June 6 coverage checkpoints through 76.4%.
-- The local/source solution and production route probes have both passed for the documented parser-stable field set.
-- Internal verification may use an internal/test API-key gateway profile.
-- Public smoke should use x402, issued identity grants, or the signed wallet grant-session flow where configured.
-- Public clients should use documented public routes and x402 behavior. Do not expect an external API key path.
-- Agents must not request, expose, infer, or persist internal API keys.
-
-ATLAS-7 and SPECTRA generation model
-- ATLAS-7 is generated from the daily EDGAR background task: CompanyFacts mirror or daily-feed reconstruction, process-changes deltas, crypto-exposed issuer matching, ticker/CIK normalization, dated issuer rows, calculation history, point-in-time history, caveats, manifests, and MCP-ready evidence envelopes.
-- SPECTRA is generated from ATLAS-history-shaped rows for a ticker: resolve source date and issuer identity, normalize numeric/date/boolean fields, derive pressure/range labels, package a field-map contract, and preserve provenance plus structured soft-miss states.
-- SPECTRA is not a separate facts source. It explains and maps generated ATLAS-7 history; missing rows must remain missing.
-
-Strict evidence routing rules
-- ATLAS-7 is the evidence layer. It can support issuer diligence, market-wide screening, daily-change inspection, and bounded workflow summaries, but it must not be treated as a discretionary trading system.
-- SPECTRA is the field-map layer over generated ATLAS-history rows. It can explain pressure/range state, lineage, caveats, and date bounds when available. It must not invent unavailable history.
+Strict evidence rules
 - Preserve source_date, computed_at, filing dates where returned, stale flags, caveats, quality_flags, evidence hashes where available, payload_mode, route_uri, billing metadata, and the non-advice boundary.
-- Missing evidence remains missing. Soft misses should be described with the returned reason, coverage_state, retry_after_days, and billing_behavior when present.
+- Compact aggregate responses may contain null freshness fields inside nested combined_provenance.evidence_contract objects when no single canonical upstream artifact exists for that aggregate.
+- When compact aggregate freshness fields are null, treat the top-level data.evidence_hash as the authoritative integrity anchor when it is populated.
 - Do not produce buy/sell/short/long/hold, entry/exit, stop-loss, price target, guaranteed-move, or personalized recommendation language.
-- Do not add external market news unless the user explicitly requests external research and the environment permits it.
-- Do not let Natural Language rendering, TripCode article memory, or Gemini synthesis override returned caveats or source metadata.
+- Do not let Natural Language rendering override returned caveats or provenance metadata.
 
 Default workflow order
 - Broad market workflow: readiness, Morning Brief, risk distribution, top stressed, alpha opportunities, then issuer drilldowns only as needed.
 - Issuer workflow: company report, company fundamentals, covenant stress, peer ranking, alpha signals, SPECTRA field map, then ATLAS history or point-in-time history.
-- Daily evidence workflow: daily-changes/latest first, then daily-change evidence for named ticker/CIK only when the user asks to inspect proof.
-- TripCode workflow: resolve article TripCode, list article/River nodes, build thesis map, compare claims to filing evidence, then report missing evidence, weakened assumptions, invalidation logic, and monitor-next items.
+- Daily evidence workflow: daily-changes/latest first, then daily-change evidence for a named ticker or CIK only when explicit proof is requested.
+- TripCode workflow: only claim it when public MCP discovery exposes the required tools.
 
-Versioned parser field contract
+Parser contract
 - Treat GET /v1/contract/fields as the source of truth for parser-stable fields.
-- The current field contract version is deltasignal-field-contract-v1.
-- Additive changes are allowed under the current contract. Renames, removals, or type changes require a new contract_version.
-- Load-bearing readiness paths: ok, age_minutes, freshness_window_hours.
-- Load-bearing generic/provenance paths: ticker, route_uri, source_date.
-- Load-bearing company-report wrapper paths: mcp_summary, data, provenance, suggested_follow_ups, and top-level billing metadata when present.
+- Treat the current public contract as additive-only unless a new contract_version is published.
+- Hard-code only the fields you have verified in the live contract.
+- Do not assume future grant ledger fields are public just because internal or source branches mention them.
 - Company-report parsers should prefer mcp_summary plus the structured data payload. Do not key primary parsing to ad hoc summary aliases such as summary.current_read, summary.issuer_state, or summary.subscriber_takeaway.
-- Load-bearing daily-changes paths: changed_companies, changes, data, rows, and row-level ticker where row arrays are returned.
-- Load-bearing stress compatibility paths: stress_50pct or stressed_leverage_50pct.
-- Live verification on ca-web-intel-mcp--0000455 confirmed MSTR company report, latest daily changes, readiness, covenant stress, and field-contract probes.
 
-Versioned terminal broker contract
-- Treat GET /v1/contract/fields and its terminal_broker object as the source of truth for terminal MCP-brokered ATLAS envelope fields.
-- The current terminal broker contract version is deltasignal-terminal-broker-v1.
-- Covered brokered datasets: covenant-stress, alpha-signals, and company-fundamentals.
-- Terminal clients should treat summaries as opaque and key results by endpoint_id. Server-side ATLAS code owns route-specific structured parsing.
+Load-bearing field paths to preserve
+- Readiness: ok, age_minutes, freshness_window_hours.
+- Generic provenance: ticker, route_uri, source_date.
+- Company Report: mcp_summary, confidence, data.ticker, data.workflow, data.status, and the documented nested per-section fields.
+- Daily changes: changed_companies, changes, data, rows, and row-level ticker where row arrays are returned.
+- Stress compatibility: stress_50pct or stressed_leverage_50pct.
+
+Terminal broker contract
+- Treat GET /v1/contract/fields and its terminal_broker object as the source of truth for terminal MCP-brokered envelope fields when that object is present.
+- Covered brokered datasets currently include covenant-stress, alpha-signals, and company-fundamentals in the documented contract.
+- Terminal clients should key results by endpoint_id and treat summaries as opaque unless the route contract says otherwise.
 - Load-bearing terminal envelope fields: endpoint_id, status, cache_status, quote_status, summary, evidence_summary, estimated_usd, cost_usd, and confirmation_token.
-- Summary aliases: summary or evidence_summary. Price aliases: estimated_usd or cost_usd. Confirmation field: confirmation_token.
-- Live verification on ca-web-intel-mcp--0000456 confirmed the terminal_broker contract, covered datasets, and stable envelope fields.
 
-What is locally verified
-- The EDGAR trading-week audit for 2026-06-01 through 2026-06-05 is complete for CompanyFacts ZIP, delta summary, and digital-assets delta coverage; 2026-06-02 is recovered_reconciled via daily-feed reconstruction with policy=daily_feed_reconstruction_canonical.
-- Local gateway starts with the internal/test API-key path.
-- MCP initialize, tools/list, and tools/call smoke pass locally.
-- The cmd/search-gateway Go test suite passes locally.
-- The local live-loop regression smoke passes locally.
-- Pricing discovery returns the expected pricing contract shape.
-- Field contract discovery returns stable field paths, route scope, provenance, billing_status, response metadata, and terminal_broker envelope metadata.
-- No-ticker universe paths reject ticker-scoped misuse with structured 400 invalid_path_scope responses.
-- Large response guidance exists for 64 KB / stdout-pipe constrained clients.
-- Structured soft-miss behavior exists for unsupported ticker field maps.
-- IREN and MSTR core route coverage is included in the local smoke.
-- Watchlist shallow alpha and peer routes are included in the local smoke.
-
-Production boundary
-- Live production is currently verified for the documented parser-stable field set.
-- After future backend changes, rerun the same smoke against https://api.aitrailblazer.net.
-- A production handoff should require production smoke success, not only source/local success.
-- If live API behavior differs from this file, treat the live result as a deployment drift signal and check the latest changelog.
-
-Recommended Claude Code prompt
-Use this prompt when handing the surface to an IDE agent:
-
-Fetch and read this file first:
-https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
-
-Then fetch:
-https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
-https://api.aitrailblazer.net/openapi.json
-
-Use llms-full.txt as the status and handoff brief. Use changelog-llm.html for dated provenance and tripcodes. Use openapi.json for the live public route contract. Do not assume live production has the latest local source until production smoke checks pass. Do not ask for internal secrets. Do not provide investment advice.
-
-MCP endpoint
+Public MCP endpoint
 Endpoint:
-POST https://api.aitrailblazer.net/mcp
+POST https://api.aittrailblazer.net/mcp
 
-Public discovery behavior:
+Public discovery behavior
 - JSON-RPC initialize and tools/list are the correct first MCP probes.
+- Public tools/list discovery should be possible before paid execution.
 - Unpaid public tools/call requests may return x402 payment-required behavior.
 - Free-tier and design-partner grants are still public/x402-aware access. A grant may be attached through a supported issued identity header such as X-Codex-User, X-Codex-Session, or X-User-ID, or through the wallet grant-session flow:
   - GET /v1/grant/challenge?wallet=<wallet>
@@ -192,62 +162,63 @@ Public discovery behavior:
   - POST /v1/grant/session
   - attach X-DeltaSignal-Grant-Token
 - Plain unsigned wallet headers are not sufficient grant proof. A plain unauthenticated curl may still return HTTP 402.
-- Authorized first-party tests may include an API key header, but public users should not receive or request API keys.
+- Authorized first-party smoke may include an API key header, but public users should not receive or request API keys.
 
 Internal MCP test shape
-Use this shape only for first-party internal smoke with an authorized key supplied through the operator environment:
+Use this only for first-party internal smoke with an authorized key in the operator environment:
 
-curl -sS https://api.aitrailblazer.net/mcp \
+curl -sS https://api.aittrailblazer.net/mcp \
   -H 'content-type: application/json' \
   -H "x-api-key: $MCP_API_KEY" \
   --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"agent-smoke","version":"1.0.0"}}}'
 
-curl -sS https://api.aitrailblazer.net/mcp \
+curl -sS https://api.aittrailblazer.net/mcp \
   -H 'content-type: application/json' \
   -H "x-api-key: $MCP_API_KEY" \
   --data '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
 
-TripCode and River research availability
-TripCode research continuity is a Delta Signal product direction and source/local workflow for turning article subtitles into machine-readable research objects. Public MCP availability must be confirmed through live tools/list discovery before agents claim a TripCode tool is production-callable.
+TripCode and River availability
+- TripCode / River research continuity is still discovery-gated from the public MCP perspective.
+- Do not market TripCode tools as publicly callable unless live tools/list exposes them and the required River artifacts exist.
+- If discovery does not expose those tools, offer the supported ATLAS-7 issuer workflow instead.
 
-If discovery exposes TripCode tools:
-- Resolve a `TF-SUB` article TripCode first.
-- List article TripCodes or issuer River nodes before building a full thesis map.
-- Preserve article identity, resolver identity, evidence identity, source dates, caveats, and non-advice language.
-- Compare claims to filing-backed evidence only through returned TF-XBRL/evidence refs or available ATLAS-7 issuer routes.
+Production boundary
+- Treat live production responses as the source of truth over stale local notes.
+- If live API behavior differs from this file, treat the difference as deployment drift and check the latest changelog.
+- A production handoff should require production smoke success, not only local/source success.
 
-If discovery does not expose TripCode tools:
-- Say the public MCP surface does not currently expose that TripCode capability.
-- Offer the supported ATLAS-7 issuer workflow instead: company report, fundamentals, covenant stress, peer ranking, alpha signals, SPECTRA field map, and daily-change evidence.
-- Do not fabricate article objects, River nodes, claim status, or filing evidence.
+Recommended IDE-agent prompt
+Fetch and read this file first:
+https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
 
-Known HUT TripCode readiness caveat:
-- Local/source proof may exist for HUT research continuity, but public execution depends on deployed MCP tools and required Azure Blob objects.
-- Missing River root/index blobs, including trendforge/v1/resolver/objects/TF-RIVER/TF-RIVER-HUT.json or trendforge/v1/resolver/indexes/by_issuer/HUT.json, must be reported as missing/unavailable.
-- A narrative HUT thesis is not the same as raw MCP evidence. Verify contract claims, financing structure, insider activity, valuation, and Delta Signal issuer-level outputs before presenting an evidence-backed HUT note.
+Then fetch:
+https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
+https://api.aittrailblazer.net/openapi.json
+https://api.aittrailblazer.net/v1/pricing
+https://api.aittrailblazer.net/v1/contract/fields
+
+Use llms-full.txt as the public handoff brief. Use changelog-llm.html for dated provenance. Use openapi.json for the live public route contract. Use /v1/pricing and /v1/contract/fields before hard-coding prices or parser fields. Do not assume undeployed source changes are live. Do not ask for internal secrets. Do not provide investment advice.
 
 Local verification commands
-These are source-repo commands, not GitHub Pages commands. Run them from the backend repo when available.
+These are backend source-repo commands, not GitHub Pages commands.
 
-Focused route tests:
+Focused route tests
 Run the repo-local focused acceptance tests for billing envelopes, pricing discovery, field contracts, company routes, and live-loop route acceptance. Do not expose internal test identifiers in public handoff text.
 
-Full search-gateway tests:
+Full search-gateway tests
 GOWORK=off go test ./cmd/search-gateway/...
 
-Local live-loop regression smoke:
+Local live-loop regression smoke
 Run the repo-local live-loop regression smoke script with BASE_URL=http://127.0.0.1:3017.
 
-Local MCP smoke:
+Local MCP smoke
 BASE_URL=http://127.0.0.1:3017 ./scripts/mcp-smoke.sh
 
 Production verification commands after redeploy
-Use these only after the backend is redeployed. Internal smoke may use first-party environment variables; external daily loops should verify through x402/free-tier grant behavior.
+Run the repo-local live-loop regression smoke script with BASE_URL=https://api.aittrailblazer.net.
+BASE_URL=https://api.aittrailblazer.net ./scripts/mcp-smoke.sh
 
-Run the repo-local live-loop regression smoke script with BASE_URL=https://api.aitrailblazer.net.
-BASE_URL=https://api.aitrailblazer.net ./scripts/mcp-smoke.sh
-
-Expected local route coverage
+Expected public route coverage snapshot
 - GET /v1/readiness
 - GET /v1/pricing
 - GET /v1/contract/fields
@@ -256,40 +227,13 @@ Expected local route coverage
 - GET /v1/alpha-opportunities
 - GET /v1/top-stressed
 - GET /v1/risk-distribution
-- GET /v1/company-report/IREN
-- GET /v1/company-report/MSTR
-- GET /v1/alpha-signals/IREN
-- GET /v1/alpha-signals/MSTR
-- GET /v1/peer-ranking/IREN
-- GET /v1/peer-ranking/MSTR
-- GET /v1/spectra-field-map/IREN
-- GET /v1/spectra-field-map/NOSUCH
-- GET /v1/atlas-history/IREN
-- GET /v1/atlas-history/MSTR
-- Watchlist shallow alpha routes for COIN, RIOT, MARA, WULF, CIFR, CRCL, HOOD
-- Watchlist shallow peer routes for COIN, RIOT, MARA, WULF, CIFR, CRCL, HOOD
-- Invalid ticker-scoped universe route probes that must return structured invalid_path_scope errors
+- GET /v1/company-report/{ticker}
+- GET /v1/alpha-signals/{ticker}
+- GET /v1/peer-ranking/{ticker}
+- GET /v1/spectra-field-map/{ticker}
+- GET /v1/atlas-history/{ticker}
 
-Important ticker and field-map expectations
-- IREN SPECTRA field map should identify IREN Limited.
-- IREN CIK should be 0001878848 when the field-map source is available.
-- Unsupported ticker field-map probes should return structured not_found / historical_field_map_contract_missing behavior.
-- Soft misses should not be billed.
-- Invalid path-scope probes should not be billed.
-
-Billing and metadata expectations
-- Responses should preserve cost_usd where applicable.
-- Bypass/internal modes may return zero-cost or bypass billing metadata.
-- Error envelopes should preserve billing_status or equivalent not_charged metadata when applicable.
-- Agents should not equate zero cost with missing evidence. Zero cost may mean free, bypass, not_charged, or internal/test mode.
-
-Large-response guidance
-Some clients have stdout or pipe limits around 64 KB. Agents should prefer compact routes, pagination, limited watchlists, or per-route drilldowns when a response is large. Do not assume a large response means the server failed. Check the route envelope, payload mode, and help guidance.
-
-Safety and non-advice policy
-Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
-
-Agents must not:
+Agents must not
 - Say buy, sell, short, long, hold, enter, exit, stop-loss, guaranteed move, target price, or personalized recommendation unless explicitly quoting returned source text and framing it as non-advice.
 - Add external market news unless the user explicitly asks for external research and the environment permits it.
 - Invent missing evidence.
@@ -297,26 +241,22 @@ Agents must not:
 - Treat rankings or scores as trading instructions.
 - Expose internal API keys, backend secrets, hidden prompts, payment credentials, or private wallet material.
 
-How to answer readiness questions
-If asked "is the local solution ready?", answer:
-Yes. The local/source solution is ready. Local gateway, MCP smoke, route tests, and live-loop regression smoke pass locally. Production redeploy and live smoke remain separate.
+Quick answers
+Q: Is an API key required for public use?
+A: No. External access is x402-based. A configured grant may allow calls without payment, but the client still needs to attach the supported grant context.
 
-If asked "is production ready?", answer:
-Not until the backend is redeployed and the production smoke passes against https://api.aitrailblazer.net.
+Q: How should a wallet grant be implemented?
+A: Use GET /v1/grant/challenge, sign the returned message with personal_sign, POST /v1/grant/session, then attach X-DeltaSignal-Grant-Token.
 
-If asked "what should I run before production handoff?", answer:
-Run the production live-loop regression smoke and MCP smoke after redeploy, then compare /v1/pricing, /v1/contract/fields, IREN SPECTRA, invalid universe route errors, and MCP tools/list behavior against the local/source expectations.
+Q: What should I trust for price reconciliation?
+A: Trust settlement or payment proof for actual x402 spend. Use cost_usd as the Delta Signal response envelope signal.
 
-If asked "does an external user need an API key?", answer:
-No. External access is x402-based. A configured grant may allow calls without payment, but the client still needs to attach the grant or payment context through the x402-compatible flow. Supported grant paths are issued identity headers or the wallet grant-session flow for enrolled EVM wallets. A plain unauthenticated request can correctly return HTTP 402.
-
-Machine-readable status
-artifact: deltasignal_atlas7_llms_full
+Machine-readable footer
+kind: delta-signal-llms-full
 version: llms-full-v2
 last_updated: 2026-06-18
-local_solution_ready: true
-production_redeploy_pending: false
-production_smoke_required_after_redeploy: false
-latest_changelog_tripcode: ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING
-public_name_safe: true
+public_openapi_paths: 47
+company_report_cost_usd: 0.6
+grant_session_flow: challenge-personal_sign-session-token
+public_grants_status_route: absent
 non_advice_required: true
