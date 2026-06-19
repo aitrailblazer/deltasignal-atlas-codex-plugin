@@ -247,12 +247,4 @@
     <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9" />
     <summary>The public changelog now includes the full June 6 public-safe update set through worker-proxy and DeltaSignal store-constructor coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.9%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.9 percent coverage Track: T+866m Commit: current changelog update</summary>
   </entry>
-  <entry>
-    <title>Worker proxy and DeltaSignal store constructor coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-WORKER-PROXY-STORE-COVERAGE-74P9" />
-    <summary>Worker proxy and store-constructor coverage now verifies authorized proxy forwarding with query/body/header preservation, transport-error behavior, proxy response-header filtering, OpenAPI template fallback loading, and no-op DeltaSignal store close behavior; the verified cmd/search-gateway package coverage checkpoint reached 74.9%. Breadcrumb: Improvement Timeline &gt; Worker proxy and DeltaSignal store constructor coverage checkpoint Track: T+858m Commit: 4e4d7d64</summary>
-  </entry>
 </feed>
