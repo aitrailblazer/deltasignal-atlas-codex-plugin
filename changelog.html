@@ -489,16 +489,16 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 16, 2026 - public rollup updated for the audit-grade Natural Language Morning Brief renderer, scheduled precompute/cache reuse, Azure revision ca-web-intel-mcp--0000527, live MCP cache-hit verification, Claude Code MCP project guide, Coinbase x402 / Codex marketplace reviewer positioning, live readiness and MCP evidence hardening, OpenAPI 56-path verification, live /v1/pricing and /v1/contract/fields discovery, HUT issuer-evidence readiness, structured invalid_path_scope behavior for universe routes, issuer evidence envelope fields, strict ATLAS-7/SPECTRA LLM guardrails, TripCode public-discovery caveats, public x402 challenge verification, deployment ledger commit fd5ec09c, and cmd/search-gateway source coverage hardening to 97.5%</p>
+      <p class="eyebrow">Updated June 19, 2026 - public rollup updated for the design-partner grant runway and expiry contract, Company Report pricing correction, OpenAPI 48-path verification, signed wallet grant-session flow, /v1/grants/status identity requirement, TripCode/River gated evidence wording, audit-grade Natural Language Morning Brief renderer, and public x402 challenge verification</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>196</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>111</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>194</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>196</strong><span>breadcrumb chips</span></div>
-        <div class="stat"><strong>76</strong><span>visible commit refs</span></div>
-        <div class="stat"><strong>104</strong><span>unique source commits</span></div>
+        <div class="stat"><strong>197</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>112</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>195</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>197</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>77</strong><span>visible commit refs</span></div>
+        <div class="stat"><strong>105</strong><span>unique source commits</span></div>
       </div>
       <div class="hero-actions">
         <a class="btn" href="https://api.aitrailblazer.net/openapi.json">Inspect OpenAPI</a>
@@ -519,6 +519,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>197</span>
+              <code>ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</code>
+              <span>Improvement Timeline &gt; Design-partner grant runway and expiry contract clarified</span>
+              <code>T+1098m</code>
+            </div>
             <div class="river-row">
               <span>196</span>
               <code>ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</code>
@@ -2085,6 +2091,25 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY">
+            <div class="date">June 19, 2026</div>
+            <h3>Design-partner grant runway and expiry contract clarified</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</code>
+              <code>track: T+1098m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; Design-partner grant runway and expiry contract clarified</code>
+            </div>
+            <p>The public contract now clarifies that design-partner grant runway should be sized from grant_budget_usd and grant_remaining_usd, that grant_limit is only a compatibility view, that route-priced grant debit is server-side, and that issued design-partner grants expire 30 days after issuance unless separately renewed.</p>
+            <ul>
+              <li>Budget-grant sizing uses grant_budget_usd and grant_remaining_usd as authoritative USD runway fields.</li>
+              <li>grant_limit and grant_credit_equivalent_* remain compatibility fields and must not be treated as raw USD or request count.</li>
+              <li>Grant-covered calls debit server-side by route-declared price; clients should read server runway instead of reconstructing decrement math from local call logs.</li>
+              <li>Fresh and cached covered reads should not be assumed to debit differently unless the live contract changes.</li>
+              <li>The design-partner grant is separate from client-side x402 monthly caps; x402 spend starts only when the grant is unavailable, expired, or exhausted.</li>
+              <li>Design-partner grants expire 30 days after issuance unless a separate renewal or replenishment is explicitly issued.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER">
             <div class="date">June 16, 2026</div>
             <h3>Audit-grade Natural Language Morning Brief renderer deployed</h3>
@@ -4762,7 +4787,7 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-06-16",
+      "last_updated": "2026-06-19",
       "sources": [
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through af9f8718",

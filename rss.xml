@@ -6,8 +6,16 @@
     <atom:link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml" rel="self" type="application/rss+xml" />
     <description>Public changelog for Delta Signal ATLAS-7 MCP, OpenAPI, x402, notification, SPECTRA, and evidence-contract changes.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Design-partner grant runway and expiry contract clarified</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</guid>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</category>
+      <description>The public contract now clarifies that design-partner grant runway should be sized from grant_budget_usd and grant_remaining_usd, that grant_limit is only a compatibility view, that route-priced grant debit is server-side, and that issued design-partner grants expire 30 days after issuance unless separately renewed. Breadcrumb: Improvement Timeline &gt; Design-partner grant runway and expiry contract clarified Track: T+1098m Commit: current changelog update</description>
+    </item>
     <item>
       <title>Audit-grade Natural Language Morning Brief renderer deployed</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</link>
