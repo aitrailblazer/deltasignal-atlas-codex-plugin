@@ -57,7 +57,7 @@ Composite presets are discounted server-enforced workflows. Public Builder prici
 | MCP tool | Builder price | Internal calls |
 | --- | ---: | --- |
 | `deltasignal_morning_brief` | 18 credits / `$0.18` | readiness, daily_changes, risk_distribution, top_stressed(limit=10), alpha_opportunities(limit=10) |
-| `deltasignal_company_report` | 30 credits / `$0.30` | readiness, company_fundamentals(ticker), alpha_signals(ticker), peer_ranking(ticker), covenant_stress(ticker) |
+| `deltasignal_company_report` | 60 credits / `$0.60` standard display; `$0.45-$0.75` route-declared range | readiness, company_fundamentals(ticker), alpha_signals(ticker), peer_ranking(ticker), covenant_stress(ticker), SPECTRA when available |
 | `deltasignal_pressure_board` | 14 credits / `$0.14` | readiness, top_stressed(limit=15), risk_distribution |
 | `deltasignal_alpha_sweep` | 14 credits / `$0.14` | readiness, alpha_opportunities(limit=15), daily_changes |
 | `deltasignal_quick_ticker_check` | 18 credits / `$0.18` | readiness, covenant_stress(ticker), alpha_signals(ticker) |

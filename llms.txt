@@ -32,7 +32,7 @@ SPECTRA generation: SPECTRA reads generated ATLAS-history rows for a ticker, res
 
 Natural Language Briefs are evidence-to-Markdown compiler outputs. They are not chatbot responses, analyst opinions, trade recommendations, or new evidence sources.
 
-Current public hardening checkpoint: `ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING`. Production revision `ca-web-intel-mcp--0000484` serves OpenAPI with 56 paths, live `/v1/pricing`, live `/v1/contract/fields`, structured `invalid_path_scope` for universe-route misuse, HUT issuer-evidence readiness, and a 97.5% `cmd/search-gateway` source coverage checkpoint.
+Current public hardening checkpoint: June 19 public contract audit. Production serves OpenAPI with 48 paths, live `/v1/pricing`, live `/v1/contract/fields`, free MCP `initialize` and `tools/list` discovery, x402 challenges for protected execution, and fresh 215-issuer ATLAS-7 audit status through the MCP audit tool.
 
 Strict ATLAS-7 / SPECTRA rule:
 
@@ -54,7 +54,7 @@ TripCode research continuity lets subscribers turn DeltaSignal article subtitles
 - If current MCP discovery exposes TripCode tools and the user provides `ATLAS-7 TripCode: TF-SUB-...`, call `deltasignal_resolve_article_tripcode` first, then follow returned continuity links. If evidence is missing, say it is missing.
 - If current discovery exposes the required tools and a user asks for the full article thesis map, list article/River nodes first, then call the thesis-map tool with discovered River continuity.
 - If current discovery exposes the required tools and a user asks what changed across the whole River, use the River resolver, River reverse search, claim search, and claim/evidence comparison tools in that order.
-- TripCode/River public availability is discovery-gated. Local/source proof, stale public MCP output, or planned tools are not enough to claim public production availability.
+- TripCode/River tools are currently visible in public MCP discovery, but execution is x402/grant-gated and evidence-dependent. A tool being listed is not enough to promise a successful River answer for a given issuer.
 - Known HUT River readiness caveat: public execution may require `trendforge/v1/resolver/objects/TF-RIVER/TF-RIVER-HUT.json` and `trendforge/v1/resolver/indexes/by_issuer/HUT.json`; if either is unavailable, report missing/unavailable state instead of inventing continuity.
 - TripCode subscriber execution uses the public MCP/x402 surface: discovery is free, tools/call may require grant/free-tier/x402 payment proof, and paid article content or LLM-friendly Markdown must be entitlement-gated.
 - If entitlement is not verified, return metadata, permitted summaries, continuity links, and restricted or missing status. Do not leak full paid content and do not invent unavailable evidence.
@@ -283,7 +283,7 @@ Coinbase x402 / Codex marketplace reviewer framing:
 - Validate discovery before paid execution: MCP tools/list, OpenAPI, Arazzo, and x402 metadata.
 - Validate the lifecycle: install -> discover -> inspect route metadata -> receive HTTP 402 -> settle through Base USDC -> retry with proof -> inspect provenance.
 - Primary public review workflows: readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, daily changes, issuer fundamentals, covenant stress, peer ranking, alpha signals, and SPECTRA field maps.
-- TripCode/River subscriber research is a near-term extension unless live MCP discovery exposes those tools and required River/index blobs are available.
+- TripCode/River subscriber research is discoverable in live MCP, but remains x402/grant-gated and River/index-blob dependent. If required blobs are unavailable, report that gap and fall back to the supported ATLAS-7 issuer workflow.
 
 ## Recommended Agent Behavior
 

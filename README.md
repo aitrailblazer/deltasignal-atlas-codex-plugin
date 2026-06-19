@@ -6,7 +6,7 @@
 [![Discovery Contract](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml/badge.svg)](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml)
 [![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 
-Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies. Latest public checkpoint: `ATLAS-JUN-8-LIVE-READINESS-MCP-EVIDENCE-HARDENING` on Azure revision `ca-web-intel-mcp--0000484`, with OpenAPI 56 paths, live pricing/field-contract discovery, HUT issuer-evidence readiness, and 97.5% `cmd/search-gateway` source coverage.
+Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies. Latest public checkpoint: June 19 public contract audit, with OpenAPI 48 paths, live pricing/field-contract discovery, free MCP `initialize` and `tools/list` discovery, x402 challenges for protected execution, and fresh 215-issuer ATLAS-7 audit status through the MCP audit tool.
 
 Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live Azure service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
 
@@ -41,7 +41,7 @@ Recommended reviewer path:
 
 Marketplace reviewers should validate `extensions.bazaar.routeTemplate=/v1/readiness`, an output example, merchant resources, seller `payTo`, amount/network/asset metadata, and the absence of unsupported Agentic Market first-party verification claims.
 
-TripCode / River subscriber research is a near-term extension. Do not market TripCode tools as public marketplace-ready unless the deployed public MCP endpoint exposes them and the required River / issuer index blobs are available.
+TripCode / River subscriber research is visible in public MCP discovery, but execution is x402/grant-gated and evidence-dependent. Do not promise a successful TripCode/River answer unless the live tool call resolves the required River / issuer index blobs.
 
 ## How Agents Know and Run Workflows
 
@@ -164,7 +164,7 @@ Operator readiness check for the scheduled Azure-native regression audit.
 
 Flow:
 
-1. Call `GET /v1/atlas7/audit/latest` with an internal/pre-authorized key, or call MCP tool `deltasignal_atlas7_audit_status`.
+1. Call MCP tool `deltasignal_atlas7_audit_status` through the paid/grant/internal MCP flow, or call `GET /v1/atlas7/audit/latest` with an internal/pre-authorized key. The REST audit endpoint is not a plain unauthenticated public probe.
 2. Confirm `status=healthy`, `stale=false`, `issuer_count=215`, `failed_count=0`, `historical_failed_count=0`, and `composite_failed_count=0`.
 3. Preserve the artifact prefix and `finished_at_utc` when summarizing.
 
@@ -296,7 +296,7 @@ All tools are read-only, schema-validated, and bounded for agent use.
 
 TripCode tools are MCP-first research-continuity utilities. They are priced to make subscriber article resolution cheap while keeping higher-value synthesis separate.
 
-Public marketplace caveat: TripCode / River tools must be treated as a near-term extension unless live MCP discovery exposes them. The strongest Coinbase / Codex marketplace path today is ATLAS-7 x402 issuer intelligence: readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and issuer drilldowns.
+Public marketplace caveat: TripCode / River tools are discoverable in public MCP, but execution is x402/grant-gated and depends on deployed River / issuer index blobs. The strongest Coinbase / Codex marketplace path today remains ATLAS-7 x402 issuer intelligence: readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and issuer drilldowns.
 
 | MCP tool | Typical price | Purpose |
 | --- | ---: | --- |
@@ -373,7 +373,7 @@ Public REST and payment surfaces:
 
 - `GET /v1/daily-changes/latest` or `GET /mpp/v1/daily-changes/latest` - compact monitoring.
 - `GET /v1/daily-changes/evidence` or `GET /mpp/v1/daily-changes/evidence` - issuer evidence drilldown.
-- `GET /v1/atlas7/audit/latest` - authenticated operator status for the latest 215-issuer Azure regression audit.
+- `GET /v1/atlas7/audit/latest` - authenticated operator REST status for the latest 215-issuer Azure regression audit. Public agents should prefer MCP `deltasignal_atlas7_audit_status` through the paid/grant/internal MCP flow.
 - Future bulk evidence export proposal: small pack $0.15, standard pack $0.30, full daily export $0.75-$1.50.
 
 ## Development Modes

@@ -7,7 +7,7 @@ slug: /quickstart
 version: ATLAS7_NL_DOCS_V1
 status: phase-1
 product: Delta Signal Natural Language Briefs
-last_updated: 2026-05-10
+last_updated: 2026-06-19
 ---
 
 # Delta Signal Natural Language Briefs Quickstart
@@ -16,7 +16,7 @@ last_updated: 2026-05-10
 
 Latest public changelog: [`changelog.html`](./changelog.html).
 
-June 8 live contract checkpoint: production revision `ca-web-intel-mcp--0000484` exposes OpenAPI with 56 paths, `GET /v1/pricing`, `GET /v1/contract/fields`, structured `invalid_path_scope` errors for universe-route path misuse, HUT issuer-evidence readiness, and public x402 challenges for protected issuer routes.
+June 19 live contract checkpoint: production exposes OpenAPI with 48 paths, `GET /v1/pricing`, `GET /v1/contract/fields`, public MCP `initialize` and `tools/list` discovery, and public x402 challenges for protected route and MCP `tools/call` execution.
 
 Delta Signal Natural Language Briefs convert canonical Delta Signal evidence into validated, audit-grade Markdown.
 
@@ -79,7 +79,7 @@ Primary public workflows for review:
 
 ## TripCode Research Continuity Quickstart
 
-Public marketplace caveat: TripCode / River subscriber research is a near-term extension unless the live public MCP endpoint exposes the relevant tools. If discovery does not list the TripCode tools, treat this section as source/local product direction and use the supported ATLAS-7 issuer workflow instead.
+Public marketplace caveat: TripCode / River subscriber research is currently discoverable in public MCP `tools/list`, but execution is x402/grant-gated and evidence-dependent. If a live tool call cannot resolve the required River / issuer index blobs, keep the missing state explicit and use the supported ATLAS-7 issuer workflow instead.
 
 When a DeltaSignal article subtitle includes `ATLAS-7 TripCode: TF-SUB-...`, an MCP-enabled agent can load the research object behind the article instead of relying only on copied prose.
 

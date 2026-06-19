@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v5
-Last updated: 2026-06-18
+Last updated: 2026-06-19
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 19 public contract audit.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
@@ -32,15 +32,15 @@ Primary links
 - LLM changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html
 - Changelog RSS: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
 - Changelog Atom: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
-- OpenAPI 3.1: https://api.aittrailblazer.net/openapi.json
-- MCP endpoint: https://api.aittrailblazer.net/mcp
-- Pricing contract: https://api.aittrailblazer.net/v1/pricing
-- Field contract: https://api.aittrailblazer.net/v1/contract/fields
-- Readiness: https://api.aittrailblazer.net/v1/readiness
-- Grant challenge: https://api.aittrailblazer.net/v1/grant/challenge?wallet=<wallet>
+- OpenAPI 3.1: https://api.aitrailblazer.net/openapi.json
+- MCP endpoint: https://api.aitrailblazer.net/mcp
+- Pricing contract: https://api.aitrailblazer.net/v1/pricing
+- Field contract: https://api.aitrailblazer.net/v1/contract/fields
+- Readiness: https://api.aitrailblazer.net/v1/readiness
+- Grant challenge: https://api.aitrailblazer.net/v1/grant/challenge?wallet=<wallet>
 - Arazzo workflow YAML: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
-- Arazzo workflow JSON: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
-- Public x402 handshake workflow: https://aittrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
+- Arazzo workflow JSON: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
+- Public x402 handshake workflow: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
 
 Read order for agents
 Use this order unless the user asks for a narrower probe:
@@ -68,17 +68,17 @@ Do not start by:
 
 Most recent public verification anchor
 The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
-- OpenAPI was observed at 47 public paths.
+- OpenAPI was observed at 48 public paths.
 - `/v1/pricing` and `/v1/contract/fields` were live public discovery surfaces.
 - Company Report was observed at `cost_usd: 0.6` with a public standard display price of `$0.60` and a live route-declared range of `$0.45-$0.75`.
 - Wallet grants used a signed challenge -> `personal_sign` -> session -> token flow.
-- `/v1/grants/status` was part of the confirmed live public surface for contexts where explicit grant-runway reporting was available.
+- `/v1/grants/status` was part of the confirmed live public surface for contexts where an active grant identity or grant token makes explicit grant-runway reporting available; a plain request without identity may correctly return HTTP 400.
 - Verified budget-grant reporting exposed USD-style runway semantics rather than request-count semantics.
 
 How to think about drift
 - If production now exposes more than this file says, trust production.
 - If source branches or private notes mention fields or routes that production does not expose, do not assume they are live.
-- If `/v1/grants/status` is exposed for the caller, trust its explicit runway fields over older grant wording.
+- If `/v1/grants/status` is exposed for the caller context, trust its explicit runway fields over older grant wording.
 - If pricing prose and `/v1/pricing` disagree, trust `/v1/pricing` and the route-specific challenge.
 - If the contract adds fields, treat the public surface as additive unless a newer contract explicitly marks a breaking change.
 
@@ -182,7 +182,7 @@ Terminal broker contract
 
 Public MCP behavior
 Endpoint:
-POST https://api.aittrailblazer.net/mcp
+POST https://api.aitrailblazer.net/mcp
 
 Expected public discovery behavior
 - JSON-RPC `initialize` and `tools/list` are the correct first MCP probes.
@@ -194,22 +194,22 @@ Expected public discovery behavior
 Internal smoke shape
 Use this only for first-party internal smoke with an authorized key in the operator environment:
 
-curl -sS https://api.aittrailblazer.net/mcp \
+curl -sS https://api.aitrailblazer.net/mcp \
   -H 'content-type: application/json' \
   -H "x-api-key: $MCP_API_KEY" \
   --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"agent-smoke","version":"1.0.0"}}}'
 
-curl -sS https://api.aittrailblazer.net/mcp \
+curl -sS https://api.aitrailblazer.net/mcp \
   -H 'content-type: application/json' \
   -H "x-api-key: $MCP_API_KEY" \
   --data '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
 
 Recommended first reviewer probes
-- `GET https://api.aittrailblazer.net/v1/pricing`
-- `GET https://api.aittrailblazer.net/v1/contract/fields`
-- `GET https://api.aittrailblazer.net/v1/readiness`
-- `POST https://api.aittrailblazer.net/mcp initialize`
-- `POST https://api.aittrailblazer.net/mcp tools/list`
+- `GET https://api.aitrailblazer.net/v1/pricing`
+- `GET https://api.aitrailblazer.net/v1/contract/fields`
+- `GET https://api.aitrailblazer.net/v1/readiness`
+- `POST https://api.aitrailblazer.net/mcp initialize`
+- `POST https://api.aitrailblazer.net/mcp tools/list`
 
 Reviewer checklist
 - MCP `initialize` and `tools/list` work before paid execution.
@@ -236,9 +236,9 @@ Agents must not output:
 - personalized recommendation
 
 TripCode and River availability
-- Treat TripCode / River as discovery-gated from the public MCP perspective.
-- Do not market those tools as publicly callable unless live `tools/list` exposes them and the required artifacts exist.
-- If discovery does not expose them, use the supported ATLAS-7 issuer workflow instead.
+- TripCode / River tools are currently visible in public MCP discovery, but execution is x402/grant-gated and evidence-dependent.
+- Do not promise a successful TripCode/River answer unless the live tool call resolves the required River / issuer index blobs and evidence objects.
+- If the required artifacts are unavailable for a given issuer, keep the missing state explicit and use the supported ATLAS-7 issuer workflow instead.
 
 Review posture
 Review Delta Signal as a public issuer-intelligence evidence surface with:
