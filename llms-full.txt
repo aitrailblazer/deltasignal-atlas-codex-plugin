@@ -68,6 +68,8 @@ Do not start by:
 
 Most recent public verification anchor
 The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
+- Latest public changelog tripcode: `ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE`.
+- Latest referenced live rollout: Azure Container App revision `ca-web-intel-mcp--0000536`.
 - Grant challenge/session/status responses can expose `grant_expires_at` and `grant_expires_in_seconds` for the actual grant window. The existing `expires_at` and `expires_in_seconds` fields on challenge/session responses remain the short signing/session TTL.
 - Active grant runway metadata can list `grant_expires_at` in `grant_runway_authoritative_fields` alongside USD runway fields.
 - Grant-covered Natural Language routes can include `GET /v1/morning-brief/natural`, `GET /v1/top-stressed/natural`, and `GET /v1/covenant-stress/natural` when the active grant contract includes them.
@@ -117,6 +119,12 @@ Grant rules
 - The wallet grant flow is separate from ordinary x402 settlement.
 - If grant issuance fails, expires, or is unavailable, the client should fall back to ordinary x402 instead of blocking the request path.
 - Some first-party or partner flows may also use issued identity headers, but public wallet integrations should implement the signed session flow above.
+
+Grant-covered Natural Language routes
+- Natural Language routes are not automatically free; they are grant-covered only when the caller has a valid signed grant session and the active grant contract includes the exact route.
+- Current grant-eligible Natural Language route examples include `GET /v1/morning-brief/natural`, `GET /v1/top-stressed/natural`, and `GET /v1/covenant-stress/natural`.
+- If a Natural Language route is not grant-eligible for the caller context, expect ordinary x402/payment-required behavior rather than assuming service failure.
+- Preserve the same evidence and non-advice rules for Natural Language output as for structured JSON routes.
 
 Grant sizing and runway rules
 - Do not guess the unit of a grant field unless the live contract states it explicitly.
