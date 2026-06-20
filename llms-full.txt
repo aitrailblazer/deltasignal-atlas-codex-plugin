@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
 Version: llms-full-v5
-Last updated: 2026-06-19
+Last updated: 2026-06-20
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 19 public contract audit.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 20 grant-expiry and Natural Language grant-coverage rollout.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
@@ -68,6 +68,10 @@ Do not start by:
 
 Most recent public verification anchor
 The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
+- Grant challenge/session/status responses can expose `grant_expires_at` and `grant_expires_in_seconds` for the actual grant window. The existing `expires_at` and `expires_in_seconds` fields on challenge/session responses remain the short signing/session TTL.
+- Active grant runway metadata can list `grant_expires_at` in `grant_runway_authoritative_fields` alongside USD runway fields.
+- Grant-covered Natural Language routes can include `GET /v1/morning-brief/natural`, `GET /v1/top-stressed/natural`, and `GET /v1/covenant-stress/natural` when the active grant contract includes them.
+- Exact route matching resolves `/v1/covenant-stress/natural` before templated ticker routes such as `/v1/covenant-stress/{ticker}`.
 - OpenAPI was observed at 48 public paths.
 - `/v1/pricing` and `/v1/contract/fields` were live public discovery surfaces.
 - Company Report was observed at `cost_usd: 0.6` with a public standard display price of `$0.60` and a live route-declared range of `$0.45-$0.75`.
@@ -117,6 +121,8 @@ Grant rules
 Grant sizing and runway rules
 - Do not guess the unit of a grant field unless the live contract states it explicitly.
 - If production exposes `grant_limit_type=budget_usd`, `grant_limit_unit=usd`, `grant_budget_usd`, or `grant_remaining_usd`, treat the grant as a USD-denominated budget grant.
+- If production exposes `grant_expires_at` or `grant_expires_in_seconds`, treat those as the grant-window expiry fields. Do not confuse them with the short challenge/session `expires_at` or `expires_in_seconds` fields.
+- If production exposes `grant_runway_authoritative_fields`, use that list to decide which grant fields are authoritative for runway display.
 - If production exposes a debit policy such as `grant_debit_policy=route_declared_price`, use that policy rather than legacy "credit" wording.
 - If production exposes `grant_cache_treatment=fresh_and_cached_charge_same_route_quote`, assume fresh and cached covered reads debit the same route quote unless the live contract changes.
 - If public runway fields are absent, treat grant coverage as boolean in public integrations and rely on x402 fallback for exhaustion handling.

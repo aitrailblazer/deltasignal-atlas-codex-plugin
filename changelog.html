@@ -489,14 +489,14 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 19, 2026 - public rollup updated for the design-partner grant runway and expiry contract, Company Report pricing correction, OpenAPI 48-path verification, signed wallet grant-session flow, /v1/grants/status identity requirement, TripCode/River gated evidence wording, audit-grade Natural Language Morning Brief renderer, and public x402 challenge verification</p>
+      <p class="eyebrow">Updated June 20, 2026 - public rollup updated for design-partner grant expiry fields, Natural Language grant coverage, exact /natural route matching, Company Report pricing correction, OpenAPI 48-path verification, signed wallet grant-session flow, /v1/grants/status identity requirement, TripCode/River gated evidence wording, audit-grade Natural Language Morning Brief renderer, and public x402 challenge verification</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>197</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>112</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>195</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>197</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>198</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>113</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>196</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>198</strong><span>breadcrumb chips</span></div>
         <div class="stat"><strong>77</strong><span>visible commit refs</span></div>
         <div class="stat"><strong>105</strong><span>unique source commits</span></div>
       </div>
@@ -519,6 +519,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>198</span>
+              <code>ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</code>
+              <span>Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed</span>
+              <code>T+1106m</code>
+            </div>
             <div class="river-row">
               <span>197</span>
               <code>ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</code>
@@ -2091,6 +2097,25 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE">
+            <div class="date">June 20, 2026</div>
+            <h3>Design-partner grant expiry fields and Natural Language route coverage deployed</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</code>
+              <code>track: T+1106m</code>
+              <code>commit: live rollout ca-web-intel-mcp--0000536</code>
+              <code>bread: Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed</code>
+            </div>
+            <p>Production now exposes the actual grant-window expiry fields separately from the short signing-challenge TTL, and grant-covered Natural Language routes use the same signed-session grant path as structured Delta Signal routes when the active grant contract includes them.</p>
+            <ul>
+              <li><code>GET /v1/grant/challenge</code>, <code>POST /v1/grant/session</code>, and <code>GET /v1/grants/status</code> can expose <code>grant_expires_at</code> and <code>grant_expires_in_seconds</code> for the grant window.</li>
+              <li><code>grant_runway_authoritative_fields</code> now includes <code>grant_expires_at</code> alongside USD runway fields when the caller context has an active budget grant.</li>
+              <li><code>expires_at</code> and <code>expires_in_seconds</code> on challenge/session responses remain the short signing/session TTL fields, not the grant-window expiry.</li>
+              <li>Grant contracts can now cover <code>GET /v1/morning-brief/natural</code>, <code>GET /v1/top-stressed/natural</code>, and <code>GET /v1/covenant-stress/natural</code> through the signed wallet grant-session flow.</li>
+              <li>Exact public route matching now resolves <code>/v1/covenant-stress/natural</code> before templated ticker routes such as <code>/v1/covenant-stress/{ticker}</code>.</li>
+              <li>Plain unsigned wallet headers still do not unlock grants; signed grant-session tokens remain the authorization artifact, and x402 fallback remains the correct path when a grant is unavailable, expired, exhausted, or not route-eligible.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY">
             <div class="date">June 19, 2026</div>
             <h3>Design-partner grant runway and expiry contract clarified</h3>
@@ -4787,8 +4812,9 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-06-19",
+      "last_updated": "2026-06-20",
       "sources": [
+        "Live grant-expiry and Natural Language route coverage rollout from 2026-06-20",
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through af9f8718",
         "Live verification snapshot from 2026-05-27 company-report aggregate rollout",

@@ -7,7 +7,7 @@ slug: /llms
 version: ATLAS7_NL_DOCS_V1
 status: phase-1
 product: Delta Signal Natural Language Briefs
-last_updated: 2026-06-06
+last_updated: 2026-06-20
 ---
 
 # StrategiX Delta Signal Natural Language Briefs
@@ -22,7 +22,7 @@ Full agent handoff brief: https://aitrailblazer.github.io/deltasignal-atlas-code
 
 For changelog tracking, prefer `changelog-llm.html` when available. Use `tripcode` as the stable row key, `bread` as the breadcrumb path, and the ordered tracking river plus `track` minute marker to preserve sequence across human-readable and LLM-readable changelog surfaces.
 
-Latest public rollup tripcode: `ATLAS-JUN-6-SPECTRA-GENERATION-MODEL`. It follows `ATLAS-JUN-6-EDGAR-DAILY-BACKGROUND-FOUNDATION`, `ATLAS-JUN-6-EDGAR-COMPANYFACTS-DAILY-FEED-RESTORE`, `ATLAS-JUN-6-EDGAR-WEEK-20260601-AUDIT-RECONCILIATION`, `ATLAS-JUN-6-ATLAS7-GENERATION-MODEL`, `ATLAS-JUN-6-SPECTRA-GENERATION-MODEL`, `ATLAS-JUN-6-NOTIFICATION-HARDENING-LIVE-VERIFY`, `ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-76P4`, `ATLAS-JUN-6-NOTIFICATION-DIGEST-PRICING-ROLLUP`, `ATLAS-JUN-6-DAILY-ALL-DELTAS-MCP-NOTIFICATION-DIGEST`, and `ATLAS-JUN-6-NOTIFICATION-PRICING-DELIVERY-LADDER`, plus the live notification hardening checkpoint and the EDGAR week audit/reconciliation checkpoint.
+Latest public rollup tripcode: `ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE`. It follows the June 19 grant runway clarification and documents live grant-window expiry fields plus grant-covered Natural Language route eligibility.
 
 StrategiX exposes Delta Signal ATLAS-7 Natural Language Briefs for humans, agents, and developer workflows that need audit-grade Markdown summaries over canonical Delta Signal evidence. The daily EDGAR CompanyFacts background task is the basis of the MCP evidence layer: it waits for SEC companyfacts.zip readiness, mirrors or reconstructs the date in Azure, runs process-changes, and publishes the delta/intelligence/manifests consumed by Morning Brief, daily-change, issuer-report, pressure-board, alpha, and notification tools.
 
@@ -32,7 +32,9 @@ SPECTRA generation: SPECTRA reads generated ATLAS-history rows for a ticker, res
 
 Natural Language Briefs are evidence-to-Markdown compiler outputs. They are not chatbot responses, analyst opinions, trade recommendations, or new evidence sources.
 
-Current public hardening checkpoint: June 19 public contract audit. Production serves OpenAPI with 48 paths, live `/v1/pricing`, live `/v1/contract/fields`, free MCP `initialize` and `tools/list` discovery, x402 challenges for protected execution, and fresh 215-issuer ATLAS-7 audit status through the MCP audit tool.
+Current public hardening checkpoint: June 20 grant-expiry and Natural Language grant-coverage rollout. Production serves OpenAPI with 48 paths, live `/v1/pricing`, live `/v1/contract/fields`, free MCP `initialize` and `tools/list` discovery, x402 challenges for protected execution, fresh 215-issuer ATLAS-7 audit status through the MCP audit tool, and grant-window expiry fields (`grant_expires_at`, `grant_expires_in_seconds`) when caller context has an active grant.
+
+Grant Natural Language coverage: signed wallet grant-session tokens can authorize grant-covered Natural Language routes when the active grant contract includes them, including `GET /v1/morning-brief/natural`, `GET /v1/top-stressed/natural`, and `GET /v1/covenant-stress/natural`. Plain unsigned wallet headers still do not unlock grants. `expires_at` / `expires_in_seconds` on challenge/session responses are the short signing/session TTL; `grant_expires_at` / `grant_expires_in_seconds` are the grant-window fields.
 
 Strict ATLAS-7 / SPECTRA rule:
 

@@ -6,7 +6,7 @@
 [![Discovery Contract](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml/badge.svg)](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml)
 [![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 
-Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies. Latest public checkpoint: June 19 public contract audit, with OpenAPI 48 paths, live pricing/field-contract discovery, free MCP `initialize` and `tools/list` discovery, x402 challenges for protected execution, and fresh 215-issuer ATLAS-7 audit status through the MCP audit tool.
+Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies. Latest public checkpoint: June 20 grant-expiry and Natural Language grant-coverage rollout, with OpenAPI 48 paths, live pricing/field-contract discovery, free MCP `initialize` and `tools/list` discovery, x402 challenges for protected execution, grant-window expiry fields for active grants, and fresh 215-issuer ATLAS-7 audit status through the MCP audit tool.
 
 Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live Azure service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
 
@@ -140,7 +140,7 @@ Flow:
 2. Do not send an internal key.
 3. Expect HTTP `200` with the public DeltaSignal tool inventory.
 4. Call a real tool such as `deltasignal_readiness` through the x402-capable client.
-5. Expect either an attached grant to allow execution or HTTP `402 Payment Required`. Supported grant paths are identity headers (`X-Codex-User`, `X-Codex-Session`, `X-User-ID`) or the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`.
+5. Expect either an attached grant to allow execution or HTTP `402 Payment Required`. Supported grant paths are identity headers (`X-Codex-User`, `X-Codex-Session`, `X-User-ID`) or the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Active grant contexts may expose `grant_expires_at` / `grant_expires_in_seconds` for the grant window; challenge/session `expires_at` fields remain short TTLs.
 6. If challenged, let the x402-capable client pay and retry the same `tools/call` request.
 
 Use this to confirm public MCP discovery and paid tool execution before real use.

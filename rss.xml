@@ -6,8 +6,16 @@
     <atom:link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml" rel="self" type="application/rss+xml" />
     <description>Public changelog for Delta Signal ATLAS-7 MCP, OpenAPI, x402, notification, SPECTRA, and evidence-contract changes.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Design-partner grant expiry fields and Natural Language route coverage deployed</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</category>
+      <description>Production now exposes grant_expires_at and grant_expires_in_seconds for the actual grant window, separates those fields from the short challenge/session TTL, and allows grant-covered Natural Language routes through the signed wallet grant-session flow when included in the active grant contract. Breadcrumb: Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed Track: T+1106m Commit: live rollout ca-web-intel-mcp--0000536</description>
+    </item>
     <item>
       <title>Design-partner grant runway and expiry contract clarified</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</link>
@@ -239,14 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2</category>
       <description>DeltaSignal helper and handler guard coverage now verifies small helper branches, native health readiness reporting, and fail-closed HTTP behavior; the verified cmd/search-gateway package coverage checkpoint reached 75.2%. Breadcrumb: Improvement Timeline &gt; DeltaSignal handler and helper guard coverage checkpoint Track: T+874m Commit: b9029faa</description>
-    </item>
-    <item>
-      <title>Consolidated June 6 public rollup to 74.9 percent coverage</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-74P9</category>
-      <description>The public changelog now includes the full June 6 public-safe update set through worker-proxy and DeltaSignal store-constructor coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 74.9%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 74.9 percent coverage Track: T+866m Commit: current changelog update</description>
     </item>
   </channel>
 </rss>
