@@ -71,7 +71,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 - **Changelog feeds** - [`rss.xml`](./rss.xml) and [`atom.xml`](./atom.xml)
 - **Claude Code project guide** - [`CLAUDE.md`](./CLAUDE.md)
 - **MCP endpoint** - `https://api.aitrailblazer.net/mcp`
-- **Main website** - `https://aitrailblazer.com`
+- **Main website** - `https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/`
 - **StrategiX Visual MCP** - `https://aitrailblazer.github.io/strategix-visual-mcp/`
 - **Delta Signal Substack** - `https://substack.com/@deltasignalai`
 - **OpenAPI 3.1** - `https://api.aitrailblazer.net/openapi.json`
