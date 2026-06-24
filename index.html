@@ -329,7 +329,8 @@
       backdrop-filter: blur(10px);
     }
 
-    .hero-map img {
+    .hero-map img,
+    .hero-map svg {
       position: relative;
       z-index: 1;
       display: block;
@@ -1759,7 +1760,106 @@
             </nav>
           </div>
           <figure class="hero-map">
-            <img src="./assets/atlas7-evidence-pipeline-hero.jpg?v=20260606-hero-visible" alt="ATLAS-7 Evidence Pipeline diagram showing SEC/XBRL evidence, ATLAS-7 intelligence, agent-ready outputs, access rails, and validation layers" loading="eager" decoding="async">
+            <svg viewBox="0 0 960 540" role="img" aria-labelledby="hero-atlas-title hero-atlas-desc">
+              <title id="hero-atlas-title">ATLAS-7 evidence pipeline overview</title>
+              <desc id="hero-atlas-desc">A first-load visualization showing evidence ingestion, ATLAS-7 and SPECTRA normalization, access rails, and bounded outputs.</desc>
+              <defs>
+                <linearGradient id="hero-atlas-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1a120d" />
+                  <stop offset="52%" stop-color="#130c0b" />
+                  <stop offset="100%" stop-color="#12070d" />
+                </linearGradient>
+                <linearGradient id="hero-atlas-line" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#ff9a1a" />
+                  <stop offset="50%" stop-color="#ff5b2d" />
+                  <stop offset="100%" stop-color="#e30055" />
+                </linearGradient>
+                <filter id="hero-atlas-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="10" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <rect x="0" y="0" width="960" height="540" fill="url(#hero-atlas-bg)" />
+              <g opacity="0.2">
+                <path d="M0 70 H960" stroke="#ff9a1a" stroke-width="1" />
+                <path d="M0 140 H960" stroke="#ff9a1a" stroke-width="1" />
+                <path d="M0 210 H960" stroke="#ff9a1a" stroke-width="1" />
+                <path d="M0 280 H960" stroke="#ff9a1a" stroke-width="1" />
+                <path d="M0 350 H960" stroke="#ff9a1a" stroke-width="1" />
+                <path d="M0 420 H960" stroke="#ff9a1a" stroke-width="1" />
+                <path d="M0 490 H960" stroke="#ff9a1a" stroke-width="1" />
+                <path d="M96 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M192 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M288 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M384 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M480 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M576 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M672 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M768 0 V540" stroke="#e30055" stroke-width="1" />
+                <path d="M864 0 V540" stroke="#e30055" stroke-width="1" />
+              </g>
+
+              <text x="42" y="56" fill="#ffe8d9" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="700">ATLAS-7 Workflow Map</text>
+              <text x="42" y="87" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="17">Visible on first load: evidence in, bounded workflow out.</text>
+
+              <rect x="42" y="124" width="184" height="232" rx="22" fill="rgba(255,154,26,0.11)" stroke="rgba(255,154,26,0.38)" />
+              <rect x="270" y="124" width="184" height="232" rx="22" fill="rgba(255,91,45,0.11)" stroke="rgba(255,91,45,0.38)" />
+              <rect x="498" y="124" width="184" height="232" rx="22" fill="rgba(227,0,85,0.12)" stroke="rgba(227,0,85,0.38)" />
+              <rect x="726" y="124" width="192" height="232" rx="22" fill="rgba(248,208,140,0.08)" stroke="rgba(248,208,140,0.34)" />
+
+              <text x="62" y="160" fill="#ffd1a3" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700">Evidence</text>
+              <text x="62" y="195" fill="#fff6ee" font-family="'Inter', sans-serif" font-size="16" font-weight="700">EDGAR + CompanyFacts</text>
+              <text x="62" y="220" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">Nightly readiness,</text>
+              <text x="62" y="241" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">mirror / reconstruction,</text>
+              <text x="62" y="262" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">process-changes.</text>
+              <text x="62" y="304" fill="#ffb85c" font-family="'Inter', sans-serif" font-size="13" font-weight="700">Ground truth only</text>
+
+              <text x="290" y="160" fill="#ffd7c7" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700">ATLAS-7</text>
+              <text x="290" y="195" fill="#fff6ee" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Normalize issuer evidence</text>
+              <text x="290" y="220" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">History, stress, peers,</text>
+              <text x="290" y="241" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">alpha, readiness, caveats.</text>
+              <text x="290" y="283" fill="#fff6ee" font-family="'Inter', sans-serif" font-size="16" font-weight="700">SPECTRA field maps</text>
+              <text x="290" y="308" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">Typed values, source date,</text>
+              <text x="290" y="329" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">guardrails, soft-miss states.</text>
+
+              <text x="518" y="160" fill="#ffbfd0" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700">Access Rails</text>
+              <text x="518" y="195" fill="#fff6ee" font-family="'Inter', sans-serif" font-size="16" font-weight="700">MCP composites</text>
+              <text x="518" y="220" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">Morning Brief, Company Report,</text>
+              <text x="518" y="241" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">Pressure Board.</text>
+              <text x="518" y="283" fill="#fff6ee" font-family="'Inter', sans-serif" font-size="16" font-weight="700">REST + OpenAPI + Arazzo</text>
+              <text x="518" y="308" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">Exact routes, scenario plans,</text>
+              <text x="518" y="329" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">grant and x402 execution.</text>
+
+              <text x="746" y="160" fill="#ffe8bf" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700">Outputs</text>
+              <text x="746" y="195" fill="#fff6ee" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Evidence JSON</text>
+              <text x="746" y="220" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">Source dates, hashes,</text>
+              <text x="746" y="241" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">quality flags, metadata.</text>
+              <text x="746" y="283" fill="#fff6ee" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Readable briefs</text>
+              <text x="746" y="308" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">Compiled from returned evidence,</text>
+              <text x="746" y="329" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">not invented prose.</text>
+
+              <path d="M226 238 C242 238, 248 238, 270 238" stroke="url(#hero-atlas-line)" stroke-width="8" fill="none" filter="url(#hero-atlas-shadow)" />
+              <path d="M454 238 C470 238, 476 238, 498 238" stroke="url(#hero-atlas-line)" stroke-width="8" fill="none" filter="url(#hero-atlas-shadow)" />
+              <path d="M682 238 C698 238, 704 238, 726 238" stroke="url(#hero-atlas-line)" stroke-width="8" fill="none" filter="url(#hero-atlas-shadow)" />
+              <polygon points="258,231 276,238 258,245" fill="#ff5b2d" />
+              <polygon points="486,231 504,238 486,245" fill="#e30055" />
+              <polygon points="714,231 732,238 714,245" fill="#f8d08c" />
+
+              <rect x="42" y="395" width="876" height="92" rx="20" fill="rgba(5,5,5,0.48)" stroke="rgba(255,154,26,0.18)" />
+              <text x="66" y="430" fill="#ffe4cf" font-family="'Inter', sans-serif" font-size="15" font-weight="700">Best first path:</text>
+              <text x="184" y="430" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="15">discover</text>
+              <text x="248" y="430" fill="#ff9a1a" font-family="'Inter', sans-serif" font-size="16">→</text>
+              <text x="268" y="430" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="15">inspect pricing + field contract</text>
+              <text x="520" y="430" fill="#ff9a1a" font-family="'Inter', sans-serif" font-size="16">→</text>
+              <text x="540" y="430" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="15">verify readiness</text>
+              <text x="662" y="430" fill="#ff9a1a" font-family="'Inter', sans-serif" font-size="16">→</text>
+              <text x="682" y="430" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="15">run one bounded workflow</text>
+              <text x="66" y="458" fill="#cbb9ae" font-family="'Inter', sans-serif" font-size="14">This panel replaces the missing local hero JPG so the architecture is visible immediately.</text>
+            </svg>
             <figcaption>ATLAS-7 generation path: SEC/XBRL evidence -> deterministic intelligence engine -> MCP, REST, Arazzo, signed grant sessions, and x402 outputs.</figcaption>
           </figure>
         </div>
