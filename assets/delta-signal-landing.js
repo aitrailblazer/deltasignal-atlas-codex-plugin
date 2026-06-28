@@ -2,7 +2,8 @@ import { LitElement, css, html } from "https://cdn.jsdelivr.net/npm/lit@3/+esm";
 
 const rawRoutes = [
   ["morning_brief", "$0.18", "Default daily market scan through the Go relay: readiness, latest meaningful deltas, risk distribution, top stressed issuers, and alpha opportunities."],
-  ["company_report", "$0.30", "Full issuer report across fundamentals, alpha signals, peer ranking, covenant stress, and SPECTRA when available."],
+  ["company_report", "$0.60", "Full issuer report across fundamentals, alpha signals, peer ranking, covenant stress, and SPECTRA when available."],
+  ["synthetic_etf_pressure", "contract", "DeltaSignal Synthetic ETF pressure views for AI, innovation, AI power infrastructure, and semiconductor baskets when exposed by live route metadata."],
   ["pressure_board", "$0.14", "Risk board with top stressed issuers and risk distribution."],
   ["alpha_sweep", "$0.14", "Opportunity screen with alpha opportunities and daily changes."],
   ["quick_ticker_check", "$0.18", "Fast issuer triage using covenant stress and alpha signals."],

@@ -1,15 +1,16 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v5
-Last updated: 2026-06-20
+Version: llms-full-v6
+Last updated: 2026-06-28
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 20 grant-expiry and Natural Language grant-coverage rollout.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 28 DeltaSignal Synthetic ETF public-access wording update.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
 
 One-screen summary
-- Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies.
+- Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies and DeltaSignal Synthetic ETF baskets.
 - The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions.
+- Public-facing basket language uses DeltaSignal Synthetic ETF names. Do not expose third-party basket-provider branding in public summaries unless the live route explicitly returns it as source metadata.
 - The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
 - Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough.
@@ -68,7 +69,11 @@ Do not start by:
 
 Most recent public verification anchor
 The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
-- Latest public changelog tripcode: `ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE`.
+- Latest public changelog tripcode: `ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING`.
+- Public copy now describes the basket layer as DeltaSignal Synthetic ETF evidence. Source-provider names, source files, weights, hashes, and lineage are internal evidence metadata unless a live route explicitly exposes them.
+- DeltaSignal Synthetic ETF lanes include Synthetic AI10 ETF, Synthetic Innovators 100 ETF, Synthetic AI Power Infrastructure ETF, and Synthetic Semiconductor 25 ETF.
+- The four evidence levels are Level 1 issuer truth, Level 2 equity behavior, Level 3 basket pressure, and Level 4 derivative dislocation where a linked venue product exists. Missing levels remain explicit and must not be inferred.
+- Previous public changelog tripcode: `ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE`.
 - Latest referenced live rollout: Azure Container App revision `ca-web-intel-mcp--0000536`.
 - Grant challenge/session/status responses can expose `grant_expires_at` and `grant_expires_in_seconds` for the actual grant window. The existing `expires_at` and `expires_in_seconds` fields on challenge/session responses remain the short signing/session TTL.
 - Active grant runway metadata can list `grant_expires_at` in `grant_runway_authoritative_fields` alongside USD runway fields.
@@ -91,7 +96,16 @@ How to think about drift
 What Delta Signal is
 - Delta Signal ATLAS-7 is an issuer-intelligence and evidence-rendering layer grounded in SEC / XBRL filings and Delta Signal processing.
 - It produces structured market and issuer workflows such as Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and Daily Change evidence views.
+- It also exposes DeltaSignal Synthetic ETF evidence layers that turn issuer truth, equity behavior, basket pressure, and derivative dislocation into bounded public-company pressure views.
 - It returns evidence, metadata, caveats, and billing context designed for machine use.
+
+DeltaSignal Synthetic ETF public naming
+- Use `DeltaSignal Synthetic AI10 ETF` for the concentrated AI-leader basket.
+- Use `DeltaSignal Synthetic Innovators 100 ETF` for the broad innovation and technology basket.
+- Use `DeltaSignal Synthetic AI Power Infrastructure ETF` for power, grid, data-center, compute-infrastructure, and miner-to-HPC transition evidence.
+- Use `DeltaSignal Synthetic Semiconductor 25 ETF` for semiconductor supply-chain pressure.
+- These are synthetic evidence baskets inside Delta Signal. They are not personalized recommendations and should not be described as customer-managed exchange-traded funds.
+- Public summaries should say `DeltaSignal Synthetic ETF` instead of third-party basket-provider names. If a route returns provider/source lineage, preserve it as source metadata rather than marketing copy.
 
 What Delta Signal is not
 - Not a broker.

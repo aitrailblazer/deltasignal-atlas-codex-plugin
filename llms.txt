@@ -7,7 +7,7 @@ slug: /llms
 version: ATLAS7_NL_DOCS_V1
 status: phase-1
 product: Delta Signal Natural Language Briefs
-last_updated: 2026-06-20
+last_updated: 2026-06-28
 ---
 
 # StrategiX Delta Signal Natural Language Briefs
@@ -22,11 +22,13 @@ Full agent handoff brief: https://aitrailblazer.github.io/deltasignal-atlas-code
 
 For changelog tracking, prefer `changelog-llm.html` when available. Use `tripcode` as the stable row key, `bread` as the breadcrumb path, and the ordered tracking river plus `track` minute marker to preserve sequence across human-readable and LLM-readable changelog surfaces.
 
-Latest public rollup tripcode: `ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE`. It follows the June 19 grant runway clarification and documents live grant-window expiry fields plus grant-covered Natural Language route eligibility.
+Latest public rollup tripcode: `ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING`. It updates public basket language to use DeltaSignal Synthetic ETF names and keeps source-provider lineage as route/source metadata rather than marketing copy.
 
 StrategiX exposes Delta Signal ATLAS-7 Natural Language Briefs for humans, agents, and developer workflows that need audit-grade Markdown summaries over canonical Delta Signal evidence. The daily EDGAR CompanyFacts background task is the basis of the MCP evidence layer: it waits for SEC companyfacts.zip readiness, mirrors or reconstructs the date in Azure, runs process-changes, and publishes the delta/intelligence/manifests consumed by Morning Brief, daily-change, issuer-report, pressure-board, alpha, and notification tools.
 
-ATLAS-7 generation: EDGAR CompanyFacts and daily-feed/full-index inputs are mirrored or reconstructed, process-changes creates dated deltas and intelligence artifacts, and the crypto-exposed issuer universe is matched by ticker/CIK into generated issuer rows, history rows, and MCP-ready evidence envelopes.
+ATLAS-7 generation: EDGAR CompanyFacts and daily-feed/full-index inputs are mirrored or reconstructed, process-changes creates dated deltas and intelligence artifacts, and the crypto-exposed issuer universe is matched by ticker/CIK into generated issuer rows, history rows, Synthetic ETF basket layers, and MCP-ready evidence envelopes.
+
+DeltaSignal Synthetic ETF naming: public copy should use DeltaSignal Synthetic AI10 ETF, DeltaSignal Synthetic Innovators 100 ETF, DeltaSignal Synthetic AI Power Infrastructure ETF, and DeltaSignal Synthetic Semiconductor 25 ETF. Treat them as synthetic evidence baskets, not personalized recommendations or customer-managed exchange-traded funds. If source lineage appears in a live route, preserve it as metadata rather than public marketing language.
 
 SPECTRA generation: SPECTRA reads generated ATLAS-history rows for a ticker, resolves source date and issuer identity, normalizes numeric/date/boolean fields, derives pressure and range labels, and returns a field-map contract with provenance, caveats, and structured soft-miss behavior.
 
