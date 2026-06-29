@@ -52,6 +52,8 @@ Current public hardening checkpoint: June 28 MCP help and Synthetic ETF / Coinba
 
 Current live route matrix: `GET /v1/readiness`, `GET /v1/pricing`, `GET /v1/contract/fields`, `GET /openapi.json`, MCP `initialize`, and MCP `tools/list` are live discovery/contract surfaces. Synthetic and Coinbase market routes observed live on 2026-06-28 include `/v1/synthetic-etf/pressure-state/{product}` ($0.12), `/v1/market-atlas/perps/constituents/{product}` ($0.08), `/v1/market-atlas/perps/factors/{product}` ($0.10), `/v1/market-atlas/perps/calculation-history` ($0.20), `/v1/market-atlas/perps/rankings` ($0.12), and `/v1/market-spectra-field-map/{product}` ($0.08). These are evidence/read surfaces, not trade execution or personalized advice. AS/GLFT execution-control material remains `PROPOSED` unless future OpenAPI, pricing, readiness, and MCP discovery surfaces expose it as live.
 
+Pricing boundary: Delta Signal pricing applies only to Delta Signal-derived evidence workflows and analytical outputs. It does not provide access to, redistribute, or resell any upstream market-data feed.
+
 Grant Natural Language coverage: signed wallet grant-session tokens can authorize grant-covered Natural Language routes when the active grant contract includes them, including `GET /v1/morning-brief/natural`, `GET /v1/top-stressed/natural`, and `GET /v1/covenant-stress/natural`. Plain unsigned wallet headers still do not unlock grants. `expires_at` / `expires_in_seconds` on challenge/session responses are the short signing/session TTL; `grant_expires_at` / `grant_expires_in_seconds` are the grant-window fields.
 
 Strict ATLAS-7 / SPECTRA rule:

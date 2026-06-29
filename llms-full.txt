@@ -191,6 +191,7 @@ Grant sizing and runway rules
 
 Pricing and billing rules
 - `/v1/pricing` is the authoritative public route-pricing surface.
+- Delta Signal pricing applies only to Delta Signal-derived evidence workflows and analytical outputs. It does not provide access to, redistribute, or resell any upstream market-data feed.
 - Company Report is not the older `$0.30` assumption. The corrected public display contract is `$0.60` standard with a live route-declared range of `$0.45-$0.75`.
 - Grant-covered, API-key-bypassed, or discovery responses may show `cost_usd: 0`.
 - Public grant or x402 billing envelopes may also expose fields such as `billing_mode`, `payment_status`, `billing_status`, `quoted_cost_usd`, `actual_cost_usd`, `credits_charged`, and request-scoped billing metadata.
