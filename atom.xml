@@ -5,8 +5,16 @@
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html" />
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml" rel="self" type="application/atom+xml" />
   <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog</id>
-  <updated>2026-06-20T00:00:00.000Z</updated>
+  <updated>2026-06-28T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
+  <entry>
+    <title>Public no-key DeltaSignal MCP help deployed</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-28-MCP-HELP-LIVE" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-28-MCP-HELP-LIVE</id>
+    <updated>2026-06-28T00:00:00.000Z</updated>
+    <category term="ATLAS-JUN-28-MCP-HELP-LIVE" />
+    <summary>Production MCP now exposes deltasignal_help as a public no-key free discovery-tier tool. It returns schema_id=deltasignal.help.v1, payment_status=free_discovery, example prompts, next-best discovery calls, evidence boundaries, non-advice framing, and topic-specific Synthetic ETF / Coinbase perp / SPECTRA orientation. Breadcrumb: Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed Track: T+1122m Commit: live rollout ca-web-intel-mcp--0000563</summary>
+  </entry>
   <entry>
     <title>Design-partner grant expiry fields and Natural Language route coverage deployed</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE" />
@@ -238,13 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2" />
     <summary>The public changelog now includes the full June 6 public-safe update set through DeltaSignal helper branches and HTTP handler guard coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 75.2%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.2 percent coverage Track: T+882m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>DeltaSignal handler and helper guard coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-DELTASIGNAL-HANDLER-GUARD-COVERAGE-75P2" />
-    <summary>DeltaSignal helper and handler guard coverage now verifies small helper branches, native health readiness reporting, and fail-closed HTTP behavior; the verified cmd/search-gateway package coverage checkpoint reached 75.2%. Breadcrumb: Improvement Timeline &gt; DeltaSignal handler and helper guard coverage checkpoint Track: T+874m Commit: b9029faa</summary>
   </entry>
 </feed>

@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v6
+Version: llms-full-v7
 Last updated: 2026-06-28
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 28 DeltaSignal Synthetic ETF public-access wording update.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 28 public DeltaSignal MCP help deployment.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
@@ -13,6 +13,7 @@ One-screen summary
 - Public-facing basket language uses DeltaSignal Synthetic ETF names. Do not expose third-party basket-provider branding in public summaries unless the live route explicitly returns it as source metadata.
 - The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
+- Natural-language MCP help is live through the free discovery-tier `deltasignal_help` tool. Use it before paid workflows when a user asks "help", "what can I ask?", "help perps", or "show examples".
 - Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough.
 - `/v1/pricing` is the public pricing source of truth. `/v1/contract/fields` is the parser-field source of truth.
 - For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from `cost_usd`.
@@ -24,6 +25,17 @@ When two sources disagree, trust them in this order:
 3. This file.
 4. `changelog-llm.html` for dated drift history.
 5. The landing page or older notes.
+
+Deployment-state labels
+Use these labels whenever summarizing Delta Signal routes, specs, or research notes:
+- `LIVE`: confirmed by current production response, `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, or MCP discovery.
+- `PLANNED`: documented design or route intent that is not confirmed by live discovery.
+- `PROPOSED`: architecture or product research that has no live route contract yet.
+- `LOCAL_ONLY`: implemented or tested in a source tree but not yet verified in Azure production.
+- `DEPRECATED`: replaced by a newer live contract or name.
+- `SECOND_LEVEL_LINK_NOT_FETCHED`: mentioned as a drilldown link but not inspected in the current evidence packet.
+
+Agent rule: never promote `PLANNED`, `PROPOSED`, `LOCAL_ONLY`, or `SECOND_LEVEL_LINK_NOT_FETCHED` material to `LIVE` unless live discovery confirms it.
 
 Primary links
 - Product page: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/
@@ -69,12 +81,38 @@ Do not start by:
 
 Most recent public verification anchor
 The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
-- Latest public changelog tripcode: `ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING`.
+- Live verification date: `2026-06-28`.
+- Latest deployed MCP/backend revision checked for this brief: `ca-web-intel-mcp--0000563`.
+- Live public no-key MCP discovery exposes `deltasignal_help` as a free discovery-tier tool.
+- Live public no-key `deltasignal_help` returns `schema_id=deltasignal.help.v1`, `payment_status=free_discovery`, `billing_status=not_charged`, `x402_required=false`, common example prompts, next-best discovery calls, and the non-advice boundary.
+- `deltasignal_help` with `topic=perps` returns a structured `perp_market_boundary`: public reads are read-only over recorded/materialized rows, no live Coinbase fetch happens during help reads, raw ladders are not exposed, default normalization is a rolling 30-day available-bucket window, and `MARKET_ALPHA` is market-state telemetry rather than issuer alpha or a trade signal.
+- Live MCP discovery exposes `deltasignal_synthetic_etf_pressure_state`.
+- Live Synthetic AI10 alias contract: `Delta Signal Synthetic AI 10 ETF`, `Market Vector`, `marketvector`, `marketvector_ai10`, and `DeltaSignal Synthetic AI10 ETF` all resolve to canonical product `AI-PERP-INTX`.
+- Synthetic AI10 lineage is preserved in `identity_lineage`: `canonical_name=Delta Signal Synthetic AI 10 ETF`, `former_name=Market Vector`, `methodology_changed=false`, `method_version=synthetic_ai10_etf_v1`.
+- Synthetic AI10 responses preserve top-level `source_date`, `observed_bucket_utc`, `computed_at_utc`, `route_uri`, `evidence_hash`, `billing_status`, `payment_status`, `quoted_cost_usd`, `caveats`, `quality_flags`, `identity_lineage`, and `disclosures`.
+- Live OpenAPI/pricing expose Coinbase perp/SPECTRA read routes: `/v1/market-atlas/perps/constituents/{product}`, `/v1/market-atlas/perps/factors/{product}`, `/v1/market-atlas/perps/calculation-history`, `/v1/market-atlas/perps/rankings`, `/v1/market-spectra-field-map/{product}`, and `/v1/synthetic-etf/pressure-state/{product}`.
+- Coinbase perp/SPECTRA is additive market intelligence derived from persisted market-factor rows. It is not canonical SEC/XBRL issuer truth, not live exchange execution, and not personalized trading advice.
+- Latest public changelog tripcode: `ATLAS-JUN-28-MCP-HELP-LIVE`.
+- Previous public changelog tripcode: `ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING`.
 - Public copy now describes the basket layer as DeltaSignal Synthetic ETF evidence. Source-provider names, source files, weights, hashes, and lineage are internal evidence metadata unless a live route explicitly exposes them.
 - DeltaSignal Synthetic ETF lanes include Synthetic AI10 ETF, Synthetic Innovators 100 ETF, Synthetic AI Power Infrastructure ETF, and Synthetic Semiconductor 25 ETF.
 - The four evidence levels are Level 1 issuer truth, Level 2 equity behavior, Level 3 basket pressure, and Level 4 derivative dislocation where a linked venue product exists. Missing levels remain explicit and must not be inferred.
+- Current live route matrix from the 2026-06-28 verification pass:
+  - `GET /v1/readiness`: `LIVE`; protected by x402/API-key flow; returns readiness, source date, caveats, quality flags, and billing envelope when authorized; unauthenticated HTTP 402 is expected and is not a service failure.
+  - `GET /v1/pricing`: `LIVE`; authoritative public route-pricing source; use it instead of stale prose or copied examples.
+  - `GET /v1/contract/fields`: `LIVE`; authoritative parser and field-contract source for agents and clients.
+  - `GET /openapi.json`: `LIVE`; authoritative REST path and schema discovery surface.
+  - `POST /mcp initialize` and `POST /mcp tools/list`: `LIVE`; authoritative MCP discovery surfaces for tool availability.
+  - `POST /mcp tools/call name=deltasignal_help`: `LIVE`; free discovery-tier Natural Language help surface; no x402 payment required; use `topic=overview`, `tools`, `pricing`, `fields`, `grants`, `x402`, `morning_brief`, `company_report`, `perps`, `spectra`, or `examples`.
+  - `GET /v1/synthetic-etf/pressure-state/{product}`: `LIVE`; route-declared price observed at `$0.12`; returns Synthetic ETF pressure-state evidence with lineage/disclosures; not a regulated ETF offer, personalized advice, or exchange-native truth claim.
+  - `GET /v1/market-atlas/perps/constituents/{product}`: `LIVE`; route-declared price observed at `$0.08`; returns product constituent/readiness evidence; does not claim Coinbase owns or verifies the synthetic basket.
+  - `GET /v1/market-atlas/perps/factors/{product}`: `LIVE`; route-declared price observed at `$0.10`; returns persisted market-factor evidence; not SEC/XBRL issuer truth.
+  - `GET /v1/market-atlas/perps/calculation-history`: `LIVE`; route-declared price observed at `$0.20`; returns persisted calculation-history evidence; do not infer full-depth historical order-book reconstruction before durable recording began.
+  - `GET /v1/market-atlas/perps/rankings`: `LIVE`; route-declared price observed at `$0.12`; returns market-factor ranking evidence; not an execution directive.
+  - `GET /v1/market-spectra-field-map/{product}`: `LIVE`; route-declared price observed at `$0.08`; returns SPECTRA field-map/derived-label evidence over persisted rows; visual labels are presentation-only unless backed by raw factors.
+  - AS/GLFT execution-control research: `PROPOSED`; treat it as a risk-envelope design concept unless a future live route, pricing entry, OpenAPI schema, and MCP tool confirm deployment.
 - Previous public changelog tripcode: `ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE`.
-- Latest referenced live rollout: Azure Container App revision `ca-web-intel-mcp--0000536`.
+- Earlier referenced Natural Language grant rollout: Azure Container App revision `ca-web-intel-mcp--0000536`.
 - Grant challenge/session/status responses can expose `grant_expires_at` and `grant_expires_in_seconds` for the actual grant window. The existing `expires_at` and `expires_in_seconds` fields on challenge/session responses remain the short signing/session TTL.
 - Active grant runway metadata can list `grant_expires_at` in `grant_runway_authoritative_fields` alongside USD runway fields.
 - Grant-covered Natural Language routes can include `GET /v1/morning-brief/natural`, `GET /v1/top-stressed/natural`, and `GET /v1/covenant-stress/natural` when the active grant contract includes them.
@@ -89,6 +127,8 @@ The current GitHub Pages surface is aligned to the latest public verification no
 How to think about drift
 - If production now exposes more than this file says, trust production.
 - If source branches or private notes mention fields or routes that production does not expose, do not assume they are live.
+- If a spec says "planned" but `openapi.json`, `/v1/pricing`, and MCP discovery now expose the route, treat the live route as authoritative and preserve any caveats returned by the response.
+- If a source note says "not deployed in this pass," re-check live discovery before repeating that claim; deployment state can change after the note was written.
 - If `/v1/grants/status` is exposed for the caller context, trust its explicit runway fields over older grant wording.
 - If pricing prose and `/v1/pricing` disagree, trust `/v1/pricing` and the route-specific challenge.
 - If the contract adds fields, treat the public surface as additive unless a newer contract explicitly marks a breaking change.
@@ -105,7 +145,7 @@ DeltaSignal Synthetic ETF public naming
 - Use `DeltaSignal Synthetic AI Power Infrastructure ETF` for power, grid, data-center, compute-infrastructure, and miner-to-HPC transition evidence.
 - Use `DeltaSignal Synthetic Semiconductor 25 ETF` for semiconductor supply-chain pressure.
 - These are synthetic evidence baskets inside Delta Signal. They are not personalized recommendations and should not be described as customer-managed exchange-traded funds.
-- Public summaries should say `DeltaSignal Synthetic ETF` instead of third-party basket-provider names. If a route returns provider/source lineage, preserve it as source metadata rather than marketing copy.
+- Public summaries should say `DeltaSignal Synthetic ETF` instead of third-party basket-provider names. Legacy names may appear only as bounded lineage metadata such as `identity_lineage.former_name`; preserve that metadata without treating it as a methodology change or marketing copy.
 
 What Delta Signal is not
 - Not a broker.
@@ -214,10 +254,51 @@ POST https://api.aitrailblazer.net/mcp
 
 Expected public discovery behavior
 - JSON-RPC `initialize` and `tools/list` are the correct first MCP probes.
+- JSON-RPC `tools/call` with `name=deltasignal_help` is the safest Natural Language help probe and is free discovery-tier.
 - Public MCP discovery should work before paid execution.
 - Public `tools/call` may return x402 payment-required behavior.
+- Public `deltasignal_help` should not return x402 payment-required behavior; if it does, treat that as a help-surface regression and re-check live deployment.
 - Free-tier or grant-covered execution may use an active grant context or the wallet grant-session flow.
 - Public users should not request internal API keys.
+
+Public Natural Language help examples
+Use this no-key MCP call when the user asks for help, examples, or "what can I ask?":
+
+curl -sS https://api.aitrailblazer.net/mcp \
+  -H 'content-type: application/json' \
+  --data '{"jsonrpc":"2.0","id":"help","method":"tools/call","params":{"name":"deltasignal_help","arguments":{"topic":"overview","detail":"short","include_examples":true}}}'
+
+Use this no-key MCP call when the user asks about Synthetic ETF, Coinbase perp, or SPECTRA pressure-state workflows:
+
+curl -sS https://api.aitrailblazer.net/mcp \
+  -H 'content-type: application/json' \
+  --data '{"jsonrpc":"2.0","id":"help-perps","method":"tools/call","params":{"name":"deltasignal_help","arguments":{"topic":"perps","detail":"short","include_examples":true}}}'
+
+Expected help response fields
+- `schema_id=deltasignal.help.v1`
+- `status=ok`
+- `payment_status=free_discovery`
+- `billing_status=not_charged`
+- `x402_required=false`
+- `common_commands`
+- `featured_workflows`
+- `example_prompts`
+- `next_best_calls`
+- `evidence_boundary`
+- `non_advice_boundary=true`
+- `perp_market_boundary` when `topic=perps`
+
+Example prompts surfaced by help
+- "Generate today's Delta Signal Morning Brief."
+- "Create a Delta Signal Company Report for RIOT."
+- "Quick check MSTR with source dates, caveats, and quality flags."
+- "Show the latest Delta Signal Pressure Board."
+- "Run an Alpha Sweep across crypto-exposed issuers."
+- "Show daily changes and changed companies from the latest Delta Signal run."
+- "Generate a SPECTRA field map for COIN."
+- "Show the Synthetic AI10 pressure state and preserve identity lineage and disclosures."
+- "List available Delta Signal MCP tools and schemas."
+- "Show current Delta Signal pricing and explain grant-session requirements."
 
 Internal smoke shape
 Use this only for first-party internal smoke with an authorized key in the operator environment:

@@ -1709,14 +1709,14 @@
       <div class="hero-inner">
         <div class="hero-topline">
           <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
-          <p class="eyebrow">MCP live • EDGAR verified • SPECTRA • Synthetic ETF layer • signed grants • x402</p>
+          <p class="eyebrow">MCP live • NL help live • EDGAR verified • SPECTRA • Synthetic ETF layer • signed grants • x402</p>
         </div>
         <div class="hero-layout">
           <div class="hero-copy">
             <h1><span>Delta Signal</span><span>ATLAS-7</span></h1>
             <p class="tagline">
               Filing-backed issuer intelligence for crypto-exposed public companies and DeltaSignal Synthetic ETF baskets.
-              <span>Daily EDGAR CompanyFacts -> ATLAS-7 evidence rows -> Synthetic ETF pressure layers -> SPECTRA field maps -> REST, MCP, Arazzo, signed grant-session access, and x402 workflows.</span>
+              <span>Daily EDGAR CompanyFacts -> ATLAS-7 evidence rows -> Synthetic ETF pressure layers -> SPECTRA field maps -> REST, MCP, Arazzo, free Natural Language help, signed grant-session access, and x402 workflows.</span>
             </p>
             <div class="quick-facts" aria-label="Delta Signal ATLAS-7 essentials">
               <div class="quick-fact"><strong>What it is</strong><span>Evidence pipeline for 215 crypto-exposed issuers grounded in SEC/XBRL facts.</span></div>
@@ -1724,13 +1724,15 @@
               <div class="quick-fact"><strong>How it updates</strong><span>Nightly EDGAR waits for CompanyFacts, mirrors or reconstructs the date, then runs process-changes.</span></div>
               <div class="quick-fact"><strong>What ATLAS-7 adds</strong><span>Daily changes, issuer history, stress, peers, alpha, readiness, caveats, and MCP manifests.</span></div>
               <div class="quick-fact"><strong>How to integrate</strong><span>Discover through OpenAPI, /v1/pricing, and /v1/contract/fields; use signed grant sessions or x402 for execution.</span></div>
-              <div class="quick-fact"><strong>Best first probes</strong><span>Read llms-full.txt, then check pricing, field contract, readiness, and MCP discovery before any paid or grant-covered call.</span></div>
+              <div class="quick-fact"><strong>Natural help</strong><span>Ask MCP for <code>deltasignal_help</code> when you need examples, tool orientation, pricing, grants, Synthetic ETF, or SPECTRA guidance.</span></div>
+              <div class="quick-fact"><strong>Best first probes</strong><span>Read llms-full.txt, then check pricing, field contract, readiness, MCP discovery, and help before any paid or grant-covered call.</span></div>
             </div>
             <nav class="toc-panel" aria-label="Page contents">
               <strong>Jump to</strong>
               <div class="toc-links">
                 <a href="#generation-model">Generation</a>
                 <a href="#synthetic-etf">Synthetic ETFs</a>
+                <a href="#mcp-help">MCP Help</a>
                 <a href="#first-test">Start here</a>
                 <a href="#what-you-get">Outputs</a>
                 <a href="#integration-hardening">Hardening</a>
@@ -1750,7 +1752,7 @@
               <a href="./changelog-llm.html" class="btn btn-secondary">LLM Changelog</a>
               <a href="#pricing" class="btn btn-secondary">View pricing</a>
             </div>
-            <p class="meter">MCP live • EDGAR daily background task verified • Synthetic ETF evidence layer documented • /v1/pricing + /v1/contract/fields live • signed grant-session flow live • x402 enabled</p>
+            <p class="meter">MCP live • free deltasignal_help live • EDGAR daily background task verified • Synthetic ETF evidence layer documented • /v1/pricing + /v1/contract/fields live • signed grant-session flow live • x402 enabled</p>
             <p class="hero-image-credit">Hero visual: SEC/XBRL evidence base -> ATLAS-7 intelligence engine -> agent-ready outputs.</p>
             <nav class="agent-links" aria-label="Agent files">
               <a href="./CLAUDE.md">CLAUDE.md</a>
@@ -1901,11 +1903,32 @@
       </div>
     </section>
 
+    <section class="section" id="mcp-help">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Ask MCP for help first</h2>
+          <p><code>deltasignal_help</code> is a live, public, no-key, free discovery-tier MCP tool. Use it when a user or agent does not yet know the exact workflow name, input schema, pricing surface, grant behavior, or Synthetic ETF / SPECTRA boundary.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><strong>Natural Language front door</strong><span>Ask "help", "what can I ask?", "help perps", "show examples", "help pricing", or "list workflows" before paid execution.</span></div>
+          <div class="feature"><strong>Free discovery envelope</strong><span>The live response returns <code>schema_id=deltasignal.help.v1</code>, <code>payment_status=free_discovery</code>, <code>billing_status=not_charged</code>, and <code>x402_required=false</code>.</span></div>
+          <div class="feature"><strong>Example prompts</strong><span>Help includes copy-ready prompts for Morning Brief, Company Report, Quick Ticker Check, Pressure Board, Alpha Sweep, Daily Changes, SPECTRA, Synthetic AI10, MCP discovery, pricing, and grants.</span></div>
+          <div class="feature"><strong>Perp boundary</strong><span><code>topic=perps</code> explains that Coinbase perp and SPECTRA public reads are over recorded/materialized factor rows, not live exchange fetches, raw order-book ladders, or trade instructions.</span></div>
+        </div>
+        <div class="code" style="margin-top:1.5rem;">curl -sS https://api.aitrailblazer.net/mcp \
+  -H 'content-type: application/json' \
+  --data '{"jsonrpc":"2.0","id":"help","method":"tools/call","params":{"name":"deltasignal_help","arguments":{"topic":"overview","detail":"short","include_examples":true}}}'</div>
+        <div class="code" style="margin-top:1rem;">curl -sS https://api.aitrailblazer.net/mcp \
+  -H 'content-type: application/json' \
+  --data '{"jsonrpc":"2.0","id":"help-perps","method":"tools/call","params":{"name":"deltasignal_help","arguments":{"topic":"perps","detail":"short","include_examples":true}}}'</div>
+      </div>
+    </section>
+
     <section class="section alt" id="first-test">
       <div class="wrap">
         <div class="section-head">
-          <h2>Start here: readiness -> Morning Brief -> metadata</h2>
-          <p>New users should get one successful evidence response before choosing REST, MCP, Arazzo, Glama, or x402 details.</p>
+          <h2>Start here: help -> readiness -> Morning Brief -> metadata</h2>
+          <p>New users should get one successful help or evidence response before choosing REST, MCP, Arazzo, Glama, or x402 details.</p>
         </div>
         <div class="steps">
           <div class="step">
@@ -1916,18 +1939,24 @@
           </div>
           <div class="step">
             <div class="step-number">Step 2</div>
+            <h3>Ask MCP for help</h3>
+            <p>Call <code>deltasignal_help</code> through MCP when you need examples, available workflow orientation, pricing/grant guidance, or Synthetic ETF / SPECTRA boundaries before a paid route.</p>
+            <p><a href="#mcp-help">Copy the no-key MCP help command</a></p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3</div>
             <h3>Check system readiness</h3>
             <p>Use readiness through x402, an active grant, or a payment proof to confirm the active data slice, service health, and payment state. Grant paths include issued identity headers such as <code>X-Codex-User</code> and the wallet grant-session flow: <code>GET /v1/grant/challenge</code>, sign the returned message, <code>POST /v1/grant/session</code>, then attach <code>X-DeltaSignal-Grant-Token</code>. A plain unauthenticated request may correctly return HTTP 402.</p>
             <p><a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">GET /v1/readiness</a></p>
           </div>
           <div class="step">
-            <div class="step-number">Step 3</div>
+            <div class="step-number">Step 4</div>
             <h3>Run a bounded scan</h3>
             <p>Start with a composite or Natural Language route: Morning Brief, Top-Stressed Brief, Pressure Board, or Alpha Sweep.</p>
             <p>Starter prompt: Give me a Delta Signal morning brief.</p>
           </div>
           <div class="step">
-            <div class="step-number">Step 4</div>
+            <div class="step-number">Step 5</div>
             <h3>Inspect evidence metadata</h3>
             <p>Check source dates, caveats, quality flags, evidence hashes, renderer status, and non-advice disclaimers before using the result.</p>
             <p><a href="./quickstart.md">Read response metadata guide</a></p>
@@ -2141,6 +2170,7 @@
               <h3>1. Discover</h3>
               <p>The agent sees the service contract through public metadata and tool discovery.</p>
               <div class="workflow-list">
+                <span>@DeltaSignal deltasignal_help</span>
                 <span>MCP tools/list</span>
                 <span>/openapi.json</span>
                 <span>/arazzo YAML + JSON</span>
@@ -2183,7 +2213,7 @@
         <div class="workflow-strata" aria-label="Workflow layers">
           <div class="workflow-stratum">
             <strong>Access layer</strong>
-            <span>publicMcpX402Handshake proves free public tool discovery and the paid tools/call challenge. internalMcpToolSmoke stays for first-party validation.</span>
+            <span><code>deltasignal_help</code> gives no-key Natural Language orientation. publicMcpX402Handshake proves free public tool discovery and the paid tools/call challenge. internalMcpToolSmoke stays for first-party validation.</span>
           </div>
           <div class="workflow-stratum">
             <strong>Analytical REST layer</strong>
@@ -2199,6 +2229,7 @@
           <p>These are the machine-readable scenarios agents can inspect before choosing a tool or route sequence.</p>
         </div>
         <div class="tool-grid">
+          <div class="tool"><strong>deltasignal_help</strong><span>Free public MCP discovery tool for examples, available workflows, pricing/grant orientation, Synthetic ETF pressure-state guidance, SPECTRA boundaries, and safe next commands.</span></div>
           <div class="tool"><strong>publicMcpX402Handshake</strong><span>POST /mcp allows free tools/list discovery, then returns 402 on unpaid tools/call so x402-capable public clients can pay and retry.</span></div>
           <div class="tool"><strong>internalMcpToolSmoke</strong><span>First-party keyed validation on the same /mcp endpoint. Not public install guidance.</span></div>
           <div class="tool"><strong>atlas7AuditStatusCheck</strong><span>Operator workflow for the Azure-native 215-row audit status: freshness, artifact prefix, current failures, historical failures, and composite failures.</span></div>
@@ -2675,8 +2706,8 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           </div>
           <div class="step">
             <div class="step-number">First Run</div>
-            <h3>Discover, then execute</h3>
-            <p>Start with MCP <code>tools/list</code>, check readiness, run one bounded composite, then inspect source dates, caveats, quality flags, payment metadata, and non-advice boundaries.</p>
+            <h3>Ask help, discover, then execute</h3>
+            <p>Start with MCP <code>deltasignal_help</code>, then <code>tools/list</code>, check readiness, run one bounded composite, then inspect source dates, caveats, quality flags, payment metadata, and non-advice boundaries.</p>
           </div>
           <div class="step">
             <div class="step-number">Boundary</div>
@@ -2689,6 +2720,9 @@ npx @coinbase/payments-mcp install --client claude-code
 claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.net/mcp
 
 # First prompt:
+# Ask Delta Signal MCP for help and show example prompts.
+#
+# Or:
 # Give me a Delta Signal morning brief, then show source_date,
 # route_uri, cost_usd, caveats, and non-advice boundary.</div>
       </div>

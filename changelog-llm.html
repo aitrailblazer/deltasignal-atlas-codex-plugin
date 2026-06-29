@@ -51,8 +51,8 @@
         <div><strong>114</strong><span>timeline entries</span></div>
         <div><strong>197</strong><span>unique tripcodes</span></div>
         <div><strong>199</strong><span>breadcrumb chips</span></div>
-        <div><strong>77</strong><span>visible commit references</span></div>
-        <div><strong>105</strong><span>unique source commits</span></div>
+        <div><strong>78</strong><span>visible commit references</span></div>
+        <div><strong>106</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
@@ -70,6 +70,21 @@
         </ol>
       </div>
     </section>
+    <section id="current-live-state-override">
+      <h2>Current Live-State Override</h2>
+      <div class="notice">
+        <p><strong>2026-06-28 live verification:</strong> current production discovery now confirms public no-key <code>deltasignal_help</code>, the Synthetic AI10 MCP route, and the Coinbase perp/SPECTRA read surfaces. Treat current production responses, <code>openapi.json</code>, <code>/v1/pricing</code>, <code>/v1/contract/fields</code>, and MCP discovery as authoritative when they conflict with older planned, proposed, or local-only notes.</p>
+        <ul>
+          <li><code>deltasignal_help</code> is live as a free discovery-tier MCP tool. It returns <code>schema_id=deltasignal.help.v1</code>, <code>payment_status=free_discovery</code>, common example prompts, next-best discovery calls, evidence boundaries, and non-advice framing.</li>
+          <li><code>deltasignal_help</code> with <code>topic=perps</code> exposes the persisted-row boundary for Coinbase perp/SPECTRA reads: no live exchange fetch, no raw ladder exposure, rolling 30-day normalization, and <code>MARKET_ALPHA</code> as market-state telemetry rather than issuer alpha.</li>
+          <li><code>deltasignal_synthetic_etf_pressure_state</code> is live in MCP discovery for the canonical <code>Delta Signal Synthetic AI 10 ETF</code> lane.</li>
+          <li>Legacy aliases including <code>Market Vector</code>, <code>marketvector</code>, and <code>marketvector_ai10</code> resolve through identity lineage without a methodology change.</li>
+          <li>Live REST discovery includes Synthetic ETF pressure state plus Coinbase perp constituents, factors, calculation history, rankings, and SPECTRA field-map read routes.</li>
+          <li>These routes are evidence/read surfaces only. They are not SEC/XBRL issuer truth, live exchange execution, personalized trading advice, or regulated ETF marketing.</li>
+          <li>Use the current route/status matrix in <a href="./llms-full.txt">llms-full.txt</a> for pricing, parser, auth/payment, evidence-boundary, and deployment-state checks.</li>
+        </ul>
+      </div>
+    </section>
     <section id="tracking-river">
       <h2>Tracking River</h2>
       <p>The river is the ordered stream of tracking chips extracted from the human changelog. It is the primary synchronization surface for LLMs.</p>
@@ -77,6 +92,7 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>200</td><td><code>ATLAS-JUN-28-MCP-HELP-LIVE</code></td><td>Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed</td><td><code>T+1122m</code></td><td>live rollout ca-web-intel-mcp--0000563</td></tr>
           <tr><td>199</td><td><code>ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING</code></td><td>Improvement Timeline &gt; DeltaSignal Synthetic ETF public wording and accessibility update</td><td><code>T+1114m</code></td><td>public docs update</td></tr>
           <tr><td>198</td><td><code>ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</code></td><td>Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed</td><td><code>T+1106m</code></td><td>live rollout ca-web-intel-mcp--0000536</td></tr>
           <tr><td>197</td><td><code>ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</code></td><td>Improvement Timeline &gt; Design-partner grant runway and expiry contract clarified</td><td><code>T+1098m</code></td><td>current changelog update</td></tr>
@@ -2727,16 +2743,23 @@
 {
   "artifact": "deltasignal_atlas7_changelog_llm",
   "version": "changelog-llm-v1",
-  "last_updated": "2026-06-20",
+  "last_updated": "2026-06-28",
   "stats": {
-    "tracked_changes": 198,
-    "timeline_entries": 113,
-    "unique_tripcodes": 196,
-    "breadcrumb_chips": 198,
-    "visible_commit_references": 77,
-    "unique_source_commits": 105
+    "tracked_changes": 199,
+    "timeline_entries": 114,
+    "unique_tripcodes": 197,
+    "breadcrumb_chips": 199,
+    "visible_commit_references": 78,
+    "unique_source_commits": 106
   },
   "tracking_river": [
+    {
+      "tripcode": "ATLAS-JUN-28-MCP-HELP-LIVE",
+      "track": "T+1122m",
+      "commit": "live rollout ca-web-intel-mcp--0000563",
+      "bread": "Improvement Timeline > Public no-key DeltaSignal MCP help deployed",
+      "river_index": 200
+    },
     {
       "tripcode": "ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE",
       "track": "T+1106m",
@@ -4011,6 +4034,21 @@
   ],
   "timeline_entries": [
     {
+      "river_index": 200,
+      "date": "June 28, 2026",
+      "title": "Public no-key DeltaSignal MCP help deployed",
+      "tripcode": "ATLAS-JUN-28-MCP-HELP-LIVE",
+      "track": "T+1122m",
+      "bread": "Improvement Timeline > Public no-key DeltaSignal MCP help deployed",
+      "commit": "live rollout ca-web-intel-mcp--0000563",
+      "summary": "Production MCP now exposes deltasignal_help as a public no-key free discovery-tier tool. It returns schema_id=deltasignal.help.v1, payment_status=free_discovery, example prompts, next-best discovery calls, evidence boundaries, non-advice framing, and topic-specific Synthetic ETF / Coinbase perp / SPECTRA orientation.",
+      "bullets": [
+        "Public no-key MCP tools/call with name=deltasignal_help succeeds without x402 payment and returns billing_status=not_charged and x402_required=false.",
+        "topic=perps exposes the persisted-row boundary for Coinbase perp and SPECTRA reads: no live exchange fetch, no raw ladder exposure, rolling 30-day normalization, and MARKET_ALPHA as market-state telemetry rather than issuer alpha.",
+        "Help includes copy-ready prompts for Morning Brief, Company Report, Quick Ticker Check, Pressure Board, Alpha Sweep, Daily Changes, SPECTRA, Synthetic AI10, MCP discovery, pricing, and grants."
+      ]
+    },
+    {
       "river_index": 198,
       "date": "June 20, 2026",
       "title": "Design-partner grant expiry fields and Natural Language route coverage deployed",
@@ -4020,12 +4058,12 @@
       "commit": "live rollout ca-web-intel-mcp--0000536",
       "summary": "Production now exposes grant_expires_at and grant_expires_in_seconds for the actual grant window, separates those fields from the short challenge/session TTL, and allows grant-covered Natural Language routes through the signed wallet grant-session flow when included in the active grant contract.",
       "bullets": [
-              "GET /v1/grant/challenge, POST /v1/grant/session, and GET /v1/grants/status can expose grant_expires_at and grant_expires_in_seconds.",
-              "grant_runway_authoritative_fields now includes grant_expires_at alongside USD runway fields when the caller context has an active budget grant.",
-              "expires_at and expires_in_seconds on challenge/session responses remain signing/session TTL fields, not the grant-window expiry.",
-              "Grant contracts can now cover GET /v1/morning-brief/natural, GET /v1/top-stressed/natural, and GET /v1/covenant-stress/natural.",
-              "Exact route matching resolves /v1/covenant-stress/natural before templated ticker routes such as /v1/covenant-stress/{ticker}.",
-              "Plain unsigned wallet headers remain invalid grant proof; signed grant-session tokens and x402 fallback remain the public authorization boundary."
+        "GET /v1/grant/challenge, POST /v1/grant/session, and GET /v1/grants/status can expose grant_expires_at and grant_expires_in_seconds.",
+        "grant_runway_authoritative_fields now includes grant_expires_at alongside USD runway fields when the caller context has an active budget grant.",
+        "expires_at and expires_in_seconds on challenge/session responses remain signing/session TTL fields, not the grant-window expiry.",
+        "Grant contracts can now cover GET /v1/morning-brief/natural, GET /v1/top-stressed/natural, and GET /v1/covenant-stress/natural.",
+        "Exact route matching resolves /v1/covenant-stress/natural before templated ticker routes such as /v1/covenant-stress/{ticker}.",
+        "Plain unsigned wallet headers remain invalid grant proof; signed grant-session tokens and x402 fallback remain the public authorization boundary."
       ]
     },
     {
@@ -4038,12 +4076,12 @@
       "commit": "current changelog update",
       "summary": "The public contract now clarifies that design-partner grant runway should be sized from grant_budget_usd and grant_remaining_usd, that grant_limit is only a compatibility view, that route-priced grant debit is server-side, and that issued design-partner grants expire 30 days after issuance unless separately renewed.",
       "bullets": [
-              "Budget-grant sizing uses grant_budget_usd and grant_remaining_usd as authoritative USD runway fields.",
-              "grant_limit and grant_credit_equivalent_* remain compatibility fields and must not be treated as raw USD or request count.",
-              "Grant-covered calls debit server-side by route-declared price; clients should read server runway instead of reconstructing decrement math from local call logs.",
-              "Fresh and cached covered reads should not be assumed to debit differently unless the live contract changes.",
-              "The design-partner grant is separate from client-side x402 monthly caps; x402 spend starts only when the grant is unavailable, expired, or exhausted.",
-              "Design-partner grants expire 30 days after issuance unless a separate renewal or replenishment is explicitly issued."
+        "Budget-grant sizing uses grant_budget_usd and grant_remaining_usd as authoritative USD runway fields.",
+        "grant_limit and grant_credit_equivalent_* remain compatibility fields and must not be treated as raw USD or request count.",
+        "Grant-covered calls debit server-side by route-declared price; clients should read server runway instead of reconstructing decrement math from local call logs.",
+        "Fresh and cached covered reads should not be assumed to debit differently unless the live contract changes.",
+        "The design-partner grant is separate from client-side x402 monthly caps; x402 spend starts only when the grant is unavailable, expired, or exhausted.",
+        "Design-partner grants expire 30 days after issuance unless a separate renewal or replenishment is explicitly issued."
       ]
     },
     {
@@ -5834,8 +5872,8 @@
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
-<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-20">
-  <stats tracked_changes="198" timeline_entries="113" unique_tripcodes="196" breadcrumb_chips="198" visible_commit_references="77" unique_source_commits="105" />
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-28">
+  <stats tracked_changes="199" timeline_entries="114" unique_tripcodes="197" breadcrumb_chips="199" visible_commit_references="78" unique_source_commits="106" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -5844,6 +5882,7 @@
     <instruction>Preserve the non-advice evidence boundary.</instruction>
   </instructions>
   <entries>
+    <entry river_index="200" tripcode="ATLAS-JUN-28-MCP-HELP-LIVE" track="T+1122m" bread="Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed" commit="live rollout ca-web-intel-mcp--0000563"><date>June 28, 2026</date><title>Public no-key DeltaSignal MCP help deployed</title></entry>
     <entry river_index="199" tripcode="ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING" track="T+1114m" bread="Improvement Timeline &gt; DeltaSignal Synthetic ETF public wording and accessibility update" commit="public docs update"><date>June 28, 2026</date><title>DeltaSignal Synthetic ETF public wording and accessibility update</title></entry>
     <entry river_index="198" tripcode="ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE" track="T+1106m" bread="Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed" commit="live rollout ca-web-intel-mcp--0000536"><date>June 20, 2026</date><title>Design-partner grant expiry fields and Natural Language route coverage deployed</title></entry>
     <entry river_index="197" tripcode="ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY" track="T+1098m" bread="Improvement Timeline &gt; Design-partner grant runway and expiry contract clarified" commit="current changelog update"><date>June 19, 2026</date><title>Design-partner grant runway and expiry contract clarified</title></entry>
