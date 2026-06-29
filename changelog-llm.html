@@ -78,7 +78,7 @@
           <li><code>deltasignal_help</code> is live as a free discovery-tier MCP tool. It returns <code>schema_id=deltasignal.help.v1</code>, <code>payment_status=free_discovery</code>, common example prompts, next-best discovery calls, evidence boundaries, and non-advice framing.</li>
           <li><code>deltasignal_help</code> with <code>topic=perps</code> exposes the persisted-row boundary for Coinbase perp/SPECTRA reads: no live exchange fetch, no raw ladder exposure, rolling 30-day normalization, and <code>MARKET_ALPHA</code> as market-state telemetry rather than issuer alpha.</li>
           <li><code>deltasignal_synthetic_etf_pressure_state</code> is live in MCP discovery for the canonical <code>Delta Signal Synthetic AI 10 ETF</code> lane.</li>
-          <li>Legacy aliases including <code>Market Vector</code>, <code>marketvector</code>, and <code>marketvector_ai10</code> resolve through identity lineage without a methodology change.</li>
+          <li>Public Synthetic AI10 calls use the canonical <code>Delta Signal Synthetic AI 10 ETF</code> lane and preserve identity lineage without a methodology change.</li>
           <li>Live REST discovery includes Synthetic ETF pressure state plus Coinbase perp constituents, factors, calculation history, rankings, and SPECTRA field-map read routes.</li>
           <li>These routes are evidence/read surfaces only. They are not SEC/XBRL issuer truth, live exchange execution, personalized trading advice, or regulated ETF marketing.</li>
           <li>Use the current route/status matrix in <a href="./llms-full.txt">llms-full.txt</a> for pricing, parser, auth/payment, evidence-boundary, and deployment-state checks.</li>

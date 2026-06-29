@@ -87,8 +87,8 @@ The current GitHub Pages surface is aligned to the latest public verification no
 - Live public no-key `deltasignal_help` returns `schema_id=deltasignal.help.v1`, `payment_status=free_discovery`, `billing_status=not_charged`, `x402_required=false`, common example prompts, next-best discovery calls, and the non-advice boundary.
 - `deltasignal_help` with `topic=perps` returns a structured `perp_market_boundary`: public reads are read-only over recorded/materialized rows, no live Coinbase fetch happens during help reads, raw ladders are not exposed, default normalization is a rolling 30-day available-bucket window, and `MARKET_ALPHA` is market-state telemetry rather than issuer alpha or a trade signal.
 - Live MCP discovery exposes `deltasignal_synthetic_etf_pressure_state`.
-- Live Synthetic AI10 alias contract: `Delta Signal Synthetic AI 10 ETF`, `Market Vector`, `marketvector`, `marketvector_ai10`, and `DeltaSignal Synthetic AI10 ETF` all resolve to canonical product `AI-PERP-INTX`.
-- Synthetic AI10 lineage is preserved in `identity_lineage`: `canonical_name=Delta Signal Synthetic AI 10 ETF`, `former_name=Market Vector`, `methodology_changed=false`, `method_version=synthetic_ai10_etf_v1`.
+- Live Synthetic AI10 contract: public calls should use `Delta Signal Synthetic AI 10 ETF` or `DeltaSignal Synthetic AI10 ETF` for canonical product `AI-PERP-INTX`.
+- Synthetic AI10 lineage is preserved in `identity_lineage`: `canonical_name=Delta Signal Synthetic AI 10 ETF`, `methodology_changed=false`, `method_version=synthetic_ai10_etf_v1`.
 - Synthetic AI10 responses preserve top-level `source_date`, `observed_bucket_utc`, `computed_at_utc`, `route_uri`, `evidence_hash`, `billing_status`, `payment_status`, `quoted_cost_usd`, `caveats`, `quality_flags`, `identity_lineage`, and `disclosures`.
 - Live OpenAPI/pricing expose Coinbase perp/SPECTRA read routes: `/v1/market-atlas/perps/constituents/{product}`, `/v1/market-atlas/perps/factors/{product}`, `/v1/market-atlas/perps/calculation-history`, `/v1/market-atlas/perps/rankings`, `/v1/market-spectra-field-map/{product}`, and `/v1/synthetic-etf/pressure-state/{product}`.
 - Coinbase perp/SPECTRA is additive market intelligence derived from persisted market-factor rows. It is not canonical SEC/XBRL issuer truth, not live exchange execution, and not personalized trading advice.
@@ -96,7 +96,7 @@ The current GitHub Pages surface is aligned to the latest public verification no
 - Previous public changelog tripcode: `ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING`.
 - Public copy now describes the basket layer as DeltaSignal Synthetic ETF evidence. Source-provider names, source files, weights, hashes, and lineage are internal evidence metadata unless a live route explicitly exposes them.
 - DeltaSignal Synthetic ETF lanes include Synthetic AI10 ETF, Synthetic Innovators 100 ETF, Synthetic AI Power Infrastructure ETF, and Synthetic Semiconductor 25 ETF.
-- The four evidence levels are Level 1 issuer truth, Level 2 equity behavior, Level 3 basket pressure, and Level 4 derivative dislocation where a linked venue product exists. Missing levels remain explicit and must not be inferred.
+- The four evidence levels are Level 1 issuer truth, Level 2 public-market behavior, Level 3 basket pressure, and Level 4 derivative dislocation where a linked venue product exists. Missing levels remain explicit and must not be inferred.
 - Current live route matrix from the 2026-06-28 verification pass:
   - `GET /v1/readiness`: `LIVE`; protected by x402/API-key flow; returns readiness, source date, caveats, quality flags, and billing envelope when authorized; unauthenticated HTTP 402 is expected and is not a service failure.
   - `GET /v1/pricing`: `LIVE`; authoritative public route-pricing source; use it instead of stale prose or copied examples.
@@ -136,7 +136,7 @@ How to think about drift
 What Delta Signal is
 - Delta Signal ATLAS-7 is an issuer-intelligence and evidence-rendering layer grounded in SEC / XBRL filings and Delta Signal processing.
 - It produces structured market and issuer workflows such as Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and Daily Change evidence views.
-- It also exposes DeltaSignal Synthetic ETF evidence layers that turn issuer truth, equity behavior, basket pressure, and derivative dislocation into bounded public-company pressure views.
+- It also exposes DeltaSignal Synthetic ETF evidence layers that turn issuer truth, public-market behavior, basket pressure, and derivative dislocation into bounded public-company pressure views.
 - It returns evidence, metadata, caveats, and billing context designed for machine use.
 
 DeltaSignal Synthetic ETF public naming
@@ -145,7 +145,7 @@ DeltaSignal Synthetic ETF public naming
 - Use `DeltaSignal Synthetic AI Power Infrastructure ETF` for power, grid, data-center, compute-infrastructure, and miner-to-HPC transition evidence.
 - Use `DeltaSignal Synthetic Semiconductor 25 ETF` for semiconductor supply-chain pressure.
 - These are synthetic evidence baskets inside Delta Signal. They are not personalized recommendations and should not be described as customer-managed exchange-traded funds.
-- Public summaries should say `DeltaSignal Synthetic ETF` instead of third-party basket-provider names. Legacy names may appear only as bounded lineage metadata such as `identity_lineage.former_name`; preserve that metadata without treating it as a methodology change or marketing copy.
+- Public summaries should say `DeltaSignal Synthetic ETF` instead of third-party basket-provider names. Preserve returned lineage metadata without treating it as a methodology change or marketing copy.
 
 What Delta Signal is not
 - Not a broker.
