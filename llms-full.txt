@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v7
-Last updated: 2026-06-28
+Version: llms-full-v8
+Last updated: 2026-07-01
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 28 public DeltaSignal MCP help deployment.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 28 public DeltaSignal MCP help deployment and July 1 Synthetic AI10 help/audit-routing update.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
@@ -14,6 +14,7 @@ One-screen summary
 - The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
 - Natural-language MCP help is live through the free discovery-tier `deltasignal_help` tool. Use it before paid workflows when a user asks "help", "what can I ask?", "help perps", or "show examples".
+- AI10-specific discovery starts with `deltasignal_help`, especially `help groups` and `help synthetic ai10`.
 - Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough.
 - `/v1/pricing` is the public pricing source of truth. `/v1/contract/fields` is the parser-field source of truth.
 - For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from `cost_usd`.
@@ -205,7 +206,52 @@ Primary public workflows
 - Pressure Board: stress-oriented market view.
 - Alpha Sweep: opportunity-oriented screen.
 - Quick Ticker Check: bounded issuer triage.
+- Synthetic AI10 Pressure State: compact current pressure-state read for Delta Signal Synthetic AI 10 ETF.
+- Synthetic AI10 Audit: audit-grade driver and verification payload for questions about factors, deltas, z-scores, threshold flags, event confirmation, and four-level coverage.
 - Natural Language routes: readable Markdown or rendered output that should preserve evidence boundaries rather than inventing new evidence.
+
+Public capability and lane map
+- Core issuer universe: 215 issuer rows in the original crypto-exposed public-company coverage map, with 201 nonblank unique tickers and 13 CIK-only or unresolved ticker rows.
+- Expanded ATLAS-7 coverage: 312 expanded issuer rows and 298 distinct expanded issuer tickers.
+- Synthetic membership surface: 326 synthetic basket membership rows, 180 unique public-equity tickers, and 2 canonical linked perp instruments.
+- DeltaSignal Synthetic AI10: 10 constituents. Use this for the concentrated AI leader pressure-state workflow.
+- DeltaSignal Synthetic Tech100: 100 constituents. Use this for broad innovation and technology pressure-state context.
+- DeltaSignal Synthetic AI + Power Infrastructure Basket: 81 constituents. Use this for AI power, grid, data-center, nuclear, cooling, compute-infrastructure, and miner/HPC overlap context. Level 4 remains not applicable until a validated linked derivative product exists.
+- DeltaSignal Synthetic Semiconductor 25 Basket: 25 constituents. Use this for semiconductor and hardware supply-chain pressure context. Missing Level 4 remains explicit unless a validated linked derivative product is added.
+- DeltaSignal Synthetic Crypto Industry Innovators Basket: primary crypto-equity lane for companies tied to crypto revenue, exchanges, mining, treasury exposure, digital asset financial infrastructure, and crypto capital markets.
+- DeltaSignal Synthetic Bitcoin Mining Infrastructure Basket: miner-specific lane for mining operators, mining infrastructure, hash-rate exposure, power contracts, hosting, site concentration, and AI/HPC optionality.
+- DeltaSignal Synthetic Digital Asset Infrastructure Basket: exchanges, brokers, custody, payment rails, blockchain software, clearing, crypto financial infrastructure, and capital-market access.
+- DeltaSignal Synthetic Crypto Treasury Exposure Basket: balance-sheet lane for crypto holdings, treasury policy, financing, dilution, debt, preferreds, convertibles, BTC/ETH exposure, and treasury sensitivity where filings support classification.
+- DeltaSignal Synthetic AI + Power Infrastructure Overlap: crossover lane for crypto/mining issuers with AI/HPC, data centers, power, grid, hosting, cooling, and compute relevance.
+- DeltaSignal Synthetic Public Market Rails Basket: financial-market infrastructure relevant to digital assets, including trading, brokerage, custody, index, clearing, settlement, payments, and exchange infrastructure.
+- DeltaSignal Synthetic Speculative / Emerging Crypto Issuers Basket: smaller, newer, thinner, less-proven, or evidence-limited crypto-exposed issuers separated from mature infrastructure names.
+- Lane output is cohort and pressure-intelligence metadata. It is not a regulated ETF claim, broker signal, target price, trade instruction, or investment advice.
+
+Natural-language MCP help and routing
+- `deltasignal_help` is the human orientation surface. Use it before paid or evidence workflows when the user asks for help, examples, groups, fields, pricing, grants, x402, Morning Brief, Company Report, Synthetic AI10, perps, SPECTRA, tools, or integration guidance.
+- `help groups` should list available workflow groups and the exact focused help command for each group.
+- `help synthetic ai10` should be AI10-specific. It should explain the Delta Signal Synthetic AI 10 ETF pressure-state workflow, the audit workflow, linked-market boundary, fields to preserve, caveats, and copy/paste prompts.
+- Users should be able to ask natural questions such as:
+  - What is the Synthetic AI10 pressure state right now?
+  - What factors are driving the Synthetic AI10 state?
+  - Is Synthetic AI10 in a confirmed ATLAS-7 release event?
+  - Show the Synthetic AI10 audit payload with z-scores, threshold flags, and four-level coverage.
+  - Compare the current Synthetic AI10 bucket to the previous bucket.
+  - What changed from Releasing to Normal in Synthetic AI10?
+  - Can we safely publish this Synthetic AI10 read?
+- A backend Fetcher or MCP-capable client should route plain current-state questions to `deltasignal_synthetic_etf_pressure_state`.
+- A backend Fetcher or MCP-capable client should route why/driver/confirmation/publishability/audit questions to `deltasignal_synthetic_etf_audit`.
+- Compact pressure-state output is enough for "what is the current state?"
+- Audit output is required for "why," "what factors," "what changed," "is the event confirmed," "do we have z-scores," "do we have threshold flags," "do we have four-level coverage," and "can this be published safely?"
+
+Synthetic AI10 evidence boundary
+- Delta Signal Synthetic AI 10 ETF is a synthetic benchmark pressure-state workflow, not a regulated ETF claim.
+- Synthetic AI10 output is not issuer truth by itself, not exchange-native microstructure truth, not a broker signal, not a target price, not a trade instruction, and not investment advice.
+- The compact pressure-state tool may say that a linked-market state is Releasing, Normal, or another state. Do not promote that label into a confirmed ATLAS-7 event unless the audit tool returns passing threshold flags and a confirmed event classification.
+- The audit tool can expose current bucket, previous bucket, factor-history pagination/export metadata, audit-window z-scores, threshold flags, event classification, four-level coverage, provenance, caveats, and quality flags.
+- If `event_classification.canonical_confirmed` is false or the payload carries a quality flag such as `canonical_event_not_confirmed`, say that no canonical ATLAS-7 event is confirmed.
+- If Level 1, Level 2, Level 3, or Level 4 coverage is partial, label the result as a partial linked-market or synthetic read instead of a full four-level ATLAS-7 verdict.
+- Preserve source dates, observed bucket timestamps, method version, quality flags, caveats, route URI, payload mode, and evidence boundaries in any summary.
 
 Representative public route pricing
 Treat these as examples, not hard-coded truth:

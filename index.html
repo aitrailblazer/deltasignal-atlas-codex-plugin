@@ -1735,6 +1735,8 @@
                 <a href="#mcp-help">MCP Help</a>
                 <a href="#first-test">Start here</a>
                 <a href="#what-you-get">Outputs</a>
+                <a href="#coverage-lanes">Lanes</a>
+                <a href="#synthetic-ai10-help">AI10 questions</a>
                 <a href="#integration-hardening">Hardening</a>
                 <a href="#recommended-workflows">Workflows</a>
                 <a href="#pricing">Pricing</a>
@@ -1899,6 +1901,10 @@
           <div class="feature"><strong>DeltaSignal Synthetic Semiconductor 25 ETF</strong><span>A semiconductor supply-chain pressure lane for AI compute hardware, public-market behavior, and basket-level stress.</span></div>
           <div class="feature"><strong>Four evidence levels</strong><span>Level 1 issuer truth, Level 2 public-market behavior, Level 3 basket pressure, and Level 4 derivative dislocation where a linked venue product exists. Missing levels remain explicit.</span></div>
           <div class="feature"><strong>Public wording boundary</strong><span>The public surface uses DeltaSignal Synthetic ETF names. Source files, weights, hashes, and provider-specific lineage remain internal evidence metadata unless the live route explicitly exposes them.</span></div>
+          <div class="feature"><strong>215 core issuer rows</strong><span>The original crypto-exposed public-company universe, with 201 nonblank unique tickers and 13 CIK-only or unresolved ticker rows.</span></div>
+          <div class="feature"><strong>312 expanded issuer rows</strong><span>The current expanded ATLAS-7 coverage map after synthetic basket and public-market context expansion, representing 298 distinct expanded issuer tickers.</span></div>
+          <div class="feature"><strong>326 synthetic membership rows</strong><span>Current synthetic basket membership surface across 180 unique public-equity tickers and 2 canonical linked perp instruments.</span></div>
+          <div class="feature"><strong>Crypto-native lanes</strong><span>Crypto industry innovators, bitcoin mining infrastructure, digital asset infrastructure, crypto treasury exposure, AI + power overlap, public market rails, and speculative/emerging crypto issuers.</span></div>
         </div>
       </div>
     </section>
@@ -1921,6 +1927,28 @@
         <div class="code" style="margin-top:1rem;">curl -sS https://api.aitrailblazer.net/mcp \
   -H 'content-type: application/json' \
   --data '{"jsonrpc":"2.0","id":"help-perps","method":"tools/call","params":{"name":"deltasignal_help","arguments":{"topic":"perps","detail":"short","include_examples":true}}}'</div>
+      </div>
+    </section>
+
+    <section class="section" id="synthetic-ai10-help">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Ask Synthetic AI10 questions in plain English</h2>
+          <p>Delta Signal MCP now exposes Synthetic AI10 as a discoverable workflow, so users do not need to know the raw tool names before asking useful questions.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><strong>Start with help</strong><span>Ask <code>help groups</code> to see available workflow groups, then ask <code>help synthetic ai10</code> for focused Synthetic AI10 prompts, boundaries, and the right next command.</span></div>
+          <div class="feature"><strong>Current state</strong><span>Ask: <code>What is the Synthetic AI10 pressure state right now?</code> This should route to the compact pressure-state workflow and preserve source dates, caveats, and quality flags.</span></div>
+          <div class="feature"><strong>Drivers and deltas</strong><span>Ask: <code>What factors are driving the Synthetic AI10 state?</code> Driver questions should route to audit mode because they require current bucket, previous bucket, deltas, factor history, and provenance.</span></div>
+          <div class="feature"><strong>Event confirmation</strong><span>Ask: <code>Is Synthetic AI10 in a confirmed ATLAS-7 release event?</code> The answer must use threshold flags and event classification, not only the visible pressure label.</span></div>
+          <div class="feature"><strong>Audit payload</strong><span>Ask: <code>Show the Synthetic AI10 audit payload with z-scores, threshold flags, and four-level coverage.</code> This is the right path for technical validation and publication review.</span></div>
+          <div class="feature"><strong>Publish safely</strong><span>Ask: <code>Can we safely publish this Synthetic AI10 read?</code> The answer should separate live facts, caveats, unresolved validation, and non-advice boundaries.</span></div>
+        </div>
+        <div class="tool-grid" style="margin-top:1.5rem;">
+          <div class="tool"><strong>Compact route</strong><span>Use <code>deltasignal_synthetic_etf_pressure_state</code> for plain current-state questions such as “what is the state?”</span></div>
+          <div class="tool"><strong>Audit route</strong><span>Use <code>deltasignal_synthetic_etf_audit</code> for “why,” “what changed,” “is it confirmed,” “do we have z-scores,” “do we have threshold flags,” or “can we publish this?”</span></div>
+          <div class="tool"><strong>Boundary</strong><span>Delta Signal Synthetic AI 10 ETF is a synthetic benchmark pressure-state workflow. It is not a regulated ETF claim, not issuer truth by itself, not exchange-native microstructure truth, not a broker signal, and not investment advice.</span></div>
+        </div>
       </div>
     </section>
 
