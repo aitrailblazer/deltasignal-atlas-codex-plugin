@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v8
-Last updated: 2026-07-01
+Version: llms-full-v9
+Last updated: 2026-07-02
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the June 28 public DeltaSignal MCP help deployment and July 1 Synthetic AI10 help/audit-routing update.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 2 Synthetic AI10 audit answer-completeness Azure deployment.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
@@ -15,6 +15,7 @@ One-screen summary
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
 - Natural-language MCP help is live through the free discovery-tier `deltasignal_help` tool. Use it before paid workflows when a user asks "help", "what can I ask?", "help perps", or "show examples".
 - AI10-specific discovery starts with `deltasignal_help`, especially `help groups` and `help synthetic ai10`.
+- Synthetic AI10 audit mode is live through REST and MCP for driver, threshold, export, publication-safety, and event-confirmation questions.
 - Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough.
 - `/v1/pricing` is the public pricing source of truth. `/v1/contract/fields` is the parser-field source of truth.
 - For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from `cost_usd`.
@@ -82,6 +83,21 @@ Do not start by:
 
 Most recent public verification anchor
 The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
+- Live verification date: `2026-07-02`.
+- Latest deployed MCP/backend revision checked for this brief: `ca-web-intel-mcp--0000577`.
+- Deployed image checked for this brief: `acrgniwebintel001.azurecr.io/ca-web-intel-mcp:skill-synthetic-ai10-answer-completeness-20260702-055337`.
+- Live Synthetic AI10 audit route is available at `GET /v1/synthetic-etf/audit/{product}`.
+- Live Synthetic AI10 MCP audit tool is available as `deltasignal_synthetic_etf_audit`.
+- Live authenticated REST audit smoke for `Delta Signal Synthetic AI 10 ETF` returned `audit_status=complete`, `source_date=2026-06-30`, `observed_bucket_utc=2026-07-01T14:45:00Z`, `canonical_event_status=not_confirmed`, and `factor_history.export.row_count=656`.
+- Live authenticated MCP audit smoke returned `audit_status=complete` and exposes the answer-completeness sections `constituent_contributions`, `presentation_parity`, `trident`, `trident.liquidation_gradient`, and `question_readiness`.
+- Live MCP discovery exposes `deltasignal_synthetic_etf_audit`, and its output schema mentions `question_readiness` and `constituent_contributions`.
+- Current Synthetic AI10 audit boundary:
+  - `constituent_contributions.status=partial` because live contribution rows are coverage/weight evidence until per-constituent pressure-driver joins are persisted.
+  - `presentation_parity.status=requires_artifact` until a named chart/report artifact is supplied for parity comparison.
+  - `trident.status=unavailable` and `trident.liquidation_gradient.status=unavailable` until persisted TRIDENT/liquidation-gradient evidence exists.
+  - `canonical_event_status=not_confirmed`; do not call the current read a confirmed ATLAS-7 release event unless live threshold and coverage evidence pass.
+- Verification artifact path in the backend repo: `artifacts/deltasignal-synthetic-etf-audit/azure-deploy/20260702T060725Z/Synthetic_AI10_Azure_Deploy_Answer_Completeness_Report_2026_07_02.html`.
+- Previous live verification anchor:
 - Live verification date: `2026-06-28`.
 - Latest deployed MCP/backend revision checked for this brief: `ca-web-intel-mcp--0000563`.
 - Live public no-key MCP discovery exposes `deltasignal_help` as a free discovery-tier tool.
@@ -207,7 +223,7 @@ Primary public workflows
 - Alpha Sweep: opportunity-oriented screen.
 - Quick Ticker Check: bounded issuer triage.
 - Synthetic AI10 Pressure State: compact current pressure-state read for Delta Signal Synthetic AI 10 ETF.
-- Synthetic AI10 Audit: audit-grade driver and verification payload for questions about factors, deltas, z-scores, threshold flags, event confirmation, and four-level coverage.
+- Synthetic AI10 Audit: live audit-grade driver and verification payload for questions about factors, deltas, z-scores, threshold flags, event confirmation, four-level coverage, constituent contribution readiness, presentation parity, TRIDENT availability, liquidation-gradient availability, and publication safety.
 - Natural Language routes: readable Markdown or rendered output that should preserve evidence boundaries rather than inventing new evidence.
 
 Public capability and lane map
@@ -243,13 +259,17 @@ Natural-language MCP help and routing
 - A backend Fetcher or MCP-capable client should route why/driver/confirmation/publishability/audit questions to `deltasignal_synthetic_etf_audit`.
 - Compact pressure-state output is enough for "what is the current state?"
 - Audit output is required for "why," "what factors," "what changed," "is the event confirmed," "do we have z-scores," "do we have threshold flags," "do we have four-level coverage," and "can this be published safely?"
+- Audit output is also required for "which constituents drove it," "does the chart match the data," "is TRIDENT available," "is liquidation-gradient evidence available," and "what can a customer-facing article safely claim?"
 
 Synthetic AI10 evidence boundary
 - Delta Signal Synthetic AI 10 ETF is a synthetic benchmark pressure-state workflow, not a regulated ETF claim.
 - Synthetic AI10 output is not issuer truth by itself, not exchange-native microstructure truth, not a broker signal, not a target price, not a trade instruction, and not investment advice.
 - The compact pressure-state tool may say that a linked-market state is Releasing, Normal, or another state. Do not promote that label into a confirmed ATLAS-7 event unless the audit tool returns passing threshold flags and a confirmed event classification.
 - The audit tool can expose current bucket, previous bucket, factor-history pagination/export metadata, audit-window z-scores, threshold flags, event classification, four-level coverage, provenance, caveats, and quality flags.
+- The audit tool can also expose `constituent_contributions`, `presentation_parity`, `trident`, `trident.liquidation_gradient`, and `question_readiness` so agents can answer customer questions without overclaiming missing evidence.
 - If `event_classification.canonical_confirmed` is false or the payload carries a quality flag such as `canonical_event_not_confirmed`, say that no canonical ATLAS-7 event is confirmed.
+- If `presentation_parity.status=requires_artifact`, ask for the specific chart/report artifact before claiming parity between rendered visuals and raw evidence.
+- If `trident.status=unavailable` or `trident.liquidation_gradient.status=unavailable`, say that TRIDENT/liquidation-gradient evidence is not available rather than fabricating an execution or liquidation read.
 - If Level 1, Level 2, Level 3, or Level 4 coverage is partial, label the result as a partial linked-market or synthetic read instead of a full four-level ATLAS-7 verdict.
 - Preserve source dates, observed bucket timestamps, method version, quality flags, caveats, route URI, payload mode, and evidence boundaries in any summary.
 

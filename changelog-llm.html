@@ -43,19 +43,29 @@
       <a href="#tracking-river">Tracking river</a>
       <a href="#machine-contract">Machine contract</a>
     </nav>
-    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-07-01</code></p>
+    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-07-02</code></p>
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
-        <div><strong>199</strong><span>tracked changes</span></div>
-        <div><strong>114</strong><span>timeline entries</span></div>
-        <div><strong>197</strong><span>unique tripcodes</span></div>
-        <div><strong>199</strong><span>breadcrumb chips</span></div>
+        <div><strong>201</strong><span>tracked changes</span></div>
+        <div><strong>116</strong><span>timeline entries</span></div>
+        <div><strong>199</strong><span>unique tripcodes</span></div>
+        <div><strong>201</strong><span>breadcrumb chips</span></div>
         <div><strong>78</strong><span>visible commit references</span></div>
         <div><strong>106</strong><span>unique source commits</span></div>
     </div>
   </header>
   <main>
+    <section id="latest-2026-07-02">
+      <h2>Latest Synthetic AI10 Audit Answer-Completeness Deployment</h2>
+      <div class="notice">
+        <p><strong>tripcode:</strong> <code>ATLAS-JUL-2-SYNTHETIC-AI10-AUDIT-ANSWER-COMPLETENESS-LIVE</code></p>
+        <p><strong>bread:</strong> Improvement Timeline &gt; Synthetic AI10 audit answer-completeness deployed to Azure</p>
+        <p>Azure production revision <code>ca-web-intel-mcp--0000577</code> now exposes the Synthetic AI10 audit answer-completeness payload through REST and MCP. The live route is <code>GET /v1/synthetic-etf/audit/{product}</code>, and the live MCP tool is <code>deltasignal_synthetic_etf_audit</code>.</p>
+        <p>Live authenticated smoke verification for <code>Delta Signal Synthetic AI 10 ETF</code> returned <code>audit_status=complete</code>, <code>source_date=2026-06-30</code>, <code>observed_bucket_utc=2026-07-01T14:45:00Z</code>, <code>canonical_event_status=not_confirmed</code>, and a 656-row export. MCP discovery exposes the audit tool and its schema mentions <code>question_readiness</code> and <code>constituent_contributions</code>.</p>
+        <p>The audit response now includes answer-completeness sections for <code>constituent_contributions</code>, <code>presentation_parity</code>, <code>trident</code>, <code>trident.liquidation_gradient</code>, and <code>question_readiness</code>. Boundary: the current live result remains pressure-state evidence, not a confirmed canonical ATLAS-7 release event, because the canonical event status is still <code>not_confirmed</code>.</p>
+      </div>
+    </section>
     <section id="latest-2026-07-01">
       <h2>Latest Synthetic AI10 Help And Audit Guidance Update</h2>
       <div class="notice">
@@ -110,6 +120,7 @@
         <table>
           <thead><tr><th>#</th><th>tripcode</th><th>bread</th><th>track</th><th>commit</th></tr></thead>
           <tbody>
+          <tr><td>201</td><td><code>ATLAS-JUL-2-SYNTHETIC-AI10-AUDIT-ANSWER-COMPLETENESS-LIVE</code></td><td>Improvement Timeline &gt; Synthetic AI10 audit answer-completeness deployed to Azure</td><td><code>T+1138m</code></td><td>live rollout ca-web-intel-mcp--0000577</td></tr>
           <tr><td>200</td><td><code>ATLAS-JUN-28-MCP-HELP-LIVE</code></td><td>Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed</td><td><code>T+1122m</code></td><td>live rollout ca-web-intel-mcp--0000563</td></tr>
           <tr><td>199</td><td><code>ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING</code></td><td>Improvement Timeline &gt; DeltaSignal Synthetic ETF public wording and accessibility update</td><td><code>T+1114m</code></td><td>public docs update</td></tr>
           <tr><td>198</td><td><code>ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</code></td><td>Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed</td><td><code>T+1106m</code></td><td>live rollout ca-web-intel-mcp--0000536</td></tr>
@@ -5890,8 +5901,8 @@
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
-<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-06-28">
-  <stats tracked_changes="199" timeline_entries="114" unique_tripcodes="197" breadcrumb_chips="199" visible_commit_references="78" unique_source_commits="106" />
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-07-02">
+  <stats tracked_changes="201" timeline_entries="116" unique_tripcodes="199" breadcrumb_chips="201" visible_commit_references="78" unique_source_commits="106" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
