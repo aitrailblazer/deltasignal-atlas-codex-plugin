@@ -14,7 +14,7 @@
       <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-28-MCP-HELP-LIVE</guid>
       <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-28-MCP-HELP-LIVE</category>
-      <description>Production MCP now exposes deltasignal_help as a public no-key free discovery-tier tool. It returns schema_id=deltasignal.help.v1, payment_status=free_discovery, example prompts, next-best discovery calls, evidence boundaries, non-advice framing, and topic-specific Synthetic ETF / Coinbase perp / SPECTRA orientation. Breadcrumb: Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed Track: T+1122m Commit: live rollout ca-web-intel-mcp--0000563</description>
+      <description>Production MCP now exposes deltasignal_help as a public no-key free discovery-tier tool. It returns schema_id=deltasignal.help.v1, payment_status=free_discovery, example prompts, next-best discovery calls, evidence boundaries, non-advice framing, and topic-specific Synthetic Basket / Coinbase perp / SPECTRA orientation. Breadcrumb: Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed Track: T+1122m Commit: live rollout ca-web-intel-mcp--0000563</description>
     </item>
     <item>
       <title>Design-partner grant expiry fields and Natural Language route coverage deployed</title>
