@@ -137,7 +137,7 @@ Payment failure returns:
 402 Payment Required
 ```
 
-Coinbase x402 and Agentic Market use the Base route family under `https://api.aitrailblazer.net/v1/*`. Before spending USDC, run an x402 discovery probe against `GET /v1/readiness`. A configured grant may allow execution when the client attaches supported identity headers or completes the wallet grant-session flow for an enrolled EVM wallet: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers are not a grant identity. Otherwise expect HTTP `402` and confirm:
+Coinbase x402 and Agentic Market use the Base route family under `https://api.aitrailblazer.net/v1/*`. Public clients do not need Delta Signal API keys. Before spending USDC, run an x402 discovery probe against `GET /v1/readiness`. A database-managed grant may allow execution when the caller completes the wallet grant-session flow for an enrolled EVM wallet: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers are not a grant identity. Otherwise expect HTTP `402` and confirm:
 
 - `x402Version=2`
 - `network=eip155:8453`
@@ -365,7 +365,7 @@ Important response fields:
 - `natural_brief`: the validated Markdown brief.
 - `summary_data`: compact structured summary values returned alongside the Markdown.
 - `raw_data_ref`: reference to raw evidence or raw artifact location when available.
-- `cost_usd`: endpoint price for the Natural Language response unless internal, free-tier, or other access policy applies.
+- `cost_usd`: endpoint price for the Natural Language response unless a signed grant session or other live access policy applies.
 - `payload_mode`: always `natural_language` for successful Natural Language responses.
 - `raw_payload_mode`: the evidence mode used to produce the brief, such as `compact`, `full`, or `evidence_page`.
 - `renderer_mode`: `deterministic`, `apex`, or `deterministic_fallback`.

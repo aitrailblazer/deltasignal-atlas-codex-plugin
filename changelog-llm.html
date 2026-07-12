@@ -62,7 +62,7 @@
         <p><strong>tripcode:</strong> <code>ATLAS-JUL-2-SYNTHETIC-AI10-AUDIT-ANSWER-COMPLETENESS-LIVE</code></p>
         <p><strong>bread:</strong> Improvement Timeline &gt; Synthetic AI10 audit answer-completeness deployed to Azure</p>
         <p>Azure production revision <code>ca-web-intel-mcp--0000577</code> now exposes the Synthetic AI10 audit answer-completeness payload through REST and MCP. The live route is <code>GET /v1/synthetic-etf/audit/{product}</code>, and the live MCP tool is <code>deltasignal_synthetic_etf_audit</code>.</p>
-        <p>Live authenticated smoke verification for <code>Delta Signal Synthetic AI 10 ETF</code> returned <code>audit_status=complete</code>, <code>source_date=2026-06-30</code>, <code>observed_bucket_utc=2026-07-01T14:45:00Z</code>, <code>canonical_event_status=not_confirmed</code>, and a 656-row export. MCP discovery exposes the audit tool and its schema mentions <code>question_readiness</code> and <code>constituent_contributions</code>.</p>
+        <p>Live authenticated smoke verification for <code>Delta Signal Synthetic AI 10 Basket</code> returned <code>audit_status=complete</code>, <code>source_date=2026-06-30</code>, <code>observed_bucket_utc=2026-07-01T14:45:00Z</code>, <code>canonical_event_status=not_confirmed</code>, and a 656-row export. MCP discovery exposes the audit tool and its schema mentions <code>question_readiness</code> and <code>constituent_contributions</code>.</p>
         <p>The audit response now includes answer-completeness sections for <code>constituent_contributions</code>, <code>presentation_parity</code>, <code>trident</code>, <code>trident.liquidation_gradient</code>, and <code>question_readiness</code>. Boundary: the current live result remains pressure-state evidence, not a confirmed canonical ATLAS-7 release event, because the canonical event status is still <code>not_confirmed</code>.</p>
       </div>
     </section>
@@ -105,9 +105,9 @@
         <ul>
           <li><code>deltasignal_help</code> is live as a free discovery-tier MCP tool. It returns <code>schema_id=deltasignal.help.v1</code>, <code>payment_status=free_discovery</code>, common example prompts, next-best discovery calls, evidence boundaries, and non-advice framing.</li>
           <li><code>deltasignal_help</code> with <code>topic=perps</code> exposes the persisted-row boundary for Coinbase perp/SPECTRA reads: no live exchange fetch, no raw ladder exposure, rolling 30-day normalization, and <code>MARKET_ALPHA</code> as market-state telemetry rather than issuer alpha.</li>
-          <li><code>deltasignal_synthetic_etf_pressure_state</code> is live in MCP discovery for the canonical <code>Delta Signal Synthetic AI 10 ETF</code> lane.</li>
-          <li>Public Synthetic AI10 calls use the canonical <code>Delta Signal Synthetic AI 10 ETF</code> lane and preserve identity lineage without a methodology change.</li>
-          <li>Live REST discovery includes Synthetic ETF pressure state plus Coinbase perp constituents, factors, calculation history, rankings, and SPECTRA field-map read routes.</li>
+          <li><code>deltasignal_synthetic_etf_pressure_state</code> is live in MCP discovery for the canonical <code>Delta Signal Synthetic AI 10 Basket</code> lane.</li>
+          <li>Public Synthetic AI10 calls use the canonical <code>Delta Signal Synthetic AI 10 Basket</code> lane and preserve identity lineage without a methodology change.</li>
+          <li>Live REST discovery includes Synthetic Basket pressure state plus Coinbase perp constituents, factors, calculation history, rankings, and SPECTRA field-map read routes.</li>
           <li>These routes are evidence/read surfaces only. They are not SEC/XBRL issuer truth, live exchange execution, personalized trading advice, or regulated ETF marketing.</li>
           <li>Use the current route/status matrix in <a href="./llms-full.txt">llms-full.txt</a> for pricing, parser, auth/payment, evidence-boundary, and deployment-state checks.</li>
         </ul>
@@ -122,7 +122,7 @@
           <tbody>
           <tr><td>201</td><td><code>ATLAS-JUL-2-SYNTHETIC-AI10-AUDIT-ANSWER-COMPLETENESS-LIVE</code></td><td>Improvement Timeline &gt; Synthetic AI10 audit answer-completeness deployed to Azure</td><td><code>T+1138m</code></td><td>live rollout ca-web-intel-mcp--0000577</td></tr>
           <tr><td>200</td><td><code>ATLAS-JUN-28-MCP-HELP-LIVE</code></td><td>Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed</td><td><code>T+1122m</code></td><td>live rollout ca-web-intel-mcp--0000563</td></tr>
-          <tr><td>199</td><td><code>ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING</code></td><td>Improvement Timeline &gt; DeltaSignal Synthetic ETF public wording and accessibility update</td><td><code>T+1114m</code></td><td>public docs update</td></tr>
+          <tr><td>199</td><td><code>ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING</code></td><td>Improvement Timeline &gt; DeltaSignal Synthetic Basket public wording and accessibility update</td><td><code>T+1114m</code></td><td>public docs update</td></tr>
           <tr><td>198</td><td><code>ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE</code></td><td>Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed</td><td><code>T+1106m</code></td><td>live rollout ca-web-intel-mcp--0000536</td></tr>
           <tr><td>197</td><td><code>ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY</code></td><td>Improvement Timeline &gt; Design-partner grant runway and expiry contract clarified</td><td><code>T+1098m</code></td><td>current changelog update</td></tr>
           <tr><td>196</td><td><code>ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER</code></td><td>Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed</td><td><code>T+1090m</code></td><td>981f25ae</td></tr>
@@ -4070,7 +4070,7 @@
       "track": "T+1122m",
       "bread": "Improvement Timeline > Public no-key DeltaSignal MCP help deployed",
       "commit": "live rollout ca-web-intel-mcp--0000563",
-      "summary": "Production MCP now exposes deltasignal_help as a public no-key free discovery-tier tool. It returns schema_id=deltasignal.help.v1, payment_status=free_discovery, example prompts, next-best discovery calls, evidence boundaries, non-advice framing, and topic-specific Synthetic ETF / Coinbase perp / SPECTRA orientation.",
+      "summary": "Production MCP now exposes deltasignal_help as a public no-key free discovery-tier tool. It returns schema_id=deltasignal.help.v1, payment_status=free_discovery, example prompts, next-best discovery calls, evidence boundaries, non-advice framing, and topic-specific Synthetic Basket / Coinbase perp / SPECTRA orientation.",
       "bullets": [
         "Public no-key MCP tools/call with name=deltasignal_help succeeds without x402 payment and returns billing_status=not_charged and x402_required=false.",
         "topic=perps exposes the persisted-row boundary for Coinbase perp and SPECTRA reads: no live exchange fetch, no raw ladder exposure, rolling 30-day normalization, and MARKET_ALPHA as market-state telemetry rather than issuer alpha.",
@@ -5912,7 +5912,7 @@
   </instructions>
   <entries>
     <entry river_index="200" tripcode="ATLAS-JUN-28-MCP-HELP-LIVE" track="T+1122m" bread="Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed" commit="live rollout ca-web-intel-mcp--0000563"><date>June 28, 2026</date><title>Public no-key DeltaSignal MCP help deployed</title></entry>
-    <entry river_index="199" tripcode="ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING" track="T+1114m" bread="Improvement Timeline &gt; DeltaSignal Synthetic ETF public wording and accessibility update" commit="public docs update"><date>June 28, 2026</date><title>DeltaSignal Synthetic ETF public wording and accessibility update</title></entry>
+    <entry river_index="199" tripcode="ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING" track="T+1114m" bread="Improvement Timeline &gt; DeltaSignal Synthetic Basket public wording and accessibility update" commit="public docs update"><date>June 28, 2026</date><title>DeltaSignal Synthetic Basket public wording and accessibility update</title></entry>
     <entry river_index="198" tripcode="ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE" track="T+1106m" bread="Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed" commit="live rollout ca-web-intel-mcp--0000536"><date>June 20, 2026</date><title>Design-partner grant expiry fields and Natural Language route coverage deployed</title></entry>
     <entry river_index="197" tripcode="ATLAS-JUN-19-DESIGN-PARTNER-GRANT-RUNWAY-EXPIRY" track="T+1098m" bread="Improvement Timeline &gt; Design-partner grant runway and expiry contract clarified" commit="current changelog update"><date>June 19, 2026</date><title>Design-partner grant runway and expiry contract clarified</title></entry>
     <entry river_index="196" tripcode="ATLAS-JUN-16-NATURAL-BRIEF-AUDIT-GRADE-RENDERER" track="T+1090m" bread="Improvement Timeline &gt; Audit-grade Natural Language Morning Brief renderer deployed" commit="981f25ae"><date>June 16, 2026</date><title>Audit-grade Natural Language Morning Brief renderer deployed</title></entry>

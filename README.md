@@ -63,7 +63,7 @@ flowchart LR
   Plan --> W4["mcpCompositePresetSelection"]
 ```
 
-Agents do not need a special Arazzo runner to use this today. MCP clients can read the scenario definitions, select one of the exposed MCP composite tools, or follow the OpenAPI route sequence step by step. Public clients use x402 when a route returns `402 Payment Required`; internal keyed validation is first-party testing only.
+Agents do not need a special Arazzo runner to use this today. MCP clients can read the scenario definitions, select one of the exposed MCP composite tools, or follow the OpenAPI route sequence step by step. Public clients should use x402 challenge/retry or signed wallet grant sessions. Internal API keys are first-party operations credentials and are not part of the public integration path.
 
 ## Key Surfaces
 
@@ -140,23 +140,24 @@ Flow:
 2. Do not send an internal key.
 3. Expect HTTP `200` with the public DeltaSignal tool inventory.
 4. Call a real tool such as `deltasignal_readiness` through the x402-capable client.
-5. Expect either an attached grant to allow execution or HTTP `402 Payment Required`. Supported grant paths are identity headers (`X-Codex-User`, `X-Codex-Session`, `X-User-ID`) or the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Active grant contexts may expose `grant_expires_at` / `grant_expires_in_seconds` for the grant window; challenge/session `expires_at` fields remain short TTLs.
+5. Expect either a signed wallet grant-session token to allow execution or HTTP `402 Payment Required`. Public grant access uses enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. The backend maps that wallet to database-managed grant budget/runway records. Active grant contexts may expose `grant_expires_at` / `grant_expires_in_seconds` for the grant window; challenge/session `expires_at` fields remain short TTLs.
 6. If challenged, let the x402-capable client pay and retry the same `tools/call` request.
 
 Use this to confirm public MCP discovery and paid tool execution before real use.
 
-### 2. `internalMcpToolSmoke`
+### 2. `publicRestX402DailyClient`
 
-First-party internal no-payment smoke on the same MCP endpoint.
+Deterministic REST clients can run the same evidence workflows without handling API keys.
 
 Flow:
 
-1. Call `POST /mcp tools/list` with `x-api-key` or `mcp-api-key`.
-2. Expect HTTP `200`.
-3. Confirm the tool inventory.
-4. Call `deltasignal_readiness`.
+1. Read `GET /v1/pricing` and `GET /v1/contract/fields`.
+2. Run `GET /v1/readiness` through an x402-capable client.
+3. If the route returns `402 Payment Required`, settle through the x402 client and retry with proof.
+4. If the wallet is enrolled for a grant, mint a signed wallet grant session and attach `X-DeltaSignal-Grant-Token` instead of paying on-chain.
+5. Store the response evidence metadata, billing metadata, grant runway fields, caveats, and non-advice boundary with each call.
 
-This workflow is internal validation only. Public users should use x402.
+Use this for Node, Go, .NET, cron, and data-pipeline integrations that do not need an agent runtime.
 
 ### 3. `atlas7AuditStatusCheck`
 
@@ -244,7 +245,7 @@ Use this when a subscriber asks Codex or Claude Code to turn a DeltaSignal artic
 Public subscriber access is through MCP/x402:
 
 1. Discovery is free: plugin page, `tools/list`, OpenAPI, Arazzo, `llms.txt`, and `.well-known/x402`.
-2. Public `tools/call` may require a grant, free-tier allowance, or x402 payment proof.
+2. Public `tools/call` may require a signed wallet grant session or x402 payment proof.
 3. x402-compatible clients receive a 402 challenge, pay through Base USDC, then retry the same request.
 4. Full paid article text and LLM-friendly Markdown are entitlement-gated. If access is not verified, tools should return metadata, permitted summaries, continuity links, and `restricted` or `missing` status rather than leaking paid content.
 5. Internal authoring write tools are not exposed publicly.
@@ -336,7 +337,7 @@ Planned routes:
 - Payment rail: Base USDC through x402-capable clients
 - Seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
 
-First calls are free where a grant is configured or a free-tier policy applies. Supported grant paths are identity headers (`X-Codex-User`, `X-Codex-Session`, `X-User-ID`) or the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers are not a grant identity. After the free tier, compatible clients receive x402 payment requirements. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client.
+Public clients do not need Delta Signal API keys. First calls may be grant-covered when the caller wallet is enrolled in the backend grant database. Public grant access uses the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers do not unlock grants. If no active grant applies, compatible clients receive x402 payment requirements and retry with payment proof. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client.
 
 ## Public x402 Probe
 

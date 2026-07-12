@@ -8,15 +8,15 @@ Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
 
 One-screen summary
-- Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies and DeltaSignal Synthetic ETF baskets.
-- The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions.
-- Public-facing basket language uses DeltaSignal Synthetic ETF names. Do not expose third-party basket-provider branding in public summaries unless the live route explicitly returns it as source metadata.
+- Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies and DeltaSignal Synthetic Baskets.
+- The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions. Public clients should not request or store Delta Signal API keys.
+- Public-facing basket language uses DeltaSignal Synthetic Basket names. Do not expose third-party basket-provider branding in public summaries unless the live route explicitly returns it as source metadata.
 - The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
 - Natural-language MCP help is live through the free discovery-tier `deltasignal_help` tool. Use it before paid workflows when a user asks "help", "what can I ask?", "help perps", or "show examples".
 - AI10-specific discovery starts with `deltasignal_help`, especially `help groups` and `help synthetic ai10`.
 - Synthetic AI10 audit mode is live through REST and MCP for driver, threshold, export, publication-safety, and event-confirmation questions.
-- Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough.
+- Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough. The backend maps enrolled wallets to database-managed grant records and grant runway fields.
 - `/v1/pricing` is the public pricing source of truth. `/v1/contract/fields` is the parser-field source of truth.
 - For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from `cost_usd`.
 
@@ -88,7 +88,7 @@ The current GitHub Pages surface is aligned to the latest public verification no
 - Deployed image checked for this brief: `acrgniwebintel001.azurecr.io/ca-web-intel-mcp:skill-synthetic-ai10-answer-completeness-20260702-055337`.
 - Live Synthetic AI10 audit route is available at `GET /v1/synthetic-etf/audit/{product}`.
 - Live Synthetic AI10 MCP audit tool is available as `deltasignal_synthetic_etf_audit`.
-- Live authenticated REST audit smoke for `Delta Signal Synthetic AI 10 ETF` returned `audit_status=complete`, `source_date=2026-06-30`, `observed_bucket_utc=2026-07-01T14:45:00Z`, `canonical_event_status=not_confirmed`, and `factor_history.export.row_count=656`.
+- Live authenticated REST audit smoke for `Delta Signal Synthetic AI 10 Basket` returned `audit_status=complete`, `source_date=2026-06-30`, `observed_bucket_utc=2026-07-01T14:45:00Z`, `canonical_event_status=not_confirmed`, and `factor_history.export.row_count=656`.
 - Live authenticated MCP audit smoke returned `audit_status=complete` and exposes the answer-completeness sections `constituent_contributions`, `presentation_parity`, `trident`, `trident.liquidation_gradient`, and `question_readiness`.
 - Live MCP discovery exposes `deltasignal_synthetic_etf_audit`, and its output schema mentions `question_readiness` and `constituent_contributions`.
 - Current Synthetic AI10 audit boundary:
@@ -104,15 +104,15 @@ The current GitHub Pages surface is aligned to the latest public verification no
 - Live public no-key `deltasignal_help` returns `schema_id=deltasignal.help.v1`, `payment_status=free_discovery`, `billing_status=not_charged`, `x402_required=false`, common example prompts, next-best discovery calls, and the non-advice boundary.
 - `deltasignal_help` with `topic=perps` returns a structured `perp_market_boundary`: public reads are read-only over recorded/materialized rows, no live Coinbase fetch happens during help reads, raw ladders are not exposed, default normalization is a rolling 30-day available-bucket window, and `MARKET_ALPHA` is market-state telemetry rather than issuer alpha or a trade signal.
 - Live MCP discovery exposes `deltasignal_synthetic_etf_pressure_state`.
-- Live Synthetic AI10 contract: public calls should use `Delta Signal Synthetic AI 10 ETF` or `DeltaSignal Synthetic AI10 ETF` for canonical product `AI-PERP-INTX`.
-- Synthetic AI10 lineage is preserved in `identity_lineage`: `canonical_name=Delta Signal Synthetic AI 10 ETF`, `methodology_changed=false`, `method_version=synthetic_ai10_etf_v1`.
+- Live Synthetic AI10 contract: public calls should use `Delta Signal Synthetic AI 10 Basket` or `DeltaSignal Synthetic AI10 Basket` for canonical product `AI-PERP-INTX`.
+- Synthetic AI10 lineage is preserved in `identity_lineage`: `canonical_name=Delta Signal Synthetic AI 10 Basket`, `methodology_changed=false`, `method_version=synthetic_ai10_etf_v1`.
 - Synthetic AI10 responses preserve top-level `source_date`, `observed_bucket_utc`, `computed_at_utc`, `route_uri`, `evidence_hash`, `billing_status`, `payment_status`, `quoted_cost_usd`, `caveats`, `quality_flags`, `identity_lineage`, and `disclosures`.
 - Live OpenAPI/pricing expose Coinbase perp/SPECTRA read routes: `/v1/market-atlas/perps/constituents/{product}`, `/v1/market-atlas/perps/factors/{product}`, `/v1/market-atlas/perps/calculation-history`, `/v1/market-atlas/perps/rankings`, `/v1/market-spectra-field-map/{product}`, and `/v1/synthetic-etf/pressure-state/{product}`.
 - Coinbase perp/SPECTRA is additive market intelligence derived from persisted market-factor rows. It is not canonical SEC/XBRL issuer truth, not live exchange execution, and not personalized trading advice.
 - Latest public changelog tripcode: `ATLAS-JUN-28-MCP-HELP-LIVE`.
 - Previous public changelog tripcode: `ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING`.
-- Public copy now describes the basket layer as DeltaSignal Synthetic ETF evidence. Source-provider names, source files, weights, hashes, and lineage are internal evidence metadata unless a live route explicitly exposes them.
-- DeltaSignal Synthetic ETF lanes include Synthetic AI10 ETF, Synthetic Innovators 100 ETF, Synthetic AI Power Infrastructure ETF, and Synthetic Semiconductor 25 ETF.
+- Public copy now describes the basket layer as DeltaSignal Synthetic Basket evidence. Source-provider names, source files, weights, hashes, and lineage are internal evidence metadata unless a live route explicitly exposes them.
+- DeltaSignal Synthetic Basket lanes include Synthetic AI10 Basket, Synthetic Innovators 100 Basket, Synthetic AI Power Infrastructure Basket, and Synthetic Semiconductor 25 Basket.
 - The four evidence levels are Level 1 issuer truth, Level 2 public-market behavior, Level 3 basket pressure, and Level 4 derivative dislocation where a linked venue product exists. Missing levels remain explicit and must not be inferred.
 - Current live route matrix from the 2026-06-28 verification pass:
   - `GET /v1/readiness`: `LIVE`; protected by x402/API-key flow; returns readiness, source date, caveats, quality flags, and billing envelope when authorized; unauthenticated HTTP 402 is expected and is not a service failure.
@@ -121,7 +121,7 @@ The current GitHub Pages surface is aligned to the latest public verification no
   - `GET /openapi.json`: `LIVE`; authoritative REST path and schema discovery surface.
   - `POST /mcp initialize` and `POST /mcp tools/list`: `LIVE`; authoritative MCP discovery surfaces for tool availability.
   - `POST /mcp tools/call name=deltasignal_help`: `LIVE`; free discovery-tier Natural Language help surface; no x402 payment required; use `topic=overview`, `tools`, `pricing`, `fields`, `grants`, `x402`, `morning_brief`, `company_report`, `perps`, `spectra`, or `examples`.
-  - `GET /v1/synthetic-etf/pressure-state/{product}`: `LIVE`; route-declared price observed at `$0.12`; returns Synthetic ETF pressure-state evidence with lineage/disclosures; not a regulated ETF offer, personalized advice, or exchange-native truth claim.
+  - `GET /v1/synthetic-etf/pressure-state/{product}`: `LIVE`; route-declared price observed at `$0.12`; returns Synthetic Basket pressure-state evidence with lineage/disclosures; not a regulated ETF offer, personalized advice, or exchange-native truth claim.
   - `GET /v1/market-atlas/perps/constituents/{product}`: `LIVE`; route-declared price observed at `$0.08`; returns product constituent/readiness evidence; does not claim Coinbase owns or verifies the synthetic basket.
   - `GET /v1/market-atlas/perps/factors/{product}`: `LIVE`; route-declared price observed at `$0.10`; returns persisted market-factor evidence; not SEC/XBRL issuer truth.
   - `GET /v1/market-atlas/perps/calculation-history`: `LIVE`; route-declared price observed at `$0.20`; returns persisted calculation-history evidence; do not infer full-depth historical order-book reconstruction before durable recording began.
@@ -153,16 +153,16 @@ How to think about drift
 What Delta Signal is
 - Delta Signal ATLAS-7 is an issuer-intelligence and evidence-rendering layer grounded in SEC / XBRL filings and Delta Signal processing.
 - It produces structured market and issuer workflows such as Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and Daily Change evidence views.
-- It also exposes DeltaSignal Synthetic ETF evidence layers that turn issuer truth, public-market behavior, basket pressure, and derivative dislocation into bounded public-company pressure views.
+- It also exposes DeltaSignal Synthetic Basket evidence layers that turn issuer truth, public-market behavior, basket pressure, and derivative dislocation into bounded public-company pressure views.
 - It returns evidence, metadata, caveats, and billing context designed for machine use.
 
-DeltaSignal Synthetic ETF public naming
-- Use `DeltaSignal Synthetic AI10 ETF` for the concentrated AI-leader basket.
-- Use `DeltaSignal Synthetic Innovators 100 ETF` for the broad innovation and technology basket.
-- Use `DeltaSignal Synthetic AI Power Infrastructure ETF` for power, grid, data-center, compute-infrastructure, and miner-to-HPC transition evidence.
-- Use `DeltaSignal Synthetic Semiconductor 25 ETF` for semiconductor supply-chain pressure.
+DeltaSignal Synthetic Basket public naming
+- Use `DeltaSignal Synthetic AI10 Basket` for the concentrated AI-leader basket.
+- Use `DeltaSignal Synthetic Innovators 100 Basket` for the broad innovation and technology basket.
+- Use `DeltaSignal Synthetic AI Power Infrastructure Basket` for power, grid, data-center, compute-infrastructure, and miner-to-HPC transition evidence.
+- Use `DeltaSignal Synthetic Semiconductor 25 Basket` for semiconductor supply-chain pressure.
 - These are synthetic evidence baskets inside Delta Signal. They are not personalized recommendations and should not be described as customer-managed exchange-traded funds.
-- Public summaries should say `DeltaSignal Synthetic ETF` instead of third-party basket-provider names. Preserve returned lineage metadata without treating it as a methodology change or marketing copy.
+- Public summaries should say `DeltaSignal Synthetic Basket` instead of third-party basket-provider names. Preserve returned lineage metadata without treating it as a methodology change or marketing copy.
 
 What Delta Signal is not
 - Not a broker.
@@ -189,7 +189,7 @@ Grant rules
 - The signed grant-session token is the authorization artifact.
 - The wallet grant flow is separate from ordinary x402 settlement.
 - If grant issuance fails, expires, or is unavailable, the client should fall back to ordinary x402 instead of blocking the request path.
-- Some first-party or partner flows may also use issued identity headers, but public wallet integrations should implement the signed session flow above.
+- Public wallet integrations should implement the signed session flow above. Internal identity headers or API keys are first-party operations mechanisms and should not be documented as customer integration requirements.
 
 Grant-covered Natural Language routes
 - Natural Language routes are not automatically free; they are grant-covered only when the caller has a valid signed grant session and the active grant contract includes the exact route.
@@ -222,7 +222,7 @@ Primary public workflows
 - Pressure Board: stress-oriented market view.
 - Alpha Sweep: opportunity-oriented screen.
 - Quick Ticker Check: bounded issuer triage.
-- Synthetic AI10 Pressure State: compact current pressure-state read for Delta Signal Synthetic AI 10 ETF.
+- Synthetic AI10 Pressure State: compact current pressure-state read for Delta Signal Synthetic AI 10 Basket.
 - Synthetic AI10 Audit: live audit-grade driver and verification payload for questions about factors, deltas, z-scores, threshold flags, event confirmation, four-level coverage, constituent contribution readiness, presentation parity, TRIDENT availability, liquidation-gradient availability, and publication safety.
 - Natural Language routes: readable Markdown or rendered output that should preserve evidence boundaries rather than inventing new evidence.
 
@@ -246,7 +246,7 @@ Public capability and lane map
 Natural-language MCP help and routing
 - `deltasignal_help` is the human orientation surface. Use it before paid or evidence workflows when the user asks for help, examples, groups, fields, pricing, grants, x402, Morning Brief, Company Report, Synthetic AI10, perps, SPECTRA, tools, or integration guidance.
 - `help groups` should list available workflow groups and the exact focused help command for each group.
-- `help synthetic ai10` should be AI10-specific. It should explain the Delta Signal Synthetic AI 10 ETF pressure-state workflow, the audit workflow, linked-market boundary, fields to preserve, caveats, and copy/paste prompts.
+- `help synthetic ai10` should be AI10-specific. It should explain the Delta Signal Synthetic AI 10 Basket pressure-state workflow, the audit workflow, linked-market boundary, fields to preserve, caveats, and copy/paste prompts.
 - Users should be able to ask natural questions such as:
   - What is the Synthetic AI10 pressure state right now?
   - What factors are driving the Synthetic AI10 state?
@@ -262,7 +262,7 @@ Natural-language MCP help and routing
 - Audit output is also required for "which constituents drove it," "does the chart match the data," "is TRIDENT available," "is liquidation-gradient evidence available," and "what can a customer-facing article safely claim?"
 
 Synthetic AI10 evidence boundary
-- Delta Signal Synthetic AI 10 ETF is a synthetic benchmark pressure-state workflow, not a regulated ETF claim.
+- Delta Signal Synthetic AI 10 Basket is a synthetic benchmark pressure-state workflow, not a regulated ETF claim.
 - Synthetic AI10 output is not issuer truth by itself, not exchange-native microstructure truth, not a broker signal, not a target price, not a trade instruction, and not investment advice.
 - The compact pressure-state tool may say that a linked-market state is Releasing, Normal, or another state. Do not promote that label into a confirmed ATLAS-7 event unless the audit tool returns passing threshold flags and a confirmed event classification.
 - The audit tool can expose current bucket, previous bucket, factor-history pagination/export metadata, audit-window z-scores, threshold flags, event classification, four-level coverage, provenance, caveats, and quality flags.
@@ -326,7 +326,7 @@ Expected public discovery behavior
 - Public `tools/call` may return x402 payment-required behavior.
 - Public `deltasignal_help` should not return x402 payment-required behavior; if it does, treat that as a help-surface regression and re-check live deployment.
 - Free-tier or grant-covered execution may use an active grant context or the wallet grant-session flow.
-- Public users should not request internal API keys.
+- Public users should not request, store, or transmit internal API keys. Use x402 challenge/retry for paid execution, or signed wallet grant sessions when the wallet is enrolled in the backend grant database.
 
 Public Natural Language help examples
 Use this no-key MCP call when the user asks for help, examples, or "what can I ask?":
@@ -335,7 +335,7 @@ curl -sS https://api.aitrailblazer.net/mcp \
   -H 'content-type: application/json' \
   --data '{"jsonrpc":"2.0","id":"help","method":"tools/call","params":{"name":"deltasignal_help","arguments":{"topic":"overview","detail":"short","include_examples":true}}}'
 
-Use this no-key MCP call when the user asks about Synthetic ETF, Coinbase perp, or SPECTRA pressure-state workflows:
+Use this no-key MCP call when the user asks about Synthetic Basket, Coinbase perp, or SPECTRA pressure-state workflows:
 
 curl -sS https://api.aitrailblazer.net/mcp \
   -H 'content-type: application/json' \
