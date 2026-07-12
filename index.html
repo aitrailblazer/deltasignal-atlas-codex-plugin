@@ -2063,7 +2063,7 @@
         <div class="tool-grid" style="margin-top:1.5rem;">
           <div class="tool"><strong>Agent read order</strong><span>For IDEs and autonomous clients, fetch <code>llms-full.txt</code> first, then <code>changelog-llm.html</code>, then <code>openapi.json</code>, then <code>/v1/pricing</code>, then <code>/v1/contract/fields</code>. That order cuts down drift and prevents stale parser, grant, or pricing assumptions.</span></div>
           <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>48</code> paths, live <code>/v1/pricing</code>, live <code>/v1/contract/fields</code>, <code>/v1/grants/status</code> for callers with a resolved grant identity or active grant token, grant-window expiry fields when applicable, Company Report at <code>0.6</code> cost_usd, and a signed wallet-grant challenge/session flow.</span></div>
-          <div class="tool"><strong>Billing rule</strong><span>Treat <code>/v1/pricing</code> as the quote source and the response billing envelope as Delta Signal billing metadata. For plain x402 calls, reconcile actual spend from settlement or payment proof when the wallet moves.</span></div>
+          <div class="tool"><strong>Billing rule</strong><span>Treat <code>/v1/pricing</code> as the quote source and the response billing envelope as Delta Signal billing metadata. Standard Base x402 remains the compatibility path; Circle Gateway is the preferred optimized path for Circle-aware clients. Reconcile paid calls from the response settlement receipt plus settlement or payment proof.</span></div>
           <div class="tool"><strong>HUT evidence readiness</strong><span>HUT company-report and SPECTRA field-map routes are live behind public x402 challenges. Agent-facing envelopes document <code>issuer_evidence_envelope</code>, <code>evidence_sections</code>, <code>spectra_metadata</code>, and <code>publication_audit_block</code>.</span></div>
           <div class="tool"><strong>Universe route safety</strong><span>No-ticker universe routes reject extra path segments such as <code>/UNIVERSE</code> with structured <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span></div>
           <div class="tool"><strong>Current hardening checkpoint</strong><span>Recent integration pressure tests tightened pricing discovery, parser-field stability, compact evidence handling, large-payload guardrails, and grant-session contract wording. Public docs now track the live surface, including explicit budget-grant runway fields when production exposes them, not undeployed source expectations.</span></div>
@@ -2103,7 +2103,7 @@
         </div>
         <div class="tool-grid">
           <div class="tool"><strong>Dedicated grant path</strong><span>Enrolled wallet-grant users should use the challenge/session flow: <code>GET /v1/grant/challenge</code>, EIP-191 <code>personal_sign</code>, <code>POST /v1/grant/session</code>, then attach <code>X-DeltaSignal-Grant-Token</code>. Raw unsigned wallet headers are not a grant identity. The signed token is the auth artifact; runway and debit semantics come from the live grant-status and billing fields.</span></div>
-          <div class="tool"><strong>Billing envelope</strong><span><code>cost_usd</code> is the customer-visible charged-cost field and should stay <code>0</code> for grant, API-key, internal, or discovery bypasses. Public grant and x402 envelopes may also expose <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>credits_charged</code>, <code>billing_mode</code>, <code>payment_status</code>, <code>billing_status</code>, and <code>request_id</code>; reconcile actual x402 spend from settlement or payment proof when the wallet moves.</span></div>
+          <div class="tool"><strong>Billing envelope</strong><span><code>cost_usd</code> is the customer-visible charged-cost field and should stay <code>0</code> for grant, API-key, internal, or discovery bypasses. Public grant and x402 envelopes may also expose <code>quoted_cost_usd</code>, <code>actual_cost_usd</code>, <code>credits_charged</code>, <code>billing_mode</code>, <code>payment_status</code>, <code>billing_status</code>, <code>settlement_receipt</code>, and <code>request_id</code>; reconcile actual paid spend from the per-call receipt plus settlement or payment proof.</span></div>
           <div class="tool"><strong>Pricing discovery</strong><span>Use <code>/v1/pricing</code> as the live route-pricing source of truth and <code>/v1/contract/fields</code> for canonical response-field semantics. Company Report is no longer the older $0.30 display price; the corrected standard display price is $0.60 with a route-declared range of $0.45-$0.75.</span></div>
           <div class="tool"><strong>Universe route invariant</strong><span><code>/v1/readiness</code>, <code>/v1/daily-changes/latest</code>, <code>/v1/alpha-opportunities</code>, <code>/v1/top-stressed</code>, and <code>/v1/risk-distribution</code> are universe-scoped routes and should remain path-ticker-free.</span></div>
           <div class="tool"><strong>MCP composites exposed</strong><span>MCP clients should discover composite tools before execution and prefer bounded presets such as Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check when they match the user intent.</span></div>
@@ -2683,7 +2683,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           <div class="tool"><strong>Readiness route</strong><span>Recommended first reviewer test; returns current service state or a valid public payment challenge.</span></div>
           <div class="tool"><strong>MCP discovery</strong><span>Works before paid calls so agents can inspect available tools.</span></div>
           <div class="tool"><strong>OpenAPI contract</strong><span>Shows reachable public routes, route metadata, and 402 response shape.</span></div>
-          <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, and amount metadata before retry. Public clients should reconcile actual spend from settlement or payment proof.</span></div>
+          <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, amount, and available payment-path metadata before retry. Standard Base x402 is first for compatibility; Circle Gateway appears as <code>GatewayWalletBatched</code> for Circle-aware clients.</span></div>
           <div class="tool"><strong>Paid retry</strong><span>Returns structured JSON or Markdown evidence after compatible payment proof.</span></div>
           <div class="tool"><strong>Response metadata</strong><span>Includes source dates, caveats, quality flags, and non-advice boundaries.</span></div>
           <div class="tool"><strong>Review target</strong><span>Validate ATLAS-7 x402 issuer intelligence first: Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and issuer drilldowns.</span></div>
@@ -2711,14 +2711,14 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
             </div>
           </div>
           <div class="surface-card payment">
-            <h3>x402 / Bazaar Settlement</h3>
-            <p>When free calls are exhausted, the route returns a 402 challenge with Bazaar metadata and settles paid calls with Base USDC.</p>
+            <h3>x402 / Circle Settlement</h3>
+            <p>When free calls are exhausted, the route returns a 402 challenge with Bazaar metadata. Standard Base x402 remains compatible; Circle Gateway is the preferred optimized path for clients that support <code>GatewayWalletBatched</code>.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">402 challenge</div>
               <div class="surface-step">Base USDC</div>
               <div class="surface-step">verify + settle</div>
-              <div class="surface-step hot">paid data</div>
+              <div class="surface-step hot">receipt</div>
             </div>
           </div>
         </div>

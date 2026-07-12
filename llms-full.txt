@@ -9,7 +9,7 @@ This file is the shortest public document that still captures the live Delta Sig
 
 One-screen summary
 - Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies and DeltaSignal Synthetic Baskets.
-- The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions. Public clients should not request or store Delta Signal API keys.
+- The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions. Public clients should not request or store Delta Signal API keys. Standard Base x402 remains the compatibility path; Circle Gateway is published as the preferred optimized path for Circle-aware clients that can select `GatewayWalletBatched`.
 - Public-facing basket language uses DeltaSignal Synthetic Basket names. Do not expose third-party basket-provider branding in public summaries unless the live route explicitly returns it as source metadata.
 - The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
@@ -18,7 +18,7 @@ One-screen summary
 - Synthetic AI10 audit mode is live through REST and MCP for driver, threshold, export, publication-safety, and event-confirmation questions.
 - Signed grant-session tokens authorize grant-covered requests. Plain unsigned wallet headers are intentionally not enough. The backend maps enrolled wallets to database-managed grant records and grant runway fields.
 - `/v1/pricing` is the public pricing source of truth. `/v1/contract/fields` is the parser-field source of truth.
-- For plain x402 calls, reconcile actual spend from settlement or payment proof, not only from `cost_usd`.
+- For paid calls, reconcile actual spend from the per-call settlement receipt plus settlement or payment proof, not only from `cost_usd`. Grant-covered calls stay separate and should not settle.
 
 Trust order
 When two sources disagree, trust them in this order:
@@ -211,9 +211,13 @@ Pricing and billing rules
 - Delta Signal pricing applies only to Delta Signal-derived evidence workflows and analytical outputs. It does not provide access to, redistribute, or resell any upstream market-data feed.
 - Company Report is not the older `$0.30` assumption. The corrected public display contract is `$0.60` standard with a live route-declared range of `$0.45-$0.75`.
 - Grant-covered, API-key-bypassed, or discovery responses may show `cost_usd: 0`.
-- Public grant or x402 billing envelopes may also expose fields such as `billing_mode`, `payment_status`, `billing_status`, `quoted_cost_usd`, `actual_cost_usd`, `credits_charged`, and request-scoped billing metadata.
+- Public grant or x402 billing envelopes may also expose fields such as `billing_mode`, `payment_status`, `billing_status`, `quoted_cost_usd`, `actual_cost_usd`, `credits_charged`, `settlement_receipt`, and request-scoped billing metadata.
 - Treat those fields as Delta Signal response-envelope billing data.
-- For plain x402 calls, reconcile real spend from settlement or payment proof when the wallet moved.
+- Standard Base x402 remains first in the 402 challenge for broad client compatibility.
+- Circle Gateway is an optional additive payment path and the preferred optimized route for clients that support `GatewayWalletBatched`.
+- Signed grant-session calls are separate from settlement and should remain zero-settlement when the grant covers the route.
+- For standard `x402_direct`, wallet movement plus the response receipt is the reconciliation path.
+- For `circle_gateway_batched`, the response receipt must remain the authoritative per-call attribution surface, including route, quote, charged/attributed amount, settlement mode, payer reference, reconciliation key, batch/transaction reference when available, timestamp, status, and quality flags.
 - Treat `cost_usd` as the Delta Signal billing-envelope signal, not the sole authority for externally settled x402 spend.
 
 Primary public workflows

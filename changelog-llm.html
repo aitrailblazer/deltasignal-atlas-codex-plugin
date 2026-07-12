@@ -43,7 +43,7 @@
       <a href="#tracking-river">Tracking river</a>
       <a href="#machine-contract">Machine contract</a>
     </nav>
-    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-07-02</code></p>
+    <p>artifact: <code>deltasignal_atlas7_changelog_llm</code> version: <code>changelog-llm-v1</code> last_updated: <code>2026-07-12</code></p>
     <h1>Delta Signal ATLAS-7 LLM Changelog</h1>
     <p>This page is optimized for language-model reading, citation, regression tracking, and cross-surface synchronization with the human changelog.</p>
     <div class="stats" aria-label="Changelog statistics">
@@ -56,6 +56,16 @@
     </div>
   </header>
   <main>
+    <section id="latest-2026-07-12">
+      <h2>Latest Circle Gateway x402 Compatibility Guidance Update</h2>
+      <div class="notice">
+        <p><strong>tripcode:</strong> <code>ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE</code></p>
+        <p><strong>bread:</strong> Improvement Timeline &gt; Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved</p>
+        <p>Public docs now state that standard Base x402 remains the first compatibility path in 402 challenges, while Circle Gateway is published as the preferred optimized path for Circle-aware clients that can select <code>GatewayWalletBatched</code>.</p>
+        <p>The agent-readable billing contract now distinguishes grant-covered zero-settlement calls, standard <code>x402_direct</code> wallet-settled calls, and future <code>circle_gateway_batched</code> receipt-based attribution. Paid responses should preserve response-envelope billing metadata and per-call settlement receipts where available.</p>
+        <p>Boundary: Circle Gateway improves the settlement path for supported clients; it does not replace x402, remove standard client compatibility, or make grant-covered calls settle on-chain.</p>
+      </div>
+    </section>
     <section id="latest-2026-07-02">
       <h2>Latest Synthetic AI10 Audit Answer-Completeness Deployment</h2>
       <div class="notice">

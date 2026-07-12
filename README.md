@@ -334,10 +334,10 @@ Planned routes:
 - Public OpenAPI: `https://api.aitrailblazer.net/openapi.json`
 - Public x402 discovery: `https://api.aitrailblazer.net/.well-known/x402`
 - Base x402 routes: `https://api.aitrailblazer.net/v1/*`
-- Payment rail: Base USDC through x402-capable clients
+- Payment rail: Base USDC through x402-capable clients; standard x402 remains first for compatibility and Circle Gateway is the preferred optimized path for clients that support `GatewayWalletBatched`
 - Seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
 
-Public clients do not need Delta Signal API keys. First calls may be grant-covered when the caller wallet is enrolled in the backend grant database. Public grant access uses the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers do not unlock grants. If no active grant applies, compatible clients receive x402 payment requirements and retry with payment proof. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client.
+Public clients do not need Delta Signal API keys. First calls may be grant-covered when the caller wallet is enrolled in the backend grant database. Public grant access uses the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers do not unlock grants. Grant-covered calls are virtual backend credit and do not settle. If no active grant applies, compatible clients receive x402 payment requirements and retry with payment proof. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client or a Circle-aware client that can select `GatewayWalletBatched`.
 
 ## Public x402 Probe
 
@@ -353,8 +353,12 @@ Expected public behavior:
 - `x402Version=2`
 - `network=eip155:8453`
 - Base USDC settlement
+- standard x402 option first for broad compatibility
+- optional Circle Gateway `GatewayWalletBatched` option for Circle-aware clients
 - seller `payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
 - Bazaar discovery metadata for the route
+
+Paid responses should include response-envelope billing metadata and, where applicable, a per-call settlement receipt. For standard `x402_direct`, reconcile wallet movement plus the response receipt. For Circle Gateway batching, the response receipt is the per-call attribution surface and should preserve route, quoted cost, charged or attributed amount, settlement mode, payer reference, reconciliation key, batch or transaction reference when available, timestamp, status, and quality flags.
 
 Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
 
