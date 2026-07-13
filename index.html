@@ -1709,7 +1709,7 @@
       <div class="hero-inner">
         <div class="hero-topline">
           <img src="./assets/logo.png" class="logo" alt="Delta Signal logo">
-          <p class="eyebrow">MCP live • NL help live • EDGAR verified • SPECTRA • Synthetic Basket layer • signed grants • x402</p>
+          <p class="eyebrow">MCP live • Circle-ready x402 • EDGAR verified • SPECTRA • Synthetic Basket layer • signed grants • no public API keys</p>
         </div>
         <div class="hero-layout">
           <div class="hero-copy">
@@ -1723,7 +1723,7 @@
               <div class="quick-fact"><strong>Synthetic Basket layer</strong><span>DeltaSignal Synthetic Baskets translate issuer evidence into AI, innovation, infrastructure, and semiconductor pressure views.</span></div>
               <div class="quick-fact"><strong>How it updates</strong><span>Nightly EDGAR waits for CompanyFacts, mirrors or reconstructs the date, then runs process-changes.</span></div>
               <div class="quick-fact"><strong>What ATLAS-7 adds</strong><span>Daily changes, issuer history, stress, peers, alpha, readiness, caveats, and MCP manifests.</span></div>
-              <div class="quick-fact"><strong>How to integrate</strong><span>Discover through OpenAPI, /v1/pricing, and /v1/contract/fields; use x402 or signed wallet grant sessions for execution. No customer API key handling required.</span></div>
+              <div class="quick-fact"><strong>How to integrate</strong><span>Discover through OpenAPI, /v1/pricing, and /v1/contract/fields; use standard Base x402, Circle Gateway <code>GatewayWalletBatched</code>, or signed wallet grant sessions. No customer API key handling required.</span></div>
               <div class="quick-fact"><strong>Natural help</strong><span>Ask MCP for <code>deltasignal_help</code> when you need examples, tool orientation, pricing, grants, Synthetic Basket, or SPECTRA guidance.</span></div>
               <div class="quick-fact"><strong>Best first probes</strong><span>Read llms-full.txt, then check pricing, field contract, readiness, MCP discovery, and help before any paid or grant-covered call.</span></div>
             </div>
@@ -1732,6 +1732,7 @@
               <div class="toc-links">
                 <a href="#start-here">Start Here</a>
                 <a href="#access-model">Access</a>
+                <a href="#circle-marketplace-validation">Circle</a>
                 <a href="#recommended-workflows">Workflows</a>
                 <a href="#what-you-get">Outputs</a>
                 <a href="#synthetic-baskets">Baskets</a>
@@ -1747,10 +1748,11 @@
               <a href="#start-here" class="btn btn-primary">Start Here</a>
               <a href="./llms-full.txt" class="btn btn-secondary">Agent Brief</a>
               <a href="#access-model" class="btn btn-secondary">Access Model</a>
+              <a href="#circle-marketplace-validation" class="btn btn-secondary">Circle Review</a>
               <a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener" class="btn btn-secondary">OpenAPI</a>
               <a href="./changelog-llm.html" class="btn btn-secondary">LLM Changelog</a>
             </div>
-            <p class="meter">MCP live • free deltasignal_help live • EDGAR daily background task verified • Synthetic Basket evidence layer documented • /v1/pricing + /v1/contract/fields live • wallet grant-session flow live • x402-first public execution</p>
+            <p class="meter">MCP live • free deltasignal_help live • EDGAR daily background task verified • Synthetic Basket evidence layer documented • /v1/pricing + /v1/contract/fields live • wallet grant-session flow live • standard x402 plus Circle Gateway-ready execution</p>
             <p class="hero-image-credit">Hero visual: SEC/XBRL evidence base -> ATLAS-7 intelligence engine -> agent-ready outputs.</p>
             <nav class="agent-links" aria-label="Agent files">
               <a href="./CLAUDE.md">CLAUDE.md</a>
@@ -2632,32 +2634,32 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
       </div>
     </section>
 
-    <section class="section" id="coinbase-bazaar-validation">
+    <section class="section" id="circle-marketplace-validation">
       <div class="wrap">
         <div class="section-head">
-          <h2>Coinbase x402 / Codex marketplace review path</h2>
-          <p>Review Delta Signal as a paid evidence API for Codex workflows: install, discover, inspect route metadata, use grant-session or x402 challenge flow, retry with proof or token, and verify returned provenance before trusting rendered prose.</p>
+          <h2>Circle Agent Marketplace review path</h2>
+          <p>Review Delta Signal as an x402-compatible seller service for AI agents: discover the public contract, inspect payment requirements, verify standard Base x402 plus Circle Gateway metadata, retry with proof or grant token, and preserve returned evidence provenance.</p>
         </div>
-        <div class="surface-stage" aria-label="Coinbase x402 and Bazaar validation flow">
+        <div class="surface-stage" aria-label="Circle Agent Marketplace x402 validation flow">
           <div class="surface-card">
-            <h3>Reviewer lifecycle</h3>
-            <p>Start with free discovery, then verify the challenge/retry path before running paid workflows.</p>
+            <h3>Seller service lifecycle</h3>
+            <p>Start with free discovery, then verify the 402 challenge, Circle-aware payment option, paid retry, and per-call receipt metadata before listing.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">MCP tools/list</div>
               <div class="surface-step">OpenAPI</div>
               <div class="surface-step">402 challenge</div>
-              <div class="surface-step hot">paid retry</div>
+              <div class="surface-step hot">receipt</div>
             </div>
           </div>
           <div class="surface-card payment">
-            <h3>Bazaar discovery proof</h3>
-            <p>Pass requires <code>extensions.bazaar.routeTemplate=/v1/readiness</code>, an output example, merchant resources for the seller <code>payTo</code>, and no Agentic Market first-party verification claim until the UI or Coinbase team confirms it.</p>
+            <h3>Circle-ready payment proof</h3>
+            <p>Pass requires a public x402 resource, seller <code>payTo</code>, amount, network, asset, standard Base x402 compatibility, and a Circle Gateway option exposed as <code>GatewayWalletBatched</code> for Circle-aware clients.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">payTo</div>
-              <div class="surface-step">merchant resources</div>
-              <div class="surface-step">Bazaar metadata</div>
+              <div class="surface-step">Base USDC</div>
+              <div class="surface-step">GatewayWalletBatched</div>
               <div class="surface-step hot">validated</div>
             </div>
           </div>
@@ -2673,10 +2675,10 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
             <span>Use an x402-capable discovery client to inspect pricing and payment requirements before paying or attaching a grant token.</span>
             <code>GET https://api.aitrailblazer.net/v1/readiness</code>
           </a>
-          <a class="link-card" href="https://docs.cdp.coinbase.com/x402/welcome" target="_blank" rel="noopener">
-            <strong>Coinbase x402 Docs</strong>
-            <span>Buyer, seller, facilitator, and Bazaar discovery reference for compatible clients.</span>
-            <code>docs.cdp.coinbase.com/x402</code>
+          <a class="link-card" href="https://developers.circle.com/gateway/nanopayments/quickstarts/seller.md" target="_blank" rel="noopener">
+            <strong>Circle Seller Reference</strong>
+            <span>Circle Gateway nanopayments seller flow for x402-compatible APIs that accept gasless USDC payments.</span>
+            <code>developers.circle.com/gateway/nanopayments/quickstarts/seller.md</code>
           </a>
         </div>
         <div class="tool-grid" style="margin-top:1.5rem;">
@@ -2684,10 +2686,10 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           <div class="tool"><strong>MCP discovery</strong><span>Works before paid calls so agents can inspect available tools.</span></div>
           <div class="tool"><strong>OpenAPI contract</strong><span>Shows reachable public routes, route metadata, and 402 response shape.</span></div>
           <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, amount, and available payment-path metadata before retry. Standard Base x402 is first for compatibility; Circle Gateway appears as <code>GatewayWalletBatched</code> for Circle-aware clients.</span></div>
-          <div class="tool"><strong>Paid retry</strong><span>Returns structured JSON or Markdown evidence after compatible payment proof.</span></div>
-          <div class="tool"><strong>Response metadata</strong><span>Includes source dates, caveats, quality flags, and non-advice boundaries.</span></div>
-          <div class="tool"><strong>Review target</strong><span>Validate ATLAS-7 x402 issuer intelligence first: Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and issuer drilldowns.</span></div>
-          <div class="tool"><strong>TripCode caveat</strong><span>TripCode/River subscriber research is discoverable in public MCP, but execution is x402/grant-gated and depends on required River/index blobs being available.</span></div>
+          <div class="tool"><strong>Paid retry</strong><span>Returns structured JSON or Markdown evidence after compatible payment proof, with billing metadata that supports per-call reconciliation.</span></div>
+          <div class="tool"><strong>No API keys</strong><span>Public clients discover and pay through x402 or use signed wallet grant sessions. Delta Signal API keys are first-party operations credentials, not customer integration requirements.</span></div>
+          <div class="tool"><strong>Evidence boundary</strong><span>Outputs include source dates, caveats, quality flags, and non-advice boundaries. Delta Signal is not a broker, trading bot, wallet, settlement service, or investment adviser.</span></div>
+          <div class="tool"><strong>Review target</strong><span>Validate ATLAS-7 x402 issuer intelligence first: Readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, Synthetic Basket pressure, and issuer drilldowns.</span></div>
         </div>
       </div>
     </section>
@@ -2712,7 +2714,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           </div>
           <div class="surface-card payment">
             <h3>x402 / Circle Settlement</h3>
-            <p>When free calls are exhausted, the route returns a 402 challenge with Bazaar metadata. Standard Base x402 remains compatible; Circle Gateway is the preferred optimized path for clients that support <code>GatewayWalletBatched</code>.</p>
+            <p>When free or grant-covered calls are unavailable, the route returns a 402 challenge with payment metadata. Standard Base x402 remains compatible; Circle Gateway is the preferred optimized path for clients that support <code>GatewayWalletBatched</code>.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">402 challenge</div>
@@ -2881,7 +2883,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
     <div class="workflow-strata" style="text-align:left;">
       <div class="workflow-stratum"><strong>Start</strong><span><a href="./index.html">ATLAS-7 Home</a><br><a href="https://aitrailblazer.github.io/strategix-visual-mcp/" target="_blank" rel="noopener">StrategiX Visual MCP</a><br><a href="https://substack.com/@deltasignalai" target="_blank" rel="noopener">Delta Signal Substack</a><br><a href="./changelog.html">Changelog</a><br><a href="./terms.html">Terms</a><br><a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">Readiness</a><br><a href="#recommended-workflows">Morning Brief</a><br><a href="./quickstart.md">Quickstart</a><br><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI</a><br><a href="#install">MCP connector</a><br><a href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">Glama connector</a></span></div>
       <div class="workflow-stratum"><strong>Workflows</strong><span>Morning Brief<br>Company Report<br>Pressure Board<br>Alpha Sweep<br>Quick Ticker Check<br>Peer Context<br>Daily Change Evidence Drilldown<br>TripCode / River research: discoverable, gated, and evidence-dependent</span></div>
-      <div class="workflow-stratum"><strong>Developer Resources</strong><span><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI schema</a><br><a href="./arazzo/deltasignal-arazzo.yaml">Arazzo YAML</a><br><a href="./arazzo/deltasignal-arazzo.json">Arazzo JSON</a><br><a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">MCP endpoint</a><br><a href="./arazzo/publicMcpX402Handshake.arazzo.yaml">x402 handshake</a><br><a href="./CLAUDE.md">CLAUDE.md</a><br><a href="./llms.txt">llms.txt</a><br><a href="./llms-full.txt">llms-full.txt</a></span></div>
+      <div class="workflow-stratum"><strong>Developer Resources</strong><span><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI schema</a><br><a href="https://api.aitrailblazer.net/.well-known/x402" target="_blank" rel="noopener">x402 discovery</a><br><a href="https://developers.circle.com/gateway/nanopayments/quickstarts/seller.md" target="_blank" rel="noopener">Circle seller reference</a><br><a href="./arazzo/deltasignal-arazzo.yaml">Arazzo YAML</a><br><a href="./arazzo/deltasignal-arazzo.json">Arazzo JSON</a><br><a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">MCP endpoint</a><br><a href="./arazzo/publicMcpX402Handshake.arazzo.yaml">x402 handshake</a><br><a href="./CLAUDE.md">CLAUDE.md</a><br><a href="./llms.txt">llms.txt</a><br><a href="./llms-full.txt">llms-full.txt</a></span></div>
     </div>
     <p style="max-width:980px;margin:1.5rem auto 0;">Delta Signal outputs are evidence packages, not unconstrained AI opinions. Natural Language briefs render returned evidence into readable Markdown; they do not create new evidence, fill missing data, override source caveats, convert screens into recommendations, or provide personalized investment advice. If evidence is missing, it remains missing and should be surfaced as a caveat.</p>
     <p style="max-width:980px;margin:1rem auto 0;">Discovery is free. Public clients should inspect <code>/v1/pricing</code>, <code>/v1/contract/fields</code>, OpenAPI, and MCP tools before execution. Paid calls may return a 402 challenge, while enrolled-wallet grants use a signed session token. Verify route availability, pricing, freshness, and payment behavior from the current live contract before trusting any cached note.</p>

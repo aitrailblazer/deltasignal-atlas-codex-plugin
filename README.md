@@ -2,23 +2,24 @@
 
 [![MCP Live](https://img.shields.io/badge/MCP-live-ff9a1a)](https://api.aitrailblazer.net/mcp)
 [![x402 Live](https://img.shields.io/badge/x402-Base%20USDC-e30055)](https://api.aitrailblazer.net/.well-known/x402)
+[![Circle Ready](https://img.shields.io/badge/Circle-GatewayWalletBatched-00a86b)](https://developers.circle.com/gateway/nanopayments/quickstarts/seller.md)
 [![Arazzo Workflows](https://img.shields.io/badge/Arazzo-1.0.1-54d69d)](./arazzo/deltasignal-arazzo.yaml)
 [![Discovery Contract](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml/badge.svg)](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml)
 [![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 
-Real-time financial signals, risk, fundamentals, and alpha for crypto-exposed public companies. Latest public checkpoint: June 20 grant-expiry and Natural Language grant-coverage rollout, with OpenAPI 48 paths, live pricing/field-contract discovery, free MCP `initialize` and `tools/list` discovery, x402 challenges for protected execution, grant-window expiry fields for active grants, and fresh 215-issuer ATLAS-7 audit status through the MCP audit tool.
+Evidence-first issuer intelligence, SEC/XBRL signals, risk context, fundamentals, alpha screens, and Synthetic Basket pressure evidence for crypto-exposed public companies. The live public surface exposes MCP, OpenAPI, Arazzo workflows, pricing/field-contract discovery, x402 challenges for protected execution, signed wallet grant sessions, and ATLAS-7 audit status.
 
 Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live Azure service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
 
-Native MCP server plus x402 micropayments. First 5 calls are free where supported, then Base USDC through compatible x402 clients. No subscription required.
+Native MCP server plus x402 micropayments. Public clients should not request or store Delta Signal API keys. Standard Base x402 remains the compatibility path; Circle Gateway is supported as the optimized path for Circle-aware clients using `GatewayWalletBatched`. Signed wallet grants are separate backend virtual credit and do not settle on-chain.
 
 Agents discover, pay, and execute deterministic workflows through MCP tools, OpenAPI routes, and Arazzo scenario definitions.
 
 Also available as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7). Smithery remains available as an alternate connector path.
 
-## Coinbase x402 / Codex Marketplace Review Focus
+## Circle Agent Marketplace Review Focus
 
-Delta Signal ATLAS-7 should be reviewed as a Codex-ready, x402-payable financial evidence service, not as a generic chat plugin.
+Delta Signal ATLAS-7 should be reviewed as an x402-compatible seller service for AI agents, not as a generic chat plugin or API-key product.
 
 The public review surface is ATLAS-7 issuer intelligence:
 
@@ -26,20 +27,23 @@ The public review surface is ATLAS-7 issuer intelligence:
 - OpenAPI route contracts with reachable REST routes and 402 response behavior.
 - Arazzo workflow metadata for bounded scenario planning.
 - x402 challenge and retry behavior through Base USDC.
+- Circle Gateway metadata through `GatewayWalletBatched` for Circle-aware clients.
 - Route-level pricing and payment metadata.
+- Per-call receipt metadata for paid-call reconciliation.
 - Evidence-preserving JSON or Markdown outputs with source dates, caveats, quality flags, payload mode, route provenance, and non-advice boundaries.
 
 Recommended reviewer path:
 
-1. Install the Coinbase payments MCP and this Codex plugin.
+1. Inspect `https://api.aitrailblazer.net/.well-known/x402`.
 2. Inspect MCP `tools/list` before any paid call.
 3. Inspect `https://api.aitrailblazer.net/openapi.json`.
 4. Probe `GET https://api.aitrailblazer.net/v1/readiness`.
 5. Confirm that a plain unauthenticated paid route may return HTTP `402 Payment Required`.
-6. Retry through an x402-compatible client or an active grant context.
-7. Inspect returned metadata before trusting rendered prose.
+6. Confirm the challenge includes standard Base x402 and, where configured, Circle Gateway `GatewayWalletBatched`.
+7. Retry through an x402-compatible client, Circle-aware client, or active signed grant context.
+8. Inspect returned evidence, billing, and receipt metadata before trusting rendered prose.
 
-Marketplace reviewers should validate `extensions.bazaar.routeTemplate=/v1/readiness`, an output example, merchant resources, seller `payTo`, amount/network/asset metadata, and the absence of unsupported Agentic Market first-party verification claims.
+Marketplace reviewers should validate a public x402 resource, seller `payTo`, amount/network/asset metadata, standard x402 compatibility, Circle Gateway `GatewayWalletBatched` availability for Circle-aware clients, and the absence of broker, wallet, settlement-service, or investment-advice claims.
 
 TripCode / River subscriber research is visible in public MCP discovery, but execution is x402/grant-gated and evidence-dependent. Do not promise a successful TripCode/River answer unless the live tool call resolves the required River / issuer index blobs.
 
@@ -53,7 +57,7 @@ flowchart LR
   Discover["Discover<br/>MCP tools/list<br/>OpenAPI<br/>Arazzo<br/>x402 metadata"]
   Plan["Plan<br/>select Arazzo workflow"]
   Execute["Execute<br/>MCP composite<br/>or REST sequence"]
-  Pay["Resolve payment<br/>402 challenge<br/>Coinbase x402 pay + retry"]
+  Pay["Resolve payment<br/>402 challenge<br/>standard x402 or Circle-aware retry"]
   Result["Result<br/>bounded JSON<br/>Markdown evidence"]
 
   Intent --> Discover --> Plan --> Execute --> Pay --> Result
@@ -94,7 +98,7 @@ The `Changelog Feeds` GitHub Action runs on changelog pushes, daily schedule, an
 
 ## Quick Start
 
-### Codex + Coinbase
+### Codex + x402
 
 ```bash
 npx @coinbase/payments-mcp install
@@ -103,7 +107,7 @@ codex plugin marketplace add aitrailblazer/deltasignal-atlas-codex-plugin
 
 Restart Codex CLI after install.
 
-### Claude Code + Coinbase
+### Claude Code + x402
 
 ```bash
 npx @coinbase/payments-mcp install --client claude-code
@@ -297,7 +301,7 @@ All tools are read-only, schema-validated, and bounded for agent use.
 
 TripCode tools are MCP-first research-continuity utilities. They are priced to make subscriber article resolution cheap while keeping higher-value synthesis separate.
 
-Public marketplace caveat: TripCode / River tools are discoverable in public MCP, but execution is x402/grant-gated and depends on deployed River / issuer index blobs. The strongest Coinbase / Codex marketplace path today remains ATLAS-7 x402 issuer intelligence: readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, and issuer drilldowns.
+Public marketplace caveat: TripCode / River tools are discoverable in public MCP, but execution is x402/grant-gated and depends on deployed River / issuer index blobs. The strongest Circle Agent Marketplace path today is ATLAS-7 x402 issuer intelligence: Readiness, Morning Brief, Company Report, Pressure Board, Alpha Sweep, Quick Ticker Check, Synthetic Basket pressure, and issuer drilldowns.
 
 | MCP tool | Typical price | Purpose |
 | --- | ---: | --- |
@@ -337,7 +341,7 @@ Planned routes:
 - Payment rail: Base USDC through x402-capable clients; standard x402 remains first for compatibility and Circle Gateway is the preferred optimized path for clients that support `GatewayWalletBatched`
 - Seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
 
-Public clients do not need Delta Signal API keys. First calls may be grant-covered when the caller wallet is enrolled in the backend grant database. Public grant access uses the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers do not unlock grants. Grant-covered calls are virtual backend credit and do not settle. If no active grant applies, compatible clients receive x402 payment requirements and retry with payment proof. If payment tooling is unavailable, inspect the route and expected cost, then retry through a Coinbase/x402-capable client or a Circle-aware client that can select `GatewayWalletBatched`.
+Public clients do not need Delta Signal API keys. First calls may be grant-covered when the caller wallet is enrolled in the backend grant database. Public grant access uses the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers do not unlock grants. Grant-covered calls are virtual backend credit and do not settle. If no active grant applies, compatible clients receive x402 payment requirements and retry with payment proof. If payment tooling is unavailable, inspect the route and expected cost, then retry through a standard x402-capable client or a Circle-aware client that can select `GatewayWalletBatched`.
 
 ## Public x402 Probe
 
@@ -356,11 +360,11 @@ Expected public behavior:
 - standard x402 option first for broad compatibility
 - optional Circle Gateway `GatewayWalletBatched` option for Circle-aware clients
 - seller `payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
-- Bazaar discovery metadata for the route
+- payment metadata for the route, including Circle Gateway metadata when available
 
 Paid responses should include response-envelope billing metadata and, where applicable, a per-call settlement receipt. For standard `x402_direct`, reconcile wallet movement plus the response receipt. For Circle Gateway batching, the response receipt is the per-call attribution surface and should preserve route, quoted cost, charged or attributed amount, settlement mode, payer reference, reconciliation key, batch or transaction reference when available, timestamp, status, and quality flags.
 
-Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
+Do not claim Circle Agent Marketplace listing status until Circle or the Circle marketplace UI confirms the branded Delta Signal ATLAS-7 listing.
 
 ## Daily Monitoring, Evidence, and Export Packaging
 
