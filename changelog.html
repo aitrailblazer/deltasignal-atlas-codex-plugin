@@ -489,14 +489,14 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated June 28, 2026 - public rollup clarified live no-key MCP help, Synthetic AI10 MCP readiness, Coinbase perp/SPECTRA read-route discovery, state labels for live/planned/proposed/local-only material, and the DeltaSignal Synthetic Basket evidence boundary.</p>
+      <p class="eyebrow">Updated July 12, 2026 - Circle Agent Marketplace readiness is now first-class: standard Base x402 remains compatible, Circle Gateway <code>GatewayWalletBatched</code> is documented for Circle-aware clients, public API keys are not required, and grant sessions remain virtual backend credit.</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>199</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>114</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>197</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>199</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>202</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>116</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>199</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>202</strong><span>breadcrumb chips</span></div>
         <div class="stat"><strong>78</strong><span>visible commit refs</span></div>
         <div class="stat"><strong>106</strong><span>unique source commits</span></div>
       </div>
@@ -516,9 +516,13 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Current Live-State Override</h2>
-          <p>Use current production discovery before older planning notes. The June 28 verification pass confirms public no-key MCP help, Synthetic AI10, and Coinbase market read surfaces are live, while execution-control research remains proposed unless future route discovery says otherwise.</p>
+          <p>Use current production discovery before older planning notes. The July 12 verification pass confirms public no-key MCP help, Synthetic AI10, Circle-ready x402 metadata, and Coinbase market read surfaces are live, while execution-control research remains proposed unless future route discovery says otherwise.</p>
         </div>
         <div class="cards">
+          <article class="card">
+            <h3>Circle-ready x402 is live</h3>
+            <p>The public x402 discovery surface now exposes Circle Gateway metadata with <code>paymentRequirement=GatewayWalletBatched</code>, live facilitator status, Base network identity, and seller <code>payTo</code>. Standard Base x402 remains the compatibility path.</p>
+          </article>
           <article class="card">
             <h3>MCP help is live</h3>
             <p>Public no-key MCP <code>tools/call</code> now supports <code>deltasignal_help</code>. It returns <code>schema_id=deltasignal.help.v1</code>, example prompts, next-best discovery calls, evidence boundaries, and <code>payment_status=free_discovery</code>.</p>
@@ -548,7 +552,19 @@
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
             <div class="river-row">
-              <span>199</span>
+              <span>202</span>
+              <code>ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS</code>
+              <span>Improvement Timeline &gt; Circle Agent Marketplace review path made first-class on the public page</span>
+              <code>T+1138m</code>
+            </div>
+            <div class="river-row">
+              <span>201</span>
+              <code>ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE</code>
+              <span>Improvement Timeline &gt; Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved</span>
+              <code>T+1130m</code>
+            </div>
+            <div class="river-row">
+              <span>200</span>
               <code>ATLAS-JUN-28-MCP-HELP-LIVE</code>
               <span>Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed</span>
               <code>T+1122m</code>
@@ -1752,6 +1768,28 @@
         </div>
         <div class="grid">
           <div class="card">
+            <span class="status">CIRCLE READY</span>
+            <strong>Circle Agent Marketplace readiness made first-class</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS</code>
+              <code>track: T+1138m</code>
+              <code>commit: d1076e4</code>
+              <code>bread: Improvement Timeline &gt; Circle Agent Marketplace review path made first-class on the public page</code>
+            </div>
+            <span>The public page now presents Delta Signal ATLAS-7 MCP as an x402-compatible seller service for Circle Agent Marketplace review, with Circle seller-reference links, <code>GatewayWalletBatched</code> payment metadata, no-public-API-key guidance, grant-session separation, receipt reconciliation, and non-advice boundaries visible in the first review pass.</span>
+          </div>
+          <div class="card">
+            <span class="status">CIRCLE GATEWAY</span>
+            <strong>Circle Gateway x402 compatibility guidance published</strong>
+            <div class="track">
+              <code>tripcode: ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE</code>
+              <code>track: T+1130m</code>
+              <code>commit: 5891246</code>
+              <code>bread: Improvement Timeline &gt; Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved</code>
+            </div>
+            <span>Public docs now state that standard Base x402 remains the compatibility path while Circle Gateway is the optimized path for Circle-aware clients that select <code>GatewayWalletBatched</code>. Grant-covered calls remain backend virtual credit and should not settle on-chain.</span>
+          </div>
+          <div class="card">
             <span class="status">PUBLIC ROLLUP</span>
             <strong>Consolidated June 6 public rollup to 74.7 percent coverage</strong>
             <div class="track">
@@ -2131,6 +2169,28 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS">
+            <div class="date">July 12, 2026</div>
+            <h3>Circle Agent Marketplace readiness made first-class</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS</code>
+              <code>track: T+1138m</code>
+              <code>commit: d1076e4</code>
+              <code>bread: Improvement Timeline &gt; Circle Agent Marketplace review path made first-class on the public page</code>
+            </div>
+            <p>The landing page, README, and LLM changelog now frame Delta Signal ATLAS-7 MCP as an x402-compatible seller service for Circle Agent Marketplace review. The public copy surfaces standard Base x402 compatibility, Circle Gateway <code>GatewayWalletBatched</code>, no-public-API-key integration, signed grant-session separation, per-call receipt reconciliation, and the non-broker / non-advice boundary.</p>
+          </article>
+          <article class="timeline-item" id="ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE">
+            <div class="date">July 12, 2026</div>
+            <h3>Circle Gateway x402 compatibility guidance published</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE</code>
+              <code>track: T+1130m</code>
+              <code>commit: 5891246</code>
+              <code>bread: Improvement Timeline &gt; Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved</code>
+            </div>
+            <p>Public docs now state that standard Base x402 remains the compatibility path, Circle Gateway is the optimized path for Circle-aware clients using <code>GatewayWalletBatched</code>, and grant-covered calls remain backend virtual credit rather than on-chain settlement.</p>
+          </article>
           <article class="timeline-item" id="ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE">
             <div class="date">June 20, 2026</div>
             <h3>Design-partner grant expiry fields and Natural Language route coverage deployed</h3>

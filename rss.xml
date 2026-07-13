@@ -6,8 +6,24 @@
     <atom:link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml" rel="self" type="application/rss+xml" />
     <description>Public changelog for Delta Signal ATLAS-7 MCP, OpenAPI, x402, notification, SPECTRA, and evidence-contract changes.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 00:00:00 GMT</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Circle Agent Marketplace readiness made first-class</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS</category>
+      <description>The public GitHub Pages surface now presents Delta Signal ATLAS-7 MCP as an x402-compatible seller service for Circle Agent Marketplace review. The landing page names the Circle review path, links to Circle Gateway nanopayments seller reference, and surfaces standard Base x402 plus Circle Gateway GatewayWalletBatched compatibility in the first integration scan. Breadcrumb: Improvement Timeline &gt; Circle Agent Marketplace review path made first-class on the public page Track: T+1138m Commit: d1076e4</description>
+    </item>
+    <item>
+      <title>Circle Gateway x402 compatibility guidance published</title>
+      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE</link>
+      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate>
+      <category>ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE</category>
+      <description>Public docs now state that standard Base x402 remains the first compatibility path in 402 challenges, while Circle Gateway is published as the preferred optimized path for Circle-aware clients that can select GatewayWalletBatched. Breadcrumb: Improvement Timeline &gt; Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved Track: T+1130m Commit: 5891246</description>
+    </item>
     <item>
       <title>Public no-key DeltaSignal MCP help deployed</title>
       <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-28-MCP-HELP-LIVE</link>
@@ -231,22 +247,6 @@
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <category>ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6</category>
       <description>DeltaSignal MCP validation and coercion coverage now verifies bounded defaults, integer coercion, common argument checks, ticker validation, output-mode validation, daily-change evidence checks, and composite workflow guardrails; the verified cmd/search-gateway package coverage checkpoint reached 75.6%. Breadcrumb: Improvement Timeline &gt; MCP validation and coercion coverage checkpoint Track: T+898m Commit: 387a8abd</description>
-    </item>
-    <item>
-      <title>SPECTRA dynamic helper coverage checkpoint</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-SPECTRA-DYNAMIC-HELPER-COVERAGE-75P4</category>
-      <description>SPECTRA dynamic helper coverage now verifies field-map row normalization, scalar coercion, point-date bounds, min/max normalization, compression/release labels, pressure/fair-value reads, rounding, and historical contract derivation; the verified cmd/search-gateway package coverage checkpoint reached 75.4%. Breadcrumb: Improvement Timeline &gt; SPECTRA dynamic helper coverage checkpoint Track: T+890m Commit: 71ceeb97</description>
-    </item>
-    <item>
-      <title>Consolidated June 6 public rollup to 75.2 percent coverage</title>
-      <link>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2</link>
-      <guid isPermaLink="false">https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2</guid>
-      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
-      <category>ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P2</category>
-      <description>The public changelog now includes the full June 6 public-safe update set through DeltaSignal helper branches and HTTP handler guard coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 75.2%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.2 percent coverage Track: T+882m Commit: current changelog update</description>
     </item>
   </channel>
 </rss>

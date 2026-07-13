@@ -2792,16 +2792,30 @@
 {
   "artifact": "deltasignal_atlas7_changelog_llm",
   "version": "changelog-llm-v1",
-  "last_updated": "2026-06-28",
+  "last_updated": "2026-07-12",
   "stats": {
-    "tracked_changes": 199,
-    "timeline_entries": 114,
-    "unique_tripcodes": 197,
-    "breadcrumb_chips": 199,
+    "tracked_changes": 202,
+    "timeline_entries": 116,
+    "unique_tripcodes": 199,
+    "breadcrumb_chips": 202,
     "visible_commit_references": 78,
     "unique_source_commits": 106
   },
   "tracking_river": [
+    {
+      "tripcode": "ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS",
+      "track": "T+1138m",
+      "commit": "d1076e4",
+      "bread": "Improvement Timeline > Circle Agent Marketplace review path made first-class on the public page",
+      "river_index": 202
+    },
+    {
+      "tripcode": "ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE",
+      "track": "T+1130m",
+      "commit": "5891246",
+      "bread": "Improvement Timeline > Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved",
+      "river_index": 201
+    },
     {
       "tripcode": "ATLAS-JUN-28-MCP-HELP-LIVE",
       "track": "T+1122m",
@@ -4082,6 +4096,37 @@
     }
   ],
   "timeline_entries": [
+    {
+      "river_index": 202,
+      "date": "July 12, 2026",
+      "title": "Circle Agent Marketplace readiness made first-class",
+      "tripcode": "ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS",
+      "track": "T+1138m",
+      "bread": "Improvement Timeline > Circle Agent Marketplace review path made first-class on the public page",
+      "commit": "d1076e4",
+      "summary": "The public GitHub Pages surface now presents Delta Signal ATLAS-7 MCP as an x402-compatible seller service for Circle Agent Marketplace review. The landing page names the Circle review path, links to Circle Gateway nanopayments seller reference, and surfaces standard Base x402 plus Circle Gateway GatewayWalletBatched compatibility in the first integration scan.",
+      "bullets": [
+        "The public page now links to Circle seller documentation and describes the seller-service lifecycle: MCP tools/list, OpenAPI, 402 challenge, paid retry, and receipt metadata.",
+        "The README now starts from Circle/x402 marketplace readiness instead of Coinbase-specific reviewer framing.",
+        "The no-public-API-key boundary, grant-session zero-settlement boundary, per-call receipt reconciliation requirement, and non-advice / non-broker service boundary remain explicit.",
+        "This entry does not claim that Circle has approved or listed Delta Signal until Circle or the Circle Agent Marketplace UI confirms the branded listing."
+      ]
+    },
+    {
+      "river_index": 201,
+      "date": "July 12, 2026",
+      "title": "Circle Gateway x402 compatibility guidance published",
+      "tripcode": "ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE",
+      "track": "T+1130m",
+      "bread": "Improvement Timeline > Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved",
+      "commit": "5891246",
+      "summary": "Public docs now state that standard Base x402 remains the first compatibility path in 402 challenges, while Circle Gateway is published as the preferred optimized path for Circle-aware clients that can select GatewayWalletBatched.",
+      "bullets": [
+        "The billing contract distinguishes grant-covered zero-settlement calls, standard x402_direct wallet-settled calls, and circle_gateway_batched receipt-based attribution.",
+        "Paid responses should preserve response-envelope billing metadata and per-call settlement receipts where available.",
+        "Circle Gateway improves the settlement path for supported clients; it does not replace x402, remove standard client compatibility, or make grant-covered calls settle on-chain."
+      ]
+    },
     {
       "river_index": 200,
       "date": "June 28, 2026",
@@ -5921,8 +5966,8 @@
 }
 </script>
   <script type="application/xml" id="changelog-llm-xml">
-<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-07-02">
-  <stats tracked_changes="201" timeline_entries="116" unique_tripcodes="199" breadcrumb_chips="201" visible_commit_references="78" unique_source_commits="106" />
+<changelog_llm artifact="deltasignal_atlas7_changelog_llm" version="changelog-llm-v1" last_updated="2026-07-12">
+  <stats tracked_changes="202" timeline_entries="116" unique_tripcodes="199" breadcrumb_chips="202" visible_commit_references="78" unique_source_commits="106" />
   <instructions>
     <instruction>Use tripcode as stable row identifier.</instruction>
     <instruction>Use bread as breadcrumb path.</instruction>
@@ -5931,6 +5976,8 @@
     <instruction>Preserve the non-advice evidence boundary.</instruction>
   </instructions>
   <entries>
+    <entry river_index="202" tripcode="ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS" track="T+1138m" bread="Improvement Timeline &gt; Circle Agent Marketplace review path made first-class on the public page" commit="d1076e4"><date>July 12, 2026</date><title>Circle Agent Marketplace readiness made first-class</title></entry>
+    <entry river_index="201" tripcode="ATLAS-JUL-12-CIRCLE-GATEWAY-X402-COMPATIBILITY-GUIDANCE" track="T+1130m" bread="Improvement Timeline &gt; Circle Gateway published as additive preferred settlement path with standard x402 compatibility preserved" commit="5891246"><date>July 12, 2026</date><title>Circle Gateway x402 compatibility guidance published</title></entry>
     <entry river_index="200" tripcode="ATLAS-JUN-28-MCP-HELP-LIVE" track="T+1122m" bread="Improvement Timeline &gt; Public no-key DeltaSignal MCP help deployed" commit="live rollout ca-web-intel-mcp--0000563"><date>June 28, 2026</date><title>Public no-key DeltaSignal MCP help deployed</title></entry>
     <entry river_index="199" tripcode="ATLAS-JUN-28-SYNTHETIC-ETF-PUBLIC-WORDING" track="T+1114m" bread="Improvement Timeline &gt; DeltaSignal Synthetic Basket public wording and accessibility update" commit="public docs update"><date>June 28, 2026</date><title>DeltaSignal Synthetic Basket public wording and accessibility update</title></entry>
     <entry river_index="198" tripcode="ATLAS-JUN-20-GRANT-NATURAL-EXPIRY-LIVE" track="T+1106m" bread="Improvement Timeline &gt; Design-partner grant expiry fields and Natural Language route coverage deployed" commit="live rollout ca-web-intel-mcp--0000536"><date>June 20, 2026</date><title>Design-partner grant expiry fields and Natural Language route coverage deployed</title></entry>
