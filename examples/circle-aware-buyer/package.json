@@ -1,0 +1,17 @@
+{
+  "name": "@aitrailblazer/deltasignal-circle-aware-buyer-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dry-run": "node ./buyer.mjs --dry-run",
+    "pay": "node ./buyer.mjs --pay",
+    "test": "node --test ./buyer.test.mjs"
+  },
+  "dependencies": {
+    "ethers": "6.17.0"
+  }
+}

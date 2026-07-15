@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v10
+Version: llms-full-v11
 Last updated: 2026-07-15
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 15 Circle x402 compatibility rollout.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 15 Circle x402 compatibility rollout and executable buyer publication.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
@@ -217,6 +217,7 @@ Pricing and billing rules
 - Circle Gateway is an optional additive payment path. Circle-aware buyers must explicitly select `GatewayWalletBatched` by capability or provider pin and sign against the challenge-provided Gateway verifying contract.
 - Circle Gateway settlement requires deposited or available Gateway balance. A Base ERC-20 USDC balance alone may return `insufficient_balance`; that closed failure is not a settled or charged call.
 - Do not claim automatic fallback after an invalid or failed proof. A buyer that wants another requirement must select and sign it explicitly.
+- A runnable Node.js buyer is published at `examples/circle-aware-buyer/`. It defaults to dry-run, selects Circle by capability, validates the live requirement, signs the challenge-provided Gateway domain only with `--pay`, and prints a sanitized settlement/receipt summary.
 - Signed grant-session calls are separate from settlement and should remain zero-settlement when the grant covers the route.
 - For standard `x402_direct`, wallet movement plus the response receipt is the reconciliation path.
 - For `circle_gateway_batched`, the response receipt must remain the authoritative per-call attribution surface, including route, quote, charged/attributed amount, settlement mode, payer reference, reconciliation key, batch/transaction reference when available, timestamp, status, and quality flags.
