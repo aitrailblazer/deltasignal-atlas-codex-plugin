@@ -7,7 +7,7 @@ slug: /llms
 version: ATLAS7_NL_DOCS_V1
 status: phase-1
 product: Delta Signal Natural Language Briefs
-last_updated: 2026-06-28
+last_updated: 2026-07-15
 ---
 
 # StrategiX Delta Signal Natural Language Briefs
@@ -19,6 +19,8 @@ LLM-optimized changelog: https://aitrailblazer.github.io/deltasignal-atlas-codex
 Changelog RSS: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rss.xml
 Changelog Atom: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
 Full agent handoff brief: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
+
+x402 compatibility rule: standard Base x402 is `accepts[0]`; Circle Gateway `GatewayWalletBatched` is an explicit additive requirement at `accepts[1]`. Circle-aware settlement requires available Gateway balance, not only Base ERC-20 USDC.
 
 For changelog tracking, prefer `changelog-llm.html` when available. Use `tripcode` as the stable row key, `bread` as the breadcrumb path, and the ordered tracking river plus `track` minute marker to preserve sequence across human-readable and LLM-readable changelog surfaces.
 

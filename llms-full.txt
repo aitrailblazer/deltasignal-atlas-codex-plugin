@@ -1,15 +1,15 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v9
-Last updated: 2026-07-02
+Version: llms-full-v10
+Last updated: 2026-07-15
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 2 Synthetic AI10 audit answer-completeness Azure deployment.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 15 Circle x402 compatibility rollout.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
 
 One-screen summary
 - Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies and DeltaSignal Synthetic Baskets.
-- The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions. Public clients should not request or store Delta Signal API keys. Standard Base x402 remains the compatibility path; Circle Gateway is published as the preferred optimized path for Circle-aware clients that can select `GatewayWalletBatched`.
+- The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions. Public clients should not request or store Delta Signal API keys. Standard Base x402 is the compatibility-first requirement at `accepts[0]`; Circle Gateway is an explicitly selectable additive path at `accepts[1]` for Circle-aware clients that support `GatewayWalletBatched`.
 - Public-facing basket language uses DeltaSignal Synthetic Basket names. Do not expose third-party basket-provider branding in public summaries unless the live route explicitly returns it as source metadata.
 - The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
@@ -214,7 +214,9 @@ Pricing and billing rules
 - Public grant or x402 billing envelopes may also expose fields such as `billing_mode`, `payment_status`, `billing_status`, `quoted_cost_usd`, `actual_cost_usd`, `credits_charged`, `settlement_receipt`, and request-scoped billing metadata.
 - Treat those fields as Delta Signal response-envelope billing data.
 - Standard Base x402 remains first in the 402 challenge for broad client compatibility.
-- Circle Gateway is an optional additive payment path and the preferred optimized route for clients that support `GatewayWalletBatched`.
+- Circle Gateway is an optional additive payment path. Circle-aware buyers must explicitly select `GatewayWalletBatched` by capability or provider pin and sign against the challenge-provided Gateway verifying contract.
+- Circle Gateway settlement requires deposited or available Gateway balance. A Base ERC-20 USDC balance alone may return `insufficient_balance`; that closed failure is not a settled or charged call.
+- Do not claim automatic fallback after an invalid or failed proof. A buyer that wants another requirement must select and sign it explicitly.
 - Signed grant-session calls are separate from settlement and should remain zero-settlement when the grant covers the route.
 - For standard `x402_direct`, wallet movement plus the response receipt is the reconciliation path.
 - For `circle_gateway_batched`, the response receipt must remain the authoritative per-call attribution surface, including route, quote, charged/attributed amount, settlement mode, payer reference, reconciliation key, batch/transaction reference when available, timestamp, status, and quality flags.

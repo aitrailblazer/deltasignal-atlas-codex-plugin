@@ -40,19 +40,19 @@ Every successful brief ends with:
 Delta Signal outputs are diligence triage and risk-sizing signals, not investment advice.
 ```
 
-## Coinbase x402 / Codex Marketplace Reviewer Quickstart
+## Standard x402 + Circle-Aware Reviewer Quickstart
 
 Review Delta Signal ATLAS-7 as a paid evidence API for Codex workflows.
 
 Start with discovery, not payment:
 
-1. Install Coinbase payments MCP.
+1. Use a standard EIP-3009 x402 client, or a Circle-aware buyer that can explicitly select `GatewayWalletBatched`.
 2. Install the Codex plugin.
 3. Confirm hosted MCP `tools/list` works before paid execution.
 4. Inspect OpenAPI and Arazzo metadata.
 5. Probe `GET https://api.aitrailblazer.net/v1/readiness`.
 6. Confirm HTTP `402` challenge behavior when payment or grant proof is required.
-7. Retry through an x402-compatible client or active grant context.
+7. Retry through standard `accepts[0]`, explicitly select Circle at `accepts[1]`, or use an active grant context.
 8. Confirm returned JSON or Markdown preserves source dates, caveats, quality flags, evidence hashes where available, payload mode, route provenance, and the non-advice boundary.
 
 Reviewer pass conditions:
@@ -137,7 +137,7 @@ Payment failure returns:
 402 Payment Required
 ```
 
-Coinbase x402 and Agentic Market use the Base route family under `https://api.aitrailblazer.net/v1/*`. Public clients do not need Delta Signal API keys. Before spending USDC, run an x402 discovery probe against `GET /v1/readiness`. A database-managed grant may allow execution when the caller completes the wallet grant-session flow for an enrolled EVM wallet: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers are not a grant identity. Otherwise expect HTTP `402` and confirm:
+Standard x402, Circle-aware buyers, and Agentic Market use the Base route family under `https://api.aitrailblazer.net/v1/*`. Public clients do not need Delta Signal API keys. Before spending USDC, run an x402 discovery probe against `GET /v1/readiness`. A database-managed grant may allow execution when the caller completes the wallet grant-session flow for an enrolled EVM wallet: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers are not a grant identity. Otherwise expect HTTP `402` and confirm:
 
 - `x402Version=2`
 - `network=eip155:8453`
@@ -145,6 +145,10 @@ Coinbase x402 and Agentic Market use the Base route family under `https://api.ai
 - `amount=40000` atomic USDC (`$0.04`)
 - seller `payTo=0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
 - Bazaar metadata includes `extensions.bazaar.routeTemplate=/v1/readiness`
+- `accepts[0]` is standard Base x402 for first-entry client compatibility
+- `accepts[1]` is Circle `GatewayWalletBatched` when Circle settlement is enabled
+
+Circle-aware buyers must select the Circle requirement explicitly and sign against its Gateway EIP-712 domain using the challenge-provided `extra.verifyingContract`. The signing wallet must have deposited or available Circle Gateway balance. Base ERC-20 USDC alone may return `insufficient_balance`, and that response must not be treated as a charge.
 
 Do not claim Agentic Market first-party verification until the Agentic Market UI or Coinbase/Agentic Market team confirms the branded DeltaSignal ATLAS-7 listing.
 

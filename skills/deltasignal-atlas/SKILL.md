@@ -50,6 +50,8 @@ Bundled MCP server:
 
 Do not translate between route families unless the user explicitly switches payment rails. If the active client is Agentic Market or Coinbase x402, use `/v1/*`. If the active client is MPPScan, mpp.dev, or asks for Tempo MPP, use `/mpp/v1/*`.
 
+Within `/v1/*`, preserve compatibility-first requirement selection: standard Base x402 is `accepts[0]`; Circle `GatewayWalletBatched` is the explicit additive requirement at `accepts[1]`. Do not assume clients automatically fall through after an unsupported or failed requirement. A Circle-aware buyer must select Circle by capability or provider pin, sign the challenge-provided Gateway domain, and have available Circle Gateway balance. Ordinary Base ERC-20 USDC balance alone is not sufficient for Gateway settlement.
+
 ## Composite Presets
 
 Composite presets are discounted server-enforced workflows. Public Builder pricing uses `1 credit = $0.01` of DeltaSignal usage value. Credit packs are not implemented yet.

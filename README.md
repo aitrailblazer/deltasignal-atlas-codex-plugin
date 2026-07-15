@@ -11,7 +11,7 @@ Evidence-first issuer intelligence, SEC/XBRL signals, risk context, fundamentals
 
 Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live Azure service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
 
-Native MCP server plus x402 micropayments. Public clients should not request or store Delta Signal API keys. Standard Base x402 remains the compatibility path; Circle Gateway is supported as the optimized path for Circle-aware clients using `GatewayWalletBatched`. Signed wallet grants are separate backend virtual credit and do not settle on-chain.
+Native MCP server plus x402 micropayments. Public clients should not request or store Delta Signal API keys. Standard Base x402 is the compatibility-first challenge at `accepts[0]`; Circle Gateway is an explicitly selectable optimized path at `accepts[1]` for Circle-aware clients using `GatewayWalletBatched`. Signed wallet grants are separate backend virtual credit and do not settle on-chain.
 
 Agents discover, pay, and execute deterministic workflows through MCP tools, OpenAPI routes, and Arazzo scenario definitions.
 
@@ -39,11 +39,11 @@ Recommended reviewer path:
 3. Inspect `https://api.aitrailblazer.net/openapi.json`.
 4. Probe `GET https://api.aitrailblazer.net/v1/readiness`.
 5. Confirm that a plain unauthenticated paid route may return HTTP `402 Payment Required`.
-6. Confirm the challenge includes standard Base x402 and, where configured, Circle Gateway `GatewayWalletBatched`.
-7. Retry through an x402-compatible client, Circle-aware client, or active signed grant context.
+6. Confirm the challenge presents standard Base x402 at `accepts[0]` and, where configured, Circle Gateway `GatewayWalletBatched` at `accepts[1]`.
+7. Let first-entry clients use the standard requirement, or explicitly select Circle by capability/provider pin from a Circle-aware client.
 8. Inspect returned evidence, billing, and receipt metadata before trusting rendered prose.
 
-Marketplace reviewers should validate a public x402 resource, seller `payTo`, amount/network/asset metadata, standard x402 compatibility, Circle Gateway `GatewayWalletBatched` availability for Circle-aware clients, and the absence of broker, wallet, settlement-service, or investment-advice claims.
+Marketplace reviewers should validate a public x402 resource, seller `payTo`, amount/network/asset metadata, standard x402 compatibility, explicit Circle Gateway `GatewayWalletBatched` selection for Circle-aware clients, and the absence of broker, wallet, settlement-service, or investment-advice claims. A Circle test wallet must have deposited or available Gateway balance; an ERC-20 USDC balance on Base alone is not sufficient for Gateway settlement.
 
 TripCode / River subscriber research is visible in public MCP discovery, but execution is x402/grant-gated and evidence-dependent. Do not promise a successful TripCode/River answer unless the live tool call resolves the required River / issuer index blobs.
 
@@ -57,7 +57,7 @@ flowchart LR
   Discover["Discover<br/>MCP tools/list<br/>OpenAPI<br/>Arazzo<br/>x402 metadata"]
   Plan["Plan<br/>select Arazzo workflow"]
   Execute["Execute<br/>MCP composite<br/>or REST sequence"]
-  Pay["Resolve payment<br/>402 challenge<br/>standard x402 or Circle-aware retry"]
+  Pay["Resolve payment<br/>standard accepts[0]<br/>or explicit Circle accepts[1]"]
   Result["Result<br/>bounded JSON<br/>Markdown evidence"]
 
   Intent --> Discover --> Plan --> Execute --> Pay --> Result
@@ -338,7 +338,7 @@ Planned routes:
 - Public OpenAPI: `https://api.aitrailblazer.net/openapi.json`
 - Public x402 discovery: `https://api.aitrailblazer.net/.well-known/x402`
 - Base x402 routes: `https://api.aitrailblazer.net/v1/*`
-- Payment rail: Base USDC through x402-capable clients; standard x402 remains first for compatibility and Circle Gateway is the preferred optimized path for clients that support `GatewayWalletBatched`
+- Payment rail: Base USDC through x402-capable clients; standard x402 is `accepts[0]` for compatibility and Circle Gateway is an explicit additive option at `accepts[1]` for clients that support `GatewayWalletBatched`
 - Seller `payTo`: `0x6D91ADF2c545047cbbC5b37a5f457cce081B48d3`
 
 Public clients do not need Delta Signal API keys. First calls may be grant-covered when the caller wallet is enrolled in the backend grant database. Public grant access uses the wallet grant-session flow for enrolled EVM wallets: `GET /v1/grant/challenge`, sign the returned message, `POST /v1/grant/session`, then attach `X-DeltaSignal-Grant-Token`. Raw unsigned wallet headers do not unlock grants. Grant-covered calls are virtual backend credit and do not settle. If no active grant applies, compatible clients receive x402 payment requirements and retry with payment proof. If payment tooling is unavailable, inspect the route and expected cost, then retry through a standard x402-capable client or a Circle-aware client that can select `GatewayWalletBatched`.
@@ -363,6 +363,8 @@ Expected public behavior:
 - payment metadata for the route, including Circle Gateway metadata when available
 
 Paid responses should include response-envelope billing metadata and, where applicable, a per-call settlement receipt. For standard `x402_direct`, reconcile wallet movement plus the response receipt. For Circle Gateway batching, the response receipt is the per-call attribution surface and should preserve route, quoted cost, charged or attributed amount, settlement mode, payer reference, reconciliation key, batch or transaction reference when available, timestamp, status, and quality flags.
+
+Circle selection is capability-based, not automatic fallback. A plain EIP-3009 client may use the first standard requirement without Circle support. A Circle-aware buyer must explicitly select the `GatewayWalletBatched` requirement and sign against the Gateway domain and challenge-provided `extra.verifyingContract`. The signing wallet must also have deposited or available Circle Gateway balance; Base ERC-20 USDC alone can produce a closed `insufficient_balance` response with no charge.
 
 Do not claim Circle Agent Marketplace listing status until Circle or the Circle marketplace UI confirms the branded Delta Signal ATLAS-7 listing.
 

@@ -2065,10 +2065,10 @@
         <div class="tool-grid" style="margin-top:1.5rem;">
           <div class="tool"><strong>Agent read order</strong><span>For IDEs and autonomous clients, fetch <code>llms-full.txt</code> first, then <code>changelog-llm.html</code>, then <code>openapi.json</code>, then <code>/v1/pricing</code>, then <code>/v1/contract/fields</code>. That order cuts down drift and prevents stale parser, grant, or pricing assumptions.</span></div>
           <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>48</code> paths, live <code>/v1/pricing</code>, live <code>/v1/contract/fields</code>, <code>/v1/grants/status</code> for callers with a resolved grant identity or active grant token, grant-window expiry fields when applicable, Company Report at <code>0.6</code> cost_usd, and a signed wallet-grant challenge/session flow.</span></div>
-          <div class="tool"><strong>Billing rule</strong><span>Treat <code>/v1/pricing</code> as the quote source and the response billing envelope as Delta Signal billing metadata. Standard Base x402 remains the compatibility path; Circle Gateway is the preferred optimized path for Circle-aware clients. Reconcile paid calls from the response settlement receipt plus settlement or payment proof.</span></div>
+          <div class="tool"><strong>Billing rule</strong><span>Treat <code>/v1/pricing</code> as the quote source and the response billing envelope as Delta Signal billing metadata. Standard Base x402 is the compatibility-first requirement; Circle Gateway is an explicitly selected additive path for Circle-aware clients. Reconcile paid calls from the response settlement receipt plus settlement or payment proof.</span></div>
           <div class="tool"><strong>HUT evidence readiness</strong><span>HUT company-report and SPECTRA field-map routes are live behind public x402 challenges. Agent-facing envelopes document <code>issuer_evidence_envelope</code>, <code>evidence_sections</code>, <code>spectra_metadata</code>, and <code>publication_audit_block</code>.</span></div>
           <div class="tool"><strong>Universe route safety</strong><span>No-ticker universe routes reject extra path segments such as <code>/UNIVERSE</code> with structured <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span></div>
-          <div class="tool"><strong>Current hardening checkpoint</strong><span>Recent integration pressure tests tightened pricing discovery, parser-field stability, compact evidence handling, large-payload guardrails, and grant-session contract wording. Public docs now track the live surface, including explicit budget-grant runway fields when production exposes them, not undeployed source expectations.</span></div>
+          <div class="tool"><strong>July 15 x402 checkpoint</strong><span>Production revision <code>ca-web-intel-mcp--0000594</code> restores standard-first compatibility and honors an explicitly selected Circle requirement. A bounded standard readiness call settled for <code>0.04 USDC</code>; Circle routing reached the Gateway facilitator and failed closed with <code>insufficient_balance</code> because the test wallet had no available Gateway balance.</span></div>
         </div>
         <div class="tool-grid" style="margin-top:1.5rem;">
           <div class="tool"><strong>Readiness should show</strong><span>Service state, active source date, issuer count, live-price status, audit freshness, and route/payment readiness.</span></div>
@@ -2375,7 +2375,7 @@
         <div class="tool-grid" style="margin-bottom:1.5rem;">
           <div class="tool"><strong>Discovery</strong><span>Free metadata and tool inspection: MCP discovery, OpenAPI route inspection, Arazzo workflow metadata, and readiness probes where a grant or policy applies.</span></div>
           <div class="tool"><strong>Granular reads</strong><span>Typical public reads run about $0.03-$0.10 depending on route: daily changes, readiness, risk distribution, top-stressed, peer ranking, alpha signals, covenant stress, SPECTRA, and issuer detail.</span></div>
-          <div class="tool"><strong>Payment rail</strong><span>Compatible public clients use Base USDC via x402 on <code>/v1/*</code>. Tempo/MPP clients use the matching <code>/mpp/v1/*</code> route family.</span></div>
+          <div class="tool"><strong>Payment rail</strong><span>Compatible public clients use Base USDC via x402 on <code>/v1/*</code>: standard at <code>accepts[0]</code>, with explicit Circle <code>GatewayWalletBatched</code> selection at <code>accepts[1]</code>. Tempo/MPP clients use the matching <code>/mpp/v1/*</code> route family.</span></div>
         </div>
         <p class="mini-note">Live route metadata is the source of truth. Use <code>/v1/pricing</code> for current cost discovery, then reconcile actual x402 spend from settlement or payment proof when the wallet moves. Route prices are for Delta Signal-derived evidence workflows only, not upstream market-data access or redistribution.</p>
       </div>
@@ -2638,7 +2638,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
       <div class="wrap">
         <div class="section-head">
           <h2>Circle Agent Marketplace review path</h2>
-          <p>Review Delta Signal as an x402-compatible seller service for AI agents: discover the public contract, inspect payment requirements, verify standard Base x402 plus Circle Gateway metadata, retry with proof or grant token, and preserve returned evidence provenance.</p>
+          <p>Review Delta Signal as an x402-compatible seller service for AI agents: discover the public contract, verify standard Base x402 at <code>accepts[0]</code> and Circle Gateway at <code>accepts[1]</code>, retry through the selected capability or a grant token, and preserve returned evidence provenance.</p>
         </div>
         <div class="surface-stage" aria-label="Circle Agent Marketplace x402 validation flow">
           <div class="surface-card">
@@ -2654,7 +2654,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           </div>
           <div class="surface-card payment">
             <h3>Circle-ready payment proof</h3>
-            <p>Pass requires a public x402 resource, seller <code>payTo</code>, amount, network, asset, standard Base x402 compatibility, and a Circle Gateway option exposed as <code>GatewayWalletBatched</code> for Circle-aware clients.</p>
+            <p>Pass requires a public x402 resource, seller <code>payTo</code>, amount, network, asset, standard Base x402 compatibility, and an explicitly selectable Circle Gateway option exposed as <code>GatewayWalletBatched</code>.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">payTo</div>
@@ -2685,7 +2685,8 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           <div class="tool"><strong>Readiness route</strong><span>Recommended first reviewer test; returns current service state or a valid public payment challenge.</span></div>
           <div class="tool"><strong>MCP discovery</strong><span>Works before paid calls so agents can inspect available tools.</span></div>
           <div class="tool"><strong>OpenAPI contract</strong><span>Shows reachable public routes, route metadata, and 402 response shape.</span></div>
-          <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, amount, and available payment-path metadata before retry. Standard Base x402 is first for compatibility; Circle Gateway appears as <code>GatewayWalletBatched</code> for Circle-aware clients.</span></div>
+          <div class="tool"><strong>x402 challenge</strong><span>Returns expected network, asset, seller, amount, and payment-path metadata before retry. Standard Base x402 is first for compatibility; Circle Gateway appears second as <code>GatewayWalletBatched</code> for explicit Circle-aware selection.</span></div>
+          <div class="tool"><strong>Circle wallet prerequisite</strong><span>A Circle-aware signing wallet needs deposited or available Gateway balance. Base ERC-20 USDC alone may return <code>insufficient_balance</code>; that closed failure is not a charge.</span></div>
           <div class="tool"><strong>Paid retry</strong><span>Returns structured JSON or Markdown evidence after compatible payment proof, with billing metadata that supports per-call reconciliation.</span></div>
           <div class="tool"><strong>No API keys</strong><span>Public clients discover and pay through x402 or use signed wallet grant sessions. Delta Signal API keys are first-party operations credentials, not customer integration requirements.</span></div>
           <div class="tool"><strong>Evidence boundary</strong><span>Outputs include source dates, caveats, quality flags, and non-advice boundaries. Delta Signal is not a broker, trading bot, wallet, settlement service, or investment adviser.</span></div>
@@ -2714,7 +2715,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
           </div>
           <div class="surface-card payment">
             <h3>x402 / Circle Settlement</h3>
-            <p>When free or grant-covered calls are unavailable, the route returns a 402 challenge with payment metadata. Standard Base x402 remains compatible; Circle Gateway is the preferred optimized path for clients that support <code>GatewayWalletBatched</code>.</p>
+            <p>When free or grant-covered calls are unavailable, the route returns a 402 challenge with payment metadata. Standard Base x402 remains first for compatibility; Circle Gateway is an explicit additive path for clients that support <code>GatewayWalletBatched</code> and have available Gateway balance.</p>
             <div class="surface-flow">
               <span class="surface-dot"></span>
               <div class="surface-step">402 challenge</div>

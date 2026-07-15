@@ -537,8 +537,10 @@
           "x-deltasignal-path": "/mcp",
           "x-http-method": "POST",
           "x-mcp-tool": "deltasignal_company_report",
-          "x-price-usd": 0.3,
-          "x-user-intent": "Full single-ticker diligence package.",
+          "x-price-usd": 0.6,
+          "x-price-range-usd": "0.45-0.75",
+          "x-recommended-display-price-usd": 0.6,
+          "x-user-intent": "Full single-ticker diligence package. Final charge is route-declared and should be confirmed through /v1/pricing, OpenAPI metadata, or the x402 challenge.",
           "requestBody": {
             "payload": {
               "jsonrpc": "2.0",
