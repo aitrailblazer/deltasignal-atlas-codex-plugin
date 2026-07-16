@@ -1,6 +1,6 @@
 {
   "name": "deltasignal-atlas-7",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "SEC-grounded crypto public issuer intelligence with compact daily monitoring, evidence drilldowns, Azure-native audit status, and x402 paid access.",
   "author": {
     "name": "AITrailblazer",
@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "DeltaSignal ATLAS-7",
     "shortDescription": "SEC-grounded ATLAS-7 stress, alpha, fundamentals, daily monitoring, evidence drilldowns, and audit status.",
-    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence on crypto public companies. It exposes composite presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha, fundamentals, risk distribution, compact daily monitoring, paginated daily evidence drilldowns, Natural Language briefs, and Azure-native 215-issuer regression audit status. Public MCP initialize and tools/list are free for discovery; public tools/call remains x402-protected unless a free-tier grant applies. Public Builder metadata uses usage credits; credit packs are not implemented yet. TripCode/River subscriber research is a near-term extension and must not be treated as public marketplace-ready unless live MCP discovery exposes those tools.",
+    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence across the current 378-issuer calculation universe. It exposes composite presets, granular issuer and market evidence, 26 governed atlas7_* semantic discovery/query tools, Natural Language briefs, and Azure-native 215-issuer regression audit status. Public MCP initialize and tools/list are free for discovery; public tools/call remains x402-protected unless a free-tier grant applies. Public Builder metadata uses usage credits; credit packs are not implemented yet. TripCode/River tools are visible in current public discovery, but execution remains x402/grant-gated and depends on the required River/index evidence objects.",
     "developerName": "AITrailblazer",
     "category": "Research",
     "capabilities": [
@@ -42,7 +42,8 @@
       "Use deltasignal_pressure_board, deltasignal_alpha_sweep, or deltasignal_quick_ticker_check for focused preset workflows.",
       "Use deltasignal_daily_changes for compact Daily Monitoring.",
       "Use deltasignal_daily_change_evidence with ticker ARKB for paginated raw issuer proof.",
-      "Do not claim TripCode/River tools are public marketplace-ready unless live MCP tools/list exposes them.",
+      "Use atlas7_model_catalog and atlas7_field_catalog before building governed semantic queries.",
+      "Treat TripCode/River tools as discovery-visible, x402/grant-gated, and evidence-dependent; never invent missing River/index objects.",
       "Use deltasignal_atlas7_audit_status when the user asks whether the full 215-issuer audit is healthy."
     ],
     "brandColor": "#0B5FFF",

@@ -1,8 +1,8 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v11
+Version: llms-full-v12
 Last updated: 2026-07-15
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
-Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 15 Circle x402 compatibility rollout and executable buyer publication.
+Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 15 issuer-wide calculation replay, customer-route audit, and governed semantic MCP verification.
 
 Purpose
 This file is the shortest public document that still captures the live Delta Signal operator contract. Read it before changelogs, before examples, and before hard-coding route, pricing, grant, or parser assumptions.
@@ -83,6 +83,17 @@ Do not start by:
 
 Most recent public verification anchor
 The current GitHub Pages surface is aligned to the latest public verification notes summarized here:
+- Live verification date: `2026-07-15` (public discovery reconfirmed `2026-07-16`).
+- Live discovery: OpenAPI `1.5.2` with `68` paths; MCP `tools/list` with `81` tools, including `26` governed `atlas7_*` semantic tools; `/v1/pricing` with `30` routes; `/v1/contract/fields` with `47` fields.
+- CompanyFacts/PIT replay execution: `edgarcompanyfactsmirror-sx9ym3w`, source date `2026-07-13`, completed `378/378` issuers and materialized `817,992` rows with `0` errors.
+- Current calculation-universe boundary: `378` issuers = `215` crypto-canonical issuers + `163` expanded public-equity issuers. The earlier `312` expanded rows / `298` distinct tickers describe a historical cohort snapshot.
+- Customer-route regression audit execution: `deltasigatlasaudit-29735310`, covering `215` issuers and `1,935` operations: `1,923` successful, `0` failed, `0` skipped, and `12` not applicable.
+- Audit detail: historical operations `645` successful / `0` failed; composite operations `430` successful / `0` failed; identity gaps `0`.
+- Audit artifact prefix: `20260715T123025Z`; summary SHA-256: `a341b77512418aeb5a5070dea4fa421c80b2dac40976100665098031e3a97840`.
+- Scope boundary: the 378-issuer calculation replay and 215-issuer customer-route audit are separate governed surfaces. Do not combine their totals or treat an audit `not_applicable` result as a failure.
+- Governed semantic tools expose model/field catalogs, validation, evidence envelopes, issuer/report inputs, history, pressure, and lineage. Raw SQL is never returned.
+
+Previous Synthetic AI10 verification anchor
 - Live verification date: `2026-07-02`.
 - Latest deployed MCP/backend revision checked for this brief: `ca-web-intel-mcp--0000577`.
 - Deployed image checked for this brief: `acrgniwebintel001.azurecr.io/ca-web-intel-mcp:skill-synthetic-ai10-answer-completeness-20260702-055337`.
@@ -235,7 +246,8 @@ Primary public workflows
 
 Public capability and lane map
 - Core issuer universe: 215 issuer rows in the original crypto-exposed public-company coverage map, with 201 nonblank unique tickers and 13 CIK-only or unresolved ticker rows.
-- Expanded ATLAS-7 coverage: 312 expanded issuer rows and 298 distinct expanded issuer tickers.
+- Current calculation universe: 378 issuer rows, composed of 215 crypto-canonical issuers plus 163 expanded public-equity issuers.
+- Historical expanded cohort snapshot: a 312-row expanded issuer cohort with 298 distinct tickers. Preserve this only as historical context.
 - Synthetic membership surface: 326 synthetic basket membership rows, 180 unique public-equity tickers, and 2 canonical linked perp instruments.
 - DeltaSignal Synthetic AI10: 10 constituents. Use this for the concentrated AI leader pressure-state workflow.
 - DeltaSignal Synthetic Tech100: 100 constituents. Use this for broad innovation and technology pressure-state context.
@@ -249,6 +261,16 @@ Public capability and lane map
 - DeltaSignal Synthetic Public Market Rails Basket: financial-market infrastructure relevant to digital assets, including trading, brokerage, custody, index, clearing, settlement, payments, and exchange infrastructure.
 - DeltaSignal Synthetic Speculative / Emerging Crypto Issuers Basket: smaller, newer, thinner, less-proven, or evidence-limited crypto-exposed issuers separated from mature infrastructure names.
 - Lane output is cohort and pressure-intelligence metadata. It is not a regulated ETF claim, broker signal, target price, trade instruction, or investment advice.
+
+Governed semantic MCP
+- Live public MCP discovery exposes 26 tools with the `atlas7_*` prefix.
+- Start with `atlas7_model_catalog` to discover governed semantic models and supported intents.
+- Use `atlas7_field_catalog` to inspect allowlisted fields, filters, sorts, freshness, and evidence requirements for one model.
+- Use `atlas7_compile_query` or `atlas7_explain_signal` to validate a request and inspect the public plan or SQL fingerprint without exposing raw SQL.
+- Use `atlas7_semantic_query` only with allowlisted model, intent, field, filter, and sort inputs. The response is an ATLAS evidence envelope, not a database console.
+- Preserve source dates, accessions, CIK/ticker identity, fact names, evidence hashes, freshness, quality flags, and missing-evidence states.
+- Use `atlas7_evidence_lineage` or `atlas7_lineage_audit` when a user asks how a fact or calculation is supported.
+- Treat subscription gating as part of the contract. Tool discovery does not imply that a caller is entitled to execute every semantic route.
 
 Natural-language MCP help and routing
 - `deltasignal_help` is the human orientation surface. Use it before paid or evidence workflows when the user asks for help, examples, groups, fields, pricing, grants, x402, Morning Brief, Company Report, Synthetic AI10, perps, SPECTRA, tools, or integration guidance.

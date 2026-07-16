@@ -3,7 +3,7 @@
   "name": "io.github.aitrailblazer/deltasignal-atlas-7",
   "title": "DeltaSignal ATLAS-7",
   "description": "SEC/XBRL issuer intelligence for crypto public companies via MCP, OpenAPI, x402, and MPP.",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "websiteUrl": "https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin",
   "relatedProducts": [
     {
@@ -63,7 +63,7 @@
     "codex",
     "x402"
   ],
-  "instructions": "Prefer composite MCP presets for public marketplace workflows: deltasignal_morning_brief for daily scans, deltasignal_company_report for ticker reports, deltasignal_pressure_board for risk monitoring, deltasignal_alpha_sweep for opportunities, and deltasignal_quick_ticker_check for fast ticker checks. Use deltasignal_daily_changes for compact Daily Monitoring and deltasignal_daily_change_evidence for explicit ticker/CIK proof drilldowns. Use deltasignal_atlas7_audit_status or GET /v1/atlas7/audit/latest when the user asks whether the full Azure-native 215-issuer ATLAS-7 regression audit is healthy and fresh. Public MCP initialize and tools/list are free for discovery; public tools/call requires x402 payment unless a free-tier grant applies. Public users can access the surface through x402/Base or MPP/Tempo rails. First 5 calls are free where supported; paid usage settles via x402 USDC on Base. Do not claim TripCode/River subscriber research tools are public marketplace-ready unless live MCP tools/list exposes them and the required River/index evidence objects are present.",
+  "instructions": "Prefer composite MCP presets for public marketplace workflows: deltasignal_morning_brief for daily scans, deltasignal_company_report for ticker reports, deltasignal_pressure_board for risk monitoring, deltasignal_alpha_sweep for opportunities, and deltasignal_quick_ticker_check for fast ticker checks. Use deltasignal_daily_changes for compact Daily Monitoring and deltasignal_daily_change_evidence for explicit ticker/CIK proof drilldowns. For governed semantic access, inspect atlas7_model_catalog and atlas7_field_catalog before atlas7_semantic_query, and preserve every evidence envelope. Use deltasignal_atlas7_audit_status or GET /v1/atlas7/audit/latest when the user asks whether the full Azure-native 215-issuer ATLAS-7 regression audit is healthy and fresh. Public MCP initialize and tools/list are free for discovery; public tools/call requires x402 payment unless a free-tier grant applies. Public users can access the surface through x402/Base or MPP/Tempo rails. First 5 calls are free where supported; paid usage settles via x402 USDC on Base. TripCode/River subscriber research is discovery-visible but remains x402/grant-gated and evidence-dependent; never infer missing River/index objects.",
   "configSchema": {
     "type": "object",
     "properties": {
@@ -82,7 +82,7 @@
   "_meta": {
     "io.modelcontextprotocol.registry/publisher-provided": {
       "summary": "DeltaSignal ATLAS-7 gives agents SEC/XBRL-grounded issuer intelligence for crypto public companies.",
-      "longDescription": "Composite MCP presets cover Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check workflows. Granular tools expose readiness, covenant stress, peer ranking, alpha signals, SEC/XBRL fundamentals, compact daily monitoring, evidence drilldowns, Natural Language briefs, and Azure-native 215-issuer audit status. Public access supports x402/Base and MPP/Tempo rails. TripCode/River subscriber research is a near-term extension and should not be represented as public marketplace-ready unless live MCP discovery confirms those tools.",
+      "longDescription": "Composite MCP presets cover Morning Brief, Company Report, Pressure Board, Alpha Sweep, and Quick Ticker Check workflows. Granular tools expose readiness, covenant stress, peer ranking, alpha signals, SEC/XBRL fundamentals, compact daily monitoring, evidence drilldowns, Natural Language briefs, and Azure-native 215-issuer audit status. The current public MCP catalog also exposes 26 governed atlas7_* semantic tools for catalog, query, evidence-lineage, history, and report workflows. Public access supports x402/Base and MPP/Tempo rails. TripCode/River research is discovery-visible but x402/grant-gated and dependent on deployed River/index evidence.",
       "install": {
         "transport": "streamable-http",
         "mcpEndpoint": "https://api.aitrailblazer.net/mcp",

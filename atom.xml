@@ -5,8 +5,16 @@
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog.html" />
   <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml" rel="self" type="application/atom+xml" />
   <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog</id>
-  <updated>2026-07-12T00:00:00.000Z</updated>
+  <updated>2026-07-15T00:00:00.000Z</updated>
   <author><name>AITrailblazer</name></author>
+  <entry>
+    <title>Calculation-plane receipts and semantic MCP public contract synchronized</title>
+    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUL-15-CALCULATION-PLANE-SEMANTIC-MCP-PUBLIC-CONTRACT" />
+    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUL-15-CALCULATION-PLANE-SEMANTIC-MCP-PUBLIC-CONTRACT</id>
+    <updated>2026-07-15T00:00:00.000Z</updated>
+    <category term="ATLAS-JUL-15-CALCULATION-PLANE-SEMANTIC-MCP-PUBLIC-CONTRACT" />
+    <summary>The public plugin now reflects the final issuer-wide calculation replay, the separate customer-route regression audit, and the governed semantic MCP catalog instead of preserving older route and coverage counts as current. Breadcrumb: Improvement Timeline &gt; July 15 calculation-plane receipts and semantic MCP public contract synchronized Track: T+1146m Commit: current changelog update</summary>
+  </entry>
   <entry>
     <title>Circle Agent Marketplace readiness made first-class</title>
     <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS" />
@@ -238,13 +246,5 @@
     <updated>2026-06-06T00:00:00.000Z</updated>
     <category term="ATLAS-JUN-6-COMPLETE-PUBLIC-ROLLUP-75P6" />
     <summary>The public changelog now includes the full June 6 public-safe update set through SPECTRA dynamic helper coverage and MCP validation/coercion coverage, with RSS/Atom subscriber feeds and LLM handoff files synchronized to the verified cmd/search-gateway package coverage checkpoint at 75.6%. Breadcrumb: Improvement Timeline &gt; Consolidated June 6 public rollup to 75.6 percent coverage Track: T+906m Commit: current changelog update</summary>
-  </entry>
-  <entry>
-    <title>MCP validation and coercion coverage checkpoint</title>
-    <link href="https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog-llm.html#ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6" />
-    <id>https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/changelog/ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6</id>
-    <updated>2026-06-06T00:00:00.000Z</updated>
-    <category term="ATLAS-JUN-6-MCP-VALIDATION-COERCION-COVERAGE-75P6" />
-    <summary>DeltaSignal MCP validation and coercion coverage now verifies bounded defaults, integer coercion, common argument checks, ticker validation, output-mode validation, daily-change evidence checks, and composite workflow guardrails; the verified cmd/search-gateway package coverage checkpoint reached 75.6%. Breadcrumb: Improvement Timeline &gt; MCP validation and coercion coverage checkpoint Track: T+898m Commit: 387a8abd</summary>
   </entry>
 </feed>

@@ -489,14 +489,14 @@
         <a href="./changelog-llm.html">LLM-readable changelog</a>
         <a href="#tracking-river">Tracking river</a>
       </nav>
-      <p class="eyebrow">Updated July 12, 2026 - Circle Agent Marketplace readiness is now first-class: standard Base x402 remains compatible, Circle Gateway <code>GatewayWalletBatched</code> is documented for Circle-aware clients, public API keys are not required, and grant sessions remain virtual backend credit.</p>
+      <p class="eyebrow">Updated July 16, 2026 - The public contract now records the issuer-wide calculation replay and customer-route audit, exposes the governed semantic MCP surface, and preserves the Circle Agent Marketplace guidance added July 12.</p>
       <h1>Delta Signal ATLAS-7 Changelog</h1>
       <p class="subtitle">A public changelog for the SEC/XBRL-grounded issuer-intelligence surface: OpenAPI, MCP, x402, atomic company reports, audit status, historical ATLAS-7 calculations, SPECTRA, and evidence-preserving briefs.</p>
       <div class="stats" aria-label="Changelog tracking statistics">
-        <div class="stat"><strong>202</strong><span>tracked changes</span></div>
-        <div class="stat"><strong>116</strong><span>timeline entries</span></div>
-        <div class="stat"><strong>199</strong><span>unique tripcodes</span></div>
-        <div class="stat"><strong>202</strong><span>breadcrumb chips</span></div>
+        <div class="stat"><strong>203</strong><span>tracked changes</span></div>
+        <div class="stat"><strong>117</strong><span>timeline entries</span></div>
+        <div class="stat"><strong>200</strong><span>unique tripcodes</span></div>
+        <div class="stat"><strong>203</strong><span>breadcrumb chips</span></div>
         <div class="stat"><strong>78</strong><span>visible commit refs</span></div>
         <div class="stat"><strong>106</strong><span>unique source commits</span></div>
       </div>
@@ -516,9 +516,17 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Current Live-State Override</h2>
-          <p>Use current production discovery before older planning notes. The July 12 verification pass confirms public no-key MCP help, Synthetic AI10, Circle-ready x402 metadata, and Coinbase market read surfaces are live, while execution-control research remains proposed unless future route discovery says otherwise.</p>
+          <p>Use current production discovery before older planning notes. The July 16 verification confirms 68 OpenAPI paths, 81 MCP tools including 26 governed semantic tools, 30 priced routes, 47 parser-contract fields, and the final July 15 calculation-plane receipts.</p>
         </div>
         <div class="cards">
+          <article class="card">
+            <h3>Calculation plane is replay-verified</h3>
+            <p>The July 15 CompanyFacts/PIT replay completed 378 of 378 issuers and materialized 817,992 rows with 0 errors. The separate 215-issuer customer audit completed 1,935 operations with 0 failures.</p>
+          </article>
+          <article class="card">
+            <h3>Governed semantic MCP is live</h3>
+            <p>Public MCP discovery exposes 26 <code>atlas7_*</code> tools for model/field catalogs, governed queries, evidence lineage, issuer inputs, pressure, and history. Raw SQL is never returned.</p>
+          </article>
           <article class="card">
             <h3>Circle-ready x402 is live</h3>
             <p>The public x402 discovery surface now exposes Circle Gateway metadata with <code>paymentRequirement=GatewayWalletBatched</code>, live facilitator status, Base network identity, and seller <code>payTo</code>. Standard Base x402 remains the compatibility path.</p>
@@ -551,6 +559,12 @@
           <p>Ordered river of changelog tracking chips. Use <code>tripcode</code> as the stable row key, <code>bread</code> as the human breadcrumb, and <code>track</code> as the minute marker for cross-surface references.</p>
         </div>
         <div class="river" role="list" aria-label="Ordered changelog tracking river">
+            <div class="river-row">
+              <span>203</span>
+              <code>ATLAS-JUL-15-CALCULATION-PLANE-SEMANTIC-MCP-PUBLIC-CONTRACT</code>
+              <span>Improvement Timeline &gt; July 15 calculation-plane receipts and semantic MCP public contract synchronized</span>
+              <code>T+1146m</code>
+            </div>
             <div class="river-row">
               <span>202</span>
               <code>ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS</code>
@@ -2169,6 +2183,23 @@
           <p>Reconstructed from deployed backend continuity notes, route metadata updates, and recent source history. Dates are release or verification dates, not marketing milestones.</p>
         </div>
         <div class="timeline">
+          <article class="timeline-item" id="ATLAS-JUL-15-CALCULATION-PLANE-SEMANTIC-MCP-PUBLIC-CONTRACT">
+            <div class="date">July 15, 2026</div>
+            <h3>Calculation-plane receipts and semantic MCP public contract synchronized</h3>
+            <div class="track">
+              <code>tripcode: ATLAS-JUL-15-CALCULATION-PLANE-SEMANTIC-MCP-PUBLIC-CONTRACT</code>
+              <code>track: T+1146m</code>
+              <code>commit: current changelog update</code>
+              <code>bread: Improvement Timeline &gt; July 15 calculation-plane receipts and semantic MCP public contract synchronized</code>
+            </div>
+            <p>The public plugin now reflects the final issuer-wide replay, the separate customer-route regression audit, and the governed semantic MCP catalog instead of preserving older route and coverage counts as current.</p>
+            <ul>
+              <li>CompanyFacts/PIT replay: 378 of 378 issuers, 817,992 materialized rows, and 0 errors.</li>
+              <li>Customer audit: 215 issuers, 1,935 operations, 1,923 successful, 0 failed, 0 skipped, and 12 not applicable.</li>
+              <li>Live discovery: OpenAPI 1.5.2 with 68 paths; MCP with 81 tools including 26 governed semantic tools; pricing with 30 routes; field contract with 47 fields.</li>
+              <li>The 378-issuer replay and 215-issuer route audit remain separate evidence scopes, and semantic tools return governed evidence envelopes rather than raw SQL.</li>
+            </ul>
+          </article>
           <article class="timeline-item" id="ATLAS-JUL-12-CIRCLE-AGENT-MARKETPLACE-READINESS">
             <div class="date">July 12, 2026</div>
             <h3>Circle Agent Marketplace readiness made first-class</h3>
@@ -4906,8 +4937,9 @@ Spacing note: published paths use company-report. A copied
   <script type="application/json" id="changelog-provenance">
     {
       "artifact": "deltasignal_atlas7_changelog",
-      "last_updated": "2026-06-20",
+      "last_updated": "2026-07-16",
       "sources": [
+        "July 15 calculation-plane replay and customer-route audit receipts, with public discovery reconfirmed 2026-07-16",
         "Live grant-expiry and Natural Language route coverage rollout from 2026-06-20",
         "aitrailblazer-web-intel-mcp CONTINUITY.md",
         "aitrailblazer-web-intel-mcp git history through af9f8718",

@@ -7,7 +7,7 @@ slug: /quickstart
 version: ATLAS7_NL_DOCS_V1
 status: phase-1
 product: Delta Signal Natural Language Briefs
-last_updated: 2026-06-19
+last_updated: 2026-07-16
 ---
 
 # Delta Signal Natural Language Briefs Quickstart
@@ -16,7 +16,7 @@ last_updated: 2026-06-19
 
 Latest public changelog: [`changelog.html`](./changelog.html).
 
-June 19 live contract checkpoint: production exposes OpenAPI with 48 paths, `GET /v1/pricing`, `GET /v1/contract/fields`, public MCP `initialize` and `tools/list` discovery, and public x402 challenges for protected route and MCP `tools/call` execution.
+July 16 live contract checkpoint: production exposes OpenAPI with 68 paths, public MCP discovery with 81 tools including 26 governed `atlas7_*` semantic tools, 30 priced routes, 47 parser-contract fields, and public x402 challenges for protected route and MCP `tools/call` execution.
 
 Delta Signal Natural Language Briefs convert canonical Delta Signal evidence into validated, audit-grade Markdown.
 

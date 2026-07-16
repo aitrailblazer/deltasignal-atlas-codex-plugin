@@ -20,6 +20,8 @@ Changelog RSS: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/rs
 Changelog Atom: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/atom.xml
 Full agent handoff brief: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/llms-full.txt
 
+July 15/16 public checkpoint: live OpenAPI exposes 68 paths; MCP discovery exposes 81 tools, including 26 governed `atlas7_*` semantic tools; pricing publishes 30 routes; and the parser contract publishes 47 fields. The current calculation replay covers 378 issuers and materialized 817,992 point-in-time rows with 0 errors. The separate 215-issuer customer audit completed 1,935 operations with 1,923 successful, 0 failed, 0 skipped, and 12 not applicable.
+
 x402 compatibility rule: standard Base x402 is `accepts[0]`; Circle Gateway `GatewayWalletBatched` is an explicit additive requirement at `accepts[1]`. Circle-aware settlement requires available Gateway balance, not only Base ERC-20 USDC.
 
 For changelog tracking, prefer `changelog-llm.html` when available. Use `tripcode` as the stable row key, `bread` as the breadcrumb path, and the ordered tracking river plus `track` minute marker to preserve sequence across human-readable and LLM-readable changelog surfaces.

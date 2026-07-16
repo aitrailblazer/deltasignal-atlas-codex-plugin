@@ -17,6 +17,14 @@ Agents discover, pay, and execute deterministic workflows through MCP tools, Ope
 
 Also available as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7). Smithery remains available as an alternate connector path.
 
+## July 15 Live Contract Checkpoint
+
+The latest verified public contract exposes **68 OpenAPI paths**, **81 MCP tools**, **30 priced routes**, and **47 parser-contract fields**. The MCP catalog includes **26 governed `atlas7_*` semantic tools** for model/field discovery, validated semantic queries, evidence lineage, issuer reports, history, pressure, and readiness.
+
+The current Level 2 calculation universe contains **378 issuers**: 215 crypto-canonical issuers plus 163 expanded public-equity issuers. The July 15 CompanyFacts/PIT replay completed all 378 issuers and materialized **817,992 rows with 0 errors**. The separate customer-route regression audit covered 215 issuers and 1,935 operations: **1,923 successful, 0 failed, 0 skipped, and 12 not applicable**.
+
+For governed semantic access, inspect `atlas7_model_catalog` and `atlas7_field_catalog` before compiling or executing a semantic query. Treat returned evidence envelopes as the source boundary; raw SQL is never part of the public contract.
+
 ## Circle Agent Marketplace Review Focus
 
 Delta Signal ATLAS-7 should be reviewed as an x402-compatible seller service for AI agents, not as a generic chat plugin or API-key product.

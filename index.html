@@ -1970,9 +1970,26 @@
           <div class="feature"><strong>Four evidence levels</strong><span>Level 1 issuer truth, Level 2 public-market behavior, Level 3 basket pressure, and Level 4 derivative dislocation where a linked venue product exists. Missing levels remain explicit.</span></div>
           <div class="feature"><strong>Public wording boundary</strong><span>The public surface uses DeltaSignal Synthetic Basket names. Source files, weights, hashes, and provider-specific lineage remain internal evidence metadata unless the live route explicitly exposes them.</span></div>
           <div class="feature"><strong>215 core issuer rows</strong><span>The original crypto-exposed public-company universe, with 201 nonblank unique tickers and 13 CIK-only or unresolved ticker rows.</span></div>
-          <div class="feature"><strong>312 expanded issuer rows</strong><span>The current expanded ATLAS-7 coverage map after synthetic basket and public-market context expansion, representing 298 distinct expanded issuer tickers.</span></div>
+          <div class="feature"><strong>378 current calculation issuers</strong><span>The July 15 calculation plane covers 215 crypto-canonical issuers plus 163 expanded public-equity issuers. The earlier 312-row / 298-ticker expanded snapshot remains historical context, not the current replay universe.</span></div>
           <div class="feature"><strong>326 synthetic membership rows</strong><span>Current synthetic basket membership surface across 180 unique public-equity tickers and 2 canonical linked perp instruments.</span></div>
           <div class="feature"><strong>Crypto-native lanes</strong><span>Crypto industry innovators, bitcoin mining infrastructure, digital asset infrastructure, crypto treasury exposure, AI + power overlap, public market rails, and speculative/emerging crypto issuers.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="july-15-verification">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>July 15 calculation-plane and semantic MCP verification</h2>
+          <p>The public contract is synchronized to the final issuer-wide replay and customer-route audit rather than an older coverage snapshot.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><strong>378-issuer replay</strong><span>The CompanyFacts/PIT run completed 378 of 378 issuers and materialized 817,992 point-in-time rows with 0 errors.</span></div>
+          <div class="feature"><strong>215-issuer customer audit</strong><span>The separate route audit executed 1,935 operations: 1,923 successful, 0 failed, 0 skipped, and 12 explicitly not applicable.</span></div>
+          <div class="feature"><strong>68 REST paths</strong><span>Live OpenAPI 1.5.2 exposes 68 paths. Pricing currently publishes 30 routes and the parser contract publishes 47 fields.</span></div>
+          <div class="feature"><strong>81 MCP tools</strong><span>Live public discovery exposes 81 tools, including 26 governed <code>atlas7_*</code> semantic tools.</span></div>
+          <div class="feature"><strong>Semantic query discipline</strong><span>Inspect the model and field catalogs first, compile governed queries when needed, and preserve the evidence envelope. Raw SQL is never returned.</span></div>
+          <div class="feature"><strong>Evidence boundary</strong><span>The 378-issuer calculation replay and the 215-issuer customer-route regression audit are different scopes. Do not merge their counts or infer unavailable evidence.</span></div>
         </div>
       </div>
     </section>
@@ -2064,7 +2081,7 @@
 
         <div class="tool-grid" style="margin-top:1.5rem;">
           <div class="tool"><strong>Agent read order</strong><span>For IDEs and autonomous clients, fetch <code>llms-full.txt</code> first, then <code>changelog-llm.html</code>, then <code>openapi.json</code>, then <code>/v1/pricing</code>, then <code>/v1/contract/fields</code>. That order cuts down drift and prevents stale parser, grant, or pricing assumptions.</span></div>
-          <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>48</code> paths, live <code>/v1/pricing</code>, live <code>/v1/contract/fields</code>, <code>/v1/grants/status</code> for callers with a resolved grant identity or active grant token, grant-window expiry fields when applicable, Company Report at <code>0.6</code> cost_usd, and a signed wallet-grant challenge/session flow.</span></div>
+          <div class="tool"><strong>Live contract snapshot</strong><span>Public verification currently shows OpenAPI with <code>68</code> paths, MCP discovery with <code>81</code> tools including <code>26</code> governed semantic tools, <code>30</code> priced routes, <code>47</code> parser-contract fields, <code>/v1/grants/status</code> for callers with a resolved grant identity or active grant token, and a signed wallet-grant challenge/session flow.</span></div>
           <div class="tool"><strong>Billing rule</strong><span>Treat <code>/v1/pricing</code> as the quote source and the response billing envelope as Delta Signal billing metadata. Standard Base x402 is the compatibility-first requirement; Circle Gateway is an explicitly selected additive path for Circle-aware clients. Reconcile paid calls from the response settlement receipt plus settlement or payment proof.</span></div>
           <div class="tool"><strong>HUT evidence readiness</strong><span>HUT company-report and SPECTRA field-map routes are live behind public x402 challenges. Agent-facing envelopes document <code>issuer_evidence_envelope</code>, <code>evidence_sections</code>, <code>spectra_metadata</code>, and <code>publication_audit_block</code>.</span></div>
           <div class="tool"><strong>Universe route safety</strong><span>No-ticker universe routes reject extra path segments such as <code>/UNIVERSE</code> with structured <code>invalid_path_scope</code>, <code>billing_behavior=not_charged</code>, and <code>cost_usd=0</code>.</span></div>
@@ -2572,7 +2589,7 @@ Open https://api.aitrailblazer.net/openapi.json and call the route family direct
         <div class="link-grid">
           <a class="link-card" href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">
             <strong>Open API 3.1</strong>
-            <span>Public route contract for raw, composite, x402, Natural Language, pricing discovery, and field-contract discovery surfaces. Current live contract exposes 48 paths.</span>
+            <span>Public route contract for raw, composite, x402, Natural Language, pricing discovery, semantic, and field-contract discovery surfaces. Current live OpenAPI exposes 68 paths.</span>
             <code>https://api.aitrailblazer.net/openapi.json</code>
           </a>
           <a class="link-card" href="https://api.aitrailblazer.net/v1/pricing" target="_blank" rel="noopener">
