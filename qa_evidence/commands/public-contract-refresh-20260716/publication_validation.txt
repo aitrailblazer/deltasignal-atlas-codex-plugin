@@ -1,0 +1,10 @@
+PASS html index.html
+PASS html changelog.html
+PASS html changelog-llm.html
+PASS embedded JSON/XML
+PASS feed rss.xml
+PASS feed atom.xml
+PASS json .codex-plugin/plugin.json
+PASS json server.json
+PASS current counts, stale-claim checks, and captured live discovery
+ALL PUBLICATION CHECKS PASSED

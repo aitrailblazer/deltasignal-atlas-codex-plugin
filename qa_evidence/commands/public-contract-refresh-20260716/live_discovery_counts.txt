@@ -1,0 +1,6 @@
+openapi_paths 68
+openapi_version 1.5.2
+mcp_tools 81
+semantic_tools 26
+priced_routes 30
+contract_fields 47

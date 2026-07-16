@@ -1,0 +1,300 @@
+{
+  "billing": {
+    "actual_cost_usd": "Actual settled or charged amount.",
+    "billing.request": "Nested copy of the billing envelope for clients that prefer grouped metadata.",
+    "billing_mode": "Access mode used by the request.",
+    "billing_status": "charged, not_charged, or discovery_only.",
+    "cost_usd": "Canonical actual charged cost. For grant, API-key, internal, or discovery paths this is 0.",
+    "credits_charged": "Integer credit equivalent charged for this response. One credit equals one cent.",
+    "grant_budget_usd": "Total promotional budget allocated to the grant when present.",
+    "grant_cache_treatment": "How cached versus fresh reads affect promotional budget.",
+    "grant_credit_equivalent_limit": "Compatibility cents-equivalent budget view retained in the grant session mint response.",
+    "grant_credit_equivalent_remaining": "Compatibility cents-equivalent remaining-budget view retained in the grant session mint response.",
+    "grant_debit_policy": "Policy used to decrement promotional budget.",
+    "grant_debit_usd": "Promotional budget consumed by the covered request.",
+    "grant_expires_at": "Budget-grant expiry timestamp, distinct from challenge or session token expiry.",
+    "grant_expires_in_seconds": "Seconds until budget-grant expiry, clamped to zero once expired.",
+    "grant_id": "Stable promotional grant identifier when present.",
+    "grant_limit_type": "Unit family for the current grant contract surface.",
+    "grant_limit_unit": "Concrete unit for grant_limit or grant runway reporting.",
+    "grant_program": "Grant program that covered the request.",
+    "grant_remaining_usd": "Promotional budget remaining after the covered request.",
+    "grant_runway_authoritative_fields": "Fields clients should use as the authoritative runway for promotional grants.",
+    "grant_source": "budget_grant, legacy_identity_credit, or none.",
+    "grant_status": "Grant state resolved for the request.",
+    "payment_status": "Payment or bypass state.",
+    "quoted_cost_usd": "Public x402 equivalent quote for the route.",
+    "request_id": "Correlation identifier.",
+    "settlement_receipt": "Per-call settlement and grant receipt. This is the authoritative call-level attribution surface when wallet deltas are unavailable or batched.",
+    "settlement_receipt.charge_status": "Call-level settlement state: not_charged, authorized, queued_for_batch, submitted, settled, failed, refunded, or disputed.",
+    "settlement_receipt.reconciliation_key": "Stable key for accounting exports and support reconciliation.",
+    "settlement_receipt.settlement_mode": "Access and settlement rail used by this call: api_key_not_charged, grant_covered, x402_direct, mpp, circle_gateway_batched, or shadow_unsettled.",
+    "usage_metadata": "Legacy performance/cost estimate block; not authoritative for settled public spend."
+  },
+  "fields": [
+    {
+      "description": "Human-readable compact summary for MCP/composite responses.",
+      "path": "mcp_summary",
+      "type": "string"
+    },
+    {
+      "description": "Composite or route execution status, usually ok or partial.",
+      "path": "data.status",
+      "type": "string"
+    },
+    {
+      "description": "Normalized ticker for ticker-scoped routes.",
+      "path": "data.ticker",
+      "type": "string"
+    },
+    {
+      "description": "Deterministic Phase 1 alpha score.",
+      "path": "alpha_signals.alpha_score",
+      "type": "number"
+    },
+    {
+      "description": "Seven-day live stress movement for the issuer when available.",
+      "path": "covenant_stress.live_stress_delta_7d",
+      "type": "number"
+    },
+    {
+      "description": "Peer stress measure under a 50 percent shock.",
+      "path": "peer_ranking.stress_50pct",
+      "type": "number"
+    },
+    {
+      "description": "Peer stressed leverage under a 50 percent shock.",
+      "path": "peer_ranking.stressed_leverage_50pct",
+      "type": "number"
+    },
+    {
+      "description": "Stable evidence hash for the combined response envelope.",
+      "path": "combined_provenance.evidence_hash",
+      "type": "string"
+    },
+    {
+      "description": "Composite evidence schema version.",
+      "path": "combined_provenance.schema_version",
+      "type": "string"
+    },
+    {
+      "description": "Primary source date for the response.",
+      "path": "provenance.source_date",
+      "type": "date"
+    },
+    {
+      "description": "Legacy estimated x402-equivalent cost when present.",
+      "path": "usage_metadata.estimated_cost_usd",
+      "type": "number"
+    },
+    {
+      "description": "Canonical actual charged cost for this response; zero for grant/API-key/internal bypass.",
+      "path": "cost_usd",
+      "type": "number"
+    },
+    {
+      "description": "Public route quote for the same request.",
+      "path": "quoted_cost_usd",
+      "type": "number"
+    },
+    {
+      "description": "Actual settled or charged amount for this response.",
+      "path": "actual_cost_usd",
+      "type": "number"
+    },
+    {
+      "description": "Integer credit equivalent charged for customer-visible settled spend.",
+      "path": "credits_charged",
+      "type": "number"
+    },
+    {
+      "description": "x402, mpp, api_key, internal, free, identity_credit, test, or public_discovery.",
+      "path": "billing_mode",
+      "type": "string"
+    },
+    {
+      "description": "settled, grant_applied, api_key_bypass, mpp_credential, or not_applicable.",
+      "path": "payment_status",
+      "type": "string"
+    },
+    {
+      "description": "charged, not_charged, or discovery_only.",
+      "path": "billing_status",
+      "type": "string"
+    },
+    {
+      "description": "Request correlation identifier from X-Request-ID or generated gateway context when available.",
+      "path": "request_id",
+      "type": "string"
+    },
+    {
+      "description": "Stable promotional grant identifier when a budget grant covers the request.",
+      "path": "grant_id",
+      "type": "string"
+    },
+    {
+      "description": "Promotional grant program such as design_partner_alpha or founding_user_credit.",
+      "path": "grant_program",
+      "type": "string"
+    },
+    {
+      "description": "active, exhausted, expired, revoked, suspended, or not_applicable.",
+      "path": "grant_status",
+      "type": "string"
+    },
+    {
+      "description": "budget_grant, legacy_identity_credit, or none.",
+      "path": "grant_source",
+      "type": "string"
+    },
+    {
+      "description": "Total promotional budget allocated to the active budget grant.",
+      "path": "grant_budget_usd",
+      "type": "number"
+    },
+    {
+      "description": "Promotional budget remaining after this request.",
+      "path": "grant_remaining_usd",
+      "type": "number"
+    },
+    {
+      "description": "Budget-grant expiry timestamp. Distinct from the short-lived grant challenge/session token TTL.",
+      "path": "grant_expires_at",
+      "type": "datetime"
+    },
+    {
+      "description": "Seconds until the budget grant expires, clamped to zero when expired.",
+      "path": "grant_expires_in_seconds",
+      "type": "number"
+    },
+    {
+      "description": "Promotional budget debited for this covered request.",
+      "path": "grant_debit_usd",
+      "type": "number"
+    },
+    {
+      "description": "request_count for legacy grants, budget_usd for status views, or compatibility_credit_equivalent in the session mint response.",
+      "path": "grant_limit_type",
+      "type": "string"
+    },
+    {
+      "description": "requests, usd, or usd_cents_equivalent depending on the grant contract surface.",
+      "path": "grant_limit_unit",
+      "type": "string"
+    },
+    {
+      "description": "Fields that should be treated as the authoritative remaining-runway signal for the active grant.",
+      "path": "grant_runway_authoritative_fields",
+      "type": "array\u003cstring\u003e"
+    },
+    {
+      "description": "Compatibility cents-equivalent budget view retained for older grant-session clients.",
+      "path": "grant_credit_equivalent_limit",
+      "type": "number"
+    },
+    {
+      "description": "Compatibility cents-equivalent remaining-budget view retained for older grant-session clients.",
+      "path": "grant_credit_equivalent_remaining",
+      "type": "number"
+    },
+    {
+      "description": "How a promotional grant is decremented; current value is route_declared_price.",
+      "path": "grant_debit_policy",
+      "type": "string"
+    },
+    {
+      "description": "Whether cached reads discount grant spend; current value keeps fresh and cached reads at the same route quote.",
+      "path": "grant_cache_treatment",
+      "type": "string"
+    },
+    {
+      "description": "Stable receipt schema identifier. Current value is deltasignal_settlement_receipt.v1.",
+      "path": "settlement_receipt.schema_id",
+      "type": "string"
+    },
+    {
+      "description": "Stable per-call receipt identifier for reconciliation and support.",
+      "path": "settlement_receipt.receipt_id",
+      "type": "string"
+    },
+    {
+      "description": "Stable accounting export key that joins call, route, and settlement state.",
+      "path": "settlement_receipt.reconciliation_key",
+      "type": "string"
+    },
+    {
+      "description": "api_key_not_charged, grant_covered, x402_direct, mpp, circle_gateway_batched, or shadow_unsettled.",
+      "path": "settlement_receipt.settlement_mode",
+      "type": "string"
+    },
+    {
+      "description": "not_charged, authorized, queued_for_batch, submitted, settled, failed, refunded, or disputed.",
+      "path": "settlement_receipt.charge_status",
+      "type": "string"
+    },
+    {
+      "description": "USDC amount attributable to this call. Zero for API-key and grant-covered calls.",
+      "path": "settlement_receipt.charged_amount_usdc",
+      "type": "string"
+    },
+    {
+      "description": "Non-secret hash of the submitted payment authorization when present.",
+      "path": "settlement_receipt.payment_authorization_hash",
+      "type": "string"
+    },
+    {
+      "description": "Circle Gateway transfer identifier when the call is submitted through the batched Circle path.",
+      "path": "settlement_receipt.circle_x402_transfer_id",
+      "type": "string"
+    },
+    {
+      "description": "Circle Gateway batch identifier when returned by the facilitator or reconciliation importer.",
+      "path": "settlement_receipt.batch_id",
+      "type": "string"
+    },
+    {
+      "description": "Onchain settlement transaction hash when present.",
+      "path": "settlement_receipt.settlement_tx_hash",
+      "type": "string"
+    },
+    {
+      "description": "Evidence boundary statements for the settlement mode.",
+      "path": "settlement_receipt.source_boundary",
+      "type": "array\u003cstring\u003e"
+    },
+    {
+      "description": "Receipt caveats such as circle_gateway_not_used or settlement_not_confirmed.",
+      "path": "settlement_receipt.quality_flags",
+      "type": "array\u003cstring\u003e"
+    }
+  ],
+  "generated_at": "2026-07-16T15:46:34Z",
+  "grant_auth": {
+    "authorization_bearer": "Bearer dsg1.\u003cpayload\u003e.\u003csignature\u003e",
+    "challenge_endpoint": "/v1/grant/challenge?wallet=\u003cwallet\u003e",
+    "headers": [
+      "X-DeltaSignal-Grant-Wallet",
+      "X-DeltaSignal-Grant-Timestamp",
+      "X-DeltaSignal-Grant-Signature"
+    ],
+    "message_template": "DeltaSignal wallet grant\nwallet: \u003clowercase_wallet\u003e\nmethod: \u003cHTTP_METHOD\u003e\npath: \u003cURL_PATH\u003e\nhost: \u003crequest_host\u003e\ntimestamp: \u003cRFC3339_OR_UNIX_SECONDS\u003e",
+    "mode": "signed_wallet_pre_payment_identity",
+    "note": "For AgentCash/x402 clients, call the challenge/session endpoints before settlement and attach the returned grant token. Plain unsigned wallet headers remain rejected.",
+    "session_body": {
+      "signature": "\u003cpersonal_sign(message)\u003e",
+      "timestamp": "\u003cchallenge timestamp\u003e",
+      "wallet": "\u003clowercase_wallet\u003e"
+    },
+    "session_endpoint": "/v1/grant/session",
+    "session_ttl_seconds": 86400,
+    "supported": true,
+    "timestamp_window_seconds": 600,
+    "token_header": "X-DeltaSignal-Grant-Token"
+  },
+  "grant_authentication": {
+    "alias_of": "grant_auth",
+    "supported": true
+  },
+  "service": "deltasignal_atlas7",
+  "version": "field-contract-v1"
+}
