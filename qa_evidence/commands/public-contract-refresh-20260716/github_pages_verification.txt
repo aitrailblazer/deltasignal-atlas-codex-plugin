@@ -1,0 +1,4 @@
+DEPLOYED attempt=2
+home=378-current-calculation-issuers
+brief=llms-full-v12
+changelog=ATLAS-JUL-15-CALCULATION-PLANE-SEMANTIC-MCP-PUBLIC-CONTRACT
