@@ -2426,6 +2426,34 @@
       </div>
     </section>
 
+    <section class="section" id="hedera-proofpay">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Hedera ProofPay preview</h2>
+          <p>ProofPay adds a separate Hedera testnet x402 path for deterministic DeltaSignal evidence. It does not replace or silently modify the live Base, Circle, grant, or MPP route families.</p>
+        </div>
+        <div class="tool-grid" style="margin-bottom:1.5rem;">
+          <div class="tool"><strong>Deployed backend</strong><span>Inspect the public preview at <code>proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io</code>. Health, discovery, catalog, quote creation, and OpenAPI are free.</span></div>
+          <div class="tool"><strong>Exact HBAR challenge</strong><span>Create a single-use quote, call its paid resource URL, receive HTTP 402 for <code>hedera:testnet</code> HBAR, then let an approved x402 buyer settle and retry.</span></div>
+          <div class="tool"><strong>Payment-to-artifact proof</strong><span>After mirror-node verification, ProofPay releases the sealed artifact and signs a receipt binding payment, request, evidence, output, source date, and software commit.</span></div>
+          <div class="tool"><strong>Evidence boundary</strong><span>The preview currently uses a deterministic MSTR filing-evidence fixture for the bounty. It is not arbitrary live MCP fulfillment, live market data, or investment advice.</span></div>
+        </div>
+        <div class="code" translate="no" spellcheck="false"><strong>Safe Hedera discovery — no payment</strong>
+PROOFPAY=https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io
+curl -fsSL "$PROOFPAY/.well-known/proofpay" | jq
+curl -fsSL "$PROOFPAY/catalog" | jq
+curl -fsSL -X POST "$PROOFPAY/quotes" \
+  -H 'content-type: application/json' \
+  -d '{"ticker":"MSTR","period":"2025-12-31"}' | jq</div>
+        <div class="link-grid" style="margin-top:1.5rem;">
+          <a class="link-card" href="https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/.well-known/proofpay" target="_blank" rel="noopener"><strong>Live ProofPay discovery</strong><span>Network, asset, seller, endpoints, evidence boundary, and performed-payment proof.</span><code>GET /.well-known/proofpay</code></a>
+          <a class="link-card" href="https://github.com/aitrailblazer/proofpay-hedera-x402" target="_blank" rel="noopener"><strong>Open-source verifier</strong><span>Hedera x402 client, receipt verifier, tests, proof bundle, demo, and transcript.</span><code>github.com/aitrailblazer/proofpay-hedera-x402</code></a>
+          <a class="link-card" href="https://hashscan.io/testnet/transaction/0.0.7162784-1784665192-906989595" target="_blank" rel="noopener"><strong>Performed testnet settlement</strong><span>Completed payment from value buyer to seller, with facilitator-paid network fee.</span><code>0.0.7162784-1784665192-906989595</code></a>
+        </div>
+        <p class="mini-note">Creating or reading a quote does not move funds. Do not sign or submit a Hedera payment without explicit user approval, and never expose the buyer private key.</p>
+      </div>
+    </section>
+
     <section class="section" id="developer-proof">
       <div class="wrap">
         <div class="section-head">
@@ -2906,7 +2934,7 @@ claude mcp add --transport http deltasignal-atlas-7 https://api.aitrailblazer.ne
     <div class="workflow-strata" style="text-align:left;">
       <div class="workflow-stratum"><strong>Start</strong><span><a href="./index.html">ATLAS-7 Home</a><br><a href="https://aitrailblazer.github.io/strategix-visual-mcp/" target="_blank" rel="noopener">StrategiX Visual MCP</a><br><a href="https://substack.com/@deltasignalai" target="_blank" rel="noopener">Delta Signal Substack</a><br><a href="./changelog.html">Changelog</a><br><a href="./terms.html">Terms</a><br><a href="https://api.aitrailblazer.net/v1/readiness" target="_blank" rel="noopener">Readiness</a><br><a href="#recommended-workflows">Morning Brief</a><br><a href="./quickstart.md">Quickstart</a><br><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI</a><br><a href="#install">MCP connector</a><br><a href="https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7" target="_blank" rel="noopener">Glama connector</a></span></div>
       <div class="workflow-stratum"><strong>Workflows</strong><span>Morning Brief<br>Company Report<br>Pressure Board<br>Alpha Sweep<br>Quick Ticker Check<br>Peer Context<br>Daily Change Evidence Drilldown<br>TripCode / River research: discoverable, gated, and evidence-dependent</span></div>
-      <div class="workflow-stratum"><strong>Developer Resources</strong><span><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI schema</a><br><a href="https://api.aitrailblazer.net/.well-known/x402" target="_blank" rel="noopener">x402 discovery</a><br><a href="https://developers.circle.com/gateway/nanopayments/quickstarts/seller.md" target="_blank" rel="noopener">Circle seller reference</a><br><a href="./arazzo/deltasignal-arazzo.yaml">Arazzo YAML</a><br><a href="./arazzo/deltasignal-arazzo.json">Arazzo JSON</a><br><a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">MCP endpoint</a><br><a href="./arazzo/publicMcpX402Handshake.arazzo.yaml">x402 handshake</a><br><a href="./CLAUDE.md">CLAUDE.md</a><br><a href="./llms.txt">llms.txt</a><br><a href="./llms-full.txt">llms-full.txt</a></span></div>
+      <div class="workflow-stratum"><strong>Developer Resources</strong><span><a href="https://api.aitrailblazer.net/openapi.json" target="_blank" rel="noopener">OpenAPI schema</a><br><a href="https://api.aitrailblazer.net/.well-known/x402" target="_blank" rel="noopener">Base x402 discovery</a><br><a href="https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/.well-known/proofpay" target="_blank" rel="noopener">Hedera ProofPay preview</a><br><a href="https://developers.circle.com/gateway/nanopayments/quickstarts/seller.md" target="_blank" rel="noopener">Circle seller reference</a><br><a href="./arazzo/deltasignal-arazzo.yaml">Arazzo YAML</a><br><a href="./arazzo/deltasignal-arazzo.json">Arazzo JSON</a><br><a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">MCP endpoint</a><br><a href="./arazzo/publicMcpX402Handshake.arazzo.yaml">x402 handshake</a><br><a href="./CLAUDE.md">CLAUDE.md</a><br><a href="./llms.txt">llms.txt</a><br><a href="./llms-full.txt">llms-full.txt</a></span></div>
     </div>
     <p style="max-width:980px;margin:1.5rem auto 0;">Delta Signal outputs are evidence packages, not unconstrained AI opinions. Natural Language briefs render returned evidence into readable Markdown; they do not create new evidence, fill missing data, override source caveats, convert screens into recommendations, or provide personalized investment advice. If evidence is missing, it remains missing and should be surfaced as a caveat.</p>
     <p style="max-width:980px;margin:1rem auto 0;">Discovery is free. Public clients should inspect <code>/v1/pricing</code>, <code>/v1/contract/fields</code>, OpenAPI, and MCP tools before execution. Paid calls may return a 402 challenge, while enrolled-wallet grants use a signed session token. Verify route availability, pricing, freshness, and payment behavior from the current live contract before trusting any cached note.</p>

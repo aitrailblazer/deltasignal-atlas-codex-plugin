@@ -1,6 +1,6 @@
 Delta Signal ATLAS-7 Full Agent Brief
-Version: llms-full-v12
-Last updated: 2026-07-15
+Version: llms-full-v13
+Last updated: 2026-07-21
 Audience: Codex, Claude Code, Cursor, MCP clients, IDE agents, integration reviewers
 Status: canonical public operator brief for the live GitHub Pages surface; refreshed after the July 15 issuer-wide calculation replay, customer-route audit, and governed semantic MCP verification.
 
@@ -10,6 +10,7 @@ This file is the shortest public document that still captures the live Delta Sig
 One-screen summary
 - Delta Signal ATLAS-7 is a filing-backed issuer-intelligence service for crypto-exposed public companies and DeltaSignal Synthetic Baskets.
 - The public surface is REST + MCP + OpenAPI + Arazzo + x402-compatible payment behavior + signed wallet grant sessions. Public clients should not request or store Delta Signal API keys. Standard Base x402 is the compatibility-first requirement at `accepts[0]`; Circle Gateway is an explicitly selectable additive path at `accepts[1]` for Circle-aware clients that support `GatewayWalletBatched`.
+- ProofPay for DeltaSignal is an additive Hedera testnet x402 preview deployed as a separate Azure backend. It is not a new `accepts[]` entry on the Base `/v1/*` or `/mcp` challenges. It creates single-use quotes, returns a Hedera HBAR HTTP 402 challenge for sealed evidence, mirror-verifies settlement, and issues an Ed25519 payment-to-artifact receipt.
 - Public-facing basket language uses DeltaSignal Synthetic Basket names. Do not expose third-party basket-provider branding in public summaries unless the live route explicitly returns it as source metadata.
 - The product is evidence-first. It is not a trading bot, not a retail signal room, and not an investment-advice surface.
 - Public discovery starts with `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, MCP `initialize`, and MCP `tools/list`.
@@ -56,6 +57,10 @@ Primary links
 - Arazzo workflow YAML: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.yaml
 - Arazzo workflow JSON: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/deltasignal-arazzo.json
 - Public x402 handshake workflow: https://aitrailblazer.github.io/deltasignal-atlas-codex-plugin/arazzo/publicMcpX402Handshake.arazzo.yaml
+- Hedera ProofPay preview: https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io
+- Hedera ProofPay discovery: https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/.well-known/proofpay
+- Hedera ProofPay source and verifier: https://github.com/aitrailblazer/proofpay-hedera-x402
+- Performed Hedera testnet payment: https://hashscan.io/testnet/transaction/0.0.7162784-1784665192-906989595
 
 Read order for agents
 Use this order unless the user asks for a narrower probe:
@@ -73,6 +78,12 @@ These are the safest first validation calls for a new integration:
 - `GET /v1/readiness`
 - `POST /mcp initialize`
 - `POST /mcp tools/list`
+
+Hedera ProofPay preview probes:
+- `GET https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/health`
+- `GET https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/.well-known/proofpay`
+- `GET https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/catalog`
+- `POST https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/quotes` with `{"ticker":"MSTR","period":"2025-12-31"}`. Quote creation is free and does not move funds.
 
 Do not start by:
 - assuming a route price from an old note
@@ -233,6 +244,23 @@ Pricing and billing rules
 - For standard `x402_direct`, wallet movement plus the response receipt is the reconciliation path.
 - For `circle_gateway_batched`, the response receipt must remain the authoritative per-call attribution surface, including route, quote, charged/attributed amount, settlement mode, payer reference, reconciliation key, batch/transaction reference when available, timestamp, status, and quality flags.
 - Treat `cost_usd` as the Delta Signal billing-envelope signal, not the sole authority for externally settled x402 spend.
+
+Hedera ProofPay usage
+- Deployment state: `LIVE` public testnet preview. The Azure backend exposes health, discovery, catalog, quote creation, paid evidence, and receipt-finalization routes. The performed-payment proof is independently visible on HashScan.
+- The preview is separate from the live Base/Circle/MPP DeltaSignal route families. Do not claim that `https://api.aitrailblazer.net/v1/*` or `POST /mcp` accepts HBAR unless live discovery later adds that network.
+- Safe inspection: read `/.well-known/proofpay`, read `/catalog`, create a bounded quote with `POST /quotes`, then inspect its payment terms, expiry, request hash, and paid resource URL. These steps do not move funds.
+- Paid execution requires explicit user approval:
+  1. Call the quote's paid resource URL.
+  2. Receive HTTP 402 with `network=hedera:testnet`, HBAR asset `0.0.0`, exact amount, seller account, and timeout.
+  3. Let a Hedera x402-compatible buyer sign and settle.
+  4. Retry with payment proof.
+  5. Mirror-verify buyer debit, seller credit, amount, result, network, and transaction ID.
+  6. Call `/receipts/finalize` to release the decryption key and Ed25519 receipt.
+  7. Run the repository's offline verifier against the trusted public key.
+- Never paste a Hedera private key into a prompt, browser, source file, transcript, screenshot, or repository. The paying agent owns the buyer key; the resource server needs only the public seller account and its separate receipt-signing key.
+- The public demonstration transaction is a completed prior run, not a payment that occurs when documentation or video is viewed: value buyer `0.0.9676074`; seller `0.0.9676073`; transaction fee payer `0.0.7162784`; amount `1,000,001` tinybar; transaction `0.0.7162784-1784665192-906989595`.
+- HashScan proves ledger settlement. The ProofPay signed receipt separately binds payment to request, encrypted delivery, evidence hash, output hash, source date, and software commit.
+- Current boundary: the preview fulfills a deterministic MSTR filing-evidence fixture for the bounty demonstration. It does not yet proxy arbitrary live DeltaSignal MCP tools, live market data, or investment advice.
 
 Primary public workflows
 - Morning Brief: readiness, daily changes, risk distribution, top stressed issuers, alpha opportunities, caveats, and non-advice framing.

@@ -3,6 +3,7 @@
 [![MCP Live](https://img.shields.io/badge/MCP-live-ff9a1a)](https://api.aitrailblazer.net/mcp)
 [![x402 Live](https://img.shields.io/badge/x402-Base%20USDC-e30055)](https://api.aitrailblazer.net/.well-known/x402)
 [![Circle Ready](https://img.shields.io/badge/Circle-GatewayWalletBatched-00a86b)](https://developers.circle.com/gateway/nanopayments/quickstarts/seller.md)
+[![Hedera Preview](https://img.shields.io/badge/Hedera-ProofPay%20testnet-8259ef)](https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/.well-known/proofpay)
 [![Arazzo Workflows](https://img.shields.io/badge/Arazzo-1.0.1-54d69d)](./arazzo/deltasignal-arazzo.yaml)
 [![Discovery Contract](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml/badge.svg)](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml)
 [![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
@@ -14,6 +15,44 @@ Common workflows are exposed as composite MCP presets so agents can call one rel
 Native MCP server plus x402 micropayments. Public clients should not request or store Delta Signal API keys. Standard Base x402 is the compatibility-first challenge at `accepts[0]`; Circle Gateway is an explicitly selectable optimized path at `accepts[1]` for Circle-aware clients using `GatewayWalletBatched`. Signed wallet grants are separate backend virtual credit and do not settle on-chain.
 
 Agents discover, pay, and execute deterministic workflows through MCP tools, OpenAPI routes, and Arazzo scenario definitions.
+
+## Hedera ProofPay Preview
+
+ProofPay is the additive Hedera testnet x402 evidence-delivery adapter for
+DeltaSignal. It is deployed separately from the Base/Circle `/v1/*` and `/mcp`
+payment challenges:
+
+- Backend: `https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io`
+- Discovery: `/.well-known/proofpay`
+- Catalog: `/catalog`
+- Quote creation: `POST /quotes`
+- Source and offline verifier:
+  [`aitrailblazer/proofpay-hedera-x402`](https://github.com/aitrailblazer/proofpay-hedera-x402)
+- Performed testnet payment:
+  [`0.0.7162784-1784665192-906989595`](https://hashscan.io/testnet/transaction/0.0.7162784-1784665192-906989595)
+
+Safe discovery does not move funds:
+
+```bash
+PROOFPAY=https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io
+curl -fsSL "$PROOFPAY/.well-known/proofpay" | jq
+curl -fsSL "$PROOFPAY/catalog" | jq
+curl -fsSL -X POST "$PROOFPAY/quotes" \
+  -H 'content-type: application/json' \
+  -d '{"ticker":"MSTR","period":"2025-12-31"}' | jq
+```
+
+The returned quote contains the exact HBAR terms and paid resource URL. Calling
+that resource without proof returns HTTP 402. Only continue to signing and
+settlement with explicit user approval. Never paste a Hedera private key into a
+prompt or repository. After settlement, ProofPay mirror-verifies the transfer,
+unlocks the sealed artifact, and issues an Ed25519 receipt that can be verified
+offline.
+
+Proof boundary: HashScan proves the completed ledger transfer. The signed
+ProofPay receipt separately binds that payment to the demonstrated request and
+delivery. The current preview uses a deterministic MSTR filing-evidence fixture;
+it does not yet proxy arbitrary live DeltaSignal MCP tools.
 
 Also available as a [Glama Connector](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7). Smithery remains available as an alternate connector path.
 
@@ -92,6 +131,7 @@ Agents do not need a special Arazzo runner to use this today. MCP clients can re
 - **Arazzo JSON** - [`arazzo/deltasignal-arazzo.json`](./arazzo/deltasignal-arazzo.json) and root mirror [`deltasignal-arazzo.json`](./deltasignal-arazzo.json)
 - **Public handshake workflow** - [`arazzo/publicMcpX402Handshake.arazzo.yaml`](./arazzo/publicMcpX402Handshake.arazzo.yaml)
 - **Executable Circle-aware buyer** - [setup instructions](./examples/circle-aware-buyer/README.md) and [buyer source](./examples/circle-aware-buyer/buyer.mjs)
+- **Hedera ProofPay preview** - [`/.well-known/proofpay`](https://proofpay-hedera.kindbeach-299ce8c4.eastus.azurecontainerapps.io/.well-known/proofpay) and [public source](https://github.com/aitrailblazer/proofpay-hedera-x402)
 - **Glama Connector** - [`net.aitrailblazer.api/delta-signal-atlas-7`](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
 - **Registry refresh notes** - [`REGISTRY_REFRESH.md`](./REGISTRY_REFRESH.md)
 
