@@ -689,6 +689,45 @@
       font-size: 1.08rem;
     }
 
+    .lifecycle-section {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 154, 26, 0.12), transparent 32rem),
+        #0a0908;
+    }
+
+    .lifecycle-frame {
+      width: min(900px, 100%);
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(255, 154, 26, 0.34);
+      border-radius: 18px;
+      background: #f4f1ed;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .lifecycle-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .lifecycle-frame figcaption {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-top: 1px solid rgba(20, 26, 34, 0.16);
+      background: #e9e4de;
+      color: #20262e;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .lifecycle-frame figcaption span:last-child {
+      color: #59616b;
+      text-align: right;
+    }
+
     .prompt-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1420,6 +1459,14 @@
         overflow-wrap: anywhere;
       }
 
+      .lifecycle-frame figcaption {
+        grid-template-columns: 1fr;
+      }
+
+      .lifecycle-frame figcaption span:last-child {
+        text-align: left;
+      }
+
       .surface-stage,
       .surface-card {
         width: 100%;
@@ -1867,6 +1914,29 @@
             <figcaption>ATLAS-7 generation path: SEC/XBRL evidence -> deterministic intelligence engine -> MCP, REST, Arazzo, signed grant sessions, and x402 outputs.</figcaption>
           </figure>
         </div>
+      </div>
+    </section>
+
+    <section class="section lifecycle-section" id="evidence-lifecycle">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The complete financial-evidence integration lifecycle</h2>
+          <p>See how an agent moves from free discovery to bounded access, governed semantic tools, and inspectable evidence preservation—without requiring a traditional API key.</p>
+        </div>
+        <figure class="lifecycle-frame">
+          <img
+            src="./assets/deltasignal-mcp-financial-evidence-lifecycle.png"
+            width="1536"
+            height="2752"
+            loading="lazy"
+            decoding="async"
+            alt="DeltaSignal MCP financial evidence integration lifecycle showing free discovery and natural-language guidance, x402 or signed-wallet access, governed semantic MCP tools, and evidence preservation with non-advice and missing-data boundaries."
+          >
+          <figcaption>
+            <span>Discover → authorize → query → preserve inspectable financial evidence.</span>
+            <span>x402 changes access—not evidence quality.</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
