@@ -2148,28 +2148,48 @@
     <section class="section settlement-section" id="x402-handshake">
       <div class="wrap">
         <div class="section-head">
-          <h2>How the x402 settlement handshake works</h2>
-          <p>Follow the key-free request lifecycle from route discovery and HTTP 402 challenge through compatible settlement, proof-bearing retry, evidence delivery, signed grant sessions, and deterministic reconciliation.</p>
+          <div class="artifact-label">Infographic audit · Artifact #3</div>
+          <h2>DeltaSignal x402 Direct Settlement &amp; Handshake Protocol</h2>
+          <p>Follow the key-free, six-step settle-and-retry loop: discover a protected route, make the request, receive its HTTP 402 challenge, settle through a compatible rail, retry with proof, and receive the governed evidence envelope and receipt.</p>
         </div>
-        <figure class="lifecycle-frame">
+        <figure class="architecture-frame">
           <img
-            src="./assets/deltasignal-x402-settlement-handshake-protocol.png"
-            width="1536"
-            height="2752"
+            src="./assets/deltasignal-x402-direct-settlement-handshake-protocol.png"
+            width="2752"
+            height="1536"
             loading="lazy"
             decoding="async"
-            alt="DeltaSignal x402 direct settlement and handshake protocol showing route discovery, protected request, HTTP 402 challenge, client settlement, retry with proof, evidence delivery, Base USDC, Circle Gateway, Hedera ProofPay preview, signed grant sessions, and reconciliation."
+            alt="DeltaSignal x402 secure direct settlement and handshake protocol showing discovery and initial request, HTTP 402 payment challenge, standard Base USDC, Circle Gateway, and Hedera ProofPay settlement paths, payment-proof retry, evidence delivery, receipts, key-free infrastructure, EIP-191 wallet authentication, and receipt reconciliation."
           >
           <figcaption>
             <span>Discover → request → receive 402 → settle → retry with proof → receive evidence.</span>
             <span>Payment changes access—not provenance or analytical confidence.</span>
           </figcaption>
         </figure>
+        <div class="architecture-stages" aria-label="Settlement and authentication paths">
+          <div class="architecture-stage">
+            <strong>Standard Base USDC</strong>
+            <span>The compatibility-first public x402 path settles the route challenge directly on Base, then retries the original request with proof.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>Circle Gateway</strong>
+            <span>An additive gateway path uses the contract advertised by live discovery and requires sufficient deposited balance.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>Hedera ProofPay</strong>
+            <span>A separately hosted preview path verifies HBAR settlement and binds payment evidence to the resulting artifact receipt.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>EVM wallet signing</strong>
+            <span>EIP-191 signing authenticates eligible grant-session enrollment without exposing a long-lived customer API key; it is not itself a payment rail.</span>
+          </div>
+        </div>
         <div class="protocol-links" aria-label="x402 verification links">
           <a href="https://api.aitrailblazer.net/v1/pricing" target="_blank" rel="noopener">Check live route pricing</a>
           <a href="https://api.aitrailblazer.net/.well-known/x402" target="_blank" rel="noopener">Inspect x402 discovery</a>
           <a href="#x402">Open implementation guidance</a>
         </div>
+        <p class="fineprint" style="width:min(1180px,100%);margin:1rem auto 0;text-align:center;">Workflow prices and rail states printed inside Artifact #3 are illustrative snapshot annotations. Always use live pricing, x402 discovery, and the route’s current HTTP 402 response as the authoritative settlement contract.</p>
       </div>
     </section>
 
