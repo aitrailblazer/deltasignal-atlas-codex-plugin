@@ -695,10 +695,96 @@
         #0a0908;
     }
 
+    .architecture-section {
+      background:
+        radial-gradient(circle at 16% 0%, rgba(73, 198, 255, 0.12), transparent 30rem),
+        radial-gradient(circle at 84% 0%, rgba(255, 154, 26, 0.12), transparent 32rem),
+        linear-gradient(180deg, #070a0d, #0a0908);
+    }
+
     .settlement-section {
       background:
         radial-gradient(circle at 50% 0%, rgba(227, 0, 85, 0.11), transparent 34rem),
         linear-gradient(180deg, #050505, #0b0908);
+    }
+
+    .artifact-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 1rem;
+      padding: 0.48rem 0.72rem;
+      border: 1px solid rgba(73, 198, 255, 0.36);
+      border-radius: 999px;
+      background: rgba(73, 198, 255, 0.08);
+      color: #9fe5ff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .architecture-frame {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(73, 198, 255, 0.34);
+      border-radius: 18px;
+      background: #f4f1ed;
+      box-shadow: 0 38px 110px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .architecture-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .architecture-frame figcaption {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-top: 1px solid rgba(20, 26, 34, 0.16);
+      background: #e9e4de;
+      color: #20262e;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .architecture-frame figcaption span:last-child {
+      color: #59616b;
+      text-align: right;
+    }
+
+    .architecture-stages {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      width: min(1180px, 100%);
+      margin: 1.25rem auto 0;
+    }
+
+    .architecture-stage {
+      padding: 0.9rem;
+      border: 1px solid rgba(73, 198, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(7, 16, 22, 0.78);
+    }
+
+    .architecture-stage strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #9fe5ff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .architecture-stage span {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
     }
 
     .lifecycle-frame {
@@ -1497,6 +1583,18 @@
         text-align: left;
       }
 
+      .architecture-frame figcaption {
+        grid-template-columns: 1fr;
+      }
+
+      .architecture-frame figcaption span:last-child {
+        text-align: left;
+      }
+
+      .architecture-stages {
+        grid-template-columns: 1fr;
+      }
+
       .surface-stage,
       .surface-card {
         width: 100%;
@@ -1807,6 +1905,7 @@
             <nav class="toc-panel" aria-label="Page contents">
               <strong>Jump to</strong>
               <div class="toc-links">
+                <a href="#agent-native-architecture">Architecture</a>
                 <a href="#start-here">Start Here</a>
                 <a href="#access-model">Access</a>
                 <a href="#circle-marketplace-validation">Circle</a>
@@ -1943,6 +2042,53 @@
             </svg>
             <figcaption>ATLAS-7 generation path: SEC/XBRL evidence -> deterministic intelligence engine -> MCP, REST, Arazzo, signed grant sessions, and x402 outputs.</figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section architecture-section" id="agent-native-architecture">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="artifact-label">Infographic audit · Artifact #7</div>
+          <h2>DeltaSignal Agent-Native Financial-Evidence Architecture</h2>
+          <p>Follow the complete operating path from SEC EDGAR and CompanyFacts/XBRL collection, through the nightly governed data plane, into bounded MCP evidence delivery and Google Cloud agent specialist orchestration.</p>
+        </div>
+        <figure class="architecture-frame">
+          <img
+            src="./assets/deltasignal-agent-native-financial-evidence-architecture.png"
+            width="2752"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+            alt="DeltaSignal Agent-Native Evidence Fabric showing Stage 01 SEC EDGAR and CompanyFacts XBRL evidence collection, Stage 02 nightly governed acquisition, normalization, materialization, validation, provenance, PostgreSQL, and immutable raw snapshots, Stage 03 MCP discovery, authorization, and evidence envelopes, and Stage 04 Google Cloud agent orchestration with four bounded specialists and Gemini synthesis."
+          >
+          <figcaption>
+            <span>Collect → govern → deliver → orchestrate.</span>
+            <span>Missing evidence remains explicit throughout the path.</span>
+          </figcaption>
+        </figure>
+        <div class="architecture-stages" aria-label="Four architecture stages">
+          <div class="architecture-stage">
+            <strong>01 · Collect</strong>
+            <span>SEC EDGAR establishes issuer identity; CompanyFacts/XBRL supplies structured filing evidence.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>02 · Build</strong>
+            <span>Nightly jobs acquire, normalize, materialize, validate, publish, and preserve provenance.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>03 · Deliver</strong>
+            <span>MCP exposes bounded discovery, authorization, tools, and context-rich evidence envelopes.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>04 · Use</strong>
+            <span>Google Cloud coordinates bounded specialists; a boundary reviewer separates facts from interpretation before Gemini synthesis.</span>
+          </div>
+        </div>
+        <div class="protocol-links" aria-label="Architecture implementation links">
+          <a href="https://github.com/aitrailblazer/deltasignal-ai-agent/tree/main/client-demo/google-cloud-aapl" target="_blank" rel="noopener">Open the Google Cloud AAPL client demo</a>
+          <a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">Inspect the live MCP endpoint</a>
+          <a href="#developer-docs">Open operator documentation</a>
         </div>
       </div>
     </section>
