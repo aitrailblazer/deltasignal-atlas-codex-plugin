@@ -787,6 +787,27 @@
       line-height: 1.45;
     }
 
+    .missingness-boundary {
+      width: min(1180px, 100%);
+      margin: 1rem auto 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(255, 154, 26, 0.46);
+      border-radius: 14px;
+      background:
+        linear-gradient(90deg, rgba(255, 154, 26, 0.14), rgba(227, 0, 85, 0.08)),
+        rgba(18, 11, 7, 0.92);
+      color: #f3ddd0;
+      line-height: 1.55;
+    }
+
+    .missingness-boundary strong {
+      display: block;
+      margin-bottom: 0.28rem;
+      color: #ffbd66;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+    }
+
     .lifecycle-frame {
       width: min(900px, 100%);
       margin: 0 auto;
@@ -1907,6 +1928,7 @@
               <div class="toc-links">
                 <a href="#agent-native-architecture">Architecture</a>
                 <a href="#evidence-lifecycle">Lifecycle</a>
+                <a href="#four-level-framework">Framework</a>
                 <a href="#start-here">Start Here</a>
                 <a href="#access-model">Access</a>
                 <a href="#circle-marketplace-validation">Circle</a>
@@ -2237,6 +2259,58 @@
 
     <span id="synthetic-etf" aria-hidden="true"></span>
     <span id="coverage-lanes" aria-hidden="true"></span>
+    <section class="section architecture-section" id="four-level-framework">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="artifact-label">Infographic audit · Artifact #6</div>
+          <h2>DeltaSignal Four-Level Evidence &amp; Synthetic Basket Framework</h2>
+          <p>Read evidence completeness as a hierarchy: issuer truth first, then public-market behavior, point-in-time basket pressure, and capability-gated derivative dislocation. Unsupported levels remain explicitly missing rather than being completed by an AI model.</p>
+        </div>
+        <figure class="architecture-frame">
+          <img
+            src="./assets/deltasignal-four-level-evidence-synthetic-basket-framework.png"
+            width="2752"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+            alt="DeltaSignal Four-Level Evidence and Synthetic Basket Framework showing Level 1 SEC EDGAR and XBRL issuer truth, Level 2 public-market behavior, Level 3 point-in-time basket pressure, Level 4 derivative dislocation, a preserved-missingness boundary, and thematic synthetic benchmark lanes."
+          >
+          <figcaption>
+            <span>Level 1 issuer truth → Level 2 market behavior → Level 3 basket pressure → Level 4 derivative dislocation.</span>
+            <span>Unavailable evidence remains null; no synthetic completion.</span>
+          </figcaption>
+        </figure>
+        <div class="architecture-stages" aria-label="Four evidence levels">
+          <div class="architecture-stage">
+            <strong>Level 1 · Issuer truth</strong>
+            <span>SEC EDGAR, CompanyFacts, and XBRL establish filing-backed identity, periods, concepts, values, and provenance.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>Level 2 · Market behavior</strong>
+            <span>Public-market observations describe how an issuer or linked instrument behaves; they do not rewrite filing truth.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>Level 3 · Basket pressure</strong>
+            <span>Point-in-time thematic rollups show whether pressure is isolated or propagating across a governed constituent set.</span>
+          </div>
+          <div class="architecture-stage">
+            <strong>Level 4 · Derivative dislocation</strong>
+            <span>Depth, basis, or reference dislocation appears only when a supported linked instrument and sufficient recorder evidence exist.</span>
+          </div>
+        </div>
+        <div class="missingness-boundary">
+          <strong>Preserved missingness is a trust control—not a defect.</strong>
+          If a level, field, venue observation, or constituent input is unavailable, DeltaSignal returns it as missing, partial, or not applicable. The system does not infer absent evidence, promote linked-market context into issuer truth, or turn basket pressure into personalized investment advice.
+        </div>
+        <div class="protocol-links" aria-label="Four-level framework links">
+          <a href="#synthetic-baskets">Explore basket definitions</a>
+          <a href="#synthetic-ai10-help">Ask Synthetic AI10 questions</a>
+          <a href="https://api.aitrailblazer.net/mcp" target="_blank" rel="noopener">Inspect live MCP coverage</a>
+        </div>
+        <p class="fineprint" style="width:min(1180px,100%);margin:1rem auto 0;text-align:center;">The constituent counts printed inside Artifact #6 are snapshot annotations. Query the live MCP and audit surfaces for current membership, coverage, and source dates. Synthetic baskets are analytical benchmarks—not regulated ETFs, broker signals, or personalized advice.</p>
+      </div>
+    </section>
+
     <section class="section alt" id="synthetic-baskets">
       <div class="wrap">
         <div class="section-head">
