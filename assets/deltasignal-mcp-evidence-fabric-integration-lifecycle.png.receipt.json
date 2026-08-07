@@ -1,0 +1,20 @@
+{
+  "schema": "strategix.image.provenance.v1",
+  "owner": "AITrailblazer / DeltaSignal",
+  "copyright": "(c) 2026 AITrailblazer / DeltaSignal",
+  "notice": "User-supplied visual artifact published with provenance receipt. Illustrative tool labels must be verified against live MCP discovery and field catalogs.",
+  "model": "user-supplied",
+  "backend": "Codex attachment",
+  "receipt_id": "deltasignal-mcp-evidence-fabric-artifact-1-20260807",
+  "prompt_sha256": "fd2772c9503ba645a61a6429064f755da34fa1844a11262097c47d30e0f10bc4",
+  "input_sha256": "2413e95e724fdd1db490f5ed1b33c984490664443af0d26c76a6e242c3ea93f7",
+  "output_sha256": "cfcbadf2308e5c4ca71e2d0a4f2d64d13289397641a1ad02adf398962705e1c9",
+  "created_at": "2026-08-07T17:26:59Z",
+  "source_image": "/var/folders/ys/51stpkg918s_87622n6hhmm40000gn/T/codex-clipboard-676f2b7c-6aa8-4a91-a8ba-614ea8fa52db.png",
+  "output_image": "assets/deltasignal-mcp-evidence-fabric-integration-lifecycle.png",
+  "visible_branding": "DeltaSignal title in supplied artwork",
+  "artifact_number": 1,
+  "artifact_title": "DeltaSignal MCP Evidence Fabric & Integration Lifecycle",
+  "focus": "Free Discovery through deltasignal_help; bounded x402 or signed wallet-grant access; governed atlas7_* semantic MCP; evidence preservation and non-advice boundaries.",
+  "verification_boundary": "Tool names drawn inside the infographic are illustrative. Live MCP tools/list, model_catalog, and field_catalog are authoritative."
+}
