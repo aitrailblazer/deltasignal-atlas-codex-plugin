@@ -695,6 +695,12 @@
         #0a0908;
     }
 
+    .settlement-section {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(227, 0, 85, 0.11), transparent 34rem),
+        linear-gradient(180deg, #050505, #0b0908);
+    }
+
     .lifecycle-frame {
       width: min(900px, 100%);
       margin: 0 auto;
@@ -726,6 +732,30 @@
     .lifecycle-frame figcaption span:last-child {
       color: #59616b;
       text-align: right;
+    }
+
+    .protocol-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.4rem;
+    }
+
+    .protocol-links a {
+      padding: 0.72rem 1rem;
+      border: 1px solid rgba(255, 154, 26, 0.34);
+      border-radius: 999px;
+      background: rgba(255, 154, 26, 0.07);
+      color: #ffd7af;
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .protocol-links a:hover {
+      border-color: var(--orange);
+      background: rgba(255, 154, 26, 0.13);
     }
 
     .prompt-grid {
@@ -1937,6 +1967,34 @@
             <span>x402 changes access—not evidence quality.</span>
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="section settlement-section" id="x402-handshake">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How the x402 settlement handshake works</h2>
+          <p>Follow the key-free request lifecycle from route discovery and HTTP 402 challenge through compatible settlement, proof-bearing retry, evidence delivery, signed grant sessions, and deterministic reconciliation.</p>
+        </div>
+        <figure class="lifecycle-frame">
+          <img
+            src="./assets/deltasignal-x402-settlement-handshake-protocol.png"
+            width="1536"
+            height="2752"
+            loading="lazy"
+            decoding="async"
+            alt="DeltaSignal x402 direct settlement and handshake protocol showing route discovery, protected request, HTTP 402 challenge, client settlement, retry with proof, evidence delivery, Base USDC, Circle Gateway, Hedera ProofPay preview, signed grant sessions, and reconciliation."
+          >
+          <figcaption>
+            <span>Discover → request → receive 402 → settle → retry with proof → receive evidence.</span>
+            <span>Payment changes access—not provenance or analytical confidence.</span>
+          </figcaption>
+        </figure>
+        <div class="protocol-links" aria-label="x402 verification links">
+          <a href="https://api.aitrailblazer.net/v1/pricing" target="_blank" rel="noopener">Check live route pricing</a>
+          <a href="https://api.aitrailblazer.net/.well-known/x402" target="_blank" rel="noopener">Inspect x402 discovery</a>
+          <a href="#x402">Open implementation guidance</a>
+        </div>
       </div>
     </section>
 

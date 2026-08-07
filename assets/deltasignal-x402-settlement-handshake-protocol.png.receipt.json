@@ -1,0 +1,16 @@
+{
+  "schema": "strategix.image.provenance.v1",
+  "owner": "AITrailblazer / DeltaSignal",
+  "copyright": "(c) 2026 AITrailblazer / DeltaSignal",
+  "notice": "User-supplied visual artifact published with provenance receipt. Verify claims against the live DeltaSignal contract.",
+  "model": "user-supplied",
+  "backend": "Codex attachment",
+  "receipt_id": "deltasignal-x402-lifecycle-20260807",
+  "prompt_sha256": "4c5c1b33efc61384a1a4f0648e2cf8a3304a54935122c9eab43e7cfd25d179a3",
+  "input_sha256": "ecabfed03f2ae7c94f501c4e296065a5089e13d7594f0a3e96820ad5c8c53e9d",
+  "output_sha256": "f1c38141337bb886c8aa8070c24b69b63382e19c570ea520926e0aca8d705bce",
+  "created_at": "2026-08-07T16:55:50Z",
+  "source_image": "/var/folders/ys/51stpkg918s_87622n6hhmm40000gn/T/codex-clipboard-17f59b83-60c2-4a08-ba2f-5dcf6e99586e.png",
+  "output_image": "assets/deltasignal-x402-settlement-handshake-protocol.png",
+  "visible_branding": "DeltaSignal x402 title in supplied artwork"
+}
