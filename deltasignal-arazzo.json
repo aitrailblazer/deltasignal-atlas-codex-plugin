@@ -179,8 +179,8 @@
     },
     {
       "workflowId": "atlas7AuditStatusCheck",
-      "summary": "Verify the Azure-native ATLAS-7 regression audit is healthy.",
-      "description": "Use this internal/operator workflow when a user asks whether ATLAS-7 is current, healthy, monitored, Azure-native, or fully regression-tested. The REST route and MCP tool both read the latest Azure Blob summary from the scheduled Go audit job. This is an operational readiness surface, not an issuer-analysis or paid data workflow.\n",
+      "summary": "Verify the GCP-native ATLAS-7 regression audit is healthy.",
+      "description": "Use this internal/operator workflow when a user asks whether ATLAS-7 is current, healthy, monitored, GCP-native, or fully regression-tested. The REST route and MCP tool both read the latest GCS summary from the scheduled Go audit job. This is an operational readiness surface, not an issuer-analysis or paid data workflow.\n",
       "x-audience": "internal",
       "x-public-docs": true,
       "x-payment-rail": "internal_api_key_bypass",
@@ -188,7 +188,7 @@
         "audit_status",
         "regression_health",
         "operator_readiness",
-        "azure_native_monitoring"
+        "gcp_native_monitoring"
       ],
       "steps": [
         {

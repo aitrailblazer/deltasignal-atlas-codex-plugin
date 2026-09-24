@@ -30,7 +30,7 @@ Latest public rollup tripcode: `ATLAS-JUN-28-MCP-HELP-LIVE`. It confirms the pub
 
 Live state rule: trust current production responses, `openapi.json`, `/v1/pricing`, `/v1/contract/fields`, and MCP discovery before static notes. Label unverified material as `PLANNED`, `PROPOSED`, `LOCAL_ONLY`, `DEPRECATED`, or `SECOND_LEVEL_LINK_NOT_FETCHED`; do not promote it to `LIVE` without live discovery.
 
-StrategiX exposes Delta Signal ATLAS-7 Natural Language Briefs for humans, agents, and developer workflows that need audit-grade Markdown summaries over canonical Delta Signal evidence. The daily EDGAR CompanyFacts background task is the basis of the MCP evidence layer: it waits for SEC companyfacts.zip readiness, mirrors or reconstructs the date in Azure, runs process-changes, and publishes the delta/intelligence/manifests consumed by Morning Brief, daily-change, issuer-report, pressure-board, alpha, and notification tools.
+StrategiX exposes Delta Signal ATLAS-7 Natural Language Briefs for humans, agents, and developer workflows that need audit-grade Markdown summaries over canonical Delta Signal evidence. The daily EDGAR CompanyFacts background task is the basis of the MCP evidence layer: it waits for SEC companyfacts.zip readiness, mirrors or reconstructs the date in GCP, runs process-changes, and publishes the delta/intelligence/manifests consumed by Morning Brief, daily-change, issuer-report, pressure-board, alpha, and notification tools.
 
 ATLAS-7 generation: EDGAR CompanyFacts and daily-feed/full-index inputs are mirrored or reconstructed, process-changes creates dated deltas and intelligence artifacts, and the crypto-exposed issuer universe is matched by ticker/CIK into generated issuer rows, history rows, Synthetic Basket layers, and MCP-ready evidence envelopes.
 
@@ -72,7 +72,7 @@ Strict ATLAS-7 / SPECTRA rule:
 
 TripCode research continuity lets subscribers turn DeltaSignal article subtitles into machine-readable research objects:
 
-- `TF-SUB` resolves DeltaSignal article and narrative research nodes from Azure Blob.
+- `TF-SUB` resolves DeltaSignal article and narrative research nodes from GCS.
 - `TF-XBRL` resolves SEC/XBRL evidence nodes while preserving official accession, CIK, form, period, and source-document identity.
 - `TF-DS` is reserved for computed DeltaSignal signal nodes.
 - `TF-RIVER` is reserved for issuer thesis River nodes.

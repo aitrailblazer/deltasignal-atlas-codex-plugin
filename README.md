@@ -10,7 +10,7 @@
 
 Evidence-first issuer intelligence, SEC/XBRL signals, risk context, fundamentals, alpha screens, and Synthetic Basket pressure evidence for crypto-exposed public companies. The live public surface exposes MCP, OpenAPI, Arazzo workflows, pricing/field-contract discovery, x402 challenges for protected execution, signed wallet grant sessions, and ATLAS-7 audit status.
 
-Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live Azure service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
+Common workflows are exposed as composite MCP presets so agents can call one reliable tool instead of hand-orchestrating several low-level calls. The live GCP service also exposes an operator audit-status tool so agents can verify that the full 215-issuer regression run is healthy before relying on the surface.
 
 Native MCP server plus x402 micropayments. Public clients should not request or store Delta Signal API keys. Standard Base x402 is the compatibility-first challenge at `accepts[0]`; Circle Gateway is an explicitly selectable optimized path at `accepts[1]` for Circle-aware clients using `GatewayWalletBatched`. Signed wallet grants are separate backend virtual credit and do not settle on-chain.
 
@@ -214,7 +214,7 @@ Use this for Node, Go, .NET, cron, and data-pipeline integrations that do not ne
 
 ### 3. `atlas7AuditStatusCheck`
 
-Operator readiness check for the scheduled Azure-native regression audit.
+Operator readiness check for the scheduled GCP-native regression audit.
 
 Flow:
 
@@ -320,9 +320,9 @@ Granular tools:
 Discovery-gated TripCode / River tools. Call only when live MCP `tools/list` exposes them:
 
 - `deltasignal_generate_article_tripcode` - authoring-time TF-SUB identity generation; local, deterministic, typical price $0.00.
-- `deltasignal_resolve_article_tripcode` - resolves an article subtitle TripCode into the Azure Blob research object; typical price $0.02.
+- `deltasignal_resolve_article_tripcode` - resolves an article subtitle TripCode into the GCS research object; typical price $0.02.
 - `deltasignal_list_article_tripcodes` - discovers prior TF-SUB article nodes from a current article TripCode, River TripCode, or issuer symbol; typical price $0.02.
-- `deltasignal_resolve_river_tripcode` - resolves a TF-RIVER issuer thesis graph from Azure Blob; typical price $0.05.
+- `deltasignal_resolve_river_tripcode` - resolves a TF-RIVER issuer thesis graph from GCS; typical price $0.05.
 - `deltasignal_reverse_search_river` - reconstructs River thesis lineage and the eight-section subscriber map from an issuer, TripCode, or claim; typical price $0.30.
 - `deltasignal_search_by_claim` - searches River claim records by query or claim hash; typical price $0.05.
 - `deltasignal_search_by_issuer` - discovers the issuer index, active River root, and article nodes; typical price $0.05.
@@ -342,7 +342,7 @@ Public ATLAS-7 issuer tools:
 - `deltasignal_risk_distribution`
 - `deltasignal_daily_changes` - compact Daily Monitoring; no raw tag arrays; typical public route price $0.03.
 - `deltasignal_daily_change_evidence` - explicit issuer proof drilldown; paginated raw Company Facts tags; typical public route price $0.03.
-- `deltasignal_atlas7_audit_status` - operator health check for the Azure-native 215-issuer ATLAS-7 regression audit; reports freshness, artifact prefix, operation count, historical failures, composite failures, and health state. This is a readiness/audit surface, not an issuer-analysis route.
+- `deltasignal_atlas7_audit_status` - operator health check for the GCP-native 215-issuer ATLAS-7 regression audit; reports freshness, artifact prefix, operation count, historical failures, composite failures, and health state. This is a readiness/audit surface, not an issuer-analysis route.
 
 All tools are read-only, schema-validated, and bounded for agent use.
 
@@ -355,7 +355,7 @@ Public marketplace caveat: TripCode / River tools are discoverable in public MCP
 | MCP tool | Typical price | Purpose |
 | --- | ---: | --- |
 | `deltasignal_generate_article_tripcode` | `$0.00` | Generate a deterministic TF-SUB article/research identity before publication |
-| `deltasignal_resolve_article_tripcode` | `$0.02` | Resolve an article subtitle TripCode into its Azure Blob research object |
+| `deltasignal_resolve_article_tripcode` | `$0.02` | Resolve an article subtitle TripCode into its GCS research object |
 | `deltasignal_list_article_tripcodes` | `$0.02` | Discover prior TF-SUB nodes from a current article, TF-RIVER, or issuer River |
 | `deltasignal_resolve_river_tripcode` | `$0.05` | Resolve the persistent TF-RIVER issuer thesis graph |
 | `deltasignal_reverse_search_river` | `$0.30` | Reconstruct thesis deltas, confirmations, weakened assumptions, risks, scenarios, and monitors |
@@ -433,7 +433,7 @@ Public REST and payment surfaces:
 
 - `GET /v1/daily-changes/latest` or `GET /mpp/v1/daily-changes/latest` - compact monitoring.
 - `GET /v1/daily-changes/evidence` or `GET /mpp/v1/daily-changes/evidence` - issuer evidence drilldown.
-- `GET /v1/atlas7/audit/latest` - authenticated operator REST status for the latest 215-issuer Azure regression audit. Public agents should prefer MCP `deltasignal_atlas7_audit_status` through the paid/grant/internal MCP flow.
+- `GET /v1/atlas7/audit/latest` - authenticated operator REST status for the latest 215-issuer GCP regression audit. Public agents should prefer MCP `deltasignal_atlas7_audit_status` through the paid/grant/internal MCP flow.
 - Future bulk evidence export proposal: small pack $0.15, standard pack $0.30, full daily export $0.75-$1.50.
 
 ## Development Modes

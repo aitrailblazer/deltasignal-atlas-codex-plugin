@@ -1,7 +1,7 @@
 {
   "name": "deltasignal-atlas-7",
   "version": "0.2.7",
-  "description": "SEC-grounded crypto public issuer intelligence with compact daily monitoring, evidence drilldowns, Azure-native audit status, and x402 paid access.",
+  "description": "SEC-grounded crypto public issuer intelligence with compact daily monitoring, evidence drilldowns, GCP-native audit status, and x402 paid access.",
   "author": {
     "name": "AITrailblazer",
     "url": "https://api.aitrailblazer.net"
@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "DeltaSignal ATLAS-7",
     "shortDescription": "SEC-grounded ATLAS-7 stress, alpha, fundamentals, daily monitoring, evidence drilldowns, and audit status.",
-    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence across the current 378-issuer calculation universe. It exposes composite presets, granular issuer and market evidence, 26 governed atlas7_* semantic discovery/query tools, Natural Language briefs, and Azure-native 215-issuer regression audit status. Public MCP initialize and tools/list are free for discovery; public tools/call remains x402-protected unless a free-tier grant applies. Public Builder metadata uses usage credits; credit packs are not implemented yet. TripCode/River tools are visible in current public discovery, but execution remains x402/grant-gated and depends on the required River/index evidence objects.",
+    "longDescription": "DeltaSignal ATLAS-7 gives Codex an MCP-first tool surface for SEC-grounded issuer intelligence across the current 378-issuer calculation universe. It exposes composite presets, granular issuer and market evidence, 26 governed atlas7_* semantic discovery/query tools, Natural Language briefs, and GCP-native 215-issuer regression audit status. Public MCP initialize and tools/list are free for discovery; public tools/call remains x402-protected unless a free-tier grant applies. Public Builder metadata uses usage credits; credit packs are not implemented yet. TripCode/River tools are visible in current public discovery, but execution remains x402/grant-gated and depends on the required River/index evidence objects.",
     "developerName": "AITrailblazer",
     "category": "Research",
     "capabilities": [

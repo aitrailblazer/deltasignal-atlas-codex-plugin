@@ -1,6 +1,6 @@
 ---
 name: deltasignal-atlas-7
-description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including composite MCP presets, readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, compact daily SEC monitoring, paginated evidence drilldowns, and Azure-native audit status over the free starter tier, Tempo MPP, or Base x402.
+description: Use DeltaSignal ATLAS-7 for SEC-grounded issuer intelligence on crypto public companies, including composite MCP presets, readiness, covenant stress, top-stressed issuers, peer ranking, alpha signals, fundamentals, compact daily SEC monitoring, paginated evidence drilldowns, and GCP-native audit status over the free starter tier, Tempo MPP, or Base x402.
 ---
 
 # DeltaSignal ATLAS-7
@@ -39,7 +39,7 @@ Bundled MCP server:
   - `deltasignal_quick_ticker_check` for fast ticker checks.
   - `deltasignal_daily_changes` for compact Daily Monitoring.
   - `deltasignal_daily_change_evidence` for explicit issuer proof after a monitoring result.
-  - `deltasignal_atlas7_audit_status` for operator checks that the Azure-native 215-issuer regression audit is healthy and fresh.
+  - `deltasignal_atlas7_audit_status` for operator checks that the GCP-native 215-issuer regression audit is healthy and fresh.
 - Use granular tools only for custom drilldowns or when a composite preset is unavailable.
 - Prefer the `deltasignal_*` MCP tools when this plugin is installed and the request maps to a supported DeltaSignal route.
 - MCP tools are read-only, idempotent, closed-world tools with strict argument validation.
@@ -73,7 +73,7 @@ Use TripCode tools when a user has a DeltaSignal article subtitle with `ATLAS-7 
 Important rules:
 
 - First confirm the live MCP `tools/list` exposes the TripCode tool you intend to call. Local/source proof, planned tools, or stale public MCP output are not enough to claim public production availability.
-- `TF-SUB` resolves DeltaSignal article/research objects stored in Azure Blob.
+- `TF-SUB` resolves DeltaSignal article/research objects stored in GCS.
 - `TF-XBRL` resolves SEC/XBRL evidence nodes and must preserve SEC identifiers.
 - `TF-DS` is reserved for computed DeltaSignal signal nodes.
 - `TF-RIVER` is reserved for issuer thesis River nodes.
@@ -87,7 +87,7 @@ TripCode tool pricing:
 | MCP tool | Typical price | Purpose |
 | --- | ---: | --- |
 | `deltasignal_generate_article_tripcode` | `$0.00` | Generate a deterministic TF-SUB article/research identity before publication |
-| `deltasignal_resolve_article_tripcode` | `$0.02` | Resolve an article subtitle TripCode into its Azure Blob research object |
+| `deltasignal_resolve_article_tripcode` | `$0.02` | Resolve an article subtitle TripCode into its GCS research object |
 | `deltasignal_generate_filing_tripcode` | `$0.00` | Generate a deterministic TF-XBRL identity from supplied SEC/XBRL tuple data |
 | `deltasignal_resolve_filing_tripcode` | `$0.02` | Resolve a TF-XBRL filing evidence object |
 | `deltasignal_compare_article_to_filing_evidence` | `$0.08` | Return a compact article-to-filing verification packet |
@@ -101,7 +101,7 @@ TripCode tool pricing:
 
 ## Operator Audit Status
 
-- Use `deltasignal_atlas7_audit_status` when the user asks whether ATLAS-7 is healthy, current, monitored, Azure-native, or fully regression-tested.
+- Use `deltasignal_atlas7_audit_status` when the user asks whether ATLAS-7 is healthy, current, monitored, GCP-native, or fully regression-tested.
 - Treat it as an operational readiness/audit surface, not as issuer intelligence or investment evidence.
 - Preserve `status`, `stale`, `artifact.prefix`, `finished_at_utc`, `issuer_count`, `operation_count`, `failed_count`, `historical_failed_count`, and `composite_failed_count` when summarizing.
 - A healthy result currently means the latest scheduled Go audit covered the 215-issuer universe, current routes, historical routes, and composite MCP workflows with zero failures inside the freshness window.
@@ -125,7 +125,7 @@ When exact quote, budget-gate, or reconciliation accuracy matters, fetch `GET ht
 | `GET /mpp/v1/covenant-stress` or `GET /v1/covenant-stress` | `$0.08` | Filter or list the active covenant stress slice |
 | `GET /mpp/v1/spectra-field-map/{ticker}` or `GET /v1/spectra-field-map/{ticker}` | `$0.08` | Historical field-map pressure and filing choreography |
 | `GET /mpp/v1/covenant-stress/{ticker}` or `GET /v1/covenant-stress/{ticker}` | `$0.10` | Detailed ATLAS-7 covenant stress for one issuer |
-| MCP `deltasignal_resolve_article_tripcode` | `$0.02` | Article TripCode to Azure Blob research object |
+| MCP `deltasignal_resolve_article_tripcode` | `$0.02` | Article TripCode to GCS research object |
 | MCP `deltasignal_list_article_tripcodes` | `$0.02` | Prior TF-SUB article nodes by current TripCode, River, or issuer |
 | MCP `deltasignal_resolve_river_tripcode` | `$0.05` | Persistent TF-RIVER issuer graph |
 | MCP `deltasignal_reverse_search_river` | `$0.30` | River thesis-lineage reconstruction |

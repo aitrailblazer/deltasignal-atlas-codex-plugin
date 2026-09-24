@@ -18,7 +18,7 @@ The repo and GitHub Pages surfaces are current:
 
 Current one-line description:
 
-> DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies, including composite MCP presets, alpha signals, covenant stress, peer ranking, SEC XBRL fundamentals, compact daily monitoring, evidence drilldowns, and Azure-native 215-issuer regression audit status over x402/Base and MPP/Tempo rails.
+> DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies, including composite MCP presets, alpha signals, covenant stress, peer ranking, SEC XBRL fundamentals, compact daily monitoring, evidence drilldowns, and GCP-native 215-issuer regression audit status over x402/Base and MPP/Tempo rails.
 
 Registry-safe description, capped to the official MCP registry schema limit:
 
@@ -159,13 +159,13 @@ SEC/XBRL issuer intelligence for crypto public companies via MCP, OpenAPI, x402,
 Long:
 
 ```text
-DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies. It exposes composite MCP presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha signals, fundamentals, compact daily monitoring, paginated evidence drilldowns, Natural Language briefs, and Azure-native 215-issuer regression audit status. Public users can access the surface through x402/Base or MPP/Tempo rails; internal validation can use pre-authorized MCP/API keys.
+DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies. It exposes composite MCP presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha signals, fundamentals, compact daily monitoring, paginated evidence drilldowns, Natural Language briefs, and GCP-native 215-issuer regression audit status. Public users can access the surface through x402/Base or MPP/Tempo rails; internal validation can use pre-authorized MCP/API keys.
 ```
 
 Operator/audit note:
 
 ```text
-Use deltasignal_atlas7_audit_status or GET /v1/atlas7/audit/latest to verify the latest scheduled Azure-native 215-issuer regression audit. A healthy result reports stale=false, issuer_count=215, operation_count=1935, failed_count=0, historical_failed_count=0, and composite_failed_count=0.
+Use deltasignal_atlas7_audit_status or GET /v1/atlas7/audit/latest to verify the latest scheduled GCP-native 215-issuer regression audit. A healthy result reports stale=false, issuer_count=215, operation_count=1935, failed_count=0, historical_failed_count=0, and composite_failed_count=0.
 ```
 
 ## Verification Commands

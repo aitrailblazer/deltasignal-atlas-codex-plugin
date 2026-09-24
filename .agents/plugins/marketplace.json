@@ -3,7 +3,7 @@
   "interface": {
     "displayName": "DeltaSignal ATLAS-7",
     "shortDescription": "SEC-grounded crypto public issuer intelligence with MCP presets, x402 access, and audit status.",
-    "longDescription": "DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies. It exposes composite MCP presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha signals, fundamentals, compact daily monitoring, evidence drilldowns, and Azure-native 215-issuer regression audit status."
+    "longDescription": "DeltaSignal ATLAS-7 gives agents SEC-grounded issuer intelligence for crypto public companies. It exposes composite MCP presets for morning briefs, company reports, pressure boards, alpha sweeps, and quick ticker checks, plus granular readiness, covenant stress, peer ranking, alpha signals, fundamentals, compact daily monitoring, evidence drilldowns, and GCP-native 215-issuer regression audit status."
   },
   "plugins": [
     {
