@@ -7,6 +7,7 @@
 [![Arazzo Workflows](https://img.shields.io/badge/Arazzo-1.0.1-54d69d)](./arazzo/deltasignal-arazzo.yaml)
 [![Discovery Contract](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml/badge.svg)](https://github.com/aitrailblazer/deltasignal-atlas-codex-plugin/actions/workflows/discovery-contract.yml)
 [![Glama Connector](https://img.shields.io/badge/Glama-connector-c7a0ff)](https://glama.ai/mcp/connectors/net.aitrailblazer.api/delta-signal-atlas-7)
+[![MCP Queen operational grade](https://mcpqueen.com/badge/io.github.aitrailblazer/deltasignal-atlas-7.svg)](https://mcpqueen.com/s/io.github.aitrailblazer/deltasignal-atlas-7)
 
 Evidence-first issuer intelligence, SEC/XBRL signals, risk context, fundamentals, alpha screens, and Synthetic Basket pressure evidence for crypto-exposed public companies. The live public surface exposes MCP, OpenAPI, Arazzo workflows, pricing/field-contract discovery, x402 challenges for protected execution, signed wallet grant sessions, and ATLAS-7 audit status.
 
